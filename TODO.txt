@@ -1,0 +1,31 @@
+add rgb logo to logic-ref and boolAlgBasics
+update rgb logo and organize folders
+make rgb link work
+link other pages to material icons page and roboto font page
+	https://material.io/icons/
+	https://fonts.google.com/specimen/Roboto?selection.family=Roboto
+char create graph show all 6 in odds chart
+make 404 pretty
+rgb facebook
+organize icons and other stuff in folders
+make rgb website main index and link to others
+display most recent donation?
+update dnd dice with more options and buttons
+dnd dice info button (explain how advantage adn disadvantage work)
+make intiatitive tracker work
+track number of visitors
+checkbox on char create for new character deleting name and stats
+put fullscreen, random and other common functions in scripts file andadd to all pages. move specific code from scripts to dndDiceScripts
+remeber to make oggle theme ad night mode work together and in common scripts file
+make all rgb icon links work
+
+AFTER EVERYTHING WORKS
+make rgbstudios gmail and github account and use rgbstudios.github.io as website
+update chrome apps and app descriptions to go to website
+
+GITHUB INFO
+git clone https://github.com/justingolden21/justingolden21.github.io
+cd justingolden21.github.io
+git add --all
+git commit -m "initial commit"
+git push -u origin master
