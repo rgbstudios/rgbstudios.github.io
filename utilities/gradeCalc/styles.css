@@ -1,0 +1,101 @@
+body {
+	background-color: #eee;
+} body, textarea, button, input {
+	font-family: Arial;
+} #calcDiv {
+	text-align: center;
+} #calc {
+	padding: 12px;
+} #grade {
+	font-size: 150%;
+} h1 {
+	color: #090 !important;
+	text-align: center;
+} .gradeItem:hover {
+	border: 2px solid #0c0;
+	box-shadow: 1px 2px 1px #0c0;
+} input, p {
+	display: inline-block;
+} h3 {
+	width: 25%;
+	font-size: 2.5vw;
+	display: inline;
+} input, p, h1, h2, h3, h4, button, textarea {
+	color: #666;
+} input {
+	background-color: #f6f6f6;
+	text-align: center;
+	width: 10%;
+	margin: 5px;
+} #console {
+	background-color: #f6f6f6;
+	width: 80%;
+	position: relative;
+	margin-bottom: 8px;
+	text-align: center;
+	resize: vertical;
+} .name {
+	width:15%;
+} input:focus, button:focus, textarea:focus {
+	outline-color: #090;
+} button {
+	background-color: #eee;
+	color: #666;
+	margin: 2px;
+	padding: 2px;
+	border-radius: 4px;
+} button:hover {
+	background-color: #ddd;
+	color: #090;
+	cursor: pointer;
+}.svgButton {
+	padding: 4px;
+	margin-top: 4px;
+} .gradeItem {
+	border: 2px solid #666;
+	border-radius: 6px;
+	box-shadow: 1px 2px 1px #666;
+} .svgButton:hover {
+	background-color: #0f0;
+	border-radius: 50%;
+	cursor: pointer;
+} ::selection {
+	background-color: #9f9;
+} ::-moz-selection {
+	background-color: #ccc;
+} img, button {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;	
+} #logo {
+	width: 50px;
+} h1 {
+	display: inline;	
+} #titleDiv {
+	text-align: center;
+} #studentName {
+	width: 200px;
+} #downloadLink {
+	width: 0;
+	text-decoration: none;
+} #RGBIcon {
+	width: 50px;
+	cursor: pointer;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #6c6; /*70%*/
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #6c6; /*70%*/
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #6c6; /*70%*/
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #6c6; /*70%*/
+}

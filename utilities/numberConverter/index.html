@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+<head>
+<title>Base Converter</title>
+<link rel="shortcut icon" type="image/png" href="logo/num_logo.png"/>
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#933">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#933">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#933">
+<style>
+/*main color: #933*/
+
+@font-face {
+    font-family: MatrixBoldSmallCaps;
+    src: url(../resources/fonts/MatrixBoldSmallCaps.ttf);
+}
+
+body {
+	padding: 4px;
+	margin: 4px;
+} body, textarea, input {
+	font-family: Roboto, Arial;
+	color: #4d1919; /*20%*/
+} body, input, textarea {
+	background-color: #f2d9d9; /*90%*/
+} th, td {
+    border: 2px solid #4d1919; /*20%*/
+	padding: 2px;
+	margin: 2px;
+} .center, input, table, textarea {
+	text-align: center;
+} input, textarea, #reset {
+	border: 2px solid #4d1919; /*20%*/
+} input:focus, textarea:focus { 
+	outline: 2px solid #c66; /*60%*/
+	border: 0px solid #000;
+	padding: 8px;
+} input:hover, textarea:hover, td:hover {	
+	box-shadow: 2px 2px 0px #4d1919; /*20%*/
+} textarea {
+	width: 100%;
+	resize: vertical;
+} tr:nth-child(odd) {
+	background-color: #e6b3b3; /*80%*/
+} tr:hover {
+	background-color: #fff;
+} ::-moz-selection {
+	background-color: #e6b3b3; /*80%*/
+} ::selection {
+	background-color: #e6b3b3; /*80%*/
+} #reset {
+	fill: #4d1919; /*20%*/
+	cursor: pointer;
+	border-radius: 50%;
+	padding: 4px;
+} #reset:hover {
+	fill: #c66; /*60%*/
+	border-color: #c66; /*60%*/
+	-webkit-transition: -webkit-transform .25s ease-in-out;
+	transition: transform .25s ease-in-out;
+} #reset:hover {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+} input {
+	margin-right: 12px;
+	margin-bottom: 8px;
+	padding: 4px;
+} hr {
+	height: 4px;
+	border: 0;
+	box-shadow: 0 4px 4px -4px #4d1919 inset; /*20%*/
+} h3 {
+	display: inline-block;
+} #logo {
+	width: 50px;
+} svg, img {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+} #RGBIcon {
+	width: 50px;
+	height: auto;
+	bottom: 0%;
+	cursor: pointer;
+} #RGBPara {
+	font-family: MatrixBoldSmallCaps;
+} #email {
+	width: 40px;
+	stroke: #f00;
+} #email:hover {
+	cursor: pointer;
+	content: url('icon/email-open.svg');
+} a {
+	text-decoration: none;
+	color: #933; /*40%*/
+} a:hover {
+	text-decoration: underline;
+} input {
+	font-size: 150%;
+}
+</style>
+</head>
+<body>
+<div class="center">
+<img id="logo" src="logo/num_logo.svg" onerror="this.src='logo/num_logo.png';">
+<h3 class="center">Number Base Converter</h3>
+<p>V.1.0.2</p>
+</div>
+<br>
+<input id="binary" autofocus onclick="this.setSelectionRange(0, this.value.length)" type="text" value="0"><sub>2</sub><label> Binary</label><br>
+<input id="octal" onclick="this.setSelectionRange(0, this.value.length)" type="text" value="0"><sub>8</sub><label> Octal</label><br>
+<input id="decimal" onclick="this.setSelectionRange(0, this.value.length)" type="text" value="0"><sub>10</sub><label> Decimal</label><br>
+<input id="hex" onclick="this.setSelectionRange(0, this.value.length)" type="text" value="0"><sub>16</sub><label> Hex</label><br>
+<p>Hit Enter (or tab) to calculate other values, use Tab and Shift+Tab to navigate inputs</p>
+<hr>
+<p class="center"><i>Console</i></p>
+<div title="Reset Console">
+<svg id="reset" onclick="document.getElementById('valConsole').value='';" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+<textarea id="valConsole" rows="5"></textarea>
+<hr>
+<p class="center"><i>Quick reference table</i></p>
+<table>
+<tr>
+<th>Decimal (10)</th>
+<th>Binary (2)</th>
+<th>Octal (8)</th>
+<th>Hexadecimal (16)</th>
+</tr>
+<tr>
+<td>00</td>
+<td>0000</td>
+<td>00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>01</td>
+<td>0001</td>
+<td>01</td>
+<td>1</td>
+</tr>
+<tr>
+<td>02</td>
+<td>0010</td>
+<td>02</td>
+<td>2</td>
+</tr>
+<tr>
+<td>03</td>
+<td>0011</td>
+<td>03</td>
+<td>3</td>
+</tr>
+<tr>
+<td>04</td>
+<td>0100</td>
+<td>04</td>
+<td>4</td>
+</tr>
+<tr>
+<td>05</td>
+<td>0101</td>
+<td>05</td>
+<td>5</td>
+</tr>
+<tr>
+<td>06</td>
+<td>0110</td>
+<td>06</td>
+<td>6</td>
+</tr>
+<tr>
+<td>07</td>
+<td>0111</td>
+<td>07</td>
+<td>7</td>
+</tr>
+<tr>
+<td>08</td>
+<td>1000</td>
+<td>10</td>
+<td>8</td>
+</tr>
+<tr>
+<td>09</td>
+<td>1001</td>
+<td>11</td>
+<td>9</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1010</td>
+<td>12</td>
+<td>A</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1011</td>
+<td>13</td>
+<td>B</td>
+</tr>
+<tr>
+<td>12</td>
+<td>1100</td>
+<td>14</td>
+<td>C</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1101</td>
+<td>15</td>
+<td>D</td>
+</tr>
+<tr>
+<td>14</td>
+<td>1110</td>
+<td>16</td>
+<td>E</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1111</td>
+<td>17</td>
+<td>F</td>
+</tr>
+</table>
+<a href="chart.png" download="chart">Download chart as image</a>
+<br>
+<div class="center">
+<img id="RGBIcon" src="logo/rgb-icon.svg" onerror="this.src='logo/rgb-icon.png'"></img>
+<p id="RGBPara">RGB Studios</p>
+<img id="email" title="justingolden21@gmail.com" src="icon/email-closed.svg"></img>
+<br>
+</div>
+
+<script>
+/*TODO
+maybe: copy and download buttons? night mode?
+work with negative and decimal.
+2^n chart or input. ascii chart and download?
+add, subtract, multiply options?
+tutorial on how to convert
+enter custom length (nible, byte, 4 bytes) and format to that
+enter comma seperated list of items to convert
+chose to and from bases
+*/
+window.onload = function() {
+	
+	document.getElementById("RGBIcon").onclick = function() {
+		window.open("../index.html");
+	}
+	
+	document.getElementById("email").onclick = function() {
+		window.open("mailto:justingolden21@gmail.com?Subject=Regarding%20Number%20Converter");
+	}
+	
+	var binary = document.getElementById("binary");
+	var octal = document.getElementById("octal");
+	var decimal = document.getElementById("decimal");
+	var hex = document.getElementById("hex");
+	
+	binary.onchange = function(e) {
+		convert(document.getElementById(e.target.id).value, 2);
+	}
+	octal.onchange = function(e) {
+		convert(document.getElementById(e.target.id).value, 8);
+	}
+	decimal.onchange = function(e) {
+		convert(document.getElementById(e.target.id).value, 10);
+	}
+	hex.onchange = function(e) {
+		convert(document.getElementById(e.target.id).value, 16);
+	}
+}
+
+function convert(val, base) {
+	var decimalAns = parseInt(val, base);
+	if(isNaN(decimalAns) ) {
+		return;
+	}
+	binary.value = decimalAns.toString(2);
+	octal.value = decimalAns.toString(8);
+	decimal.value = decimalAns;
+	hex.value = decimalAns.toString(16).toUpperCase();
+	
+	document.getElementById("valConsole").value =
+	"Bin: " + decimalAns.toString(2) +
+	", Oct: " + decimalAns.toString(8) +
+	", Dec: " + decimalAns +
+	", Hex: " + decimalAns.toString(16).toUpperCase() + "\n\n" +	
+	document.getElementById("valConsole").value;
+}
+
+//Google Analytics
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-104632692-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+</body>
+</html>

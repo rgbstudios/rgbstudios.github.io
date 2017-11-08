@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216">
+<style type="text/css">
+	.st0{fill:#B3B3E6;}
+	.st1{fill:#6666CC;}
+	.st2{fill:#8C8CD9;}
+</style>
+<g stroke="#19194d" stroke-width="6" stroke-linejoin="round">
+<polygon class="st0" points="160,78 108,168 56,78"/>
+<polygon class="st1" points="191.1,60 160,78 108,12"/>
+<polygon class="st1" points="191.1,156 108,204 108,168"/>
+<polygon class="st1" points="108,168 108,204 24.9,156"/>
+<polygon class="st1" points="108,12 56,78 24.9,60"/>
+<polygon class="st1" points="56,78 24.8,156 24.8,60"/>
+<polygon class="st1" points="191.1,60 191.1,155.8 160,78"/>
+<polygon class="st2" points="160,78 191.1,156 108,168"/>
+<polygon class="st2" points="108,12 160,78 56,78"/>
+<polygon class="st2" points="56,78 108,168 24.9,156"/>
+</g>
+</svg>

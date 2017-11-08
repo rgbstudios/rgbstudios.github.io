@@ -1,0 +1,74 @@
+/*  main color: #339 40%
+Colors by lightness:
+100% 	#ffffff
+95% 	#ececf9
+90% 	#d9d9f2
+85% 	#c6c6ec
+80% 	#b3b3e6
+75% 	#9f9fdf
+70% 	#8c8cd9
+65% 	#7979d2
+60% 	#6666cc
+55% 	#5353c6
+50% 	#4040bf
+45% 	#3939ac
+40% 	#333399
+35% 	#2d2d86
+30% 	#262673
+25% 	#202060
+20% 	#19194d
+15% 	#131339
+10% 	#0d0d26
+5% 	#060613
+0% 	#000000
+https://www.w3schools.com/colors/colors_picker.asp
+
+*/
+
+body {
+	background: linear-gradient(#19194d, #339); /*20%, 40%*/
+	background: -webkit-linear-gradient(#19194d, #339); /*20%, 40%*/
+	background: -moz-linear-gradient(#19194d, #339); /*20%, 40%*/
+	background: -ms-linear-gradient(#19194d, #339); /*20%, 40%*/
+	background: -o-linear-gradient(#19194d, #339); /*20%, 40%*/	
+} body, summary, a {
+	color: #66c /*60%*/
+} .statDiv {
+	border: 2px solid #000; /*0%*/
+} svg {
+	fill: #000; /*0%*/
+	border: 2px solid #000; /*0%*/
+} svg:hover {
+	fill: #339; /*40%*/
+	border: 2px solid #339; /*40%*/
+} tr {
+	color: #b3b3e6 /*80%*/
+} tr:nth-child(even){
+	background-color: #339; /*40%*/
+	color: #b3b3e6 /*80%*/
+} option:disabled {
+	color: #66c /*60%*/
+} .modal-content {
+	background-color: #19194d; /*20%*/
+}
+
+select, button, input {
+	background-color: #339; /*40%*/
+	color: #b3b3e6; /*80%*/
+} select:hover, button:hover, input:hover, select:focus, button:focus, input:focus {
+	color: #339; /*40%*/
+	background-color: #b3b3e6; /*80%*/
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #66c; /*60%*/
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: #66c; /*60%*/
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: #66c; /*60%*/
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: #66c; /*60%*/
+}

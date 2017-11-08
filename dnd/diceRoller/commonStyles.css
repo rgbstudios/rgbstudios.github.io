@@ -1,0 +1,250 @@
+/* main color: #339 40%
+Colors by lightness:
+100% 	#ffffff
+95% 	#ececf9
+90% 	#d9d9f2
+85% 	#c6c6ec
+80% 	#b3b3e6
+75% 	#9f9fdf
+70% 	#8c8cd9
+65% 	#7979d2
+60% 	#6666cc
+55% 	#5353c6
+50% 	#4040bf
+45% 	#3939ac
+40% 	#333399
+35% 	#2d2d86
+30% 	#262673
+25% 	#202060
+20% 	#19194d
+15% 	#131339
+10% 	#0d0d26
+5% 	#060613
+0% 	#000000
+https://www.w3schools.com/colors/colors_picker.asp
+
+TODO:
+figure out imputs not quite horizontally aligned
+*/
+
+@font-face {
+    font-family: MatrixBoldSmallCaps;
+    src: url(../resources/fonts/MatrixBoldSmallCaps.ttf);
+}
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+html{
+	font-family: Roboto, Arial;
+	min-height: 100%; /*for gradient*/
+} body {
+	margin: 0;
+	background: linear-gradient(#b3b3e6, #66c); /*80%, 60%*/
+	background: -webkit-linear-gradient(#b3b3e6, #66c); /*80%, 60%*/
+	background: -moz-linear-gradient(#b3b3e6, #66c); /*80%, 60%*/
+	background: -ms-linear-gradient(#b3b3e6, #66c); /*80%, 60%*/
+	background: -o-linear-gradient(#b3b3e6, #66c); /*80%, 60%*/		
+} p {
+	line-height: 100%;
+	margin-bottom: 4px;
+	margin-top: 4px;
+} body:not(input):not(textarea), svg, img {
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+} ::selection {
+	background: #b3b3e6; /*80%*/
+} ::-moz-selection {
+	background: #b3b3e6; /*80%*/
+} hr {
+	border: 1px solid #19194d; /*20%*/
+	margin: 10px;
+
+} svg {
+	max-height: 7.5vw;
+} .die, .stroke {
+	stroke-width: 8;
+	stroke-linejoin: round;
+	stroke: #19194d; /*20%*/
+	fill: none;
+} .die {
+	fill: #8c8cd9; /*70%*/	
+} .die:hover {
+	fill: #66c; /*60%*/
+} .die:hover, .die:active {
+	stroke: #d9d9f2; /*90%*/
+	cursor: pointer;
+	stroke-width: 10;
+} .die:active {
+	fill: #339; /*40%*/
+} a{
+	color: #339; /*40%*/
+} a:hover {
+	color: #d9d9f2; /*90%*/
+} textarea {
+	resize: vertical;
+	border: inset;
+} button {
+	overflow: hidden;
+	text-overflow: ellipsis;
+} button:hover, select:hover {
+	cursor: pointer;
+} select {
+	border: outset;
+} p, textarea, button, input, select {
+	font-family: Roboto, Arial;
+	font-size: 2vmax;
+	text-align: center;	
+} textarea, button, input, select {
+	background-color: #d9d9f2; /*90%*/
+	color: #19194d; /*20%*/
+	border-color: #d9d9f2; /*90%*/
+	outline: none !important;
+} summary {
+	outline-color: #19194d; /*20%*/
+	cursor: pointer;
+	color: #19194d; /*20%*/
+} summary:hover {
+	color: #d9d9f2; /*90%*/
+
+
+} input:hover, button:hover, textarea:hover, select:hover {
+	background-color: #b3b3e6; /*80%*/
+/*buttons and reset inputs are on active, rest on focus*/
+} input:not([type="reset"]):hover:not(:focus), input[type="reset"]:hover:not(:active), button:hover:not(:active), textarea:hover:not(:focus), select:hover:not(:focus) {		
+	border-color: #8c8cd9; /*70%*/
+} input:not([type="reset"]):focus, input[type="reset"]:focus, button:focus, textarea:focus, select:focus, a:focus {
+	border: 2px solid #339; /*40%*/
+	color: #339 /*40%*/
+} a:focus {
+	outline: none;
+} input[type="radio"] {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 12px;
+	height: 12px;
+	border: 2px solid #19194d; /*20%*/
+	border-radius: 50%;
+	outline: none;
+} input[type="radio"]:before {
+	content: '';
+	display: block;
+	width: 50%;
+	height: 50%;
+	margin: 25% auto;    
+	border-radius: 100%;    
+} input[type="radio"]:checked:before {
+	background: #19194d; /*20%*/
+} input[type="radio"]:active {
+	border: 2px solid #19194d; /*20%*/
+} input[type="checkbox"] {	
+	-webkit-appearance: none;
+	-moz-appearance: none;	
+	border-radius: 25%;
+	width: 12px;
+	height: 12px;
+	border: 2px solid #19194d; /*20%*/
+	outline: none;
+} input[type="checkbox"]:before {
+	content: '';
+	display: block;
+	width: 50%;
+	height: 50%;
+	margin: 25% auto;    
+	border-radius: 50%;    
+} input[type="checkbox"]:checked:before {
+	background: #19194d; /*20%*/
+} input[type="checkbox"]:active {
+	border: 2px solid #19194d; /*20%*/
+} #RGBIcon {
+	width: 50px;
+	height: auto;
+	bottom: 0%;
+	cursor: pointer;
+} #RGBPara {
+	font-family: MatrixBoldSmallCaps;
+	font-size: 12pt;
+} #infoP {
+	font-size: 10pt;
+} #email {
+	width: 40px;
+	stroke: #f00;
+} #email:hover {
+	cursor: pointer;
+	content: url('icon/email-open.svg');
+} .sideButton {
+	width: 40%;
+} #paypalButton {
+	width: 40%;
+} #paypalSelect {	
+	width: 20%;
+}
+
+
+
+
+/*Modal*/
+.modal {
+	display: none;
+	/*transition: display .5s; */
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top:  0;
+	width:  100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.5);
+} .modal-content {
+	position: absolute;
+	text-align: center;
+	left:  10%;
+	top: 10%;
+	padding: 10px;
+	width:   80%;
+	background-color: #66c; /*60%*/
+} .close {
+	float: right;
+	font-size:   200%;
+	font-weight: bold;
+	padding: 0px 10px;
+	color: #339; /*40%*/
+} .close:hover, .close:focus {
+	text-decoration: none;
+	cursor: pointer;
+	color: #b3b3e6; /*80%*/
+}
+	
+@media screen and (orientation:portrait) {
+	td {
+		height: 10vh;
+	}
+}
+
+@media(max-width:480px) {
+	table {
+		width: 150%;
+	}
+}	
+@media(min-width:600px) {
+	td {
+		padding: .6vmin;
+	} input {
+		margin: .6vmin;
+	} p {
+		line-height: 120%;
+	} p, textarea, button, input, select {
+		font-size: 1.4vmax;
+	} svg {
+		max-height: 5vw;
+	}
+}
+@media(min-width:720px) {
+	p, textarea, button, input, select {
+		font-size: 1.2vmax;
+	} svg {
+		max-height: 4vw;
+	}
+}

@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<!--TODO:
+mode with ties?
+split into 3 colums textareas and small screen make 1 at a time.
+
+percentile calc
+enter x,y data? enter x,y,x,y or x,x,x,y,y,y. or x,y x,y or x y x y or x y, x y
+-->
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/png" href="statCalc_logo.png"/>
+<title>Stat Calculator</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+<img id="logo" src="statCalc_logo.svg">
+<h1>Stat Calc</h1>
+<div title="Refresh">
+<svg id="refresh" onclick="location.reload()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+<br>
+<textarea autofocus id="input" rows="6" placeholder="Input here. Seperate data with new lines."></textarea>
+
+<br>
+<div title="Submit">
+<svg id="submit" tabindex="0" onkeyup="calc()" onclick="calc()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 8V4l8 8-8 8v-4H4V8z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+<br>
+<textarea id="output" rows="24" spellcheck="false" placeholder="Output will appear here." onclick="this.setSelectionRange(0, this.value.length)"></textarea>
+<div title="Copy">
+<svg id="copy" onclick="copy()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+</svg></div>
+<br>
+<input id="comma" onchange="commaChange()" type="checkbox"><label id="commaLabel">Check to seperate with commas</label>
+<p><i>Use tab and shift tab to navigate.</i></p>
+<p><i>Population uses number of items, Sample uses number of items minus one.</i></p>
+<p>V.1.00.01</p>
+
+<script>
+function calc() {
+	var output = document.getElementById("output");
+	var nums = getInput();
+		
+	if(!isValid(nums) ) {
+		output.value = "Invalid Input";
+		return;
+	}
+	output.value = "";
+	
+	sortedNums = nums.sort(sortNum);
+
+	output.value += "Input: " + nums.toString();
+	output.value += "\nInput size: " + nums.length;
+	output.value += "\nValid: " + isValid(nums);
+	output.value += "\nSorted lo-hi: " + sortedNums.toString();
+	output.value += "\nSorted hi-lo: " + sortedNums.reverse().toString();
+	output.value += "\nSum: " + sum(nums);
+	output.value += "\nSum of Squares: " + sumOfSquares(nums);
+  output.value += "\nMean (\u03BC): " + mean(nums);
+	output.value += "\nPopulation Variance (\u03C3^2): " + variancePop(nums);
+	output.value += "\nPopulation Standard Deviation (\u03C3): " + stdDevPop(nums);
+	output.value += "\nSample Variance (s^2): " + varianceSamp(nums);
+	output.value += "\nSample Standard Deviation (s): " + stdDevSamp(nums);
+	output.value += "\nGeometric Mean: " + geoMean(nums);
+	output.value += "\nQuadratic Mean: " + quadMean(nums);
+	output.value += "\nMedian: " + median(sortedNums);
+	output.value += "\nMode: " + mode(sortedNums);
+	output.value += "\nRange: " + range(sortedNums);
+	output.value += "\nFirst Quartile: " + firstQuartile(sortedNums);
+	output.value += "\nThird Quartile: " + thirdQuartile(sortedNums);
+	output.value += "\nInterquartile Range: " + (thirdQuartile(sortedNums) - firstQuartile(sortedNums) );
+	output.value += "\nMid-Range: " + midrange(sortedNums);
+	output.value += "\nMin: " + sortedNums[sortedNums.length-1];
+	output.value += "\nMax: " + sortedNums[0];
+}
+function sortNum(a, b) {
+	return a - b;
+}
+
+function getInput() {
+	var nums;
+	if(document.getElementById("comma").checked) {
+		nums = document.getElementById("input").value.split(",");		
+	} else {
+		nums = document.getElementById("input").value.split("\n");
+	}
+	for(var i = 0; i < nums.length; i++) {
+		nums[i] = parseFloat(nums[i].trim() ); //trim because whitespace doesn't get found in isNaN()		
+		if( (isNaN(nums[i]) || nums[i] == "") && nums[i] != 0) { //doesn't accept "" but does accept 0.
+			nums.splice(i, 1);
+			i--;
+		}
+	}
+	return nums;
+}
+
+function isValid(nums) {
+	return (nums.length != 0);
+}
+
+function stdDevPop(array) { //standard deviation
+	if(array.length < 2) {
+		return 0;
+	} return Math.sqrt(variancePop(array) );
+}
+
+function stdDevSamp(array) {
+	if(array.length < 2) {
+		return 0;
+	} return Math.sqrt(varianceSamp(array) );
+}
+
+function variancePop(array) {
+	if(array.length < 2) {
+		return 0;
+	}
+	var devs = 0, len = array.length;
+	for(var i = 0; i < len; i++) {
+		devs += Math.pow(array[i], 2);
+	}
+	return devs / len - Math.pow(mean(array), 2);
+}
+
+function varianceSamp(array) {
+	if(array.length < 2) {
+		return 0;
+	}
+	var devs = 0, len = array.length;
+	for(var i = 0; i < len; i++) {
+		devs += Math.pow(array[i] - mean(array), 2);
+	}
+	return devs / (len - 1);
+}
+
+function sumOfSquares(array) {
+	if(!isValid(array) ) {
+		return 0;
+	}
+	var sumOfSquares = 0, len = array.length;
+	for(var i = 0; i < len; i++) {
+		sumOfSquares += Math.pow(array[i], 2);
+	}
+	return sumOfSquares;
+}
+
+function sum(array) {
+	if(!isValid(array) ) {
+			return 0;
+	}
+	var sum = 0, len = array.length;
+	for(var i = 0; i < len; i++) {
+		sum += array[i];
+	}
+	return sum;
+}
+
+function mean(array) {
+	if(!isValid(array) ) {
+			return 0;
+	}
+	return sum(array) / array.length;
+}
+
+
+function median(sortedArray) {
+	if(!isValid(sortedArray) ) {
+		return 0;
+	}
+	len = sortedArray.length;
+	if(len % 2 == 1) { //odd
+		return sortedArray[(len-1)/2];
+	} else { //even
+		return (sortedArray[len/2] + sortedArray[(len/2)-1] ) /2;
+	}
+}
+
+function thirdQuartile(sortedArray) {	//TODO median of upper half (round to less items)
+	if(!isValid(sortedArray) ) {
+		return 0;
+	}
+	var bottomHalf = sortedArray.slice(0, Math.floor(sortedArray.length/2)-1);
+	return median(bottomHalf);
+}
+
+function firstQuartile(sortedArray) {	//TODO median of lower half (round to less items)
+	if(!isValid(sortedArray) ) {
+		return 0;
+	}
+	var topHalf = sortedArray.slice(Math.ceil(sortedArray.length/2), sortedArray.length-1);
+	return median(topHalf);
+}
+
+function mode(sortedArray) {
+	if(!isValid(sortedArray) ) {
+		return 0;
+	}
+	var oldNum = null, oldCount = 0, newNum = sortedArray[0], newCount = 1;
+	for(var i = 1; i < sortedArray.length; i++) {
+		if(sortedArray[i] == newNum) {
+			newCount++;
+		} else {
+			if(newCount > oldCount) {
+				oldCount = newCount;
+				oldNum = newNum;
+			}
+			newCount = 1;
+			newNum = sortedArray[i];
+		}
+	}
+	return newCount > oldCount ? newNum : oldNum;
+}
+
+function range(sortedArray) {
+	return sortedArray[0] - sortedArray[sortedArray.length-1]; //sorted lo-hi
+}
+
+function midrange(sortedArray) {
+	return (sortedArray[0] + sortedArray[sortedArray.length-1]) / 2; //sorted lo-hi
+}
+
+function geoMean(array) {
+	if(!isValid(array) ) {
+		return 0;
+	}
+	var prod = 1, len = array.length;
+	for(var i = 0; i < len; i++) {
+		prod *= array[i];
+	}
+	return Math.pow(prod, 1/len); //Nth root
+}
+
+function quadMean(array) {
+	if(!isValid(array) ) {
+		return 0;
+	}
+	var squareSum = 1, len = array.length;
+	for(var i =0; i < len; i++) {
+		squareSum += Math.pow(array[i], 2);
+	}
+	return Math.sqrt(squareSum / len);
+}
+
+function copy() {
+	var output = document.getElementById("output");
+	output.setSelectionRange(0, output.value.length);
+	output.focus();
+	document.execCommand("copy");
+}
+
+function commaChange() {
+	if(document.getElementById("comma").checked) {
+		document.getElementById("input").placeholder = "Input here. Seperate data with commas.";
+		document.getElementById("commaLabel").innerHTML = "Uncheck to seperate with new lines.";
+	} else {
+		document.getElementById("input").placeholder = "Input here. Seperate data with new lines.";
+		document.getElementById("commaLabel").innerHTML = "Check to seperate with commas.";
+	}
+}
+
+</script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104632692-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

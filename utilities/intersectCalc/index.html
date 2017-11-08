@@ -1,0 +1,71 @@
+<!docype html>
+<!--todo: add tss and r^2 and r-->
+<html>
+<head>
+<title>Line Intersection Calc</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="shortcut icon" type="image/png" href="statCalc_logo.png"/><!--TODO update-->
+<style>
+input[type=number] {
+	width: 120px; !important;
+}
+</style>
+</head>
+<body>
+
+<img id="logo" src="statCalc_logo.svg">
+<h1>Line Intersection Calculator</h1>
+<div title="Refresh">
+<svg id="refresh" onclick="location.reload()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+
+<p>F(y) = <input type="number" value="1" autofocus id="m1"> x + <input value="0" type="number" id="b1"></p>
+<p>G(y) = <input type="number" value="1" id="m2"> x + <input value="0" type="number" id="b2"></p>
+<br>
+
+<div title="Submit">
+<svg id="submit" tabindex="0" onkeyup="calc()" onclick="calc()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 8V4l8 8-8 8v-4H4V8z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+</svg></div>
+
+<p id="answerPara"></p>
+
+<p>x = (b1-b2)/(m2-m1)</p>
+<p>y = x*m1+b1 = x*m2+b2</p>
+
+<script>
+window.onload = function() {
+	document.getElementById("submit").onclick = function() {
+		calc();
+	}
+}
+
+function calc() {
+	var answerPara = document.getElementById("answerPara");
+	var m1 = document.getElementById("m1").value;
+	var b1 = document.getElementById("b1").value;
+	var m2 = document.getElementById("m2").value;
+	var b2 = document.getElementById("b2").value;
+
+	answerPara.innerHTML = "";
+	
+	if(m1 == m2 && b1 == b2) {
+		answerPara.innerHTML = "Slopes and Y-intercepts are the same, so lines are the same";
+		return;
+	} if(m1 == m2) {
+		answerPara.innerHTML = "Slopes are the same, so lines are parallel";
+		return;
+	} if(b1 == b2) {
+		answerPara.innerHTML = "Y-intercepts are the same, so they intersect at the Y-intercept.";
+	}
+	
+	var x = (b1-b2)/(m2-m1);
+	var y = x*m1+b1;	
+	answerPara.innerHTML += "<br>Intersection at point (" + x + ", " + y + ")";	
+}
+</script>
+</body>
+</html>

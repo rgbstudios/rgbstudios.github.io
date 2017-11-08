@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>New Project | RGB Studios</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/icons/rgb/rgb-logo-64.png"/>
+
+  <!-- Semantic UI -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+
+  <!-- Primary Stylesheet -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Color Themes -->
+  <!-- Text Selection Colors -->
+  <link id="theme" rel="stylesheet" href="">
+  <!-- Mobile Nav-bar Colors -->
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta id="meta1" name="theme-color" content="#999">
+  <!-- Windows Phone -->
+  <meta id="meta2" name="msapplication-navbutton-color" content="#999">
+  <!-- iOS Safari -->
+  <meta id="meta3" name="apple-mobile-web-app-status-bar-style" content="#999">
+  <!-- Theme Setup Script -->
+  <script src="../colors.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+<div class="ui stackable borderless menu transparent no-lines header-menu">
+  <a name="top"></a>
+  <!-- Header Primary Tabs -->
+  <a class="fitted item header-item red-hover" href="../">
+    <p class="header-text">Home</p>
+  </a>
+  <a class="fitted item header-item green-hover active" href="./">
+    <p class="header-text">New Projects</p>
+  </a>
+  <a class="fitted item header-item blue-hover" href="../aboutUs">
+    <p class="header-text">About Us</p>
+  </a>
+  <!-- Header Social Links -->
+  <div class="right fitted item">
+    <div class="ui three column grid header-menu">
+      <a class="column header-item green-hover" href="mailto:support@rgbstudios.org?Subject=Regarding%20RGB%20Studios" onmouseover="document.getElementById('header-contact-icon').src='../assets/icons/social/mail-open.svg';" onmouseout="document.getElementById('header-contact-icon').src='../assets/icons/social/mail-closed.svg';">
+        <img class="ui image header-icon" id="header-contact-icon" src="../assets/icons/social/mail-closed.svg">
+      </a>
+      <a class="column header-item blue-hover" href="https://www.facebook.com/rgbstudios.org" target="_blank">
+        <img class="ui image header-icon" src="../assets/icons/social/facebook.svg">
+      </a>
+      <a class="column header-item red-hover" href="https://www.youtube.com/channel/UCW5yNQej45V4LDdZymAezZQ" target="_blank">
+        <img class="ui image header-icon" src="../assets/icons/social/youtube.svg">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Banner -->
+<div class="banner" id="banner">
+  <div class="ui center aligned container">
+    <img class="banner-icon" src="../assets/icons/rgb/rgb-logo.svg">
+    <p class="banner-text title">RGB Studios.org</p>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="ui center aligned container content-header">
+  <p class="content-title">New Projects</p>
+</div>
+<div class="ui two column stackable grid no-lines content-grid">
+  <!--Row 1 gbr-->
+  <div class="column">
+    <a href="https://www.youtube.com/watch?v=pKdLHiCQdus" target="_blank">
+      <div class="ui center aligned segment content-box-green">
+        <img class="content-icon" src="../assets/icons/amvs/stolen_present_icon.png"></img>
+        <p class="content-title inline">&nbsp;Stolen Present</p>
+        <p class="content-description">An Erased AMV featuring the song Theif by Imagine Dragons</p>
+        <p class="content-description">Released October 23, 2017</p>
+      </div>
+    </a>
+  </div>
+  <div class="column">
+    <a href="https://chrome.google.com/webstore/detail/macaw-theme/kohdhodmkpkdhckijnphpmopigcebbod" target="_blank">
+      <div class="ui center aligned segment content-box-blue">
+        <img class="content-icon" src="../assets/icons/themes/macaw_icon.png"></img>
+        <p class="content-title inline">&nbsp;Macaw Theme</p>
+        <p class="content-description">A Chrome theme featuring a Scarlet Macaw. Photo taken in Cancun.</p>
+        <p class="content-description">Released October 24, 2017</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="ui three column stackable grid no-lines content-grid">
+  <div class="column"></div>
+  <div class="column">
+
+    <!--<a href="#">-->
+    <div class="ui center aligned segment content-box-red plain">
+      <img class="content-icon" src="../assets/icons/rgb/rgb-logo.svg"></img>
+      <p class="content-title">&nbsp;Content coming soon</p>
+      <p class="content-description">Check back later as we release more projects</p>
+    </div>
+    <!--</a>-->
+  </div>
+  <div class="column"></div>
+</div>
+
+<!-- Footer -->
+<hr class="footer-break">
+<div class="ui stackable borderless three item menu no-lines transparent footer-menu">
+  <!-- Contact Button -->
+  <div class="item">
+    <a class="hover-connect" href="mailto:support@rgbstudios.org?Subject=Regarding%20RGB%20Studios" onmouseover="document.getElementById('footer-contact-icon').src='../assets/icons/social/mail-open.svg';" onmouseout="document.getElementById('footer-contact-icon').src='../assets/icons/social/mail-closed.svg';">
+      <p class="footer-text">Contact</p>
+      <img class="ui image footer-icon" id="footer-contact-icon" src="../assets/icons/social/mail-closed.svg">
+    </a>
+  </div>
+  <!-- Page Top Button -->
+  <div class="item">
+    <a class="footer-text" href="#top">Back to top</a>
+  </div>
+  <!-- RGB Studios Button-->
+  <div class="item">
+    <a class="hover-connect" href="../">
+      <img class="ui image footer-icon" src="../assets/icons/rgb/rgb-logo.svg">
+      <p class="footer-text">RGB Studios</p>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

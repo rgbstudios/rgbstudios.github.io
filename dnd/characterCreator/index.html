@@ -1,0 +1,308 @@
+<!doctype html> <html>
+
+<!-- TODO
+IMPORTANT: redo chart
+create and download X characters input
+open in new window button
+speak option
+show percentile option
+console of old characters?
+edit and move email icon
+roll one at a time
+share rolls and url to load specific rolls, stats, and name
+info button to explain top number is roll and bottom is stat
+info button with explaination of dice roll process and what standard deviation is.
+enter your own mod table option
+rename dnd stat roller
+
+ -->
+
+<head>
+<title> Dnd Character Creator </title>
+<link rel="shortcut icon" type="image/png" href="favicon/d6.png"/>
+
+<link rel="stylesheet" type="text/css" href="commonStyles.css">
+<link rel="stylesheet" type="text/css" href="charStyles.css">
+<link id="nightStyle" rel="stylesheet" type="text/css" href="">
+
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#66c">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#66c">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#66c">
+
+<script src="commonScripts.js"></script>
+<script src="charScripts.js"></script>
+</head>
+<body>
+
+<button id="genButton">Generate New Character!</button>
+<p id="numChars"></p>
+
+<div style="text-align:center">
+
+<div id="characterDiv">
+	<div class="statDiv">
+	<p id="stat1"> </p>
+	<select autofocus="autofocus" id="stat1Mod" class="statMod"> <option value=" - ">-</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+	
+	</div>
+	<div class="statDiv">
+	<p id="stat2"> </p>
+	<select id="stat2Mod" class="statMod"> <option value=" - ">-</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+
+	</div>
+	<div class="statDiv">
+	<p id="stat3"> </p>
+	<select id="stat3Mod" class="statMod"> <option value=" - ">-</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+
+	</div>
+	<div class="statDiv">
+	<p id="stat4"> </p>
+	<select id="stat4Mod" class="statMod"> <option value=" - ">-</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+
+	</div>
+	<div class="statDiv">
+	<p id="stat5"> </p>
+	<select id="stat5Mod" class="statMod"> <option value=" - ">-</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+
+	</div>
+	<div class="statDiv">
+	<p id="stat6"> </p>
+	<select id="stat6Mod" class="statMod"> <option value=" - ">-</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+
+	</div>
+
+	<br><br>
+
+	<div style="text-align:left">
+	<div id="statsInfo" class="statDiv"></div>
+	<div id="statsInfoAvg" class="statDiv"></div>
+	<div id="statsInfoStdDev" class="statDiv"></div>
+	
+	<br><br>
+	
+	<input id="nameInput" maxlength="50" placeholder="character name..." type="text" />
+	<input id="numbersInput" onclick="this.setSelectionRange(0, this.value.length)" type="text" />
+	
+	<div id="copyButton" title="copy stats" style="display:inline-block;">
+	<svg id="copy" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+	</svg>
+	</div>
+	
+	<div title="download stats as txt file" style="display:inline-block;">
+	<a id="downloadLink" target="_blank" download="stats.txt">
+	<svg id="download" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+	</svg>
+	</a>
+	</div>
+	
+	<div title="reset stat selections" style="display:inline-block;">
+	<svg id="resetStat" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+	</svg>
+	</div>
+	
+	<div title="night mode" style="display:inline-block;">
+	<svg id="nightMode" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9 2c-1.05 0-2.05.16-3 .46 4.06 1.27 7 5.06 7 9.54 0 4.48-2.94 8.27-7 9.54.95.3 1.95.46 3 .46 5.52 0 10-4.48 10-10S14.52 2 9 2z"/>
+    <path d="M0 0h24v24H0z" fill="none"/>
+	</svg>
+	</div>
+
+	<div title="fullscreen" style="display:inline-block;">
+	<svg id="fullscreen" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+	</svg>
+	</div>
+
+<!--	<div title="open in new window" style="display:inline-block;">
+	<svg id="newWindow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none"/>
+	<path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+	</svg>
+	</div> -->
+	
+	<div title="info" style="display:inline-block;">
+	<svg id="info" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+	<path d="M0 0h24v24H0z" fill="none"/>
+	<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+	</svg>
+	</div>
+
+	
+	</div>
+
+</div>
+
+<div id="infoModal" class="modal">
+	<div class="modal-content">
+		<span id="settingsClose" class="close" >&times;</span>
+		<h3>Info</h3>
+		<ul>
+		<li>Each stat is generated  by rolling 4 d6, taking the 3 highest rolls. There are 6 stats.</li>
+		<br>
+		<li>Use the dropdown menu to choose which stat you want to assign to which roll.</li>
+		<br>
+		<li>Dnd Character Roller is good for a DM who wants to quickly create new NPCs and download their stats for later</li>
+		<br>
+		<li>You can use the tab key to navitage inputs. Use arrow keys to choose your stat, or enter to open the dropdown.</li>
+		<br>
+		</ul>
+		<p id="sources">Sources</p>
+		<a href="https://material.io/icons/">Material Icons</a>
+		<a href="http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900">Roboto</a>
+		
+	</div>
+</div>	
+
+
+<br>
+<hr>
+
+<details><summary>Stat Odds Graph</summary>
+	<div class="centerDiv">
+	<canvas id="oddsGraphCanvas"></canvas> <!--20%-->
+	</div>
+	<p>Odds of each stat (of 1296)</p>
+	<p>Mean: 12.24, Median: 12, Mode: 13, Standard Deviation: 2.85</p>
+</details>
+
+<br>
+<hr>
+
+<details><summary>Roll/Mod Table</summary>
+<div class="centerDiv">
+<table align="center"><tr>
+<th>Roll Value</th>
+<th>Modifier</th>
+</tr>
+<tr>
+<td>3</td>
+<td>-4</td>
+</tr>
+<tr>
+<td>4-5</td>
+<td>-3</td>
+</tr>
+<tr>
+<td>6-7</td>
+<td>-2</td>
+</tr>
+<tr>
+<td>8-9</td>
+<td>-1</td>
+</tr>
+<tr>
+<td>10-11</td>
+<td>+0</td>
+</tr>
+<tr>
+<td>12-13</td>
+<td>+1</td>
+</tr>
+<tr>
+<td>14-15</td>
+<td>+2</td>
+</tr>
+<tr>
+<td>16-17</td>
+<td>+3</td>
+</tr>
+<tr>
+<td>18</td>
+<td>+4</td>
+</tr>
+</table>
+</div>
+</details>
+
+
+<br>
+<hr>
+
+<details><summary>Stat Skills</summary>
+<div style="text-align:left; column-count: 2; -webkit-column-count: 2; -moz-column-count: 2; ">
+
+Strength<ul>
+<li>Athletics</li>
+</ul>Dexterity<ul>
+<li>Acrobatics</li>
+<li>Sleight of Hand</li>
+<li>Stealth</li>
+</ul>Intelligence<ul>
+<li>Arcana</li>
+<li>History</li>
+<li>Investigation</li>
+<li>Nature</li>
+<li>Religion</li>
+
+</ul>Wisdom<ul>
+<li>Animal Handling</li>
+<li>Insight</li>
+<li>Medicine</li>
+<li>Perception</li>
+<li>Survival</li>
+</ul>Charisma<ul>
+<li>Deception</li>
+<li>Intimidation</li>
+<li>Performance</li>
+<li>Persuasion</li>
+
+</div>
+</details>
+
+<br>
+<hr>
+
+<img id="RGBIcon" src="favicon/rgb-icon.svg" onerror="this.src='favicon/rgb-icon.png'"></img>
+<p id="RGBPara">RGB Studios</p>
+<p id="infoP">DnD Character Creator&trade; V 0.04</p>
+<img id="email" title="justingolden21@gmail.com" src="icon/email-closed.svg"></img>
+<br>
+
+
+<!--Donate Button: paypal-->
+<details><summary>Donate :)</summary>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="7KE89Y9Z88UFN">
+<table>
+<tr><td style="display:none;"><input type="hidden" name="on0" value="Donation Amount">Donation Amount</td></tr><tr id="paypalTR"><td id="paypalTD"><select id="paypalSelect" name="os0">
+	<option value="I despise you">I despise you $0.01 USD</option>
+	<option value="Thanks" selected>Thanks $0.99 USD</option>
+	<option value="Thanks a bunch">Thanks a bunch $2.99 USD</option>
+	<option value="You're the best">You're the best $4.99 USD</option>
+	<option value="I love you">I love you $9.99 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<button id="paypalButton" name="submit">Donate via PayPal</button>
+</form>
+
+</details>
+
+<br><br><br>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104632692-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

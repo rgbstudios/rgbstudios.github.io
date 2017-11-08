@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="shortcut icon" type="image/png" href="logo/calc-logo.png"/>
+</head>
+<body>
+<div id="titleDiv">
+<h1>Quick Grade Calculator</h1>
+<img id="logo" src="logo/calc-logo.svg"></img>
+<h4 style="text-align:center;">For Professors</h4>
+</div>
+
+<b><div id="gradeItems">
+</div></b>
+
+<input id="studentName" tabIndex="-1" maxlength="50" type="text" placeholder="Student Name (optional)"></input>
+<br>
+<img id="add" title="New Item" class="svgButton" src="img/add.svg"></img>
+<img id="clear" title="Clear All Grades" class="svgButton" src="img/delete_sweep.svg"></img>
+<img title="Reset" class="svgButton" src="img/refresh.svg" onclick="location.reload();" ></img>
+<img id="same" class="svgButton" src="img/gavel.svg" title="Make all weights the same"></img>
+<img id="night" title="Night Mode" class="svgButton" src="img/night.svg"></img>
+<img src="img/email.svg" class="svgButton" title="Email me at justingolden21@gmail.com" onclick="window.open('mailto:justingolden21@gmail.com?Subject=Regarding%20Grade%20Calc%20')"></img>
+<img id="fullscreen" title="Toggle Fullscreen" class="svgButton" src="img/fullscreen.svg"></img>
+<br>
+<div id="calcDiv">
+<button id="calc" title="Calculate weighted course grade">Calculate</button>
+<br>
+<h1 id="grade" style="display:inline-block;">Grade will appear here </h1>
+<img id="copy" title="Copy grade to clipboard" class="svgButton" src="img/copy.svg"></img>
+
+<br>
+<h3 id="letter"></h3>
+</div>
+<h4 style="text-align:center; display:inline-block;">Console</h4>
+<img id="clearConsole" title="Clear Console" class="svgButton" src="img/clear.svg"></img>
+<a id="downloadLink" target="_blank" download="stats.txt">
+<img id="downloadConsole" title="Download Console" class="svgButton" src="img/download.svg"></img>
+</a>
+<br>
+<textarea id="console" rows="5"></textarea>
+<br>
+<p id="info"><i>Use Tab and Shift+Tab to quickly change the student's grade on each assignment. V.1.00.05</i></p>
+<img id="RGBIcon" src="logo/rgb-icon.svg">
+
+<script src="script.js"></script>
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104632692-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

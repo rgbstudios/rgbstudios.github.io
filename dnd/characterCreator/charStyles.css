@@ -1,0 +1,176 @@
+/*  main color: #339 40%
+Colors by lightness:
+100% 	#ffffff
+95% 	#ececf9
+90% 	#d9d9f2
+85% 	#c6c6ec
+80% 	#b3b3e6
+75% 	#9f9fdf
+70% 	#8c8cd9
+65% 	#7979d2
+60% 	#6666cc
+55% 	#5353c6
+50% 	#4040bf
+45% 	#3939ac
+40% 	#333399
+35% 	#2d2d86
+30% 	#262673
+25% 	#202060
+20% 	#19194d
+15% 	#131339
+10% 	#0d0d26
+5% 	#060613
+0% 	#000000
+https://www.w3schools.com/colors/colors_picker.asp
+
+TODO:
+*/
+
+.statDiv, select, input, button, canvas, svg{
+	text-align: center;
+	border: 2px solid #19194d; /*20%*/
+	box-shadow: 2px 4px 2px #19194d; /*20%*/
+	padding: 8px;
+	margin: 4px;
+	background-color: transparent;
+} .statDiv:hover, select:hover, input:hover, button:hover, canvas:hover, svg:hover {
+	box-shadow: 4px 8px 4px #19194d; /*20%*/
+} .modal-content {
+
+	border: 2px solid #19194d; /*20%*/
+	box-shadow: 2px 4px 2px #19194d; /*20%*/
+	padding: 8px;
+	margin: 4px;
+	background-color: auto !important;
+} .modal-content:hover {
+	box-shadow: 4px 8px 4px #19194d; /*20%*/
+} #characterDiv {
+	display: none;
+} select, .statDiv {
+	display: inline-block;
+	position: relative;
+} svg {
+	cursor: pointer;
+	fill: #19194d; /*20%*/
+	border: 2px solid #19194d; /*20%*/
+	border-radius: 50%;
+	padding: 6px;
+} svg:hover {
+	fill: #339; /*40%*/
+	border: 2px solid #339; /*40%*/
+} svg:active {
+	fill: #b3b3e6; /*80%*/
+	border: 2px solid #b3b3e6; /*80%*/
+} tr {
+	color: #339; /*40%*/
+} tr:nth-child(even) {
+	background-color: #b3b3e6; /*80%*/
+} option {
+	text-align: center;
+} #genButton {
+	font-size: 200%;
+	font-weight: bold;
+	margin: 10px;
+} .statDiv p {
+	font-size: 150%;
+} p, div {
+	cursor: default;
+} #downloadLink {
+	font-size: 0;
+	width: 0;
+	border: none !important;
+} #downloadLink, option {
+	text-decoration: none;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+} option:disabled {
+	color: #ececf9; /*95%*/
+} ul {
+	list-style-type: circle;
+	margin: 0;
+} input[type=text] {
+	font-size: 80%;
+	margin-bottom: 5px;
+} #nameInput {
+	display: block;
+} canvas:hover {
+	box-shadow: 4px 8px 4px #19194d; /*20%*/
+} summary {
+	outline: none !important;
+} p {
+	font-size: 1vmin;
+} .centerDiv {
+	text-align: center;
+} td, th {
+	padding: 4px;
+} a {
+	padding: 2px;
+} #paypalSelect {
+	width: auto;
+} summary:focus {
+	color: #b3b3e6; /*80%*/
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #339; /*40%*/
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: #339; /*40%*/
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: #339; /*40%*/
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: #339; /*40%*/
+} button {
+	position: relative;
+	left: 10%;
+	width: 80%;
+} #paypalTR {
+	background-color: transparent !important;
+} #numChars {
+	font-size: 2.5vmax;
+} p {
+	font-size: 2vmax;
+}
+
+#copy, #download, #resetStat, #fullscreen, #info {
+	-webkit-transition: -webkit-transform .25s ease-in-out;
+	transition: transform .25s ease-in-out;
+} #nightMode {
+	-webkit-transition: -webkit-transform .05s ease-in-out; /*because user has to hold mouse this long to get onclick event*/
+	transition: transform .05s ease-in-out;
+} #resetStat:active {
+	-webkit-transform: rotate(180deg);
+	transform: rotate(180deg);
+	box-shadow: none;
+} #nightMode:active {
+	-webkit-transform: rotate3d(0,24,0,180deg);
+	transform: rotate3d(0,24,0,180deg);
+} #download:active {
+	-webkit-transform: translate(0px, 8px);
+	transform: translate(0px, 8px);
+} #fullscreen:active, #info:active, #copy:active {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);	
+}
+
+@media(max-width:480px) {
+	#genButton {
+		font-size: 150%;
+	} .statDiv, select, input, button {
+		padding: 2px;
+		margin: 2px;
+	}
+}	
+
+@media screen and (orientation:portrait) {
+	#genButton {
+		font-size: 120%;
+	} .statDiv, select, input, button {
+		padding: 0px;
+		margin: 0px;
+	}
+}

@@ -1,0 +1,287 @@
+<!doctype html> <html>
+
+<!-- TODO
+info area with:
+try landscape on mobile
+enter shouldnt roll all
+info modal
+character name input for download and upload text file displays character name at top
+ -->
+
+<head>
+<title> DnD Dice Roller </title>
+<link rel="shortcut icon" type="image/png" href="favicon/d20.png"/>
+<link rel="stylesheet" type="text/css" href="diceStyles.css">
+<link rel="stylesheet" type="text/css" href="commonStyles.css">
+<link id="bonusTheme" rel="stylesheet" type="text/css" href="">
+
+
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#66c">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#66c">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#66c">
+
+<script src="commonScripts.js"></script>
+<script src="diceScripts.js"></script>
+</head>
+<body>
+<form id="bodyForm">
+	<table>
+		<tr>
+			<form>
+			<th colspan="3"> <p>Number of Dice</p> </th>
+			<td> <input autofocus id="numD4" onchange="update('D4')" type="number" value="1" min="0" max="100"> <p id="D4Label">  1d4</p>  </td>
+			<td> <input id="numD6"     onchange="update('D6')"     type="number" value="1" min="0" max="100"> <p id="D6Label">    1d6</p>  </td>
+			<td> <input id="numD8"     onchange="update('D8')"     type="number" value="1" min="0" max="100"> <p id="D8Label">    1d8</p>  </td>
+			<td> <input id="numD12"    onchange="update('D12')"    type="number" value="1" min="0" max="100"> <p id="D12Label">   1d12</p> </td>
+			<td> <input id="numD20"    onchange="update('D20')"    type="number" value="1" min="0" max="100"> <p id="D20Label">   1d20</p> </td>
+			<td> <input id="numcustom" onchange="update('custom')" type="number" value="1" min="0" max="100"> <p id="customLabel">1d10</p> </td>
+			</form>
+		</tr>
+		<tr>
+			<th colspan="3"> <p>Die</p> </th>
+			<td>
+			<div style="text-align:center" title="click to roll wihtout mods">
+			<svg onclick="rollRaw(4, false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216">
+			  <g class="die">
+			  <!--transform="translate(0,27)"-->
+				<path d="M108,108 L24.86,156 M108,12 L108,108 M191.14,156 L108,108
+				M108,12 L191.14,156 L24.86,156z"/>
+			  </g>
+			</svg>
+			</div>
+			</td>
+			<td>
+			<div style="text-align:center" title="click to roll wihtout mods">
+			<svg onclick="rollRaw(6, false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216">
+			  <g class="die">
+				<path d="M24.9,60 L108,108 M191.1,60 L 108,108 M108,204 L108,108
+				M191.1,60 L191.1,156 L108,204 L24.9,156 L24.9,60 L108,12z"/>
+			  </g>
+			</svg>
+			</div>
+			</td>
+			<td>
+			<div style="text-align:center" title="click to roll wihtout mods">
+			<svg onclick="rollRaw(8, false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216">
+			  <g class="die">		
+				<path d="m24.86,60 L191.13,60 L108,204z
+				M24.86,156 L24.86,60 L108,12 L191.13,60 L191.14,156 L108,204z"/>
+			  </g>
+			</svg>
+			</div>
+			</td>
+			<td>
+			<div style="text-align:center" title="click to roll wihtout mods">
+			<svg onclick="rollRaw(12, false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216">
+			  <g class="die">
+			    <path d="M157.88,50.4 L108.7,60.14 L58.12,50.4 L83.06,36 L136.5,36z
+				M157.88,50.4 L182.83,93.6 L149.57,132 L108.7,108.4 L108.33,108.61 L107.99,108 L108.7,60.14z
+				M182.83,93.6 L182.82,122.4 L157.88,165.6 L132.94,180 L149.57,132z
+				M149.57,132 L132.94,180 L83.08,180 L66.43,132 L108.33,108.61 L108.7,108.4z
+				M66.43,132 L83.08,180 L58.12,165.6 L33.18,122.4 L33.17,93.6z
+				M108.7,60.14 L107.99,108 L108.33,108.61 L66.43,132 L33.17,93.6 L58.12,50.4z"/>
+			  </g>
+			</svg>
+			</div>
+			</td>
+			<td>
+			<div style="text-align:center" title="click to roll wihtout mods">
+			<svg onclick="rollRaw(20, false)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216">
+			  <g class="die">
+			    <path d="M191.14,60 L191.14,156 L159.96,78z
+				M159.96,78 L191.14,156 L108,168z
+				M191.14,60 L159.96,78 L108,12z
+				M191.14,156 L108,204 L108,168z
+				M108,12 L159.96,78 L56.04,78z
+				M159.96,78 L108,168 L56.04,78z
+				M108,168 L108,204 L24.86,156z
+				M108,12 L56.04,78 L24.86,60z
+				M56.04,78 L108,168 L24.86,156z
+				M56.04,78 L24.86,156 L24.86,60z"/>
+			  </g>
+			</svg>
+			</div>
+			</td>
+			<td> <input id="customSides" onchange="update('custom')" type="number" value="10" min="2" max="1000"> <button onclick="rollRaw(document.getElementById('customSides').value, true)" type="button">Roll Custom</button> </td>
+		</tr>
+		<tr class="modTR">
+			<form onReset="updateAll()">
+			<th colspan="3"> <p>Modifiers</p> <input id="resetMod" onclick="updateAll()" type="reset" style="width:40%;left:30%"> </th>
+			
+			<td>
+				<input id="D4Mod" onchange="update('D4')" type="number" value="0" min="-100" max="100"><hr><p>Attribute:</p>
+				<select id="D4StatMod" onchange="update('D4')"> <option value="None">None</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+			</td>
+			<td>
+				<input id="D6Mod" onchange="update('D6')" type="number" value="0" min="-100" max="100"><hr><p>Attribute:</p>
+				<select id="D6StatMod" onchange="update('D6')"> <option value="None">None</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+			</td>
+			<td>
+				<input id="D8Mod" onchange="update('D8')" type="number" value="0" min="-100" max="100"><hr><p>Attribute:</p>
+				<select id="D8StatMod" onchange="update('D8')"> <option value="None">None</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+			</td>
+			<td>
+				<input id="D12Mod" onchange="update('D12')" type="number" value="0" min="-100" max="100"><hr><p>Attribute:</p>
+				<select id="D12StatMod" onchange="update('D12')"> <option value="None">None</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+			</td>
+			<td>
+				<input id="D20Mod" onchange="update('D20')" type="number" value="0" min="-100" max="100">
+				<select id="D20BonusMod" onchange="update('D20')"> <option value="None">None</option> <option value="Prf">Proficiency</option> <option value="Spl">Spell Atk</option> <option value="Itv">Initiative</option> </select>
+				<p>Attribute:</p>
+				<select id="D20StatMod" onchange="update('D20')"> <option value="None">None</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+			</td>
+			<td>
+				<input id="customMod" onchange="update('custom')" type="number" value="0" min="-100" max="100"><hr><p>Attribute:</p>
+				<select id="customStatMod" onchange="update('custom')"> <option value="None">None</option> <option value="Str">Str</option> <option value="Dex">Dex</option> <option value="Con">Con</option> <option value="Int">Int</option> <option value="Wis">Wis</option> <option value="Cha">Cha</option> </select>
+			</td>
+			</form>
+		</tr>
+		
+		<tr class="modTR">
+			<th colspan="3"> <p>Advantage</p></th>
+			<td> <select id="D4Advantage" onchange="update('D4')"> <option value="None">None</option> <option value="Adv">Advantage</option> <option value="Dis">Disadvantage</option> </select> </td>
+			<td> <select id="D6Advantage" onchange="update('D6')"> <option value="None">None</option> <option value="Adv">Advantage</option> <option value="Dis">Disadvantage</option> </select> </td>
+			<td> <select id="D8Advantage" onchange="update('D8')"> <option value="None">None</option> <option value="Adv">Advantage</option> <option value="Dis">Disadvantage</option> </select> </td>
+			<td> <select id="D12Advantage" onchange="update('D12')"> <option value="None">None</option> <option value="Adv">Advantage</option> <option value="Dis">Disadvantage</option> </select> </td>
+			<td> <select id="D20Advantage" onchange="update('D20')"> <option value="None">None</option> <option value="Adv">Advantage</option> <option value="Dis">Disadvantage</option> </select> </td>
+			<td> <select id="customAdvantage" onchange="update('custom')"> <option value="None">None</option> <option value="Adv">Advantage</option> <option value="Dis">Disadvantage</option> </select> </td>
+		</tr>
+		
+		<tr class="modTR">
+			<th colspan="3"> <p>Multiplier</p></th>
+			<td>
+				<form id="D4MultiplierRadio" onchange="update('D4')"> <input checked name="mod" type="radio" value="X"> <p style="display:inline;"><b>X</b></p> <br> <input name="mod" type="radio" value="/"> <p style="display:inline;"><b>/</b></p> </form>
+				<input id="D4Multiplier" onchange="update('D4')" type="number" value="1" min="-100" max="100">
+			</td>
+			<td>
+				<form id="D6MultiplierRadio" onchange="update('D6')"> <input checked name="mod" type="radio" value="X"> <p style="display:inline;"><b>X</b></p> <br> <input name="mod" type="radio" value="/"> <p style="display:inline;"><b>/</b></p> </form>
+				<input id="D6Multiplier" onchange="update('D6')" type="number" value="1" min="-100" max="100">
+			</td>
+			<td>
+				<form id="D8MultiplierRadio" onchange="update('D8')"> <input checked name="mod" type="radio" value="X"> <p style="display:inline;"><b>X</b></p> <br> <input name="mod" type="radio" value="/"> <p style="display:inline;"><b>/</b></p> </form>
+				<input id="D8Multiplier" onchange="update('D8')" type="number" value="1" min="-100" max="100">
+			</td>
+			<td>
+				<form id="D12MultiplierRadio" onchange="update('D12')"> <input checked name="mod" type="radio" value="X"> <p style="display:inline;"><b>X</b></p> <br> <input name="mod" type="radio" value="/"> <p style="display:inline;"><b>/</b></p> </form>
+				<input id="D12Multiplier" onchange="update('D12')" type="number" value="1" min="-100" max="100">
+			</td>
+			<td>
+				<form id="D20MultiplierRadio" onchange="update('D12')"> <input checked name="mod" type="radio" value="X"> <p style="display:inline;"><b>X</b></p> <br> <input name="mod" type="radio" value="/"> <p style="display:inline;"><b>/</b></p> </form>
+				<input id="D20Multiplier" onchange="update('D12')" type="number" value="1" min="-100" max="100">
+			</td>
+			<td>
+				<form id="customMultiplierRadio" onchange="update('custom')"> <input checked name="mod" type="radio" value="X"> <p style="display:inline;"><b>X</b></p> <br> <input name="mod" type="radio" value="/"> <p style="display:inline;"><b>/</b></p> </form>
+				<input id="customMultiplier" onchange="update('custom')" type="number" value="1" min="-100" max="100">
+			</td>
+		</tr>
+		
+		<tr>
+			<th colspan="3"> <p>Roll/Result</p></th>
+			<td> <button onclick="rollDie(4, false, false)"  type="button">Roll</button> <button onclick="resetDie('D4');update('D4')"  type="button">Reset</button> <input id="D4RawResult" disabled type="number"> </td>
+			<td> <button onclick="rollDie(6, false, false)"  type="button">Roll</button> <button onclick="resetDie('D6');update('D6')"  type="button">Reset</button> <input id="D6RawResult" disabled type="number"> </td>
+			<td> <button onclick="rollDie(8, false, false)"  type="button">Roll</button> <button onclick="resetDie('D8');update('D8')"  type="button">Reset</button> <input id="D8RawResult" disabled type="number"> </td>
+			<td> <button onclick="rollDie(12, false, false)" type="button">Roll</button> <button onclick="resetDie('D12');update('D12')" type="button">Reset</button> <input id="D12RawResult" disabled type="number"> </td>
+			<td> <button onclick="rollDie(20, false, false)" type="button">Roll</button> <button onclick="resetDie('D20');update('D20')" type="button">Reset</button> <input id="D20RawResult" disabled type="number"> </td>
+			<td> <button onclick="rollDie(document.getElementById('customSides').value, true, false)" type="button">Roll</button> <button onclick="resetDie('custom');update('custom')" type="sumbit">Reset</button> <input id="customRawResult" disabled type="number"> </td>
+		</tr>
+		
+		<tr class="modTR">
+			<td colspan="3" rowspan="1">
+				<button onclick="rollAll()" type="button" class="sideButton">Roll All</button>
+				<button onclick="resetStats();updateAll()" type="button" class="sideButton">Reset Stats</button>
+				<button onclick="location.reload()" type="button" class="sideButton">Reset All</button> <!--refreshes page-->
+				<button onclick="toggleFullscreen()" type="button" class="sideButton">Toggle Fullscreen</button>
+				<button onclick="toggleCleanTheme()" type="button" class="sideButton">Toggle Theme</button>
+				<br>
+				<input id="speak" type="checkbox"> <p style="display:inline;">Speak Results</p> 
+				<br>
+				<p>Upload your stats:</p>
+				<input type="file" id="fileInput">
+				<br>
+				<a id="downloadLink" target="_blank" download="stats.txt">
+				<button id="download" type="button">Download Stats</button>
+				<br>
+				
+			</td>
+			<td colspan="3" rowspan="1">
+				<textarea readonly id="rollsText" rows="5"></textarea>
+				<button onclick="document.getElementById('rollsText').value = ''" type="button">Reset Console</button>
+				<p id="recentRoll">Most recent result: </p>
+				<p id="totalRollsP">You've rolled 0 dice</p>
+			</td>
+			<td colspan="3"> 
+				<textarea id="notes" class="notes" rows="10"> Notes: </textarea>
+			</td>
+		</tr>
+		
+		<tr class="modTR">
+			<td> <input id="Prf" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Proficiency</p> </td>
+			<td> <input id="Spl" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Spell Atk</p> </td>
+			<td> <input id="Itv" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Initiative</p> </td>
+			<td> <input id="Str" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Str</p> </td>
+			<td> <input id="Dex" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Dex</p> </td>
+			<td> <input id="Con" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Con</p> </td>
+			<td> <input id="Int" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Int</p> </td>
+			<td> <input id="Wis" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Wis</p> </td>
+			<td> <input id="Cha" onchange="updateAll()" type="number" value="0" min="-100" max="100"> <p>Cha</p> </td>
+		</tr>
+	</table>
+</form>
+
+<div style="text-align:center">
+<button id="simpleButton" type="button" style="width:100px; left:0px;">Simple Display</button>
+<br>
+<img id="RGBIcon" src="favicon/rgb-icon.svg" onerror="this.src='favicon/rgb-icon.png'"></img>
+<p id="RGBPara">RGB Studios</p>
+<p id="infoP">DnD Dice Roller&trade; V. 0.18 </p>
+<img id="email" title="justingolden21@gmail.com" src="icon/email-closed.svg"></img>
+<br>
+
+
+<!--Donate Button: paypal-->
+<details><summary>Donate :)</summary>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="7KE89Y9Z88UFN">
+<table>
+<tr><td style="display:none;"><input type="hidden" name="on0" value="Donation Amount">Donation Amount</td></tr><tr><td id="paypalTD"><select id="paypalSelect" name="os0">
+	<option value="I despise you">I despise you $0.01 USD</option>
+	<option value="Thanks" selected>Thanks $0.99 USD</option>
+	<option value="Thanks a bunch">Thanks a bunch $2.99 USD</option>
+	<option value="You're the best">You're the best $4.99 USD</option>
+	<option value="I love you">I love you $9.99 USD</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="USD">
+<button id="paypalButton" name="submit">Donate via PayPal</button>
+</form>
+
+</details>
+
+<br><br><br>
+
+
+<!--
+<p style="text-align:left;">Click on a die to roll it without modifiers or other additions. 
+<br><br>Website looks best in chrome and landscape on mobile.
+<br><br>Enter rolls all dice</p>
+-->
+
+<!--Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104632692-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>

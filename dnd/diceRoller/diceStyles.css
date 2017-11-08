@@ -1,0 +1,51 @@
+/* main color: #339 40%
+Colors by lightness:
+100% 	#ffffff
+95% 	#ececf9
+90% 	#d9d9f2
+85% 	#c6c6ec
+80% 	#b3b3e6
+75% 	#9f9fdf
+70% 	#8c8cd9
+65% 	#7979d2
+60% 	#6666cc
+55% 	#5353c6
+50% 	#4040bf
+45% 	#3939ac
+40% 	#333399
+35% 	#2d2d86
+30% 	#262673
+25% 	#202060
+20% 	#19194d
+15% 	#131339
+10% 	#0d0d26
+5% 	#060613
+0% 	#000000
+https://www.w3schools.com/colors/colors_picker.asp
+
+TODO:
+
+*/
+
+button, input[type="reset"], textarea, select {
+	position: relative;
+	left: 10%;
+	width: 80%;
+} input[type="number"] {
+	position: relative;
+	left: 7.5%;
+	width: 75%;
+} table {
+	table-layout: fixed;
+	width: 100%;
+} td:not(#paypalTD), th {
+	padding: 1px;
+	border-radius: 3px;
+	border-bottom: 1px #339 solid; /*40%*/
+	border-right: 2px #339 solid; /*40%*/
+	box-shadow: 1px 2px 0px #19194d; /*20%*/
+	vertical-align: middle;
+} td:hover:not(#paypalTD) {
+	border-color: #339; /*40%*/
+	box-shadow: 4px 2px 0px #19194d inset; /*20%*/
+}
