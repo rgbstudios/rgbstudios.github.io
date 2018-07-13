@@ -2,18 +2,27 @@
 <!--todo: add tss and r^2 and r-->
 <html>
 <head>
-<title>Line Intersection Calc</title>
+<title>Intersection Calc</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="shortcut icon" type="image/png" href="statCalc_logo.png"/><!--TODO update-->
 <style>
 input[type=number] {
 	width: 120px; !important;
+} #answerPara {
+	font-weight: 800;
+} #RGBIcon {
+	width: 48px;
+} hr {
+	height: 4px !important;
+	padding: 0px !important;
+	border: 0;
+	background-color: #732;
 }
 </style>
 </head>
 <body>
 
-<img id="logo" src="statCalc_logo.svg">
+<!-- <img id="logo" src="statCalc_logo.svg"> -->
 <h1>Line Intersection Calculator</h1>
 <div title="Refresh">
 <svg id="refresh" onclick="location.reload()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -21,37 +30,47 @@ input[type=number] {
     <path d="M0 0h24v24H0z" fill="none"/>
 </svg></div>
 
-<p>F(y) = <input type="number" value="1" autofocus id="m1"> x + <input value="0" type="number" id="b1"></p>
-<p>G(y) = <input type="number" value="1" id="m2"> x + <input value="0" type="number" id="b2"></p>
+<p>F(y) = <input type="number" value="1" autofocus id="m1" onkeyup="calc()"> x + <input value="0" type="number" id="b1" onkeyup="calc()"></p>
+<p>G(y) = <input type="number" value="1" id="m2" onkeyup="calc()"> x + <input value="0" type="number" id="b2" onkeyup="calc()"></p>
 <br>
 
-<div title="Submit">
-<svg id="submit" tabindex="0" onkeyup="calc()" onclick="calc()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<!-- <div title="Submit">
+<svg id="submit" tabindex="-1" onkeyup="calc()" onclick="calc()" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 8V4l8 8-8 8v-4H4V8z"/>
     <path d="M0 0h24v24H0z" fill="none"/>
-</svg></div>
+</svg></div> -->
 
 <p id="answerPara"></p>
-
+<br>
 <p>x = (b1-b2)/(m2-m1)</p>
 <p>y = x*m1+b1 = x*m2+b2</p>
+<br><hr>
+<p>Use tab and shift+tab to navigate inputs</p>
+<p>V. 1.0.1</p>
+
+<img id="RGBIcon" src="../../assets/icons/rgb/rgb-logo.svg" onerror="this.src='../../assets/icons/rgb/rgb-logo-64.png'"></img>
+<p>RGB Studios</p>
 
 <script>
-window.onload = function() {
-	document.getElementById("submit").onclick = function() {
-		calc();
-	}
-}
+// window.onload = function() {
+// 	document.getElementById("submit").onclick = function() {
+// 		calc();
+// 	}
+// }
 
 function calc() {
-	var answerPara = document.getElementById("answerPara");
-	var m1 = document.getElementById("m1").value;
-	var b1 = document.getElementById("b1").value;
-	var m2 = document.getElementById("m2").value;
-	var b2 = document.getElementById("b2").value;
+	let answerPara = document.getElementById("answerPara");
+	let m1 = parseFloat(document.getElementById("m1").value);
+	let b1 = parseFloat(document.getElementById("b1").value);
+	let m2 = parseFloat(document.getElementById("m2").value);
+	let b2 = parseFloat(document.getElementById("b2").value);
 
 	answerPara.innerHTML = "";
 	
+	if(isNaN(m1) || isNaN(b1) || isNaN(m2) || isNaN(b2) ) {
+		answerPara.innerHTML = "You are missing an input";
+		return;
+	}
 	if(m1 == m2 && b1 == b2) {
 		answerPara.innerHTML = "Slopes and Y-intercepts are the same, so lines are the same";
 		return;
@@ -60,11 +79,12 @@ function calc() {
 		return;
 	} if(b1 == b2) {
 		answerPara.innerHTML = "Y-intercepts are the same, so they intersect at the Y-intercept.";
+		return;
 	}
 	
-	var x = (b1-b2)/(m2-m1);
-	var y = x*m1+b1;	
-	answerPara.innerHTML += "<br>Intersection at point (" + x + ", " + y + ")";	
+	let x = (b1-b2)/(m2-m1);
+	let y = x*m1+b1;	
+	answerPara.innerHTML += "<br><i>Intersection at point (" + x + ", " + y + ")</i>";	
 }
 </script>
 </body>

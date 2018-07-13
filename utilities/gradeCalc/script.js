@@ -1,6 +1,7 @@
 /*TODO
 download and upload assignments from previous session
 upload console
+make night work when adding new item (change script to link to .css file)
 
 warn if anything under 0 or if grade > total
 !!option to drop lowest

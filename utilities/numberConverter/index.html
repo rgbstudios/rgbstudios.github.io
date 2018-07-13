@@ -16,7 +16,6 @@
     font-family: MatrixBoldSmallCaps;
     src: url(../resources/fonts/MatrixBoldSmallCaps.ttf);
 }
-
 body {
 	padding: 4px;
 	margin: 4px;
@@ -31,6 +30,8 @@ body {
 	margin: 2px;
 } .center, input, table, textarea {
 	text-align: center;
+} input {
+	margin-left: 20px;
 } input, textarea, #reset {
 	border: 2px solid #4d1919; /*20%*/
 } input:focus, textarea:focus { 
@@ -50,6 +51,8 @@ body {
 	background-color: #e6b3b3; /*80%*/
 } ::selection {
 	background-color: #e6b3b3; /*80%*/
+} p, div {
+	display: inline;
 } #reset {
 	fill: #4d1919; /*20%*/
 	cursor: pointer;
@@ -70,7 +73,8 @@ body {
 } hr {
 	height: 4px;
 	border: 0;
-	box-shadow: 0 4px 4px -4px #4d1919 inset; /*20%*/
+	background-color: #4d1919; /*20%*/
+
 } h3 {
 	display: inline-block;
 } #logo {
@@ -109,7 +113,7 @@ body {
 <div class="center">
 <img id="logo" src="logo/num_logo.svg" onerror="this.src='logo/num_logo.png';">
 <h3 class="center">Number Base Converter</h3>
-<p>V.1.0.2</p>
+<p>V.1.0.3</p>
 </div>
 <br>
 <input id="binary" autofocus onclick="this.setSelectionRange(0, this.value.length)" type="text" value="0"><sub>2</sub><label> Binary</label><br>
@@ -234,7 +238,7 @@ body {
 <a href="chart.png" download="chart">Download chart as image</a>
 <br>
 <div class="center">
-<img id="RGBIcon" src="logo/rgb-icon.svg" onerror="this.src='logo/rgb-icon.png'"></img>
+<img id="RGBIcon" src="../../assets/icons/rgb/rgb-logo.svg" onerror="this.src='../../assets/icons/rgb/rgb-logo-64.png'"></img>
 <p id="RGBPara">RGB Studios</p>
 <img id="email" title="justingolden21@gmail.com" src="icon/email-closed.svg"></img>
 <br>

@@ -1,3 +1,6 @@
 # Ignore IntelliJ Project files.
 *.iml
 .idea/
+# Ignore Eclipse Project files.
+.settings/
+.project

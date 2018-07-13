@@ -21,6 +21,9 @@ img {
   -webkit-user-select: none !important;
   -ms-user-select: none !important;
 }
+iframe {
+  border: none;
+}
 .transparent {
   background-color: transparent !important;
 }
@@ -143,6 +146,10 @@ img {
 .content-description {
   color: #fff !important;
   font-size: 3vmin;
+}
+.content-subtitle {
+  color: #fff !important;
+  font-size: 2.5vmin;
 }
 .content-icon {
   height: 48px;
