@@ -1,31 +1,23 @@
-add rgb logo to logic-ref and boolAlgBasics
-update rgb logo and organize folders
-make rgb link work
-link other pages to material icons page and roboto font page
-	https://material.io/icons/
-	https://fonts.google.com/specimen/Roboto?selection.family=Roboto
-char create graph show all 6 in odds chart
-make 404 pretty
-rgb facebook
-organize icons and other stuff in folders
-make rgb website main index and link to others
-display most recent donation?
-update dnd dice with more options and buttons
-dnd dice info button (explain how advantage adn disadvantage work)
-make intiatitive tracker work
-track number of visitors
-checkbox on char create for new character deleting name and stats
-put fullscreen, random and other common functions in scripts file andadd to all pages. move specific code from scripts to dndDiceScripts
-remeber to make oggle theme ad night mode work together and in common scripts file
-make all rgb icon links work
+organize apps by section:
+tools, websites, chrome apps, dnd, mobile apps, themes, articles, libraries, apis?
 
-AFTER EVERYTHING WORKS
-make rgbstudios gmail and github account and use rgbstudios.github.io as website
-update chrome apps and app descriptions to go to website
+make mobile nav not bad
+get projects to scale better
 
-GITHUB INFO
-git clone https://github.com/justingolden21/justingolden21.github.io
-cd justingolden21.github.io
-git add --all
-git commit -m "initial commit"
-git push -u origin master
+url params in search when click search button open base url with input text as param
+when load base url if search param run search function
+
+add footer
+
+change about-us to about and new-projects to new for url
+
+fix alignment of banner on mobile, alignment of items, especially when searching
+make search work from other pages
+edit focus outline color on search input in nav
+
+add twitter typeahead for searching?
+
+searching "D&D" doesn't find correct stuff. ampersand escape issues?
+
+give each item a description and platform, allow sorting by platforms.
+for exaple, binomial calc has a description below and an android icon and globe icon

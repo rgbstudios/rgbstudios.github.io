@@ -1,0 +1,77 @@
+<link rel="stylesheet" itemprop="url" href="{{ site.baseurl }}/assets/css/header.css">
+
+<nav class="navbar navbar-expand-lg p-0 navbar-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarToggler">
+    <!-- <a id="navRgbText" class="navbar-brand" href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/icons/rgb/rgb-logo.svg" width="32px"> RGB Studios </a> -->
+    <!-- NOTE: if we uncomment above, change navbar-expand-lg to navbar-expand-xl -->
+
+
+  <ul class="navbar-nav w-100">
+    <li class="nav-item p-0 rgb-header red {% if page.active == 'Home' %}active{% endif %}">
+      <a class="nav-link px-3" href="{{ site.baseurl }}/">
+        <span class="text-white vmin3">
+          <i class="fas fa-home fa-sm"></i> 
+        Home</span>
+      </a>
+    </li>
+    <li class="nav-item p-0 rgb-header green {% if page.active == 'New Projects' %}active{% endif %}">
+      <a class="nav-link px-3" href="{{ site.baseurl }}/new-projects/">
+        <span class="text-white vmin3">
+          <i class="fas fa-certificate fa-sm"></i> 
+        New Projects</span>
+      </a>
+    </li>
+    <li class="nav-item p-0 rgb-header blue {% if page.active == 'About Us' %}active{% endif %}">
+      <a class="nav-link px-3 py-2" href="{{ site.baseurl }}/about-us/">
+        <span class="text-white vmin3">
+          <i class="fas fa-info-circle fa-sm"></i> 
+        About Us</span>
+      </a>
+    </li>
+    <li class="nav-item dropdown p-0 rgb-header red">
+      <a class="nav-link px-3 dropdown-toggle text-white rgb-header" href="#" id="rgbHeaderDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="text-white vmin3">More</span>
+      </a>
+      <div class="dropdown-menu p-0 m-0 rounded-0 rgb-header" aria-labelledby="rgbHeaderDropdown">
+        <a class="dropdown-item rgb-header red" href="{{ site.baseurl }}/quote/">
+          <span class="text-white vmin3">Request a Quote</span>
+        </a>
+        <a class="dropdown-item rgb-header blue" href="{{ site.baseurl }}/chrome-app-help/">
+          <span class="text-white vmin3">Help with Chrome Apps</span>
+        </a>
+      </div>
+    </li>
+  </ul>
+
+
+<!-- TODO: make it work -->
+<!--     <form id="searchForm">
+      <div class="input-group">
+        <div class="input-group-append">
+          <button id="navClearButton" class="btn btn-outline-danger"><i class="fas fa-times"></i></button>
+        </div>
+        <input id="navSearch" spellcheck="false" autofocus class="form-control input-primary" type="search" placeholder="Search..." aria-label="Search">
+        <div class="input-group-append">
+          <button id="navSearchButton" class="btn btn-outline-success"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </form>
+ -->
+
+  <ul class="navbar-nav navbar-expand">
+    {% for item in site.data.social %}
+    <li class="nav-item p-0 rgb-header {{ item.color }}">
+      <a class="nav-link px-3" href="{{ item.url }}">
+        <span class="text-white vmin3"> </span>
+        <i class="{{ item.icon }} text-white vmin3"></i>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+  </div>
+</nav>

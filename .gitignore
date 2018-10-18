@@ -1,6 +1,7 @@
-# Ignore IntelliJ Project files.
-*.iml
-.idea/
-# Ignore Eclipse Project files.
-.settings/
+_site
+.sass-cache
+.jekyll-metadata
 .project
+Gemfile
+Gemfile.lock
+vendor/*
