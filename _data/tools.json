@@ -173,7 +173,7 @@
 
   {
     "name": "Songs Searcher .com",
-    "url": "https:songssearcher.com",
+    "url": "https://songssearcher.com",
     "icon": "assets/icons/utilities/songs_searcher.svg",
 
     "platform": "website",
