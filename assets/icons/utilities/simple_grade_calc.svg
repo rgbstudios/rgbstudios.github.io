@@ -1,9 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
 <style type="text/css">
-.st0{fill:#393;}
-.st1{fill:#fff;}
+*{stroke:#333;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.st0{fill:#fff;}
 </style>
-<circle class="st0" cx="32" cy="32" r="30"/>
-<path class="st1" d="M49.1,46.2H38.6v-4.6h10.6V46.2z"/>
-<path class="st1" d="M22.7,20.5h6v5.1h-6v6.9h-5.5v-6.9h-6v-5.1h6v-6.7h5.5V20.5z"/>
+<circle fill="#393" cx="32" cy="32" r="28"/>
+<polygon class="st0" points="20,20 28,12 36,12 36,36 20,36 "/>
+<polygon class="st0" points="28,20 28,12 20,20 "/>
+<polygon class="st0" points="28,36 36,28 44,28 44,52 28,52 "/>
+<polygon class="st0" points="36,36 36,28 28,36 "/>
+<line class="st0" x1="28" y1="24" x2="28" y2="32"/>
+<line class="st0" x1="24" y1="28" x2="32" y2="28"/>
+<line class="st0" x1="32" y1="44" x2="40" y2="44"/>
 </svg>
