@@ -4,7 +4,7 @@
   /*height: 110px;*/
   background-size: 100% auto;
   text-align: center;
-  padding-bottom: 8px;
+  padding-bottom: 4px;
   /*NEW*/
 }
 
@@ -32,12 +32,13 @@
 .rgb-banner-icon:hover {
   transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
-  -ms-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);S
 }
 .rgb-banner-text, small {
   display: inline-block;
   color:  #fff;
   font-family: 'Saira Stencil One';
+  margin-top: -8px;
   /*font-weight: 700;*/
 
   
@@ -45,6 +46,7 @@
   /*letter-spacing: -1px;*/
 }
 .rgb-banner-subtext {
+  margin-top: -8px;
   color: #fff;
   font-family: 'Francois One';
 
