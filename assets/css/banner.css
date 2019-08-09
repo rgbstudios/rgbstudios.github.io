@@ -6,16 +6,40 @@
   text-align: center;
   padding-bottom: 4px;
   /*NEW*/
+  
+  background-size: 40px 60px;
+  
 }
 
 .rgb-banner.red-select {
-  background-color: rgba(153,51,51,.6);
+  background:
+    radial-gradient(circle farthest-side at 0% 50%,#703333 23.5%,rgba(240,166,17,0) 0)21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%,#333 24%,rgba(240,166,17,0) 0)19px 30px,
+    linear-gradient(#703333 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#703333 0)0 0,
+    linear-gradient(150deg,#703333 24%,#333 0,#333 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#333 0,#333 76%,#703333 0)0 0,
+    linear-gradient(30deg,#703333 24%,#333 0,#333 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#333 0,#333 76%,#703333 0)0 0,
+    linear-gradient(90deg,#333 2%,#703333 0,#703333 98%,#333 0%)0 0 #703333;
+  background-size: 40px 60px;
 }
 .rgb-banner.green-select {
-  background-color: rgba(51,153,51,.6);
+  background:
+    radial-gradient(circle farthest-side at 0% 50%,#337033 23.5%,rgba(240,166,17,0) 0)21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%,#333 24%,rgba(240,166,17,0) 0)19px 30px,
+    linear-gradient(#337033 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#337033 0)0 0,
+    linear-gradient(150deg,#337033 24%,#333 0,#333 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#333 0,#333 76%,#337033 0)0 0,
+    linear-gradient(30deg,#337033 24%,#333 0,#333 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#333 0,#333 76%,#337033 0)0 0,
+    linear-gradient(90deg,#333 2%,#337033 0,#337033 98%,#333 0%)0 0 #337033;
+  background-size: 40px 60px;
 }
 .rgb-banner.blue-select {
-  background-color: rgba(51,51,153,.6);
+  background:
+    radial-gradient(circle farthest-side at 0% 50%,#333370 23.5%,rgba(240,166,17,0) 0)21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%,#333 24%,rgba(240,166,17,0) 0)19px 30px,
+    linear-gradient(#333370 14%,rgba(240,166,17,0) 0, rgba(240,166,17,0) 85%,#333370 0)0 0,
+    linear-gradient(150deg,#333370 24%,#333 0,#333 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#333 0,#333 76%,#333370 0)0 0,
+    linear-gradient(30deg,#333370 24%,#333 0,#333 26%,rgba(240,166,17,0) 0,rgba(240,166,17,0) 74%,#333 0,#333 76%,#333370 0)0 0,
+    linear-gradient(90deg,#333 2%,#333370 0,#333370 98%,#333 0%)0 0 #333370;
+   background-size: 40px 60px;
 }
 
 .rgb-banner-icon {
