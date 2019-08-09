@@ -4,11 +4,8 @@
   /*height: 110px;*/
   background-size: 100% auto;
   text-align: center;
-
+  padding-bottom: 8px;
   /*NEW*/
-
-
-  
 }
 
 .rgb-banner.red-select {
@@ -22,10 +19,15 @@
 }
 
 .rgb-banner-icon {
-  height: 60px;
-  margin-top: -12px;
+  height: 128px;
+  margin-top: -32px;
   transition: transform 1s ease-out;
   -webkit-transition: -webkit-transform 1s ease-out;
+}
+@media only screen and (max-width: 768px) {
+  .rgb-banner-icon {
+    height: 96px;
+  }
 }
 .rgb-banner-icon:hover {
   transform: rotate(360deg);
@@ -33,11 +35,10 @@
   -ms-transform: rotate(360deg);
 }
 .rgb-banner-text, small {
-  margin-top: 10px;
   display: inline-block;
-    color:  #fff;
-
-  font-weight: 700;
+  color:  #fff;
+  font-family: 'Saira Stencil One';
+  /*font-weight: 700;*/
 
   
   /*font-size: 40pt;*/
@@ -45,6 +46,7 @@
 }
 .rgb-banner-subtext {
   color: #fff;
-  /*font-size: 18pt;*/
+  font-family: 'Francois One';
+
   /*margin-top: -36px;*/
 }
