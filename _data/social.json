@@ -12,12 +12,6 @@
     "color": "blue"
   },
   {
-    "name": "youtube",
-    "url": "https://www.youtube.com/channel/UCW5yNQej45V4LDdZymAezZQ",
-    "icon": "fab fa-youtube",
-    "color": "red"
-  },
-  {
     "name": "twitter",
     "url": "https://twitter.com/rgbstudiosorg",
     "icon": "fab fa-twitter",

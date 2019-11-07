@@ -21,3 +21,18 @@ searching "D&D" doesn't find correct stuff. ampersand escape issues?
 
 give each item a description and platform, allow sorting by platforms.
 for exaple, binomial calc has a description below and an android icon and globe icon
+
+NOTES
+
+command: jekyll serve --watch
+
+CODE
+
+youtube in social:
+  {
+    "name": "youtube",
+    "url": "https://www.youtube.com/channel/UCW5yNQej45V4LDdZymAezZQ",
+    "icon": "fab fa-youtube",
+    "color": "red"
+  },
+
