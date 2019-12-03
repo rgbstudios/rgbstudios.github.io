@@ -6,8 +6,20 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "false",
+    "featured": "true"
+  },
+
+  {
+    "name": "Color Convert",
+    "url": "https://rgbstudios.org/color-convert/",
+    "icon": "assets/icons/utilities/color_convert.svg",
+
+    "platform": "website",
+    "category": "tool",
+
+    "new": "true",
     "featured": "true"
   },
 
@@ -18,7 +30,7 @@
 
     "platform": "web app",
     "category": "games",
-    
+
     "new": "false",
     "featured": "true"
   },
@@ -30,7 +42,7 @@
 
     "platform": "website",
     "category": "games",
-    
+
     "new": "true",
     "featured": "true"
   },
@@ -42,7 +54,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "false"
   },
@@ -54,7 +66,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "false"
   },
@@ -66,7 +78,7 @@
 
     "platform": "extension",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "true"
   },
@@ -78,7 +90,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "false"
   },
@@ -90,7 +102,7 @@
 
     "platform": "extension",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "true"
   },
@@ -102,7 +114,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "false"
   },
@@ -116,7 +128,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "false"
   },
@@ -130,7 +142,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "false"
   },
@@ -142,7 +154,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "false"
   },
@@ -154,7 +166,7 @@
 
     "platform": "extension",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "true"
   },
@@ -166,7 +178,7 @@
 
     "platform": "app",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "true"
   },
@@ -178,7 +190,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "true"
   },
@@ -190,7 +202,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "false"
   },
@@ -202,7 +214,7 @@
 
     "platform": "website",
     "category": "games",
-    
+
     "new": "false",
     "featured": "false"
   },
@@ -214,7 +226,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "false",
     "featured": "false"
   },
@@ -226,11 +238,11 @@
 
     "platform": "website",
     "category": "games",
-    
+
     "new": "false",
     "featured": "false"
   },
-  
+
   {
     "name": "Replacement Calc",
     "url": "https://rgbstudios.org/replacement-calc",
@@ -238,7 +250,7 @@
 
     "platform": "website",
     "category": "tool",
-    
+
     "new": "true",
     "featured": "false"
   },
