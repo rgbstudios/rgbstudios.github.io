@@ -2,10 +2,6 @@
   background: #333;
 }
 
-.rgb-hdr-divide {
-  height: 3px;
-  background: #ccc;
-}
 .rgb-hdr-divide-sm {
   display: none;
   height: 1px;

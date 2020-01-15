@@ -2,12 +2,22 @@ body {
   background: #333;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 .rgb-clr-light {
   color: #ccc;
 }
 a.rgb-clr-light:hover {
   color: #999;
 }
-a>i.rgb-clr-light:hover {
+a>.rgb-clr-light:hover {
   color: #999;
+}
+
+
+.rgb-wht-divide {
+  height: 3px;
+  background: #ccc;
 }
