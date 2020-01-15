@@ -1,0 +1,13 @@
+body {
+  background: #333;
+}
+
+.rgb-clr-light {
+  color: #ccc;
+}
+a.rgb-clr-light:hover {
+  color: #999;
+}
+a>i.rgb-clr-light:hover {
+  color: #999;
+}

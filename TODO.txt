@@ -1,0 +1,4 @@
+Header:
+  Styling for dropdown menu
+  Link up live links
+  Search bar
