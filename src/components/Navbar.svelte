@@ -12,18 +12,22 @@
 				tabindex="0"
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
-				<li><a>Item 1</a></li>
+				<li><a>Home</a></li>
+
 				<li tabindex="0">
 					<a class="justify-between">
-						Parent
+						Popular Apps
 						<Icon name="chevron_right" class="w-4 h-4" />
 					</a>
 					<ul class="p-2">
-						<li><a>Submenu 1</a></li>
-						<li><a>Submenu 2</a></li>
+						<li><a>Desktop Clock</a></li>
+						<li><a>Chrome Notes</a></li>
 					</ul>
 				</li>
-				<li><a>Item 3</a></li>
+				<li><a>New</a></li>
+				<li><a>Recently Updated</a></li>
+				<li><a>About Us</a></li>
+				<li><a>Contact</a></li>
 			</ul>
 		</div>
 		<a class="btn btn-ghost">
@@ -33,22 +37,25 @@
 
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal p-0">
-			<li><a>Item 1</a></li>
+			<li><a>Home</a></li>
 			<li tabindex="0">
 				<a>
-					Parent
+					Popular Apps
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
 				<ul class="p-2">
-					<li><a>Submenu 1</a></li>
-					<li><a>Submenu 2</a></li>
+					<li><a>Desktop Clock</a></li>
+					<li><a>Chrome Notes</a></li>
 				</ul>
 			</li>
-			<li><a>Item 3</a></li>
+			<li><a>New</a></li>
+			<li><a>Recently Updated</a></li>
+			<li><a>About Us</a></li>
+			<li><a>Contact</a></li>
 		</ul>
 	</div>
 
 	<div class="navbar-end">
-		<a class="btn">Get started</a>
+		<a class="btn">Get in touch</a>
 	</div>
 </div>

@@ -1,20 +1,35 @@
 <footer class="footer p-10 bg-base-200 text-base-content">
 	<div>
+		<span class="footer-title">Apps</span>
+		<a class="link link-hover">Popular</a>
+		<a class="link link-hover">New</a>
+		<a class="link link-hover">Recently Updated</a>
+	</div>
+	<div>
+		<span class="footer-title">Blog</span>
+		<a class="link link-hover">Web Development</a>
+		<a class="link link-hover">Design</a>
+	</div>
+	<div>
 		<span class="footer-title">Services</span>
 		<a class="link link-hover">Branding</a>
 		<a class="link link-hover">Design</a>
-		<a class="link link-hover">Marketing</a>
-		<a class="link link-hover">Advertisement</a>
-	</div>
-	<div>
-		<span class="footer-title">Company</span>
+
+		<span class="footer-title mt-4">Company</span>
 		<a class="link link-hover">About us</a>
 		<a class="link link-hover">Contact</a>
-		<a class="link link-hover">Jobs</a>
-		<a class="link link-hover">Press kit</a>
+	</div>
+</footer>
+<footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+	<div class="items-center grid-flow-col">
+		<img class="w-12 h-12" src="/img/rgb_logo_mono_64.png" alt="RGB logo" />
+		<p>RGB Studios<br />Simple webapps and more</p>
 	</div>
 	<div>
-		<span class="footer-title">Social</span>
+		<a class="link link-hover">Sitemap</a>
+		<a class="link link-hover">Privacy policy</a>
+	</div>
+	<div class="md:place-self-center md:justify-self-end">
 		<div class="grid grid-flow-col gap-4">
 			<a
 				><svg
