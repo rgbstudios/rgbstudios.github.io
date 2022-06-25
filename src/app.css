@@ -16,4 +16,8 @@
 	h6 {
 		@apply font-display;
 	}
+
+	img {
+		@apply select-none;
+	}
 }
