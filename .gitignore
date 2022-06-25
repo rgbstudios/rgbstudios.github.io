@@ -1,9 +1,16 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-.project
-.settings
-Gemfile
-Gemfile.lock
-vendor/*
+# Mac
+.DS_Store
+
+# Packages
+node_modules
+
+# Build
+/build
+/.svelte-kit
+/package
+/.netlify
+
+# Env
+.env
+.env.*
+!.env.example
