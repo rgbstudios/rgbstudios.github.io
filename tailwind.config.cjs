@@ -5,6 +5,11 @@ module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
+			colors: {
+				'brand-red': '#cc3300',
+				'brand-green': '#339966',
+				'brand-blue': '#3366ff'
+			},
 			fontFamily: {
 				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
 				display: ['Poppins'],

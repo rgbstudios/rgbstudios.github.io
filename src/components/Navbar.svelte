@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 		<a class="btn btn-ghost">
-			<img class="h-full" src="/img/rgb_logo_64.png" alt="RGB Studios logo" />
+			<img class="h-full" src="/img/rgb_logo_light_64.png" alt="RGB Studios logo" />
 		</a>
 	</div>
 

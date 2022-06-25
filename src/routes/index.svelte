@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import RGBHero from '../components/RGBHero.svelte';
 
 	onMount(() => {
 		// random primary color. r,g, or b
@@ -12,10 +13,10 @@
 	});
 </script>
 
+<RGBHero />
 <div class="container mx-auto my-8">
 	<article class="prose lg:prose-xl">
 		<h1 class="text-center">RGB Studios</h1>
 		<p>Hello there</p>
 	</article>
-	<button class="btn btn-primary">Hello</button>
 </div>

@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--brand-red: #cc3300;
+		--brand-green: #339966;
+		--brand-blue: #3366ff;
+	}
 	h1,
 	h2,
 	h3,
