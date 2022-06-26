@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import RGBHero from '../components/RGBHero.svelte';
+	import AppCard from '../components/AppCard.svelte';
 
 	onMount(() => {
 		// random primary color. r,g, or b
@@ -18,5 +19,6 @@
 	<article class="prose lg:prose-xl">
 		<h1 class="text-center">RGB Studios</h1>
 		<p>Hello there</p>
+		<AppCard />
 	</article>
 </div>

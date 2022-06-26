@@ -8,6 +8,21 @@
 		--brand-green: #339966;
 		--brand-blue: #3366ff;
 	}
+
+	/* https://css-tricks.com/couple-takes-sticky-footer/#aa-there-is-grid */
+	html {
+		height: 100%;
+	}
+	body {
+		min-height: 100%;
+		display: grid;
+		grid-template-rows: 1fr auto;
+	}
+	footer {
+		grid-row-start: 2;
+		grid-row-end: 3;
+	}
+
 	h1,
 	h2,
 	h3,

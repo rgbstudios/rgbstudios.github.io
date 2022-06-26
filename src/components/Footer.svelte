@@ -1,5 +1,5 @@
-<div class="fixed bottom-0 w-full">
-	<footer class="footer p-10 bg-base-200 text-base-content">
+<footer class="w-full">
+	<div class="footer p-10 bg-base-200 text-base-content">
 		<div>
 			<span class="footer-title">Apps</span>
 			<a class="link link-hover">Popular</a>
@@ -20,8 +20,8 @@
 			<a class="link link-hover">About us</a>
 			<a class="link link-hover">Contact</a>
 		</div>
-	</footer>
-	<footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+	</div>
+	<div class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
 		<div class="items-center grid-flow-col">
 			<img class="w-12 h-12" src="/img/rgb_logo_mono_64.png" alt="RGB logo" />
 			<p>RGB Studios<br />Simple webapps and more</p>
@@ -70,5 +70,5 @@
 				>
 			</div>
 		</div>
-	</footer>
-</div>
+	</div>
+</footer>
