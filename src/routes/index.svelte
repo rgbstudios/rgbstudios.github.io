@@ -2,8 +2,12 @@
 	import RGBHero from '../components/RGBHero.svelte';
 </script>
 
+<svelte:head>
+	<title>RGB Studios.org</title>
+</svelte:head>
+
 <RGBHero />
-<div class="container mx-auto p-8">
+<div class="container mx-auto py-8">
 	<article class="prose lg:prose-xl">
 		<h1>Who We Are</h1>
 		<p>

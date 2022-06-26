@@ -5,6 +5,8 @@ const projects = [
 		img: 'https://desktopclock.app/img/screenshot.png',
 		link: 'https://desktopclock.app/',
 		isNew: true,
+		isPopular: true,
+		isUpdated: true,
 		tags: ['clock', 'stopwatch', 'worldclock', 'web app', 'installable', 'free', 'offline']
 	},
 	{
@@ -12,6 +14,8 @@ const projects = [
 		text: 'A simple notepad extension for Google Chrome',
 		img: '/img/screenshots/chrome_notes.png',
 		link: 'https://chrome.google.com/webstore/detail/chrome-notes/lnfempckkegmaeleniojhjplemmebgfi',
+		isPopular: true,
+		isUpdated: true,
 		tags: ['notepad', 'extension', 'installable', 'free', 'offline']
 	}
 ];

@@ -1,15 +1,23 @@
 <script>
-	export let title, text, img, link, isNew, tags;
+	export let title, text, img, link, isNew, isPopular, isUpdated, tags;
 </script>
 
 <a href={link} target="_blank" class="card bg-base-200 shadow-xl cursor-pointer no-underline m-4">
 	<div class="card-body">
 		<h2 class="card-title text-3xl">
 			{title}
+		</h2>
+		<p>
 			{#if isNew}
 				<div class="badge badge-primary">NEW</div>
 			{/if}
-		</h2>
+			{#if isPopular}
+				<div class="badge badge-primary">POPULAR</div>
+			{/if}
+			{#if isUpdated}
+				<div class="badge badge-primary">UPDATED</div>
+			{/if}
+		</p>
 		<p class="my-4">{text}</p>
 		<div class="card-actions">
 			{#each tags as tag}

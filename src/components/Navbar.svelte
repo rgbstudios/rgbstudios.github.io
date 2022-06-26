@@ -12,7 +12,7 @@
 				tabindex="0"
 				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 			>
-				<li><a>Home</a></li>
+				<li><a href="/">Home</a></li>
 
 				<li tabindex="0">
 					<a class="justify-between">
@@ -20,10 +20,10 @@
 						<Icon name="chevron_right" class="w-4 h-4" />
 					</a>
 					<ul class="p-2 bg-base-100">
-						<li><a>All Projects</a></li>
-						<li><a>Popular</a></li>
-						<li><a>New</a></li>
-						<li><a>Recently Updated</a></li>
+						<li><a href="/projects">All Projects</a></li>
+						<li><a href="/projects?sort=popular">Popular</a></li>
+						<li><a href="/projects?sort=new">New</a></li>
+						<li><a href="/projects?sort=updated">Recently Updated</a></li>
 					</ul>
 				</li>
 				<li><a>About Us</a></li>
@@ -37,17 +37,17 @@
 
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal p-0">
-			<li><a>Home</a></li>
+			<li><a href="/">Home</a></li>
 			<li tabindex="0">
 				<a>
 					Projects
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
 				<ul class="p-2 bg-base-100">
-					<li><a>All Projects</a></li>
-					<li><a>Popular</a></li>
-					<li><a>New</a></li>
-					<li><a>Recently Updated</a></li>
+					<li><a href="/projects">All Projects</a></li>
+					<li><a href="/projects?sort=popular">Popular</a></li>
+					<li><a href="/projects?sort=new">New</a></li>
+					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
 			<li><a>About Us</a></li>
