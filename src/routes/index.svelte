@@ -3,46 +3,14 @@
 
 	import projects from '../data/projects';
 
-	$: featured = projects.filter((p) => p.title === 'Desktop Clock')[0];
+	$: featured = projects.filter((p) => p.isFeatured);
 </script>
 
 <svelte:head>
 	<title>RGB Studios.org</title>
 </svelte:head>
 
-<!-- <FeaturedAppCard
-	title={featured.title}
-	text={featured.text}
-	longText={featured.longText}
-	img={featured.img}
-	link={featured.link}
-/> -->
-
-<FeaturedAppCarousel
-	slides={[
-		{
-			title: featured.title,
-			text: featured.text,
-			longText: featured.longText,
-			img: featured.img,
-			link: featured.link
-		},
-		{
-			title: 'notes',
-			text: 'text',
-			longText: 'longText',
-			img: 'http://placekitten.com/200/300',
-			link: 'google.com'
-		},
-		{
-			title: 'notes2',
-			text: 'text2',
-			longText: 'longText2',
-			img: 'http://placekitten.com/200/200',
-			link: 'google.com/'
-		}
-	]}
-/>
+<FeaturedAppCarousel slides={featured} />
 
 <article class="prose lg:prose-xl mx-auto mt-8">
 	<h1>What We Do</h1>

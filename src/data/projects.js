@@ -9,7 +9,8 @@ const projects = [
 		isUpdated: true,
 		tags: ['clock', 'stopwatch', 'worldclock', 'web app', 'installable', 'free', 'offline'],
 		longText:
-			'Desktop Clock is a simple, resizable, customizable, installable clock for any device. Features include customizable analog and digital displays, night mode, themes, timezones and more. Desktop Clock is designed to scale perfectly to any screen size and ratio, with no distortion or pixelation. Use Desktop Clock as a clock on your TV, a night clock, or project the time in the classroom. Desktop Clock is super light-weight, works offline, free, ad-free, and always will be. Customize the time, date and more to your liking! Desktop Clock is the all-in-one clock for any of your timekeeping needs!'
+			'Desktop Clock is a simple, resizable, customizable, installable clock for any device. Features include customizable analog and digital displays, night mode, themes, timezones and more. Desktop Clock is designed to scale perfectly to any screen size and ratio, with no distortion or pixelation. Use Desktop Clock as a clock on your TV, a night clock, or project the time in the classroom. Desktop Clock is super light-weight, works offline, free, ad-free, and always will be. Customize the time, date and more to your liking! Desktop Clock is the all-in-one clock for any of your timekeeping needs!',
+		isFeatured: true
 	},
 	{
 		title: 'Chrome Notes',
@@ -18,7 +19,10 @@ const projects = [
 		link: 'https://chrome.google.com/webstore/detail/chrome-notes/lnfempckkegmaeleniojhjplemmebgfi',
 		isPopular: true,
 		isUpdated: true,
-		tags: ['notepad', 'extension', 'installable', 'free', 'offline']
+		tags: ['notepad', 'extension', 'installable', 'free', 'offline'],
+		longText:
+			'Chrome Notes is a simple notepad extension with quick edit buttons, speak outloud, download, popout, night mode, and more',
+		isFeatured: true
 	}
 ];
 
