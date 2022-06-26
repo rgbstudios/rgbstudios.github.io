@@ -20,9 +20,11 @@
 		</p>
 		<p class="my-4">{text}</p>
 		<div class="card-actions">
-			{#each tags as tag}
-				<div class="badge badge-outline">{tag}</div>
-			{/each}
+			{#if tags}
+				{#each tags as tag}
+					<div class="badge badge-outline">{tag}</div>
+				{/each}
+			{/if}
 		</div>
 	</div>
 	<figure><img src={img} alt={title} class="w-full h-72 object-cover object-top" /></figure>
