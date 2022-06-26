@@ -22,6 +22,7 @@ module.exports = {
 		themes: [
 			{
 				rgbtheme: {
+					'primary': '#339966',
 					'success': '#339966',
 					'info': '#3366ff',
 					'error': '#cc3300',
