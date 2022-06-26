@@ -8,7 +8,7 @@
 
 <RGBHero />
 <div class="container mx-auto py-8">
-	<article class="prose lg:prose-xl">
+	<article class="prose lg:prose-xl mx-auto">
 		<h1>Who We Are</h1>
 		<p>
 			RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take
