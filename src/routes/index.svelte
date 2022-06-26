@@ -3,6 +3,8 @@
 	import RGBHero from '../components/RGBHero.svelte';
 	import AppCard from '../components/AppCard.svelte';
 
+	import projects from '../data/projects';
+
 	onMount(() => {
 		// random primary color. r,g, or b
 		document
@@ -20,12 +22,7 @@
 		<h1 class="text-center">RGB Studios</h1>
 		<p>Hello there</p>
 	</article>
-	<AppCard
-		title="Desktop Clock"
-		text="A simple, resizable customizable, installable clock for any device!"
-		img="https://desktopclock.app/img/screenshot.png"
-		link="https://desktopclock.app/"
-		isNew={true}
-		tags={['clock', 'stopwatch', 'worldclock', 'web app', 'installable', 'free', 'offline']}
-	/>
+	{#each projects as { title, text, img, link, isNew, tags }}
+		<AppCard {title} {text} {img} {link} {isNew} {tags} />
+	{/each}
 </div>
