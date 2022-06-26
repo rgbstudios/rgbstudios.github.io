@@ -23,7 +23,7 @@
 			<a class="link link-hover">Design</a> -->
 
 			<span class="footer-title mt-4">Company</span>
-			<a class="link link-hover" href="/about">About us</a>
+			<a class="link link-hover" href="/about">About Us</a>
 			<a class="link link-hover" href="/contact">Contact</a>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 		</div>
 		<div>
 			<a class="link link-hover" href="/sitemap">Sitemap</a>
-			<a class="link link-hover" href="/privacy">Privacy policy</a>
+			<a class="link link-hover" href="/privacy">Privacy Policy</a>
 		</div>
 		<div class="md:place-self-center md:justify-self-end">
 			<div class="grid grid-flow-col gap-4">
