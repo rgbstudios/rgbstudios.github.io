@@ -1,6 +1,6 @@
 <script>
 	import RGBHero from '../components/RGBHero.svelte';
-	import AppCard from '../components/AppCard.svelte';
+	import Card from '../components/Card.svelte';
 
 	import people from '../data/people';
 </script>
@@ -16,7 +16,7 @@
 	</article>
 	<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 		{#each people as { name, img, website, email, about }}
-			<AppCard title={name} text={about} {email} {img} link={website} />
+			<Card title={name} text={about} {email} {img} link={website} />
 		{/each}
 	</div>
 </div>
