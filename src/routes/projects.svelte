@@ -1,6 +1,6 @@
 <script>
 	import RGBHero from '../components/RGBHero.svelte';
-	import Card from '../components/Card.svelte';
+	import AppCard from '../components/AppCard.svelte';
 
 	import projects from '../data/projects';
 
@@ -31,7 +31,7 @@
 	<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 		{#each projects as { title, text, img, link, isNew, isPopular, isUpdated, tags }}
 			{#if sort === null || (sort === 'new' && isNew) || (sort === 'popular' && isPopular) || (sort === 'updated' && isUpdated)}
-				<Card {title} {text} {img} {link} {isNew} {isPopular} {isUpdated} {tags} />
+				<AppCard {title} {text} {img} {link} {isNew} {isPopular} {isUpdated} {tags} />
 			{/if}
 		{/each}
 	</div>
