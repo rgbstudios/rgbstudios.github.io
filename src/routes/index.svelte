@@ -16,7 +16,15 @@
 	<h1>What We Do</h1>
 	<p>
 		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
-		in clean, beautiful designs that are simple and easy to use.
+		in clean, beautiful designs that are simple and easy to use. Check out <a
+			href="/projects"
+			class="ml-4 btn btn-primary no-underline">Our Projects</a
+		>
 	</p>
-	<p>Check out <a href="/projects" class="btn btn-primary no-underline">Our Projects</a></p>
+	<p>
+		We can also design your website for you. Contact us for a quote!<a
+			href="mailto:contact@rgbstudios.org"
+			class="ml-4 btn btn-primary no-underline">Reach Out</a
+		>
+	</p>
 </article>
