@@ -11,8 +11,8 @@
 		products.
 	</p>
 	<p>
-		For any questions, you can contact us at <a href="mailto:contact@rgbstudios.org"
-			>contact@rgbstudios.org</a
-		>
+		For any questions, you can contact us at <a href="mailto:contact@rgbstudios.org">
+			contact@rgbstudios.org
+		</a>
 	</p>
 </article>
