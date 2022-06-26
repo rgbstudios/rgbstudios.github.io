@@ -1,19 +1,8 @@
 <script>
-	import { onMount } from 'svelte';
 	import RGBHero from '../components/RGBHero.svelte';
 	import AppCard from '../components/AppCard.svelte';
 
 	import projects from '../data/projects';
-
-	onMount(() => {
-		// random primary color. r,g, or b
-		document
-			.querySelector(':root')
-			.style.setProperty(
-				'--p',
-				['150 80% 40%', '225 100% 60%', '15 100% 40%'][Math.floor(Math.random() * 3)]
-			);
-	});
 </script>
 
 <RGBHero />

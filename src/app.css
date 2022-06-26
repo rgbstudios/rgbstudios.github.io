@@ -9,6 +9,13 @@
 		--brand-blue: #3366ff;
 	}
 
+	::selection {
+		@apply bg-base-300;
+	}
+	::-moz-selection {
+		@apply bg-base-300;
+	}
+
 	/* https://css-tricks.com/couple-takes-sticky-footer/#aa-there-is-grid */
 	html {
 		height: 100%;
