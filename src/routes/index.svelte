@@ -1,5 +1,4 @@
 <script>
-	// import FeaturedAppCard from '../components/FeaturedAppCard.svelte';
 	import FeaturedAppCarousel from '../components/FeaturedAppCarousel.svelte';
 
 	import projects from '../data/projects';
@@ -22,7 +21,6 @@
 <FeaturedAppCarousel
 	slides={[
 		{
-			id: 'clock',
 			app: {
 				title: featured.title,
 				text: featured.text,
@@ -32,7 +30,6 @@
 			}
 		},
 		{
-			id: 'notes',
 			app: {
 				title: 'notes',
 				text: 'text',
