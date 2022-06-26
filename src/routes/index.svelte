@@ -1,8 +1,24 @@
+<script>
+	import FeaturedAppCard from '../components/FeaturedAppCard.svelte';
+
+	import projects from '../data/projects';
+
+	$: featured = projects.filter((p) => p.title === 'Desktop Clock')[0];
+</script>
+
 <svelte:head>
 	<title>RGB Studios.org</title>
 </svelte:head>
 
-<article class="prose lg:prose-xl mx-auto">
+<FeaturedAppCard
+	title={featured.title}
+	text={featured.text}
+	longText={featured.longText}
+	img={featured.img}
+	link={featured.link}
+/>
+
+<article class="prose lg:prose-xl mx-auto mt-8">
 	<h1>Who We Are</h1>
 	<p>
 		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
