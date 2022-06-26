@@ -19,7 +19,7 @@
 						Popular Apps
 						<Icon name="chevron_right" class="w-4 h-4" />
 					</a>
-					<ul class="p-2">
+					<ul class="p-2 bg-base-100">
 						<li><a>Desktop Clock</a></li>
 						<li><a>Chrome Notes</a></li>
 					</ul>
@@ -43,7 +43,7 @@
 					Popular Apps
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
-				<ul class="p-2">
+				<ul class="p-2 bg-base-100">
 					<li><a>Desktop Clock</a></li>
 					<li><a>Chrome Notes</a></li>
 				</ul>
