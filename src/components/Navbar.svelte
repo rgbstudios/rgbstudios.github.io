@@ -56,6 +56,6 @@
 	</div>
 
 	<div class="navbar-end">
-		<a class="btn">Get in touch</a>
+		<a class="btn btn-outline">Get in touch</a>
 	</div>
 </div>

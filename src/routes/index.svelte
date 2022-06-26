@@ -5,7 +5,11 @@
 <RGBHero />
 <div class="container mx-auto p-8">
 	<article class="prose lg:prose-xl">
-		<h1 class="text-center">RGB Studios</h1>
-		<p>Hello there</p>
+		<h1>Who We Are</h1>
+		<p>
+			RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take
+			pride in clean, beautiful designs that are simple and easy to use.
+		</p>
+		<p>Check out <a href="/projects" class="btn btn-primary no-underline">Our Projects</a></p>
 	</article>
 </div>

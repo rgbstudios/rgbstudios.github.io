@@ -7,7 +7,7 @@
 		<h2 class="card-title text-3xl">
 			{title}
 			{#if isNew}
-				<div class="badge badge-secondary">NEW</div>
+				<div class="badge badge-primary">NEW</div>
 			{/if}
 		</h2>
 		<p class="my-4">{text}</p>
