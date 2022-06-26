@@ -16,16 +16,16 @@
 
 				<li tabindex="0">
 					<a class="justify-between">
-						Popular Apps
+						Projects
 						<Icon name="chevron_right" class="w-4 h-4" />
 					</a>
 					<ul class="p-2 bg-base-100">
-						<li><a>Desktop Clock</a></li>
-						<li><a>Chrome Notes</a></li>
+						<li><a>All Projects</a></li>
+						<li><a>Popular</a></li>
+						<li><a>New</a></li>
+						<li><a>Recently Updated</a></li>
 					</ul>
 				</li>
-				<li><a>New</a></li>
-				<li><a>Recently Updated</a></li>
 				<li><a>About Us</a></li>
 				<li><a>Contact</a></li>
 			</ul>
@@ -40,16 +40,16 @@
 			<li><a>Home</a></li>
 			<li tabindex="0">
 				<a>
-					Popular Apps
+					Projects
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
 				<ul class="p-2 bg-base-100">
-					<li><a>Desktop Clock</a></li>
-					<li><a>Chrome Notes</a></li>
+					<li><a>All Projects</a></li>
+					<li><a>Popular</a></li>
+					<li><a>New</a></li>
+					<li><a>Recently Updated</a></li>
 				</ul>
 			</li>
-			<li><a>New</a></li>
-			<li><a>Recently Updated</a></li>
 			<li><a>About Us</a></li>
 			<li><a>Contact</a></li>
 		</ul>
