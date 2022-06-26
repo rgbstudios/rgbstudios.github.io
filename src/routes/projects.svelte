@@ -9,12 +9,12 @@
 
 	const pageTitle =
 		(sort === 'popular'
-			? 'Popular '
+			? 'Popular'
 			: sort === 'new'
-			? 'New '
+			? 'New'
 			: sort === 'updated'
-			? 'Recently Updated '
-			: '') + 'Projects';
+			? 'Recently Updated'
+			: 'All') + ' Projects';
 </script>
 
 <svelte:head>
