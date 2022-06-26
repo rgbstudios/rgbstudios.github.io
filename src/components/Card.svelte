@@ -1,5 +1,5 @@
 <script>
-	export let title, text, img, link, isNew, isPopular, isUpdated, tags;
+	export let title, text, img, link, isNew, isPopular, isUpdated, tags, email;
 </script>
 
 <a href={link} target="_blank" class="card bg-base-200 shadow-xl cursor-pointer no-underline m-4">
@@ -19,6 +19,9 @@
 			{/if}
 		</p>
 		<p class="my-4">{text}</p>
+		{#if email}
+			<p><a href="mailto:{email}" class="hover:underline">Contact</a></p>
+		{/if}
 		<div class="card-actions">
 			{#if tags}
 				{#each tags as tag}
