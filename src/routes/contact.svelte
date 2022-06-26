@@ -1,5 +1,6 @@
 <script>
 	import RGBHero from '../components/RGBHero.svelte';
+	import Breadcrumbs from '../components/Breadcrumbs.svelte';
 </script>
 
 <svelte:head>
@@ -7,7 +8,20 @@
 </svelte:head>
 
 <RGBHero />
+
 <div class="container mx-auto py-8">
+	<Breadcrumbs
+		breadcrumbs={[
+			{
+				text: 'Home',
+				link: '/'
+			},
+			{
+				text: 'Contact'
+			}
+		]}
+	/>
+
 	<article class="prose lg:prose-xl mx-auto">
 		<h1>Let's Get in Touch</h1>
 		<p>

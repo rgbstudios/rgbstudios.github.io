@@ -1,6 +1,7 @@
 <script>
 	import RGBHero from '../components/RGBHero.svelte';
 	import AboutCard from '../components/AboutCard.svelte';
+	import Breadcrumbs from '../components/Breadcrumbs.svelte';
 
 	import people from '../data/people';
 </script>
@@ -11,6 +12,18 @@
 
 <RGBHero />
 <div class="container mx-auto py-8">
+	<Breadcrumbs
+		breadcrumbs={[
+			{
+				text: 'Home',
+				link: '/'
+			},
+			{
+				text: 'About'
+			}
+		]}
+	/>
+
 	<article class="prose lg:prose-xl mx-auto">
 		<h1 class="text-center">About</h1>
 	</article>
