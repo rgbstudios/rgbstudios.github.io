@@ -22,8 +22,8 @@
 			<a class="link link-hover">Design</a>
 
 			<span class="footer-title mt-4">Company</span>
-			<a class="link link-hover">About us</a>
-			<a class="link link-hover">Contact</a>
+			<a class="link link-hover" href="/about">About us</a>
+			<a class="link link-hover" href="/contact">Contact</a>
 		</div>
 	</div>
 	<div class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
@@ -42,9 +42,9 @@
 				<a href="https://twitter.com/rgbstudiosorg" target="_blank">
 					<Icon name="twitter" class="w-6 h-6" />
 				</a>
-				<a>
+				<!-- <a>
 					<Icon name="youtube" class="w-6 h-6" />
-				</a>
+				</a> -->
 				<a href="https://www.facebook.com/rgbstudios.org" target="_blank">
 					<Icon name="facebook" class="w-6 h-6" />
 				</a>

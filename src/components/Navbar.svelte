@@ -26,11 +26,11 @@
 						<li><a href="/projects?sort=updated">Recently Updated</a></li>
 					</ul>
 				</li>
-				<li><a>About Us</a></li>
-				<li><a>Contact</a></li>
+				<li><a href="/about">About Us</a></li>
+				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
-		<a class="btn btn-ghost">
+		<a class="btn btn-ghost" href="/">
 			<img class="h-full" src="/img/rgb_logo_light_64.png" alt="RGB Studios logo" />
 		</a>
 	</div>
@@ -50,8 +50,8 @@
 					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
-			<li><a>About Us</a></li>
-			<li><a>Contact</a></li>
+			<li><a href="/about">About Us</a></li>
+			<li><a href="/contact">Contact</a></li>
 		</ul>
 	</div>
 
