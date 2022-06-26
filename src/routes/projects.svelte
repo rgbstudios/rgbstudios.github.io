@@ -5,9 +5,9 @@
 	import projects from '../data/projects';
 
 	import { page } from '$app/stores';
-	const sort = $page.url.searchParams.get('sort');
+	$: sort = $page.url.searchParams.get('sort');
 
-	const pageTitle =
+	$: pageTitle =
 		(sort === 'popular'
 			? 'Popular'
 			: sort === 'new'
