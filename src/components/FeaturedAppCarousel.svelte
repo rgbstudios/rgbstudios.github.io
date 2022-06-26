@@ -4,9 +4,9 @@
 </script>
 
 <div class="carousel w-full">
-	{#each slides as { app }, idx}
+	{#each slides as slide, idx}
 		<div id={idx} class="carousel-item relative w-full">
-			<FeaturedAppCard {...app} />
+			<FeaturedAppCard {...slide} />
 
 			<div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
 				<a
