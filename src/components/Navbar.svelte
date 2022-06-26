@@ -1,4 +1,6 @@
 <script>
+	import { page } from '$app/stores';
+
 	import Icon from './Icon.svelte';
 </script>
 
@@ -37,9 +39,9 @@
 
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal p-0">
-			<li><a href="/">Home</a></li>
+			<li><a href="/" class:active={$page.url.pathname === '/'}>Home</a></li>
 			<li tabindex="0">
-				<a>
+				<a class:active={$page.url.pathname === '/projects'}>
 					Projects
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
@@ -50,8 +52,8 @@
 					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
-			<li><a href="/about">About Us</a></li>
-			<li><a href="/contact">Contact</a></li>
+			<li><a href="/about" class:active={$page.url.pathname === '/about'}>About Us</a></li>
+			<li><a href="/contact" class:active={$page.url.pathname === '/contact'}>Contact</a></li>
 		</ul>
 	</div>
 
