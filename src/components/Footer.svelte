@@ -1,10 +1,11 @@
 <footer class="w-full">
 	<div class="footer p-10 bg-base-200 text-base-content">
 		<div>
-			<span class="footer-title">Apps</span>
-			<a class="link link-hover">Popular</a>
-			<a class="link link-hover">New</a>
-			<a class="link link-hover">Recently Updated</a>
+			<span class="footer-title">Projects</span>
+			<a class="link link-hover" href="/projects">All</a>
+			<a class="link link-hover" href="/projects?sort=popular">Popular</a>
+			<a class="link link-hover" href="/projects?sort=new">New</a>
+			<a class="link link-hover" href="/projects?sort=updated">Recently Updated</a>
 		</div>
 		<div>
 			<span class="footer-title">Blog</span>
@@ -24,7 +25,9 @@
 	<div class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
 		<div class="items-center grid-flow-col">
 			<img class="w-12 h-12" src="/img/rgb_logo_mono_64.png" alt="RGB logo" />
-			<p>RGB Studios<br />Simple webapps and more</p>
+			<p>
+				<a class="link link-hover font-bold" href="/">RGB Studios</a><br />Simple webapps and more
+			</p>
 		</div>
 		<div>
 			<a class="link link-hover">Sitemap</a>
