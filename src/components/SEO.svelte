@@ -37,15 +37,19 @@
 	<title>{title}</title>
 
 	<link rel="icon" href="{BASE_URL}img/rgb_logo_64.png" />
+	<meta name="apple-mobile-web-app-status-bar" content="#111111" />
+	<meta name="theme-color" content="#111111" />
+	<meta name="msapplication-TileColor" content="#111111" />
+	<link rel="mask-icon" href="{BASE_URL}img/rgb_logo_64.png" color="#111111" />
 
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<meta name="keywords" content={keywords} />
-	<meta name="robots" content="index" />
+	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index" />
 
-	<meta property="og:image:height" content="720" />
-	<meta property="og:image:width" content="720" />
+	<meta property="og:image:height" content="600" />
+	<meta property="og:image:width" content="1600" />
 	<meta property="og:description" content={description} />
 	<meta property="og:title" content={title} />
 	<meta property="og:url" content={url} />
