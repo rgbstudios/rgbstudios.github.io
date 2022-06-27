@@ -40,7 +40,7 @@
 		<textarea
 			id="body"
 			name="body"
-			class="textarea textarea-bordered block"
+			class="textarea textarea-bordered block w-full"
 			placeholder="Your message..."
 		/>
 
