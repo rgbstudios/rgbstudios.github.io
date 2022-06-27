@@ -23,7 +23,7 @@
 	</p>
 	<p>
 		We can also design your website for you. Contact us for a quote!<a
-			href="mailto:contact@rgbstudios.org"
+			href="/contact"
 			class="ml-4 btn btn-primary no-underline">Reach Out</a
 		>
 	</p>
