@@ -2,7 +2,7 @@
 	export let breadcrumbs;
 </script>
 
-<div class="text-sm breadcrumbs">
+<div class="text-sm breadcrumbs mb-2">
 	<ul>
 		{#each breadcrumbs as { text, link }}
 			{#if link}
