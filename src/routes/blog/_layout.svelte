@@ -2,6 +2,7 @@
 	export let title, date, author, categories;
 
 	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
+	import ShareButtons from '../../components/ShareButtons.svelte';
 </script>
 
 <svelte:head><title>{title} | RGB Studios</title></svelte:head>
@@ -29,3 +30,5 @@
 	{/each}
 	<slot />
 </article>
+
+<ShareButtons {title} link={window.location.href} />
