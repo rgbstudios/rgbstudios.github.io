@@ -10,7 +10,27 @@
 
 <SEO />
 
-<article class="prose lg:prose-xl mx-auto my-8">
+<div class="prose lg:prose-xl my-8">
+	<h3>Featured Projects:</h3>
+</div>
+<FeaturedAppCarousel slides={featured} />
+
+<div class="prose lg:prose-xl my-8">
+	<hr />
+	<h3>Featured Articles:</h3>
+</div>
+<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	<BlogCard
+		title="File Size on the Web"
+		text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
+		link="/blog/file-size-on-the-web"
+		tags={['webdev']}
+		img="/img/blog/slow_website_frustration.avif"
+	/>
+</div>
+
+<article class="prose lg:prose-xl my-8">
+	<hr />
 	<h1>What We Do</h1>
 	<p>
 		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
@@ -23,22 +43,10 @@
 		Contact us for a quote!
 	</p>
 	<a href="/contact" class="btn btn-primary no-underline">Reach Out</a>
+	<hr />
+	<p>
+		Read on to learn more about the web, design, and how to get your website cleaner, easier to use,
+		and higher ranked.
+	</p>
+	<a href="/blog" class="btn btn-primary no-underline">Blog Articles</a>
 </article>
-
-<div class="prose lg:prose-xl my-8">
-	<h3>Featured Projects:</h3>
-</div>
-<FeaturedAppCarousel slides={featured} />
-
-<div class="prose lg:prose-xl my-8">
-	<h3>Featured Articles:</h3>
-</div>
-<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-	<BlogCard
-		title="File Size on the Web"
-		text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
-		link="/blog/file-size-on-the-web"
-		tags={['webdev']}
-		img="/img/blog/slow_website_frustration.avif"
-	/>
-</div>
