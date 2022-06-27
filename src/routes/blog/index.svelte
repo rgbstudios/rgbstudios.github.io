@@ -19,6 +19,7 @@
 <script>
 	import BlogCard from '../../components/BlogCard.svelte';
 	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
+	import SEO from '../../components/SEO.svelte';
 
 	import { page } from '$app/stores';
 
@@ -39,6 +40,19 @@
 <svelte:head>
 	<title>{pageTitle} | RGB Studios</title>
 </svelte:head>
+
+<SEO
+	title={`${pageTitle} | RGB Studios`}
+	description="Read blog posts about web design and more from RGB Studios"
+	keywords={[
+		'web dev blog',
+		'web development blog',
+		'web design blog',
+		'website design blog',
+		'rgb studios blog',
+		'design tips and tricks'
+	]}
+/>
 
 <Breadcrumbs
 	breadcrumbs={[

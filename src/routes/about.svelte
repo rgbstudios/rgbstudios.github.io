@@ -1,13 +1,12 @@
 <script>
 	import AboutCard from '../components/AboutCard.svelte';
 	import Breadcrumbs from '../components/Breadcrumbs.svelte';
+	import SEO from '../components/SEO.svelte';
 
 	import people from '../data/people';
 </script>
 
-<svelte:head>
-	<title>About | RGB Studios</title>
-</svelte:head>
+<SEO title="About | RGB Studios" />
 
 <Breadcrumbs
 	breadcrumbs={[

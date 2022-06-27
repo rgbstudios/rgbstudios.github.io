@@ -1,15 +1,14 @@
 <script>
 	import FeaturedAppCarousel from '../components/FeaturedAppCarousel.svelte';
 	import BlogCard from '../components/BlogCard.svelte';
+	import SEO from '../components/SEO.svelte';
 
 	import projects from '../data/projects';
 
 	$: featured = projects.filter((p) => p.isFeatured);
 </script>
 
-<svelte:head>
-	<title>RGB Studios.org</title>
-</svelte:head>
+<SEO />
 
 <div class="prose lg:prose-xl my-8">
 	<h3>Featured Projects:</h3>

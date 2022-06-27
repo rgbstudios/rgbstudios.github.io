@@ -1,6 +1,8 @@
-<svelte:head>
-	<title>Sitemap | RGB Studios.org</title>
-</svelte:head>
+<script>
+	import SEO from '../components/SEO.svelte';
+</script>
+
+<SEO title="Sitemap | RGB Studios" />
 
 <article class="prose lg:prose-xl mx-auto">
 	<h1>Sitemap</h1>

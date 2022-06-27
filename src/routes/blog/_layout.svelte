@@ -1,9 +1,10 @@
 <script>
 	import { onMount } from 'svelte';
 
-	export let title, date, author, categories;
+	export let title, date, author, categories, img, preview_text, keywords, updated_date;
 
 	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
+	import SEO from '../../components/SEO.svelte';
 	import ShareButtons from '../../components/ShareButtons.svelte';
 
 	$: link = '';
@@ -13,6 +14,19 @@
 </script>
 
 <svelte:head><title>{title} | RGB Studios</title></svelte:head>
+
+<SEO
+	title={`${title} | RGB Studios`}
+	description={preview_text}
+	{keywords}
+	screenshot={img}
+	articleData={{
+		published_time: date,
+		modified_time: updated_date,
+		author: author,
+		tags: keywords
+	}}
+/>
 
 <Breadcrumbs
 	breadcrumbs={[

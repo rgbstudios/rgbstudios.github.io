@@ -1,6 +1,8 @@
-<svelte:head>
-	<title>Privacy Policy | RGB Studios.org</title>
-</svelte:head>
+<script>
+	import SEO from '../components/SEO.svelte';
+</script>
+
+<SEO title="Privacy Policy | RGB Studios.org" />
 
 <article class="prose lg:prose-xl mx-auto">
 	<h1>Privacy Policy</h1>

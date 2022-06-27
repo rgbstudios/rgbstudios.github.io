@@ -2,10 +2,19 @@
 layout: blog_layout
 title: 'File Size on the Web'
 date: '2022/06/26'
+updated: '2022/06/26'
 author: 'Justin Golden'
 preview_text: 'PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why.'
 img: '/img/blog/slow_website_frustration.avif'
 categories: ['webdev']
+keywords:
+  [
+    'website file size',
+    'web page file size',
+    'faster website',
+    'making faster websites',
+    'optimize website images'
+  ]
 ---
 
 <img src="/img/blog/slow_website_frustration.avif">

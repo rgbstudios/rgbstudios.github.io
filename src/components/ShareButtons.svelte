@@ -1,4 +1,7 @@
 <script>
+	// TODO: linkedin and others
+	// TODO: print button
+
 	import Icon from './Icon.svelte';
 
 	export let title, link;
@@ -69,7 +72,7 @@
 	title="Facebook"
 >
 	<Icon name="facebook" class="w-6 h-6" />
-	&nbsp; Facebook
+	&nbsp; Share
 </a>
 
 <a
@@ -81,7 +84,7 @@
 	title="Twitter"
 >
 	<Icon name="twitter" class="w-6 h-6" />
-	&nbsp; Twitter
+	&nbsp; Tweet
 </a>
 
 <a
@@ -93,7 +96,7 @@
 	title="Pinterest"
 >
 	<Icon name="pinterest" class="w-6 h-6" />
-	&nbsp; Pinterest
+	&nbsp; Pin
 </a>
 
 <a
@@ -105,7 +108,7 @@
 	title="Reddit"
 >
 	<Icon name="reddit" class="w-6 h-6" />
-	&nbsp; Reddit
+	&nbsp; Post
 </a>
 
 <!-- `%0D%0A` is `<br>` encoded -->

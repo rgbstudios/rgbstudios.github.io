@@ -1,6 +1,7 @@
 <script>
 	import AppCard from '../components/AppCard.svelte';
 	import Breadcrumbs from '../components/Breadcrumbs.svelte';
+	import SEO from '../components/SEO.svelte';
 
 	import projects from '../data/projects';
 
@@ -17,9 +18,10 @@
 			: 'All') + ' Projects';
 </script>
 
-<svelte:head>
-	<title>{pageTitle} | RGB Studios</title>
-</svelte:head>
+<SEO
+	title={`${pageTitle} | RGB Studios`}
+	description="View the top web apps from RGB Studios: clocks, calculators, converters and more"
+/>
 
 <Breadcrumbs
 	breadcrumbs={[
