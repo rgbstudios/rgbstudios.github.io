@@ -15,4 +15,31 @@
 			var(--brand-blue) 67%
 		);
 	}
+	.rgb-banner img {
+		animation: rotate 12s ease-in-out infinite;
+	}
+
+	@-webkit-keyframes rotate {
+		0% {
+			-webkit-transform: rotate(0deg);
+		}
+		16.7% {
+			-webkit-transform: rotate(120deg);
+		}
+		33.3% {
+			-webkit-transform: rotate(120deg);
+		}
+		50% {
+			-webkit-transform: rotate(240deg);
+		}
+		66.7% {
+			-webkit-transform: rotate(240deg);
+		}
+		83.3% {
+			-webkit-transform: rotate(360deg);
+		}
+		100% {
+			-webkit-transform: rotate(360deg);
+		}
+	}
 </style>
