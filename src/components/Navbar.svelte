@@ -17,10 +17,10 @@
 				<li><a href="/">Home</a></li>
 
 				<li tabindex="0">
-					<a class="justify-between">
+					<span class="justify-between">
 						Projects
 						<Icon name="chevron_right" class="w-4 h-4" />
-					</a>
+					</span>
 					<ul class="p-2 bg-base-100">
 						<li><a href="/projects">All Projects</a></li>
 						<li><a href="/projects?sort=popular">Popular</a></li>
@@ -28,11 +28,11 @@
 						<li><a href="/projects?sort=updated">Recently Updated</a></li>
 					</ul>
 				</li>
-				<li tabindex="1">
-					<a class="justify-between">
+				<li tabindex="0">
+					<span class="justify-between">
 						Blog
 						<Icon name="chevron_right" class="w-4 h-4" />
-					</a>
+					</span>
 					<ul class="p-2 bg-base-100">
 						<li><a href="/blog">All Posts</a></li>
 						<li><a href="/blog?category=webdev">Web Dev</a></li>
@@ -63,7 +63,7 @@
 					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
-			<li tabindex="1">
+			<li tabindex="0">
 				<a class:active={$page.url.pathname === '/blog'}>
 					Blog
 					<Icon name="chevron_down" class="w-4 h-4" />
