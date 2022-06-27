@@ -1,6 +1,6 @@
 // http://localhost:3000/robots.txt
 
-import { appURL } from '$lib/data/consts';
+const BASE_URL = 'https://rgbstudios.org/';
 
 export async function get() {
 	return {
@@ -10,6 +10,6 @@ export async function get() {
 		},
 		body: `User-agent: *
 Disallow:
-Sitemap: ${appURL}/sitemap.xml`.trim()
+Sitemap: ${BASE_URL}/sitemap.xml`.trim()
 	};
 }
