@@ -1,0 +1,9 @@
+urgent:
+n/a
+
+future:
+create and implement related articles component
+
+maybe:
+search bar
+pagination
