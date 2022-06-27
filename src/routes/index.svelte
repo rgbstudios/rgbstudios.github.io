@@ -1,5 +1,6 @@
 <script>
 	import FeaturedAppCarousel from '../components/FeaturedAppCarousel.svelte';
+	import BlogCard from '../components/BlogCard.svelte';
 
 	import projects from '../data/projects';
 
@@ -10,9 +11,22 @@
 	<title>RGB Studios.org</title>
 </svelte:head>
 
+<div class="prose lg:prose-xl my-8">
+	<h3>Featured Projects:</h3>
+</div>
 <FeaturedAppCarousel slides={featured} />
 
-<article class="prose lg:prose-xl mx-auto mt-8">
+<div class="prose lg:prose-xl my-8">
+	<h3>Featured Article:</h3>
+</div>
+<BlogCard
+	title="File Size on the Web"
+	text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
+	link="/blog/file-size-on-the-web"
+	tags={['webdev']}
+/>
+
+<article class="prose lg:prose-xl mx-auto my-8">
 	<h1>What We Do</h1>
 	<p>
 		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
