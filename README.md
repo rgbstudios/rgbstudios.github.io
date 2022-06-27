@@ -39,3 +39,7 @@ Add icon, fill out keywords
 ### Preview Production Build
 
 `npm run preview`
+
+### Credit
+
+Designed by Justin Golden. Images from Unsplash. Icons (generally) from Hero Icons.

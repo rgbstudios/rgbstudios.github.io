@@ -22,6 +22,8 @@ Ok sure, but now we can load a few megs like nothing, right?
 
 Ideally, a website would be less than 1mb, but a website ranging between 2 or 3 megabytes is right at the limit in my opinion.
 
+<img src="/img/blog/hands_on_desk.avif">
+
 ### Easy Wins
 
 ##### Images
