@@ -52,4 +52,6 @@
 	<slot />
 </article>
 
-<ShareButtons {title} {link} />
+<div class="noprint">
+	<ShareButtons {title} {link} />
+</div>

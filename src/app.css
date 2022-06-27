@@ -42,4 +42,19 @@
 	img {
 		@apply select-none;
 	}
+
+	@media print {
+		* {
+			background: white !important;
+			color: black !important;
+		}
+		.noprint,
+		.navbar,
+		.rgb-banner,
+		footer,
+		img {
+			visibility: hidden;
+			display: none;
+		}
+	}
 }

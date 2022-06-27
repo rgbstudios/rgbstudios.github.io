@@ -1,6 +1,5 @@
 <script>
 	// https://github.com/bradvin/social-share-urls/blob/master/code/javascript/javascript/social-share-media.js
-	// TODO: print button
 
 	import Icon from './Icon.svelte';
 
@@ -158,16 +157,22 @@
 >
 	<Icon name="copy" class="w-6 h-6" />
 	&nbsp;
-	{copied ? 'Copied' : 'Copy Link'}</button
->
+	{copied ? 'Copied' : 'Copy Link'}
+</button>
 
 <button on:click={() => shareApp(title, '', link)} class="btn btn-outline" title="Share">
 	<Icon name="share" class="w-6 h-6" />
-	&nbsp; Share</button
->
+	&nbsp; Share
+</button>
+
+<button on:click={() => window.print()} class="btn btn-outline" title="Share">
+	<Icon name="print" class="w-6 h-6" />
+	&nbsp; Print
+</button>
 
 <style>
-	a {
+	a,
+	button {
 		@apply m-2 ml-0;
 	}
 </style>
