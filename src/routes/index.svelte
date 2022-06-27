@@ -10,22 +10,6 @@
 
 <SEO />
 
-<div class="prose lg:prose-xl my-8">
-	<h3>Featured Projects:</h3>
-</div>
-<FeaturedAppCarousel slides={featured} />
-
-<div class="prose lg:prose-xl my-8">
-	<h3>Featured Article:</h3>
-</div>
-<BlogCard
-	title="File Size on the Web"
-	text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
-	link="/blog/file-size-on-the-web"
-	tags={['webdev']}
-	img="/img/blog/slow_website_frustration.avif"
-/>
-
 <article class="prose lg:prose-xl mx-auto my-8">
 	<h1>What We Do</h1>
 	<p>
@@ -40,3 +24,21 @@
 	</p>
 	<a href="/contact" class="btn btn-primary no-underline">Reach Out</a>
 </article>
+
+<div class="prose lg:prose-xl my-8">
+	<h3>Featured Projects:</h3>
+</div>
+<FeaturedAppCarousel slides={featured} />
+
+<div class="prose lg:prose-xl my-8">
+	<h3>Featured Articles:</h3>
+</div>
+<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	<BlogCard
+		title="File Size on the Web"
+		text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
+		link="/blog/file-size-on-the-web"
+		tags={['webdev']}
+		img="/img/blog/slow_website_frustration.avif"
+	/>
+</div>
