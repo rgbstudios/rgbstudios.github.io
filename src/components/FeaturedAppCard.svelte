@@ -2,9 +2,9 @@
 	export let title, text, longText, img, link;
 </script>
 
-<div class="card lg:card-side bg-base-100 shadow-xl">
+<div class="card lg:card-side bg-base-100 shadow-xl w-full">
 	<figure>
-		<img src={img} alt={title} class="w-full h-72 lg:w-72 lg:h-full object-cover object-top" />
+		<img src={img} alt={title} class="w-full h-64 lg:h-96 lg:w-96 object-cover object-top" />
 	</figure>
 	<div class="card-body">
 		<h2 class="card-title">{title}</h2>
