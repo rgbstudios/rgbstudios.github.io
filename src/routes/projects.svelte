@@ -39,9 +39,13 @@
 	</h1>
 </article>
 <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-	{#each projects as { title, text, img, link, isNew, isPopular, isUpdated, tags }}
+	{#each projects as { title, text, img, link, isNew, isPopular, isUpdated, tags } (link)}
 		{#if sort === null || (sort === 'new' && isNew) || (sort === 'popular' && isPopular) || (sort === 'updated' && isUpdated)}
 			<AppCard {title} {text} {img} {link} {isNew} {isPopular} {isUpdated} {tags} />
 		{/if}
 	{/each}
 </div>
+
+{#if sort !== null}
+	<a class="btn btn-primary" href="/projects">View all projects</a>
+{/if}
