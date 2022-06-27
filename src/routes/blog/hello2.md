@@ -1,12 +1,12 @@
 ---
 layout: blog_layout
 title: 'hello world'
-date: '2022/06/26'
-author: 'Justin Golden'
+date: '2022/06/27'
 preview_text: 'All about hello and world'
-categories: ['webdev', 'world']
+categories: ['design']
+hidden: true
 ---
 
-### hello
+### helloo
 
-world
+worldo

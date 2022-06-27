@@ -14,9 +14,9 @@
 		</div>
 		<div>
 			<span class="footer-title">Blog</span>
-			<a class="link link-hover" href="/blog">Blog</a>
-			<!-- <a class="link link-hover">Web Development</a>
-			<a class="link link-hover">Design</a> -->
+			<a class="link link-hover" href="/blog">All Posts</a>
+			<a class="link link-hover" href="/blog?category=webdev">Web Dev</a>
+			<a class="link link-hover" href="/blog?category=design">Design</a>
 		</div>
 		<div>
 			<!-- <span class="footer-title">Services</span>

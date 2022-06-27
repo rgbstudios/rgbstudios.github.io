@@ -28,7 +28,17 @@
 						<li><a href="/projects?sort=updated">Recently Updated</a></li>
 					</ul>
 				</li>
-				<li><a href="/blog">Blog</a></li>
+				<li tabindex="1">
+					<a class="justify-between">
+						Blog
+						<Icon name="chevron_right" class="w-4 h-4" />
+					</a>
+					<ul class="p-2 bg-base-100">
+						<li><a href="/blog">All Posts</a></li>
+						<li><a href="/blog?category=webdev">Web Dev</a></li>
+						<li><a href="/blog?category=design">Design</a></li>
+					</ul>
+				</li>
 				<li><a href="/about">About Us</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
@@ -53,7 +63,17 @@
 					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
-			<li><a href="/blog" class:active={$page.url.pathname === '/blog'}>Blog</a></li>
+			<li tabindex="1">
+				<a class:active={$page.url.pathname === '/blog'}>
+					Blog
+					<Icon name="chevron_down" class="w-4 h-4" />
+				</a>
+				<ul class="p-2 bg-base-100">
+					<li><a href="/blog">All Posts</a></li>
+					<li><a href="/blog?category=webdev">Web Dev</a></li>
+					<li><a href="/blog?category=design">Design</a></li>
+				</ul>
+			</li>
 			<li><a href="/about" class:active={$page.url.pathname === '/about'}>About Us</a></li>
 			<li><a href="/contact" class:active={$page.url.pathname === '/contact'}>Contact</a></li>
 		</ul>
