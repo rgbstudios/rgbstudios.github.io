@@ -11,7 +11,11 @@
 		<a href="/projects?sort=new">New</a>
 		<a href="/projects?sort=updated">Recently Updated</a>
 
+		<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Blog</h2>
+		<a href="/blog">Blog</a>
+
 		<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Company</h2>
+		<a href="/">Home</a>
 		<a href="/about">About us</a>
 		<a href="/contact">Contact</a>
 	</div>

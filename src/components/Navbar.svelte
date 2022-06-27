@@ -53,13 +53,13 @@
 					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
-			<li><a href="/blog">Blog</a></li>
+			<li><a href="/blog" class:active={$page.url.pathname === '/blog'}>Blog</a></li>
 			<li><a href="/about" class:active={$page.url.pathname === '/about'}>About Us</a></li>
 			<li><a href="/contact" class:active={$page.url.pathname === '/contact'}>Contact</a></li>
 		</ul>
 	</div>
 
 	<div class="navbar-end">
-		<a class="btn btn-outline">Get in touch</a>
+		<a class="btn btn-outline" href="/contact">Get in touch</a>
 	</div>
 </div>

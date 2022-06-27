@@ -13,8 +13,9 @@
 			<a class="link link-hover" href="/projects?sort=updated">Recently Updated</a>
 		</div>
 		<div>
-			<!-- <span class="footer-title">Blog</span>
-			<a class="link link-hover">Web Development</a>
+			<span class="footer-title">Blog</span>
+			<a class="link link-hover" href="/blog">Blog</a>
+			<!-- <a class="link link-hover">Web Development</a>
 			<a class="link link-hover">Design</a> -->
 		</div>
 		<div>

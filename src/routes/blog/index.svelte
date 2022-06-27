@@ -17,7 +17,7 @@
 </script>
 
 <script>
-	// import BlogCard from '../components/BlogCard.svelte';
+	import BlogCard from '../../components/BlogCard.svelte';
 	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
 
 	export let posts;
@@ -41,15 +41,9 @@
 
 <article class="prose lg:prose-xl mx-auto">
 	<h1 class="text-center">Blog</h1>
-	{#each posts.posts as post}
-		{#each post.categories as category}
-			<div class="badge badge-outline">{category}</div>
-		{/each}
-		<a href="/blog/{post.slug}">{post.title}</a>
-	{/each}
 </article>
-<!-- <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-	{#each blogs as { title, text, img, link, tags }}
-		<BlogCard {title} {text} {img} {link} {tags} />
+<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	{#each posts.posts as { title, preview_text, slug, categories }}
+		<BlogCard {title} text={preview_text} link="/blog/{slug}" tags={categories} />
 	{/each}
-</div> -->
+</div>
