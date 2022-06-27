@@ -83,3 +83,17 @@
 		<a class="btn btn-outline" href="/contact">Get in touch</a>
 	</div>
 </div>
+<div class="navbar-bottom sticky top-16 z-10" />
+
+<style>
+	.navbar-bottom {
+		@apply w-full h-2 opacity-50 hidden lg:block;
+		background: linear-gradient(
+			-45deg,
+			var(--brand-red) 33%,
+			var(--brand-green) 33%,
+			var(--brand-green) 67%,
+			var(--brand-blue) 67%
+		);
+	}
+</style>
