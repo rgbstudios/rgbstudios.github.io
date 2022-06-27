@@ -27,6 +27,7 @@
 		url,
 		articleData = null;
 
+	let HOST_URL = $page.url.host;
 	onMount(() => {
 		if (!url) url = window.location.href;
 	});
@@ -35,11 +36,11 @@
 <svelte:head>
 	<title>{title}</title>
 
-	<link rel="icon" href="{$page.url.host}img/rgb_logo_64.png" />
+	<link rel="icon" href="{HOST_URL}/img/rgb_logo_64.png" />
 	<meta name="apple-mobile-web-app-status-bar" content="#111111" />
 	<meta name="theme-color" content="#111111" />
 	<meta name="msapplication-TileColor" content="#111111" />
-	<link rel="mask-icon" href="{$page.url.host}img/rgb_logo_64.png" color="#111111" />
+	<link rel="mask-icon" href="{HOST_URL}/img/rgb_logo_64.png" color="#111111" />
 
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
@@ -52,19 +53,19 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:title" content={title} />
 	<meta property="og:url" content={url} />
-	<meta property="og:image" content={$page.url.host + screenshot} />
+	<meta property="og:image" content={HOST_URL + '/' + screenshot} />
 	<meta property="og:site_name" content={title} />
 
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content={$page.url.host + screenshot} />
+	<meta name="twitter:image" content={HOST_URL + '/' + screenshot} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content={url} />
 
 	<link rel="canonical" href={url} />
 
 	{#if articleData !== null}
-		<meta property="article:publisher" content={$page.url.host} />
+		<meta property="article:publisher" content={HOST_URL} />
 		<meta property="article:published_time" content={articleData.published_time} />
 		<meta property="article:modified_time" content={articleData.modified_time} />
 		<meta property="article:author" content={articleData.author} />
