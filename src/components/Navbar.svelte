@@ -28,6 +28,7 @@
 						<li><a href="/projects?sort=updated">Recently Updated</a></li>
 					</ul>
 				</li>
+				<li><a href="/blog">Blog</a></li>
 				<li><a href="/about">About Us</a></li>
 				<li><a href="/contact">Contact</a></li>
 			</ul>
@@ -52,6 +53,7 @@
 					<li><a href="/projects?sort=updated">Recently Updated</a></li>
 				</ul>
 			</li>
+			<li><a href="/blog">Blog</a></li>
 			<li><a href="/about" class:active={$page.url.pathname === '/about'}>About Us</a></li>
 			<li><a href="/contact" class:active={$page.url.pathname === '/contact'}>Contact</a></li>
 		</ul>
