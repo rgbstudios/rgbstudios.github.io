@@ -1,5 +1,5 @@
 <script>
-	export let title, text, link, tags;
+	export let title, text, link, tags, img;
 </script>
 
 <a href={link} class="card bg-base-200 shadow-xl cursor-pointer no-underline m-4">
@@ -14,4 +14,5 @@
 			{/each}
 		</div>
 	</div>
+	<figure><img src={img} alt={title} class="w-full h-72 object-cover object-top" /></figure>
 </a>

@@ -4,8 +4,11 @@ title: 'File Size on the Web'
 date: '2022/06/26'
 author: 'Justin Golden'
 preview_text: 'PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why.'
+img: '/img/blog/slow_website_frustration.avif'
 categories: ['webdev']
 ---
+
+<img src="/img/blog/slow_website_frustration.avif">
 
 ### Why do web developers care so much about a few kilobytes?
 

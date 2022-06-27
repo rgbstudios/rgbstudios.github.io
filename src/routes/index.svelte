@@ -24,6 +24,7 @@
 	text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
 	link="/blog/file-size-on-the-web"
 	tags={['webdev']}
+	img="/img/blog/slow_website_frustration.avif"
 />
 
 <article class="prose lg:prose-xl mx-auto my-8">
