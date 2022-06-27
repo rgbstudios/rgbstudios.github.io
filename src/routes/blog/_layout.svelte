@@ -1,8 +1,15 @@
 <script>
+	import { onMount } from 'svelte';
+
 	export let title, date, author, categories;
 
 	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
 	import ShareButtons from '../../components/ShareButtons.svelte';
+
+	$: link = '';
+	onMount(() => {
+		link = window.location.href;
+	});
 </script>
 
 <svelte:head><title>{title} | RGB Studios</title></svelte:head>
@@ -31,4 +38,4 @@
 	<slot />
 </article>
 
-<ShareButtons {title} link={window.location.href} />
+<ShareButtons {title} {link} />
