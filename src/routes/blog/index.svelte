@@ -1,14 +1,7 @@
 <script context="module">
 	export async function load({ fetch }) {
 		const res = await fetch('/blog/posts.json');
-		// const { posts } = await res.json();
-
-		let posts = null;
-		try {
-			posts = await res.json();
-		} catch (e) {
-			posts = await res.text();
-		}
+		const { posts } = await res.json();
 
 		return {
 			props: { posts }
@@ -29,7 +22,7 @@
 
 	$: category = $page.url.searchParams.get('category');
 
-	$: filteredPosts = posts.posts
+	$: filteredPosts = posts
 		?.filter((post) => !post.hidden)
 		.filter((post) => category === null || post.categories.includes(category))
 		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
