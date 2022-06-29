@@ -37,11 +37,11 @@
 <svelte:head>
 	<title>{title}</title>
 
-	<link rel="icon" href={icon} />
+	<link rel="icon" href={HOST_URL + '/' + icon} />
 	<meta name="apple-mobile-web-app-status-bar" content="#111111" />
 	<meta name="theme-color" content="#111111" />
 	<meta name="msapplication-TileColor" content="#111111" />
-	<link rel="mask-icon" href={icon} color="#111111" />
+	<link rel="mask-icon" href={HOST_URL + '/' + icon} color="#111111" />
 
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
