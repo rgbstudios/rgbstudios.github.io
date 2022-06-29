@@ -1,8 +1,7 @@
 <script>
 	import Alert from '../../components/Alert.svelte';
-	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
 	import Icon from '../../components/Icon.svelte';
-	import SEO from '../../components/SEO.svelte';
+	import ProjectHeader from '../../components/ProjectHeader.svelte';
 
 	import copyText from '../../util/copyText';
 
@@ -133,9 +132,8 @@
 	}
 </script>
 
-<!-- TODO screenshot in SEO -->
-<SEO
-	title="Morse Code Converter | RGB Studios"
+<ProjectHeader
+	title="Morse Code Converter"
 	description="Use Morse Code Converter to convert both ways between English and Morse code"
 	keywords={[
 		'morse code',
@@ -147,29 +145,9 @@
 		'to morse code',
 		'english'
 	]}
-	icon="/img/projects/morse-convert.png"
+	icon="img/projects/icons/morse-convert.png"
+	screenshot="img/projects/screenshots/morse-convert.png"
 />
-
-<Breadcrumbs
-	breadcrumbs={[
-		{
-			text: 'Home',
-			link: '/'
-		},
-		{
-			text: 'Projects',
-			link: '/projects'
-		},
-		{
-			text: 'Morse Convert'
-		}
-	]}
-/>
-
-<article class="prose lg:prose-xl mx-auto">
-	<img class="mx-auto" src="/img/projects/morse-convert.png" width="64px" alt="" />
-	<h1 class="text-center">Morse Code Converter</h1>
-</article>
 
 <label for="english">English</label>
 <div class="input-group">
@@ -194,6 +172,8 @@
 	</button>
 </div>
 
+<br />
+
 <label for="morse">Morse</label>
 <div class="input-group">
 	<button on:click={copyMorse} title="Copy" type="button" class="btn btn-secondary">
@@ -216,19 +196,20 @@
 		<Icon name="close" class="w-6 h-6" />
 	</button>
 </div>
-<br />
 
+<br />
 <Alert
 	text="Space between characters are represented with spaces. Space between words are represented with
 slashes ( / )"
 />
+<br />
 
 <p>Conversion Table</p>
 <div class="input-group">
 	<input
 		bind:value={searchVal}
 		type="text"
-		class="input w-full max-w-xs"
+		class="input input-bordered w-full max-w-xs"
 		placeholder="Search the table..."
 		autocomplete="off"
 		autocorrect="off"
