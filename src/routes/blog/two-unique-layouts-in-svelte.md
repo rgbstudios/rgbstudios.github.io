@@ -6,7 +6,7 @@ updated_date: '2022/06/29'
 author: 'Justin Golden'
 preview_text: "If you ever struggled to use one layout for some pages, and another layout that doesn't inherit from the base layout, read on."
 img: '/img/blog/two_doors.avif'
-categories: ['webdev']
+categories: ['webdev', 'svelte', 'svelte kit']
 keywords:
   [
     'svelte kit layouts',
