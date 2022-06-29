@@ -15,7 +15,7 @@
 			var(--brand-blue) 67%
 		);
 	}
-	.rgb-banner img {
+	/* .rgb-banner img {
 		animation: rotate 12s ease-in-out infinite;
 	}
 
@@ -41,5 +41,5 @@
 		100% {
 			-webkit-transform: rotate(360deg);
 		}
-	}
+	} */
 </style>
