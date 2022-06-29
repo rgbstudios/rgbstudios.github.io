@@ -18,5 +18,7 @@
 			<Icon name="home" class="w-6 h-6" />
 		</a>
 	</div>
-	<figure><img src={img} alt={title} class="w-full h-72 object-cover object-top" /></figure>
+	<figure>
+		<img src={img} alt={title} class="w-full h-72 object-cover object-top grayscale" />
+	</figure>
 </div>
