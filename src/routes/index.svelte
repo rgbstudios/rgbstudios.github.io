@@ -1,3 +1,14 @@
+<script context="module">
+	export async function load({ fetch }) {
+		const res = await fetch('/blog/posts.json');
+		const { posts } = await res.json();
+
+		return {
+			props: { posts }
+		};
+	}
+</script>
+
 <script>
 	import FeaturedAppCarousel from '../components/FeaturedAppCarousel.svelte';
 	import BlogCard from '../components/BlogCard.svelte';
@@ -5,7 +16,15 @@
 
 	import projects from '../data/projects';
 
-	$: featured = projects.filter((p) => p.isFeatured);
+	export let posts;
+
+	$: featuredPosts = posts
+		?.filter((post) => !post.hidden)
+		.filter((post) => post.categories.includes('webdev')) // TODO criteria for featured
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+		.slice(0, 4);
+
+	$: featuredApps = projects.filter((p) => p.isFeatured);
 </script>
 
 <SEO />
@@ -13,20 +32,16 @@
 <div class="prose lg:prose-xl my-8">
 	<h3>Featured Projects:</h3>
 </div>
-<FeaturedAppCarousel slides={featured} />
+<FeaturedAppCarousel slides={featuredApps} />
 
 <div class="prose lg:prose-xl my-8">
 	<hr />
 	<h3>Featured Articles:</h3>
 </div>
 <div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-	<BlogCard
-		title="File Size on the Web"
-		text="PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why."
-		link="/blog/file-size-on-the-web"
-		tags={['webdev']}
-		img="/img/blog/slow_website_frustration.avif"
-	/>
+	{#each featuredPosts as { title, preview_text, slug, categories, img } (slug)}
+		<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
+	{/each}
 </div>
 
 <article class="prose lg:prose-xl my-8">
