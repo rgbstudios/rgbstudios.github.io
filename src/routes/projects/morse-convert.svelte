@@ -244,5 +244,3 @@ slashes ( / )"
 	and
 	<a class="link link-hover" href="https://morsecode.world/" target="_blank"> morsecode.world </a>
 </p>
-
-<!-- TODO share btns -->
