@@ -1,0 +1,25 @@
+<script>
+	import Icon from './Icon.svelte';
+	const year = new Date().getFullYear();
+</script>
+
+<footer class="footer items-center p-4 bg-neutral text-neutral-content">
+	<div class="items-center grid-flow-col">
+		<img class="w-12 h-12" src="/img/rgb_logo_64.png" alt="RGB logo" />
+		<p>
+			<a class="link link-hover font-bold" href="/">RGB Studios</a>
+			<br />
+			Simple webapps and more
+			<br />
+			&copy; Copyright {year}
+		</p>
+	</div>
+	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+		<a href="https://twitter.com/rgbstudiosorg" target="_blank">
+			<Icon name="twitter" class="w-6 h-6" />
+		</a>
+		<a href="https://www.facebook.com/rgbstudios.org" target="_blank">
+			<Icon name="facebook" class="w-6 h-6" />
+		</a>
+	</div>
+</footer>
