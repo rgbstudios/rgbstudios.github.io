@@ -11,7 +11,12 @@
 		</h2>
 		<p class="mt-4">{text}</p>
 	</div>
-	<img src={img} alt={title} class="w-full h-72 object-cover object-top grayscale mb-8" />
+	<img
+		src={img}
+		alt={title}
+		class="h-full w-72 sm:w-full sm:h-72 mx-auto object-cover object-top grayscale b-8"
+	/>
+
 	<a href="mailto:{email}" class="btn btn-outline">
 		<Icon name="envelope" class="w-6 h-6" />
 	</a>
