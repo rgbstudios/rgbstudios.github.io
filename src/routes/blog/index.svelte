@@ -32,7 +32,7 @@
 	$: filteredPosts = posts.posts
 		?.filter((post) => !post.hidden)
 		.filter((post) => category === null || post.categories.includes(category))
-		.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 	$: pageTitle = category === null ? 'Blog' : `${capitalize(category)} Blog Posts`;
 </script>
