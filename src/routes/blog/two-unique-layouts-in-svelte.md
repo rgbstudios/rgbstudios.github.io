@@ -17,6 +17,7 @@ keywords:
 ---
 
 <img src="/img/blog/two_doors.avif">
+<figcaption>Photo credit @erol on Unsplash</figcaption>
 
 ### The Problem
 

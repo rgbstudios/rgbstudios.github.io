@@ -55,6 +55,7 @@ export default redirects;
 ```
 
 <img src="/img/blog/redirect_road.avif">
+<figcaption>Photo credit @35mm on Unsplash</figcaption>
 
 ### The Details
 
