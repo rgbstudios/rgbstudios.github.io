@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="5 -5 64 64">
+<style type="text/css">
+	.st0{fill:#333;}
+	.st1{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+</style>
+<circle class="st0" cx="37" cy="27" r="24"/>
+<line class="st1" x1="49" y1="19" x2="28.2" y2="31"/>
+<line class="st1" x1="47.5" y1="24.5" x2="49" y2="19"/>
+<line class="st1" x1="43.5" y1="17.5" x2="49" y2="19"/>
+<line class="st1" x1="33.9" y1="14.6" x2="44.1" y2="36.3"/>
+<line class="st1" x1="39.2" y1="16.5" x2="33.9" y2="14.6"/>
+<line class="st1" x1="32" y1="19.9" x2="33.9" y2="14.6"/>
+<circle class="st0" cx="39" cy="25" r="2"/>
+</svg>
