@@ -1,5 +1,4 @@
 <script>
-	import { validate_component } from 'svelte/internal';
 	import Alert from '../../components/Alert.svelte';
 	import Icon from '../../components/Icon.svelte';
 	import ProjectHeader from '../../components/ProjectHeader.svelte';
@@ -10,10 +9,62 @@
 		octal = '0',
 		decimal = '0',
 		hex = '0';
-	const convert = (val, base) => {
-		return;
+
+	let simpleError = '';
+
+	// up and down arrow to change number inputs
+	const keyup = (e) => {
+		if (e.keyCode !== 38 && e.keyCode !== 40) return;
+		if (document.activeElement.nodeName !== 'INPUT') return;
+
+		let baseNames = { binary: 2, octal: 8, decimal: 10, hex: 16 };
+		let base = baseNames[document.activeElement.id];
+
+		if (base === undefined) return;
+
+		if (e.keyCode === 38) {
+			//up
+			document.activeElement.value = add(document.activeElement.value, 1, base);
+			convert(e.target.value, base);
+		} else if (e.keyCode === 40) {
+			//down
+			document.activeElement.value = add(document.activeElement.value, -1, base);
+			convert(e.target.value, base);
+		}
+		if (document.activeElement.value === 'NAN') document.activeElement.value = '0';
+		document.activeElement.select();
 	};
+
+	function add(val, addend, base) {
+		let decimalAns = parseInt(val, base);
+		decimalAns += addend;
+		try {
+			return decimalAns.toString(base).toUpperCase();
+		} catch (err) {
+			//only catches if invalid base in arithmetic modal
+			showError('Error - Invalid Inputs');
+		}
+	}
+
+	function convert(val, base) {
+		val = val ?? '0';
+
+		let decimalAns = parseInt(val, base);
+		if (isNaN(decimalAns)) {
+			simpleError = 'Invalid input';
+			return;
+		}
+
+		simpleError = '';
+
+		binary = decimalAns.toString(2);
+		octal = decimalAns.toString(8);
+		decimal = decimalAns.toString(10);
+		hex = decimalAns.toString(16).toUpperCase();
+	}
 </script>
+
+<svelte:window on:keyup={keyup} />
 
 <ProjectHeader
 	title="Base Converter"
@@ -38,11 +89,12 @@
 	screenshot="img/projects/screenshots/base-convert.png"
 />
 
-<div class="grid sm:grid-cols-2 md:grid-cols-4">
+<div class="grid sm:grid-cols-2 md:grid-cols-4 my-8">
 	<label>
 		<input
+			id="binary"
 			bind:value={binary}
-			on:change={(e) => convert(e.target.value, 2)}
+			on:keyup={(e) => convert(e.target.value, 2)}
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 		/>
@@ -50,8 +102,9 @@
 	</label>
 	<label>
 		<input
+			id="octal"
 			bind:value={octal}
-			on:change={(e) => convert(e.target.value, 8)}
+			on:keyup={(e) => convert(e.target.value, 8)}
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 		/>
@@ -59,8 +112,9 @@
 	</label>
 	<label>
 		<input
+			id="decimal"
 			bind:value={decimal}
-			on:change={(e) => convert(e.target.value, 10)}
+			on:keyup={(e) => convert(e.target.value, 10)}
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 		/>
@@ -68,8 +122,9 @@
 	</label>
 	<label>
 		<input
+			id="hex"
 			bind:value={hex}
-			on:change={(e) => convert(e.target.value, 16)}
+			on:keyup={(e) => convert(e.target.value, 16)}
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 			spellcheck="false"
@@ -78,22 +133,19 @@
 	</label>
 </div>
 
-<br />
+<Alert text="Use arrow keys to increment or decrement your input" />
 
-<Alert
-	text="Use Tab and Shift+Tab to navigate inputs. Hit Enter to Tab to calculate other values. Use arrow keys to increment or decrement your input"
-/>
+<p class="bg-error {simpleError && 'p-2'}">{simpleError}</p>
 
-<p id="simpleError" class="errorP" />
 <hr />
 
 <div class="overflow-x-auto">
-	<table class="table table-compact w-full">
+	<table class="table table-compact w-full border">
 		<tr>
-			<th class="text-center">Decimal (base 10)</th>
-			<th class="text-center">Binary (base 2)</th>
-			<th class="text-center">Octal (base 8)</th>
-			<th class="text-center">Hexadecimal (base 16)</th>
+			<th>Decimal (base 10)</th>
+			<th>Binary (base 2)</th>
+			<th>Octal (base 8)</th>
+			<th>Hexadecimal (base 16)</th>
 		</tr>
 		<tr>
 			<td>00</td>
@@ -194,12 +246,25 @@
 	</table>
 </div>
 
-<button id="downloadChartButton" class="btn">
+<a href="/img/projects/other/base-chart-light.png" download="base-chart-light.png" class="btn">
 	<Icon name="download" />
-	Download chart
-</button>
+	Download light chart
+</a>
 
-<button id="printButton" class="btn">
+<a href="/img/projects/other/base-chart-dark.png" download="base-chart-dark.png" class="btn">
+	<Icon name="download" />
+	Download dark chart
+</a>
+
+<button
+	on:click={() => {
+		const page = window.open();
+		page.document.write(
+			'<title>Reference Table | Base Converter</title><img src="/img/projects/other/base-chart-light.png" onload="print();">'
+		);
+	}}
+	class="btn"
+>
 	<Icon name="print" />
 	Print chart
 </button>
