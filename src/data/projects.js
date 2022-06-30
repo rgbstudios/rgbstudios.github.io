@@ -100,7 +100,6 @@ const projects = [
 		tags: ['art', 'drawing', 'tool', 'web app']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Morse Code Converter',
 		text: 'Use Morse Code Converter to convert both ways between English and Morse code',
 		img: 'img/projects/screenshots/morse-convert.png',
