@@ -76,11 +76,10 @@ const projects = [
 		tags: ['calculator', 'converter', 'educational', 'tool', 'web app']
 	},
 	{
-		// TODO add sharethis and cleanup site
 		title: 'Intersect Calc',
 		text: 'Use Intersection Calc to calculate the intersection point of lines',
-		img: 'img/screenshots/intersect_calc.png',
-		link: 'https://rgbstudios.org/intersect-calc/',
+		img: 'img/projects/screenshots/intersect-calc.png',
+		link: '/projects/intersect-calc/',
 		tags: ['calculator', 'educational', 'tool', 'web app']
 	},
 	{
