@@ -69,11 +69,10 @@ const projects = [
 		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
-		// TODO add sharethis and cleanup site
-		title: 'Base Convert',
-		text: 'Contvert numbers between binary, octal, decimal, hexadecimal, and more',
-		img: 'img/screenshots/base_convert.png',
-		link: 'https://rgbstudios.org/base-convert/',
+		title: 'Base Converter',
+		text: 'Convert numbers between binary, octal, decimal, hexadecimal, and more',
+		img: 'img/projects/screenshots/base-convert.png',
+		link: '/projects/base-convert/',
 		tags: ['calculator', 'converter', 'educational', 'tool', 'web app']
 	},
 	{
@@ -102,10 +101,10 @@ const projects = [
 	},
 	{
 		// TODO cleanup and add sharethis
-		title: 'Morse Convert',
+		title: 'Morse Code Converter',
 		text: 'Use Morse Code Converter to convert both ways between English and Morse code',
-		img: 'img/screenshots/morse_convert.png',
-		link: 'https://rgbstudios.org/morse-convert/',
+		img: 'img/projects/screenshots/morse-convert.png',
+		link: '/projects/morse-convert/',
 		tags: ['morse code', 'converter', 'tool', 'web app']
 	},
 	{

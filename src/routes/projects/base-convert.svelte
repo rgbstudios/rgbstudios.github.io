@@ -75,7 +75,7 @@
 
 <ProjectHeader
 	title="Base Converter"
-	description="Contvert numbers between binary, octal, decimal, and hexadecimal"
+	description="Convert numbers between binary, octal, decimal, hexadecimal, and more"
 	keywords={[
 		'base converter',
 		'convert number bases',
@@ -105,7 +105,7 @@
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 		/>
-		<sub>2 </sub> Binary
+		<p class="inline sm:block"><sub>2 </sub> Binary</p>
 	</label>
 	<label>
 		<input
@@ -115,7 +115,7 @@
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 		/>
-		<sub>8 </sub> Octal
+		<p class="inline sm:block"><sub>8 </sub> Octal</p>
 	</label>
 	<label>
 		<input
@@ -125,7 +125,7 @@
 			class="input input-bordered w-full max-w-xs"
 			type="text"
 		/>
-		<sub>10 </sub> Decimal
+		<p class="inline sm:block"><sub>10 </sub> Decimal</p>
 	</label>
 	<label>
 		<input
@@ -136,7 +136,7 @@
 			type="text"
 			spellcheck="false"
 		/>
-		<sub>16 </sub> Hex
+		<p class="inline sm:block"><sub>16 </sub> Hex</p>
 	</label>
 </div>
 
