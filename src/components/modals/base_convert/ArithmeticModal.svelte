@@ -142,3 +142,4 @@
 	style="cursor:text;"
 />
 <p class="bg-error {complexError && 'p-2'}">{complexError}</p>
+<p>Note: max base is 36</p>
