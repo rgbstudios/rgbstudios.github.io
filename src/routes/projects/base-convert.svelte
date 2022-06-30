@@ -1,4 +1,11 @@
 <script>
+	/**
+	 * Maybe TODO
+	 * enter custom length (nible, byte, 4 bytes) and format to that/pad zeros
+	 * signed or unsigned?
+	 * enter comma seperated list of items to convert
+	 */
+
 	import Alert from '../../components/Alert.svelte';
 	import Icon from '../../components/Icon.svelte';
 	import ProjectHeader from '../../components/ProjectHeader.svelte';
@@ -137,10 +144,8 @@
 
 <p class="bg-error {simpleError && 'p-2'}">{simpleError}</p>
 
-<hr />
-
-<div class="overflow-x-auto">
-	<table class="table table-compact w-full border">
+<div class="overflow-x-auto my-8">
+	<table class="table table-compact w-full">
 		<tr>
 			<th>Decimal (base 10)</th>
 			<th>Binary (base 2)</th>
@@ -269,7 +274,7 @@
 	Print chart
 </button>
 
-<hr class="my-4" />
+<hr class="my-8" />
 
 <button
 	on:click={() => open('base_convert/ArithmeticModal')}
