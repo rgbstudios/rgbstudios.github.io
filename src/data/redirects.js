@@ -1,8 +1,8 @@
 const redirects = [
-	// {
-	// 	source: '/test1',
-	// 	destination: '/test2'
-	// }
+	{
+		source: '/morse-convert',
+		destination: '/projects/morse-convert'
+	}
 ];
 
 export default redirects;
