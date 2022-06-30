@@ -4,7 +4,7 @@
 	export let title, text, img, link, email;
 </script>
 
-<div class="card bg-base-200 shadow-xl m-4">
+<div class="card bg-base-200 m-4">
 	<div class="card-body">
 		<h2 class="card-title text-3xl">
 			{title}
