@@ -16,10 +16,10 @@
 	</div>
 	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
 		<a href="https://twitter.com/rgbstudiosorg" target="_blank">
-			<Icon name="twitter" class="w-6 h-6" />
+			<Icon name="twitter" />
 		</a>
 		<a href="https://www.facebook.com/rgbstudios.org" target="_blank">
-			<Icon name="facebook" class="w-6 h-6" />
+			<Icon name="facebook" />
 		</a>
 	</div>
 </footer>

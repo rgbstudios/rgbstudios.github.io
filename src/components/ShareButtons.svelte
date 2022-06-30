@@ -70,7 +70,7 @@
 	class="btn btn-outline"
 	title="Facebook"
 >
-	<Icon name="facebook" class="w-6 h-6" />
+	<Icon name="facebook" />
 	&nbsp; Share
 </a>
 
@@ -82,7 +82,7 @@
 	class="btn btn-outline"
 	title="Twitter"
 >
-	<Icon name="twitter" class="w-6 h-6" />
+	<Icon name="twitter" />
 	&nbsp; Tweet
 </a>
 
@@ -92,7 +92,7 @@
 	class="btn btn-outline"
 	title="Pinterest"
 >
-	<Icon name="pinterest" class="w-6 h-6" />
+	<Icon name="pinterest" />
 	&nbsp; Pin
 </a>
 
@@ -104,7 +104,7 @@
 	class="btn btn-outline"
 	title="Reddit"
 >
-	<Icon name="reddit" class="w-6 h-6" />
+	<Icon name="reddit" />
 	&nbsp; Post
 </a>
 
@@ -114,7 +114,7 @@
 	class="btn btn-outline"
 	title="Linkedin"
 >
-	<Icon name="linkedin" class="w-6 h-6" />
+	<Icon name="linkedin" />
 	&nbsp; Post
 </a>
 
@@ -124,7 +124,7 @@
 	class="btn btn-outline"
 	title="Whatsapp"
 >
-	<Icon name="whatsapp" class="w-6 h-6" />
+	<Icon name="whatsapp" />
 	&nbsp; Share
 </a>
 
@@ -137,7 +137,7 @@
 	class="btn btn-outline"
 	title="Email"
 >
-	<Icon name="envelope" class="w-6 h-6" />
+	<Icon name="envelope" />
 	&nbsp; Email
 </a>
 
@@ -155,18 +155,18 @@
 	class="btn btn-outline"
 	title="Copy Link"
 >
-	<Icon name="copy" class="w-6 h-6" />
+	<Icon name="copy" />
 	&nbsp;
 	{copied ? 'Copied' : 'Copy Link'}
 </button>
 
 <button on:click={() => shareApp(title, '', link)} class="btn btn-outline" title="Share">
-	<Icon name="share" class="w-6 h-6" />
+	<Icon name="share" />
 	&nbsp; Share
 </button>
 
 <button on:click={() => window.print()} class="btn btn-outline" title="Share">
-	<Icon name="print" class="w-6 h-6" />
+	<Icon name="print" />
 	&nbsp; Print
 </button>
 
