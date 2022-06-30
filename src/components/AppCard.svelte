@@ -2,7 +2,11 @@
 	export let title, text, img, link, isNew, isPopular, isUpdated, tags;
 </script>
 
-<a href={link} target="_blank" class="card bg-base-200 shadow-xl cursor-pointer no-underline m-4">
+<a
+	href={link}
+	target="_blank"
+	class="card bg-base-200 ring-base-300 hover:ring-2 cursor-pointer no-underline m-4"
+>
 	<div class="card-body">
 		<h2 class="card-title text-3xl">
 			{title}
