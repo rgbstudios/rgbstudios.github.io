@@ -10,6 +10,6 @@ export async function get() {
 		},
 		body: `User-agent: *
 Disallow:
-Sitemap: ${BASE_URL}/sitemap.xml`.trim()
+Sitemap: ${BASE_URL}sitemap.xml`.trim()
 	};
 }
