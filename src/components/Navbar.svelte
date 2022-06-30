@@ -8,7 +8,7 @@
 	<div class="navbar-start">
 		<div class="dropdown">
 			<button class="btn btn-ghost lg:hidden">
-				<Icon name="menu" class="w-6 h-6" />
+				<Icon name="menu" />
 			</button>
 			<ul
 				tabindex="0"

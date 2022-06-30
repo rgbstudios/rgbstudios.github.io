@@ -152,7 +152,7 @@
 <label for="english">English</label>
 <div class="input-group">
 	<button on:click={copyEnglish} title="Copy" type="button" class="btn btn-secondary">
-		<Icon name={copiedEnglish ? 'check' : 'copy'} class="w-6 h-6" />
+		<Icon name={copiedEnglish ? 'check' : 'copy'} />
 	</button>
 	<input
 		bind:value={englishVal}
@@ -168,7 +168,7 @@
 		spellcheck="false"
 	/>
 	<button on:click={() => (englishVal = '')} title="Clear" type="button" class="btn btn-secondary">
-		<Icon name="close" class="w-6 h-6" />
+		<Icon name="close" />
 	</button>
 </div>
 
@@ -177,7 +177,7 @@
 <label for="morse">Morse</label>
 <div class="input-group">
 	<button on:click={copyMorse} title="Copy" type="button" class="btn btn-secondary">
-		<Icon name={copiedMorse ? 'check' : 'copy'} class="w-6 h-6" />
+		<Icon name={copiedMorse ? 'check' : 'copy'} />
 	</button>
 	<input
 		bind:value={morseVal}
@@ -193,7 +193,7 @@
 		spellcheck="false"
 	/>
 	<button on:click={() => (morseVal = '')} title="Clear" type="button" class="btn btn-secondary">
-		<Icon name="close" class="w-6 h-6" />
+		<Icon name="close" />
 	</button>
 </div>
 
@@ -217,7 +217,7 @@ slashes ( / )"
 		spellcheck="false"
 	/>
 	<button title="Search" type="button" class="btn btn-secondary">
-		<Icon name="search" class="w-6 h-6" />
+		<Icon name="search" />
 	</button>
 </div>
 

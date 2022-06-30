@@ -18,9 +18,9 @@
 	/>
 
 	<a href="mailto:{email}" class="btn btn-outline">
-		<Icon name="envelope" class="w-6 h-6" />
+		<Icon name="envelope" />
 	</a>
 	<a href={link} target="_blank" class="btn btn-outline">
-		<Icon name="home" class="w-6 h-6" />
+		<Icon name="home" />
 	</a>
 </div>

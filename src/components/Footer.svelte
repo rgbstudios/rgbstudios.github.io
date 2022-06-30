@@ -43,13 +43,13 @@
 		<div class="md:place-self-center md:justify-self-end">
 			<div class="grid grid-flow-col gap-4">
 				<a href="https://twitter.com/rgbstudiosorg" target="_blank">
-					<Icon name="twitter" class="w-6 h-6" />
+					<Icon name="twitter" />
 				</a>
 				<!-- <a>
-					<Icon name="youtube" class="w-6 h-6" />
+					<Icon name="youtube" />
 				</a> -->
 				<a href="https://www.facebook.com/rgbstudios.org" target="_blank">
-					<Icon name="facebook" class="w-6 h-6" />
+					<Icon name="facebook" />
 				</a>
 			</div>
 		</div>
