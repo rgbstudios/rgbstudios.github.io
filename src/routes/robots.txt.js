@@ -1,5 +1,3 @@
-// http://localhost:3000/robots.txt
-
 const BASE_URL = 'https://rgbstudios.org/';
 
 export async function get() {

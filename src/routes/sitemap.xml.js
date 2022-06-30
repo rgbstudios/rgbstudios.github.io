@@ -1,7 +1,5 @@
 // https://www.sitemaps.org/protocol.html
 
-// http://localhost:3000/sitemap.xml
-
 const pages = [
 	{
 		url: '',
@@ -36,7 +34,19 @@ const pages = [
 
 const BASE_URL = 'https://rgbstudios.org/';
 
-export async function get() {
+export async function get({ url }) {
+	const res = await fetch(url.origin + '/blog/posts.json');
+	const { posts } = await res.json();
+	const postPages = posts
+		?.filter((post) => !post.hidden)
+		.map((post) => {
+			return {
+				url: `blog/${post.slug}`,
+				priority: 0.6
+			};
+		});
+	pages.push(...postPages);
+
 	return {
 		headers: {
 			'Cache-Control': 'max-age=0, s-maxage=3600',
