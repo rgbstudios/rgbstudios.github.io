@@ -1,5 +1,5 @@
 <script>
-	import ProjectHeader from '../../components/ProjectHeader.svelte';
+	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	let m1 = 1;
 	let m2 = 1;

@@ -6,11 +6,11 @@
 	 * enter comma seperated list of items to convert
 	 */
 
-	import Alert from '../../components/Alert.svelte';
-	import Icon from '../../components/Icon.svelte';
-	import ProjectHeader from '../../components/ProjectHeader.svelte';
+	import Alert from '$lib/components/Alert.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
-	import { open } from '../../util/modal';
+	import { open } from '$lib/util/modal';
 
 	let binary = '0',
 		octal = '0',

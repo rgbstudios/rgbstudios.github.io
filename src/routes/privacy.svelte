@@ -1,5 +1,5 @@
 <script>
-	import SEO from '../components/SEO.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
 
 <SEO title="Privacy Policy | RGB Studios.org" />

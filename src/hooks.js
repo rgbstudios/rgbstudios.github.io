@@ -1,4 +1,4 @@
-import redirects from './data/redirects';
+import redirects from '$lib/data/redirects';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {

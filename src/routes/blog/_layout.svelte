@@ -3,9 +3,9 @@
 
 	export let title, date, author, categories, img, preview_text, keywords, updated_date;
 
-	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
-	import SEO from '../../components/SEO.svelte';
-	import ShareButtons from '../../components/ShareButtons.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import SEO from '$lib/components/SEO.svelte';
+	import ShareButtons from '$lib/components/ShareButtons.svelte';
 
 	$: link = '';
 	onMount(() => {

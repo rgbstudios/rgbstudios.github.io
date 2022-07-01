@@ -10,11 +10,11 @@
 </script>
 
 <script>
-	import FeaturedAppCarousel from '../components/FeaturedAppCarousel.svelte';
-	import BlogCard from '../components/BlogCard.svelte';
-	import SEO from '../components/SEO.svelte';
+	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
+	import BlogCard from '$lib/components/BlogCard.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
-	import projects from '../data/projects';
+	import projects from '$lib/data/projects';
 
 	export let posts;
 

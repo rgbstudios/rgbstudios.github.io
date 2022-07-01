@@ -3,9 +3,9 @@
 
 	import '../../app.css';
 
-	import ShareButtons from '../../components/ShareButtons.svelte';
-	import SmallFooter from '../../components/SmallFooter.svelte';
-	import ModalManager from '../../components/ModalManager.svelte';
+	import ShareButtons from '$lib/components/ShareButtons.svelte';
+	import SmallFooter from '$lib/components/SmallFooter.svelte';
+	import ModalManager from '$lib/components/ModalManager.svelte';
 
 	$: link = '';
 	$: title = '';

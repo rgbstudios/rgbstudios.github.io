@@ -1,9 +1,9 @@
 <script>
-	import AppCard from '../components/AppCard.svelte';
-	import Breadcrumbs from '../components/Breadcrumbs.svelte';
-	import SEO from '../components/SEO.svelte';
+	import AppCard from '$lib/components/AppCard.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
-	import projects from '../data/projects';
+	import projects from '$lib/data/projects';
 
 	import { page } from '$app/stores';
 	$: sort = $page.url.searchParams.get('sort');
