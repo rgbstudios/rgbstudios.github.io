@@ -13,8 +13,8 @@
 	title="Simple Grade Calc"
 	description="Calculate Grades"
 	keywords={['galculate grades']}
-	icon="img/projects/icons/intersect-calc.png"
-	screenshot="img/projects/screenshots/intersect-calc.png"
+	icon="img/projects/icons/simple-grade-calc.png"
+	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
 <div class="flex flex-col gap-5 mt-5">
 	<label class="input-group">
