@@ -5,8 +5,9 @@
 	let assignmentWeight = 20;
 	let assignmentScore = 85;
 
-	$: finalGrade =
-		currentGrade * (1 - assignmentWeight / 100) + (assignmentWeight / 100) * assignmentScore;
+	$: finalGrade = Math.round(
+		currentGrade * (1 - assignmentWeight / 100) + (assignmentWeight / 100) * assignmentScore
+	);
 </script>
 
 <ProjectHeader
