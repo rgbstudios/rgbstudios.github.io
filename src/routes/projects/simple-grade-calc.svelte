@@ -1,10 +1,11 @@
 <script>
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	let currentGrade = 75;
 	let assignmentWeight = 20;
 	let assignmentScore = 85;
-	let finalGrade = 0;
+	let finalGrade = 75;
 	let mode = 0; // 0 is for final grade; 1 is for assignment score
 
 	$: calculatedFinalGrade =
@@ -37,20 +38,20 @@
 	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
 <div class="flex flex-col gap-5 mt-5">
-	<label class="input-group justify-center">
+	<span class="input-group justify-center">
 		<span>Calculate</span>
 		<div class="btn-group">
-			<button class="btn" on:click={() => (mode = 0)} class:btn-active={mode === 0}
-				>Final Grade</button
+			<button class="btn" on:click={() => (mode = 0)} class:btn-active={mode === 0}>
+				<Icon name="clipboard_check" /> Final Grade</button
 			>
 			<button class="btn" on:click={() => (mode = 1)} class:btn-active={mode === 1}
-				>Assignment Score</button
+				><Icon name="pencil_alt" /> Assignment Score</button
 			>
 		</div>
-	</label>
+	</span>
 	{#if mode === 0}
 		<label class="input-group">
-			<span>Current Grade</span>
+			<span class="flex gap-1"><Icon name="clock" />Current Grade</span>
 			<input
 				type="number"
 				min="0"
@@ -62,7 +63,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span>Assignment Weight</span>
+			<span class="flex gap-1"> <Icon name="scale" />Assignment Weight</span>
 			<input
 				type="number"
 				min="0"
@@ -74,7 +75,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span>Assignment Score</span>
+			<span class="flex gap-1"><Icon name="pencil_alt" />Assignment Score</span>
 			<input
 				type="number"
 				required
@@ -86,7 +87,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span class="bg-blue-600">Final Grade</span>
+			<span class="flex gap-1 bg-blue-600"><Icon name="clipboard_check" />Final Grade</span>
 			<input
 				type="text"
 				disabled
@@ -96,7 +97,7 @@
 		</label>
 	{:else}
 		<label class="input-group">
-			<span>Current Grade</span>
+			<span class="flex gap-1"><Icon name="clock" />Current Grade</span>
 			<input
 				type="number"
 				min="0"
@@ -108,7 +109,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span>Assignment Weight</span>
+			<span class="flex gap-1"> <Icon name="scale" />Assignment Weight</span>
 			<input
 				type="number"
 				min="0"
@@ -120,7 +121,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span>Assignment Score</span>
+			<span class="flex gap-1 bg-blue-600"><Icon name="pencil_alt" />Assignment Score</span>
 			<input
 				type="number"
 				required
@@ -133,7 +134,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span class="bg-blue-600">Final Grade</span>
+			<span class="flex gap-1"><Icon name="clipboard_check" />Final Grade</span>
 			<input
 				type="text"
 				min="0"
