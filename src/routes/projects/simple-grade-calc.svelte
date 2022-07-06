@@ -4,11 +4,20 @@
 	let currentGrade = 75;
 	let assignmentWeight = 20;
 	let assignmentScore = 85;
+	let finalGrade = 0;
+	let mode = 0; // 0 is for final grade; 1 is for assignment score
 
-	$: finalGrade =
+	$: calculatedFinalGrade =
 		currentGrade !== null && assignmentWeight !== null && assignmentScore !== null
 			? Math.round(
 					currentGrade * (1 - assignmentWeight / 100) + (assignmentWeight / 100) * assignmentScore
+			  )
+			: 'Please enter all inputs';
+
+	$: calculatedAssignmentScore =
+		currentGrade !== null && assignmentWeight !== null && finalGrade !== null
+			? Math.round(
+					(finalGrade - currentGrade * (1 - assignmentWeight / 100)) / (assignmentWeight / 100)
 			  )
 			: 'Please enter all inputs';
 </script>
@@ -28,46 +37,112 @@
 	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
 <div class="flex flex-col gap-5 mt-5">
-	<label class="input-group">
-		<span>Current Grade</span>
-		<input
-			type="number"
-			min="0"
-			max="200"
-			required
-			placeholder="Current Grade"
-			bind:value={currentGrade}
-			class="input input-bordered grow text-center"
-		/>
+	<label class="input-group justify-center">
+		<span>Calculate</span>
+		<div class="btn-group">
+			<button class="btn" on:click={() => (mode = 0)} class:btn-active={mode === 0}
+				>Final Grade</button
+			>
+			<button class="btn" on:click={() => (mode = 1)} class:btn-active={mode === 1}
+				>Assignment Score</button
+			>
+		</div>
 	</label>
-	<label class="input-group">
-		<span>Assignment Weight</span>
-		<input
-			type="number"
-			min="0"
-			max="100"
-			required
-			placeholder="Assignment Weight"
-			bind:value={assignmentWeight}
-			class="input input-bordered grow text-center"
-		/>
-	</label>
-	<label class="input-group">
-		<span>Assignment Score</span>
-		<input
-			type="number"
-			required
-			min="0"
-			max="200"
-			placeholder="Assignment Score"
-			bind:value={assignmentScore}
-			class="input input-bordered grow text-center"
-		/>
-	</label>
-	<label class="input-group">
-		<span class="bg-blue-600">Final Grade</span>
-		<input type="text" disabled value={finalGrade} class="input input-bordered grow text-center" />
-	</label>
+	{#if mode === 0}
+		<label class="input-group">
+			<span>Current Grade</span>
+			<input
+				type="number"
+				min="0"
+				max="200"
+				required
+				placeholder="Current Grade"
+				bind:value={currentGrade}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+		<label class="input-group">
+			<span>Assignment Weight</span>
+			<input
+				type="number"
+				min="0"
+				max="100"
+				required
+				placeholder="Assignment Weight"
+				bind:value={assignmentWeight}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+		<label class="input-group">
+			<span>Assignment Score</span>
+			<input
+				type="number"
+				required
+				min="0"
+				max="200"
+				placeholder="Assignment Score"
+				bind:value={assignmentScore}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+		<label class="input-group">
+			<span class="bg-blue-600">Final Grade</span>
+			<input
+				type="text"
+				disabled
+				value={calculatedFinalGrade}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+	{:else}
+		<label class="input-group">
+			<span>Current Grade</span>
+			<input
+				type="number"
+				min="0"
+				max="200"
+				required
+				placeholder="Current Grade"
+				bind:value={currentGrade}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+		<label class="input-group">
+			<span>Assignment Weight</span>
+			<input
+				type="number"
+				min="0"
+				max="100"
+				required
+				placeholder="Assignment Weight"
+				bind:value={assignmentWeight}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+		<label class="input-group">
+			<span>Assignment Score</span>
+			<input
+				type="number"
+				required
+				disabled
+				min="0"
+				max="200"
+				placeholder="Assignment Score"
+				bind:value={calculatedAssignmentScore}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+		<label class="input-group">
+			<span class="bg-blue-600">Final Grade</span>
+			<input
+				type="text"
+				min="0"
+				max="200"
+				bind:value={finalGrade}
+				class="input input-bordered grow text-center"
+			/>
+		</label>
+	{/if}
 </div>
 
 <style>
