@@ -27,11 +27,13 @@
 	icon="img/projects/icons/simple-grade-calc.png"
 	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
-<form on:submit|preventDefault class="flex flex-col gap-5 mt-5">
+<div class="flex flex-col gap-5 mt-5">
 	<label class="input-group">
 		<span>Current Grade</span>
 		<input
 			type="number"
+			min="0"
+			max="200"
 			required
 			placeholder="Current Grade"
 			bind:value={currentGrade}
@@ -64,15 +66,9 @@
 	</label>
 	<label class="input-group">
 		<span class="bg-blue-600">Final Grade</span>
-		<input
-			type="text"
-			disabled
-			placeholder="Final Grade"
-			value={finalGrade}
-			class="input input-bordered grow text-center"
-		/>
+		<input type="text" disabled value={finalGrade} class="input input-bordered grow text-center" />
 	</label>
-</form>
+</div>
 
 <style>
 </style>
