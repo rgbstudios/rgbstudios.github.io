@@ -15,8 +15,15 @@
 
 <ProjectHeader
 	title="Simple Grade Calc"
-	description="Calculate Grades"
-	keywords={['calculate grades']}
+	description="Use Simple Grade Calc to easily calculate your grade"
+	keywords={[
+		'grade calculator simple',
+		'final exam grade calculator',
+		'grade calculator online',
+		'easy grade calculator',
+		'free grade calculator',
+		'assignment grade calculator'
+	]}
 	icon="img/projects/icons/simple-grade-calc.png"
 	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
