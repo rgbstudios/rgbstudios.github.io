@@ -10,6 +10,10 @@ const redirects = [
 	{
 		source: '/intersect-calc',
 		destination: '/projects/intersect-calc'
+	},
+	{
+		source: '/simple-grade-calc',
+		destination: '/projects/simple-grade-calc'
 	}
 ];
 
