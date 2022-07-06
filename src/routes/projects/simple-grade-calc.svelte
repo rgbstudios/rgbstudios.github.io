@@ -5,9 +5,12 @@
 	let assignmentWeight = 20;
 	let assignmentScore = 85;
 
-	$: finalGrade = Math.round(
-		currentGrade * (1 - assignmentWeight / 100) + (assignmentWeight / 100) * assignmentScore
-	);
+	$: finalGrade =
+		currentGrade !== null && assignmentWeight !== null && assignmentScore !== null
+			? Math.round(
+					currentGrade * (1 - assignmentWeight / 100) + (assignmentWeight / 100) * assignmentScore
+			  )
+			: 'Please enter all inputs';
 </script>
 
 <ProjectHeader
@@ -55,16 +58,13 @@
 	<label class="input-group">
 		<span class="bg-blue-600">Final Grade</span>
 		<input
-			type="number"
+			type="text"
 			disabled
 			placeholder="Final Grade"
 			value={finalGrade}
 			class="input input-bordered grow text-center"
 		/>
 	</label>
-	<span>
-		<button class="btn btn-primary" type="submit">Calculate</button>
-	</span>
 </form>
 
 <style>
