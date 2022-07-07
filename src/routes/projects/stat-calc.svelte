@@ -93,97 +93,90 @@
 	</label>
 </div>
 
-<div
-	class="bg-gray-900 mt-5 md:grid md:grid-cols-2 md:gap-6"
-	class:hidden={data.length === 1 && data[0] === 0}
->
-	<div>
-		<div class="stat">
-			<div class="stat-title">Input Size</div>
-			<div class="stat-value">{data.length}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Sorted (Lo-Hi)</div>
-			<div class="stat-value">{asc}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Sorted (Hi-Lo)</div>
-			<div class="stat-value">{desc}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Sum</div>
-			<div class="stat-value">{sum}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Sum of squares</div>
-			<div class="stat-value">{sumSquares}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Mean</div>
-			<div class="stat-value">{mean}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Population Variance</div>
-			<div class="stat-value">{popVariance}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Population Deviation</div>
-			<div class="stat-value">{popDeviation}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Sample Variance</div>
-			<div class="stat-value">{sampleVariance}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Sample Deviation</div>
-			<div class="stat-value">{sampleDeviation}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Geometric Mean</div>
-			<div class="stat-value">{gMean}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Quadratic Mean (Root Mean Square)</div>
-			<div class="stat-value">{rms}</div>
-		</div>
+<div class="mt-5 grid md:grid-cols-2 gap-1" class:hidden={data.length === 1 && data[0] === 0}>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Input Size</div>
+		<div class="stat-value">{data.length}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Sorted (Lo-Hi)</div>
+		<div class="stat-value">{asc}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Sorted (Hi-Lo)</div>
+		<div class="stat-value">{desc}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Sum</div>
+		<div class="stat-value">{sum}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Sum of squares</div>
+		<div class="stat-value">{sumSquares}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Mean</div>
+		<div class="stat-value">{mean}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Population Variance</div>
+		<div class="stat-value">{popVariance}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Population Deviation</div>
+		<div class="stat-value">{popDeviation}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Sample Variance</div>
+		<div class="stat-value">{sampleVariance}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Sample Deviation</div>
+		<div class="stat-value">{sampleDeviation}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Geometric Mean</div>
+		<div class="stat-value">{gMean}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Quadratic Mean (Root Mean Square)</div>
+		<div class="stat-value">{rms}</div>
 	</div>
 
-	<div>
-		<div class="stat">
-			<div class="stat-title">Median</div>
-			<div class="stat-value">{median(data)}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Mode</div>
-			<div class="stat-value">{mode(data)}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Max</div>
-			<div class="stat-value">{Math.max(...data)}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Min</div>
-			<div class="stat-value">{Math.min(...data)}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Range</div>
-			<div class="stat-value">{Math.max(...data) - Math.min(...data)}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Mid Range</div>
-			<div class="stat-value">{(Math.max(...data) + Math.min(...data)) / 2}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">First Quartile</div>
-			<div class="stat-value">{firstQuartile}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Third Quartile</div>
-			<div class="stat-value">{thirdQuartile}</div>
-		</div>
-		<div class="stat">
-			<div class="stat-title">Interquartile Range</div>
-			<div class="stat-value">{thirdQuartile - firstQuartile}</div>
-		</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Median</div>
+		<div class="stat-value">{median(data)}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Mode</div>
+		<div class="stat-value">{mode(data)}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Max</div>
+		<div class="stat-value">{Math.max(...data)}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Min</div>
+		<div class="stat-value">{Math.min(...data)}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Range</div>
+		<div class="stat-value">{Math.max(...data) - Math.min(...data)}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Mid Range</div>
+		<div class="stat-value">{(Math.max(...data) + Math.min(...data)) / 2}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">First Quartile</div>
+		<div class="stat-value">{firstQuartile}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Third Quartile</div>
+		<div class="stat-value">{thirdQuartile}</div>
+	</div>
+	<div class="stat bg-gray-900">
+		<div class="stat-title">Interquartile Range</div>
+		<div class="stat-value">{thirdQuartile - firstQuartile}</div>
 	</div>
 </div>
