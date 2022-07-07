@@ -61,7 +61,7 @@
 			type="text"
 			required
 			bind:value={dataset}
-			placeholder="1,2,3,4"
+			placeholder="1{separator}2{separator}3{separator}4"
 			class="input input-bordered grow"
 		/>
 	</label>
@@ -77,7 +77,10 @@
 	</label>
 </div>
 
-<div class="stats stats-vertical shadow bg-gray-900 mt-5 flex flex-wrap">
+<div
+	class="stats stats-vertical shadow bg-gray-900 mt-5 flex flex-wrap"
+	class:hidden={data.length === 1 && data[0] === 0}
+>
 	<div class="stat">
 		<div class="stat-title">Input Size</div>
 		<div class="stat-value">{data.length}</div>
