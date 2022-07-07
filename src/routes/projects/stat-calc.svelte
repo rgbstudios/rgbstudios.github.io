@@ -85,12 +85,10 @@
 		<div class="stat-title">Input Size</div>
 		<div class="stat-value">{data.length}</div>
 	</div>
-
 	<div class="stat">
 		<div class="stat-title">Sorted (Lo-Hi)</div>
 		<div class="stat-value">{asc}</div>
 	</div>
-
 	<div class="stat">
 		<div class="stat-title">Sorted (Hi-Lo)</div>
 		<div class="stat-value">{desc}</div>
