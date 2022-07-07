@@ -49,10 +49,21 @@
 
 <ProjectHeader
 	title="Stat Calc"
-	description="Stat Calc"
-	keywords={['stat calc']}
-	icon="img/projects/icons/intersect-calc.png"
-	screenshot="img/projects/screenshots/intersect-calc.png"
+	description="Use Stat Calc to calculate many statistics on a data set"
+	keywords={[
+		'stat',
+		'stats',
+		'statistic',
+		'statistics',
+		'calculator',
+		'ca…deviation',
+		'variance',
+		'quartile',
+		'population',
+		'sample'
+	]}
+	icon="img/projects/icons/stat-calc.png"
+	screenshot="img/projects/screenshots/stat-calc.png"
 />
 <div class="form-control mt-5 gap-5">
 	<label class="input-group">

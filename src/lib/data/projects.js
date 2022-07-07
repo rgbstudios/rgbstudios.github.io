@@ -117,8 +117,8 @@ const projects = [
 		// TODO cleanup and add sharethis
 		title: 'Stat Calc',
 		text: 'Use Stat Calc to calculate many statistics on a data set',
-		img: 'img/screenshots/stat_calc.png',
-		link: 'https://rgbstudios.org/stat-calc/',
+		img: 'img/projects/screenshots/stat-calc.png',
+		link: '/projects/stat-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
