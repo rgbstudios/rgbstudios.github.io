@@ -10,9 +10,9 @@
 </script>
 
 <script>
-	import BlogCard from '../../components/BlogCard.svelte';
-	import Breadcrumbs from '../../components/Breadcrumbs.svelte';
-	import SEO from '../../components/SEO.svelte';
+	import BlogCard from '$lib/components/BlogCard.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	import { page } from '$app/stores';
 

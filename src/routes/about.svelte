@@ -1,9 +1,9 @@
 <script>
-	import AboutCard from '../components/AboutCard.svelte';
-	import Breadcrumbs from '../components/Breadcrumbs.svelte';
-	import SEO from '../components/SEO.svelte';
+	import AboutCard from '$lib/components/AboutCard.svelte';
+	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
-	import people from '../data/people';
+	import people from '$lib/data/people';
 </script>
 
 <SEO title="About | RGB Studios" />

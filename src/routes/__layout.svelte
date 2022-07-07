@@ -1,9 +1,9 @@
 <script>
 	import '../app.css';
 
-	import Navbar from '../components/Navbar.svelte';
-	import RGBHero from '../components/RGBHero.svelte';
-	import Footer from '../components/Footer.svelte';
+	import Navbar from '$lib/components/Navbar.svelte';
+	import RGBHero from '$lib/components/RGBHero.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <Navbar />

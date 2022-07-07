@@ -1,9 +1,9 @@
 <script>
-	import Alert from '../../components/Alert.svelte';
-	import Icon from '../../components/Icon.svelte';
-	import ProjectHeader from '../../components/ProjectHeader.svelte';
+	import Alert from '$lib/components/Alert.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
-	import copyText from '../../util/copyText';
+	import copyText from '$lib/util/copyText';
 
 	// Conversion
 

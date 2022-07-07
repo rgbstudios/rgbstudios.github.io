@@ -146,11 +146,10 @@ const projects = [
 		tags: ['barcode', 'tool', 'web app']
 	},
 	{
-		// TODO add sharethis and cleanup site
 		title: 'Simple Grade Calc',
 		text: 'Use Simple Grade Calc to easily calculate your grade',
-		img: 'img/screenshots/simple_grade_calc.png',
-		link: 'https://rgbstudios.org/simple-grade-calc/',
+		img: 'img/projects/screenshots/simple-grade-calc.png',
+		link: '/projects/simple-grade-calc/',
 		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
