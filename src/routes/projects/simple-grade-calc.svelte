@@ -2,6 +2,8 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
+	import roundNumber from '$lib/util/roundNumber';
+
 	let currentGrade = 75;
 	let assignmentWeight = 20;
 	let assignmentScore = 85;
@@ -10,14 +12,14 @@
 
 	$: calculatedFinalGrade =
 		currentGrade !== null && assignmentWeight !== null && assignmentScore !== null
-			? Math.round(
+			? roundNumber(
 					currentGrade * (1 - assignmentWeight / 100) + (assignmentWeight / 100) * assignmentScore
 			  )
 			: 'Please enter all inputs';
 
 	$: calculatedAssignmentScore =
 		currentGrade !== null && assignmentWeight !== null && finalGrade !== null
-			? Math.round(
+			? roundNumber(
 					(finalGrade - currentGrade * (1 - assignmentWeight / 100)) / (assignmentWeight / 100)
 			  )
 			: 'Please enter all inputs';
