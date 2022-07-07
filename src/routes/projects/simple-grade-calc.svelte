@@ -39,14 +39,14 @@
 />
 <div class="flex flex-col gap-5 mt-5">
 	<span class="input-group justify-center">
-		<span>Calculate</span>
+		<span>Calculate:</span>
 		<div class="btn-group">
+			<button class="btn" on:click={() => (mode = 1)} class:btn-active={mode === 1}>
+				<Icon name="pencil_alt" /> Assignment Score
+			</button>
 			<button class="btn" on:click={() => (mode = 0)} class:btn-active={mode === 0}>
-				<Icon name="clipboard_check" /> Final Grade</button
-			>
-			<button class="btn" on:click={() => (mode = 1)} class:btn-active={mode === 1}
-				><Icon name="pencil_alt" /> Assignment Score</button
-			>
+				<Icon name="clipboard_check" /> Final Grade
+			</button>
 		</div>
 	</span>
 	{#if mode === 0}
@@ -87,7 +87,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span class="flex gap-1 bg-blue-600"><Icon name="clipboard_check" />Final Grade</span>
+			<span class="flex gap-1 bg-primary"><Icon name="clipboard_check" />Final Grade</span>
 			<input
 				type="text"
 				disabled
@@ -121,7 +121,7 @@
 			/>
 		</label>
 		<label class="input-group">
-			<span class="flex gap-1 bg-blue-600"><Icon name="pencil_alt" />Assignment Score</span>
+			<span class="flex gap-1 bg-primary"><Icon name="pencil_alt" />Assignment Score</span>
 			<input
 				type="number"
 				required
