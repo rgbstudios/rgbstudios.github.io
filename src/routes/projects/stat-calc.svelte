@@ -51,16 +51,21 @@
 	title="Stat Calc"
 	description="Use Stat Calc to calculate many statistics on a data set"
 	keywords={[
-		'stat',
-		'stats',
-		'statistic',
-		'statistics',
-		'calculator',
-		'ca…deviation',
-		'variance',
-		'quartile',
-		'population',
-		'sample'
+		'stats calculator',
+		'statistics calculator',
+		'statistics calculator online',
+		'statistics calculator free',
+		'calculate mean',
+		'calculate median',
+		'calculate mode',
+		'standard deviation',
+		'sort numbers',
+		'sum numbers',
+		'sum of squares calculator',
+		'statistics tool',
+		'variance calculator',
+		'quartile calculator',
+		'population and sample mean'
 	]}
 	icon="img/projects/icons/stat-calc.png"
 	screenshot="img/projects/screenshots/stat-calc.png"
