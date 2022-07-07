@@ -39,6 +39,7 @@
 	icon="img/projects/icons/simple-grade-calc.png"
 	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
+
 <div class="flex flex-col gap-5 mt-5">
 	<span class="input-group justify-center">
 		<span>Calculate:</span>
@@ -147,6 +148,3 @@
 		</label>
 	{/if}
 </div>
-
-<style>
-</style>
