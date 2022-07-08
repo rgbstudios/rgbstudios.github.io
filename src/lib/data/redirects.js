@@ -18,6 +18,10 @@ const redirects = [
 	{
 		source: '/stat-calc',
 		destination: '/projects/stat-calc'
+	},
+	{
+		source: '/replacement-calc',
+		destination: '/projects/replacement-calc'
 	}
 ];
 

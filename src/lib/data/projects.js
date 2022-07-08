@@ -156,8 +156,8 @@ const projects = [
 		// TODO cleanup and add sharethis
 		title: 'Replacement Calc',
 		text: 'Use Replacement Calc to calculate the probabilities of picking a certain number of objects without replacement, such as picking marbles or cards',
-		img: 'img/screenshots/replacement_calc.png',
-		link: 'https://rgbstudios.org/replacement-calc/',
+		img: 'img/projects/screenshots/replacement-calc.png',
+		link: '/projects/replacement-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
 	}
 
