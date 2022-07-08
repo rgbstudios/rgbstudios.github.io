@@ -181,7 +181,6 @@
 	</div>
 </div>
 
-
 <div class="alert shadow-lg mt-5">
 	<div>
 		<svg
@@ -196,7 +195,7 @@
 				d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
 			/></svg
 		>
-		<span>Population uses number of items, Sample uses number of items minus one.</span>
+		<span>Population uses number of items. Sample uses number of items minus one.</span>
 	</div>
 </div>
 
