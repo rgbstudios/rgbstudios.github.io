@@ -138,6 +138,7 @@
 <svelte:head>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </svelte:head>
+
 <ProjectHeader
 	title="Replacement Calc"
 	description="Use Replacement Calc to calculate the probabilities of picking a certain number of objects without replacement, such as picking marbles or cards"
@@ -154,28 +155,52 @@
 	icon="img/projects/icons/replacement-calc.png"
 	screenshot="img/projects/screenshots/replacement-calc.png"
 />
+
 <div class="mt-5 flex flex-col gap-5">
 	<label class="input-group">
 		<span>Total number of items</span>
 		<span class="bg-info">N</span>
-		<input type="number" bind:value={N} placeholder="52" class="input input-bordered grow" />
+		<input type="number" bind:value={N} min="1" max="1000" class="input input-bordered grow" />
 	</label>
 	<label class="input-group">
 		<span>Number of distinct items</span>
 		<span class="bg-info">m</span>
-		<input type="number" bind:value={m} placeholder="4" class="input input-bordered grow" />
+		<input type="number" bind:value={m} min="1" max="1000" class="input input-bordered grow" />
 	</label>
 	<label class="input-group">
 		<span>Number of items picked</span>
 		<span class="bg-info">n</span>
-		<input type="number" bind:value={n} placeholder="5" class="input input-bordered grow" />
+		<input type="number" bind:value={n} min="1" max="1000" class="input input-bordered grow" />
 	</label>
 	<label class="input-group">
 		<span>Number of distinct items picked</span>
 		<span class="bg-info">k</span>
-		<input type="number" bind:value={k} placeholder="1" class="input input-bordered grow" />
+		<input type="number" bind:value={k} min="0" max="1000" class="input input-bordered grow" />
 	</label>
 </div>
+
+<div class="alert shadow-lg mt-5">
+	<div>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			class="stroke-info flex-shrink-0 w-6 h-6"
+			><path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+			/></svg
+		>
+		<span
+			>Example: A deck of <strong>{N}</strong> (N) cards has <strong>{m}</strong> (m) red cards. If
+			we draw <strong>{n}</strong> (n) cards, what are the odds exactly <strong>{k}</strong> (k) of them
+			will be red?</span
+		>
+	</div>
+</div>
+
 <div class="mt-5 grid md:grid-cols-2 gap-1">
 	<div class="stat bg-gray-900">
 		<div class="stat-title">P(X=k)</div>
@@ -215,26 +240,6 @@
 		<div class="stat-value">{mu}</div>
 	</div>
 </div>
-<div class="alert shadow-lg mt-5">
-	<div>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			class="stroke-info flex-shrink-0 w-6 h-6"
-			><path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-			/></svg
-		>
-		<span
-			>Example: A deck of <strong>{N}</strong> (N) cards has <strong>{m}</strong> (m) red cards. If
-			we draw <strong>{n}</strong> (n) cards, what are the odds exactly <strong>{k}</strong> (k) of them
-			will be red?</span
-		>
-	</div>
-</div>
+
 <div id="pie-chart" class="mt-5" />
 <div id="bar-chart" class="mt-5" />
