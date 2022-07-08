@@ -3,6 +3,7 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import roundNumber from '$lib/util/roundNumber';
 
+	let googleChartsLoaded = false;
 	const roundPrecision = 10;
 	let N = 52;
 	let m = 4;
@@ -15,6 +16,10 @@
 	$: le = lt + eq;
 	$: ge = gt + eq;
 	$: mu = mean(N, m, n, k);
+
+	$: if ((N || m || n || k) && googleChartsLoaded) {
+		drawCharts();
+	}
 
 	function factorial(n) {
 		let retval = 1;
@@ -57,67 +62,70 @@
 		google.charts.load('current', { packages: ['corechart'] });
 
 		// Set a callback to run when the Google Visualization API is loaded.
-		google.charts.setOnLoadCallback(drawChart);
-
-		// Callback that creates and populates a data table,
-		// instantiates the pie chart, passes in the data and
-		// draws it.
-		function drawChart() {
-			// Create the data table.
-			const piedata = new google.visualization.DataTable();
-			piedata.addColumn('string', 'Picking Without Replacement Probability Distribution');
-			piedata.addColumn('number', 'Probability');
-			piedata.addRows([
-				['P(X=k)', eq],
-				['P(X<k)', lt],
-				['P(X>k)', gt]
-			]);
-
-			// Set chart options
-			var options = {
-				title: 'Picking Without Replacement Probability Distribution',
-				legend: { textStyle: { color: '#ccc' } },
-				titleTextStyle: { color: '#ccc' },
-				width: '90%',
-				colors: ['#339', '#933', '#393'],
-				backgroundColor: { fill: 'transparent' }
-			};
-
-			// Instantiate and draw our chart, passing in some options.
-			var piechart = new google.visualization.PieChart(document.getElementById('pie_div'));
-			piechart.draw(piedata, options);
-
-			const bardata = new google.visualization.DataTable();
-			bardata.addColumn('number', 'Number of distinct items picked (k)');
-			bardata.addColumn('number', 'Probability');
-			for (let i = 0; i <= n; i++) {
-				bardata.addRows([[i, exactKdistinct(N, m, n, i)]]);
-			}
-
-			// Set chart options
-			var options = {
-				title: 'Odds by number of distinct items picked (k)',
-				titleTextStyle: { color: '#ccc' },
-				legend: 'none',
-				chartArea: { width: '90%', legend: { position: 'none' } },
-				hAxis: {
-					title: 'Number of Distinct Items (k)',
-					textStyle: { color: '#ccc' },
-					titleTextStyle: { color: '#ccc' }
-				},
-				vAxis: {
-					title: 'P(X=k)',
-					textStyle: { color: '#ccc' },
-					titleTextStyle: { color: '#ccc' }
-				},
-				backgroundColor: { fill: 'transparent' }
-			};
-
-			// Instantiate and draw our chart, passing in some options.
-			var barchart = new google.visualization.ColumnChart(document.getElementById('bar_div'));
-			barchart.draw(bardata, options);
-		}
+		google.charts.setOnLoadCallback(() => {
+			drawCharts();
+			googleChartsLoaded = true;
+		});
 	});
+
+	// Callback that creates and populates a data table,
+	// instantiates the pie chart, passes in the data and
+	// draws it.
+	function drawCharts() {
+		// Create the data table.
+		const piedata = new google.visualization.DataTable();
+		piedata.addColumn('string', 'Picking Without Replacement Probability Distribution');
+		piedata.addColumn('number', 'Probability');
+		piedata.addRows([
+			['P(X=k)', eq],
+			['P(X<k)', lt],
+			['P(X>k)', gt]
+		]);
+
+		// Set chart options
+		const pieOptions = {
+			title: 'Picking Without Replacement Probability Distribution',
+			legend: { textStyle: { color: '#ccc' } },
+			titleTextStyle: { color: '#ccc' },
+			width: '90%',
+			colors: ['#339', '#933', '#393'],
+			backgroundColor: { fill: 'transparent' }
+		};
+
+		// Instantiate and draw our chart, passing in some options.
+		const piechart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+		piechart.draw(piedata, pieOptions);
+
+		const bardata = new google.visualization.DataTable();
+		bardata.addColumn('number', 'Number of distinct items picked (k)');
+		bardata.addColumn('number', 'Probability');
+		for (let i = 0; i <= n; i++) {
+			bardata.addRows([[i, exactKdistinct(N, m, n, i)]]);
+		}
+
+		// Set chart options
+		const barOptions = {
+			title: 'Odds by number of distinct items picked (k)',
+			titleTextStyle: { color: '#ccc' },
+			legend: 'none',
+			chartArea: { width: '90%', legend: { position: 'none' } },
+			hAxis: {
+				title: 'Number of Distinct Items (k)',
+				textStyle: { color: '#ccc' },
+				titleTextStyle: { color: '#ccc' }
+			},
+			vAxis: {
+				title: 'P(X=k)',
+				textStyle: { color: '#ccc' },
+				titleTextStyle: { color: '#ccc' }
+			},
+			backgroundColor: { fill: 'transparent' }
+		};
+
+		// Instantiate and draw our chart, passing in some options.
+		const barchart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
+		barchart.draw(bardata, barOptions);
+	}
 </script>
 
 <svelte:head>
@@ -221,5 +229,5 @@
 		>
 	</div>
 </div>
-<div id="pie_div" class="mt-5" />
-<div id="bar_div" class="mt-5" />
+<div id="pie-chart" class="mt-5" />
+<div id="bar-chart" class="mt-5" />
