@@ -93,10 +93,7 @@
 	</label>
 </div>
 
-<div
-	class="stats stats-vertical shadow bg-gray-900 mt-5 flex flex-wrap"
-	class:hidden={data.length === 1 && data[0] === 0}
->
+<div class="mt-5 grid md:grid-cols-2 gap-1" class:hidden={data.length === 1 && data[0] === 0}>
 	<div class="stat">
 		<div class="stat-title">Input Size</div>
 		<div class="stat-value">{data.length}</div>
@@ -145,6 +142,7 @@
 		<div class="stat-title">Quadratic Mean (Root Mean Square)</div>
 		<div class="stat-value">{rms}</div>
 	</div>
+
 	<div class="stat">
 		<div class="stat-title">Median</div>
 		<div class="stat-value">{median(data)}</div>
@@ -183,6 +181,7 @@
 	</div>
 </div>
 
+
 <div class="alert shadow-lg mt-5">
 	<div>
 		<svg
@@ -200,3 +199,9 @@
 		<span>Population uses number of items, Sample uses number of items minus one.</span>
 	</div>
 </div>
+
+<style>
+	.stat {
+		@apply bg-gray-800;
+	}
+</style>
