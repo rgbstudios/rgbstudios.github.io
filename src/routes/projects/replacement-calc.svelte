@@ -58,21 +58,23 @@
 	}
 
 	onMount(() => {
-		// Load the Visualization API and the corechart package.
+		// load google charts visualization API and corechart package
 		google.charts.load('current', { packages: ['corechart'] });
 
-		// Set a callback to run when the Google Visualization API is loaded.
+		// set a callback to run after visualization API loads
 		google.charts.setOnLoadCallback(() => {
 			drawCharts();
 			googleChartsLoaded = true;
 		});
 	});
 
-	// Callback that creates and populates a data table,
-	// instantiates the pie chart, passes in the data and
-	// draws it.
+	// Creates and populates data table, instantiates charts, passes in data and draws charts
 	function drawCharts() {
-		// Create the data table.
+		// ========
+		// Pie Chart
+		// ========
+
+		// data
 		const piedata = new google.visualization.DataTable();
 		piedata.addColumn('string', 'Picking Without Replacement Probability Distribution');
 		piedata.addColumn('number', 'Probability');
@@ -82,7 +84,7 @@
 			['P(X>k)', gt]
 		]);
 
-		// Set chart options
+		// options
 		const pieOptions = {
 			title: 'Picking Without Replacement Probability Distribution',
 			legend: { textStyle: { color: '#ccc' } },
@@ -92,10 +94,15 @@
 			backgroundColor: { fill: 'transparent' }
 		};
 
-		// Instantiate and draw our chart, passing in some options.
+		// instantiate and draw
 		const piechart = new google.visualization.PieChart(document.getElementById('pie-chart'));
 		piechart.draw(piedata, pieOptions);
 
+		// ========
+		// Bar Chart
+		// ========
+
+		// data
 		const bardata = new google.visualization.DataTable();
 		bardata.addColumn('number', 'Number of distinct items picked (k)');
 		bardata.addColumn('number', 'Probability');
@@ -103,7 +110,7 @@
 			bardata.addRows([[i, exactKdistinct(N, m, n, i)]]);
 		}
 
-		// Set chart options
+		// options
 		const barOptions = {
 			title: 'Odds by number of distinct items picked (k)',
 			titleTextStyle: { color: '#ccc' },
@@ -122,7 +129,7 @@
 			backgroundColor: { fill: 'transparent' }
 		};
 
-		// Instantiate and draw our chart, passing in some options.
+		// instantiate and draw
 		const barchart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
 		barchart.draw(bardata, barOptions);
 	}
