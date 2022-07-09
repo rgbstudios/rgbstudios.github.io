@@ -1,15 +1,39 @@
+<script context="module">
+	/** @type {import('./__types/[slug]').Load} */
+	export async function load({ url }) {
+		const props = {};
+
+		for (const x of ['N', 'n', 'm', 'k']) {
+			props[x] = url.searchParams.get(x);
+		}
+
+		return {
+			status: 200,
+			props
+		};
+	}
+</script>
+
 <script>
 	import { onMount } from 'svelte';
+	import { browser } from '$app/env';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import roundNumber from '$lib/util/roundNumber';
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	let N = 52;
-	let m = 4;
-	let n = 5;
-	let k = 1;
+	export let N, m, n, k;
 	let btnSubmit;
+	let errorMsg = '';
+
+	$: if (browser) {
+		let queryParams = new URLSearchParams(window.location.search);
+		N && queryParams.set('N', N);
+		n && queryParams.set('n', n);
+		k && queryParams.set('k', k);
+		m && queryParams.set('m', m);
+		history.replaceState(null, null, '?' + queryParams.toString());
+	}
 
 	$: eq = exactKdistinct(N, m, n, k);
 	$: lt = lessKdistinct(N, m, n, k);
@@ -17,6 +41,18 @@
 	$: le = lt + eq;
 	$: ge = gt + eq;
 	$: mu = mean(N, m, n, k);
+
+	$: if (isNaN(N) || isNaN(m) || isNaN(n) || isNaN(k)) {
+		errorMsg = 'N, m, n, and k must be numbers';
+	} else if (N <= 0 || m <= 0 || n <= 0 || k <= 0) {
+		errorMsg = 'n and x cannot be less than 0';
+	} else if (N >= 1000 || m >= 1000 || n >= 1000 || k >= 1000) {
+		errorMsg = 'n and x must be less than 1000';
+	} else if (N < m) {
+		errorMsg = 'N must be &ge; m';
+	} else if (n < k) {
+		errorMsg = 'n must be &ge; k';
+	}
 
 	function validateForm() {
 		if (btnSubmit) {
@@ -142,6 +178,13 @@
 		const barchart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
 		barchart.draw(bardata, barOptions);
 	}
+
+	function clear() {
+		N = null;
+		m = null;
+		n = null;
+		k = null;
+	}
 </script>
 
 <svelte:head>
@@ -231,6 +274,22 @@
 					</td>
 				</tr>
 				<button type="submit" class="hidden" bind:this={btnSubmit}>Submit</button>
+				<!-- Error -->
+				<tr>
+					<td>
+						{#if errorMsg !== ''}
+							<div class="alert shadow-lg alert-warning">
+								<div>
+									{@html errorMsg}
+								</div>
+							</div>
+						{/if}
+					</td>
+					<td />
+					<td>
+						<button type="button" on:click={clear} class="btn btn-error">Clear</button>
+					</td>
+				</tr>
 				<!-- Output -->
 				<tr>
 					<td>Probability exactly k distinct items are picked</td>
