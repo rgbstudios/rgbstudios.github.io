@@ -375,14 +375,15 @@
 		<label class="modal-box relative text-center" for="">
 			<h3 class="font-bold text-lg">Picking without replacements</h3>
 			<div class="divider" />
-			<ul>
-				View the data as pie and bar charts, where the odds of
-				<li><span style="color:#339;">exactly k items is represented in <b>blue</b></span>,</li>
+			View the data as pie and bar charts, where the odds of
+			<ul class="font-bold">
+				<li><span style="color:#339;">exactly k items is represented in blue</span>,</li>
 				<li>
-					<span style="color:#933;">less than k items is represented in <b>red</b></span>, and
+					<span style="color:#933;">less than k items is represented in red</span>,
+					<span class="font-normal">and</span>
 				</li>
 				<li>
-					<span style="color:#393;">greater than k items is represented in <n>green</n></span>
+					<span style="color:#393;">greater than k items is represented in green</span>
 				</li>
 			</ul>
 
@@ -398,23 +399,6 @@
 				that number by the number of nanoseconds the universe has been alive. This number squared is
 				significantly less than 1e300.
 			</p>
-
-			<div class="divider" />
-
-			<p>
-				Made with <a target="_blank" href="https://developers.google.com/chart">Google Charts</a>,
-				<a target="_blank" href="https://material.io/icons/">Material Icons</a>,
-				<a target="_blank" href="https://getbootstrap.com">Bootstrap</a>, and
-				<a target="_blank" href="http://imgbot.net">ImgBot</a>
-			</p>
-
-			<p>
-				View on Github <a href="https://github.com/rgbstudios/replacement-calc" target="_blank"
-					>here</a
-				>
-			</p>
-
-			<p>V.1.0.1</p>
 		</label>
 	</label>
 </div>
