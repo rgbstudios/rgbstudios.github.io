@@ -44,14 +44,18 @@
 
 	$: if (isNaN(N) || isNaN(m) || isNaN(n) || isNaN(k)) {
 		errorMsg = 'N, m, n, and k must be numbers';
-	} else if (N <= 0 || m <= 0 || n <= 0 || k <= 0) {
-		errorMsg = 'n and x cannot be less than 0';
+	} else if (N <= 0 || m <= 0 || n <= 0) {
+		errorMsg = 'N, m, and n must be &gt; 0';
+	} else if (k < 0) {
+		errorMsg = 'k must be &ge; 0';
 	} else if (N >= 1000 || m >= 1000 || n >= 1000 || k >= 1000) {
-		errorMsg = 'n and x must be less than 1000';
+		errorMsg = 'Inputs must be less than 1000';
 	} else if (N < m) {
 		errorMsg = 'N must be &ge; m';
 	} else if (n < k) {
 		errorMsg = 'n must be &ge; k';
+	} else if (N < n) {
+		errorMsg = 'N must be &ge; n';
 	} else {
 		errorMsg = '';
 	}
