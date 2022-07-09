@@ -4,7 +4,7 @@
 		const props = {};
 
 		for (const x of ['N', 'n', 'm', 'k']) {
-			props[x] = url.searchParams.get(x);
+			props[x] = parseInt(url.searchParams.get(x));
 		}
 
 		return {
