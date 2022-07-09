@@ -22,6 +22,10 @@ const redirects = [
 	{
 		source: '/replacement-calc',
 		destination: '/projects/replacement-calc'
+	},
+	{
+		source: '/grade-calc',
+		destination: '/projects/grade-calc'
 	}
 ];
 

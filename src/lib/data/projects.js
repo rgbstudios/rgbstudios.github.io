@@ -64,8 +64,8 @@ const projects = [
 		// TODO add sharethis and cleanup site
 		title: 'Grade Calc',
 		text: "Use Grade Calc to calculate students' grades quickly and simply",
-		img: 'img/screenshots/grade_calc.png',
-		link: 'https://rgbstudios.org/grade-calc/',
+		img: 'img/projects/screenshots/grade-calc.png',
+		link: '/projects/grade-calc/',
 		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
