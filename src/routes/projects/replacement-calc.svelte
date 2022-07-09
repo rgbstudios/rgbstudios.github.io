@@ -17,6 +17,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
+	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import roundNumber from '$lib/util/roundNumber';
 
@@ -226,8 +227,8 @@
 				<tr>
 					<td>Total number of items</td>
 					<td>N</td>
-					<td
-						><input
+					<td>
+						<input
 							on:blur={validateForm}
 							type="number"
 							bind:value={N}
@@ -235,8 +236,8 @@
 							max="1000"
 							class="input input-bordered w-full"
 							required
-						/></td
-					>
+						/>
+					</td>
 				</tr>
 				<tr>
 					<td>Number of distinct items</td>
@@ -290,7 +291,7 @@
 					<tr>
 						<td colspan="3">
 							{#if errorMsg !== ''}
-								<div class="alert shadow-lg alert-warning font-bold">
+								<div class="alert alert-warning font-bold">
 									{@html errorMsg}
 								</div>
 							{/if}
@@ -345,20 +346,9 @@
 	</form>
 </div>
 
-<div class="alert shadow-lg mt-5">
+<div class="alert mt-5">
 	<div>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			fill="none"
-			viewBox="0 0 24 24"
-			class="stroke-info flex-shrink-0 w-6 h-6"
-			><path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-			/></svg
-		>
+		<Icon name="info" class="w-6 h-6 inline text-brand-blue" />
 		<span
 			>Example: A deck of <strong>{N}</strong> (N) cards has <strong>{m}</strong> (m) red cards. If
 			we draw <strong>{n}</strong> (n) cards, what are the odds exactly <strong>{k}</strong> (k) of them
