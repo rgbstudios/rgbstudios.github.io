@@ -72,6 +72,8 @@
 		drawCharts();
 	}
 
+	// Math
+
 	function factorial(n) {
 		let retval = 1;
 		for (let i = n; i > 1; i--) {
@@ -108,6 +110,8 @@
 	function mean(N, m, n, k) {
 		return roundNumber((m * n) / N, roundPrecision);
 	}
+
+	// Charts
 
 	onMount(() => {
 		// load google charts visualization API and corechart package
@@ -370,9 +374,8 @@
 			<h3 class="font-bold text-lg">Picking without replacements</h3>
 			<div class="divider" />
 			<p>
-				When picking n items out of N total items, where m of them are distinct, the odds of picking <i
-					>exactly</i
-				>
+				When picking n items out of N total items, where m of them are distinct, the odds of picking
+				<i>exactly</i>
 				k distinct items is defined as:
 				<br />P(X = k) = <sub>m</sub>C<sub>k</sub> * <sub>N-m</sub>C<sub>n-k</sub> /
 				<sub>N</sub>C<sub>n</sub>
@@ -398,18 +401,20 @@
 				<a
 					class="link"
 					href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"
-					target="_blank">Wikipedia on Hypergeometric Distributions</a
+					target="_blank"
 				>
+					Wikipedia on Hypergeometric Distributions
+				</a>
 			</p>
 			<p>
-				<a class="link" href="https://en.wikipedia.org/wiki/Simple_random_sample" target="_blank"
-					>Wikipedia on Simple Random Samples</a
-				>
+				<a class="link" href="https://en.wikipedia.org/wiki/Simple_random_sample" target="_blank">
+					Wikipedia on Simple Random Samples
+				</a>
 			</p>
 			<p>
-				<a class="link" href="https://en.wikipedia.org/wiki/Urn_problem" target="_blank"
-					>Wikipedia on the Urn Problem</a
-				>
+				<a class="link" href="https://en.wikipedia.org/wiki/Urn_problem" target="_blank">
+					Wikipedia on the Urn Problem
+				</a>
 			</p>
 
 			<br />
@@ -417,8 +422,10 @@
 				<a
 					class="link"
 					href="https://web.ma.utexas.edu/users/parker/sampling/woreplshort.htm"
-					target="_blank">UTexas provides formulas for sampling with and without replacement</a
+					target="_blank"
 				>
+					UTexas provides formulas for sampling with and without replacement
+				</a>
 			</p>
 		</label>
 	</label>
@@ -440,9 +447,9 @@
 					<span class="text-brand-red font-bold">less than k items is represented in red</span>, and
 				</li>
 				<li>
-					<span class="text-brand-green font-bold"
-						>greater than k items is represented in green</span
-					>
+					<span class="text-brand-green font-bold">
+						greater than k items is represented in green
+					</span>
 				</li>
 			</ul>
 
