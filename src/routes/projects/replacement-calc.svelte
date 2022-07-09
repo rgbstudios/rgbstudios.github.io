@@ -52,6 +52,8 @@
 		errorMsg = 'N must be &ge; m';
 	} else if (n < k) {
 		errorMsg = 'n must be &ge; k';
+	} else {
+		errorMsg = '';
 	}
 
 	function validateForm() {
