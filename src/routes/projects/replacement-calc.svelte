@@ -203,11 +203,13 @@
 	title="Replacement Calc"
 	description="Use Replacement Calc to calculate the probabilities of picking a certain number of objects without replacement, such as picking marbles or cards"
 	keywords={[
+		'picking without replacement',
+		'picking without replacement calculator',
+		'picking without replacement probability',
 		'statistics',
 		'without replacement',
 		'replacemenet calc',
 		'replacement calculator',
-		'calc',
 		'calculator',
 		'stats',
 		'probability'
