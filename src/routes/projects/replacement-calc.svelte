@@ -272,16 +272,15 @@
 						/>
 					</td>
 				</tr>
+				<hr class="w-full" />
 				<button type="submit" class="hidden" bind:this={btnSubmit}>Submit</button>
 				<!-- Error -->
 				{#if errorMsg !== ''}
 					<tr>
 						<td colspan="3">
 							{#if errorMsg !== ''}
-								<div class="alert shadow-lg alert-warning">
-									<div>
-										{@html errorMsg}
-									</div>
+								<div class="alert shadow-lg alert-warning font-bold">
+									{@html errorMsg}
 								</div>
 							{/if}
 						</td>
