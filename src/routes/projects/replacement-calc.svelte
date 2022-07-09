@@ -119,6 +119,13 @@
 		});
 	});
 
+	const colors = {
+		red: '#c30',
+		green: '#396',
+		blue: '#36f',
+		gray: '#ccc'
+	};
+
 	// Creates and populates data table, instantiates charts, passes in data and draws charts
 	function drawCharts() {
 		// ========
@@ -138,10 +145,10 @@
 		// options
 		const pieOptions = {
 			title: 'Picking Without Replacement Probability Distribution',
-			legend: { textStyle: { color: '#ccc' } },
-			titleTextStyle: { color: '#ccc' },
+			legend: { textStyle: { color: colors.gray } },
+			titleTextStyle: { color: colors.gray },
 			width: '90%',
-			colors: ['#339', '#933', '#393'],
+			colors: [colors.blue, colors.red, colors.green],
 			backgroundColor: { fill: 'transparent' }
 		};
 
@@ -157,25 +164,27 @@
 		const bardata = new google.visualization.DataTable();
 		bardata.addColumn('number', 'Number of distinct items picked (k)');
 		bardata.addColumn('number', 'Probability');
+		bardata.addColumn({ type: 'string', role: 'style' });
 		for (let i = 0; i <= n; i++) {
-			bardata.addRows([[i, exactKdistinct(N, m, n, i)]]);
+			const colorName = i === k ? 'blue' : i > k ? 'green' : 'red';
+			bardata.addRows([[i, exactKdistinct(N, m, n, i), colors[colorName]]]);
 		}
 
 		// options
 		const barOptions = {
 			title: 'Odds by number of distinct items picked (k)',
-			titleTextStyle: { color: '#ccc' },
+			titleTextStyle: { color: colors.gray },
 			legend: 'none',
 			chartArea: { width: '90%', legend: { position: 'none' } },
 			hAxis: {
 				title: 'Number of Distinct Items (k)',
-				textStyle: { color: '#ccc' },
-				titleTextStyle: { color: '#ccc' }
+				textStyle: { color: colors.gray },
+				titleTextStyle: { color: colors.gray }
 			},
 			vAxis: {
 				title: 'P(X=k)',
-				textStyle: { color: '#ccc' },
-				titleTextStyle: { color: '#ccc' }
+				textStyle: { color: colors.gray },
+				titleTextStyle: { color: colors.gray }
 			},
 			backgroundColor: { fill: 'transparent' }
 		};
@@ -207,7 +216,7 @@
 	screenshot="img/projects/screenshots/replacement-calc.png"
 />
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto mt-8">
 	<form on:submit|preventDefault>
 		<table class="table w-full border border-gray-700">
 			<tbody>
@@ -289,21 +298,21 @@
 				<!-- Output -->
 				<tr>
 					<td>Probability exactly k distinct items are picked</td>
-					<td>P(X=k)</td>
+					<td class="text-brand-blue font-bold">P(X=k)</td>
 					<td>
 						<input disabled value={eq} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Probability less than k distinct items are picked</td>
-					<td>P(X&lt;k)</td>
+					<td class="text-brand-red font-bold">P(X&lt;k)</td>
 					<td>
 						<input disabled value={lt} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Probability more than k distinct items are picked</td>
-					<td>P(X&gt;k)</td>
+					<td class="text-brand-green font-bold">P(X&gt;k)</td>
 					<td>
 						<input disabled value={gt} class="input input-bordered w-full" />
 					</td>
@@ -431,14 +440,17 @@
 			<h3 class="font-bold text-lg">Picking without replacements</h3>
 			<div class="divider" />
 			View the data as pie and bar charts, where the odds of
-			<ul class="font-bold">
-				<li><span style="color:#339;">exactly k items is represented in blue</span>,</li>
+			<ul>
 				<li>
-					<span style="color:#933;">less than k items is represented in red</span>,
-					<span class="font-normal">and</span>
+					<span class="text-brand-blue font-bold">exactly k items is represented in blue</span>,
 				</li>
 				<li>
-					<span style="color:#393;">greater than k items is represented in green</span>
+					<span class="text-brand-red font-bold">less than k items is represented in red</span>, and
+				</li>
+				<li>
+					<span class="text-brand-green font-bold"
+						>greater than k items is represented in green</span
+					>
 				</li>
 			</ul>
 
