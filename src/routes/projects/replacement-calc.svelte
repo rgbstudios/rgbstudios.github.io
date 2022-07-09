@@ -184,13 +184,6 @@
 		const barchart = new google.visualization.ColumnChart(document.getElementById('bar-chart'));
 		barchart.draw(bardata, barOptions);
 	}
-
-	function clear() {
-		N = null;
-		m = null;
-		n = null;
-		k = null;
-	}
 </script>
 
 <svelte:head>
@@ -243,7 +236,7 @@
 							type="number"
 							bind:value={m}
 							min="1"
-							max="1000"
+							max={N}
 							class="input input-bordered w-full"
 							required
 						/>
@@ -272,7 +265,7 @@
 							on:blur={validateForm}
 							type="number"
 							bind:value={k}
-							min="1"
+							min="0"
 							max={n}
 							class="input input-bordered w-full"
 							required
@@ -281,21 +274,19 @@
 				</tr>
 				<button type="submit" class="hidden" bind:this={btnSubmit}>Submit</button>
 				<!-- Error -->
-				<tr>
-					<td>
-						{#if errorMsg !== ''}
-							<div class="alert shadow-lg alert-warning">
-								<div>
-									{@html errorMsg}
+				{#if errorMsg !== ''}
+					<tr>
+						<td colspan="3">
+							{#if errorMsg !== ''}
+								<div class="alert shadow-lg alert-warning">
+									<div>
+										{@html errorMsg}
+									</div>
 								</div>
-							</div>
-						{/if}
-					</td>
-					<td />
-					<td>
-						<button type="button" on:click={clear} class="btn btn-error">Clear</button>
-					</td>
-				</tr>
+							{/if}
+						</td>
+					</tr>
+				{/if}
 				<!-- Output -->
 				<tr>
 					<td>Probability exactly k distinct items are picked</td>
