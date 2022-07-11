@@ -217,6 +217,7 @@
 			<Icon name="book" /> &nbsp; Gradebook
 		</label>
 	</div>
+	<h3 class="text-center">Assignments</h3>
 	<form on:submit|preventDefault={calculate} class="grid gap-5">
 		{#each $assignments as { name, max_score, weight }, index}
 			<div class="card w-full bg-gray-900 border">
@@ -230,8 +231,7 @@
 								min="0"
 								required
 								bind:value={student.scores[index]}
-								max={max_score}
-								placeholder="10"
+								max={max_score * 2}
 								class="input input-bordered xl:w-auto w-full"
 							/>
 							<span>/</span>
