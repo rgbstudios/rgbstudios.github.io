@@ -27,10 +27,6 @@
 		{
 			id: 1,
 			title: 'Students'
-		},
-		{
-			id: 2,
-			title: 'Insights'
 		}
 	];
 	let activeTab: TabItem['id'] = 0;
@@ -366,9 +362,6 @@
 						</tbody>
 					</table>
 				</div>
-				<!-- Insights Tab -->
-			{:else}
-				<p>Insights Coming Soon...</p>
 			{/if}
 		</div>
 		<div class="btn-group justify-end gap-1 mt-5">
