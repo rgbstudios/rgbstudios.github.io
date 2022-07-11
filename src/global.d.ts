@@ -1,5 +1,6 @@
 /// <reference types="@sveltejs/kit" />
 
+// Grade Calc
 interface Assignment {
 	id: string;
 	name?: string;
