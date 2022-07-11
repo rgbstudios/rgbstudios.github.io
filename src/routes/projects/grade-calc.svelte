@@ -49,7 +49,11 @@
 		student.grade = grade;
 		$assignments = $assignments;
 		student = student;
-		history.push(`${student.grade * 100}% ${getGradeLetter(student.grade * 100)}`);
+		history.push(
+			`${student.name ? student.name + ' ' : ''} ${student.grade * 100}% ${getGradeLetter(
+				student.grade * 100
+			)}`
+		);
 		history = history;
 		$studentsHistory.push(student);
 		$studentsHistory = $studentsHistory;
