@@ -1,6 +1,7 @@
 <script lang="ts">
 	/// COMPONENTS ///
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	/// UTILS ///
 	import Screenfull from 'screenfull';
@@ -205,21 +206,21 @@
 <!-- Root Layout -->
 <div class="wrapper mt-5 grid gap-5">
 	<div class="btn-group justify-center gap-1">
-		<label for="info-modal" class="btn modal-button">Info</label>
-		<label for="settings-modal" class="btn modal-button">Settings</label>
-		<label for="gradebook-modal" class="btn modal-button btn-primary">Gradebook</label>
+		<label for="info-modal" class="btn modal-button">
+			<Icon name="info" /> &nbsp; Info
+		</label>
+		<label for="settings-modal" class="btn modal-button">
+			<Icon name="settings" /> &nbsp; Settings
+		</label>
+		<label for="gradebook-modal" class="btn modal-button btn-primary">
+			<Icon name="book" /> &nbsp; Gradebook
+		</label>
 	</div>
 	<form on:submit|preventDefault={calculate} class="grid gap-5">
 		{#each $assignments as { name, max_score, weight }, index}
 			<div class="card w-full bg-gray-900 border">
-				<div class="card-body">
-					<small class="text-center">
-						Points {points(student.scores[index], weight, max_score) * 100}%; Grade: {grade(
-							student.scores[index],
-							max_score
-						) * 100}%
-					</small>
-					<div class="grid grid-cols-1 xl:grid-cols-[auto,auto,auto,auto] gap-2 mt-5">
+				<div class="card-body p-6">
+					<div class="grid grid-cols-1 xl:grid-cols-[auto,auto,auto,auto] gap-2 mb-4">
 						<label class="input-group">
 							<span>Score</span>
 							<input
@@ -267,6 +268,12 @@
 							>&times;</button
 						>
 					</div>
+					<small class="text-center">
+						Points {points(student.scores[index], weight, max_score) * 100}%; Grade: {grade(
+							student.scores[index],
+							max_score
+						) * 100}%
+					</small>
 				</div>
 			</div>
 		{/each}
@@ -281,11 +288,17 @@
 			/>
 		</label>
 		<div class="btn-group justify-center gap-1">
-			<button type="button" on:click={newAssignment} class="btn">New Assignment</button>
-			<button type="button" on:click={clear} class="btn">Clear</button>
-			<button type="button" on:click={resetWeights} class="btn">Same Weights</button>
+			<button type="button" on:click={newAssignment} class="btn">
+				<Icon name="plus" /> &nbsp; New Assignment
+			</button>
+			<button type="button" on:click={clear} class="btn">
+				<Icon name="backspace" /> &nbsp; Clear
+			</button>
+			<button type="button" on:click={resetWeights} class="btn">
+				<Icon name="scale" /> &nbsp; Same Weights
+			</button>
 		</div>
-		<button class="btn btn-primary">Calculate</button>
+		<button class="btn btn-primary">Calculate &nbsp; <Icon name="chevron_right" /> </button>
 	</form>
 	<div class="bg-gray-900 border card p-5 text-center grid gap-3">
 		<p class="flex gap-5 justify-center text-5xl">
@@ -293,8 +306,9 @@
 				class="btn btn-primary text-md"
 				type="button"
 				on:click={() => copyText(`${student.grade * 100}% ${getGradeLetter(student.grade * 100)}`)}
-				>Copy</button
 			>
+				<Icon name="copy" /> &nbsp; Copy
+			</button>
 		</p>
 		<p class="text-3xl font-bold">{getGradeLetter(student.grade * 100)}</p>
 	</div>
@@ -304,8 +318,12 @@
 		{/each}
 	</div>
 	<div class="btn-group justify-center gap-1">
-		<button type="button" on:click={() => (history = [])} class="btn">Clear History</button>
-		<button type="button" on:click={downloadHistory} class="btn">Download</button>
+		<button type="button" on:click={() => (history = [])} class="btn"
+			><Icon name="backspace" /> &nbsp; Clear History</button
+		>
+		<button type="button" on:click={downloadHistory} class="btn"
+			><Icon name="download" /> &nbsp; Download</button
+		>
 	</div>
 </div>
 
@@ -373,8 +391,12 @@
 			{/if}
 		</div>
 		<div class="btn-group justify-end gap-1 mt-5">
-			<button class="btn" on:click={exportAsCSV}>Download Grades</button>
-			<button class="btn btn-primary" on:click={uploadCSV}>Upload Grades</button>
+			<button class="btn" on:click={exportAsCSV}>
+				<Icon name="download" /> &nbsp; Download Grades
+			</button>
+			<button class="btn btn-primary" on:click={uploadCSV}>
+				<Icon name="upload" /> &nbsp; Upload Grades
+			</button>
 			<input type="file" class="hidden" id="upload-grades-input" on:change={readCSV} />
 		</div>
 	</label>
@@ -404,15 +426,21 @@
 					on:change={() => ($settings = $settings)}
 				/>
 			</label>
-			<button class="btn btn-error" on:click={clearData}>Clear All Data</button>
+			<button class="btn btn-error" on:click={clearData}>
+				<Icon name="trash" /> &nbsp; Clear All Data
+			</button>
 		</div>
 		<div class="btn-group justify-end gap-1 mt-5">
 			<label
 				for="settings-modal"
 				class="btn"
-				on:click={() => Screenfull.isEnabled && Screenfull.toggle()}>Fullscreen</label
+				on:click={() => Screenfull.isEnabled && Screenfull.toggle()}
 			>
-			<button class="btn btn-error" on:click={resetSettings}>Reset Settings</button>
+				<Icon name="fullscreen" /> &nbsp; Fullscreen
+			</label>
+			<button class="btn btn-error" on:click={resetSettings}>
+				<Icon name="reset" /> &nbsp; Reset Settings
+			</button>
 		</div>
 	</label>
 </label>
@@ -434,7 +462,7 @@
 		</p>
 		<p>✅ Enter total scores those assignments are out of</p>
 		<p>
-			✅ Optional: Use the gavel button titled "Same Weights" to make all assignments equally
+			✅ Optional: Use the scale button titled "Same Weights" to make all assignments equally
 			weighted.
 		</p>
 		<h3 class="border-b">Grading</h3>
