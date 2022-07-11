@@ -8,10 +8,12 @@ function localStore<T>(key: string, defaultValue: T): Writable<T> {
 		const lsVal = JSON.parse(localStorage.getItem(key));
 		const value = lsVal ?? defaultValue;
 
-		if (typeof defaultValue === 'object' && !(defaultValue instanceof Array)) {
-			if (value !== null) store.set(_.merge(defaultValue, lsVal));
-		} else {
-			if (value !== null) store.set(value);
+		if (value !== null) {
+			if (typeof defaultValue === 'object' && !(defaultValue instanceof Array)) {
+				store.set(_.merge(defaultValue, lsVal));
+			} else {
+				store.set(value);
+			}
 		}
 
 		store.subscribe((val) => {
