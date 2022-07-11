@@ -3,6 +3,7 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	/// UTILS ///
+	import Screenfull from 'screenfull';
 	import roundNumber from '$lib/util/roundNumber';
 	import copyText from '$lib/util/copyText';
 	import downloadFile from '$lib/util/downloadFile';
@@ -412,7 +413,7 @@
 			<label
 				for="settings-modal"
 				class="btn"
-				on:click={() => document.documentElement.requestFullscreen()}>Fullscreen</label
+				on:click={() => Screenfull.isEnabled && Screenfull.toggle()}>Fullscreen</label
 			>
 			<button class="btn btn-error" on:click={resetSettings}>Reset Settings</button>
 		</div>
