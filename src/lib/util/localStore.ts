@@ -5,14 +5,14 @@ function localStore<T>(key: string, defaultValue: T): Writable<T> {
 	const store = writable<T>(defaultValue);
 
 	if (typeof localStorage !== 'undefined') {
-		const lsVal = JSON.parse(localStorage.getItem(key));
-		const value = lsVal ?? defaultValue;
+		const localValue = JSON.parse(localStorage.getItem(key));
+		const newValue = localValue ?? defaultValue;
 
-		if (value !== null) {
+		if (newValue !== null) {
 			if (typeof defaultValue === 'object' && !(defaultValue instanceof Array)) {
-				store.set(_.merge(defaultValue, lsVal));
+				store.set(_.merge(defaultValue, localValue));
 			} else {
-				store.set(value);
+				store.set(newValue);
 			}
 		}
 
