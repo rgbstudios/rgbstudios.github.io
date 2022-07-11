@@ -2,8 +2,8 @@
 	"name": "rgbstudios",
 	"version": "0.0.1",
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
+		"dev": "svelte-kit dev",
+		"build": "svelte-kit build",
 		"package": "svelte-kit package",
 		"preview": "svelte-kit preview",
 		"prepare": "svelte-kit sync",
@@ -29,8 +29,7 @@
 		"svelte": "^3.44.0",
 		"svelte-check": "^2.7.2",
 		"svelte-preprocess": "^4.10.7",
-		"tailwindcss": "^3.1.4",
-		"vite": "^2.9.14"
+		"tailwindcss": "^3.1.4"
 	},
 	"type": "module",
 	"dependencies": {
