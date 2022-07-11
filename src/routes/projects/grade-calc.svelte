@@ -54,7 +54,6 @@
 		$studentsHistory.push(student);
 		$studentsHistory = $studentsHistory;
 		const new_id = uid();
-		console.log(new_id);
 		student = { ...student, id: new_id };
 		if ($settings.clearOnCalculate) clear();
 	}
@@ -163,7 +162,6 @@
 			$assignments = [];
 			for (const [index, a] of as.split('\n').entries()) {
 				const [name, max_score, weight] = a.split(',');
-				console.log({ name, max_score, weight });
 				const n = name === `Assignment ${index + 1}` ? null : name;
 				$assignments.push({ id: uid(), name: n, max_score: +max_score, weight: +weight });
 			}
