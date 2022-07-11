@@ -189,7 +189,14 @@
 <ProjectHeader
 	title="Grade Calc"
 	description="Use Grade Calc to calculate students' grades quickly and simply"
-	keywords={['professor', 'grade', 'calculator', 'calc']}
+	keywords={[
+		'free grade calculator',
+		'grade calculator',
+		'grade calculator for professors',
+		'grade tracker',
+		'student grade calculator',
+		'student grade organizer'
+	]}
 	icon="img/projects/icons/grade-calc.png"
 	screenshot="img/projects/screenshots/grade-calc.png"
 />
@@ -404,7 +411,7 @@
 				class="btn"
 				on:click={() => document.documentElement.requestFullscreen()}>Fullscreen</label
 			>
-			<button class="btn btn-error" on:click={resetSettings}>ResetSettings</button>
+			<button class="btn btn-error" on:click={resetSettings}>Reset Settings</button>
 		</div>
 	</label>
 </label>
