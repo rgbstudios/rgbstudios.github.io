@@ -51,6 +51,9 @@
 		history = history;
 		$studentsHistory.push(student);
 		$studentsHistory = $studentsHistory;
+		const new_id = uid();
+		console.log(new_id);
+		student = { ...student, id: new_id };
 		if ($settings.clearOnCalculate) clear();
 	}
 
