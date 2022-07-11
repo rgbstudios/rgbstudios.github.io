@@ -19,9 +19,10 @@ const defaultAssignments: Assignment[] = [
 	}
 ];
 
-export const assignments = localStore<Assignment[]>('grade-calc-assignments', {
-	...defaultAssignments
-});
+export const assignments = localStore<Assignment[]>(
+	'grade-calc-assignments',
+	JSON.parse(JSON.stringify(defaultAssignments))
+);
 export const studentsHistory = localStore<Student[]>('grade-calc-students-history', []);
 interface Settings {
 	selectOnClick: boolean;
@@ -32,12 +33,15 @@ const defaultSettings: Settings = {
 	selectOnClick: false,
 	clearOnCalculate: false
 };
-export const settings = localStore<Settings>('grade-calc-settings', { ...defaultSettings });
+export const settings = localStore<Settings>(
+	'grade-calc-settings',
+	JSON.parse(JSON.stringify(defaultSettings))
+);
 
 export function clearData() {
-	assignments.set(defaultAssignments);
+	assignments.set(JSON.parse(JSON.stringify(defaultAssignments)));
 	studentsHistory.set([]);
 }
 export function resetSettings() {
-	settings.set(defaultSettings);
+	settings.set(JSON.parse(JSON.stringify(defaultSettings)));
 }
