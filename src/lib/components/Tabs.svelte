@@ -15,7 +15,9 @@
 		<button
 			class="tab tab-bordered"
 			class:tab-active={activeTab === tab.id}
-			on:click={() => (activeTab = tab.id)}>{tab.title}</button
+			on:click={() => (activeTab = tab.id)}
 		>
+			{tab.title}
+		</button>
 	{/each}
 </div>

@@ -7,7 +7,7 @@ export function CSVToArray(strData, strDelimiter) {
 	strDelimiter = strDelimiter || ',';
 
 	// Create a regular expression to parse the CSV values.
-	var objPattern = new RegExp(
+	let objPattern = new RegExp(
 		// Delimiters.
 		'(\\' +
 			strDelimiter +
@@ -23,17 +23,17 @@ export function CSVToArray(strData, strDelimiter) {
 
 	// Create an array to hold our data. Give the array
 	// a default empty first row.
-	var arrData = [[]];
+	let arrData = [[]];
 
 	// Create an array to hold our individual pattern
 	// matching groups.
-	var arrMatches = null;
+	let arrMatches = null;
 
 	// Keep looping over the regular expression matches
 	// until we can no longer find a match.
 	while ((arrMatches = objPattern.exec(strData))) {
 		// Get the delimiter that was found.
-		var strMatchedDelimiter = arrMatches[1];
+		const strMatchedDelimiter = arrMatches[1];
 
 		// Check to see if the given delimiter has a length
 		// (is not the start of string) and if it matches
@@ -48,13 +48,14 @@ export function CSVToArray(strData, strDelimiter) {
 		// Now that we have our delimiter out of the way,
 		// let's check to see which kind of value we
 		// captured (quoted or unquoted).
+		let strMatchedValue;
 		if (arrMatches[2]) {
 			// We found a quoted value. When we capture
 			// this value, unescape any double quotes.
-			var strMatchedValue = arrMatches[2].replace(new RegExp('""', 'g'), '"');
+			strMatchedValue = arrMatches[2].replace(new RegExp('""', 'g'), '"');
 		} else {
 			// We found a non-quoted value.
-			var strMatchedValue = arrMatches[3];
+			strMatchedValue = arrMatches[3];
 		}
 
 		// Now that we have our value string, let's add
