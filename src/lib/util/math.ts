@@ -6,7 +6,10 @@ export function factorial(n: number): number {
 	return retval;
 }
 
-export function nCk(n: number, x: number): number {
-	if (x > n) return 0;
-	return factorial(n) / (factorial(n - x) * factorial(x));
+export function nCk(n: number, k: number): number {
+	let result = 1;
+	for (let i = 1; i <= k; i++) {
+		result *= (n + 1 - i) / i;
+	}
+	return result;
 }

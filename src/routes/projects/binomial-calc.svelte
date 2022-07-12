@@ -62,7 +62,6 @@
 	$: mu = errorMsg !== '' ? 0 : roundNumber(mean(p, n, x), roundPrecision);
 	$: sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
 	$: stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
-	$: console.log(nCk(n, x));
 
 	$: if (n > 1000) {
 		n = 1000;
@@ -382,7 +381,7 @@
 					<td>
 						<input
 							disabled
-							value={errorMsg !== '' ? 0 : roundNumber(nCk(n, x), roundPrecision)}
+							value={errorMsg !== '' ? 0 : nCk(n, x)}
 							class="input input-bordered w-full"
 						/>
 					</td>
