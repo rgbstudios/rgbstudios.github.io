@@ -62,13 +62,6 @@
 		errorMsg = '';
 	}
 
-	function validateForm() {
-		if (btnSubmit) {
-			N, m, n, k;
-			btnSubmit.click();
-		}
-	}
-
 	$: if ((N || m || n || k) && googleChartsLoaded) {
 		drawCharts();
 	}
@@ -220,7 +213,6 @@
 					<td>N</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={N}
 							min="1"
@@ -235,7 +227,6 @@
 					<td>m</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={m}
 							min="1"
@@ -250,7 +241,6 @@
 					<td>n</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={n}
 							min="1"
@@ -265,7 +255,6 @@
 					<td>k</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={k}
 							min="0"

@@ -55,14 +55,31 @@
 			: history.replaceState(null, null);
 	}
 
-	$: eq = probabilityMass(p, n, x);
-	$: lt = less(p, n, x);
-	$: gt = more(p, n, x);
+	$: eq = errorMsg !== '' ? 0 : probabilityMass(p, n, x);
+	$: lt = errorMsg !== '' ? 0 : less(p, n, x);
+	$: gt = errorMsg !== '' ? 0 : more(p, n, x);
 	$: le = lt + eq;
 	$: ge = gt + eq;
-	$: mu = roundNumber(mean(p, n, x), roundPrecision);
-	$: sigma = roundNumber(variance(p, n, x), roundPrecision);
+	$: mu = errorMsg !== '' ? 0 : roundNumber(mean(p, n, x), roundPrecision);
+	$: sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
 	$: stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
+	$: console.log(nCk(n, x));
+
+	$: if (n > 1000) {
+		n = 1000;
+	} else if (n < 0) {
+		n = 0;
+	}
+	$: if (x > 1000) {
+		x = 1000;
+	} else if (x < 0) {
+		x = 0;
+	}
+	$: if (p > 1) {
+		p = 1;
+	} else if (p < 0) {
+		p = 0;
+	}
 
 	$: if (isNaN(p) || isNaN(n) || isNaN(x)) errorMsg = 'p, n, and x must be numbers';
 	else if (p > 1 || p < 0) errorMsg = 'p must be between 0 and 1';
@@ -70,13 +87,6 @@
 	else if (n >= 1000 || x >= 1000) errorMsg = 'n and x must be less than 1000';
 	else if (n < x) errorMsg = 'n must be &ge; x';
 	else errorMsg = '';
-
-	function validateForm() {
-		if (btnSubmit) {
-			p, n, x;
-			btnSubmit.click();
-		}
-	}
 
 	$: if ((p || n || x) && googleChartsLoaded) {
 		drawCharts();
@@ -247,7 +257,6 @@
 					<td>p</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={p}
 							min="0"
@@ -263,7 +272,6 @@
 					<td>n</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={n}
 							min="0"
@@ -278,7 +286,6 @@
 					<td>x</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={x}
 							min="0"
@@ -305,35 +312,68 @@
 				<!-- Output -->
 				<tr>
 					<td>Binomial probability</td>
-					<td class="text-brand-blue font-bold">P(X=x)</td>
+					<td class="text-brand-blue font-bold">
+						<div class="flex items-center gap-3">
+							<span>P(X=x)</span>
+							<img class="h-[1.5rem]" src="/img/projects/other/icon-equal.png" alt="equal" />
+						</div>
+					</td>
 					<td>
 						<input disabled value={eq} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Cumulative probability</td>
-					<td class="text-brand-red font-bold">P(X&lt;x)</td>
+					<td class="text-brand-red font-bold">
+						<div class="flex items-center gap-3">
+							<span>P(X&lt;x)</span>
+							<img class="h-[1.5rem]" src="/img/projects/other/icon-less.png" alt="less" />
+						</div>
+					</td>
 					<td>
 						<input disabled value={lt} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Cumulative probability</td>
-					<td class="text-brand-green font-bold">P(X&gt;x)</td>
+					<td class="text-brand-green font-bold">
+						<div class="flex items-center gap-3">
+							<span>P(X&gt;x)</span>
+							<img class="h-[1.5rem]" src="/img/projects/other/icon-greater.png" alt="greater" />
+						</div>
+					</td>
 					<td>
 						<input disabled value={gt} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Cumulative probability</td>
-					<td>P(X&le;x)</td>
+					<td class="font-bold">
+						<div class="flex items-center gap-3">
+							<span>P(X&le;x)</span>
+							<img
+								class="h-[1.5rem]"
+								src="/img/projects/other/icon-less-equal.png"
+								alt="less-equal"
+							/>
+						</div></td
+					>
 					<td>
 						<input disabled value={le} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Cumulative probability</td>
-					<td>P(X&ge;x)</td>
+					<td class="font-bold">
+						<div class="flex items-center gap-3">
+							<span>P(X&ge;x)</span>
+							<img
+								class="h-[1.5rem]"
+								src="/img/projects/other/icon-greater-equal.png"
+								alt="greater-equal"
+							/>
+						</div></td
+					>
 					<td>
 						<input disabled value={ge} class="input input-bordered w-full" />
 					</td>
@@ -344,7 +384,7 @@
 					<td>
 						<input
 							disabled
-							value={roundNumber(nCk(n, x), roundPrecision)}
+							value={errorMsg !== '' ? 0 : roundNumber(nCk(n, x), roundPrecision)}
 							class="input input-bordered w-full"
 						/>
 					</td>
@@ -424,26 +464,15 @@
 						<Icon name="copy" />
 					</button>
 				</div>
+				<div class="divider" />
+				<p>
+					Made with <a class="link" target="_blank" href="https://developers.google.com/chart"
+						>Google Charts</a
+					>,
+					<a class="link" target="_blank" href="https://www.mathjax.org/">MathJax</a>,
+					<a class="link" target="_blank" href="https://kit.svelte.dev/">SvelteKit</a>,
+				</p>
 			</div>
-		</label>
-	</label>
-
-	<!-- About modal -->
-	<label for="about-modal" class="btn modal-button btn-info">About</label>
-
-	<input type="checkbox" id="about-modal" class="modal-toggle" />
-	<label for="about-modal" class="modal cursor-pointer">
-		<label class="modal-box relative text-center" for="">
-			<h3 class="font-bold text-lg">About</h3>
-			<div class="divider" />
-
-			<p>
-				Made with <a class="link" target="_blank" href="https://developers.google.com/chart"
-					>Google Charts</a
-				>,
-				<a class="link" target="_blank" href="https://www.mathjax.org/">MathJax</a>,
-				<a class="link" target="_blank" href="https://kit.svelte.dev/">SvelteKit</a>,
-			</p>
 		</label>
 	</label>
 </div>
