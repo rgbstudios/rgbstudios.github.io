@@ -25,7 +25,6 @@
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
 	export let N, m, n, k;
-	let btnSubmit;
 	let errorMsg = '';
 
 	$: if (browser) {
@@ -265,7 +264,6 @@
 					</td>
 				</tr>
 				<hr class="w-full" />
-				<button type="submit" class="hidden" bind:this={btnSubmit}>Submit</button>
 				<!-- Error -->
 				{#if errorMsg !== ''}
 					<tr>

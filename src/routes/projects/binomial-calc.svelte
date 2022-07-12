@@ -36,7 +36,6 @@
 		n = 40,
 		x = 18;
 	export let q;
-	let btnSubmit;
 	let errorMsg = '';
 	let barChartURI, pieChartURI;
 	const learnLocation = browser
@@ -296,7 +295,6 @@
 					</td>
 				</tr>
 				<hr class="w-full" />
-				<button type="submit" class="hidden" bind:this={btnSubmit}>Submit</button>
 				<!-- Error -->
 				{#if errorMsg !== ''}
 					<tr>
