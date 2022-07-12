@@ -29,10 +29,13 @@ interface Settings {
 	clearOnCalculate: boolean;
 }
 
+export const setupDone = localStore<boolean>('grade-calc-setup-done', false);
+
 const defaultSettings: Settings = {
 	selectOnClick: false,
 	clearOnCalculate: false
 };
+
 export const settings = localStore<Settings>(
 	'grade-calc-settings',
 	JSON.parse(JSON.stringify(defaultSettings))
@@ -41,6 +44,7 @@ export const settings = localStore<Settings>(
 export function clearData() {
 	assignments.set(JSON.parse(JSON.stringify(defaultAssignments)));
 	studentsHistory.set([]);
+	setupDone.set(false);
 }
 export function resetSettings() {
 	settings.set(JSON.parse(JSON.stringify(defaultSettings)));

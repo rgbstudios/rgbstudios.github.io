@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	/// COMPONENTS ///
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
@@ -16,9 +17,11 @@
 		assignments,
 		studentsHistory,
 		settings,
-		resetSettings
+		resetSettings,
+		setupDone
 	} from '$lib/stores/grade-calc';
 	import Tabs, { type TabItem } from '$lib/components/Tabs.svelte';
+	import SetupModal from '$lib/components/modals/grade_calc/SetupModal.svelte';
 
 	/// STATE ///
 	const tabs: TabItem[] = [
@@ -74,31 +77,9 @@
 		return roundNumber(score / max_score, 5);
 	}
 
-	function newAssignment() {
-		$assignments.push({
-			id: uid(),
-			max_score: 100,
-			weight: 100
-		});
-		student.scores.push(0);
-		$assignments = $assignments;
-		student = student;
-	}
-
 	function clear() {
 		student.scores.fill(0);
 		student = student;
-	}
-
-	function resetWeights() {
-		$assignments = $assignments.map((a) => {
-			a.weight = 100;
-			return a;
-		});
-	}
-
-	function removeAssignment(index: number) {
-		$assignments = $assignments.filter((_, i) => i !== index);
 	}
 
 	type Grade = 'A' | 'A+' | 'A-' | 'B' | 'B+' | 'A-' | 'C' | 'C+' | 'C-' | 'D' | 'D+' | 'D-' | 'F';
@@ -191,6 +172,11 @@
 		const inp = e.target as HTMLInputElement;
 		inp.select();
 	}
+
+	/// LIFECYCLE HOOKS ///
+	onMount(() => {
+		if ($setupDone) return;
+	});
 </script>
 
 <ProjectHeader
@@ -226,7 +212,7 @@
 		{#each $assignments as { name, max_score, weight }, index}
 			<div class="card w-full bg-gray-900 border">
 				<div class="card-body p-6">
-					<div class="grid grid-cols-1 xl:grid-cols-[auto,auto,auto,auto] gap-2 mb-4">
+					<div class="grid grid-cols-1 xl:grid-cols-[auto,auto,auto] gap-2 mb-4">
 						<label class="input-group">
 							<span>Score</span>
 							<input
@@ -240,21 +226,23 @@
 							/>
 							<span>/</span>
 							<input
+								disabled
 								on:click|self={selectTextOnClick}
 								type="number"
 								min="0"
+								value={max_score}
 								required
-								bind:value={max_score}
 								class="input input-bordered xl:w-auto w-full"
 							/>
 						</label>
 						<label class="input-group ">
 							<span>Weight</span>
 							<input
+								disabled
 								on:click|self={selectTextOnClick}
 								type="number"
 								min="0"
-								bind:value={weight}
+								value={weight}
 								required
 								class="input input-bordered xl:w-auto w-full"
 							/>
@@ -262,16 +250,14 @@
 						<label class="input-group ">
 							<span>Name</span>
 							<input
+								disabled
 								on:click|self={selectTextOnClick}
 								type="text"
-								bind:value={name}
+								value={name || `Assignment (optional)`}
 								placeholder="Assignment (optional)"
 								class="input input-bordered xl:w-auto w-full"
 							/>
 						</label>
-						<button class="btn btn-error text-xl" on:click={() => removeAssignment(index)}
-							>&times;</button
-						>
 					</div>
 					<small class="text-center">
 						Points {points(student.scores[index], weight, max_score) * 100}%; Grade: {grade(
@@ -293,14 +279,8 @@
 			/>
 		</label>
 		<div class="btn-group justify-center gap-1">
-			<button type="button" on:click={newAssignment} class="btn">
-				<Icon name="plus" /> &nbsp; New Assignment
-			</button>
 			<button type="button" on:click={clear} class="btn">
 				<Icon name="backspace" /> &nbsp; Clear
-			</button>
-			<button type="button" on:click={resetWeights} class="btn">
-				<Icon name="scale" /> &nbsp; Same Weights
 			</button>
 		</div>
 		<button class="btn btn-primary">Calculate &nbsp; <Icon name="chevron_right" /> </button>
@@ -431,9 +411,9 @@
 					on:change={() => ($settings = $settings)}
 				/>
 			</label>
-			<button class="btn btn-error" on:click={clearData}>
+			<label for="settings-modal" class="btn btn-error" on:click={clearData}>
 				<Icon name="trash" /> &nbsp; Clear All Data
-			</button>
+			</label>
 		</div>
 		<div class="btn-group justify-end gap-1 mt-5">
 			<label
@@ -493,6 +473,7 @@
 		</p>
 	</label>
 </label>
+<SetupModal />
 
 <style>
 	p {
