@@ -22,6 +22,7 @@
 	} from '$lib/stores/grade-calc';
 	import Tabs, { type TabItem } from '$lib/components/Tabs.svelte';
 	import SetupModal from '$lib/components/modals/grade_calc/SetupModal.svelte';
+	import ClearAllDataModal from '$lib/components/modals/grade_calc/ClearAllDataModal.svelte';
 
 	/// STATE ///
 	const tabs: TabItem[] = [
@@ -200,7 +201,7 @@
 		<label for="info-modal" class="btn modal-button">
 			<Icon name="info" /> &nbsp; Info
 		</label>
-		<label for="settings-modal" class="btn modal-button">
+		<label for="grade-calc-settings-modal" class="btn modal-button">
 			<Icon name="settings" /> &nbsp; Settings
 		</label>
 		<label for="gradebook-modal" class="btn modal-button btn-primary">
@@ -388,8 +389,8 @@
 </label>
 
 <!-- Settings Modal -->
-<input type="checkbox" id="settings-modal" class="modal-toggle" />
-<label for="settings-modal" class="modal cursor-pointer">
+<input type="checkbox" id="grade-calc-settings-modal" class="modal-toggle" />
+<label for="grade-calc-settings-modal" class="modal cursor-pointer">
 	<label class="modal-box relative text-center" for="">
 		<h3>Settings</h3>
 		<div class="form-control">
@@ -411,13 +412,13 @@
 					on:change={() => ($settings = $settings)}
 				/>
 			</label>
-			<label for="settings-modal" class="btn btn-error" on:click={clearData}>
+			<label for="grade-calc-clear-data-modal" class="btn btn-error">
 				<Icon name="trash" /> &nbsp; Clear All Data
 			</label>
 		</div>
 		<div class="btn-group justify-end gap-1 mt-5">
 			<label
-				for="settings-modal"
+				for="grade-calc-settings-modal"
 				class="btn"
 				on:click={() => Screenfull.isEnabled && Screenfull.toggle()}
 			>
@@ -473,6 +474,7 @@
 		</p>
 	</label>
 </label>
+<ClearAllDataModal />
 <SetupModal />
 
 <style>
