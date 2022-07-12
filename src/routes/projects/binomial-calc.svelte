@@ -218,13 +218,20 @@
 	title="Binomial Calc"
 	description="Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs"
 	keywords={[
-		'binomial',
-		'calculator',
-		'calc',
-		'statistics',
-		'stats',
-		'probability',
-		'distribution'
+		'binomial calculator',
+		'binomial distribution',
+		'binomial distribution calculator',
+		'binomial statistics',
+		'binomial formulas',
+		'binomial calculations',
+		'binomial distribution charts',
+		'binomial distribution graphs',
+		'binomial distribution pie chart',
+		'binomial distribution bar chart',
+		'binomial probability',
+		'binomial probability calculator',
+		'binomial probability formulas',
+		'binomial distribution probability'
 	]}
 	icon="img/projects/icons/binomial-calc.png"
 	screenshot="img/projects/screenshots/binomial-calc.png"
@@ -371,15 +378,15 @@
 <div class="grid gap-5">
 	<div id="pie-chart" class="mt-5" />
 	<div class="flex justify-center">
-		<a class="btn" download="pie_chart.png" href={pieChartURI} title="download pie chart"
-			><Icon name="download" /></a
-		>
+		<a class="btn" download="pie_chart.png" href={pieChartURI} title="Download pie chart">
+			<Icon name="download" />
+		</a>
 	</div>
 	<div id="bar-chart" class="mt-5" />
 	<div class="flex justify-center">
-		<a class="btn" download="bar_chart.png" href={barChartURI} title="download bar chart"
-			><Icon name="download" /></a
-		>
+		<a class="btn" download="bar_chart.png" href={barChartURI} title="Download bar chart">
+			<Icon name="download" />
+		</a>
 	</div>
 </div>
 
@@ -412,6 +419,7 @@
 						type="text"
 						value={learnLocation}
 					/>
+					<!-- TODO: show toast when copied -->
 					<button type="button" class="btn" title="Copy" on:click={() => copyText(learnLocation)}>
 						<Icon name="copy" />
 					</button>
