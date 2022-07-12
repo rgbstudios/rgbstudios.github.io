@@ -223,7 +223,7 @@
 </svelte:head>
 
 <ProjectHeader
-	title="Binomial Calc"
+	title="Binomial Distribution Calculator"
 	description="Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs"
 	keywords={[
 		'binomial calculator',
