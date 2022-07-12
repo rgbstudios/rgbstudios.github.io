@@ -20,6 +20,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import roundNumber from '$lib/util/roundNumber';
+	import { nCk } from '$lib/util/math';
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
@@ -73,20 +74,6 @@
 	}
 
 	// Math
-
-	function factorial(n) {
-		let retval = 1;
-		for (let i = n; i > 1; i--) {
-			retval *= i;
-		}
-		return retval;
-	}
-
-	function nCk(n, k) {
-		if (k > n) return 0;
-		return factorial(n) / (factorial(n - k) * factorial(k));
-	}
-
 	function exactKdistinct(N, m, n, k) {
 		return roundNumber((nCk(m, k) * nCk(N - m, n - k)) / nCk(N, n), roundPrecision);
 	}

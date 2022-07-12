@@ -26,6 +26,10 @@ const redirects = [
 	{
 		source: '/grade-calc',
 		destination: '/projects/grade-calc'
+	},
+	{
+		source: '/binomial-calc',
+		destination: '/projects/binomial-calc'
 	}
 ];
 
