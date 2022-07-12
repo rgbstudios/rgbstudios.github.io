@@ -1,4 +1,5 @@
 <script>
+	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '../../Icon.svelte';
 
 	let simpleMode = true;
@@ -50,96 +51,101 @@
 	}
 </script>
 
-<div class="form-control">
-	<label class="label cursor-pointer">
-		<span class="label-text">Same bases</span>
-		<input bind:checked={simpleMode} type="checkbox" class="checkbox" />
-	</label>
-</div>
-
-{#if simpleMode}
-	<label class="text-center block">
-		Base:
-		<br />
-		<input
-			bind:value={baseInput}
-			class="input input-bordered w-full max-w-xs"
-			on:keyup={handleOperation}
-			type="text"
-		/>
-	</label>
-{:else}
-	<div class="sm:grid sm:grid-cols-3">
-		<div>
-			<label>
-				Input 1 Base:
-				<input
-					bind:value={baseInput1}
-					class="input input-bordered w-full max-w-xs"
-					on:keyup={handleOperation}
-					type="text"
-				/>
-			</label>
-		</div>
-		<div>
-			<label>
-				Input 2 Base:
-				<input
-					bind:value={baseInput2}
-					class="input input-bordered w-full max-w-xs"
-					on:keyup={handleOperation}
-					type="text"
-				/>
-			</label>
-		</div>
-		<div>
-			<label>
-				Output Base:
-				<input
-					bind:value={baseInput3}
-					class="input input-bordered w-full max-w-xs"
-					on:keyup={handleOperation}
-					type="text"
-				/>
-			</label>
-		</div>
+<Modal id="base-convert-arithmetic-modal" showCloseBtn>
+	<div slot="title">
+		<Icon name="calculator" /> Arithmetic
 	</div>
-{/if}
+	<div class="form-control">
+		<label class="label cursor-pointer">
+			<span class="label-text">Same bases</span>
+			<input bind:checked={simpleMode} type="checkbox" class="checkbox" />
+		</label>
+	</div>
 
-<input
-	class="input input-bordered w-full mt-6"
-	bind:value={val1Input}
-	type="text"
-	on:keyup={handleOperation}
-/>
-<select
-	class="select select-bordered w-full"
-	bind:value={operationInput}
-	on:change={handleOperation}
->
-	<option>+</option>
-	<option>-</option>
-	<option>&times;</option>
-	<option>/</option>
-</select>
+	{#if simpleMode}
+		<label class="text-center block">
+			Base:
+			<br />
+			<input
+				bind:value={baseInput}
+				class="input input-bordered w-full max-w-xs"
+				on:keyup={handleOperation}
+				type="text"
+			/>
+		</label>
+	{:else}
+		<div class="sm:grid sm:grid-cols-3">
+			<div>
+				<label>
+					Input 1 Base:
+					<input
+						bind:value={baseInput1}
+						class="input input-bordered w-full max-w-xs"
+						on:keyup={handleOperation}
+						type="text"
+					/>
+				</label>
+			</div>
+			<div>
+				<label>
+					Input 2 Base:
+					<input
+						bind:value={baseInput2}
+						class="input input-bordered w-full max-w-xs"
+						on:keyup={handleOperation}
+						type="text"
+					/>
+				</label>
+			</div>
+			<div>
+				<label>
+					Output Base:
+					<input
+						bind:value={baseInput3}
+						class="input input-bordered w-full max-w-xs"
+						on:keyup={handleOperation}
+						type="text"
+					/>
+				</label>
+			</div>
+		</div>
+	{/if}
 
-<input
-	bind:value={val2Input}
-	class="input input-bordered w-full"
-	on:keyup={handleOperation}
-	type="text"
-/>
-<br />
-<button on:click={handleOperation} class="btn mx-auto block mt-6">
-	<Icon name="calculator" /> Calculate
-</button>
-<br /><br />
-<input
-	disabled
-	bind:value={result}
-	type="text"
-	class="input input-bordered w-full max-w-xs"
-	style="cursor:text;"
-/>
-<p class="bg-error {complexError && 'p-2'}">{complexError}</p>
-<p>Note: max base is 36</p>
+	<input
+		class="input input-bordered w-full mt-6"
+		bind:value={val1Input}
+		type="text"
+		on:keyup={handleOperation}
+	/>
+	<select
+		class="select select-bordered w-full"
+		bind:value={operationInput}
+		on:change={handleOperation}
+	>
+		<option>+</option>
+		<option>-</option>
+		<option>&times;</option>
+		<option>/</option>
+	</select>
+
+	<input
+		bind:value={val2Input}
+		class="input input-bordered w-full"
+		on:keyup={handleOperation}
+		type="text"
+	/>
+	<br />
+	<button on:click={handleOperation} class="btn mx-auto block mt-6">
+		<Icon name="calculator" /> Calculate
+	</button>
+	<br /><br />
+	<input
+		disabled
+		bind:value={result}
+		type="text"
+		class="input input-bordered w-full max-w-xs"
+		style="cursor:text;"
+	/>
+	<p class="bg-error {complexError && 'p-2'}">{complexError}</p>
+	<p>Note: max base is 36</p>
+</Modal>

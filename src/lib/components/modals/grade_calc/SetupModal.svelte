@@ -3,37 +3,19 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
-	/// UTILS ///
-	import uid from '$lib/util/uid';
-
 	/// STATE ///
 	import { assignments, setupDone } from '$lib/stores/grade-calc';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import NewAssignmentModal from './NewAssignmentModal.svelte';
 
 	/// METHODS ///
-	function newAssignment() {
-		$assignments.push({
-			id: uid(),
-			max_score: 100,
-			weight: 100
-		});
-		$assignments = $assignments;
-	}
-
-	function resetWeights() {
-		$assignments = $assignments.map((a) => {
-			a.weight = 100;
-			return a;
-		});
-	}
-
 	function removeAssignment(id: Assignment['id']) {
 		$assignments = $assignments.filter(({ id: i }) => i !== id);
 	}
 </script>
 
-<Modal id="grade-calc-setup-modal" checked={!$setupDone}>
+<Modal id="grade-calc-setup-modal" hidden={$setupDone} showCloseBtn>
+	<div slot="title">Setup</div>
 	<div class="overflow-x-auto py-4">
 		<table class="table table-zebra w-full">
 			<!-- head -->
