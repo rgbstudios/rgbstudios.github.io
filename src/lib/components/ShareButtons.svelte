@@ -61,7 +61,6 @@
 	$: copied = false;
 </script>
 
-<p>Share it:</p>
 <a
 	href="https://www.facebook.com/sharer.php?t={encodeURIComponent(title)}&u={encodeURIComponent(
 		link
