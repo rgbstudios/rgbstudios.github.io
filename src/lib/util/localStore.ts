@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import merge from 'lodash.merge';
 import { writable, type Writable } from 'svelte/store';
 
 function localStore<T>(key: string, defaultValue: T): Writable<T> {
@@ -10,7 +10,7 @@ function localStore<T>(key: string, defaultValue: T): Writable<T> {
 
 		if (newValue !== null) {
 			if (typeof defaultValue === 'object' && !(defaultValue instanceof Array)) {
-				store.set(_.merge(defaultValue, localValue));
+				store.set(merge(defaultValue, localValue));
 			} else {
 				store.set(newValue);
 			}
