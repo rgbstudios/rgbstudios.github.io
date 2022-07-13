@@ -25,7 +25,7 @@
 	on:change={(e) => (hidden = !e.target.checked)}
 />
 <label for={id} class="modal">
-	<div class="modal-box relative rounded border-2">
+	<label for="" class="modal-box relative rounded border-2">
 		{#if $$slots.title || showCloseBtn}
 			<div class="header flex justify-between items-center border-b-2 p-2 mb-5">
 				<h3><slot name="title" /></h3>
@@ -37,5 +37,5 @@
 			</div>
 		{/if}
 		<slot />
-	</div>
+	</label>
 </label>
