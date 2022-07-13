@@ -484,3 +484,9 @@
 		</label>
 	</label>
 </div>
+
+<style>
+	td {
+		padding: 0.5rem 1rem;
+	}
+</style>
