@@ -30,6 +30,11 @@
 	import copyText from '$lib/util/copyText';
 
 	/// STATE ///
+	let changed = false;
+	$: {
+		p, n, x;
+		changed = true;
+	}
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
 	export let p = 0.5,
@@ -54,14 +59,7 @@
 			: history.replaceState(null, null);
 	}
 
-	$: eq = errorMsg !== '' ? 0 : probabilityMass(p, n, x);
-	$: lt = errorMsg !== '' ? 0 : less(p, n, x);
-	$: gt = errorMsg !== '' ? 0 : more(p, n, x);
-	$: le = lt + eq;
-	$: ge = gt + eq;
-	$: mu = errorMsg !== '' ? 0 : roundNumber(mean(p, n, x), roundPrecision);
-	$: sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
-	$: stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
+	let eq, lt, gt, le, ge, mu, sigma, stddev;
 
 	$: if (n > 1000) {
 		n = 1000;
@@ -129,6 +127,19 @@
 			drawCharts();
 			googleChartsLoaded = true;
 		});
+
+		setInterval(() => {
+			if (!changed) return;
+			eq = errorMsg !== '' ? 0 : probabilityMass(p, n, x);
+			lt = errorMsg !== '' ? 0 : less(p, n, x);
+			gt = errorMsg !== '' ? 0 : more(p, n, x);
+			le = lt + eq;
+			ge = gt + eq;
+			mu = errorMsg !== '' ? 0 : roundNumber(mean(p, n, x), roundPrecision);
+			sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
+			stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
+			changed = false;
+		}, 1000);
 	});
 
 	const colors = {
