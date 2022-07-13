@@ -59,7 +59,7 @@
 			: history.replaceState(null, null);
 	}
 
-	let eq, lt, gt, le, ge, mu, sigma, stddev;
+	let eq, lt, gt, le, ge, mu, sigma, stddev, _nck;
 
 	$: if (n > 1000) {
 		n = 1000;
@@ -128,8 +128,7 @@
 			googleChartsLoaded = true;
 		});
 
-		setInterval(() => {
-			if (!changed) return;
+		function calculate() {
 			eq = errorMsg !== '' ? 0 : probabilityMass(p, n, x);
 			lt = errorMsg !== '' ? 0 : less(p, n, x);
 			gt = errorMsg !== '' ? 0 : more(p, n, x);
@@ -138,7 +137,13 @@
 			mu = errorMsg !== '' ? 0 : roundNumber(mean(p, n, x), roundPrecision);
 			sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
 			stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
+			_nck = errorMsg !== '' ? 0 : nCk(n, x);
 			changed = false;
+		}
+		calculate();
+		setInterval(() => {
+			if (!changed) return;
+			calculate();
 		}, 1000);
 	});
 
@@ -390,11 +395,7 @@
 					<td>N choose X</td>
 					<td><sub>n</sub>C<sub>x</sub></td>
 					<td>
-						<input
-							disabled
-							value={errorMsg !== '' ? 0 : nCk(n, x)}
-							class="input input-bordered w-full"
-						/>
+						<input disabled value={_nck} class="input input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
