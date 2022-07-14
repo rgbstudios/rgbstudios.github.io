@@ -78,6 +78,7 @@
 	}
 
 	$: if (isNaN(p) || isNaN(n) || isNaN(x)) errorMsg = 'p, n, and x must be numbers';
+	else if (n === null || p === null || x === null) errorMsg = 'p, n, x must be numbers';
 	else if (p > 1 || p < 0) errorMsg = 'p must be between 0 and 1';
 	else if (n < 0 || x < 0) errorMsg = 'n and x must be positive integers';
 	else if (n >= 1000 || x >= 1000) errorMsg = 'n and x must be less than 1000';
@@ -129,6 +130,7 @@
 		});
 
 		function calculate() {
+			changed = false;
 			eq = errorMsg !== '' ? 0 : probabilityMass(p, n, x);
 			lt = errorMsg !== '' ? 0 : less(p, n, x);
 			gt = errorMsg !== '' ? 0 : more(p, n, x);
@@ -138,13 +140,12 @@
 			sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
 			stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
 			_nck = errorMsg !== '' ? 0 : nCk(n, x);
-			changed = false;
 		}
 		calculate();
 		setInterval(() => {
 			if (!changed) return;
 			calculate();
-		}, 1000);
+		}, 2000);
 	});
 
 	const colors = {
@@ -235,6 +236,10 @@
 </script>
 
 <svelte:head>
+	<script
+		id="MathJax-script"
+		async
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </svelte:head>
 
