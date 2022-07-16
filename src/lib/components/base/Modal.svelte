@@ -14,6 +14,11 @@
 			}
 		});
 	});
+
+	function onChange(e: Event) {
+		const inp = e.target as HTMLInputElement;
+		hidden = !inp.checked;
+	}
 </script>
 
 <input
@@ -22,7 +27,7 @@
 	{id}
 	class="modal-toggle"
 	checked={!hidden}
-	on:change={(e) => (hidden = !e.target.checked)}
+	on:change={onChange}
 />
 <label for={id} class="modal">
 	<label for="" class="modal-box relative rounded border-2">
