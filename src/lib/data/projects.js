@@ -58,21 +58,27 @@ const projects = [
 		text: "Use Grade Calc to calculate students' grades quickly and simply",
 		img: 'img/projects/screenshots/grade-calc.png',
 		link: '/projects/grade-calc/',
-		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app']
+		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Base Converter',
 		text: 'Convert numbers between binary, octal, decimal, hexadecimal, and more',
 		img: 'img/projects/screenshots/base-convert.png',
 		link: '/projects/base-convert/',
-		tags: ['calculator', 'converter', 'educational', 'tool', 'web app']
+		tags: ['calculator', 'converter', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Intersect Calc',
 		text: 'Use Intersection Calc to calculate the intersection point of lines',
 		img: 'img/projects/screenshots/intersect-calc.png',
 		link: '/projects/intersect-calc/',
-		tags: ['calculator', 'educational', 'tool', 'web app']
+		tags: ['calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		// TODO minor cleanup
@@ -95,7 +101,9 @@ const projects = [
 		text: 'Use Morse Code Converter to convert both ways between English and Morse code',
 		img: 'img/projects/screenshots/morse-convert.png',
 		link: '/projects/morse-convert/',
-		tags: ['morse code', 'converter', 'tool', 'web app']
+		tags: ['morse code', 'converter', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		// TODO cleanup and add sharethis
@@ -110,14 +118,18 @@ const projects = [
 		text: 'Use Stat Calc to calculate many statistics on a data set',
 		img: 'img/projects/screenshots/stat-calc.png',
 		link: '/projects/stat-calc/',
-		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
+		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Binomial Calc',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
 		img: 'img/projects/screenshots/binomial-calc.png',
 		link: '/projects/binomial-calc/',
-		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
+		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Binomial Calc App',
@@ -139,14 +151,18 @@ const projects = [
 		text: 'Use Simple Grade Calc to easily calculate your grade',
 		img: 'img/projects/screenshots/simple-grade-calc.png',
 		link: '/projects/simple-grade-calc/',
-		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app']
+		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Replacement Calc',
 		text: 'Use Replacement Calc to calculate the probabilities of picking a certain number of objects without replacement, such as picking marbles or cards',
 		img: 'img/projects/screenshots/replacement-calc.png',
 		link: '/projects/replacement-calc/',
-		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
+		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
 	}
 
 	// TODO: figure out songssearcher.com
