@@ -31,13 +31,9 @@
 		</label>
 	</div>
 	<div class="btn-group justify-end gap-1 mt-5">
-		<label
-			for="grade-calc-settings-modal"
-			class="btn"
-			on:click={() => Screenfull.isEnabled && Screenfull.toggle()}
-		>
+		<button class="btn" on:click={() => Screenfull.isEnabled && Screenfull.toggle()}>
 			<Icon name="fullscreen" /> &nbsp; Fullscreen
-		</label>
+		</button>
 		<button class="btn btn-error" on:click={resetSettings}>
 			<Icon name="reset" /> &nbsp; Reset Settings
 		</button>
