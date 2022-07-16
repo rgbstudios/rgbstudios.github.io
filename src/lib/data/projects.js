@@ -31,13 +31,6 @@ const projects = [
 		isFeatured: true
 	},
 	{
-		title: 'Desktop Clock - Original Chrome App',
-		text: 'The original Chrome App for Desktop Clock. Check desktopclock.app for the latest version, which can be installed offline and has more features.',
-		img: 'img/screenshots/desktop_clock_old.png',
-		link: 'https://chrome.google.com/webstore/detail/desktop-clock/fioeniclklclkopakbepllehmbfikpcc',
-		tags: ['clock', 'web app', 'installable']
-	},
-	{
 		// TODO: move https://color-convert.netlify.app/ to rgb domain
 		// TODO: add sharethis
 		title: 'Color Convert',
