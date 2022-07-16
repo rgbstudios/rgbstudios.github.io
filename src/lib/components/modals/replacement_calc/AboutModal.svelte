@@ -2,7 +2,7 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 </script>
 
-<Modal id="replacement-calc-about-modal" showCloseBtn>
+<Modal id="replacement-calc-about-modal">
 	<div slot="title">Picking without replacements</div>
 	View the data as pie and bar charts, where the odds of
 	<ul>

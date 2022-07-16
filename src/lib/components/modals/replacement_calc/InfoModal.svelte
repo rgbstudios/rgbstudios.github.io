@@ -2,7 +2,7 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 </script>
 
-<Modal id="replacement-calc-info-modal" showCloseBtn>
+<Modal id="replacement-calc-info-modal">
 	<div slot="title">Picking without replacements</div>
 	<p>
 		When picking n items out of N total items, where m of them are distinct, the odds of picking

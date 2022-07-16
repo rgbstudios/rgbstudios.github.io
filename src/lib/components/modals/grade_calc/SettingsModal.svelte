@@ -5,7 +5,7 @@
 	import Screenfull from 'screenfull';
 </script>
 
-<Modal id="grade-calc-settings-modal" showCloseBtn>
+<Modal id="grade-calc-settings-modal">
 	<div slot="title">Settings</div>
 	<div class="form-control">
 		<label class="label cursor-pointer">

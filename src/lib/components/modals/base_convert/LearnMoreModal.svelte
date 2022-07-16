@@ -2,7 +2,7 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 </script>
 
-<Modal id="base-convert-learn-modal" showCloseBtn>
+<Modal id="base-convert-learn-modal">
 	<div slot="title">Learn</div>
 	<p>
 		<b>What are number bases?</b><br />

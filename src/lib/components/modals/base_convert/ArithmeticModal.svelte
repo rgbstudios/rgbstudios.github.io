@@ -51,7 +51,7 @@
 	}
 </script>
 
-<Modal id="base-convert-arithmetic-modal" showCloseBtn>
+<Modal id="base-convert-arithmetic-modal">
 	<div slot="title">
 		<Icon name="calculator" /> Arithmetic
 	</div>

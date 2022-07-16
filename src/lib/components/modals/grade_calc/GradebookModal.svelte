@@ -84,7 +84,7 @@
 	}
 </script>
 
-<Modal id="grade-calc-gradebook-modal" showCloseBtn>
+<Modal id="grade-calc-gradebook-modal">
 	<div slot="title">Gradebook</div>
 	<Tabs {tabs} bind:activeTab />
 	<div class="py-5">

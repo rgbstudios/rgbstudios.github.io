@@ -2,7 +2,7 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 </script>
 
-<Modal id="grade-calc-info-modal" showCloseBtn>
+<Modal id="grade-calc-info-modal">
 	<div slot="title">Setup</div>
 	<p>
 		✅ Add as many assignments as you'd like, click "New Item" to add a new one,or the close button

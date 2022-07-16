@@ -14,7 +14,7 @@
 	}
 </script>
 
-<Modal id="grade-calc-setup-modal" hidden={$setupDone} showCloseBtn>
+<Modal id="grade-calc-setup-modal" hidden={$setupDone}>
 	<div slot="title">Setup</div>
 	<div class="overflow-x-auto py-4">
 		<table class="table table-zebra w-full">

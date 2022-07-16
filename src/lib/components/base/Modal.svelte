@@ -4,7 +4,7 @@
 
 	export let id: string;
 	export let hidden: boolean = true;
-	export let showCloseBtn: boolean = false;
+	export let showCloseBtn: boolean = true;
 	let inp: HTMLInputElement;
 
 	onMount(() => {
