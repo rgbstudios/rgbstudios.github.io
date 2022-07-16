@@ -122,10 +122,9 @@ const projects = [
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Binomial Calc',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
-		img: 'img/projects/screenshots/binomial_calc.png',
+		img: 'img/projects/screenshots/binomial-calc.png',
 		link: '/projects/binomial-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
 	},
