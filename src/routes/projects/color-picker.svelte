@@ -7,6 +7,7 @@
 	import { getUrlParam, setUrlParam, removeUrlParam } from '$lib/util/urlParam';
 	import { settings } from '$lib/stores/color-picker';
 	import { clickOutside } from '$lib/util/clickOutside';
+	import { copyText } from '$lib/util/copyText';
 
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
@@ -104,18 +105,6 @@
 		}
 	};
 	const copyLink = () => copyText(window.location.href);
-	const copyText = (txt) => {
-		navigator.clipboard.writeText(txt).then(
-			() => {
-				console.log('clipboard successfully set');
-				addToast({ message: 'Copied', type: 'success', timeout: 3000 });
-			},
-			() => {
-				console.log('clipboard write failed');
-				addToast({ message: 'Failed to copy', type: 'info', timeout: 3000 });
-			}
-		);
-	};
 
 	const readColorString = (evt) => {
 		setColorItem(evt.target.value);
@@ -278,14 +267,12 @@
 					class="mb-4"
 					value={[rgbString, cmykString, hslString, hwbString][idx]}
 					onChange={readColorString}
-					{copyText}
 				/>
 				{#if colormode !== 'CMYK'}
 					<CopyableInput
 						class="mb-4"
 						value={[rgbaString, null, hslaString, hwbaString][idx]}
 						onChange={readColorString}
-						{copyText}
 					/>
 				{/if}
 				{#if colormode === 'RGB'}
@@ -293,7 +280,6 @@
 						class="mb-4 lg:col-span-2 xl:col-span-1"
 						value={hexString}
 						onChange={readColorString}
-						{copyText}
 					/>
 				{/if}
 			</div>
@@ -366,12 +352,7 @@
 </div>
 
 <Modal bind:this={historyModal} title="History" icon="history">
-	<ColorList
-		bind:this={historyList}
-		bind:items={$settings.historyList}
-		modal={historyModal}
-		{copyText}
-	/>
+	<ColorList bind:this={historyList} bind:items={$settings.historyList} modal={historyModal} />
 </Modal>
 
 <Modal bind:this={favoritesModal} title="Favorites" icon="heart">
@@ -379,7 +360,6 @@
 		bind:this={favoritesList}
 		bind:items={$settings.favoritesList}
 		modal={favoritesModal}
-		{copyText}
 	/>
 </Modal>
 

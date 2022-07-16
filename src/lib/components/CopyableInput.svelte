@@ -1,7 +1,8 @@
 <script>
-	import Icon from './Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import copyText from '$lib/util/copyText';
 
-	export let value, onChange, copyText;
+	export let value, onChange;
 
 	let input;
 </script>
