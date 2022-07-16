@@ -91,6 +91,3 @@
 {:else}
 	<p>No colors</p>
 {/if}
-
-<style lang="postcss">
-</style>

@@ -14,25 +14,18 @@
 	/>
 </div>
 
-<style lang="postcss">
+<style>
 	.slider {
-		@apply appearance-none w-full h-2 rounded-full borders;
+		@apply appearance-none w-full h-2 rounded-full border-2 border-gray-200;
 	}
 
-	/* bad UX to possibly make slider thumb white? unable to add border to thumb... */
-
 	.slider::-webkit-slider-thumb {
-		@apply appearance-none w-5 h-5 rounded-full cursor-pointer;
+		@apply appearance-none w-5 h-5 rounded-full cursor-pointer ring-2 ring-gray-200;
 		background-color: var(--current-color);
 	}
 
 	.slider::-moz-range-thumb {
-		@apply appearance-none w-5 h-5 rounded-full cursor-pointer;
+		@apply appearance-none w-5 h-5 rounded-full cursor-pointer  ring-2 ring-gray-200;
 		background-color: var(--current-color);
-	}
-
-	/* copy pasted to make it work */
-	.borders {
-		@apply border-2 border-gray-200;
 	}
 </style>
