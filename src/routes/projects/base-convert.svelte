@@ -13,8 +13,6 @@
 	import LearnMoreModal from '$lib/components/modals/base_convert/LearnMoreModal.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
-	import { open } from '$lib/util/modal';
-
 	let binary = '0',
 		octal = '0',
 		decimal = '0',
