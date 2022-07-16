@@ -14,7 +14,6 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import CopyableInput from '$lib/components/CopyableInput.svelte';
 	import Range from '$lib/components/Range.svelte';
-	import { Toasts, addToast } from '$lib/components/Toast/_toast.js';
 	import Modal from '$lib/components/Modal.svelte';
 	import ColorList from '$lib/components/ColorList.svelte';
 
@@ -362,8 +361,3 @@
 		modal={favoritesModal}
 	/>
 </Modal>
-
-<Toasts />
-
-<style>
-</style>

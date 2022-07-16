@@ -5,6 +5,7 @@
 
 	import ShareButtons from '$lib/components/ShareButtons.svelte';
 	import SmallFooter from '$lib/components/SmallFooter.svelte';
+	import { Toasts } from '$lib/components/Toast';
 
 	$: link = '';
 	$: title = '';
@@ -22,3 +23,5 @@
 </div>
 
 <SmallFooter />
+
+<Toasts />
