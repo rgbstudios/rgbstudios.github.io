@@ -1,8 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import '../../color-picker.css';
-
 	import w3color from '$lib/util/external/w3color';
 	import { getUrlParam, setUrlParam, removeUrlParam } from '$lib/util/urlParam';
 	import { settings } from '$lib/stores/color-picker';
@@ -365,3 +363,33 @@
 		modal={favoritesModal}
 	/>
 </Modal>
+
+<style>
+	h1,
+	h2,
+	h3 {
+		@apply tracking-widest sm:text-xl md:text-2xl;
+	}
+
+	p {
+		@apply leading-relaxed text-base md:text-lg;
+	}
+
+	a {
+		@apply hover:underline font-medium;
+	}
+	input[type='text'],
+	input[type='number'] {
+		@apply p-2 bg-white h-10;
+	}
+
+	.btn {
+		@apply p-2 bg-white hover:bg-gray-100 text-base-100 border-0;
+	}
+	.btn-circle {
+		@apply p-2 bg-white hover:bg-gray-100 rounded-full;
+	}
+	.colormode {
+		@apply bg-white p-4;
+	}
+</style>
