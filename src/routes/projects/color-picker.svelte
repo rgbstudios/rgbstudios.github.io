@@ -178,176 +178,180 @@
 	isDark={!c.isDark()}
 />
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
-	<div class="order-3 md:order-1 mx-auto md:mx-0">
-		<input
-			id="auto-detect-input"
-			class="w-48 mr-4 mb-4 float-left input w-full input-bordered bg-white text-base-100"
-			autofocus
-			type="text"
-			placeholder="Type a color..."
-			on:change={readColorString}
-			on:focus={(evt) => evt.target.select()}
-		/>
+<div class="text-base-100">
+	<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+		<div class="order-3 md:order-1 mx-auto md:mx-0">
+			<input
+				id="auto-detect-input"
+				class="w-48 mr-4 mb-4 float-left input w-full input-bordered bg-white text-base-100"
+				autofocus
+				type="text"
+				placeholder="Type a color..."
+				on:change={readColorString}
+				on:focus={(evt) => evt.target.select()}
+			/>
 
-		<button
-			class="btn relative w-10 h-10 z-10 float-left"
-			style="background: url(/img/projects/icons/color-picker.svg) 0.125rem 0.125rem / 2rem no-repeat white"
-			on:click|self={() => {
-				pickerOpen = !pickerOpen;
-			}}
-			use:clickOutside
-			on:click_outside={() => (pickerOpen = false)}
-		>
-			<div class="absolute top-16">
-				<dino-color-picker
-					class="p-2 bg-white block transition-opacity {pickerOpen
-						? 'opacity-100 visible'
-						: 'opacity-0 hidden'}"
-					on:change={(event) => {
-						$settings.color = event.target.value;
-					}}
-					title="Color Picker"
-				/>
-			</div>
-		</button>
-	</div>
-	<div class="order-2 md:order-3 mx-auto md:mx-0">
-		<div class="float-right">
 			<button
-				class="btn mr-2 mb-2"
-				on:click={() => {
-					$settings.colorInUrl = !$settings.colorInUrl;
-					updateLink();
-					if ($settings.colorInUrl) copyLink();
+				class="btn relative w-10 h-10 z-10 float-left"
+				style="background: url(/img/projects/icons/color-picker.svg) 0.125rem 0.125rem / 2rem no-repeat white"
+				on:click|self={() => {
+					pickerOpen = !pickerOpen;
 				}}
+				use:clickOutside
+				on:click_outside={() => (pickerOpen = false)}
 			>
-				<Icon name="link" class="inline w-4 h-4" />
-				{$settings.colorInUrl ? 'Unlink' : 'Link'}
-			</button>
-			<button class="btn mr-2 mb-2" on:click={() => ($settings.color = '#000000')}>
-				<Icon name="reset" class="inline w-4 h-4" />
-				Reset
-			</button>
-			<button
-				class="btn mb-2"
-				on:click={() =>
-					($settings.color =
-						'#' +
-						Math.floor(Math.random() * 0xffffff)
-							.toString(16)
-							.padStart(6, '0'))}
-			>
-				<Icon name="random" class="inline w-4 h-4" />
-				Random
+				<div class="absolute top-16">
+					<dino-color-picker
+						class="p-2 bg-white block transition-opacity {pickerOpen
+							? 'opacity-100 visible'
+							: 'opacity-0 hidden'}"
+						on:change={(event) => {
+							$settings.color = event.target.value;
+						}}
+						title="Color Picker"
+					/>
+				</div>
 			</button>
 		</div>
+		<div class="order-2 md:order-3 mx-auto md:mx-0">
+			<div class="float-right">
+				<button
+					class="btn mr-2 mb-2"
+					on:click={() => {
+						$settings.colorInUrl = !$settings.colorInUrl;
+						updateLink();
+						if ($settings.colorInUrl) copyLink();
+					}}
+				>
+					<Icon name="link" class="inline w-4 h-4" />
+					{$settings.colorInUrl ? 'Unlink' : 'Link'}
+				</button>
+				<button class="btn mr-2 mb-2" on:click={() => ($settings.color = '#000000')}>
+					<Icon name="reset" class="inline w-4 h-4" />
+					Reset
+				</button>
+				<button
+					class="btn mb-2"
+					on:click={() =>
+						($settings.color =
+							'#' +
+							Math.floor(Math.random() * 0xffffff)
+								.toString(16)
+								.padStart(6, '0'))}
+				>
+					<Icon name="random" class="inline w-4 h-4" />
+					Random
+				</button>
+			</div>
+		</div>
 	</div>
-</div>
 
-<select class="p-2 md:hidden mx-auto block mt-4" bind:value={selectedColorMode}>
-	{#each ['RGB', 'CMYK', 'HSL', 'HWB'] as colormode}
-		<option value={colormode}>{colormode}</option>
-	{/each}
-</select>
+	<select class="p-2 md:hidden mx-auto block mt-4" bind:value={selectedColorMode}>
+		{#each ['RGB', 'CMYK', 'HSL', 'HWB'] as colormode}
+			<option value={colormode}>{colormode}</option>
+		{/each}
+	</select>
 
-<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-	{#each ['RGB', 'CMYK', 'HSL', 'HWB'] as colormode, idx}
-		<div class="colormode {selectedColorMode !== colormode ? 'hidden md:block' : ''}">
-			<h3 class="text-center mb-4">{colormode}</h3>
-			<div
-				class="grid {colormode === 'CMYK'
-					? 'grid-cols-1'
-					: colormode === 'RGB'
-					? 'lg:grid-cols-2 xl:grid-cols-3'
-					: 'lg:grid-cols-2'} gap-2"
-			>
-				<CopyableInput
-					class="mb-4"
-					value={[rgbString, cmykString, hslString, hwbString][idx]}
-					onChange={readColorString}
-				/>
-				{#if colormode !== 'CMYK'}
+	<div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+		{#each ['RGB', 'CMYK', 'HSL', 'HWB'] as colormode, idx}
+			<div class="colormode {selectedColorMode !== colormode ? 'hidden md:block' : ''}">
+				<h3 class="text-center mb-4">{colormode}</h3>
+				<div
+					class="grid {colormode === 'CMYK'
+						? 'grid-cols-1'
+						: colormode === 'RGB'
+						? 'lg:grid-cols-2 xl:grid-cols-3'
+						: 'lg:grid-cols-2'} gap-2"
+				>
 					<CopyableInput
 						class="mb-4"
-						value={[rgbaString, null, hslaString, hwbaString][idx]}
+						value={[rgbString, cmykString, hslString, hwbString][idx]}
 						onChange={readColorString}
 					/>
-				{/if}
-				{#if colormode === 'RGB'}
-					<CopyableInput
-						class="mb-4 lg:col-span-2 xl:col-span-1"
-						value={hexString}
-						onChange={readColorString}
-					/>
-				{/if}
-			</div>
-			<div class="grid {colormode === 'CMYK' ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3'} gap-2">
-				{#each [['red', 'green', 'blue'], ['cyan', 'magenta', 'yellow', 'key'], ['hue', 'saturation', 'lightness'], ['hue', 'whiteness', 'blackness']][idx] as type, idx2}
-					<div class={idx === 0 ? 'ml-4' : ''}>
-						<label for="{type}-input">{capitalize(type)}:</label>
-						<Range
-							class="hidden sm:block mt-4"
-							min="0"
-							max={[
-								['255', '255', '255'],
-								['100', '100', '100', '100'],
-								['360', '100', '100'],
-								['360', '100', '100']
-							][idx][idx2]}
-							dataType={type}
-							onChange={[setRgbItem, setCmykItem, setHslItem, setHwbItem][idx]}
-							value={[
-								[red, green, blue],
-								[cyan, magenta, yellow, key],
-								[hue, saturation, lightness],
-								[hue, whiteness, blackness]
-							][idx][idx2]}
+					{#if colormode !== 'CMYK'}
+						<CopyableInput
+							class="mb-4"
+							value={[rgbaString, null, hslaString, hwbaString][idx]}
+							onChange={readColorString}
 						/>
-						<input
-							id="{type}-input"
-							class="mt-2 sm:mt-4 input w-full input-bordered bg-white text-base-100"
-							type="number"
-							min="0"
-							max={[
-								['255', '255', '255'],
-								['100', '100', '100', '100'],
-								['360', '100', '100'],
-								['360', '100', '100']
-							][idx][idx2]}
-							data-type={type}
-							on:change={[setRgbItem, setCmykItem, setHslItem, setHwbItem][idx]}
-							value={[
-								[red, green, blue],
-								[cyan, magenta, yellow, key],
-								[hue, saturation, lightness],
-								[hue, whiteness, blackness]
-							][idx][idx2]}
+					{/if}
+					{#if colormode === 'RGB'}
+						<CopyableInput
+							class="mb-4 lg:col-span-2 xl:col-span-1"
+							value={hexString}
+							onChange={readColorString}
 						/>
-					</div>
-				{/each}
+					{/if}
+				</div>
+				<div
+					class="grid {colormode === 'CMYK' ? 'grid-cols-2 lg:grid-cols-4' : 'grid-cols-3'} gap-2"
+				>
+					{#each [['red', 'green', 'blue'], ['cyan', 'magenta', 'yellow', 'key'], ['hue', 'saturation', 'lightness'], ['hue', 'whiteness', 'blackness']][idx] as type, idx2}
+						<div class={idx === 0 ? 'ml-4' : ''}>
+							<label for="{type}-input">{capitalize(type)}:</label>
+							<Range
+								class="hidden sm:block mt-4"
+								min="0"
+								max={[
+									['255', '255', '255'],
+									['100', '100', '100', '100'],
+									['360', '100', '100'],
+									['360', '100', '100']
+								][idx][idx2]}
+								dataType={type}
+								onChange={[setRgbItem, setCmykItem, setHslItem, setHwbItem][idx]}
+								value={[
+									[red, green, blue],
+									[cyan, magenta, yellow, key],
+									[hue, saturation, lightness],
+									[hue, whiteness, blackness]
+								][idx][idx2]}
+							/>
+							<input
+								id="{type}-input"
+								class="mt-2 sm:mt-4 input w-full input-bordered bg-white text-base-100"
+								type="number"
+								min="0"
+								max={[
+									['255', '255', '255'],
+									['100', '100', '100', '100'],
+									['360', '100', '100'],
+									['360', '100', '100']
+								][idx][idx2]}
+								data-type={type}
+								on:change={[setRgbItem, setCmykItem, setHslItem, setHwbItem][idx]}
+								value={[
+									[red, green, blue],
+									[cyan, magenta, yellow, key],
+									[hue, saturation, lightness],
+									[hue, whiteness, blackness]
+								][idx][idx2]}
+							/>
+						</div>
+					{/each}
+				</div>
 			</div>
-		</div>
-	{/each}
-</div>
+		{/each}
+	</div>
 
-<div class="grid grid-cols-3 py-4 w-full sticky bottom-0 mt-4 bg-white bg-opacity-90">
-	<button class="btn-circle w-12 h-12 mx-auto" on:click={historyModal.show} title="History">
-		<Icon name="history" class="inline w-4 h-4" />
-	</button>
-	<button class="btn-circle w-12 h-12 mx-auto" on:click={favoritesModal.show} title="Saved">
-		<Icon name="saved" class="inline w-4 h-4" />
-	</button>
-	<button
-		class="btn-circle w-12 h-12 mx-auto"
-		on:click={() => {
-			favoritesList.add({ color: $settings.color, name: '' });
-			$settings.color = $settings.color; // update `isFavorite`
-		}}
-		title="Favorite"
-	>
-		<Icon name="heart" class="inline w-4 h-4" fillColor={isFavorite ? $settings.color : 'none'} />
-	</button>
+	<div class="grid grid-cols-3 py-4 w-full sticky bottom-0 mt-4 bg-white bg-opacity-90">
+		<button class="btn-circle w-12 h-12 mx-auto" on:click={historyModal.show} title="History">
+			<Icon name="history" class="inline w-4 h-4" />
+		</button>
+		<button class="btn-circle w-12 h-12 mx-auto" on:click={favoritesModal.show} title="Saved">
+			<Icon name="saved" class="inline w-4 h-4" />
+		</button>
+		<button
+			class="btn-circle w-12 h-12 mx-auto"
+			on:click={() => {
+				favoritesList.add({ color: $settings.color, name: '' });
+				$settings.color = $settings.color; // update `isFavorite`
+			}}
+			title="Favorite"
+		>
+			<Icon name="heart" class="inline w-4 h-4" fillColor={isFavorite ? $settings.color : 'none'} />
+		</button>
+	</div>
 </div>
 
 <Modal bind:this={historyModal} title="History" icon="history">
