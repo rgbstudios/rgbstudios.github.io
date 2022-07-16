@@ -346,7 +346,7 @@
 					<td class="text-brand-blue font-bold">
 						<div class="flex items-center gap-3">
 							<span>P(X=x)</span>
-							<img class="h-[1.5rem]" src="/img/projects/other/icon-equal.png" alt="equal" />
+							<img class="h-[1.5rem]" src="/img/projects/other/icon-equal.svg" alt="equal" />
 						</div>
 					</td>
 					<td>
@@ -358,7 +358,7 @@
 					<td class="text-brand-red font-bold">
 						<div class="flex items-center gap-3">
 							<span>P(X&lt;x)</span>
-							<img class="h-[1.5rem]" src="/img/projects/other/icon-less.png" alt="less" />
+							<img class="h-[1.5rem]" src="/img/projects/other/icon-less.svg" alt="less" />
 						</div>
 					</td>
 					<td>
@@ -370,7 +370,7 @@
 					<td class="text-brand-green font-bold">
 						<div class="flex items-center gap-3">
 							<span>P(X&gt;x)</span>
-							<img class="h-[1.5rem]" src="/img/projects/other/icon-greater.png" alt="greater" />
+							<img class="h-[1.5rem]" src="/img/projects/other/icon-greater.svg" alt="greater" />
 						</div>
 					</td>
 					<td>
@@ -384,7 +384,7 @@
 							<span>P(X&le;x)</span>
 							<img
 								class="h-[1.5rem]"
-								src="/img/projects/other/icon-less-equal.png"
+								src="/img/projects/other/icon-less-equal.svg"
 								alt="less-equal"
 							/>
 						</div></td
@@ -400,7 +400,7 @@
 							<span>P(X&ge;x)</span>
 							<img
 								class="h-[1.5rem]"
-								src="/img/projects/other/icon-greater-equal.png"
+								src="/img/projects/other/icon-greater-equal.svg"
 								alt="greater-equal"
 							/>
 						</div></td
