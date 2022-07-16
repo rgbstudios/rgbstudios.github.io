@@ -8,12 +8,11 @@
 		{#each $toasts as toast (toast.id)}
 			<Toast
 				type={toast.type}
+				text={toast.message}
 				dismissible={toast.dismissible}
 				timeout={toast.timeout}
 				on:dismiss={() => dismissToast(toast.id)}
-			>
-				{toast.message}
-			</Toast>
+			/>
 		{/each}
 	</section>
 {/if}

@@ -50,7 +50,7 @@
 	</button>
 	<!-- TODO: dropdown to sort by (name, date, etc) -->
 	<div>
-		{#each items as item, idx (item.timestamp)}
+		{#each items as item (item.timestamp)}
 			<div class="surface grid grid-cols-2 md:grid-cols-6 gap-2 mb-2">
 				<div class="col-span-2 md:col-span-3">
 					<input type="text" class="w-full" placeholder="Color name" bind:value={item.name} />

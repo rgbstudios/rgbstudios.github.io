@@ -7,7 +7,7 @@
 	import { getUrlParam, setUrlParam, removeUrlParam } from '$lib/util/urlParam';
 	import { settings } from '$lib/stores/color-picker';
 	import { clickOutside } from '$lib/util/clickOutside';
-	import { copyText } from '$lib/util/copyText';
+	import copyText from '$lib/util/copyText';
 
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
