@@ -2,17 +2,15 @@
 	export let value, min, max, dataType, onChange;
 </script>
 
-<div class="w-full">
-	<input
-		type="range"
-		{value}
-		{min}
-		{max}
-		data-type={dataType}
-		on:change={onChange}
-		class="slider {$$props.class ?? ''}"
-	/>
-</div>
+<input
+	type="range"
+	{value}
+	{min}
+	{max}
+	data-type={dataType}
+	on:change={onChange}
+	class="w-full slider {$$props.class ?? ''}"
+/>
 
 <style>
 	.slider {
