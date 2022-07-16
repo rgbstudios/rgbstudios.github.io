@@ -38,6 +38,7 @@
 	import copyText from '$lib/util/copyText';
 
 	/// STATE ///
+	// mathjax conflicts with svelte templating
 	const info_html = `
   <h4>Formulas</h4><br>
   <p>
