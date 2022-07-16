@@ -7,7 +7,5 @@ export default function (content, filename, filetype = 'text/plain') {
 	document.body.appendChild(a);
 	a.click();
 	document.body.removeChild(a);
-	setTimeout(function () {
-		URL.revokeObjectURL(a.href);
-	}, 1500);
+	setTimeout(() => URL.revokeObjectURL(a.href), 1500);
 }

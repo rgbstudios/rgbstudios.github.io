@@ -36,7 +36,7 @@
 	"dependencies": {
 		"@tailwindcss/typography": "0.5.3",
 		"daisyui": "2.19.0",
-		"lodash": "4.17.21",
+		"lodash.merge": "^4.6.2",
 		"mathjax": "^3.2.2",
 		"screenfull": "6.0.2"
 	}

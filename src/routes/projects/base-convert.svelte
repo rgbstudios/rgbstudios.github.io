@@ -7,7 +7,10 @@
 	 */
 
 	import Alert from '$lib/components/Alert.svelte';
+	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import ArithmeticModal from '$lib/components/modals/base_convert/ArithmeticModal.svelte';
+	import LearnMoreModal from '$lib/components/modals/base_convert/LearnMoreModal.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import { open } from '$lib/util/modal';
@@ -276,19 +279,11 @@
 
 <hr class="my-8" />
 
-<button
-	on:click={() => open('base_convert/ArithmeticModal')}
-	title="Arithmetic and custom bases"
-	type="button"
-	class="btn"
->
+<ModalButton _for="base-convert-arithmetic-modal">
 	<Icon name="calculator" /> Arithmetic
-</button>
-<button
-	title="Learn about bases"
-	type="button"
-	class="btn"
-	on:click={() => open('base_convert/LearnMoreModal')}
->
+</ModalButton>
+<ModalButton _for="base-convert-learn-modal">
 	<Icon name="lightbulb" /> Learn
-</button>
+</ModalButton>
+<ArithmeticModal />
+<LearnMoreModal />
