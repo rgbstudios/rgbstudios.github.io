@@ -6,7 +6,7 @@
 	<ul>
 		{#each breadcrumbs as { text, link }}
 			{#if link}
-				<li><a href={link}>{text}</a></li>
+				<li><a class="underline" href={link}>{text}</a></li>
 			{:else}
 				<li><span>{text}</span></li>
 			{/if}
