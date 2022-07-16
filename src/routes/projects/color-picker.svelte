@@ -181,7 +181,7 @@
 		<div class="order-3 md:order-1 mx-auto md:mx-0">
 			<input
 				id="auto-detect-input"
-				class="w-48 mr-4 mb-4 float-left input w-full input-bordered bg-white text-base-100"
+				class="w-48 mr-4 mb-4 float-left input bg-white text-base-100"
 				autofocus
 				type="text"
 				placeholder="Type a color..."
@@ -307,7 +307,7 @@
 							/>
 							<input
 								id="{type}-input"
-								class="mt-2 sm:mt-4 input w-full input-bordered bg-white text-base-100"
+								class="mt-2 sm:mt-4 input w-full bg-white text-base-100"
 								type="number"
 								min="0"
 								max={[
@@ -381,6 +381,7 @@
 	input[type='text'],
 	input[type='number'] {
 		@apply p-2 bg-white h-10;
+		@apply border-2 border-gray-200;
 	}
 
 	.btn {
