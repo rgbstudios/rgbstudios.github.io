@@ -294,7 +294,7 @@
 							min="0"
 							max="1"
 							step="0.1"
-							class="input input-bordered w-full"
+							class="input input-sm input-bordered w-full"
 							required
 						/>
 					</td>
@@ -308,7 +308,7 @@
 							bind:value={n}
 							min="0"
 							max="999"
-							class="input input-bordered w-full"
+							class="input input-sm input-bordered w-full"
 							required
 						/>
 					</td>
@@ -322,7 +322,7 @@
 							bind:value={x}
 							min="0"
 							max={n}
-							class="input input-bordered w-full"
+							class="input input-sm input-bordered w-full"
 							required
 						/>
 					</td>
@@ -350,7 +350,7 @@
 						</div>
 					</td>
 					<td>
-						<input disabled value={eq} class="input input-bordered w-full" />
+						<input disabled value={eq} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
@@ -362,7 +362,7 @@
 						</div>
 					</td>
 					<td>
-						<input disabled value={lt} class="input input-bordered w-full" />
+						<input disabled value={lt} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
@@ -374,7 +374,7 @@
 						</div>
 					</td>
 					<td>
-						<input disabled value={gt} class="input input-bordered w-full" />
+						<input disabled value={gt} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
@@ -390,7 +390,7 @@
 						</div></td
 					>
 					<td>
-						<input disabled value={le} class="input input-bordered w-full" />
+						<input disabled value={le} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
@@ -406,35 +406,35 @@
 						</div></td
 					>
 					<td>
-						<input disabled value={ge} class="input input-bordered w-full" />
+						<input disabled value={ge} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>N choose X</td>
 					<td><sub>n</sub>C<sub>x</sub></td>
 					<td>
-						<input disabled value={_nck} class="input input-bordered w-full" />
+						<input disabled value={_nck} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Mean</td>
 					<td>&mu;</td>
 					<td>
-						<input disabled value={mu} class="input input-bordered w-full" />
+						<input disabled value={mu} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Variance</td>
 					<td>&sigma;<sup>2</sup></td>
 					<td>
-						<input disabled value={sigma} class="input input-bordered w-full" />
+						<input disabled value={sigma} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 				<tr>
 					<td>Standard Deviation</td>
 					<td>&sigma;</td>
 					<td>
-						<input disabled value={stddev} class="input input-bordered w-full" />
+						<input disabled value={stddev} class="input input-sm input-bordered w-full" />
 					</td>
 				</tr>
 			</tbody>
@@ -506,6 +506,6 @@
 
 <style>
 	td {
-		padding: 0.5rem 1rem;
+		@apply px-4 py-2 text-sm sm:text-base;
 	}
 </style>
