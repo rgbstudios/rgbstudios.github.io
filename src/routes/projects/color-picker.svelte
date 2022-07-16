@@ -14,7 +14,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import CopyableInput from '$lib/components/CopyableInput.svelte';
 	import Range from '$lib/components/Range.svelte';
-	import Modal from '$lib/components/Modal.svelte';
+	import Modal from '$lib/components/base/Modal.svelte';
 	import ColorList from '$lib/components/ColorList.svelte';
 
 	// import namer from 'color-namer';
@@ -331,7 +331,7 @@
 	{/each}
 </div>
 
-<div class="grid grid-cols-3 py-4 w-full fixed bottom-0 -mx-8 bg-white bg-opacity-90">
+<div class="grid grid-cols-3 py-4 w-full sticky bottom-0 mt-4 bg-white bg-opacity-90">
 	<button class="btn-circle w-12 h-12 mx-auto" on:click={historyModal.show} title="History">
 		<Icon name="history" class="inline w-4 h-4" />
 	</button>
