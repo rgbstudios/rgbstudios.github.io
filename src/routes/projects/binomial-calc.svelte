@@ -20,16 +20,24 @@
 <script>
 	import { afterUpdate, onMount } from 'svelte';
 	import { browser } from '$app/env';
+
+	/// COMPONENTS ///
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	/// UTILS ///
 	import roundNumber from '$lib/util/roundNumber';
-	import { nCk } from '$lib/util/math';
-	import Icon from '$lib/components/Icon.svelte';
+	import {
+		probabilityMass,
+		lessProbabilityMass,
+		moreProbabilityMass,
+		nCk,
+		meanProbabilityMass,
+		varianceProbabilityMass
+	} from '$lib/util/math';
 	import copyText from '$lib/util/copyText';
 
 	/// STATE ///
-
 	const info_html = `
   <h4>Formulas</h4><br>
   <p>
@@ -75,6 +83,7 @@
 		? window.location.protocol + `//` + window.location.host + window.location.pathname + `?q=learn`
 		: '';
 
+	/// sync inputs with url
 	$: if (browser) {
 		let queryParams = new URLSearchParams(window.location.search);
 		(typeof p == 'number') & !isNaN(p) && queryParams.set('p', p);
@@ -89,6 +98,7 @@
 
 	let eq, lt, gt, le, ge, mu, sigma, stddev, _nck;
 
+	/// Input limiter
 	$: if (n > 1000) {
 		n = 1000;
 	} else if (n < 0) {
@@ -105,6 +115,7 @@
 		p = 0;
 	}
 
+	/// Warn on invalid inputs
 	$: if (isNaN(p) || isNaN(n) || isNaN(x)) errorMsg = 'p, n, and x must be numbers';
 	else if (n === null || p === null || x === null) errorMsg = 'p, n, x must be numbers';
 	else if (p > 1 || p < 0) errorMsg = 'p must be between 0 and 1';
@@ -117,36 +128,22 @@
 		drawCharts();
 	}
 
-	/// MATH ///
-	function probabilityMass(p, n, x) {
-		return roundNumber(nCk(n, x) * Math.pow(p, x) * Math.pow(1 - p, n - x), roundPrecision);
+	/// METHODS ///
+	function calculate() {
+		changed = false;
+		eq = errorMsg !== '' ? 0 : roundNumber(probabilityMass(p, n, x), roundPrecision);
+		lt = errorMsg !== '' ? 0 : roundNumber(lessProbabilityMass(p, n, x), roundPrecision);
+		gt = errorMsg !== '' ? 0 : roundNumber(moreProbabilityMass(p, n, x), roundPrecision);
+		le = lt + eq;
+		ge = gt + eq;
+		mu = errorMsg !== '' ? 0 : roundNumber(meanProbabilityMass(p, n), roundPrecision);
+		sigma = errorMsg !== '' ? 0 : roundNumber(varianceProbabilityMass(p, n), roundPrecision);
+		stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
+		_nck = errorMsg !== '' ? 0 : nCk(n, x);
 	}
 
-	function less(p, n, x) {
-		let retval = 0;
-		for (let i = 0; i < x; i++) {
-			retval += probabilityMass(p, n, i);
-		}
-		return roundNumber(retval, roundPrecision);
-	}
-
-	function more(p, n, x) {
-		let retval = 0;
-		for (let i = n; i > x; i--) {
-			retval += probabilityMass(p, n, i);
-		}
-		return roundNumber(retval, roundPrecision);
-	}
-
-	function mean(p, n, x) {
-		return roundNumber(p * n, roundPrecision);
-	}
-	function variance(p, n, x) {
-		return n * p * (1 - p);
-	}
-
+	/// LIFECYCLE HOOKS ///
 	// Charts
-
 	onMount(() => {
 		// load google charts visualization API and corechart package
 		google.charts.load('current', { packages: ['corechart'] });
@@ -156,19 +153,6 @@
 			drawCharts();
 			googleChartsLoaded = true;
 		});
-
-		function calculate() {
-			changed = false;
-			eq = errorMsg !== '' ? 0 : probabilityMass(p, n, x);
-			lt = errorMsg !== '' ? 0 : less(p, n, x);
-			gt = errorMsg !== '' ? 0 : more(p, n, x);
-			le = lt + eq;
-			ge = gt + eq;
-			mu = errorMsg !== '' ? 0 : roundNumber(mean(p, n, x), roundPrecision);
-			sigma = errorMsg !== '' ? 0 : roundNumber(variance(p, n, x), roundPrecision);
-			stddev = roundNumber(Math.sqrt(sigma), roundPrecision);
-			_nck = errorMsg !== '' ? 0 : nCk(n, x);
-		}
 		calculate();
 		setInterval(() => {
 			if (!changed) return;

@@ -4,7 +4,8 @@
 		const props = {};
 
 		for (const x of ['N', 'n', 'm', 'k']) {
-			props[x] = parseInt(url.searchParams.get(x));
+			const val = parseInt(url.searchParams.get(x));
+			if (val) props[x] = val;
 		}
 
 		return {
@@ -17,19 +18,33 @@
 <script>
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
+
+	/// COMPONENTS ///
 	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
-	import roundNumber from '$lib/util/roundNumber';
-	import { nCk } from '$lib/util/math';
 	import AboutModal from '$lib/components/modals/replacement_calc/AboutModal.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import InfoModal from '$lib/components/modals/replacement_calc/InfoModal.svelte';
 
+	/// UTILS ///
+	import roundNumber from '$lib/util/roundNumber';
+	import {
+		exactKdistinct,
+		lessKdistinct,
+		meanReplacement,
+		moreKdistinct,
+		nCk
+	} from '$lib/util/math';
+
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	export let N, m, n, k;
+	export let N = 52,
+		m = 4,
+		n = 5,
+		k = 1;
 	let errorMsg = '';
 
+	// sync url with inputs
 	$: if (browser) {
 		let queryParams = new URLSearchParams(window.location.search);
 		N && queryParams.set('N', N);
@@ -39,12 +54,12 @@
 		history.replaceState(null, null, '?' + queryParams.toString());
 	}
 
-	$: eq = exactKdistinct(N, m, n, k);
-	$: lt = lessKdistinct(N, m, n, k);
-	$: gt = moreKdistinct(N, m, n, k);
+	$: eq = roundNumber(exactKdistinct(N, m, n, k), roundPrecision);
+	$: lt = roundNumber(lessKdistinct(N, m, n, k), roundPrecision);
+	$: gt = roundNumber(moreKdistinct(N, m, n, k), roundPrecision);
 	$: le = lt + eq;
 	$: ge = gt + eq;
-	$: mu = mean(N, m, n, k);
+	$: mu = roundNumber(meanReplacement(N, m, n), roundPrecision);
 
 	$: if (isNaN(N) || isNaN(m) || isNaN(n) || isNaN(k)) {
 		errorMsg = 'N, m, n, and k must be numbers';
@@ -66,31 +81,6 @@
 
 	$: if ((N || m || n || k) && googleChartsLoaded) {
 		drawCharts();
-	}
-
-	// Math
-	function exactKdistinct(N, m, n, k) {
-		return roundNumber((nCk(m, k) * nCk(N - m, n - k)) / nCk(N, n), roundPrecision);
-	}
-
-	function lessKdistinct(N, m, n, k) {
-		let retval = 0;
-		for (let i = 0; i < k; i++) {
-			retval += exactKdistinct(N, m, n, i);
-		}
-		return roundNumber(retval, roundPrecision);
-	}
-
-	function moreKdistinct(N, m, n, k) {
-		let retval = 0;
-		for (let i = m; i > k; i--) {
-			retval += exactKdistinct(N, m, n, i);
-		}
-		return roundNumber(retval, roundPrecision);
-	}
-
-	function mean(N, m, n, k) {
-		return roundNumber((m * n) / N, roundPrecision);
 	}
 
 	// Charts
