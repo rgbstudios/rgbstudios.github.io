@@ -4,7 +4,8 @@
 		const props = {};
 
 		for (const x of ['N', 'n', 'm', 'k']) {
-			props[x] = parseInt(url.searchParams.get(x));
+			const val = parseInt(url.searchParams.get(x));
+			if (val) props[x] = val;
 		}
 
 		return {
@@ -17,16 +18,33 @@
 <script>
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
+
+	/// COMPONENTS ///
 	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import AboutModal from '$lib/components/modals/replacement_calc/AboutModal.svelte';
+	import ModalButton from '$lib/components/base/ModalButton.svelte';
+	import InfoModal from '$lib/components/modals/replacement_calc/InfoModal.svelte';
+
+	/// UTILS ///
 	import roundNumber from '$lib/util/roundNumber';
+	import {
+		exactKdistinct,
+		lessKdistinct,
+		meanReplacement,
+		moreKdistinct,
+		nCk
+	} from '$lib/util/math';
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	export let N, m, n, k;
-	let btnSubmit;
+	export let N = 52,
+		m = 4,
+		n = 5,
+		k = 1;
 	let errorMsg = '';
 
+	// sync url with inputs
 	$: if (browser) {
 		let queryParams = new URLSearchParams(window.location.search);
 		N && queryParams.set('N', N);
@@ -36,12 +54,12 @@
 		history.replaceState(null, null, '?' + queryParams.toString());
 	}
 
-	$: eq = exactKdistinct(N, m, n, k);
-	$: lt = lessKdistinct(N, m, n, k);
-	$: gt = moreKdistinct(N, m, n, k);
+	$: eq = roundNumber(exactKdistinct(N, m, n, k), roundPrecision);
+	$: lt = roundNumber(lessKdistinct(N, m, n, k), roundPrecision);
+	$: gt = roundNumber(moreKdistinct(N, m, n, k), roundPrecision);
 	$: le = lt + eq;
 	$: ge = gt + eq;
-	$: mu = mean(N, m, n, k);
+	$: mu = roundNumber(meanReplacement(N, m, n), roundPrecision);
 
 	$: if (isNaN(N) || isNaN(m) || isNaN(n) || isNaN(k)) {
 		errorMsg = 'N, m, n, and k must be numbers';
@@ -61,54 +79,8 @@
 		errorMsg = '';
 	}
 
-	function validateForm() {
-		if (btnSubmit) {
-			N, m, n, k;
-			btnSubmit.click();
-		}
-	}
-
 	$: if ((N || m || n || k) && googleChartsLoaded) {
 		drawCharts();
-	}
-
-	// Math
-
-	function factorial(n) {
-		let retval = 1;
-		for (let i = n; i > 1; i--) {
-			retval *= i;
-		}
-		return retval;
-	}
-
-	function nCk(n, k) {
-		if (k > n) return 0;
-		return factorial(n) / (factorial(n - k) * factorial(k));
-	}
-
-	function exactKdistinct(N, m, n, k) {
-		return roundNumber((nCk(m, k) * nCk(N - m, n - k)) / nCk(N, n), roundPrecision);
-	}
-
-	function lessKdistinct(N, m, n, k) {
-		let retval = 0;
-		for (let i = 0; i < k; i++) {
-			retval += exactKdistinct(N, m, n, i);
-		}
-		return roundNumber(retval, roundPrecision);
-	}
-
-	function moreKdistinct(N, m, n, k) {
-		let retval = 0;
-		for (let i = m; i > k; i--) {
-			retval += exactKdistinct(N, m, n, i);
-		}
-		return roundNumber(retval, roundPrecision);
-	}
-
-	function mean(N, m, n, k) {
-		return roundNumber((m * n) / N, roundPrecision);
 	}
 
 	// Charts
@@ -233,7 +205,6 @@
 					<td>N</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={N}
 							min="1"
@@ -248,7 +219,6 @@
 					<td>m</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={m}
 							min="1"
@@ -263,7 +233,6 @@
 					<td>n</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={n}
 							min="1"
@@ -278,7 +247,6 @@
 					<td>k</td>
 					<td>
 						<input
-							on:blur={validateForm}
 							type="number"
 							bind:value={k}
 							min="0"
@@ -289,7 +257,6 @@
 					</td>
 				</tr>
 				<hr class="w-full" />
-				<button type="submit" class="hidden" bind:this={btnSubmit}>Submit</button>
 				<!-- Error -->
 				{#if errorMsg !== ''}
 					<tr>
@@ -366,105 +333,9 @@
 
 <!-- Info modal -->
 <div class="mt-5">
-	<label for="info-modal" class="btn modal-button btn-info">Info</label>
+	<ModalButton _for="replacement-calc-info-modal">Info</ModalButton>
+	<InfoModal />
 
-	<input type="checkbox" id="info-modal" class="modal-toggle" />
-	<label for="info-modal" class="modal cursor-pointer">
-		<label class="modal-box relative text-center" for="">
-			<h3 class="font-bold text-lg">Picking without replacements</h3>
-			<div class="divider" />
-			<p>
-				When picking n items out of N total items, where m of them are distinct, the odds of picking
-				<i>exactly</i>
-				k distinct items is defined as:
-				<br />P(X = k) = <sub>m</sub>C<sub>k</sub> * <sub>N-m</sub>C<sub>n-k</sub> /
-				<sub>N</sub>C<sub>n</sub>
-				<br />
-				<br />Where <sub>n</sub>C<sub>x</sub> ("n choose x") is defined as
-				<br /><sub>n</sub>C<sub>x</sub> = n! / [ x! (n - x)! ]
-				<br />
-				<br />Mean: n * m / N
-			</p>
-
-			<div class="divider" />
-
-			<p>Inputs should be positive integers. Non-integer inputs will be rounded down.</p>
-
-			<p>
-				Picking wihtout replacement means that once you've picked your item, you do not put it back
-				into the pool of items to pick before picking the next item
-			</p>
-
-			<div class="divider" />
-
-			<p>
-				<a
-					class="link"
-					href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"
-					target="_blank"
-				>
-					Wikipedia on Hypergeometric Distributions
-				</a>
-			</p>
-			<p>
-				<a class="link" href="https://en.wikipedia.org/wiki/Simple_random_sample" target="_blank">
-					Wikipedia on Simple Random Samples
-				</a>
-			</p>
-			<p>
-				<a class="link" href="https://en.wikipedia.org/wiki/Urn_problem" target="_blank">
-					Wikipedia on the Urn Problem
-				</a>
-			</p>
-
-			<br />
-			<p>
-				<a
-					class="link"
-					href="https://web.ma.utexas.edu/users/parker/sampling/woreplshort.htm"
-					target="_blank"
-				>
-					UTexas provides formulas for sampling with and without replacement
-				</a>
-			</p>
-		</label>
-	</label>
-
-	<!-- About modal -->
-	<label for="about-modal" class="btn modal-button btn-info">About</label>
-
-	<input type="checkbox" id="about-modal" class="modal-toggle" />
-	<label for="about-modal" class="modal cursor-pointer">
-		<label class="modal-box relative text-center" for="">
-			<h3 class="font-bold text-lg">Picking without replacements</h3>
-			<div class="divider" />
-			View the data as pie and bar charts, where the odds of
-			<ul>
-				<li>
-					<span class="text-brand-blue font-bold">exactly k items is represented in blue</span>,
-				</li>
-				<li>
-					<span class="text-brand-red font-bold">less than k items is represented in red</span>, and
-				</li>
-				<li>
-					<span class="text-brand-green font-bold">
-						greater than k items is represented in green
-					</span>
-				</li>
-			</ul>
-
-			<br />
-
-			<p>
-				Note that we limit input to 1000. This is because when calculating n choose k for inputs of
-				1000 and 500, we get about 1e300, which is a number larger than should ever been needed, and
-				is just approaching the largest number Javascript will store.
-			</p>
-			<p>
-				To put this into perspective: Say we take every particle in the known universe and multiply
-				that number by the number of nanoseconds the universe has been alive. This number squared is
-				significantly less than 1e300.
-			</p>
-		</label>
-	</label>
+	<ModalButton _for="replacement-calc-about-modal">About</ModalButton>
+	<AboutModal />
 </div>

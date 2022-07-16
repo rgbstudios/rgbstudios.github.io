@@ -49,5 +49,5 @@
 </div>
 
 {#if sort !== null}
-	<a class="btn btn-primary" href="/projects">View all projects</a>
+	<a class="btn btn-primary ml-4" href="/projects">View all projects</a>
 {/if}

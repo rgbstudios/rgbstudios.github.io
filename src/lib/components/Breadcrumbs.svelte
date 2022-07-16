@@ -7,7 +7,9 @@
 	<ul>
 		{#each breadcrumbs as { text, link }}
 			{#if link}
-				<li class={isDark ? 'text-base-100 ' : 'text-white'}><a href={link}>{text}</a></li>
+				<li class="underline {isDark ? 'text-base-100 ' : 'text-white'}">
+					<a href={link}>{text}</a>
+				</li>
 			{:else}
 				<li class={isDark ? 'text-base-100 ' : 'text-white'}>{text}</li>
 			{/if}

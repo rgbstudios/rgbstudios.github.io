@@ -38,6 +38,7 @@
 		"daisyui": "2.19.0",
 		"dino-color-picker": "^0.2.3",
 		"lodash.merge": "^4.6.2",
+		"mathjax": "^3.2.2",
 		"screenfull": "6.0.2"
 	}
 }
