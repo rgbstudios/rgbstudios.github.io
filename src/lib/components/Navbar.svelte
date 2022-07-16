@@ -88,12 +88,12 @@
 <style>
 	.navbar-bottom {
 		@apply w-full h-1 opacity-50 hidden lg:block;
-		background: linear-gradient(
+		/* background: linear-gradient(
 			-45deg,
 			var(--brand-red) 33%,
 			var(--brand-green) 33%,
 			var(--brand-green) 67%,
 			var(--brand-blue) 67%
-		);
+		); */
 	}
 </style>
