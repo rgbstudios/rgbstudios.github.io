@@ -23,7 +23,7 @@
 			<a class="link link-hover">Branding</a>
 			<a class="link link-hover">Design</a> -->
 
-			<span class="footer-title mt-4">Company</span>
+			<span class="footer-title">Company</span>
 			<a class="link link-hover" href="/about">About Us</a>
 			<a class="link link-hover" href="/contact">Contact</a>
 		</div>
