@@ -31,13 +31,6 @@ const projects = [
 		isFeatured: true
 	},
 	{
-		title: 'Desktop Clock - Original Chrome App',
-		text: 'The original Chrome App for Desktop Clock. Check desktopclock.app for the latest version, which can be installed offline and has more features.',
-		img: 'img/screenshots/desktop_clock_old.png',
-		link: 'https://chrome.google.com/webstore/detail/desktop-clock/fioeniclklclkopakbepllehmbfikpcc',
-		tags: ['clock', 'web app', 'installable']
-	},
-	{
 		// TODO: move https://color-convert.netlify.app/ to rgb domain
 		// TODO: add sharethis
 		title: 'Color Convert',
@@ -61,7 +54,6 @@ const projects = [
 		isFeatured: true
 	},
 	{
-		// TODO add sharethis and cleanup site
 		title: 'Grade Calc',
 		text: "Use Grade Calc to calculate students' grades quickly and simply",
 		img: 'img/projects/screenshots/grade-calc.png',
@@ -114,7 +106,6 @@ const projects = [
 		tags: ['images', 'screenshot', 'tool', 'browser extension']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Stat Calc',
 		text: 'Use Stat Calc to calculate many statistics on a data set',
 		img: 'img/projects/screenshots/stat-calc.png',
@@ -122,15 +113,13 @@ const projects = [
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Binomial Calc',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
-		img: 'img/screenshots/binomial_calc.png',
-		link: 'https://rgbstudios.org/binomial-calc/',
+		img: 'img/projects/screenshots/binomial-calc.png',
+		link: '/projects/binomial-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
-		// TODO cleanup?
 		title: 'Binomial Calc App',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
 		img: 'https://play-lh.googleusercontent.com/NfMpnt1CJr-jTu1tRf41YkxJtotDcd7DTfmnBpkU7YOkels6qIu6Zw9q4jZZBpopbw=w2560-h1440-rw',
@@ -153,7 +142,6 @@ const projects = [
 		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Replacement Calc',
 		text: 'Use Replacement Calc to calculate the probabilities of picking a certain number of objects without replacement, such as picking marbles or cards',
 		img: 'img/projects/screenshots/replacement-calc.png',

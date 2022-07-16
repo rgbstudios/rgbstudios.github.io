@@ -1,4 +1,7 @@
 // https://stackoverflow.com/a/12830454
-const roundNumber = (num, scale = 3) => +(Math.round(num + 'e+' + scale) + 'e-' + scale);
+function roundNumber(num, precision) {
+	precision = Math.pow(10, precision);
+	return Math.round(num * precision) / precision;
+}
 
 export default roundNumber;
