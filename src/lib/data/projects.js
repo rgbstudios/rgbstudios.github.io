@@ -134,7 +134,7 @@ const projects = [
 	{
 		title: 'Binomial Calc App',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
-		img: 'https://play-lh.googleusercontent.com/NfMpnt1CJr-jTu1tRf41YkxJtotDcd7DTfmnBpkU7YOkels6qIu6Zw9q4jZZBpopbw=w2560-h1440-rw',
+		img: 'img/projects/screenshots/binomial-calc-app.webp',
 		link: 'https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'android app', 'mobile app']
 	},
