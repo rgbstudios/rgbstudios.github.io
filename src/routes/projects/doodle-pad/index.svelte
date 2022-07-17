@@ -335,11 +335,13 @@
 		>
 			<!-- COLORS -->
 			<label class="flex gap-2 align-center">
-				Radius
+				Brush size:
 				<input type="range" min="1" max="30" bind:value={radius} />
 			</label>
 			<label class="flex gap-2 align-center">
-				<button class="btn btn-sm" on:click={toggleSwatch}>Toggle Swatch</button>
+				<button class="btn btn-sm" on:click={toggleSwatch}>
+					<Icon name="swatch" /> &nbsp; Toggle Swatches
+				</button>
 			</label>
 			{#if colorsVisible}
 				<div class="flex flex-wrap gap-1">
@@ -366,10 +368,18 @@
 				>
 			</div>
 			<div class="btn-group">
-				<button class="btn btn-sm" on:click={undo}>Undo</button>
-				<button class="btn btn-sm" on:click={deleteImg}><Icon name="trash" /></button>
-				<button class="btn btn-sm" on:click={loadImg}><Icon name="upload" /></button>
-				<button class="btn btn-sm" on:click={saveImg}><Icon name="download" /></button>
+				<button class="btn btn-sm" on:click={undo} title="Undo">
+					<Icon name="undo" />
+				</button>
+				<button class="btn btn-sm" on:click={deleteImg} title="Clear">
+					<Icon name="trash" />
+				</button>
+				<button class="btn btn-sm" on:click={loadImg} title="Upload">
+					<Icon name="upload" />
+				</button>
+				<button class="btn btn-sm" on:click={saveImg} title="Download">
+					<Icon name="download" />
+				</button>
 				<button
 					class="btn btn-sm"
 					on:click={async () => {
@@ -377,11 +387,14 @@
 						await tick();
 						window.print();
 						printing = false;
-					}}><Icon name="print" /></button
+					}}
+					title="Print"
 				>
-				<button class="btn btn-sm" on:click={() => screenfull.toggle()}
-					><Icon name="fullscreen" /></button
-				>
+					<Icon name="print" />
+				</button>
+				<button class="btn btn-sm" on:click={() => screenfull.toggle()} title="Fullscreen">
+					<Icon name="fullscreen" />
+				</button>
 			</div>
 		</div>
 	{/if}
@@ -407,15 +420,20 @@
 			uiHidden = !uiHidden;
 			await tick();
 			onResize();
-		}}>Visible</button
+		}}
+		title="Toggle UI"
 	>
-	<div class="dropdown absolute bottom-0 right-0 m-5 dropdown-top dropdown-end">
-		<label tabindex="0" class="btn btn-sm m-1">More</label>
-		<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-			<li><a on:click={darken}>Darken</a></li>
-			<li><a on:click={lighten}>Lighten</a></li>
-			<li><a on:click={grayscale}>Grayscale</a></li>
-			<li><a on:click={invert}>Invert</a></li>
-		</ul>
-	</div>
+		<Icon name="eye" />
+	</button>
+	{#if !uiHidden}
+		<div class="dropdown absolute bottom-0 right-0 m-5 dropdown-top dropdown-end">
+			<label tabindex="0" class="btn btn-sm m-1">Filters</label>
+			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+				<li><a on:click={darken}>Darken</a></li>
+				<li><a on:click={lighten}>Lighten</a></li>
+				<li><a on:click={grayscale}>Grayscale</a></li>
+				<li><a on:click={invert}>Invert</a></li>
+			</ul>
+		</div>
+	{/if}
 </div>
