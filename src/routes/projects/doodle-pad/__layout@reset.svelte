@@ -14,11 +14,6 @@
 	});
 </script>
 
-<!-- <div class="container mx-auto p-8"> -->
-<!-- 	<br /> -->
-<!-- 	<br /> -->
-<!-- </div> -->
-
 <slot />
 <div class="container mx-auto p-8">
 	<ShareButtons {title} {link} />
