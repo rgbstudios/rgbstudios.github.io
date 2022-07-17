@@ -332,6 +332,7 @@
 	icon="img/projects/icons/doodle-pad.png"
 	screenshot="img/projects/screenshots/doodle-pad.png"
 />
+
 <div class="h-screen flex flex-col relative">
 	{#if !uiHidden}
 		<div

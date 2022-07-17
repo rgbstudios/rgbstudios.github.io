@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
 <style type="text/css">
 *{stroke-width:2;stroke-linejoin:round;}
-.st2{fill:#393;stroke:#cfc;}
-.st3{fill:#cfc;stroke:#393;}
+.st2{fill:#396;stroke:#b3e6cc;}
+.st3{fill:#b3e6cc;stroke:#396;}
 </style>
 <circle class="st3" cx="36" cy="36" r="30"/>
 <path class="st2" d="M49.5,36l-5,5l-9,9l-13,13c-5,0-9-4-9-9l13-13l9-9l5-5"/>
