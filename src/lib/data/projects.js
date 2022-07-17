@@ -108,7 +108,7 @@ const projects = [
 	{
 		// TODO cleanup and add sharethis
 		title: 'Simple Shot',
-		text: 'Take a screenshot with the clock of a button in your browser',
+		text: 'Take a screenshot with the click of a button in your browser',
 		img: 'img/screenshots/simple_shot.png',
 		link: 'https://chrome.google.com/webstore/detail/simpleshot/hpnikgbjfhnpcaoicgbkkialbejlecke',
 		tags: ['images', 'screenshot', 'tool', 'browser extension']
