@@ -92,8 +92,8 @@ const projects = [
 		// TODO cleanup and add sharethis
 		title: 'Doodle Pad',
 		text: 'A simple website to doodle in your browser',
-		img: 'img/screenshots/doodle_pad.png',
-		link: 'https://rgbstudios.org/doodle-pad/',
+		img: 'img/projects/screenshots/doodle-pad.png',
+		link: '/projects/doodle-pad/',
 		tags: ['art', 'drawing', 'tool', 'web app']
 	},
 	{
