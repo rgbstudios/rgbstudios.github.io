@@ -1,9 +1,8 @@
 <script lang="ts">
-	import Icon from '$lib/components/Icon.svelte';
-	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
-	import SEO from '$lib/components/SEO.svelte';
 	import screenfull from 'screenfull';
 	import { onMount, tick } from 'svelte';
+	import Icon from '$lib/components/Icon.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	let canvas: HTMLCanvasElement;
 	let uiHidden: boolean = false;
@@ -36,6 +35,8 @@
 	function toggleSwatch() {
 		colorsVisible = !colorsVisible;
 	}
+
+	/// FILL ///
 
 	// https://codepen.io/Geeyoam/pen/vLGZzG
 	function getColorAtPixel(imageData, x, y) {
@@ -146,6 +147,8 @@
 		ctx.putImageData(imageData, 0, 0);
 	}
 
+	/// DRAWING ///
+
 	function engage(e) {
 		saveOld();
 		if (currentTool != 'draw') return false;
@@ -216,14 +219,16 @@
 		setRad(radius);
 	}
 
-	function setRad(rad: number) {
+	function setRad(radius: number) {
 		const ctx = canvas.getContext('2d');
 		ctx.lineWidth = 2 * radius;
 	}
 
+	/// FILES ///
+
 	function saveImg() {
-		let data = canvas.toDataURL('image/png');
-		let newWindow = window.open('about:blank', 'image from canvas');
+		const data = canvas.toDataURL('image/png');
+		const newWindow = window.open('about:blank', 'image from canvas');
 		newWindow.document.write('<img src="' + data + '">');
 	}
 
@@ -251,6 +256,9 @@
 		};
 		img.src = URL.createObjectURL(e.target.files[0]);
 	}
+
+	/// FILTERS ///
+
 	function invert() {
 		const ctx = canvas.getContext('2d');
 		saveOld();
@@ -306,9 +314,6 @@
 
 	/// LIFECYCLE HOOKS ///
 	onMount(() => {
-		const d = document.getElementById('svelte');
-		console.log(d);
-		d.scrollTo(0, 100);
 		const ctx = canvas.getContext('2d');
 		onResize();
 		ctx.fillStyle = 'white';
@@ -411,7 +416,7 @@
 		on:touchmove={putPoint}
 		on:touchcancel={disengage}
 	>
-		Your browser doesn't support canvas
+		Your browser does not support the canvas element
 	</canvas>
 	<button
 		class="absolute bottom-0 m-5 btn btn-sm"
@@ -427,12 +432,12 @@
 	</button>
 	{#if !uiHidden}
 		<div class="dropdown absolute bottom-0 right-0 m-5 dropdown-top dropdown-end">
-			<label tabindex="0" class="btn btn-sm m-1">Filters</label>
+			<span tabindex="0" class="btn btn-sm m-1">Filters</span>
 			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-				<li><a on:click={darken}>Darken</a></li>
-				<li><a on:click={lighten}>Lighten</a></li>
-				<li><a on:click={grayscale}>Grayscale</a></li>
-				<li><a on:click={invert}>Invert</a></li>
+				<li><button on:click={darken}>Darken</button></li>
+				<li><button on:click={lighten}>Lighten</button></li>
+				<li><button on:click={grayscale}>Grayscale</button></li>
+				<li><button on:click={invert}>Invert</button></li>
 			</ul>
 		</div>
 	{/if}
