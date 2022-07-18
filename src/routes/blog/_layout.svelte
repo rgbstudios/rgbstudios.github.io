@@ -5,6 +5,7 @@
 	export let title, date, author, categories, img, preview_text, keywords, updated_date, hidden;
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import ShareButtons from '$lib/components/ShareButtons.svelte';
 
@@ -47,13 +48,17 @@
 		}
 	]}
 />
-<article class="prose lg:prose-xl mx-auto mt-8">
+<article class="prose lg:prose-xl mx-auto m-8">
 	<h5>{author} &mdash; {new Date(date).toLocaleDateString()}</h5>
 	<h1>{title}</h1>
 	{#each categories as category}
 		<div class="badge badge-outline mr-2">{category}</div>
 	{/each}
 	<slot />
+	<hr />
+	<a href="/blog" class="btn btn-primary no-underline">
+		More Blog Articles <Icon name="chevron_right" />
+	</a>
 </article>
 
 <div class="noprint">
