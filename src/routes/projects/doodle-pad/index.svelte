@@ -443,3 +443,4 @@
 		</div>
 	{/if}
 </div>
+<input type="file" style="display: none" on:change={handleFiles} bind:this={filesInput} />
