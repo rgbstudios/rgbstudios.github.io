@@ -1,7 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 
-	export let title, date, author, categories, img, preview_text, keywords, updated_date;
+	export let title, date, author, categories, img, preview_text, keywords, updated_date, hidden;
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
@@ -9,6 +10,9 @@
 
 	$: link = '';
 	onMount(() => {
+		if (hidden) {
+			goto('/404');
+		}
 		link = window.location.href;
 	});
 </script>
