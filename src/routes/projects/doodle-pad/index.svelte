@@ -66,9 +66,10 @@
 	function getColorForFloodFill() {
 		const ctx = canvas.getContext('2d');
 		let tmp = { r: 0x0, g: 0x0, b: 0x0, a: 0xff };
-		tmp.r = parseInt(ctx.strokeStyle.slice(1, 3), 16);
-		tmp.g = parseInt(ctx.strokeStyle.slice(3, 5), 16);
-		tmp.b = parseInt(ctx.strokeStyle.slice(5, 7), 16);
+		const style = ctx.strokeStyle as string;
+		tmp.r = parseInt(style.slice(1, 3), 16);
+		tmp.g = parseInt(style.slice(3, 5), 16);
+		tmp.b = parseInt(style.slice(5, 7), 16);
 		return tmp;
 	}
 
@@ -219,9 +220,9 @@
 		setRad(radius);
 	}
 
-	function setRad(radius: number) {
+	function setRad(rad: number) {
 		const ctx = canvas.getContext('2d');
-		ctx.lineWidth = 2 * radius;
+		ctx.lineWidth = 2 * rad;
 	}
 
 	/// FILES ///
@@ -319,6 +320,7 @@
 		ctx.fillStyle = 'white';
 		ctx.rect(0, 0, canvas.width, canvas.height);
 		ctx.fill();
+		ctx.beginPath();
 		setColor(currentColor);
 	});
 </script>
