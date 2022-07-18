@@ -35,6 +35,16 @@
 </div>
 <FeaturedAppCarousel slides={featuredApps} />
 
+<article class="prose lg:prose-xl my-8">
+	<p>
+		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
+		in clean, beautiful designs that are simple and easy to use.
+	</p>
+	<a href="/projects" class="btn btn-primary no-underline">
+		Our Projects <Icon name="chevron_right" />
+	</a>
+</article>
+
 <div class="prose lg:prose-xl my-8">
 	<hr />
 	<h3>Featured Articles:</h3>
@@ -44,31 +54,20 @@
 		<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
 	{/each}
 </div>
-
 <article class="prose lg:prose-xl my-8">
-	<hr />
-	<h1>What We Do</h1>
-	<p>
-		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
-		in clean, beautiful designs that are simple and easy to use.
-	</p>
-	<a href="/projects" class="btn btn-primary no-underline">
-		Our Projects <Icon name="chevron_right" />
-	</a>
-	<hr />
-	<p>
-		We can also design your website for you or help you with your style guide and brand identity.
-		Contact us for a quote!
-	</p>
-	<a href="/contact" class="btn btn-primary no-underline">
-		Reach Out <Icon name="chevron_right" />
-	</a>
-	<hr />
 	<p>
 		Read on to learn more about the web, design, and how to get your website cleaner, easier to use,
 		and higher ranked.
 	</p>
 	<a href="/blog" class="btn btn-primary no-underline">
 		Blog Articles <Icon name="chevron_right" />
+	</a>
+
+	<p>
+		We can also design your website for you or help you with your style guide and brand identity.
+		Contact us for a quote!
+	</p>
+	<a href="/contact" class="btn btn-primary no-underline">
+		Reach Out <Icon name="chevron_right" />
 	</a>
 </article>
