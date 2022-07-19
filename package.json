@@ -36,8 +36,10 @@
 	"dependencies": {
 		"@tailwindcss/typography": "0.5.3",
 		"daisyui": "2.19.0",
+		"jsqr": "^1.4.0",
 		"lodash.merge": "^4.6.2",
 		"mathjax": "^3.2.2",
+		"qrcode": "^1.5.1",
 		"screenfull": "6.0.2"
 	}
 }

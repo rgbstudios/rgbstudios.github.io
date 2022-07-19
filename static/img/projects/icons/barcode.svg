@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<style type="text/css">
+.st0{fill:#fff;stroke:#333;stroke-width:2;}
+.st1{fill:#333;}
+.st2{fill:none;}
+.st3{fill:#933;}
+</style>
+<circle class="st0" cx="32" cy="32" r="30"/>
+<rect x="16" y="18" class="st1" width="2" height="28"/>
+<rect x="10" y="18" class="st1" width="4" height="28"/>
+<rect x="22" y="18" class="st1" width="2" height="28"/>
+<rect x="30" y="18" class="st1" width="4" height="28"/>
+<rect x="40" y="18" class="st1" width="2" height="28"/>
+<rect x="46" y="18" class="st1" width="2" height="28"/>
+<rect x="50" y="18" class="st1" width="4" height="28"/>
+</svg>
