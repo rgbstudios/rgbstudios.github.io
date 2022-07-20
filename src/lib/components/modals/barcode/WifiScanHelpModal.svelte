@@ -4,7 +4,7 @@
 </script>
 
 <Modal id="barcode-wifi-scan-help-modal">
-	<div slot="title"><Icon name="info" />Help Scanning Wifi Codes</div>
+	<div slot="title"><Icon name="info" /> &nbsp; Help Scanning Wifi Codes</div>
 	<div class="grid gap-5">
 		<img src="/img/projects/other/wifi-scan-circle.jpg" alt="wifi-scan" />
 		<p class="text-center">
