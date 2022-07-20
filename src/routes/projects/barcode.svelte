@@ -22,6 +22,7 @@
 	import QrModal from '$lib/components/modals/barcode/QRModal.svelte';
 	import { browser } from '$app/env';
 	import ScanQrModal from '$lib/components/modals/barcode/ScanQRModal.svelte';
+	import WifiQrModal from '$lib/components/modals/barcode/WifiQRModal.svelte';
 	let errorMsg: string = '';
 	let barcodeCanvas: HTMLCanvasElement;
 	let barcodeDataURL: string;
@@ -180,5 +181,10 @@
 		<ModalButton _for="barcode-scan-qr-modal">Scan QR Code</ModalButton>
 		<ScanQrModal />
 		<!-- <ModalButton _for="barcode-qr-upload-modal">Scan QR Code</ModalButton> -->
+	</div>
+	<div class="divider" />
+	<div class="btn-group mx-auto gap-1">
+		<ModalButton _for="barcode-wifi-qr-modal">Wifi QR Code</ModalButton>
+		<WifiQrModal />
 	</div>
 </div>

@@ -51,7 +51,10 @@
 
 <Modal id="barcode-qr-modal" bind:hidden on:close={onClose}>
 	<div slot="title">QR Code</div>
-	<div class="btn-group mx-auto gap-1">
+	<div class="grid p-5 justify-center">
+		<canvas bind:this={canvas} />
+	</div>
+	<div class="btn-group justify-center gap-1">
 		<a
 			on:click={download}
 			href={qrDataURL}
@@ -59,8 +62,5 @@
 			class="btn"><Icon name="download" />Download</a
 		>
 		<button class="btn" on:click={copy}><Icon name="copy" />Copy</button>
-	</div>
-	<div class="grid p-5 justify-center">
-		<canvas bind:this={canvas} />
 	</div>
 </Modal>
