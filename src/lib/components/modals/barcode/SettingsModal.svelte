@@ -63,7 +63,9 @@
 			<svg bind:this={barcodeSvg} />
 		</div>
 		<div class="mx-auto">
-			<button class="btn" on:click={resetSettings}><Icon name="reset" />Reset Settings</button>
+			<button class="btn" on:click={resetSettings}>
+				<Icon name="reset" /> &nbsp; Reset Settings
+			</button>
 		</div>
 	</div>
 </Modal>

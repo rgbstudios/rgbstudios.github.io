@@ -117,7 +117,7 @@
 			<p><strong>Data:</strong>{@html output}</p>
 		{/if}
 		<div class="mx-auto">
-			<button class="btn" on:click={restartScan}><Icon name="reset" />Restart Scan</button>
+			<button class="btn" on:click={restartScan}><Icon name="reset" /> &nbsp; Restart Scan</button>
 		</div>
 	</div>
 </Modal>

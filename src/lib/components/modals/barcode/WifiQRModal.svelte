@@ -67,12 +67,14 @@
 				on:click={download}
 				href={qrDataURL}
 				download="qr-wifi-{name.toLowerCase().split(' ').join('-')}.png"
-				class="btn"><Icon name="download" />Download</a
+				class="btn"><Icon name="download" /> &nbsp; Download</a
 			>
-			<button class="btn" on:click={print}><Icon name="print" />Print</button>
-			<ModalButton _for="barcode-wifi-scan-help-modal"
-				><Icon name="info" />Help Scanning</ModalButton
-			>
+			<button class="btn" on:click={print}>
+				<Icon name="print" /> &nbsp; Print
+			</button>
+			<ModalButton _for="barcode-wifi-scan-help-modal">
+				<Icon name="info" /> &nbsp; Help Scanning
+			</ModalButton>
 		</div>
 	{:else}
 		<div class="alert shadow-lg mt-5 alert-error">

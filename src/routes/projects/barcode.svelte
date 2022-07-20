@@ -186,7 +186,8 @@
 			<span class="label-text">Display barcode label</span>
 			<input type="checkbox" bind:checked={$showLabel} class="checkbox" />
 		</label>
-		<ModalButton _for="barcode-settings-modal"><Icon name="settings" />Settings</ModalButton>
+		<ModalButton _for="barcode-settings-modal"><Icon name="settings" /> &nbsp; Settings</ModalButton
+		>
 		<SettingsModal />
 	</div>
 	<div class="mx-auto">
@@ -197,9 +198,11 @@
 			on:click={download}
 			href={barcodeDataURL}
 			download="barcode-{$text.toLowerCase().split(' ').join('-')}.png"
-			class="btn"><Icon name="download" />Download</a
+			class="btn"
 		>
-		<button class="btn" on:click={copy}><Icon name="copy" />Copy</button>
+			<Icon name="download" /> &nbsp; Download
+		</a>
+		<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy</button>
 	</div>
 	<div class="alert">
 		<div>
