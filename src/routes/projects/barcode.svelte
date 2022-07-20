@@ -1,4 +1,5 @@
 <script lang="ts">
+	import jsQR from 'jsqr';
 	import { page } from '$app/stores';
 
 	/// COMPONENTS ///
@@ -6,6 +7,10 @@
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import SettingsModal from '$lib/components/modals/barcode/SettingsModal.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import QrModal from '$lib/components/modals/barcode/QRModal.svelte';
+	import ScanQrModal from '$lib/components/modals/barcode/ScanQRModal.svelte';
+	import WifiQrModal from '$lib/components/modals/barcode/WifiQRModal.svelte';
+	import Modal from '$lib/components/base/Modal.svelte';
 
 	/// STATE ///
 	import { barcodeFormats } from '$lib/data/consts';
@@ -19,14 +24,12 @@
 		width,
 		text
 	} from '$lib/stores/barcode';
-	import QrModal from '$lib/components/modals/barcode/QRModal.svelte';
-	import { browser } from '$app/env';
-	import ScanQrModal from '$lib/components/modals/barcode/ScanQRModal.svelte';
-	import WifiQrModal from '$lib/components/modals/barcode/WifiQRModal.svelte';
 	let errorMsg: string = '';
 	let barcodeCanvas: HTMLCanvasElement;
 	let barcodeDataURL: string;
 	let qrModalHidden: boolean = true;
+	let parsedUploadString: string = '';
+	let filesInput: HTMLInputElement;
 
 	// update error message
 	$: if ($text.trim() === '') errorMsg = 'Invalid Text';
@@ -43,6 +46,8 @@
 			background: $bgColor,
 			lineColor: $linesColor
 		});
+
+	$: parseURL($page.url.searchParams);
 
 	/// METHODS ///
 	function download() {
@@ -87,7 +92,34 @@
 		qrModalHidden = !isQr;
 	}
 
-	$: parseURL($page.url.searchParams);
+	function loadImg() {
+		filesInput.click();
+	}
+
+	async function handleFiles(e) {
+		const file = e.target.files[0] as File;
+		const reader = new FileReader();
+		reader.addEventListener('loadend', () => {
+			const dataURL = reader.result as string;
+			const canvas = document.createElement('canvas');
+			const img = new Image();
+			img.addEventListener('load', () => {
+				canvas.width = img.naturalWidth || img.width;
+				canvas.height = img.naturalHeight || img.height;
+				const ctx = canvas.getContext('2d');
+				ctx.drawImage(img, 0, 0);
+				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+				const code = jsQR(imageData.data, imageData.width, imageData.height, {
+					inversionAttempts: 'dontInvert'
+				});
+				if (code) {
+					parsedUploadString = code.data;
+				}
+			});
+			img.src = dataURL;
+		});
+		reader.readAsDataURL(file);
+	}
 </script>
 
 <svelte:head>
@@ -180,7 +212,16 @@
 		<QrModal bind:hidden={qrModalHidden} />
 		<ModalButton _for="barcode-scan-qr-modal">Scan QR Code</ModalButton>
 		<ScanQrModal />
-		<!-- <ModalButton _for="barcode-qr-upload-modal">Scan QR Code</ModalButton> -->
+		<ModalButton _for="barcode-scan-qr-modal">Scan QR Code</ModalButton>
+		<ModalButton _for="barcode-qr-upload-modal" on:click={loadImg}
+			><Icon name="upload" />Upload QR Code</ModalButton
+		>
+		<Modal id="barcode-qr-upload-modal">
+			<div slot="title">Upload QR</div>
+			<p>
+				{parsedUploadString}
+			</p>
+		</Modal>
 	</div>
 	<div class="divider" />
 	<div class="btn-group mx-auto gap-1">
@@ -188,3 +229,4 @@
 		<WifiQrModal />
 	</div>
 </div>
+<input type="file" style="display: none" on:change={handleFiles} bind:this={filesInput} />
