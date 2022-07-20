@@ -208,14 +208,17 @@
 		</div>
 	</div>
 	<div class="btn-group mx-auto gap-1">
-		<ModalButton _for="barcode-qr-modal">QR Code</ModalButton>
+		<ModalButton _for="barcode-qr-modal">
+			<Icon name="qrcode" /> &nbsp; QR Code
+		</ModalButton>
 		<QrModal bind:hidden={qrModalHidden} />
-		<ModalButton _for="barcode-scan-qr-modal">Scan QR Code</ModalButton>
 		<ScanQrModal />
-		<ModalButton _for="barcode-scan-qr-modal">Scan QR Code</ModalButton>
-		<ModalButton _for="barcode-qr-upload-modal" on:click={loadImg}
-			><Icon name="upload" />Upload QR Code</ModalButton
-		>
+		<ModalButton _for="barcode-scan-qr-modal">
+			<Icon name="video_camera" /> &nbsp; Scan QR Code
+		</ModalButton>
+		<ModalButton _for="barcode-qr-upload-modal" on:click={loadImg}>
+			<Icon name="upload" /> &nbsp; Upload QR Code
+		</ModalButton>
 		<Modal id="barcode-qr-upload-modal">
 			<div slot="title">Upload QR</div>
 			<p>
@@ -225,7 +228,9 @@
 	</div>
 	<div class="divider" />
 	<div class="btn-group mx-auto gap-1">
-		<ModalButton _for="barcode-wifi-qr-modal">Wifi QR Code</ModalButton>
+		<ModalButton _for="barcode-wifi-qr-modal">
+			<Icon name="wifi" /> &nbsp; Wifi QR Code
+		</ModalButton>
 		<WifiQrModal />
 	</div>
 </div>
