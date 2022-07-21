@@ -1,6 +1,7 @@
 <script lang="ts">
 	import jsQR from 'jsqr';
 	import { page } from '$app/stores';
+	import copyText from '$lib/util/copyText';
 
 	/// COMPONENTS ///
 	import Icon from '$lib/components/Icon.svelte';
@@ -24,6 +25,7 @@
 		width,
 		text
 	} from '$lib/stores/barcode';
+	import { browser } from '$app/env';
 	let errorMsg: string = '';
 	let barcodeCanvas: HTMLCanvasElement;
 	let barcodeDataURL: string;
@@ -32,10 +34,13 @@
 	let filesInput: HTMLInputElement;
 
 	// update error message
-	$: if ($text.trim() === '') errorMsg = 'Invalid Text';
-	else errorMsg = '';
+	$: if (barcodeCanvas) {
+		if ($text.trim() === '' || !isValid($text, $format)) errorMsg = 'Invalid Text';
+		else errorMsg = '';
+	}
 
 	$: barcodeCanvas &&
+		isValid($text, $format) &&
 		// @ts-ignore: JsBarcode is cdn loaded library
 		JsBarcode(barcodeCanvas, $text, {
 			displayValue: $showLabel,
@@ -49,12 +54,40 @@
 
 	$: parseURL($page.url.searchParams);
 
+	function isValid(text: string, format: string): boolean {
+		try {
+			// @ts-ignore: JsBarcode is cdn loaded library
+			JsBarcode(barcodeCanvas, text, {
+				displayValue: $showLabel,
+				format,
+				width: $width,
+				height: $height,
+				margin: $margin,
+				background: $bgColor,
+				lineColor: $linesColor
+			});
+			return true;
+		} catch {
+			return false;
+		}
+	}
+
 	/// METHODS ///
 	function download() {
 		barcodeDataURL = barcodeCanvas.toDataURL('image/png');
 	}
 
 	function copy() {
+		updateParams();
+		copyText(window.location.href);
+	}
+
+	$: if (browser) {
+		$width, $height, $margin, $showLabel, $format, $linesColor, $bgColor, $text;
+		updateParams();
+	}
+
+	function updateParams() {
 		let queryParams = new URLSearchParams(window.location.search);
 		queryParams.set('width', String($width));
 		queryParams.set('height', String($height));
@@ -66,9 +99,7 @@
 		queryParams.set('q', $text);
 		queryParams.set('isqr', '0');
 		let stringParams = queryParams.toString();
-		stringParams
-			? history.replaceState(null, null, '?' + stringParams)
-			: history.replaceState(null, null);
+		history.replaceState(null, null, '?' + stringParams);
 	}
 
 	function parseURL(params: URLSearchParams) {
@@ -96,8 +127,9 @@
 		filesInput.click();
 	}
 
-	async function handleFiles(e) {
-		const file = e.target.files[0] as File;
+	async function handleFiles(e: Event) {
+		const inp = e.target as HTMLInputElement;
+		const file = inp.files[0] as File;
 		const reader = new FileReader();
 		reader.addEventListener('loadend', () => {
 			const dataURL = reader.result as string;
@@ -114,6 +146,8 @@
 				});
 				if (code) {
 					parsedUploadString = code.data;
+				} else {
+					parsedUploadString = 'No QR Code found';
 				}
 			});
 			img.src = dataURL;
@@ -169,7 +203,7 @@
 		<div class="alert alert-error shadow-lg">
 			<div>
 				<Icon name="close" />
-				<span>Barcode Text is required</span>
+				<span>{errorMsg}</span>
 			</div>
 		</div>
 	{/if}
@@ -182,32 +216,34 @@
 				{/each}
 			</select>
 		</label>
-		<label class="label cursor-pointer">
-			<span class="label-text">Display barcode label</span>
+		<label class="flex items-center gap-3 cursor-pointer">
 			<input type="checkbox" bind:checked={$showLabel} class="checkbox" />
+			<span class="label-text">Display barcode label</span>
 		</label>
 		<ModalButton _for="barcode-settings-modal"><Icon name="settings" /> &nbsp; Settings</ModalButton
 		>
 		<SettingsModal />
 	</div>
-	<div class="mx-auto">
-		<canvas bind:this={barcodeCanvas} />
-	</div>
-	<div class="btn-group mx-auto gap-1">
-		<a
-			on:click={download}
-			href={barcodeDataURL}
-			download="barcode-{$text.toLowerCase().split(' ').join('-')}.png"
-			class="btn"
-		>
-			<Icon name="download" /> &nbsp; Download
-		</a>
-		<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy</button>
-	</div>
-	<div class="alert">
-		<div>
-			<Icon name="info" />
-			<span>Right click the image and click "Copy image" to copy it.</span>
+	<div class:hidden={!!errorMsg} class="contents">
+		<div class="mx-auto">
+			<canvas bind:this={barcodeCanvas} />
+		</div>
+		<div class="btn-group mx-auto gap-1">
+			<a
+				on:click={download}
+				href={barcodeDataURL}
+				download="barcode-{$text.toLowerCase().split(' ').join('-')}.png"
+				class="btn"
+			>
+				<Icon name="download" /> &nbsp; Download
+			</a>
+			<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy</button>
+		</div>
+		<div class="alert">
+			<div>
+				<Icon name="info" />
+				<span>Right click the image and click "Copy image" to copy it.</span>
+			</div>
 		</div>
 	</div>
 	<div class="btn-group mx-auto gap-1">
@@ -224,7 +260,7 @@
 		</ModalButton>
 		<Modal id="barcode-qr-upload-modal">
 			<div slot="title">Upload QR</div>
-			<p>
+			<p class:text-error={parsedUploadString === 'No QR Code found'}>
 				{parsedUploadString}
 			</p>
 		</Modal>
