@@ -1,18 +1,17 @@
 <script lang="ts">
-	import QRCode from 'qrcode';
 	import jsQR from 'jsqr';
 
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
-	import { bgColor, linesColor, margin, text } from '$lib/stores/barcode';
+	type Pos = { x: number; y: number };
 	let video: HTMLVideoElement;
 	let canvas: HTMLCanvasElement;
-	let qrDataURL: string;
-	let streamObj;
 	let found: boolean = false;
 	let loadingMessage: string = '';
 	let output: string = '';
+	let errorMsg: string = '';
+	let streamObj: MediaStream;
 	export let hidden: boolean = true;
 
 	// get webcam feed if available
@@ -23,8 +22,9 @@
 			.catch(videoError);
 	}
 
-	function handleVideo(stream) {
+	function handleVideo(stream: MediaStream) {
 		// if found attach feed to video element
+		errorMsg = '';
 		streamObj = stream;
 		video.srcObject = stream;
 		video.play();
@@ -32,7 +32,8 @@
 	}
 
 	function videoError(e) {
-		// no webcam found - do something
+		console.error(e);
+		errorMsg = 'Unable to access video stream(please make sure you have enabled your webcam)';
 	}
 
 	function stopScan() {
@@ -40,7 +41,7 @@
 		tracks.forEach((track) => track.stop());
 	}
 
-	function drawLine(begin, end, color) {
+	function drawLine(begin: Pos, end: Pos, color: string) {
 		const ctx = canvas.getContext('2d');
 		ctx.beginPath();
 		ctx.moveTo(begin.x, begin.y);
@@ -50,7 +51,7 @@
 		ctx.stroke();
 	}
 
-	function drawQuad(points, color) {
+	function drawQuad(points: Pos[], color: string) {
 		drawLine(points[0], points[1], color);
 		drawLine(points[1], points[2], color);
 		drawLine(points[2], points[3], color);
@@ -105,19 +106,29 @@
 	}
 </script>
 
-<Modal id="barcode-scan-qr-modal" bind:hidden on:open={onOpen}>
+<Modal id="barcode-scan-qr-modal" bind:hidden on:open={onOpen} fluid>
 	<div slot="title">Scan QR Code</div>
-	<div class="grid gap-3">
-		<video bind:this={video} playsinline class="hidden" />
-		{#if loadingMessage}
-			<p>{loadingMessage}</p>
+	<div class="grid gap-3 justify-center">
+		{#if errorMsg}
+			<div class="alert alert-error shadow-lg">
+				<div>
+					<Icon name="close" />
+					<span>{errorMsg}</span>
+				</div>
+			</div>
+		{:else}
+			<video bind:this={video} playsinline class="hidden" />
+			{#if loadingMessage}
+				<p>{loadingMessage}</p>
+			{/if}
+			<canvas bind:this={canvas} />
+			{#if output}
+				<p><strong>Data:</strong>{@html output}</p>
+			{/if}
+			<div class="mx-auto">
+				<button class="btn" on:click={restartScan}><Icon name="reset" /> &nbsp; Restart Scan</button
+				>
+			</div>
 		{/if}
-		<canvas bind:this={canvas} />
-		{#if output}
-			<p><strong>Data:</strong>{@html output}</p>
-		{/if}
-		<div class="mx-auto">
-			<button class="btn" on:click={restartScan}><Icon name="reset" /> &nbsp; Restart Scan</button>
-		</div>
 	</div>
 </Modal>

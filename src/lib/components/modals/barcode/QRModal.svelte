@@ -27,6 +27,7 @@
 	}
 
 	$: canvas &&
+		$text.trim() &&
 		QRCode.toCanvas(canvas, $text, {
 			margin: $margin,
 			color: {
@@ -37,15 +38,9 @@
 
 	function onClose() {
 		let queryParams = new URLSearchParams(window.location.search);
-		queryParams.set('margin', String($margin));
-		queryParams.set('lc', $linesColor);
-		queryParams.set('bgc', $bgColor);
-		queryParams.set('q', $text);
 		queryParams.set('isqr', '0');
 		let stringParams = queryParams.toString();
-		stringParams
-			? history.replaceState(null, null, '?' + stringParams)
-			: history.replaceState(null, null);
+		history.replaceState(null, null, '?' + stringParams);
 	}
 </script>
 
