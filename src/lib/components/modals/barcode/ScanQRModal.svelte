@@ -111,10 +111,7 @@
 	<div class="grid gap-3 justify-center">
 		{#if errorMsg}
 			<div class="alert alert-error shadow-lg">
-				<div>
-					<Icon name="close" />
-					<span>{errorMsg}</span>
-				</div>
+				{errorMsg}
 			</div>
 		{:else}
 			<video bind:this={video} playsinline class="hidden" />

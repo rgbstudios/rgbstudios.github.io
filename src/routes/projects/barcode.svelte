@@ -201,10 +201,7 @@
 	</label>
 	{#if errorMsg !== ''}
 		<div class="alert alert-error shadow-lg">
-			<div>
-				<Icon name="close" />
-				<span>{errorMsg}</span>
-			</div>
+			{errorMsg}
 		</div>
 	{/if}
 	<div class="grid gap-5 lg:grid-cols-[auto,auto,auto] md:grid-cols-[auto,auto]">

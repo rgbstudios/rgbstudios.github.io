@@ -121,10 +121,7 @@
 		</div>
 	{:else}
 		<div class="alert shadow-lg mt-5 alert-error">
-			<div>
-				<Icon name="close" />
-				<span>{errorMsg}</span>
-			</div>
+			{errorMsg}
 		</div>
 	{/if}
 </Modal>
