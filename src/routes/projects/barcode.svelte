@@ -208,8 +208,13 @@
 		<label class="input-group">
 			<span>Format</span>
 			<select class="select select-bordered max-w-xs" bind:value={$format}>
-				{#each barcodeFormats as f}
-					<option>{f}</option>
+				{#each barcodeFormats as i, index}
+					{#each i as f}
+						<option>{f}</option>
+					{/each}
+					{#if index !== barcodeFormats.length - 1}
+						<option disabled class="text-center">──────────────────</option>
+					{/if}
 				{/each}
 			</select>
 		</label>
