@@ -2,6 +2,7 @@
 	import jsQR from 'jsqr';
 	import { page } from '$app/stores';
 	import copyText from '$lib/util/copyText';
+	import { toast } from '$lib/components/Toast.svelte';
 
 	/// COMPONENTS ///
 	import Icon from '$lib/components/Icon.svelte';
@@ -80,6 +81,7 @@
 	function copy() {
 		updateParams();
 		copyText(window.location.href);
+		toast('Copied to clipboard');
 	}
 
 	$: if (browser) {
