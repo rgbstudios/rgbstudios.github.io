@@ -88,9 +88,7 @@
 			<input type="password" class="grow input input-bordered" bind:value={pass} />
 		</label>
 		<div class="col-span-full grid gap-5 mx-auto">
-			<h3 class="flex gap-3">
-				<Icon name="settings" />Print Settings
-			</h3>
+			<h3 class="flex gap-3">Print Settings</h3>
 			<div class="gap-5 grid">
 				<label class="flex items-center gap-3 cursor-pointer">
 					<input type="checkbox" bind:checked={showName} class="checkbox" />
