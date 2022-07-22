@@ -123,7 +123,7 @@
 			{/if}
 			<canvas bind:this={canvas} />
 			{#if output}
-				<p><strong>Data:</strong>{@html output}</p>
+				<p><strong>Data:</strong> &nbsp; {@html output}</p>
 			{/if}
 			<div class="mx-auto">
 				<button class="btn" on:click={restartScan}><Icon name="reset" /> &nbsp; Restart Scan</button
