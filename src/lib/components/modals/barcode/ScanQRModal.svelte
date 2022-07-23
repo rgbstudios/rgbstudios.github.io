@@ -104,13 +104,9 @@
 		stopScan();
 		startScan();
 	}
-
-	function onClose() {
-		stopScan();
-	}
 </script>
 
-<Modal id="barcode-scan-qr-modal" bind:hidden on:open={onOpen} on:close={onClose} fluid>
+<Modal id="barcode-scan-qr-modal" bind:hidden on:open={onOpen} on:close={stopScan} fluid>
 	<div slot="title">Scan QR Code</div>
 	<div class="grid gap-3 justify-center">
 		{#if errorMsg}
