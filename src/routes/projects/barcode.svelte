@@ -1,4 +1,5 @@
 <script lang="ts">
+	// Future: add scan barcode modal, button to toggle url params
 	import jsQR from 'jsqr';
 	import { page } from '$app/stores';
 	import copyText from '$lib/util/copyText';
