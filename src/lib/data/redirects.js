@@ -34,6 +34,10 @@ const redirects = [
 	{
 		source: '/doodle-pad',
 		destination: '/projects/doodle-pad'
+	},
+	{
+		source: '/barcode',
+		destination: '/projects/barcode'
 	}
 ];
 

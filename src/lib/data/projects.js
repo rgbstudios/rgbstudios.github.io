@@ -142,8 +142,8 @@ const projects = [
 		// TODO cleanup and add sharethis
 		title: 'Barcode Generator',
 		text: 'Use Barcode Generator to generate a barcode for any text, then save or share the image. Generate a barcode for your Wifi for guests and more.',
-		img: 'img/screenshots/barcode.png',
-		link: 'https://rgbstudios.org/barcode',
+		img: 'img/projects/screenshots/barcode.png',
+		link: '/projects/barcode',
 		tags: ['barcode', 'tool', 'web app']
 	},
 	{
