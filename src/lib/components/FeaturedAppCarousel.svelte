@@ -7,7 +7,7 @@
 {#if slides.length === 1}
 	<FeaturedAppCard {...slides[0]} />
 {:else if slides.length > 1}
-	<Carousel let:item={slide} items={slides}>
+	<Carousel let:item={slide} items={slides.map((s) => ({ id: s.link, ...s }))}>
 		<FeaturedAppCard {...slide} />
 	</Carousel>
 {/if}

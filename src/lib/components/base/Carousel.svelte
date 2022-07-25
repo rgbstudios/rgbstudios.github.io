@@ -10,13 +10,21 @@
 
 	export let items: CarouselItem[];
 	export let activeIndex: number = 0;
+	export let duration: number = 1000;
+	let moving: boolean = false;
 	$: length = items.length;
 
 	function next() {
+		if (moving) return;
+		moving = true;
 		activeIndex = (activeIndex + 1 + length) % length;
+		setTimeout(() => (moving = false), duration);
 	}
 	function prev() {
+		if (moving) return;
+		moving = true;
 		activeIndex = (activeIndex - 1 + length) % length;
+		setTimeout(() => (moving = false), duration);
 	}
 </script>
 
@@ -29,7 +37,13 @@
 	<!-- Carousel -->
 	<div class="carousel">
 		{#each items as item (item.id)}
-			<div class="child" style:transform="translateX(-{activeIndex * 100}%)"><slot {item} /></div>
+			<div
+				class="child"
+				style:transition-duration="{duration}ms"
+				style:transform="translateX(-{activeIndex * 100}%)"
+			>
+				<slot {item} />
+			</div>
 		{/each}
 	</div>
 	<!-- Next -->
@@ -53,6 +67,6 @@
 		@apply flex overflow-hidden;
 	}
 	.child {
-		@apply basis-full shrink-0 transition duration-1000;
+		@apply basis-full shrink-0 transition;
 	}
 </style>
