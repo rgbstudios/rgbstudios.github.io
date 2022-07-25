@@ -6,6 +6,8 @@
 </script>
 
 <script lang="ts">
+	import Icon from '../Icon.svelte';
+
 	export let items: CarouselItem[];
 	export let activeIndex: number = 0;
 	$: length = items.length;
@@ -18,13 +20,25 @@
 	}
 </script>
 
-<div class="parent">
-	<button class="btn prev" on:click={prev}><span> &lsaquo; </span></button>
-	{#each items as item}
-		<div class="child" style:transform="translateX(-{activeIndex * 100}%)"><slot {item} /></div>
-	{/each}
-	<button class="btn next" on:click={next}><span> &rsaquo; </span></button>
-	<div class="flex gap-3 absolute bottom-5 left-1/2 -translate-x-1/2">
+<div class="relative">
+	<!-- Prev -->
+	<button
+		class="absolute bg-primary p-3 z-10 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
+		on:click={prev}><Icon name="chevron_right" /></button
+	>
+	<!-- Carousel -->
+	<div class="carousel">
+		{#each items as item}
+			<div class="child" style:transform="translateX(-{activeIndex * 100}%)"><slot {item} /></div>
+		{/each}
+	</div>
+	<!-- Next -->
+	<button
+		class="absolute bg-primary p-3 z-10 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
+		on:click={next}><Icon name="chevron_right" /></button
+	>
+	<!-- Dots -->
+	<div class="flex gap-3 absolute bottom-5 left-1/2 -translate-x-1/2 col-start-2 col-end-3">
 		{#each items as _, index}
 			<div
 				class="w-3 h-3 rounded-full bg-white opacity-50 transition"
@@ -35,17 +49,8 @@
 </div>
 
 <style>
-	.parent {
-		@apply flex overflow-hidden relative;
-	}
-	.btn {
-		@apply absolute top-1/2 bg-black/50 text-white z-10 text-5xl outline-none border-none;
-	}
-	.prev {
-		@apply left-5;
-	}
-	.next {
-		@apply right-5;
+	.carousel {
+		@apply flex overflow-hidden;
 	}
 	.child {
 		@apply basis-full shrink-0 transition duration-1000;
