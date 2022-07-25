@@ -58,9 +58,10 @@
 	<!-- Dots -->
 	<div class="flex gap-3 absolute bottom-5 left-1/2 -translate-x-1/2 col-start-2 col-end-3">
 		{#each items as _, index}
-			<div
+			<button
 				class="w-3 h-3 rounded-full bg-white opacity-50 transition"
 				class:opacity-100={index === activeIndex}
+				on:click={() => (activeIndex = index)}
 			/>
 		{/each}
 	</div>
