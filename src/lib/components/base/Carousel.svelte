@@ -12,8 +12,8 @@
 	export let activeIndex: number = 0;
 	export let duration: number = 1000;
 
-	export let autoScroll = true;
-	export let autoScrollDuration = 5000;
+	export let autoScroll: boolean = true;
+	export let autoScrollDuration: number = 5000;
 	let autoScrollInterval;
 
 	let moving: boolean = false;
