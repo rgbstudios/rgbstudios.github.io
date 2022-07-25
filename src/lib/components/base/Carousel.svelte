@@ -70,10 +70,10 @@
 		<Icon name="chevron_right" />
 	</button>
 	<!-- Carousel -->
-	<div class="carousel">
+	<div class="carousel flex overflow-hidden">
 		{#each items as item (item.id)}
 			<div
-				class="child"
+				class="basis-full shrink-0 transition"
 				style:transition-duration="{duration}ms"
 				style:transform="translateX(-{activeIndex * 100}%)"
 			>
@@ -99,12 +99,3 @@
 		{/each}
 	</div>
 </div>
-
-<style>
-	.carousel {
-		@apply flex overflow-hidden;
-	}
-	.child {
-		@apply basis-full shrink-0 transition;
-	}
-</style>
