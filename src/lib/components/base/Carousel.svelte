@@ -70,7 +70,7 @@
 		<Icon name="chevron_right" />
 	</button>
 	<!-- Carousel -->
-	<div class="carousel flex overflow-hidden">
+	<div class="flex overflow-hidden">
 		{#each items as item (item.id)}
 			<div
 				class="basis-full shrink-0 transition"
