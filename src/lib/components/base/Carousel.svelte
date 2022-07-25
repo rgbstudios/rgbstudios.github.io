@@ -28,7 +28,7 @@
 	>
 	<!-- Carousel -->
 	<div class="carousel">
-		{#each items as item}
+		{#each items as item (item.id)}
 			<div class="child" style:transform="translateX(-{activeIndex * 100}%)"><slot {item} /></div>
 		{/each}
 	</div>
