@@ -11,6 +11,11 @@
 	export let items: CarouselItem[];
 	export let activeIndex: number = 0;
 	export let duration: number = 1000;
+
+	export let autoScroll = true;
+	export let autoScrollDuration = 5000;
+	let autoScrollInterval;
+
 	let moving: boolean = false;
 	$: length = items.length;
 
@@ -19,12 +24,40 @@
 		moving = true;
 		activeIndex = (activeIndex + 1 + length) % length;
 		setTimeout(() => (moving = false), duration);
+
+		if (autoScroll && autoScrollDuration) {
+			clearInterval(autoScrollInterval);
+			autoScrollInterval = setInterval(next, autoScrollDuration);
+		}
 	}
 	function prev() {
 		if (moving) return;
 		moving = true;
 		activeIndex = (activeIndex - 1 + length) % length;
 		setTimeout(() => (moving = false), duration);
+
+		if (autoScroll && autoScrollDuration) {
+			clearInterval(autoScrollInterval);
+			autoScrollInterval = setInterval(next, autoScrollDuration);
+		}
+	}
+	function goto(idx) {
+		if (moving) return;
+		moving = true;
+		activeIndex = idx;
+		setTimeout(() => (moving = false), duration);
+
+		if (autoScroll && autoScrollDuration) {
+			clearInterval(autoScrollInterval);
+			autoScrollInterval = setInterval(next, autoScrollDuration);
+		}
+	}
+
+	$: if (autoScroll && autoScrollDuration) {
+		clearInterval(autoScrollInterval);
+		autoScrollInterval = setInterval(next, autoScrollDuration);
+	} else {
+		clearInterval(autoScrollInterval);
 	}
 </script>
 
@@ -61,7 +94,7 @@
 			<button
 				class="w-3 h-3 rounded-full bg-white opacity-50 transition"
 				class:opacity-100={index === activeIndex}
-				on:click={() => (activeIndex = index)}
+				on:click={() => goto(index)}
 			/>
 		{/each}
 	</div>
