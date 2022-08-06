@@ -30,6 +30,10 @@ const redirects = [
 	{
 		source: '/binomial-calc',
 		destination: '/projects/binomial-calc'
+	},
+	{
+		source: '/color-picker',
+		destination: '/projects/color-picker'
 	}
 ];
 
