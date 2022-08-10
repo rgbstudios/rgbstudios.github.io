@@ -23,6 +23,7 @@
 		if ($page.url.pathname === '/projects/color-picker') {
 			$isDark = true;
 			document.documentElement.style.removeProperty('--current-color');
+			/// it's null for every route except color-picker
 			document.body.style.backgroundColor = null;
 		}
 	}
