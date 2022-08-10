@@ -70,8 +70,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Facebook"
 >
 	<Icon name="facebook" />
@@ -84,8 +83,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Twitter"
 >
 	<Icon name="twitter" />
@@ -96,8 +94,7 @@
 	href="https://www.pinterest.com/pin/create/button/?url={encodeURIComponent(link)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Pinterest"
 >
 	<Icon name="pinterest" />
@@ -110,8 +107,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Reddit"
 >
 	<Icon name="reddit" />
@@ -122,8 +118,7 @@
 	href="https://www.linkedin.com/sharing/share-offsite/?url={encodeURIComponent(link)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Linkedin"
 >
 	<Icon name="linkedin" />
@@ -134,8 +129,7 @@
 	href="https://api.whatsapp.com/send?text={encodeURIComponent(title + ': ' + link)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Whatsapp"
 >
 	<Icon name="whatsapp" />
@@ -149,8 +143,7 @@
 	)}%0D%0A{encodeURIComponent(link)} &subject={encodeURIComponent(title)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Email"
 >
 	<Icon name="envelope" />
@@ -169,8 +162,7 @@
 		});
 	}}
 	class="btn btn-outline"
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	title="Copy Link"
 >
 	<Icon name="copy" />
@@ -179,8 +171,7 @@
 </button>
 
 <button
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	on:click={() => shareApp(title, '', link)}
 	class="btn btn-outline btn-light"
 	title="Share"
@@ -190,8 +181,7 @@
 </button>
 
 <button
-	class:border-black={!$isDark}
-	class:text-black={!$isDark}
+	class:light={!$isDark}
 	on:click={() => window.print()}
 	class="btn btn-outline"
 	title="Share"
@@ -204,5 +194,9 @@
 	a,
 	button {
 		@apply m-2 ml-0;
+	}
+
+	.light {
+		@apply border-black text-black;
 	}
 </style>
