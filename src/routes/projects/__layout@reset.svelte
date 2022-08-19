@@ -5,10 +5,10 @@
 
 	import ShareButtons from '$lib/components/ShareButtons.svelte';
 	import SmallFooter from '$lib/components/SmallFooter.svelte';
-	import { Toasts } from '$lib/components/Toast';
 	import { writable } from 'svelte/store';
 	import { page } from '$app/stores';
 	import { browser } from '$app/env';
+	import Toast from '$lib/components/Toast.svelte';
 
 	const isDark = writable(true);
 	setContext('share-buttons-dark', isDark);
@@ -38,4 +38,4 @@
 
 <SmallFooter />
 
-<Toasts />
+<Toast />

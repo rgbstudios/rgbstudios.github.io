@@ -8,6 +8,11 @@
 </script>
 
 <script>
+	import projects from '$lib/data/projects';
+	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
+
+	$: featuredApps = projects.filter((p) => p.isFeatured);
+
 	export let error, status;
 </script>
 
@@ -23,4 +28,16 @@
 	<p>{error.name} {status} &mdash; {error.message}</p>
 
 	<a href="/" class="btn btn-primary no-underline">Go back home</a>
+
+	{#if status === 404}
+		<p>Check out our popular projects:</p>
+
+		<FeaturedAppCarousel slides={featuredApps} />
+	{:else}
+		<p>
+			If this problem persists, please contact us at <a href="mailto:contact@rgbstudios.org">
+				contact@rgbstudios.org
+			</a>.
+		</p>
+	{/if}
 </article>

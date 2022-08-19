@@ -90,8 +90,8 @@ const projects = [
 		// TODO cleanup and add sharethis
 		title: 'Doodle Pad',
 		text: 'A simple website to doodle in your browser',
-		img: 'img/screenshots/doodle_pad.png',
-		link: 'https://rgbstudios.org/doodle-pad/',
+		img: 'img/projects/screenshots/doodle-pad.png',
+		link: '/projects/doodle-pad/',
 		tags: ['art', 'drawing', 'tool', 'web app']
 	},
 	{
@@ -106,7 +106,7 @@ const projects = [
 	{
 		// TODO cleanup and add sharethis
 		title: 'Simple Shot',
-		text: 'Take a screenshot with the clock of a button in your browser',
+		text: 'Take a screenshot with the click of a button in your browser',
 		img: 'img/screenshots/simple_shot.png',
 		link: 'https://chrome.google.com/webstore/detail/simpleshot/hpnikgbjfhnpcaoicgbkkialbejlecke',
 		tags: ['images', 'screenshot', 'tool', 'browser extension']
@@ -132,7 +132,7 @@ const projects = [
 	{
 		title: 'Binomial Calc App',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
-		img: 'https://play-lh.googleusercontent.com/NfMpnt1CJr-jTu1tRf41YkxJtotDcd7DTfmnBpkU7YOkels6qIu6Zw9q4jZZBpopbw=w2560-h1440-rw',
+		img: 'img/projects/screenshots/binomial-calc-app.webp',
 		link: 'https://play.google.com/store/apps/details?id=org.rgbstudios.binomialdistributioncalculator',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'android app', 'mobile app']
 	},
@@ -140,8 +140,8 @@ const projects = [
 		// TODO cleanup and add sharethis
 		title: 'Barcode Generator',
 		text: 'Use Barcode Generator to generate a barcode for any text, then save or share the image. Generate a barcode for your Wifi for guests and more.',
-		img: 'img/screenshots/barcode.png',
-		link: 'https://rgbstudios.org/barcode',
+		img: 'img/projects/screenshots/barcode.png',
+		link: '/projects/barcode',
 		tags: ['barcode', 'tool', 'web app']
 	},
 	{

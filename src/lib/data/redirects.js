@@ -42,6 +42,14 @@ const redirects = [
 	{
 		source: '/color-convert/',
 		destination: '/projects/color-picker'
+	},
+	{
+		source: '/doodle-pad',
+		destination: '/projects/doodle-pad'
+	},
+	{
+		source: '/barcode',
+		destination: '/projects/barcode'
 	}
 ];
 
