@@ -10,6 +10,10 @@
 	 */
 </script>
 
+<button class="btn absolute top-0 left-0">
+	<Icon name="menu" />
+</button>
+
 <ProjectHeader
 	title="D&D Dice Roller"
 	description="Use D&D Dice Roller to easily roll any number any dice, with modifiers and more"
