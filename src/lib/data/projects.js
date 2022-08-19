@@ -27,7 +27,7 @@ const projects = [
 		isUpdated: true,
 
 		longText:
-			'Chrome Notes is a simple notepad extension with quick edit buttons, speak outloud, download, popout, night mode, and more',
+			'Chrome Notes is a simple notepad extension with quick edit buttons, speak outloud, download, popout, night mode, and more. Open it with the click of a button in your browser and auto save text when you type. Also available on Edge and Firefox!',
 		isFeatured: true
 	},
 	{
