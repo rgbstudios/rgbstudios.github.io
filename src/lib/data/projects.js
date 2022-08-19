@@ -15,11 +15,11 @@ const projects = [
 		isFeatured: true
 	},
 	{
-		// TODO: add sharethis
+		// TODO: add quick share btns
 		// TODO: add edge notes and ff notes
 		title: 'Chrome Notes',
 		text: 'A simple notepad extension for Google Chrome',
-		img: '/img/screenshots/chrome_notes.png',
+		img: '/img/projects/screenshots/chrome-notes.png',
 		link: 'https://chrome.google.com/webstore/detail/chrome-notes/lnfempckkegmaeleniojhjplemmebgfi',
 		tags: ['notepad', 'extension', 'tool', 'installable'],
 
@@ -35,13 +35,15 @@ const projects = [
 		text: 'A simple picker and converter web app with RGB, CMYK, HSL and HWB, and the ability to share and store colors. ',
 		img: 'img/projects/screenshots/color-picker.png',
 		link: '/projects/color-picker/',
-		tags: ['color', 'converter', 'tool', 'web app', 'installable']
+		tags: ['color', 'converter', 'tool', 'web app', 'installable'],
+
+		isUpdated: true
 	},
 	{
 		// TODO: redo this site, link to other dnd sites
 		title: 'D&D Dice',
 		text: 'Use D&D Dice Roller to easily roll any number any dice, with modifiers and more',
-		img: 'img/screenshots/dnd_dice_old.png',
+		img: 'img/projects/screenshots/dnd-dice-old.png',
 		link: 'https://rgbstudios.org/dnd-dice/',
 		tags: ['dnd', 'games', 'die roller', 'web app'],
 
@@ -82,17 +84,18 @@ const projects = [
 		// TODO minor cleanup
 		title: 'Copylink',
 		text: 'Copy the current link in one second!',
-		img: 'img/screenshots/copylink.png',
+		img: 'img/projects/screenshots/copylink.png',
 		link: 'https://chrome.google.com/webstore/detail/copylink/hmbglhnodfegeiemefjoejkkmncdobde',
 		tags: ['tool', 'browser extension']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Doodle Pad',
 		text: 'A simple website to doodle in your browser',
 		img: 'img/projects/screenshots/doodle-pad.png',
 		link: '/projects/doodle-pad/',
-		tags: ['art', 'drawing', 'tool', 'web app']
+		tags: ['art', 'drawing', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Morse Code Converter',
@@ -104,10 +107,10 @@ const projects = [
 		isUpdated: true
 	},
 	{
-		// TODO cleanup and add sharethis
+		// TODO minor cleanup
 		title: 'Simple Shot',
 		text: 'Take a screenshot with the click of a button in your browser',
-		img: 'img/screenshots/simple_shot.png',
+		img: 'img/projects/screenshots/simple-shot.png',
 		link: 'https://chrome.google.com/webstore/detail/simpleshot/hpnikgbjfhnpcaoicgbkkialbejlecke',
 		tags: ['images', 'screenshot', 'tool', 'browser extension']
 	},
@@ -137,12 +140,13 @@ const projects = [
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'android app', 'mobile app']
 	},
 	{
-		// TODO cleanup and add sharethis
 		title: 'Barcode Generator',
 		text: 'Use Barcode Generator to generate a barcode for any text, then save or share the image. Generate a barcode for your Wifi for guests and more.',
 		img: 'img/projects/screenshots/barcode.png',
 		link: '/projects/barcode',
-		tags: ['barcode', 'tool', 'web app']
+		tags: ['barcode', 'tool', 'web app'],
+
+		isUpdated: true
 	},
 	{
 		title: 'Simple Grade Calc',
