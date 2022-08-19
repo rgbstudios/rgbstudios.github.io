@@ -8,6 +8,9 @@ node_modules
 !.env.example
 /.netlify
 
+# Don't lint external libraries
+src/lib/util/external
+
 # Ignore files for PNPM, NPM and YARN
 pnpm-lock.yaml
 package-lock.json
