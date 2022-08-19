@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, getContext } from 'svelte';
 
 	import w3color from '$lib/util/external/w3color';
 	import { getUrlParam, setUrlParam, removeUrlParam } from '$lib/util/urlParam';
@@ -18,7 +18,9 @@
 	// import namer from 'color-namer';
 
 	let c;
+	let isDark = getContext('share-buttons-dark');
 	$: isFavorite = favoritesList && favoritesList.contains($settings.color);
+	$: $isDark = !!c.isDark();
 
 	let pageLoaded = false;
 	let colorPicker;
@@ -169,11 +171,11 @@
 	title="Color Picker"
 	description="A simple but powerful color picker and converter for digital artists and web developers"
 	keywords={['color convert', 'color picker', 'color converter']}
-	icon={!c.isDark()
+	icon={!$isDark
 		? 'img/projects/icons/color-picker.png'
 		: 'img/projects/icons/color-picker-white.png'}
 	screenshot="img/projects/screenshots/color-picker.png"
-	isDark={!c.isDark()}
+	isDark={!$isDark}
 />
 
 <div class="text-base-100">

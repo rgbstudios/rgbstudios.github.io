@@ -5,7 +5,10 @@ export async function handle({ event, resolve }) {
 	const redirect = redirects.find((item) => event.url.pathname === item.source);
 
 	if (redirect) {
-		return new Response('', { status: 301, headers: { Location: redirect.destination } });
+		return new Response('', {
+			status: 301,
+			headers: { Location: redirect.destination + event.url.search }
+		});
 	}
 
 	const response = await resolve(event);
