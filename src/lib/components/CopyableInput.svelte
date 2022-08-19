@@ -7,7 +7,6 @@
 	let input;
 </script>
 
-<!-- input-group -->
 <div class="input-group {$$props.class ?? ''}">
 	<input
 		bind:this={input}
