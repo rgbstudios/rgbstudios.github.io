@@ -1,14 +1,14 @@
-import { addToast } from '$lib/components/Toast/toastStore';
+import { toast } from '$lib/components/Toast.svelte';
 
 const copyText = (txt) => {
 	navigator.clipboard.writeText(txt).then(
 		() => {
 			console.log('clipboard successfully set');
-			addToast({ message: 'Copied', type: 'success', timeout: 3000 });
+			toast('Copied');
 		},
 		() => {
 			console.log('clipboard write failed');
-			addToast({ message: 'Failed to copy', type: 'info', timeout: 3000 });
+			toast('Failed to copy');
 		}
 	);
 };
