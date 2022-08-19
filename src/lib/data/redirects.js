@@ -34,6 +34,14 @@ const redirects = [
 	{
 		source: '/color-picker',
 		destination: '/projects/color-picker'
+	},
+	{
+		source: '/color-convert',
+		destination: '/projects/color-picker'
+	},
+	{
+		source: '/color-convert/',
+		destination: '/projects/color-picker'
 	}
 ];
 
