@@ -240,7 +240,7 @@
 			>
 				<Icon name="download" /> &nbsp; Download
 			</a>
-			<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy</button>
+			<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy Link to Barcode</button>
 		</div>
 		<div class="alert">
 			<div>
