@@ -31,12 +31,10 @@ const projects = [
 		isFeatured: true
 	},
 	{
-		// TODO: move https://color-convert.netlify.app/ to rgb domain
-		// TODO: add sharethis
-		title: 'Color Convert',
-		text: 'A simple color converter and generator web app',
-		img: 'img/screenshots/color_convert_old.png',
-		link: 'https://rgbstudios.org/color-convert/',
+		title: 'Color Picker',
+		text: 'A simple picker and converter web app with RGB, CMYK, HSL and HWB, and the ability to share and store colors. ',
+		img: 'img/projects/screenshots/color-picker.png',
+		link: '/projects/color-picker/',
 		tags: ['color', 'converter', 'tool', 'web app', 'installable']
 	},
 	{
