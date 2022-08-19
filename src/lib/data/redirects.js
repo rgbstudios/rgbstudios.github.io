@@ -50,6 +50,10 @@ const redirects = [
 	{
 		source: '/barcode',
 		destination: '/projects/barcode'
+	},
+	{
+		source: '/dnd-dice',
+		destination: '/projects/dnd-dice'
 	}
 ];
 
