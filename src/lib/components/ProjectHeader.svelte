@@ -7,7 +7,7 @@
 		keywords,
 		icon,
 		screenshot,
-		isDark = true;
+		isDark = false;
 </script>
 
 <div />
