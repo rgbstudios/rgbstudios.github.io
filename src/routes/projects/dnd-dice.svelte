@@ -4,8 +4,7 @@
 
 	/**
 	 * Todo:
-	 * SEO keywords ampersand is escaped
-	 * Share buttons not dark
+	 * SEO keywords ampersand is escaped (seems ok?)
 	 * FB messenger share not working
 	 */
 
