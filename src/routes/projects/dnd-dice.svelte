@@ -51,14 +51,14 @@
 	isCondensed={true}
 />
 
-<div class="btn-group justify-center">
-	<button class="btn">
-		<Icon name="pencil_alt" /> &nbsp; Mods and Notes
+<div class="sm:btn-group justify-center">
+	<button class="btn block mb-2 sm:mb-0">
+		<Icon name="pencil_alt" /> &nbsp; Mods &amp; Notes
 	</button>
-	<button class="btn">
+	<button class="btn block mb-2 sm:mb-0">
 		<Icon name="history" /> &nbsp; History
 	</button>
-	<button class="btn">
+	<button class="btn block">
 		<Icon name="settings" /> &nbsp; Settings
 	</button>
 </div>
