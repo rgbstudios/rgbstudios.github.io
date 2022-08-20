@@ -15,7 +15,7 @@
 </button>
 
 <ProjectHeader
-	title="D&amp;D Dice Roller"
+	title="D&D Dice Roller"
 	description="Use D&D Dice Roller to easily roll any number any dice, with modifiers and more"
 	keywords={[
 		'dnd',
