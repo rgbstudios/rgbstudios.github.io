@@ -101,7 +101,7 @@
 	</div>
 </div>
 
-<div class="mx-auto grid sm:grid-cols-2 md:grid-cols-4 sm:gap-8">
+<div class="mx-auto grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-x-8">
 	<div class="mx-auto mt-8 w-full">
 		<label for="mod-input" class="w-full">Modifier:</label>
 		<input
