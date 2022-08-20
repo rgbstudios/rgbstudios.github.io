@@ -92,8 +92,8 @@
 	</div>
 </div>
 
-<div class="mx-auto grid sm:grid-cols-2 md:grid-cols-3 sm:gap-8">
-	<div class="mx-auto sm:col-span-2 md:col-span-1 mt-8 w-full">
+<div class="mx-auto grid sm:grid-cols-2 md:grid-cols-4 sm:gap-8">
+	<div class="mx-auto mt-8 w-full">
 		<label for="mod-input" class="w-full">Modifier:</label>
 		<input
 			id="mod-input"
@@ -119,8 +119,10 @@
 				<option value={val}>{val}</option>
 			{/each}
 		</select>
-		<select class="select select-bordered mt-8 w-full">
-			<!-- non prf exp spl itv -->
+	</div>
+	<div class="mx-auto mt-8 w-full">
+		<label for="bonus-select" class="w-full">Bonus:</label>
+		<select id="bonus-select" class="select select-bordered w-full">
 			{#each ['none', 'Proficiency', 'Expertise', 'Spell atk', 'initiative'] as val}
 				<option value={val}>{val}</option>
 			{/each}
