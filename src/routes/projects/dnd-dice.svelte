@@ -109,13 +109,13 @@
 			type="number"
 			min="-999"
 			max="999"
-			value="0"
+			bind:value={modifier}
 			class="input input-bordered w-full"
 		/>
 	</div>
 	<div class="mx-auto mt-8 w-full">
 		<label for="adv-select" class="w-full">Advantage:</label>
-		<select id="adv-select" class="select select-bordered w-full">
+		<select id="adv-select" class="select select-bordered w-full" bind:value={advantage}>
 			{#each ['none', 'advantage', 'disadvantage'] as val}
 				<option value={val}>{val}</option>
 			{/each}
@@ -123,7 +123,7 @@
 	</div>
 	<div class="mx-auto mt-8 w-full">
 		<label for="attr-select" class="w-full">Attributes:</label>
-		<select id="attr-select" class="select select-bordered w-full">
+		<select id="attr-select" class="select select-bordered w-full" bind:value={attribute}>
 			{#each ['none', 'str', 'dex', 'con', 'int', 'wis', 'cha'] as val}
 				<option value={val}>{val}</option>
 			{/each}
@@ -131,8 +131,8 @@
 	</div>
 	<div class="mx-auto mt-8 w-full">
 		<label for="bonus-select" class="w-full">Bonus:</label>
-		<select id="bonus-select" class="select select-bordered w-full">
-			{#each ['none', 'Proficiency', 'Expertise', 'Spell atk', 'initiative'] as val}
+		<select id="bonus-select" class="select select-bordered w-full" bind:value={bonus}>
+			{#each ['none', 'proficiency', 'expertise', 'spell atk', 'initiative'] as val}
 				<option value={val}>{val}</option>
 			{/each}
 		</select>
