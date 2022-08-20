@@ -101,6 +101,20 @@
 	&nbsp; Pin
 </a>
 
+<!-- https://theonetechnologies.com/blog/post/how-to-get-facebook-application-id-and-secret-key -->
+<a
+	href="https://www.facebook.com/dialog/send?link={encodeURIComponent(
+		link
+	)}&app_id=1132946187618983&redirect_uri=https%3A%2F%2Frgbstudios.org"
+	target="_blank"
+	class="btn btn-outline"
+	class:light={!$isDark}
+	title="Facebook Messenger"
+>
+	<Icon name="facebook_messenger" />
+	&nbsp; Share
+</a>
+
 <a
 	href="https://www.reddit.com/submit?title={encodeURIComponent(title)}&url={encodeURIComponent(
 		link

@@ -26,16 +26,31 @@
 			/// it's null for every route except color-picker
 			document.body.style.backgroundColor = null;
 		}
+		if ($page.url.pathname === '/projects/dnd-dice') {
+			$isDark = false;
+			setContext('share-buttons-dark', false);
+		}
 	}
 </script>
 
-<div class="container mx-auto p-8">
-	<slot />
-	<br />
-	<br />
-	<ShareButtons {title} {link} />
+<div class:dnd-dice={$page.url.pathname === '/projects/dnd-dice'} class="flex min-h-full flex-col">
+	<div class="container mx-auto mb-36 md:mb-24 p-8 flex-1">
+		<slot />
+		<br />
+		<br />
+		<ShareButtons {title} {link} />
+	</div>
+
+	<SmallFooter />
+
+	<Toast />
 </div>
 
-<SmallFooter />
-
-<Toast />
+<style>
+	.dnd-dice {
+		background-color: #fff;
+		background-size: 2.5rem 2.5rem;
+		background-image: linear-gradient(to right, #eee8 1px, transparent 1px),
+			linear-gradient(to bottom, #eee8 1px, transparent 1px);
+	}
+</style>
