@@ -14,6 +14,11 @@
 
 	let customAmount = 10,
 		customSides = 10;
+
+	let modifier = 0,
+		advantage = 'none',
+		attribute = 'none',
+		bonus = 'none';
 </script>
 
 <button class="btn absolute top-0 left-0">
