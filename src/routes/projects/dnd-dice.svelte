@@ -87,7 +87,7 @@
 		<label for="dice-sides" class="hidden sm:block">Die:</label>
 		{#each [4, 6, 8, 12, 20, customSides] as num, idx}
 			<button
-				class="btn"
+				class="btn d-{num}"
 				class:btn-active={num === currentSides}
 				on:click={() => (currentSides = num)}
 			>
@@ -174,6 +174,13 @@
 
 	.btn-group button:not(:last-child) {
 		@apply border-r-0;
+	}
+
+	/* fix for d8 right border on sm screens
+	since we use a container, we can guarentee
+	that we will only encounter several fixed width sizes */
+	.btn-group button.d-8 {
+		@apply border-r-2 sm:border-r-0;
 	}
 
 	button.btn-active {
