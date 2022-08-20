@@ -1,10 +1,16 @@
-const copyText = (str) => {
-	const elm = document.createElement('textarea');
-	elm.value = str;
-	document.body.appendChild(elm);
-	elm.select();
-	document.execCommand('copy');
-	document.body.removeChild(elm);
+import { toast } from '$lib/components/Toast.svelte';
+
+const copyText = (txt) => {
+	navigator.clipboard.writeText(txt).then(
+		() => {
+			console.log('clipboard successfully set');
+			toast('Copied');
+		},
+		() => {
+			console.log('clipboard write failed');
+			toast('Failed to copy');
+		}
+	);
 };
 
 export default copyText;

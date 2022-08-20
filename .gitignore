@@ -9,6 +9,7 @@ node_modules
 /.svelte-kit
 /package
 /.netlify
+/.vite
 
 # Env
 .env

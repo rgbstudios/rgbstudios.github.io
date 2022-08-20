@@ -8,7 +8,7 @@
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
-		"format": "prettier --write --plugin-search-dir=. .",
+		"format": "prettier --write --plugin-search-dir=. . && eslint . --fix",
 		"clean": "node infrastructure/clean.js",
 		"cleanbuild": "npm run clean && npm install && npm run build && npm run preview"
 	},
@@ -36,6 +36,7 @@
 	"dependencies": {
 		"@tailwindcss/typography": "0.5.3",
 		"daisyui": "2.19.0",
+		"dino-color-picker": "^0.2.3",
 		"jsqr": "^1.4.0",
 		"lodash.merge": "^4.6.2",
 		"mathjax": "^3.2.2",

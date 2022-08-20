@@ -14,6 +14,9 @@ module.exports = {
 				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
 				display: ['Poppins'],
 				body: ['Open Sans']
+			},
+			screens: {
+				xs: '360px'
 			}
 		}
 	},

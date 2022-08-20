@@ -1,9 +1,12 @@
 <script>
+	import { getContext } from 'svelte';
+
 	// https://github.com/bradvin/social-share-urls/blob/master/code/javascript/javascript/social-share-media.js
 
 	import Icon from './Icon.svelte';
 
 	export let title, link;
+	const isDark = getContext('share-buttons-dark');
 
 	// copyText and shareText copied from Desktop Clock
 
@@ -61,13 +64,13 @@
 	$: copied = false;
 </script>
 
-<p>Share it:</p>
 <a
 	href="https://www.facebook.com/sharer.php?t={encodeURIComponent(title)}&u={encodeURIComponent(
 		link
 	)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Facebook"
 >
 	<Icon name="facebook" />
@@ -80,6 +83,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Twitter"
 >
 	<Icon name="twitter" />
@@ -90,6 +94,7 @@
 	href="https://www.pinterest.com/pin/create/button/?url={encodeURIComponent(link)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Pinterest"
 >
 	<Icon name="pinterest" />
@@ -102,6 +107,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Reddit"
 >
 	<Icon name="reddit" />
@@ -112,6 +118,7 @@
 	href="https://www.linkedin.com/sharing/share-offsite/?url={encodeURIComponent(link)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Linkedin"
 >
 	<Icon name="linkedin" />
@@ -122,6 +129,7 @@
 	href="https://api.whatsapp.com/send?text={encodeURIComponent(title + ': ' + link)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Whatsapp"
 >
 	<Icon name="whatsapp" />
@@ -135,6 +143,7 @@
 	)}%0D%0A{encodeURIComponent(link)} &subject={encodeURIComponent(title)}"
 	target="_blank"
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Email"
 >
 	<Icon name="envelope" />
@@ -153,6 +162,7 @@
 		});
 	}}
 	class="btn btn-outline"
+	class:light={!$isDark}
 	title="Copy Link"
 >
 	<Icon name="copy" />
@@ -160,12 +170,22 @@
 	{copied ? 'Copied' : 'Copy Link'}
 </button>
 
-<button on:click={() => shareApp(title, '', link)} class="btn btn-outline" title="Share">
+<button
+	class:light={!$isDark}
+	on:click={() => shareApp(title, '', link)}
+	class="btn btn-outline btn-light"
+	title="Share"
+>
 	<Icon name="share" />
 	&nbsp; Share
 </button>
 
-<button on:click={() => window.print()} class="btn btn-outline" title="Share">
+<button
+	class:light={!$isDark}
+	on:click={() => window.print()}
+	class="btn btn-outline"
+	title="Share"
+>
 	<Icon name="print" />
 	&nbsp; Print
 </button>
@@ -174,5 +194,9 @@
 	a,
 	button {
 		@apply m-2 ml-0;
+	}
+
+	.light {
+		@apply border-black text-black;
 	}
 </style>

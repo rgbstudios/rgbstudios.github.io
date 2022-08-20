@@ -3,7 +3,6 @@
 	import jsQR from 'jsqr';
 	import { page } from '$app/stores';
 	import copyText from '$lib/util/copyText';
-	import { toast } from '$lib/components/Toast.svelte';
 
 	/// COMPONENTS ///
 	import Icon from '$lib/components/Icon.svelte';
@@ -82,7 +81,6 @@
 	function copy() {
 		updateParams();
 		copyText(window.location.href);
-		toast('Copied to clipboard');
 	}
 
 	$: if (browser) {
@@ -242,7 +240,7 @@
 			>
 				<Icon name="download" /> &nbsp; Download
 			</a>
-			<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy</button>
+			<button class="btn" on:click={copy}><Icon name="copy" /> &nbsp; Copy Link to Barcode</button>
 		</div>
 		<div class="alert">
 			<div>

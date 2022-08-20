@@ -10,10 +10,10 @@
 	}
 
 	::selection {
-		@apply bg-base-300;
+		@apply bg-base-300 text-white;
 	}
 	::-moz-selection {
-		@apply bg-base-300;
+		@apply bg-base-300 text-white;
 	}
 
 	/* https://css-tricks.com/couple-takes-sticky-footer/#aa-there-is-grid */

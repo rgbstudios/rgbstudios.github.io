@@ -32,6 +32,18 @@ const redirects = [
 		destination: '/projects/binomial-calc'
 	},
 	{
+		source: '/color-picker',
+		destination: '/projects/color-picker'
+	},
+	{
+		source: '/color-convert',
+		destination: '/projects/color-picker'
+	},
+	{
+		source: '/color-convert/',
+		destination: '/projects/color-picker'
+	},
+	{
 		source: '/doodle-pad',
 		destination: '/projects/doodle-pad'
 	},
