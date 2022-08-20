@@ -7,7 +7,8 @@
 		keywords,
 		icon,
 		screenshot,
-		isDark = false;
+		isDark = false,
+		isCondensed = false;
 </script>
 
 <div />
@@ -31,7 +32,17 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto">
-	<img class="mx-auto" src="/{icon}" width="64px" alt="" />
-	<h1 class="text-center {isDark ? 'text-base-100 ' : 'text-white'}">{title}</h1>
+<article class="prose lg:prose-xl mx-auto text-center">
+	<img
+		class={isCondensed ? 'w-8 sm:w-12 inline-block mr-4' : 'w-16 mx-auto'}
+		src="/{icon}"
+		alt=""
+	/>
+	<h1
+		class="text-center {isDark ? 'text-base-100 ' : 'text-white'} {isCondensed
+			? 'text-3xl md:text-4xl lg:text-5xl inline-block'
+			: ''}"
+	>
+		{title}
+	</h1>
 </article>

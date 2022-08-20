@@ -48,9 +48,10 @@
 	icon="img/projects/icons/dnd-dice.png"
 	screenshot="img/projects/screenshots/dnd-dice.png"
 	isDark={true}
+	isCondensed={true}
 />
 
-<div class="btn-group justify-center mt-8">
+<div class="btn-group justify-center">
 	<button class="btn">
 		<Icon name="pencil_alt" /> &nbsp; Mods and Notes
 	</button>
