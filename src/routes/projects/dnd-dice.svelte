@@ -57,9 +57,11 @@
 	</button>
 </div>
 
-<div class="justify-center mt-8">
-	<div id="number-of-dice" class="btn-group justify-center">
-		<label for="number-of-dice">Number of Dice:</label>
+<div class="mt-8">
+	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
+	<div id="number-of-dice" class="btn-group sm:justify-center">
+		<label for="number-of-dice" class="hidden sm:block">Number of Dice:</label>
+		<br class="sm:hidden" />
 		{#each [1, 2, 3, 4, 5, customAmount] as num}
 			<button
 				class="btn"
@@ -74,8 +76,9 @@
 </div>
 
 <div class="justify-center mt-8">
-	<div id="dice-sides" class="btn-group justify-center">
-		<label for="dice-sides">Die:</label>
+	<label for="dice-sides" class="sm:hidden block mb-2">Die:</label>
+	<div id="dice-sides" class="btn-group sm:justify-center">
+		<label for="dice-sides" class="hidden sm:block">Die:</label>
 		{#each [4, 6, 8, 12, 20, customSides] as num, idx}
 			<button
 				class="btn"
@@ -143,7 +146,7 @@
 	}
 
 	label {
-		@apply mr-4 my-auto;
+		@apply mr-4 sm:my-auto;
 	}
 
 	button,

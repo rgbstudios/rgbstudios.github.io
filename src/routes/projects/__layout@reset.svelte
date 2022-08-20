@@ -33,7 +33,7 @@
 </script>
 
 <div class:dnd-dice={$page.url.pathname === '/projects/dnd-dice'} class="flex min-h-full flex-col">
-	<div class="container mx-auto p-8 flex-1">
+	<div class="container mx-auto px-4 py-8 flex-1">
 		<slot />
 		<br />
 		<br />
