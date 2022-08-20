@@ -8,6 +8,13 @@
 	 * Share buttons not dark
 	 * FB messenger share not working
 	 */
+
+	// TODO store these in settings:
+	let currentAmount = 1,
+		currentSides = 20;
+
+	let customAmount = 10,
+		customSides = 10;
 </script>
 
 <button class="btn absolute top-0 left-0">
@@ -54,12 +61,15 @@
 <div class="justify-center mt-8">
 	<div id="number-of-dice" class="btn-group justify-center">
 		<label for="number-of-dice">Number of Dice:</label>
-		{#each [1, 2, 3, 4, 5] as num}
-			<button class="btn" class:btn-active={num === 1}>
+		{#each [1, 2, 3, 4, 5, customAmount] as num}
+			<button
+				class="btn"
+				class:btn-active={num === currentAmount}
+				on:click={() => (currentAmount = num)}
+			>
 				{num}
 			</button>
 		{/each}
-		<button class="btn">10</button>
 		<button class="btn btn-primary">+</button>
 	</div>
 </div>
@@ -67,13 +77,18 @@
 <div class="justify-center mt-8">
 	<div id="dice-sides" class="btn-group justify-center">
 		<label for="dice-sides">Die:</label>
-		{#each [4, 6, 8, 12, 20] as num}
-			<button class="btn" class:btn-active={num === 20}>
-				<img src="/img/projects/other/icon-d{num}.svg" alt="d{num}" class="w-6 h-6 mr-2" />
+		{#each [4, 6, 8, 12, 20, customSides] as num, idx}
+			<button
+				class="btn"
+				class:btn-active={num === currentSides}
+				on:click={() => (currentSides = num)}
+			>
+				{#if idx !== 5}
+					<img src="/img/projects/other/icon-d{num}.svg" alt="d{num}" class="w-6 h-6 mr-2" />
+				{/if}
 				d{num}
 			</button>
 		{/each}
-		<button class="btn">D10</button>
 		<button class="btn btn-primary">+</button>
 	</div>
 </div>
