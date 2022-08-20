@@ -28,7 +28,6 @@
 		}
 		if ($page.url.pathname === '/projects/dnd-dice') {
 			$isDark = false;
-			setContext('share-buttons-dark', false);
 		}
 	}
 </script>
