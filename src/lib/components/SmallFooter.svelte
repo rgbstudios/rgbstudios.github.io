@@ -3,7 +3,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<div class="bg-base-200 fixed bottom-0 w-full">
+<div class="bg-base-200 w-full">
 	<footer class="container mx-auto footer items-center p-4">
 		<div class="items-center grid-flow-col">
 			<img class="w-12 h-12" src="/img/rgb_logo_64.png" alt="RGB logo" />
