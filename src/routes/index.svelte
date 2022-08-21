@@ -54,7 +54,7 @@
 		<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
 	{/each}
 </div>
-<article class="prose lg:prose-xl my-8">
+<article class="prose lg:prose-xl max-w-none my-8">
 	<p>
 		Read on to learn more about the web, design, and how to get your website cleaner, easier to use,
 		and higher ranked.
