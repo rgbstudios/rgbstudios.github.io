@@ -16,9 +16,129 @@
 		customSides = 10;
 
 	let modifier = 0,
-		advantage = 'none',
-		attribute = 'none',
-		bonus = 'none';
+		advantage = 'non',
+		attribute = 'non',
+		bonus = 'non';
+
+	// todo athletics and perception
+	// todo: descriptions of each ability in a modal, see https://www.enworld.org/threads/eight-abilities-str-con-dex-ath-int-per-cha-wis.682800/
+
+	// values used under the hood mapped to values shown to user
+	const modifierNames = {
+		non: 'None',
+
+		str: 'Strength',
+		dex: 'Dexterity',
+		con: 'Constitution',
+		int: 'Intelligence',
+		wis: 'Wisdom',
+		cha: 'Charisma',
+
+		prf: 'Proficiency',
+		exp: 'Expertise',
+		spl: 'Spell Attack',
+		itv: 'Initiative',
+
+		adv: 'Advantage',
+		dis: 'Disadvantage'
+	};
+
+	// current user's modifiers
+
+	let modifiers = {
+		str: 0,
+		dex: 0,
+		con: 0,
+		int: 0,
+		wis: 0,
+		cha: 0,
+
+		prf: 0,
+		spl: 0,
+		itv: 0
+	};
+
+	// settings
+	let speakRolls = false;
+
+	// reset disabled inputs
+	$: if (currentAmount !== 1) advantage = 'non';
+	$: if (currentSides !== 20) bonus = 'non';
+
+	// utility
+	const getRoll = (sides) => Math.floor(Math.random() * sides) + 1;
+
+	const canTalk = () => 'speechSynthesis' in window;
+
+	const talk = (words) => {
+		if (canTalk()) {
+			const synth = window.speechSynthesis;
+			const msg = new SpeechSynthesisUtterance(words);
+			msg.rate = 1;
+			msg.pitch = 1;
+			synth.speak(msg);
+		}
+	};
+
+	// dice roll
+	let rollText = '';
+	// ---------------- function for rolling dice ----------------
+	//advantage is 0 if none, 1 if advantage, -1 if disadvantage. values are strings
+	function doRolls() {
+		let result = 0,
+			rolls = [];
+
+		if (currentAmount === 1 && advantage !== 'non') {
+			rolls.push(getRoll(currentSides));
+			rolls.push(getRoll(currentSides));
+			result += advantage == 'adv' ? Math.max(rolls[0], rolls[1]) : Math.min(rolls[0], rolls[1]);
+		} else {
+			for (let i = 0; i < currentAmount; i++) {
+				rolls.push(getRoll(currentSides));
+				result += rolls[i];
+			}
+		}
+
+		result += modifier;
+		if (attribute !== 'non') {
+			result += modifiers[attribute];
+		}
+		if (bonus !== 'non') {
+			if (bonus === 'exp') {
+				result += modifiers['prf'] * 2; // expertise is double proficiency
+			} else {
+				result += modifiers[bonus];
+			}
+		}
+
+		rollText =
+			'Rolled ' +
+			currentAmount +
+			' D' +
+			currentSides +
+			(advantage === 'non' ? '' : advantage == 'adv' ? ' (advantage)' : ' (disadvantage)') +
+			(modifier === 0 ? '' : modifier > 0 ? ' +' + modifier : ' ' + modifier) +
+			(attribute === 'non'
+				? ''
+				: ' +' + modifierNames[attribute] + '(' + modifiers[attribute] + ')') +
+			(bonus === 'non'
+				? ''
+				: ' +' +
+				  modifierNames[bonus] +
+				  '(' +
+				  (bonus === 'exp' ? modifiers['prf'] * 2 : modifiers[bonus]) +
+				  ')') +
+			': ' +
+			result +
+			'  |  Rolls: ' +
+			rolls.join(', ');
+
+		// TODO: update history and total dice rolled (maybe store total dice rolled)
+
+		if (!speakRolls) {
+			talk(rollText + '... Rolls were ' + rolls);
+		}
+	}
 </script>
 
 <button class="btn absolute top-0 left-0">
@@ -115,36 +235,48 @@
 	</div>
 	<div class="mx-auto mt-8 w-full">
 		<label for="adv-select" class="w-full">Advantage:</label>
-		<select id="adv-select" class="select select-bordered w-full" bind:value={advantage}>
-			{#each ['none', 'advantage', 'disadvantage'] as val}
-				<option value={val}>{val}</option>
+		<select
+			id="adv-select"
+			class="select select-bordered w-full"
+			disabled={currentAmount !== 1}
+			bind:value={advantage}
+		>
+			{#each ['non', 'adv', 'dis'] as val}
+				<option value={val}>{modifierNames[val]}</option>
 			{/each}
 		</select>
 	</div>
 	<div class="mx-auto mt-8 w-full">
-		<label for="attr-select" class="w-full">Attributes:</label>
+		<label for="attr-select" class="w-full">Attribute:</label>
 		<select id="attr-select" class="select select-bordered w-full" bind:value={attribute}>
-			{#each ['none', 'str', 'dex', 'con', 'int', 'wis', 'cha'] as val}
-				<option value={val}>{val}</option>
+			{#each ['non', 'str', 'dex', 'con', 'int', 'wis', 'cha'] as val}
+				<option value={val}>{modifierNames[val]}</option>
 			{/each}
 		</select>
 	</div>
 	<div class="mx-auto mt-8 w-full">
 		<label for="bonus-select" class="w-full">Bonus:</label>
-		<select id="bonus-select" class="select select-bordered w-full" bind:value={bonus}>
-			{#each ['none', 'proficiency', 'expertise', 'spell atk', 'initiative'] as val}
-				<option value={val}>{val}</option>
+		<select
+			id="bonus-select"
+			class="select select-bordered w-full"
+			disabled={currentSides !== 20}
+			bind:value={bonus}
+		>
+			{#each ['non', 'prf', 'exp', 'spl', 'itv'] as val}
+				<option value={val}>{modifierNames[val]}</option>
 			{/each}
 		</select>
 	</div>
 </div>
 
 <div class="flex justify-evenly mt-12">
-	<button class="btn btn-primary btn-lg"><Icon name="roll_dice" /> &nbsp; Roll</button>
+	<button class="btn btn-primary btn-lg" on:click={doRolls}
+		><Icon name="roll_dice" /> &nbsp; Roll</button
+	>
 	<button class="btn btn-lg"><Icon name="reset" /> &nbsp; Reset</button>
 </div>
 
-<input disabled class="mt-8 input input-bordered w-full input-lg" type="text" />
+<input disabled class="mt-8 input input-bordered w-full input-lg" type="text" value={rollText} />
 
 <style>
 	* {
