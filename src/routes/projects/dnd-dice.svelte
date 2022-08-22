@@ -139,6 +139,13 @@
 			talk(rollText + '... Rolls were ' + rolls);
 		}
 	}
+
+	function doReset() {
+		modifier = 0;
+		advantage = 'non';
+		attribute = 'non';
+		bonus = 'non';
+	}
 </script>
 
 <button class="btn absolute top-0 left-0">
@@ -270,13 +277,20 @@
 </div>
 
 <div class="flex justify-evenly mt-12">
-	<button class="btn btn-primary btn-lg" on:click={doRolls}
-		><Icon name="roll_dice" /> &nbsp; Roll</button
-	>
-	<button class="btn btn-lg"><Icon name="reset" /> &nbsp; Reset</button>
+	<button class="btn btn-primary btn-lg" on:click={doRolls}>
+		<Icon name="roll_dice" /> &nbsp; Roll
+	</button>
+	<button class="btn btn-lg" on:click={doReset}>
+		<Icon name="reset" /> &nbsp; Reset
+	</button>
 </div>
 
-<input disabled class="mt-8 input input-bordered w-full input-lg" type="text" value={rollText} />
+<input
+	disabled
+	class="mt-8 input input-bordered w-full input-lg text-center"
+	type="text"
+	value={rollText}
+/>
 
 <style>
 	* {
