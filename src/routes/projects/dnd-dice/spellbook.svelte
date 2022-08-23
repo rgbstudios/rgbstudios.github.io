@@ -126,7 +126,10 @@
 <h3 class="text-3xl my-4">{spellName}</h3>
 
 {#each spellInfo as info}
-	<p class="leading-8">{info}</p>
+	<p class="my-2">
+		<b>{info.split(':')[0]}</b>:
+		{info.split(':')[1]}
+	</p>
 {/each}
 
 <style>
