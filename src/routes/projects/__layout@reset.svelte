@@ -26,13 +26,16 @@
 			/// it's null for every route except color-picker
 			document.body.style.backgroundColor = null;
 		}
-		if ($page.url.pathname === '/projects/dnd-dice') {
+		if ($page.url.pathname.includes('projects/dnd-dice')) {
 			$isDark = false;
 		}
 	}
 </script>
 
-<div class:dnd-dice={$page.url.pathname === '/projects/dnd-dice'} class="flex min-h-full flex-col">
+<div
+	class:dnd-dice={$page.url.pathname.includes('projects/dnd-dice')}
+	class="flex min-h-full flex-col"
+>
 	<div class="container mx-auto px-4 py-8 flex-1">
 		<slot />
 		<br />
@@ -51,5 +54,8 @@
 		background-size: 2.5rem 2.5rem;
 		background-image: linear-gradient(to right, #eee8 1px, transparent 1px),
 			linear-gradient(to bottom, #eee8 1px, transparent 1px);
+	}
+	.dnd-dice * {
+		@apply text-base-900;
 	}
 </style>

@@ -20,7 +20,7 @@
 		<img src="/img/projects/other/icon-d6.svg" class="h-8 inline" alt="" /> Character Roller
 	</a>
 	<a href="/projects/dnd-dice/spellbook">
-		<img src="/img/projects/other/icon-d8.svg" class="h-8 inline" alt="" /> Spell Searcher
+		<img src="/img/projects/other/icon-d8.svg" class="h-8 inline" alt="" /> Spellbook
 	</a>
 </nav>
 

@@ -335,10 +335,6 @@
 />
 
 <style>
-	* {
-		@apply text-base-900;
-	}
-
 	label {
 		@apply mr-4 sm:my-auto;
 	}
