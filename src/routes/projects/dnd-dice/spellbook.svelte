@@ -51,25 +51,27 @@
 			if (item == '_id' || item == 'url' || item == 'index') {
 				continue;
 			}
-			let spellDescription = ' ';
+			let itemDescription = ' ';
 			if (data[item][0] && data[item][0].name) {
 				for (let i = 0; i < data[item].length; i++) {
-					spellDescription += data[item][i].name + (i == data[item].length - 1 ? '' : ', ');
+					itemDescription += data[item][i].name + (i == data[item].length - 1 ? '' : ', ');
 				}
 			} else {
-				spellDescription = (data[item].name ? data[item].name : data[item]).toString();
-				spellDescription = spellDescription.replace('phb ', ''); //page number fix
+				console.log(data[item]);
+
+				itemDescription = (data[item].name ? data[item].name : data[item]).toString();
+				itemDescription = itemDescription.replace('phb ', ''); //page number fix
 			}
 
 			// fix data that wasn't properly escaped in api
-			spellDescription = spellDescription.split('â€™').join("'");
-			spellDescription = spellDescription.split('â€œ').join("'");
-			spellDescription = spellDescription.split('â€�').join("'");
+			itemDescription = itemDescription.split('â€™').join("'");
+			itemDescription = itemDescription.split('â€œ').join("'");
+			itemDescription = itemDescription.split('â€�').join("'");
 
-			spellDescription = spellDescription.split(',-').join('\n').split('.,').join('.\n');
+			itemDescription = itemDescription.split(',-').join('\n').split('.,').join('.\n');
 
 			spellInfo.push(
-				capitalize(item.replace('_', ' ').replace('desc', 'description')) + ': ' + spellDescription
+				capitalize(item.replace('_', ' ').replace('desc', 'description')) + ': ' + itemDescription
 			);
 		}
 	}
