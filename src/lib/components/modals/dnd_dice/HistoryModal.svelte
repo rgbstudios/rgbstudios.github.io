@@ -11,7 +11,7 @@
 	</div>
 
 	<p>You've rolled {rolledDice} {rolledDice === 1 ? 'die' : 'dice'}</p>
-	<textarea value={rollHistory.join('\n')} rows="10" class="textarea w-full" />
+	<textarea value={rollHistory.join('\r')} rows="10" class="textarea w-full" />
 	<div class="xs:grid xs:grid-cols-2 xs:gap-2">
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Clear History
