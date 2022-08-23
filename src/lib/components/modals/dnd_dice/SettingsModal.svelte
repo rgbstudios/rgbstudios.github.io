@@ -1,6 +1,7 @@
 <script>
 	import Modal from '$lib/components/base/Modal.svelte';
-	import Icon from '../../Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
+
 	import screenfull from 'screenfull';
 
 	export let settings;
