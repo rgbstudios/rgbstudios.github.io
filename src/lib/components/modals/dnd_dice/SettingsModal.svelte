@@ -20,9 +20,7 @@
 		<span class="label-text">Dark mode</span>
 	</label>
 
-	<hr class="my-4" />
-
-	<div class="xs:grid xs:grid-cols-2 xs:gap-2">
+	<div class="xs:grid xs:grid-cols-2 xs:gap-2 mt-6">
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="fullscreen" class="w-4 h-4 inline" /> &nbsp; Fullscreen
 		</button>
