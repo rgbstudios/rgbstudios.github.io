@@ -8,7 +8,16 @@ module.exports = {
 			colors: {
 				'brand-red': '#cc3300',
 				'brand-green': '#339966',
-				'brand-blue': '#3366ff'
+				'brand-blue': '#3366ff',
+
+				'base': {
+					100: '#eee',
+					200: '#ddd',
+					300: '#ccc',
+					700: '#333',
+					800: '#222',
+					900: '#111'
+				}
 			},
 			fontFamily: {
 				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
@@ -34,6 +43,7 @@ module.exports = {
 					'secondary-content': '#eee',
 					'accent-content': '#eee',
 					'neutral': '#ccc',
+
 					'base-100': '#111',
 					'base-200': '#222',
 					'base-300': '#333',

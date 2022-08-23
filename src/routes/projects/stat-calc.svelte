@@ -201,6 +201,6 @@
 
 <style>
 	.stat {
-		@apply bg-gray-800;
+		@apply bg-base-800;
 	}
 </style>

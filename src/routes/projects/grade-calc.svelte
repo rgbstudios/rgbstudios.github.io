@@ -129,7 +129,7 @@
 	<h3 class="text-center">Assignments</h3>
 	<form on:submit|preventDefault={calculate} class="grid gap-5">
 		{#each $assignments as { name, max_score, weight }, index}
-			<div class="card w-full bg-gray-900 border">
+			<div class="card w-full bg-base-900 border">
 				<div class="card-body p-6">
 					<div class="grid grid-cols-1 xl:grid-cols-[auto,auto,auto] gap-2 mb-4">
 						<label class="input-group">
@@ -204,7 +204,7 @@
 		</div>
 		<button class="btn btn-primary">Calculate &nbsp; <Icon name="chevron_right" /> </button>
 	</form>
-	<div class="bg-gray-900 border card p-5 text-center grid gap-3">
+	<div class="bg-base-900 border card p-5 text-center grid gap-3">
 		<p class="flex gap-5 justify-center text-5xl">
 			{student.grade * 100}%<button
 				class="btn btn-primary text-md"
@@ -216,7 +216,7 @@
 		</p>
 		<p class="text-3xl font-bold">{getGradeLetter(student.grade * 100)}</p>
 	</div>
-	<div class="bg-gray-900 border card p-5 text-center grid gap-3">
+	<div class="bg-base-900 border card p-5 text-center grid gap-3">
 		{#each history as item}
 			<span>{item}</span>
 		{/each}

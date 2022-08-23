@@ -199,19 +199,19 @@
 <div class="sm:btn-group justify-center">
 	<ModalButton
 		_for="dnd-dice-mods-modal"
-		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0 sm:border-r-0"
+		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200 mb-2 sm:mb-0 sm:border-r-0"
 	>
 		<Icon name="pencil_alt" /> &nbsp; Mods &amp; Notes
 	</ModalButton>
 	<ModalButton
 		_for="dnd-dice-history-modal"
-		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0 sm:border-r-0"
+		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200 mb-2 sm:mb-0 sm:border-r-0"
 	>
 		<Icon name="history" /> &nbsp; History
 	</ModalButton>
 	<ModalButton
 		_for="dnd-dice-settings-modal"
-		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200"
+		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200"
 	>
 		<Icon name="settings" /> &nbsp; Settings
 	</ModalButton>
@@ -331,7 +331,7 @@
 
 <style>
 	* {
-		@apply text-gray-900;
+		@apply text-base-900;
 	}
 
 	label {
@@ -348,7 +348,7 @@
 	button:not(.btn-primary),
 	select,
 	input {
-		@apply bg-white border-2 border-gray-200 hover:bg-gray-200;
+		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}
 
 	button.btn-primary {
@@ -367,6 +367,6 @@
 	}
 
 	button.btn-active {
-		@apply bg-gray-300;
+		@apply bg-base-300;
 	}
 </style>

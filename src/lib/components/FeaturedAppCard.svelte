@@ -2,7 +2,7 @@
 	export let title, text, longText, img, link;
 </script>
 
-<div class="card lg:card-side bg-base-100 shadow-xl w-full">
+<div class="card lg:card-side bg-base-900 shadow-xl w-full">
 	<figure>
 		<img src={img} alt={title} class="w-full h-64 lg:h-96 lg:w-96 object-cover object-top" />
 	</figure>

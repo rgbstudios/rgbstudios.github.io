@@ -9,7 +9,7 @@
 	export let settings;
 </script>
 
-<Modal id="dnd-dice-settings-modal" class="bg-white text-gray-900">
+<Modal id="dnd-dice-settings-modal" class="bg-white text-base-900">
 	<div slot="title">
 		<Icon name="settings" /> &nbsp; Settings
 	</div>
@@ -48,12 +48,12 @@
 
 <style>
 	.label-text {
-		@apply font-bold text-gray-700;
+		@apply font-bold text-base-700;
 	}
 	.btn,
 	button,
 	select,
 	input {
-		@apply bg-white border-2 border-gray-200 hover:bg-gray-200;
+		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}
 </style>

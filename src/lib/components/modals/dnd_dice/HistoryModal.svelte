@@ -5,7 +5,7 @@
 	export let rollHistory, rolledDice;
 </script>
 
-<Modal id="dnd-dice-history-modal" class="bg-white text-gray-900">
+<Modal id="dnd-dice-history-modal" class="bg-white text-base-900">
 	<div slot="title">
 		<Icon name="history" /> &nbsp; History
 	</div>
@@ -25,12 +25,12 @@
 <style>
 	input,
 	textarea {
-		@apply bg-white border-2 border-gray-200 font-normal;
+		@apply bg-white border-2 border-base-200 font-normal;
 	}
 
 	button,
 	select,
 	input {
-		@apply bg-white border-2 border-gray-200 hover:bg-gray-200;
+		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}
 </style>

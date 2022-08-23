@@ -11,7 +11,7 @@
 	<input
 		bind:this={input}
 		spellcheck="false"
-		class="input w-full border-2 border-gray-300 bg-white text-base-100"
+		class="input w-full border-2 border-base-300 bg-white text-base-900"
 		type="text"
 		{value}
 		on:change={onChange}
@@ -24,7 +24,7 @@
 
 			copyText(str);
 		}}
-		class="btn inset-y-0 btn-secondary border-2 border-gray-300 border-l-0 text-base-100 hover:text-white"
+		class="btn inset-y-0 btn-secondary border-2 border-base-300 border-l-0 text-base-900 hover:text-white"
 		title="Copy"
 	>
 		<Icon name="copy" />

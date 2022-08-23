@@ -178,12 +178,12 @@
 	isDark={!$isDark}
 />
 
-<div class="text-base-100">
+<div class="text-base-900">
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 		<div class="order-3 md:order-1 mx-auto md:mx-0">
 			<input
 				id="auto-detect-input"
-				class="w-48 mr-4 mb-4 float-left input bg-white text-base-100"
+				class="w-48 mr-4 mb-4 float-left input bg-white text-base-900"
 				autofocus
 				type="text"
 				placeholder="Type a color..."
@@ -309,7 +309,7 @@
 							/>
 							<input
 								id="{type}-input"
-								class="mt-2 sm:mt-4 input w-full bg-white text-base-100"
+								class="mt-2 sm:mt-4 input w-full bg-white text-base-900"
 								type="number"
 								min="0"
 								max={[
@@ -383,14 +383,14 @@
 	input[type='text'],
 	input[type='number'] {
 		@apply p-2 bg-white h-10;
-		@apply border-2 border-gray-200;
+		@apply border-2 border-base-200;
 	}
 
 	.btn {
-		@apply p-2 bg-white hover:bg-gray-100 text-base-100 border-0;
+		@apply p-2 bg-white hover:bg-base-100 text-base-900 border-0;
 	}
 	.btn-circle {
-		@apply p-2 bg-white hover:bg-gray-100 rounded-full;
+		@apply p-2 bg-white hover:bg-base-100 rounded-full;
 	}
 	.colormode {
 		@apply bg-white p-4;

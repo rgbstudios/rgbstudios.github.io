@@ -338,7 +338,7 @@
 <div class="h-screen flex flex-col relative">
 	{#if !uiHidden}
 		<div
-			class="p-3 inline-flex gap-2 align-center flex-wrap absolute top-0 bg-base-100"
+			class="p-3 inline-flex gap-2 align-center flex-wrap absolute top-0 bg-base-900"
 			class:hidden={printing}
 		>
 			<!-- COLORS -->
@@ -436,7 +436,7 @@
 	{#if !uiHidden}
 		<div class="dropdown absolute bottom-0 right-0 m-5 dropdown-top dropdown-end">
 			<span tabindex="0" class="btn btn-sm m-1">Filters</span>
-			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-900 rounded-box w-52">
 				<li><button on:click={darken}>Darken</button></li>
 				<li><button on:click={lighten}>Lighten</button></li>
 				<li><button on:click={grayscale}>Grayscale</button></li>

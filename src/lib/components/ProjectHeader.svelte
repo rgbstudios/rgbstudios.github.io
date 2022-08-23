@@ -39,7 +39,7 @@
 		alt=""
 	/>
 	<h1
-		class="text-center {isDark ? 'text-base-100 ' : 'text-white'} {isCondensed
+		class="text-center {isDark ? 'text-base-900 ' : 'text-white'} {isCondensed
 			? 'text-3xl md:text-4xl lg:text-5xl inline-block'
 			: ''}"
 	>

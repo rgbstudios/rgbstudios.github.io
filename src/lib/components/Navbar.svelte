@@ -4,7 +4,7 @@
 	import Icon from './Icon.svelte';
 </script>
 
-<div class="navbar bg-base-100 sticky top-0 z-10">
+<div class="navbar bg-base-900 sticky top-0 z-10">
 	<div class="navbar-start">
 		<div class="dropdown">
 			<button class="btn btn-ghost lg:hidden">
@@ -12,7 +12,7 @@
 			</button>
 			<ul
 				tabindex="0"
-				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-900 rounded-box w-52"
 			>
 				<li><a href="/">Home</a></li>
 
@@ -21,7 +21,7 @@
 						Projects
 						<Icon name="chevron_right" class="w-4 h-4" />
 					</span>
-					<ul class="p-2 bg-base-100">
+					<ul class="p-2 bg-base-900">
 						<li><a href="/projects">All Projects</a></li>
 						<li><a href="/projects?sort=popular">Popular</a></li>
 						<li><a href="/projects?sort=new">New</a></li>
@@ -33,7 +33,7 @@
 						Blog
 						<Icon name="chevron_right" class="w-4 h-4" />
 					</span>
-					<ul class="p-2 bg-base-100">
+					<ul class="p-2 bg-base-900">
 						<li><a href="/blog">All Posts</a></li>
 						<li><a href="/blog?category=webdev">Web Dev</a></li>
 						<li><a href="/blog?category=design">Design</a></li>
@@ -56,7 +56,7 @@
 					Projects
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
-				<ul class="p-2 bg-base-100">
+				<ul class="p-2 bg-base-900">
 					<li><a href="/projects">All Projects</a></li>
 					<li><a href="/projects?sort=popular">Popular</a></li>
 					<li><a href="/projects?sort=new">New</a></li>
@@ -68,7 +68,7 @@
 					Blog
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
-				<ul class="p-2 bg-base-100">
+				<ul class="p-2 bg-base-900">
 					<li><a href="/blog">All Posts</a></li>
 					<li><a href="/blog?category=webdev">Web Dev</a></li>
 					<li><a href="/blog?category=design">Design</a></li>
