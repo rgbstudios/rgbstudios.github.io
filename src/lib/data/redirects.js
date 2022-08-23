@@ -62,6 +62,24 @@ const redirects = [
 	{
 		source: '/dnd-dice/index.html',
 		destination: '/projects/dnd-dice'
+	},
+
+	{
+		source: '/dnd-dice/char',
+		destination: '/projects/dnd-dice/character-roller'
+	},
+	{
+		source: '/dnd-dice/char.html',
+		destination: '/projects/dnd-dice/character-roller'
+	},
+
+	{
+		source: '/dnd-dice/spell',
+		destination: '/projects/dnd-dice/spellbook'
+	},
+	{
+		source: '/dnd-dice/spell.html',
+		destination: '/projects/dnd-dice/spellbook'
 	}
 ];
 

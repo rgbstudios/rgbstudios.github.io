@@ -16,10 +16,10 @@
 	<a href="/projects/dnd-dice">
 		<img src="/img/projects/other/icon-d20.svg" class="h-8 inline" alt="" /> Dice Roller
 	</a>
-	<a href="/projects/dnd-dice/char">
+	<a href="/projects/dnd-dice/character-roller">
 		<img src="/img/projects/other/icon-d6.svg" class="h-8 inline" alt="" /> Character Roller
 	</a>
-	<a href="/projects/dnd-dice/spell">
+	<a href="/projects/dnd-dice/spellbook">
 		<img src="/img/projects/other/icon-d8.svg" class="h-8 inline" alt="" /> Spell Searcher
 	</a>
 </nav>
