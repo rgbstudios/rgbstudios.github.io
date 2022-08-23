@@ -6,8 +6,7 @@
 
 <DndSideNav />
 
-<!-- todo d6 icon
-topdo update screenshot -->
+<!-- todo update screenshot -->
 <ProjectHeader
 	title="D&D Character Roller"
 	description="Use D&D Character Roller to easily roll stats for a new D&D character, complete with graphs, download, and more"
@@ -29,7 +28,7 @@ topdo update screenshot -->
 		'dice roller',
 		'die roller'
 	]}
-	icon="img/projects/icons/dnd-dice.png"
+	icon="img/projects/icons/dnd-character-roller.png"
 	screenshot="img/projects/screenshots/dnd-dice.png"
 	isDark={true}
 	isCondensed={true}
