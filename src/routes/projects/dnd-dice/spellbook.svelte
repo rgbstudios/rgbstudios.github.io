@@ -1,7 +1,11 @@
 <script>
 	// todo fix breadcrumbs
+	// todo show loader when searching
+	// todo autocomplete
+	// http://www.dnd5eapi.co/docs/
 	import { onMount } from 'svelte';
 
+	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
@@ -116,12 +120,23 @@
 	isCondensed={true}
 />
 
-<input
-	type="text"
-	class="input input-bordered w-full"
-	bind:value={searchValue}
-	on:change={() => doSearch(searchValue)}
-/>
+<div class="form-control">
+	<div class="input-group">
+		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
+			<Icon name="copy" />
+		</button>
+		<input
+			type="text"
+			class="input w-full"
+			placeholder="Search for a spell..."
+			bind:value={searchValue}
+			on:change={() => doSearch(searchValue)}
+		/>
+		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
+			<Icon name="search" />
+		</button>
+	</div>
+</div>
 
 <h3 class="text-3xl my-4">{spellName}</h3>
 
@@ -133,20 +148,16 @@
 {/each}
 
 <style>
-	label {
-		@apply mr-4 sm:my-auto;
-	}
-
 	button,
-	select,
-	input,
-	label {
+	input {
 		@apply font-bold;
 	}
 
 	button:not(.btn-info),
-	select,
 	input {
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
+	}
+	input {
+		@apply border-x-0;
 	}
 </style>
