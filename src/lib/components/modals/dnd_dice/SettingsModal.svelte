@@ -26,12 +26,15 @@
 
 	<hr class="my-4" />
 
-	<div class="xs:grid xs:grid-cols-2 xs:gap-2">
+	<div class="xs:grid xs:grid-cols-3 xs:gap-2">
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="envelope" class="w-4 h-4 inline" /> &nbsp; Contact
 		</button>
-		<button class="btn block h-auto leading-6 text-xs">
+		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="link" class="w-4 h-4 inline" /> &nbsp; Copy link to website
+		</button>
+		<button class="btn block h-auto leading-6 text-xs">
+			<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Delete all data
 		</button>
 	</div>
 </Modal>

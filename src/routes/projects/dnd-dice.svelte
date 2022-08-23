@@ -220,7 +220,8 @@
 <ModsModal {modifiers} {modifierNames} {notes} />
 <HistoryModal {rollHistory} {rolledDice} />
 <SettingsModal {settings} />
-<ChangeDiceModal bind:value={customAmount} />
+<ChangeDiceModal bind:value={customAmount} title="Number of Dice" change="dice" />
+<ChangeDiceModal bind:value={customSides} title="Dice Sides" change="sides" />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
@@ -258,7 +259,9 @@
 				d{num}
 			</button>
 		{/each}
-		<button class="btn btn-primary">+</button>
+		<ModalButton _for="dnd-dice-change-sides-modal" class="btn-primary">
+			<Icon name="plus" class="w-4 h-4" />
+		</ModalButton>
 	</div>
 </div>
 
