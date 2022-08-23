@@ -8,6 +8,8 @@
 	import SettingsModal from '$lib/components/modals/dnd_dice/SettingsModal.svelte';
 	import ChangeDiceModal from '$lib/components/modals/dnd_dice/ChangeDiceModal.svelte';
 
+	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+
 	/**
 	 * Todo:
 	 * SEO keywords ampersand is escaped (seems ok?)
@@ -171,9 +173,7 @@
 	}
 </script>
 
-<button class="btn absolute top-0 left-0">
-	<Icon name="menu" />
-</button>
+<DndSideNav />
 
 <ProjectHeader
 	title="D&D Dice Roller"
