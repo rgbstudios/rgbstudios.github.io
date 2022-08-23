@@ -4,6 +4,7 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import ModsModal from '$lib/components/modals/dnd_dice/ModsModal.svelte';
+	import HistoryModal from '$lib/components/modals/dnd_dice/HistoryModal.svelte';
 
 	/**
 	 * Todo:
@@ -66,7 +67,9 @@
 	let speakRolls = false;
 
 	// misc
-	let notes = '';
+	let notes = '',
+		rollHistory = [],
+		rolledDice = 0;
 
 	// reset disabled inputs
 	$: if (currentAmount !== 1) advantage = 'non';
@@ -140,7 +143,8 @@
 			'  |  Rolls: ' +
 			rolls.join(', ');
 
-		// TODO: update history and total dice rolled (maybe store total dice rolled)
+		rollHistory.push(rollText);
+		rolledDice += currentAmount === 1 && advantage !== 'non' ? 2 : currentAmount;
 
 		if (!speakRolls) {
 			talk(rollText + '... Rolls were ' + rolls);
@@ -186,19 +190,25 @@
 />
 
 <div class="sm:btn-group justify-center">
-	<ModalButton _for="dnd-dice-mods-modal" class="btn mb-2 sm:mb-0">
+	<ModalButton
+		_for="dnd-dice-mods-modal"
+		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0"
+	>
 		<Icon name="pencil_alt" /> &nbsp; Mods &amp; Notes
 	</ModalButton>
-
-	<button class="btn block mb-2 sm:mb-0">
+	<ModalButton
+		_for="dnd-dice-history-modal"
+		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0"
+	>
 		<Icon name="history" /> &nbsp; History
-	</button>
+	</ModalButton>
 	<button class="btn block">
 		<Icon name="settings" /> &nbsp; Settings
 	</button>
 </div>
 
 <ModsModal {modifiers} {modifierNames} {notes} />
+<HistoryModal {rollHistory} {rolledDice} />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
@@ -321,7 +331,7 @@
 	button:not(.btn-primary),
 	select,
 	input {
-		@apply bg-white border-2 border-gray-200;
+		@apply bg-white border-2 border-gray-200 hover:bg-gray-200;
 	}
 
 	button.btn-primary {

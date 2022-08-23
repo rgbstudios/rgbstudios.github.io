@@ -50,7 +50,7 @@
 		<div class="col-span-3">
 			<hr class="my-6" />
 			<h3>Notes:</h3>
-			<textarea bind:value={notes} rows="5" class="w-full" />
+			<textarea bind:value={notes} rows="5" class="textarea w-full" />
 			<div class="xs:grid xs:grid-cols-2 xs:gap-2">
 				<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 					<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Clear Notes
