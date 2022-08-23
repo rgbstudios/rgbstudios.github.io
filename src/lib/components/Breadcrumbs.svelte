@@ -10,7 +10,7 @@
 				<li class="underline {isDark ? 'text-base-900 ' : 'text-white'}">
 					<a href={link}>{text}</a>
 				</li>
-			{:else}
+			{:else if text}
 				<li class={isDark ? 'text-base-900 ' : 'text-white'}>{text}</li>
 			{/if}
 		{/each}

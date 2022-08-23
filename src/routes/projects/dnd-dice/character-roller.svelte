@@ -32,6 +32,10 @@
 	screenshot="img/projects/screenshots/dnd-dice.png"
 	isDark={true}
 	isCondensed={true}
+	parentBreadcrumb={{
+		text: 'D&D Dice Roller',
+		link: '/projects/dnd-dice'
+	}}
 />
 
 Coming soon...

@@ -8,7 +8,8 @@
 		icon,
 		screenshot,
 		isDark = false,
-		isCondensed = false;
+		isCondensed = false,
+		parentBreadcrumb = null;
 </script>
 
 <div />
@@ -26,6 +27,12 @@
 			text: 'Projects',
 			link: '/projects'
 		},
+		parentBreadcrumb
+			? {
+					text: parentBreadcrumb.text,
+					link: parentBreadcrumb.link
+			  }
+			: {},
 		{
 			text: title
 		}

@@ -1,5 +1,4 @@
 <script>
-	// todo fix breadcrumbs
 	// todo show loader when searching
 	// todo autocomplete
 	// http://www.dnd5eapi.co/docs/
@@ -136,6 +135,10 @@
 	screenshot="img/projects/screenshots/dnd-dice.png"
 	isDark={true}
 	isCondensed={true}
+	parentBreadcrumb={{
+		text: 'D&D Dice Roller',
+		link: '/projects/dnd-dice'
+	}}
 />
 
 <div class="sm:btn-group justify-center mt-4 mb-8 sm:mt-0">
