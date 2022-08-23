@@ -1,7 +1,96 @@
 <script>
+	// todo fix breadcrumbs
+	import { onMount } from 'svelte';
+
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+
+	let searchValue = '',
+		spellName = '',
+		spellInfo = [];
+
+	// api variables
+	let resultData = {};
+	let spellNames = [];
+
+	onMount(async function () {
+		const response = await fetch('http://www.dnd5eapi.co/api/spells');
+		const data = await response.json();
+		// console.log(data);
+
+		// save data for later
+		resultData = data.results;
+		//NOTE: this part slows down page load
+		for (let i = 0; i < resultData.length; i++) {
+			spellNames[i] = resultData[i].name;
+		}
+
+		//get url params
+		const url = new URL(window.location.href);
+		const q = url.searchParams.get('q');
+		searchValue = q ?? 'magic missile';
+
+		doSearch(searchValue);
+	});
+
+	// search
+
+	async function getSpellData(spellName) {
+		const response = await fetch('http://www.dnd5eapi.co/api/spells/' + spellName);
+		const data = await response.json();
+		console.log(data);
+
+		spellInfo = [];
+		for (const item in data) {
+			// skip irrelevant items
+			if (item == '_id' || item == 'url' || item == 'index') {
+				continue;
+			}
+			let spellDescription = ' ';
+			if (data[item][0] && data[item][0].name) {
+				for (let i = 0; i < data[item].length; i++) {
+					spellDescription += data[item][i].name + (i == data[item].length - 1 ? '' : ', ');
+				}
+			} else {
+				spellDescription = (data[item].name ? data[item].name : data[item]).toString();
+				spellDescription = spellDescription.replace('phb ', ''); //page number fix
+			}
+
+			// fix data that wasn't properly escaped in api
+			spellDescription = spellDescription.split('â€™').join("'");
+			spellDescription = spellDescription.split('â€œ').join("'");
+			spellDescription = spellDescription.split('â€�').join("'");
+
+			spellDescription = spellDescription.split(',-').join('\n').split('.,').join('.\n');
+
+			spellInfo.push(
+				capitalize(item.replace('_', ' ').replace('desc', 'description')) + ': ' + spellDescription
+			);
+		}
+	}
+
+	function doSearch(term) {
+		for (const idx in resultData) {
+			spellName = resultData[idx].name;
+			if (
+				spellName.toLowerCase().replace(' ', '').indexOf(term.toLowerCase().replace(' ', '')) != -1
+			) {
+				const tmpArr = resultData[idx].url.split('/');
+				const num = tmpArr[tmpArr.length - 1];
+				getSpellData(num);
+				searchValue = spellName;
+				history.replaceState({}, '', '?q=' + spellName);
+				document.title = spellName + ' - D&D Spellbook | RGB Studios';
+				return;
+			}
+		}
+		spellName = '';
+		spellInfo = ['No results found...'];
+	}
+
+	// https://stackoverflow.com/a/38530325/4907950
+	const capitalize = (str) => str.replace(/\b\w/g, (l) => l.toUpperCase());
 </script>
 
 <DndSideNav />
@@ -27,4 +116,34 @@
 	isCondensed={true}
 />
 
-Coming soon...
+<input
+	type="text"
+	class="input input-bordered w-full"
+	bind:value={searchValue}
+	on:change={() => doSearch(searchValue)}
+/>
+
+<h3 class="text-3xl my-4">{spellName}</h3>
+
+{#each spellInfo as info}
+	<p class="leading-8">{info}</p>
+{/each}
+
+<style>
+	label {
+		@apply mr-4 sm:my-auto;
+	}
+
+	button,
+	select,
+	input,
+	label {
+		@apply font-bold;
+	}
+
+	button:not(.btn-info),
+	select,
+	input {
+		@apply bg-white border-2 border-base-200 hover:bg-base-200;
+	}
+</style>
