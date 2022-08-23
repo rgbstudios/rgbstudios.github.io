@@ -29,9 +29,9 @@
 		>
 			<Icon name="fullscreen" class="w-4 h-4 inline" /> &nbsp; Fullscreen
 		</button>
-		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+		<a href="mailto:contact@rgbstudios.org" class="flex btn h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="envelope" class="w-4 h-4 inline" /> &nbsp; Contact
-		</button>
+		</a>
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="link" class="w-4 h-4 inline" /> &nbsp; Copy link to website
 		</button>
@@ -45,6 +45,7 @@
 	.label-text {
 		@apply font-bold text-gray-700;
 	}
+	.btn,
 	button,
 	select,
 	input {
