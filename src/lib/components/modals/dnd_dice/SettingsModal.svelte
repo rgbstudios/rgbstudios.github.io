@@ -1,6 +1,7 @@
 <script>
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '../../Icon.svelte';
+	import screenfull from 'screenfull';
 
 	export let settings;
 </script>
@@ -21,7 +22,10 @@
 	</label>
 
 	<div class="xs:grid xs:grid-cols-2 xs:gap-2 mt-6">
-		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+		<button
+			class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0"
+			on:click={() => screenfull.toggle()}
+		>
 			<Icon name="fullscreen" class="w-4 h-4 inline" /> &nbsp; Fullscreen
 		</button>
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
