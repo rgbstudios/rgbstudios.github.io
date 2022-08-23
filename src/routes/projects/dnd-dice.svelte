@@ -6,12 +6,14 @@
 	import ModsModal from '$lib/components/modals/dnd_dice/ModsModal.svelte';
 	import HistoryModal from '$lib/components/modals/dnd_dice/HistoryModal.svelte';
 	import SettingsModal from '$lib/components/modals/dnd_dice/SettingsModal.svelte';
+	import ChangeDiceModal from '$lib/components/modals/dnd_dice/ChangeDiceModal.svelte';
 
 	/**
 	 * Todo:
 	 * SEO keywords ampersand is escaped (seems ok?)
 	 * FB messenger share not working
 	 * Fix focus styles
+	 * Input validation
 	 */
 
 	// TODO store these in settings:
@@ -218,6 +220,7 @@
 <ModsModal {modifiers} {modifierNames} {notes} />
 <HistoryModal {rollHistory} {rolledDice} />
 <SettingsModal {settings} />
+<ChangeDiceModal bind:value={customAmount} />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
@@ -233,7 +236,9 @@
 				{num}
 			</button>
 		{/each}
-		<button class="btn btn-primary">+</button>
+		<ModalButton _for="dnd-dice-change-dice-modal" class="btn-primary">
+			<Icon name="plus" class="w-4 h-4" />
+		</ModalButton>
 	</div>
 </div>
 
