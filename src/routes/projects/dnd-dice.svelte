@@ -1,6 +1,9 @@
 <script>
-	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import ModalButton from '$lib/components/base/ModalButton.svelte';
+	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+
+	import ModsModal from '$lib/components/modals/dnd_dice/ModsModal.svelte';
 
 	/**
 	 * Todo:
@@ -43,6 +46,7 @@
 		dis: 'Disadvantage'
 	};
 
+	// user data
 	// current user's modifiers
 
 	let modifiers = {
@@ -60,6 +64,9 @@
 
 	// settings
 	let speakRolls = false;
+
+	// misc
+	let notes = '';
 
 	// reset disabled inputs
 	$: if (currentAmount !== 1) advantage = 'non';
@@ -179,9 +186,10 @@
 />
 
 <div class="sm:btn-group justify-center">
-	<button class="btn block mb-2 sm:mb-0">
+	<ModalButton _for="dnd-dice-mods-modal" class="btn mb-2 sm:mb-0">
 		<Icon name="pencil_alt" /> &nbsp; Mods &amp; Notes
-	</button>
+	</ModalButton>
+
 	<button class="btn block mb-2 sm:mb-0">
 		<Icon name="history" /> &nbsp; History
 	</button>
@@ -189,6 +197,8 @@
 		<Icon name="settings" /> &nbsp; Settings
 	</button>
 </div>
+
+<ModsModal {modifiers} {modifierNames} {notes} />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
