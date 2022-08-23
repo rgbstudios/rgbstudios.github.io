@@ -123,7 +123,7 @@
 <div class="form-control">
 	<div class="input-group">
 		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
-			<Icon name="copy" />
+			<Icon name="link" />
 		</button>
 		<input
 			type="text"
