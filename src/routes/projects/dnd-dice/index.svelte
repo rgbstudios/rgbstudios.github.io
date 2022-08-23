@@ -374,6 +374,6 @@
 	}
 
 	button.btn-active {
-		@apply bg-base-300;
+		@apply bg-base-300 text-gray-900;
 	}
 </style>
