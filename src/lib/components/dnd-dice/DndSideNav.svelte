@@ -2,6 +2,8 @@
 	import Icon from '$lib/components/Icon.svelte';
 
 	let open = false;
+
+	// TODO: add initiative tracker?
 </script>
 
 <button class="btn absolute top-0 left-0 z-30" on:click={() => (open = !open)}>

@@ -15,12 +15,18 @@
 	 * SEO keywords ampersand is escaped (seems ok?)
 	 * FB messenger share not working
 	 * Fix focus styles
+	 * Make URL params work
 	 * Input validation
 	 * Store everything in local storage
 	 * Implement dark mode
 	 * Implement delete all data
 	 * Implement clear, download, and upload btns
 	 * Implement menu and other sites
+	 * Add info modal with how advantage works, that expertiece is double proficiency, and about rolling for initiative, to attack against AC, and for damage
+	 * Option to click to roll die by itself
+	 * Menton that modifiers are stored in the website url
+	 * Find delimeter other than 'a' for url params (?)
+	 * Add help and info modals
 	 */
 
 	// TODO store these in settings:
