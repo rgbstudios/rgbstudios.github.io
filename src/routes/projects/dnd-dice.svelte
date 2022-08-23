@@ -14,6 +14,11 @@
 	 * FB messenger share not working
 	 * Fix focus styles
 	 * Input validation
+	 * Store everything in local storage
+	 * Implement dark mode
+	 * Implement delete all data
+	 * Implement clear, download, and upload btns
+	 * Implement menu and other sites
 	 */
 
 	// TODO store these in settings:
