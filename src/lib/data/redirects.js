@@ -54,6 +54,14 @@ const redirects = [
 	{
 		source: '/dnd-dice',
 		destination: '/projects/dnd-dice'
+	},
+	{
+		source: '/dnd-dice.html',
+		destination: '/projects/dnd-dice'
+	},
+	{
+		source: '/dnd-dice/index.html',
+		destination: '/projects/dnd-dice'
 	}
 ];
 
