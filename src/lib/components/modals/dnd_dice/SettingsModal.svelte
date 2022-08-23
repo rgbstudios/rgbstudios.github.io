@@ -10,10 +10,6 @@
 		<Icon name="settings" /> &nbsp; Settings
 	</div>
 
-	<button class="btn block h-auto leading-6 text-xs">
-		<Icon name="fullscreen" class="w-4 h-4 inline" /> &nbsp; Fullscreen
-	</button>
-
 	<label class="flex items-center gap-3 cursor-pointer my-2">
 		<input type="checkbox" bind:checked={settings.speak} class="checkbox" />
 		<span class="label-text">Speak roll results</span>
@@ -26,7 +22,10 @@
 
 	<hr class="my-4" />
 
-	<div class="xs:grid xs:grid-cols-3 xs:gap-2">
+	<div class="xs:grid xs:grid-cols-2 xs:gap-2">
+		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+			<Icon name="fullscreen" class="w-4 h-4 inline" /> &nbsp; Fullscreen
+		</button>
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="envelope" class="w-4 h-4 inline" /> &nbsp; Contact
 		</button>
