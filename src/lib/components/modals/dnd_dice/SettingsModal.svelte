@@ -1,8 +1,10 @@
 <script>
+	import screenfull from 'screenfull';
+
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
-	import screenfull from 'screenfull';
+	import copyText from '$lib/util/copyText';
 
 	export let settings;
 </script>
@@ -32,7 +34,10 @@
 		<a href="mailto:contact@rgbstudios.org" class="flex btn h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="envelope" class="w-4 h-4 inline" /> &nbsp; Contact
 		</a>
-		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+		<button
+			class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0"
+			on:click={() => copyText(window.location.href)}
+		>
 			<Icon name="link" class="w-4 h-4 inline" /> &nbsp; Copy link to website
 		</button>
 		<button class="btn block h-auto leading-6 text-xs">
