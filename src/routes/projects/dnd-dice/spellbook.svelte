@@ -4,10 +4,13 @@
 	// http://www.dnd5eapi.co/docs/
 	import { onMount } from 'svelte';
 
+	import Autocomplete from '$lib/components/Autocomplete.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+
+	import copyText from '$lib/util/copyText';
 
 	let searchValue = '',
 		spellName = '',
@@ -36,6 +39,11 @@
 
 		doSearch(searchValue);
 	});
+
+	$: if (searchValue) {
+		console.log('searching:', searchValue);
+		doSearch(searchValue);
+	}
 
 	// https://stackoverflow.com/a/53620876/4907950
 	function propertiesToArray(obj) {
@@ -152,15 +160,18 @@
 
 <div class="form-control">
 	<div class="input-group">
-		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
+		<button class="btn btn-square" on:click={() => copyText(window.location.href)}>
 			<Icon name="link" />
 		</button>
-		<input
-			type="text"
-			class="input w-full"
-			placeholder="Search for a spell..."
+		<Autocomplete
+			id="dnd-spell-search-autocomplete"
 			bind:value={searchValue}
-			on:change={() => doSearch(searchValue)}
+			placeholder="Search for a spell..."
+			options={spellNames}
+			maxResults={false}
+			selectOnFocus={true}
+			selectOnClick={true}
+			class="input w-full bg-white border-2 border-base-200 hover:bg-base-200 border-x-0"
 		/>
 		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
 			<Icon name="search" />
@@ -186,8 +197,5 @@
 	button:not(.btn-info),
 	input {
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
-	}
-	input {
-		@apply border-x-0;
 	}
 </style>
