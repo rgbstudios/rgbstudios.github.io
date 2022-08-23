@@ -12,7 +12,7 @@
 	id="dnd-side-nav"
 	class="h-full {open
 		? 'w-64'
-		: 'w-0'} overflow-hidden fixed top-0 left-0 z-20 bg-white/80 pt-20 ease-in-out border-r-2 border-base-200"
+		: 'w-0'} overflow-hidden fixed top-0 left-0 z-20 bg-white/80 pt-20 ease-in-out border-r-2 border-base-200 transition-all"
 >
 	<a href="/projects/dnd-dice">
 		<img src="/img/projects/other/icon-d20.svg" class="h-8 inline" alt="" /> Dice Roller
@@ -30,6 +30,6 @@
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}
 	#dnd-side-nav a {
-		@apply m-4 bg-white border-2 border-base-200 text-base-900 hover:bg-base-200 p-4 text-lg block ease-in-out;
+		@apply m-4 bg-white border-2 border-base-200 text-base-900 hover:bg-base-200 p-4 text-lg block;
 	}
 </style>
