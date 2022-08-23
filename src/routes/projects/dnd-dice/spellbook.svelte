@@ -120,6 +120,15 @@
 	isCondensed={true}
 />
 
+<div class="sm:btn-group justify-center mt-4 mb-8 sm:mt-0">
+	<button class="btn mb-2 sm:mb-0 sm:border-r-0">
+		<Icon name="info" /> &nbsp; About
+	</button>
+	<button class="btn">
+		<Icon name="fullscreen" /> &nbsp; Fullscreen
+	</button>
+</div>
+
 <div class="form-control">
 	<div class="input-group">
 		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
