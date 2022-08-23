@@ -1,0 +1,48 @@
+<script>
+	import Modal from '$lib/components/base/Modal.svelte';
+	import Icon from '../../Icon.svelte';
+
+	export let settings;
+</script>
+
+<Modal id="dnd-dice-settings-modal" class="bg-white text-gray-900">
+	<div slot="title">
+		<Icon name="settings" /> &nbsp; Settings
+	</div>
+
+	<button class="btn block h-auto leading-6 text-xs">
+		<Icon name="fullscreen" class="w-4 h-4 inline" /> &nbsp; Fullscreen
+	</button>
+
+	<label class="flex items-center gap-3 cursor-pointer my-2">
+		<input type="checkbox" bind:checked={settings.speak} class="checkbox" />
+		<span class="label-text">Speak roll results</span>
+	</label>
+
+	<label class="flex items-center gap-3 cursor-pointer my-2">
+		<input type="checkbox" bind:checked={settings.dark} class="checkbox" />
+		<span class="label-text">Dark mode</span>
+	</label>
+
+	<hr class="my-4" />
+
+	<div class="xs:grid xs:grid-cols-2 xs:gap-2">
+		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+			<Icon name="envelope" class="w-4 h-4 inline" /> &nbsp; Contact
+		</button>
+		<button class="btn block h-auto leading-6 text-xs">
+			<Icon name="link" class="w-4 h-4 inline" /> &nbsp; Copy link to website
+		</button>
+	</div>
+</Modal>
+
+<style>
+	.label-text {
+		@apply font-bold text-gray-700;
+	}
+	button,
+	select,
+	input {
+		@apply bg-white border-2 border-gray-200 hover:bg-gray-200;
+	}
+</style>

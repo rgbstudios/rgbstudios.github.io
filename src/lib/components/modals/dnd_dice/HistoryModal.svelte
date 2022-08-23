@@ -27,4 +27,10 @@
 	textarea {
 		@apply bg-white border-2 border-gray-200 font-normal;
 	}
+
+	button,
+	select,
+	input {
+		@apply bg-white border-2 border-gray-200 hover:bg-gray-200;
+	}
 </style>

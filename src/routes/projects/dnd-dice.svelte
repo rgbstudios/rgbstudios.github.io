@@ -5,11 +5,13 @@
 
 	import ModsModal from '$lib/components/modals/dnd_dice/ModsModal.svelte';
 	import HistoryModal from '$lib/components/modals/dnd_dice/HistoryModal.svelte';
+	import SettingsModal from '$lib/components/modals/dnd_dice/SettingsModal.svelte';
 
 	/**
 	 * Todo:
 	 * SEO keywords ampersand is escaped (seems ok?)
 	 * FB messenger share not working
+	 * Fix focus styles
 	 */
 
 	// TODO store these in settings:
@@ -64,7 +66,10 @@
 	};
 
 	// settings
-	let speakRolls = false;
+	let settings = {
+		speak: false,
+		dark: false
+	};
 
 	// misc
 	let notes = '',
@@ -146,8 +151,8 @@
 		rollHistory.push(rollText);
 		rolledDice += currentAmount === 1 && advantage !== 'non' ? 2 : currentAmount;
 
-		if (!speakRolls) {
-			talk(rollText + '... Rolls were ' + rolls);
+		if (settings.speak) {
+			talk(rollText.replace('|  Rolls:', '... rolls were: '));
 		}
 	}
 
@@ -192,23 +197,27 @@
 <div class="sm:btn-group justify-center">
 	<ModalButton
 		_for="dnd-dice-mods-modal"
-		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0"
+		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0 sm:border-r-0"
 	>
 		<Icon name="pencil_alt" /> &nbsp; Mods &amp; Notes
 	</ModalButton>
 	<ModalButton
 		_for="dnd-dice-history-modal"
-		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0"
+		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200 mb-2 sm:mb-0 sm:border-r-0"
 	>
 		<Icon name="history" /> &nbsp; History
 	</ModalButton>
-	<button class="btn block">
+	<ModalButton
+		_for="dnd-dice-settings-modal"
+		class="bg-white border-2 border-gray-200 hover:bg-gray-200 hover:border-gray-200"
+	>
 		<Icon name="settings" /> &nbsp; Settings
-	</button>
+	</ModalButton>
 </div>
 
 <ModsModal {modifiers} {modifierNames} {notes} />
 <HistoryModal {rollHistory} {rolledDice} />
+<SettingsModal {settings} />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
