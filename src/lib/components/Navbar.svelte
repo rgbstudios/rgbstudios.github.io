@@ -4,7 +4,7 @@
 	import Icon from './Icon.svelte';
 </script>
 
-<div class="navbar bg-base-900 sticky top-0 z-10">
+<div class="navbar bg-base-900/90 sticky top-0 z-10 backdrop-blur-sm">
 	<div class="navbar-start">
 		<div class="dropdown">
 			<button class="btn btn-ghost lg:hidden">
