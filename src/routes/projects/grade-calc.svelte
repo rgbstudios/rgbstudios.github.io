@@ -129,7 +129,7 @@
 	<h3 class="text-center">Assignments</h3>
 	<form on:submit|preventDefault={calculate} class="grid gap-5">
 		{#each $assignments as { name, max_score, weight }, index}
-			<div class="card w-full bg-base-900 border">
+			<div class="card w-full bg-accent-900 border">
 				<div class="card-body p-6">
 					<div class="grid grid-cols-1 xl:grid-cols-[auto,auto,auto] gap-2 mb-4">
 						<label class="input-group">

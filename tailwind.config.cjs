@@ -6,9 +6,9 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				'brand-red': '#cc3300',
-				'brand-green': '#339966',
-				'brand-blue': '#3366ff',
+				'brand-red': '#c30',
+				'brand-green': '#396',
+				'brand-blue': '#36f',
 
 				'base': {
 					100: '#eee',
@@ -17,6 +17,11 @@ module.exports = {
 					700: '#333',
 					800: '#222',
 					900: '#111'
+				},
+
+				'accent': {
+					800: '#123',
+					900: '#012'
 				}
 			},
 			fontFamily: {
@@ -34,10 +39,10 @@ module.exports = {
 		themes: [
 			{
 				rgbtheme: {
-					'primary': '#339966',
-					'success': '#339966',
-					'info': '#3366ff',
-					'error': '#cc3300',
+					'primary': '#396',
+					'success': '#396',
+					'info': '#36f',
+					'error': '#c30',
 					'primary-content': '#eee',
 					'base-content': '#eee',
 					'secondary-content': '#eee',
