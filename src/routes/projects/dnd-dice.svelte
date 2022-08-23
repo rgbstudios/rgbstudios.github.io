@@ -237,7 +237,7 @@
 				{num}
 			</button>
 		{/each}
-		<ModalButton _for="dnd-dice-change-dice-modal" class="btn-primary">
+		<ModalButton _for="dnd-dice-change-dice-modal" class="btn-info">
 			<Icon name="plus" class="w-4 h-4" />
 		</ModalButton>
 	</div>
@@ -259,7 +259,7 @@
 				d{num}
 			</button>
 		{/each}
-		<ModalButton _for="dnd-dice-change-sides-modal" class="btn-primary">
+		<ModalButton _for="dnd-dice-change-sides-modal" class="btn-info">
 			<Icon name="plus" class="w-4 h-4" />
 		</ModalButton>
 	</div>
@@ -314,7 +314,7 @@
 </div>
 
 <div class="flex justify-evenly mt-12">
-	<button class="btn btn-primary btn-lg" on:click={doRolls}>
+	<button class="btn btn-info btn-lg" on:click={doRolls}>
 		<Icon name="roll_dice" /> &nbsp; Roll
 	</button>
 	<button class="btn btn-lg" on:click={doReset}>
@@ -345,13 +345,13 @@
 		@apply font-bold;
 	}
 
-	button:not(.btn-primary),
+	button:not(.btn-info),
 	select,
 	input {
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}
 
-	button.btn-primary {
+	button.btn-info {
 		@apply text-white;
 	}
 
