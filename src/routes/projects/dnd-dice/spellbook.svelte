@@ -38,6 +38,20 @@
 		doSearch(searchValue);
 	});
 
+	// https://stackoverflow.com/a/53620876/4907950
+	function propertiesToArray(obj) {
+		const isObject = (val) => val && typeof val === 'object' && !Array.isArray(val);
+		const addDelimiter = (a, b) => (a ? `${a}.${b}` : b);
+
+		const paths = (obj = {}, head = '') => {
+			return Object.entries(obj).reduce((product, [key, value]) => {
+				let fullPath = addDelimiter(head, key);
+				return isObject(value) ? product.concat(paths(value, fullPath)) : product.concat(fullPath);
+			}, []);
+		};
+		return paths(obj);
+	}
+
 	// search
 
 	async function getSpellData(spellName) {
@@ -45,7 +59,11 @@
 		const data = await response.json();
 		console.log(data);
 
+		// spellInfo = propertiesToArray(data);
+		// return;
+
 		spellInfo = [];
+
 		for (const item in data) {
 			// skip irrelevant items
 			if (item == '_id' || item == 'url' || item == 'index') {
@@ -57,8 +75,6 @@
 					itemDescription += data[item][i].name + (i == data[item].length - 1 ? '' : ', ');
 				}
 			} else {
-				console.log(data[item]);
-
 				itemDescription = (data[item].name ? data[item].name : data[item]).toString();
 				itemDescription = itemDescription.replace('phb ', ''); //page number fix
 			}
