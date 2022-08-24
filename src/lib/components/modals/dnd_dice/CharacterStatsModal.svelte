@@ -27,6 +27,7 @@
 	// Creates and populates data table, instantiates charts, passes in data and draws charts
 	function drawCharts() {
 		const odds = [1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21];
+		const oddsTotal = 1296;
 		const colors = {
 			blue: '#36f',
 			white: '#fff',
@@ -36,7 +37,7 @@
 
 		//begin chart 1: odds of each roll
 		let chartdata = [['', '', { role: 'style' }]];
-		for (let i = 0; i < odds.length; i++) chartdata.push([i + 3, odds[i], colors.blue]);
+		for (let i = 0; i < odds.length; i++) chartdata.push([i + 3, odds[i] / oddsTotal, colors.blue]);
 
 		let data = google.visualization.arrayToDataTable(chartdata);
 
@@ -55,7 +56,7 @@
 				titleTextStyle: { color: colors.dark }
 			},
 			vAxis: {
-				title: 'Odds of each stat (of 1296)',
+				title: 'Odds of each stat',
 				gridlines: {
 					count: 4,
 					color: colors.light
