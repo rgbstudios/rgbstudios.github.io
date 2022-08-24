@@ -6,7 +6,7 @@
 	// TODO: add initiative tracker?
 </script>
 
-<button class="btn absolute top-0 left-0 z-30" on:click={() => (open = !open)}>
+<button class="btn btn-square absolute top-0 left-0 z-30" on:click={() => (open = !open)}>
 	<Icon name={open ? 'close' : 'menu'} />
 </button>
 
