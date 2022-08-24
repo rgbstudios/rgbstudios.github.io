@@ -144,7 +144,9 @@
 			{#each filteredOptions as option, i}
 				<li
 					class="block autocomplete-item p-2 cursor-pointer border-2 border-t-0 border-base-200
-                    hover:bg-base-200 {i === highlightIdx ? 'bg-base-100' : 'bg-white'}"
+                    hover:bg-brand-blue hover:text-white {i === highlightIdx
+						? 'bg-base-100'
+						: 'bg-white'}"
 					on:click={() => setInputVal(option)}
 				>
 					{@html option}
