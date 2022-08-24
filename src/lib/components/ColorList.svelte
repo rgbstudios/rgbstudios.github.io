@@ -68,6 +68,7 @@
 							<Icon name="copy" class="inline w-4 h-4" />
 						</button>
 						<label
+							tabindex="0"
 							class="btn"
 							on:click={() => {
 								$settings.color = item.color;

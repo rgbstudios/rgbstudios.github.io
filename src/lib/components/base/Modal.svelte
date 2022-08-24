@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { browser } from '$app/env';
+
 	import Icon from '$lib/components/Icon.svelte';
 	import { createEventDispatcher, onMount } from 'svelte';
 	const dispatch = createEventDispatcher();
@@ -41,12 +43,14 @@
 		el.focus();
 	}
 
-	$: if (hidden) {
-		onClose();
-		dispatch('close');
-	} else {
-		onOpen();
-		dispatch('open');
+	$: if (browser) {
+		if (hidden) {
+			onClose();
+			dispatch('close');
+		} else {
+			onOpen();
+			dispatch('open');
+		}
 	}
 </script>
 
