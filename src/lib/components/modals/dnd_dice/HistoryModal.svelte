@@ -2,6 +2,8 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
+	import downloadFile from '$lib/util/downloadFile';
+
 	export let rollHistory, rolledDice;
 </script>
 
@@ -11,12 +13,23 @@
 	</div>
 
 	<p>You've rolled {rolledDice} {rolledDice === 1 ? 'die' : 'dice'}</p>
-	<textarea value={rollHistory.join('\r')} rows="10" class="textarea w-full" />
+	<textarea
+		value={rollHistory.length ? rollHistory.join('\r') : ''}
+		rows="10"
+		class="textarea w-full"
+	/>
 	<div class="xs:grid xs:grid-cols-2 xs:gap-2">
-		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+		<button
+			class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0"
+			on:click={() => (rollHistory = '')}
+		>
 			<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Clear History
 		</button>
-		<button class="btn block h-auto leading-6 text-xs">
+		<button
+			class="btn block h-auto leading-6 text-xs"
+			on:click={() =>
+				downloadFile(rollHistory.length ? rollHistory.join('\r') : '', 'roll-history.txt')}
+		>
 			<Icon name="download" class="w-4 h-4 inline" /> &nbsp; Download History
 		</button>
 	</div>

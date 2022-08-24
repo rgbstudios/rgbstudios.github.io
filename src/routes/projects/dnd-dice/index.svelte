@@ -18,7 +18,7 @@
 	 * Make URL params work
 	 * Input validation
 	 * Store everything in local storage
-	 * Implement dark mode
+	 * Implement dark mode (?)
 	 * Implement delete all data
 	 * Implement clear, download, and upload btns
 	 * Implement menu and other sites
@@ -29,7 +29,6 @@
 	 * Add help and info modals
 	 */
 
-	// TODO store these in settings:
 	let currentAmount = 1,
 		currentSides = 20;
 
@@ -163,6 +162,7 @@
 			rolls.join(', ');
 
 		rollHistory.push(rollText);
+		rollHistory = rollHistory; // reactive bugfix
 		rolledDice += currentAmount === 1 && advantage !== 'non' ? 2 : currentAmount;
 
 		if (settings.speak) {
