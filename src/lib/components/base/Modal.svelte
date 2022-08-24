@@ -22,8 +22,32 @@
 		hidden = !inp.checked;
 	}
 
-	$: !hidden && dispatch('open');
-	$: hidden && dispatch('close');
+	function onOpen() {
+		const scrollY = window.scrollY;
+		document.body.style.position = 'fixed';
+		document.body.style.width = '100%';
+		document.body.style.top = `-${scrollY}px`;
+	}
+
+	function onClose() {
+		const scrollY = document.body.style.top;
+		document.body.style.position = '';
+		document.body.style.top = '';
+		window.scrollTo(0, parseInt(scrollY || '0') * -1);
+	}
+
+	function trapFocus(e: TransitionEvent) {
+		const el = (e.target as HTMLElement).querySelector('.close-btn') as HTMLElement;
+		el.focus();
+	}
+
+	$: if (hidden) {
+		onClose();
+		dispatch('close');
+	} else {
+		onOpen();
+		dispatch('open');
+	}
 </script>
 
 <input
@@ -34,13 +58,17 @@
 	checked={!hidden}
 	on:change={onChange}
 />
-<label for={id} class="modal">
-	<label for="" class="modal-box relative rounded border-2" class:max-w-full={fluid}>
+<label for={id} class="modal" class:open={!hidden} on:transitionend={trapFocus}>
+	<label
+		for=""
+		class="overscroll-contain modal-box relative rounded border-2"
+		class:max-w-full={fluid}
+	>
 		{#if $$slots.title || showCloseBtn}
 			<div class="header flex justify-between items-center border-b-2 p-2 mb-5">
 				<h3><slot name="title" /></h3>
 				{#if showCloseBtn}
-					<label for={id} class="btn btn-ghost btn-sm btn-circle">
+					<label for={id} class="btn btn-ghost btn-sm btn-circle close-btn" tabindex="0">
 						<Icon name="close" />
 					</label>
 				{/if}
@@ -49,3 +77,14 @@
 		<slot />
 	</label>
 </label>
+
+<style>
+	/* for focus trapping */
+	.modal {
+		background-color: rgba(255, 255, 255, 0);
+	}
+	.modal.open:not(:focus-within) {
+		background-color: rgb(255, 255, 254, 0);
+		transition: background-color 0.01s;
+	}
+</style>

@@ -12,8 +12,9 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import CopyableInput from '$lib/components/CopyableInput.svelte';
 	import Range from '$lib/components/Range.svelte';
-	import Modal from '$lib/components/base/Modal.svelte';
-	import ColorList from '$lib/components/ColorList.svelte';
+	import ModalButton from '$lib/components/base/ModalButton.svelte';
+	import HistoryColorListModal from '$lib/components/modals/color_picker/HistoryColorListModal.svelte';
+	import FavouriteColorListModal from '$lib/components/modals/color_picker/FavouriteColorListModal.svelte';
 
 	// import namer from 'color-namer';
 
@@ -335,12 +336,18 @@
 	</div>
 
 	<div class="grid grid-cols-3 py-4 w-full sticky bottom-0 mt-4 bg-white bg-opacity-90">
-		<button class="btn-circle w-12 h-12 mx-auto" on:click={historyModal.show} title="History">
+		<ModalButton
+			_for="history-color-list-modal"
+			className="w-12 h-12 mx-auto bg-white hover:bg-gray-100 rounded-full border-none"
+		>
 			<Icon name="history" class="inline w-4 h-4" />
-		</button>
-		<button class="btn-circle w-12 h-12 mx-auto" on:click={favoritesModal.show} title="Saved">
+		</ModalButton>
+		<ModalButton
+			_for="favorite-color-list-modal"
+			className="w-12 h-12 mx-auto bg-white hover:bg-gray-100 rounded-full border-none"
+		>
 			<Icon name="saved" class="inline w-4 h-4" />
-		</button>
+		</ModalButton>
 		<button
 			class="btn-circle w-12 h-12 mx-auto"
 			on:click={() => {
@@ -354,17 +361,8 @@
 	</div>
 </div>
 
-<Modal bind:this={historyModal} title="History" icon="history">
-	<ColorList bind:this={historyList} bind:items={$settings.historyList} modal={historyModal} />
-</Modal>
-
-<Modal bind:this={favoritesModal} title="Favorites" icon="heart">
-	<ColorList
-		bind:this={favoritesList}
-		bind:items={$settings.favoritesList}
-		modal={favoritesModal}
-	/>
-</Modal>
+<HistoryColorListModal bind:historyList />
+<FavouriteColorListModal bind:favoritesList />
 
 <style>
 	h1,
