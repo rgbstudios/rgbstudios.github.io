@@ -374,5 +374,6 @@
 
 	button.btn-active {
 		@apply bg-base-300 text-gray-900;
+		box-shadow: inset 0 4px 4px #0002;
 	}
 </style>
