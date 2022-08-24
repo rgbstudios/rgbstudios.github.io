@@ -4,6 +4,8 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import Modal from '$lib/components/base/Modal.svelte';
 
+	import roundNumber from '$lib/util/roundNumber';
+
 	export let character;
 
 	let googleChartsLoaded = false;
@@ -25,9 +27,9 @@
 	});
 
 	// Creates and populates data table, instantiates charts, passes in data and draws charts
+	const odds = [1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21];
+	const oddsTotal = 1296;
 	function drawCharts() {
-		const odds = [1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21];
-		const oddsTotal = 1296;
 		const colors = {
 			blue: '#36f',
 			white: '#fff',
@@ -126,6 +128,21 @@
 					<Icon name="download" />
 				</a>
 			</div>
+			<hr />
+			<table class="table table-compact w-full">
+				<tr>
+					<th>Stat</th>
+					<th>Odds</th>
+					<th>Percent</th>
+				</tr>
+				{#each odds as odd, idx}
+					<tr>
+						<td>{idx + 3}</td>
+						<td>{odd}/{1296}</td>
+						<td>{roundNumber(odd / 1296, 5)}</td>
+					</tr>
+				{/each}
+			</table>
 		</div>
 	</div>
 </Modal>
@@ -133,5 +150,13 @@
 <style>
 	.btn {
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
+	}
+
+	table * {
+		@apply bg-white;
+	}
+	th,
+	td {
+		@apply border-gray-200;
 	}
 </style>
