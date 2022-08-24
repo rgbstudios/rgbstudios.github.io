@@ -82,7 +82,7 @@
 		for (let i = 0; i < 6; i++) occurences[character.stats[i].value - 3]++;
 
 		chartdata = [['', '', { role: 'style' }]];
-		for (let i = 0; i < 16; i++) chartdata.push([i + 3, occurences[i], colors.blue]);
+		for (let i = 0; i < 16; i++) chartdata.push([i + 3, occurences[i] / 6, colors.blue]);
 		data = google.visualization.arrayToDataTable(chartdata);
 
 		options.vAxis.title = 'Frequency';
