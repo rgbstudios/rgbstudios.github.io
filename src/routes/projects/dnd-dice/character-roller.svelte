@@ -370,7 +370,7 @@
 	{/if}
 </div>
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
 	{#each selectedModifiers as selectedMod, idx}
 		{#if currentCharacter}
 			<div class="border-2 border-base-200 p-4 rounded-lg text-center">
@@ -423,44 +423,44 @@
 			{Math.round(stdDev(statsToMods(currentCharacter.stats)) * 100) / 100}
 		</div>
 	</div>
+
+	<div class="sm:btn-group justify-center mt-4 sm:mt-0">
+		<input
+			type="text"
+			class="input mb-2 sm:mb-0 sm:border-r-0"
+			placeholder="Character name"
+			bind:value={characterName}
+		/>
+		<input
+			type="text"
+			class="input mb-2 sm:mb-0 sm:border-r-0"
+			value={currentCharacter.stats
+				.map((stat) => stat.value)
+				.sort((a, b) => a - b)
+				.join(', ')}
+		/>
+		<button class="btn mb-2 sm:mb-0 sm:border-r-0" on:click={downloadCharacter}>
+			<Icon name="download" /> &nbsp; Download
+		</button>
+		<button
+			class="btn mb-2 sm:mb-0 sm:border-r-0"
+			on:click={() =>
+				copyText(
+					currentCharacter.stats
+						.map((stat) => stat.value)
+						.sort((a, b) => a - b)
+						.join(', ')
+				)}
+		>
+			<Icon name="copy" /> &nbsp; Copy
+		</button>
+		<button class="btn" on:click={resetSelections}>
+			<Icon name="reset" /> &nbsp; Reset Selections
+		</button>
+	</div>
 {/if}
 
-<div class="sm:btn-group justify-center mt-4 mb-8 sm:mt-0">
-	<input
-		type="text"
-		class="input mb-2 sm:mb-0 sm:border-r-0"
-		placeholder="Character name"
-		bind:value={characterName}
-	/>
-	<input
-		type="text"
-		class="input mb-2 sm:mb-0 sm:border-r-0"
-		value={currentCharacter.stats
-			.map((stat) => stat.value)
-			.sort((a, b) => a - b)
-			.join(', ')}
-	/>
-	<button class="btn mb-2 sm:mb-0 sm:border-r-0" on:click={downloadCharacter}>
-		<Icon name="download" /> &nbsp; Download
-	</button>
-	<button
-		class="btn mb-2 sm:mb-0 sm:border-r-0"
-		on:click={() =>
-			copyText(
-				currentCharacter.stats
-					.map((stat) => stat.value)
-					.sort((a, b) => a - b)
-					.join(', ')
-			)}
-	>
-		<Icon name="copy" /> &nbsp; Copy
-	</button>
-	<button class="btn" on:click={resetSelections}>
-		<Icon name="reset" /> &nbsp; Reset Selections
-	</button>
-</div>
-
-<div class="grid grid-cols-4 xl:grid-cols-6">
+<div class="grid grid-cols-4 xl:grid-cols-6 mt-12">
 	<div class="hidden xl:block" />
 	<div class="col-span-2">
 		<ModalButton _for="dnd-dice-character-modifiers-modal" class="btn-info mr-2 mb-2">
