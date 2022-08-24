@@ -478,7 +478,7 @@
 <CharacterModifiersModal />
 <CharacterSettingsModal {settings} />
 <CharacterSkillsModal />
-<CharacterStatsModal />
+<CharacterStatsModal character={currentCharacter} />
 
 <style>
 	label {
