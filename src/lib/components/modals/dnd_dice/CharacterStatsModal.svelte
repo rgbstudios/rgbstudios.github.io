@@ -105,45 +105,43 @@
 		<Icon name="chart" /> &nbsp; Odds of Each Roll
 	</div>
 
-	<div class="modal-body">
-		<div class="grid gap-4">
-			<p>Average Rolls:</p>
-			<small>Mean: 12.24, Median: 12, Mode: 13, Standard Deviation: 2.85</small>
-			<div id="normal-rolls-chart" />
-			<div class="flex justify-center">
-				<a
-					class="btn"
-					download="normal-rolls.png"
-					href={normalChartURI}
-					title="Download normal rolls chart"
-				>
-					<Icon name="download" />
-				</a>
-			</div>
-
-			<p>My rolls:</p>
-			<div id="user-rolls-chart" />
-			<div class="flex justify-center">
-				<a class="btn" download="my-rolls.png" href={userChartURI} title="Download my rolls chart">
-					<Icon name="download" />
-				</a>
-			</div>
-			<hr />
-			<table class="table table-compact w-full">
-				<tr>
-					<th>Stat</th>
-					<th>Odds</th>
-					<th>Percent</th>
-				</tr>
-				{#each odds as odd, idx}
-					<tr>
-						<td>{idx + 3}</td>
-						<td>{odd}/{1296}</td>
-						<td>{roundNumber(odd / 1296, 5)}</td>
-					</tr>
-				{/each}
-			</table>
+	<div class="grid gap-4">
+		<p>Average Rolls:</p>
+		<small>Mean: 12.24, Median: 12, Mode: 13, Standard Deviation: 2.85</small>
+		<div id="normal-rolls-chart" />
+		<div class="flex justify-center">
+			<a
+				class="btn"
+				download="normal-rolls.png"
+				href={normalChartURI}
+				title="Download normal rolls chart"
+			>
+				<Icon name="download" />
+			</a>
 		</div>
+
+		<p>My rolls:</p>
+		<div id="user-rolls-chart" />
+		<div class="flex justify-center">
+			<a class="btn" download="my-rolls.png" href={userChartURI} title="Download my rolls chart">
+				<Icon name="download" />
+			</a>
+		</div>
+		<hr />
+		<table class="table table-compact w-full">
+			<tr>
+				<th>Stat</th>
+				<th>Odds</th>
+				<th>Percent</th>
+			</tr>
+			{#each odds as odd, idx}
+				<tr>
+					<td>{idx + 3}</td>
+					<td>{odd}/{1296}</td>
+					<td>{roundNumber(odd / 1296, 5)}</td>
+				</tr>
+			{/each}
+		</table>
 	</div>
 </Modal>
 
