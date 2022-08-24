@@ -2,6 +2,21 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+
+	let characters = [];
+
+	const modifierNames = {
+		non: '-',
+
+		str: 'Strength',
+		dex: 'Dexterity',
+		con: 'Constitution',
+		int: 'Intelligence',
+		wis: 'Wisdom',
+		cha: 'Charisma'
+	};
+
+	$: currentCharacter = characters ?? characters[characters.length - 1];
 </script>
 
 <DndSideNav />
@@ -38,4 +53,40 @@
 	}}
 />
 
-Coming soon...
+<div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 sm:gap-4">
+	{#each [1, 2, 3, 4, 5, 6] as _}
+		<div class="">
+			<p>⚄ ⚃ ⚀ ⚅</p>
+			<p class="font-bold">15</p>
+			<p>+2</p>
+			<select class="select select-bordered w-full">
+				{#each Object.keys(modifierNames) as mod}
+					<option value={mod}>{modifierNames[mod]}</option>
+				{/each}
+			</select>
+		</div>
+	{/each}
+</div>
+
+<style>
+	label {
+		@apply mr-4 sm:my-auto;
+	}
+
+	button,
+	select,
+	input,
+	label {
+		@apply font-bold;
+	}
+
+	button:not(.btn-info),
+	select,
+	input {
+		@apply bg-white border-2 border-base-200 hover:bg-base-200;
+	}
+
+	button.btn-info {
+		@apply text-white;
+	}
+</style>
