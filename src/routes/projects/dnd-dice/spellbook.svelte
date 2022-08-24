@@ -4,11 +4,15 @@
 	// http://www.dnd5eapi.co/docs/
 	import { onMount } from 'svelte';
 
+	import screenfull from 'screenfull';
+
 	import Autocomplete from '$lib/components/Autocomplete.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+	import SpellbookAboutModal from '$lib/components/modals/dnd_dice/SpellbookAboutModal.svelte';
 
 	import copyText from '$lib/util/copyText';
 
@@ -150,10 +154,13 @@
 />
 
 <div class="sm:btn-group justify-center mt-4 mb-8 sm:mt-0">
-	<button class="btn mb-2 sm:mb-0 sm:border-r-0">
+	<ModalButton
+		_for="dnd-dice-spellbook-about-modal"
+		class="btn bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200 mb-2 sm:mb-0 sm:border-r-0"
+	>
 		<Icon name="info" /> &nbsp; About
-	</button>
-	<button class="btn">
+	</ModalButton>
+	<button class="btn" on:click={() => screenfull.toggle()}>
 		<Icon name="fullscreen" /> &nbsp; Fullscreen
 	</button>
 </div>
@@ -187,6 +194,8 @@
 		{info.split(':')[1]}
 	</p>
 {/each}
+
+<SpellbookAboutModal />
 
 <style>
 	button,
