@@ -24,6 +24,7 @@
 		hidden = !inp.checked;
 	}
 
+	// stop background scrolling on open
 	function onOpen() {
 		const scrollY = window.scrollY;
 		document.body.style.position = 'fixed';
@@ -31,6 +32,7 @@
 		document.body.style.top = `-${scrollY}px`;
 	}
 
+	// allow background scrolling on close
 	function onClose() {
 		const scrollY = document.body.style.top;
 		document.body.style.position = '';
