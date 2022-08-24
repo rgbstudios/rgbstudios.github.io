@@ -3,7 +3,7 @@
 		isDark = false;
 </script>
 
-<div class="text-sm breadcrumbs mb-2">
+<div class="text-sm breadcrumbs mb-1">
 	<ul>
 		{#each breadcrumbs as { text, link }}
 			{#if link}

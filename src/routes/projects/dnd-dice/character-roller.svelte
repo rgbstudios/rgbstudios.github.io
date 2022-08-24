@@ -53,12 +53,12 @@
 	}}
 />
 
-<div class="sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 sm:gap-4">
+<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
 	{#each [1, 2, 3, 4, 5, 6] as _}
-		<div class="">
-			<p>⚄ ⚃ ⚀ ⚅</p>
-			<p class="font-bold">15</p>
-			<p>+2</p>
+		<div class="border-2 border-base-200 p-4 rounded-lg text-center">
+			<p class="text-4xl">⚄ ⚃ ⚀ ⚅</p>
+			<p class="text-xl font-extrabold mt-3">15</p>
+			<p class="mb-4">+2</p>
 			<select class="select select-bordered w-full">
 				{#each Object.keys(modifierNames) as mod}
 					<option value={mod}>{modifierNames[mod]}</option>
