@@ -1,9 +1,28 @@
 <script>
+	import { onMount } from 'svelte';
+
+	import Alert from '$lib/components/Alert.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
 
-	let characters = [];
+	import copyText from '$lib/util/copyText';
+	import downloadFile from '$lib/util/downloadFile';
+
+	// TODO: fix url param import / export
+
+	let characterName = '';
+	let showImportAlert = false;
+	let isRollingAnimation = false;
+	let animationRolls = [];
+
+	let settings = {
+		displayRolling: true,
+		exportUnicodeDice: false
+	};
+
+	let selectedModifiers = ['non', 'non', 'non', 'non', 'non', 'non'];
 
 	const modifierNames = {
 		non: '-',
@@ -16,7 +35,277 @@
 		cha: 'Charisma'
 	};
 
-	$: currentCharacter = characters ?? characters[characters.length - 1];
+	$: currentCharacter = characters[characters.length - 1];
+
+	$: charactersGeneratedText = `${characters.length} character${
+		characters.length !== 1 ? 's' : ''
+	} generated`;
+
+	const modNames = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+
+	// rolls: die rolls
+	// stat: 3 highest dice
+	// mod: mapped stat to a plus/minus modifier
+
+	// classes
+	function Character(givenRolls) {
+		this.stats = [];
+		this.statTotal = 0;
+		this.modTotal = 0;
+		for (let i = 0; i < 6; i++) {
+			// 6 stats
+			let newStat = givenRolls ? new Stat(givenRolls[i]) : new Stat(false);
+			this.stats.push(newStat);
+			this.statTotal += newStat.value;
+			this.modTotal += newStat.mod;
+		}
+	}
+
+	function Stat(givenRolls) {
+		// rolls is array of 4 dice results
+		if (givenRolls) {
+			this.rolls = givenRolls;
+		} else {
+			this.rolls = [];
+			// 4 rolls
+			for (let i = 0; i < 4; i++) {
+				this.rolls.push(getRoll(6));
+			}
+		}
+		const sum = this.rolls.reduce((a, b) => a + b, 0);
+		const min = Math.min(...this.rolls);
+		// don't count lowest roll
+		this.value = sum - min;
+
+		this.mod = getStatMod(this.value);
+	}
+
+	// todo move to dnd dice util
+	const getRoll = (sides) => Math.floor(Math.random() * sides) + 1;
+
+	let characters = [new Character()];
+
+	// utils
+	function getStatMod(stat) {
+		for (let i = 3, j = -4; ; i += 2, j++) {
+			if (i >= stat) return j;
+		}
+	}
+
+	function getDieCode(roll) {
+		return '&#98' + (55 + roll);
+	}
+	function getDieUnicode(roll) {
+		return ['\u2680', '\u2681', '\u2682', '\u2683', '\u2684', '\u2685'][roll - 1];
+	}
+
+	function getDiceCodes(rolls) {
+		let diceCodes = '';
+		for (let i = 0; i < rolls.length; i++) diceCodes += getDieCode(rolls[i]) + ' ';
+		return diceCodes;
+	}
+
+	function downloadCharacter() {
+		if (characters.length === 0) return;
+		const modifierNameMap = {
+			non: ' - ',
+			str: 'Str',
+			dex: 'Dex',
+			con: 'Con',
+			int: 'Int',
+			wis: 'Wis',
+			cha: 'Cha'
+		};
+		let txt = characterName + '\r\n';
+		for (let i = 0; i < currentCharacter.stats.length; i++) {
+			txt += modifierNameMap[selectedModifiers[i]] + ': ';
+			for (let j = 0; j < currentCharacter.stats[i].rolls.length; j++) {
+				if (settings.exportUnicodeDice) txt += getDieUnicode(currentCharacter.stats[i].rolls[j]);
+				else txt += currentCharacter.stats[i].rolls[j].toString();
+
+				if (j < currentCharacter.stats[i].rolls.length - 1) txt += ',';
+			}
+			txt +=
+				'\tVal: ' + currentCharacter.stats[i].value + '\tMod: ' + currentCharacter.stats[i].mod;
+			txt += '\r\n';
+		}
+		txt +=
+			'\r\nTotal:\t\tVal: ' + currentCharacter.statTotal + '\tMod: ' + currentCharacter.modTotal;
+		txt += '\r\n\r\nLink:\t\t' + getRollLink();
+
+		if (allAreSelected)
+			txt +=
+				'\r\nRoll with your stats: https://rgbstudios.org/projects/dnd-dice' + getDieRollerParams();
+
+		downloadFile(txt, 'Character - ' + characterName + '.txt');
+	}
+
+	// 	$('#downloadHistory').click(function () {
+	// 		downloadFile(
+	// 			'History:\r\n' +
+	// 				charactersGeneratedText +
+	// 				'.\r\n\r\n' +
+	// 				historyText.replace(/\r?\n/g, '\r\n'),
+	// 			'history ' + getFormattedDate(),
+	// 			'downloadHistoryLink'
+	// 		);
+	// 	});
+
+	onMount(() => {
+		const url = new URL(window.location.href);
+		let r = url.searchParams.get('r');
+		if (r) {
+			r = atob(r);
+			console.log(r);
+
+			let givenRolls = [];
+			let idx = 0;
+			for (let i = 0; i < 6; i++) {
+				let tmp = [];
+				for (let j = 0; j < 4; j++) {
+					tmp[j] = parseInt(r.charAt(idx++));
+				}
+				givenRolls.push(tmp);
+			}
+
+			resetSelections();
+
+			for (let i = 0; i < selectedModifiers.length; i++) {
+				selectedModifiers[i] = modNames[parseInt(r.charAt(idx++))];
+			}
+
+			characterName = r.substring(idx);
+
+			characters = [new Character(givenRolls)];
+
+			console.log(characters[0]);
+
+			showImportAlert = true;
+		}
+	});
+
+	function prettyPrint(character) {
+		let str = 'mod total: ' + character.modTotal + ' | ' + 'value total: ' + character.statTotal;
+
+		for (let i = 0; i < 6; i++) {
+			str +=
+				'\r\nmod: ' +
+				character.stats[i].mod +
+				(character.stats[i].mod < 0 ? '' : ' ') +
+				' | value: ' +
+				character.stats[i].value +
+				(character.stats[i].value > 9 ? '' : ' ') +
+				' | rolls: ' +
+				character.stats[i].rolls;
+		}
+
+		return (
+			str +
+			'\r\nmean: ' +
+			Math.round((character.statTotal * 100) / 6) / 100 +
+			'\r\ndeviation: ' +
+			Math.round(stdDev(statsToValues(character.stats)) * 100) / 100 +
+			'\r\n\r\n'
+		);
+	}
+
+	function displayRolling() {
+		isRollingAnimation = true;
+
+		// roll every 100ms for 1000ms
+		const intvl = setInterval(() => {
+			animationRolls = Array(6)
+				.fill()
+				.map(() => [getRoll(6), getRoll(6), getRoll(6), getRoll(6)]);
+		}, 100);
+		setTimeout(function () {
+			clearInterval(intvl);
+			isRollingAnimation = false;
+		}, 1000);
+	}
+
+	// todo: makeChart()
+
+	// params are all rolls in order, then all selection indicies in order
+	function getRollLink() {
+		// url params
+		let r = '';
+		for (let i = 0; i < 6; i++) {
+			for (let j = 0; j < 4; j++) {
+				// no need to delimit since all possible vals 1-6 are 1 digit
+				r += currentCharacter.stats[i].rolls[j];
+			}
+		}
+		for (let i = 0; i < 6; i++) {
+			// these values are also 0-6 so one digit
+			r += modNames.indexOf(selectedModifiers[i]);
+		}
+		r += characterName;
+		r = btoa(r); // encode base64
+		return window.location.href.split('character-roller')[0] + 'character-roller' + '?r=' + r;
+	}
+
+	$: allAreSelected = !selectedModifiers.includes('non');
+
+	// get url params for /dnd-dice
+	function getDieRollerParams() {
+		// 9 modifiers separated by spaces
+		let m = '';
+
+		for (const modName of modNames) {
+			const idx = selectedModifiers.indexOf(modName);
+			console.log(idx);
+			m += currentCharacter.stats[idx].mod + ' ';
+		}
+
+		// last 3 are always 0 (prf, spl, itv)
+		m += '0 0 0';
+		m = btoa(m); // encode base 64
+		return '?m=' + m;
+	}
+
+	function statsToValues(stats) {
+		let vals = [];
+		for (let i = 0; i < stats.length; i++) vals[i] = stats[i].value;
+		return vals;
+	}
+
+	function statsToMods(stats) {
+		let mods = [];
+		for (let i = 0; i < stats.length; i++) mods[i] = stats[i].mod;
+		return mods;
+	}
+
+	function stdDev(array) {
+		// standard deviation
+		let sum = 0,
+			len = array.length;
+		for (let i = 0; i < len; i++) sum += array[i];
+		let mean = sum / len;
+		let devs = 0;
+		for (let i = 0; i < len; i++) devs += Math.pow(array[i] - mean, 2);
+		return Math.sqrt(devs / (len - 1));
+	}
+
+	function rollCharacter() {
+		resetSelections();
+		characterName = '';
+
+		characters.push(new Character());
+		characters = characters; // update reactive stuff
+
+		if (settings.displayRolling) displayRolling();
+
+		// show alert, remove url param
+		showImportAlert = false;
+		history.replaceState({}, '', '?r=');
+
+		// historyText += prettyPrint(currentCharacter);
+	}
+
+	function resetSelections() {
+		selectedModifiers = ['non', 'non', 'non', 'non', 'non', 'non'];
+	}
 </script>
 
 <DndSideNav />
@@ -53,19 +342,109 @@
 	}}
 />
 
-<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-	{#each [1, 2, 3, 4, 5, 6] as _}
-		<div class="border-2 border-base-200 p-4 rounded-lg text-center">
-			<p class="text-4xl">⚄ ⚃ ⚀ ⚅</p>
-			<p class="text-xl font-extrabold mt-3">15</p>
-			<p class="mb-4">+2</p>
-			<select class="select select-bordered w-full">
-				{#each Object.keys(modifierNames) as mod}
-					<option value={mod}>{modifierNames[mod]}</option>
-				{/each}
-			</select>
+<div class="text-center">
+	<button class="btn btn-info btn-lg" on:click={rollCharacter}>
+		<Icon name="roll_dice" /> &nbsp; Roll New Character
+	</button>
+
+	<br />
+
+	<button class="my-4 btn" on:click={() => copyText(getRollLink())}>
+		<Icon name="link" /> &nbsp; Copy Character Link
+	</button>
+
+	<p class="mb-4">{charactersGeneratedText}</p>
+
+	{#if allAreSelected}
+		<button
+			class="btn mb-2"
+			on:click={() => window.open('/projects/dnd-dice' + getDieRollerParams())}
+		>
+			<Icon name="open" /> &nbsp; Open Character in D&D Roller
+		</button>
+	{/if}
+
+	{#if showImportAlert}
+		<div class="my-4">
+			<Alert text="Imported rolls from link" />
 		</div>
+	{/if}
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+	{#each selectedModifiers as selectedMod, idx}
+		{#if currentCharacter}
+			<div class="border-2 border-base-200 p-4 rounded-lg text-center">
+				<p class="text-4xl">
+					{@html getDiceCodes(
+						isRollingAnimation && animationRolls.length
+							? animationRolls[idx]
+							: currentCharacter.stats[idx].rolls
+					)}
+				</p>
+				{#if !isRollingAnimation}
+					<p class="text-xl font-extrabold mt-3">{currentCharacter.stats[idx].value}</p>
+					<p class="mb-4">
+						{(currentCharacter.stats[idx].mod > 0 ? '+' : '') + currentCharacter.stats[idx].mod}
+					</p>
+				{/if}
+				<select class="select select-bordered w-full" bind:value={selectedMod}>
+					{#each Object.keys(modifierNames) as mod}
+						<option value={mod} disabled={selectedModifiers.includes(mod) && mod !== 'non'}
+							>{modifierNames[mod]}</option
+						>
+					{/each}
+				</select>
+			</div>
+		{/if}
 	{/each}
+</div>
+
+{#if !isRollingAnimation}
+	<div class="text-center my-4">
+		<div class="w-20 sm:w-32 text-left inline-block border-2 border-base-200 p-2">
+			<b>Total:</b>
+			<br />
+			{currentCharacter.statTotal}
+			<br />
+			{currentCharacter.modTotal}
+		</div>
+		<div class="w-20 sm:w-32 text-left inline-block border-2 border-base-200 p-2 mx-4">
+			<b>Mean:</b>
+			<br />
+			{Math.round((currentCharacter.statTotal * 100) / 6) / 100}
+			<br />
+			{Math.round((currentCharacter.modTotal * 100) / 6) / 100}
+		</div>
+		<div class="w-20 sm:w-32 text-left inline-block border-2 border-base-200 p-2">
+			<b>Deviation:</b>
+			<br />
+			{Math.round(stdDev(statsToValues(currentCharacter.stats)) * 100) / 100}
+			<br />
+			{Math.round(stdDev(statsToMods(currentCharacter.stats)) * 100) / 100}
+		</div>
+	</div>
+{/if}
+
+<div class="sm:btn-group justify-center mt-4 mb-8 sm:mt-0">
+	<input type="text" class="input" placeholder="Character name" bind:value={characterName} />
+	<input
+		type="text"
+		class="input"
+		value={currentCharacter.stats.map((stat) => stat.value).join(', ')}
+	/>
+	<button class="btn mb-2 sm:mb-0 sm:border-r-0" on:click={downloadCharacter}>
+		<Icon name="download" /> &nbsp; Download
+	</button>
+	<button
+		class="btn mb-2 sm:mb-0 sm:border-r-0"
+		on:click={() => copyText(currentCharacter.stats.map((stat) => stat.value).join(', '))}
+	>
+		<Icon name="copy" /> &nbsp; Copy
+	</button>
+	<button class="btn" on:click={resetSelections}>
+		<Icon name="reset" /> &nbsp; Reset Selections
+	</button>
 </div>
 
 <style>
