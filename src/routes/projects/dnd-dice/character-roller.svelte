@@ -3,16 +3,26 @@
 
 	import Alert from '$lib/components/Alert.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+
+	import CharacterHistoryModal from '$lib/components/modals/dnd_dice/CharacterHistoryModal.svelte';
+	import CharacterInfoModal from '$lib/components/modals/dnd_dice/CharacterInfoModal.svelte';
+	import CharacterModifiersModal from '$lib/components/modals/dnd_dice/CharacterModifiersModal.svelte';
+	import CharacterSettingsModal from '$lib/components/modals/dnd_dice/CharacterSettingsModal.svelte';
+	import CharacterSkillsModal from '$lib/components/modals/dnd_dice/CharacterSkillsModal.svelte';
+	import CharacterStatsModal from '$lib/components/modals/dnd_dice/CharacterStatsModal.svelte';
 
 	import copyText from '$lib/util/copyText';
 	import downloadFile from '$lib/util/downloadFile';
 
 	// TODO: fix url param import / export
+	// TODO: local storage settings
 
 	let characterName = '';
+	let historyText = '';
 	let showImportAlert = false;
 	let isRollingAnimation = false;
 	let animationRolls = [];
@@ -139,17 +149,6 @@
 
 		downloadFile(txt, 'Character - ' + characterName + '.txt');
 	}
-
-	// 	$('#downloadHistory').click(function () {
-	// 		downloadFile(
-	// 			'History:\r\n' +
-	// 				charactersGeneratedText +
-	// 				'.\r\n\r\n' +
-	// 				historyText.replace(/\r?\n/g, '\r\n'),
-	// 			'history ' + getFormattedDate(),
-	// 			'downloadHistoryLink'
-	// 		);
-	// 	});
 
 	onMount(() => {
 		const url = new URL(window.location.href);
@@ -300,7 +299,7 @@
 		showImportAlert = false;
 		history.replaceState({}, '', '?r=');
 
-		// historyText += prettyPrint(currentCharacter);
+		historyText += prettyPrint(currentCharacter);
 	}
 
 	function resetSelections() {
@@ -446,6 +445,40 @@
 		<Icon name="reset" /> &nbsp; Reset Selections
 	</button>
 </div>
+
+<div class="grid grid-cols-4 xl:grid-cols-6">
+	<div class="hidden xl:block" />
+	<div class="col-span-2">
+		<ModalButton _for="dnd-dice-character-modifiers-modal" class="btn-info mr-2 mb-2">
+			<Icon name="table" /> &nbsp; Modifiers
+		</ModalButton>
+		<ModalButton _for="dnd-dice-character-skills-modal" class="btn-info mr-2 mb-2">
+			<Icon name="clipboard_list" /> &nbsp; Skills
+		</ModalButton>
+		<ModalButton _for="dnd-dice-character-stats-modal" class="btn-info mr-2 mb-2">
+			<Icon name="chart" /> &nbsp; Stats
+		</ModalButton>
+	</div>
+	<div class="col-span-2">
+		<ModalButton _for="dnd-dice-character-history-modal" class="btn-info mr-2 mb-2">
+			<Icon name="history" /> &nbsp; History
+		</ModalButton>
+		<ModalButton _for="dnd-dice-character-info-modal" class="btn-info mr-2 mb-2">
+			<Icon name="info" /> &nbsp; Info
+		</ModalButton>
+		<ModalButton _for="dnd-dice-character-settings-modal" class="btn-info mr-2 mb-2">
+			<Icon name="settings" /> &nbsp; Settings
+		</ModalButton>
+	</div>
+	<div class="hidden xl:block" />
+</div>
+
+<CharacterHistoryModal {historyText} />
+<CharacterInfoModal />
+<CharacterModifiersModal />
+<CharacterSettingsModal {settings} />
+<CharacterSkillsModal />
+<CharacterStatsModal />
 
 <style>
 	label {
