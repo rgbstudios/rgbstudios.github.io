@@ -118,7 +118,7 @@
 
 <svelte:window on:keydown={navigateList} />
 
-<div class="relative inline-block w-64">
+<div class="relative inline-block w-full">
 	<input
 		{id}
 		spellcheck="false"
