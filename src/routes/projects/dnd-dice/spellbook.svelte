@@ -184,11 +184,8 @@
 			maxResults={false}
 			selectOnFocus={true}
 			selectOnClick={true}
-			class="input bg-white border-2 border-base-200 hover:bg-base-200 border-x-0"
+			class="input bg-white border-2 border-base-200 hover:bg-base-200 border-l-0"
 		/>
-		<button class="btn btn-square" on:click={() => doSearch(searchValue)}>
-			<Icon name="search" />
-		</button>
 	</div>
 </div>
 
