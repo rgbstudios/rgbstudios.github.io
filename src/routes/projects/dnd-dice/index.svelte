@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	import Icon from '$lib/components/Icon.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
@@ -92,6 +94,22 @@
 	// reset disabled inputs
 	$: if (currentAmount !== 1) advantage = 'non';
 	$: if (currentSides !== 20) bonus = 'non';
+
+	onMount(() => {
+		// load url params
+		const url = new URL(window.location.href);
+		let m = url.searchParams.get('m');
+		if (m) {
+			// atob decodes base 64
+			m = atob(m).split(' ');
+			modifiers.str = parseInt(m[0]);
+			modifiers.dex = parseInt(m[1]);
+			modifiers.con = parseInt(m[2]);
+			modifiers.int = parseInt(m[3]);
+			modifiers.wis = parseInt(m[4]);
+			modifiers.cha = parseInt(m[5]);
+		}
+	});
 
 	// utility
 	const getRoll = (sides) => Math.floor(Math.random() * sides) + 1;
