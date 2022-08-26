@@ -80,7 +80,15 @@
 				continue;
 			}
 			let itemDescription = ' ';
-			if (data[item][0]?.name) {
+			if (item === 'damage') {
+				// https://stackoverflow.com/a/32465139/4907950
+				itemDescription +=
+					data[item].damage_type.name +
+					' damage at slot levels ' +
+					Object.keys(data[item].damage_at_slot_level)
+						.map((key) => key + '=' + data[item].damage_at_slot_level[key])
+						.join(', ');
+			} else if (data[item][0]?.name) {
 				for (let i = 0; i < data[item].length; i++) {
 					itemDescription += data[item][i].name + (i == data[item].length - 1 ? '' : ', ');
 				}
