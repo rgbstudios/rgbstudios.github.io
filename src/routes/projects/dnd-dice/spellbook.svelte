@@ -1,6 +1,5 @@
 <script>
 	// todo show loader when searching
-	// todo autocomplete
 	// http://www.dnd5eapi.co/docs/
 	import { onMount } from 'svelte';
 

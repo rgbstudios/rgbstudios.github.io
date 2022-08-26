@@ -20,6 +20,7 @@
 
 	// TODO: fix url param import / export
 	// TODO: local storage settings
+	// TODO: descriptions of each ability in a modal, see https://www.enworld.org/threads/eight-abilities-str-con-dex-ath-int-per-cha-wis.682800/
 
 	let characterName = '';
 	let historyText = '';
@@ -222,8 +223,6 @@
 			isRollingAnimation = false;
 		}, 1000);
 	}
-
-	// todo: makeChart()
 
 	// params are all rolls in order, then all selection indicies in order
 	function getRollLink() {

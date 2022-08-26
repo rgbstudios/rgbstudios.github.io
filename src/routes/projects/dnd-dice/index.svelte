@@ -42,8 +42,6 @@
 		attribute = 'non',
 		bonus = 'non';
 
-	// todo: descriptions of each ability in a modal, see https://www.enworld.org/threads/eight-abilities-str-con-dex-ath-int-per-cha-wis.682800/
-
 	// values used under the hood mapped to values shown to user
 	const modifierNames = {
 		non: 'None',
