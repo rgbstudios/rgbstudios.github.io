@@ -108,6 +108,7 @@
 			modifiers.int = parseInt(m[3]);
 			modifiers.wis = parseInt(m[4]);
 			modifiers.cha = parseInt(m[5]);
+			// TODO: open mods modal
 		}
 	});
 
