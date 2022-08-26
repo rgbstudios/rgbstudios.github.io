@@ -80,12 +80,12 @@
 				continue;
 			}
 			let itemDescription = ' ';
-			if (data[item][0] && data[item][0].name) {
+			if (data[item][0]?.name) {
 				for (let i = 0; i < data[item].length; i++) {
 					itemDescription += data[item][i].name + (i == data[item].length - 1 ? '' : ', ');
 				}
 			} else {
-				itemDescription = (data[item].name ? data[item].name : data[item]).toString();
+				itemDescription = (data[item].name ?? data[item]).toString();
 				itemDescription = itemDescription.replace('phb ', ''); //page number fix
 			}
 
