@@ -308,7 +308,6 @@
 
 <DndSideNav />
 
-<!-- todo update screenshot -->
 <ProjectHeader
 	title="D&D Character Roller"
 	description="Use D&D Character Roller to easily roll stats for a new D&D character, complete with graphs, download, and more"
@@ -331,7 +330,7 @@
 		'die roller'
 	]}
 	icon="img/projects/icons/dnd-character-roller.png"
-	screenshot="img/projects/screenshots/dnd-dice.png"
+	screenshot="img/projects/screenshots/dnd-character-roller.png"
 	isDark={true}
 	isCondensed={true}
 	parentBreadcrumb={{

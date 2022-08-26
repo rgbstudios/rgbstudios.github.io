@@ -135,7 +135,6 @@
 
 <DndSideNav />
 
-<!-- todo update screenshot -->
 <ProjectHeader
 	title="D&D Spellbook"
 	description="Search for D&D spells and find description, range, class, level, and more"
@@ -151,7 +150,7 @@
 		'searcher'
 	]}
 	icon="img/projects/icons/dnd-spellbook.png"
-	screenshot="img/projects/screenshots/dnd-dice.png"
+	screenshot="img/projects/screenshots/dnd-spellbook.png"
 	isDark={true}
 	isCondensed={true}
 	parentBreadcrumb={{
