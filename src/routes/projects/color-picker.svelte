@@ -27,7 +27,6 @@
 	let pickerOpen = false;
 	let selectedColorMode = 'RGB';
 
-	let historyModal, favoritesModal;
 	let historyList, favoritesList;
 
 	$: if ($settings.color) {
