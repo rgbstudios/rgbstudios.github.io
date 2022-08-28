@@ -13,8 +13,7 @@
 	import CopyableInput from '$lib/components/CopyableInput.svelte';
 	import Range from '$lib/components/Range.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
-	import HistoryColorListModal from '$lib/components/modals/color_picker/HistoryColorListModal.svelte';
-	import FavouriteColorListModal from '$lib/components/modals/color_picker/FavouriteColorListModal.svelte';
+	import ColorListModal from '$lib/components/modals/color_picker/ColorListModal.svelte';
 
 	// import namer from 'color-namer';
 
@@ -361,8 +360,18 @@
 	</div>
 </div>
 
-<HistoryColorListModal bind:historyList />
-<FavouriteColorListModal bind:favoritesList />
+<ColorListModal
+	bind:colorItems={favoritesList}
+	id="favorite-color-list-modal"
+	title="Favorites"
+	settingName={favoritesList}
+/>
+<ColorListModal
+	bind:colorItems={historyList}
+	id="history-color-list-modal"
+	title="History"
+	settingName={historyList}
+/>
 
 <style>
 	h1,
