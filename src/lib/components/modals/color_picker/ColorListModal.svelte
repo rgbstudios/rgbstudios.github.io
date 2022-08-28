@@ -6,7 +6,7 @@
 	export let id, title, colorItems, settingName;
 </script>
 
-<Modal {id}>
+<Modal {id} class="max-w-full bg-white text-black" fluid={true}>
 	<div slot="title">{title}</div>
 	<ColorList bind:items={$settings[settingName]} bind:this={colorItems} modalId={id} />
 </Modal>

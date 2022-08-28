@@ -67,7 +67,7 @@
 <label for={id} class="modal" class:open={!hidden} on:transitionend={trapFocus}>
 	<label
 		for=""
-		class="overscroll-contain modal-box relative rounded border-2"
+		class="overscroll-contain modal-box relative rounded border-2 {$$props.class}"
 		class:max-w-full={fluid}
 	>
 		{#if $$slots.title || showCloseBtn}
