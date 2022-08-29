@@ -25,9 +25,8 @@
 	 * Implement dark mode (?)
 	 * Implement delete all data
 	 * Implement clear, download, and upload btns
-	 * Implement menu and other sites
 	 * Add info modal with how advantage works, that expertiece is double proficiency, and about rolling for initiative, to attack against AC, and for damage
-	 * Option to click to roll die by itself
+	 * Option to doubleclick to roll die by itself
 	 * Menton that modifiers are stored in the website url
 	 * Find delimeter other than 'a' for url params (?)
 	 * Add help and info modals

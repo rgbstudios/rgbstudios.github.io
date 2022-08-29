@@ -2,6 +2,8 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
+	import downloadFile from '$lib/util/downloadFile';
+
 	export let modifiers, modifierNames, notes;
 </script>
 
@@ -52,10 +54,16 @@
 			<h3>Notes:</h3>
 			<textarea bind:value={notes} rows="5" class="textarea w-full" />
 			<div class="xs:grid xs:grid-cols-2 xs:gap-2">
-				<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+				<button
+					class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0"
+					on:click={() => (notes = '')}
+				>
 					<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Clear Notes
 				</button>
-				<button class="btn block h-auto leading-6 text-xs">
+				<button
+					class="btn block h-auto leading-6 text-xs"
+					on:click={() => downloadFile(notes ?? '', 'dnd-notes.txt')}
+				>
 					<Icon name="download" class="w-4 h-4 inline" /> &nbsp; Download Notes
 				</button>
 			</div>
