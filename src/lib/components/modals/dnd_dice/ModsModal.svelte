@@ -28,6 +28,21 @@
 			'dnd-modifiers.txt'
 		);
 	}
+
+	function clearMods() {
+		modifiers = {
+			str: 0,
+			dex: 0,
+			con: 0,
+			int: 0,
+			wis: 0,
+			cha: 0,
+
+			prf: 0,
+			spl: 0,
+			itv: 0
+		};
+	}
 </script>
 
 <Modal id="dnd-dice-mods-modal" class="bg-white text-base-900">
@@ -62,7 +77,7 @@
 
 		<div class="col-span-3 my-2" />
 
-		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0" on:click={clearMods}>
 			<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Clear Modifiers
 		</button>
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0" on:click={downloadMods}>
