@@ -15,8 +15,9 @@
 
 	import copyText from '$lib/util/copyText';
 
-	let searchValue = '',
-		spellName = '',
+	import { spellbookSettings } from '$lib/stores/dnd-dice';
+
+	let spellName = '',
 		spellInfo = [];
 
 	// api variables
@@ -42,14 +43,14 @@
 		//get url params
 		const url = new URL(window.location.href);
 		const q = url.searchParams.get('q');
-		searchValue = q ?? 'magic missile';
+		$spellbookSettings.searchValue = q ?? 'magic missile';
 
-		doSearch(searchValue);
+		doSearch($spellbookSettings.searchValue);
 	});
 
-	$: if (searchValue) {
-		console.log('searching:', searchValue);
-		doSearch(searchValue);
+	$: if ($spellbookSettings.searchValue) {
+		console.log('searching:', $spellbookSettings.searchValue);
+		doSearch($spellbookSettings.searchValue);
 	}
 
 	// https://stackoverflow.com/a/53620876/4907950
@@ -126,7 +127,7 @@
 				const tmpArr = resultData[idx].url.split('/');
 				const num = tmpArr[tmpArr.length - 1];
 				getSpellData(num);
-				searchValue = spellName;
+				$spellbookSettings.searchValue = spellName;
 				history.replaceState({}, '', '?q=' + spellName);
 				document.title = spellName + ' - D&D Spellbook | RGB Studios';
 				return;
@@ -185,7 +186,7 @@
 		</button>
 		<Autocomplete
 			id="dnd-spell-search-autocomplete"
-			bind:value={searchValue}
+			bind:value={$spellbookSettings.searchValue}
 			placeholder="Search for a spell..."
 			options={spellNames}
 			maxResults={false}
