@@ -5,20 +5,9 @@
 	import Icon from '$lib/components/Icon.svelte';
 
 	import downloadFile from '$lib/util/downloadFile';
+	import { getDieRollerParams } from '$lib/util/dndUtil';
 
 	export let modifiers, modifierNames, notes;
-
-	function getDieRollerParams() {
-		// 9 modifiers separated by spaces
-		let m = '';
-		for (const modifier in modifiers) {
-			m += modifiers[modifier] + ' ';
-		}
-		m = m.slice(0, -1); // remove last space
-
-		m = btoa(m); // encode base 64
-		return '?m=' + m;
-	}
 
 	function downloadMods() {
 		let modText = '';
@@ -27,7 +16,10 @@
 			modText += '\r\n' + modifier + ': ' + modifiers[modifier];
 		}
 		downloadFile(
-			'Mods:\r\n' + 'https://rgbstudios.org/projects/dnd-dice' + getDieRollerParams() + modText,
+			'Mods:\r\n' +
+				'https://rgbstudios.org/projects/dnd-dice' +
+				getDieRollerParams(modifiers) +
+				modText,
 			'dnd-modifiers.txt'
 		);
 	}

@@ -10,7 +10,7 @@
 	import SettingsModal from '$lib/components/modals/dnd_dice/SettingsModal.svelte';
 	import ChangeDiceModal from '$lib/components/modals/dnd_dice/ChangeDiceModal.svelte';
 
-	import { getRoll } from '$lib/util/dndUtil';
+	import { getDieRollerParams, getRoll } from '$lib/util/dndUtil';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
 
@@ -128,6 +128,11 @@
 			synth.speak(msg);
 		}
 	};
+
+	// todo: implement if link checkbox
+	function updateParams() {
+		history.replaceState({}, '', getDieRollerParams(modifiers));
+	}
 
 	// dice roll
 	let rollText = '';
