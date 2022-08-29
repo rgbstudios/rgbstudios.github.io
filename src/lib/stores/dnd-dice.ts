@@ -75,66 +75,72 @@ interface SpellbookSettings {
 	searchValue: string;
 }
 
-// All together
+// Defaults
 
-interface Settings {
-	dice: DiceSettings;
-	character: CharacterRollerSettings;
-	spellbook: SpellbookSettings;
-}
+const defaultDiceSettings: DiceSettings = {
+	currentAmount: 1,
+	currentSides: 20,
+	customAmount: 10,
+	customSides: 10,
 
-const defaultSettings: Settings = {
-	dice: {
-		currentAmount: 1,
-		currentSides: 20,
-		customAmount: 10,
-		customSides: 10,
+	modifier: 0,
+	advantage: 'non',
+	attribute: 'non',
+	bonus: 'non',
 
-		modifier: 0,
-		advantage: 'non',
-		attribute: 'non',
-		bonus: 'non',
+	modifiers: {
+		str: 0,
+		dex: 0,
+		con: 0,
+		int: 0,
+		wis: 0,
+		cha: 0,
 
-		modifiers: {
-			str: 0,
-			dex: 0,
-			con: 0,
-			int: 0,
-			wis: 0,
-			cha: 0,
-
-			prf: 0,
-			spl: 0,
-			itv: 0
-		},
-
-		settings: {
-			speak: false,
-			dark: false
-		},
-
-		notes: '',
-		rollHistory: [],
-		rolledDice: 0
+		prf: 0,
+		spl: 0,
+		itv: 0
 	},
-	character: {
-		characters: [],
-		characterName: '',
-		historyText: '',
 
-		settings: {
-			displayRolling: true,
-			exportUnicodeDice: false
-		},
-
-		selectedModifiers: ['non', 'non', 'non', 'non', 'non', 'non']
+	settings: {
+		speak: false,
+		dark: false
 	},
-	spellbook: {
-		searchValue: ''
-	}
+
+	notes: '',
+	rollHistory: [],
+	rolledDice: 0
 };
 
-export const settings = localStore<Settings>(
+const defaultCharacterSettings: CharacterRollerSettings = {
+	characters: [],
+	characterName: '',
+	historyText: '',
+
+	settings: {
+		displayRolling: true,
+		exportUnicodeDice: false
+	},
+
+	selectedModifiers: ['non', 'non', 'non', 'non', 'non', 'non']
+};
+
+const defaultSpellbookSettings: SpellbookSettings = {
+	searchValue: ''
+};
+
+// Stores
+
+export const diceSettings = localStore<DiceSettings>(
 	'dnd-dice-settings',
-	JSON.parse(JSON.stringify(defaultSettings))
+	JSON.parse(JSON.stringify(defaultDiceSettings))
+);
+
+export const characterSettings = localStore<CharacterRollerSettings>(
+	'dnd-dice-character-settings',
+	JSON.parse(JSON.stringify(defaultCharacterSettings))
+);
+
+export const spellbookSettings = localStore<SpellbookSettings>(
+	'dnd-dice-spellbook-settings',
+	JSON.parse(JSON.stringify(defaultSpellbookSettings))
 );
