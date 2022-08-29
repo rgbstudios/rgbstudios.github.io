@@ -111,7 +111,7 @@
 			modifiers.prf = parseInt(m[6]);
 			modifiers.spl = parseInt(m[7]);
 			modifiers.itv = parseInt(m[8]);
-			// TODO: open mods modal
+			// TODO: open mods modal and show toast that loaded mods successfully from url
 		}
 	});
 
