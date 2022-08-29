@@ -1,5 +1,4 @@
 <script>
-	// todo show loader when searching
 	// http://www.dnd5eapi.co/docs/
 	import { onMount } from 'svelte';
 
@@ -9,6 +8,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import Loader from '$lib/components/Loader.svelte';
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
 	import SpellbookAboutModal from '$lib/components/modals/dnd_dice/SpellbookAboutModal.svelte';
@@ -23,9 +23,13 @@
 	let resultData = {};
 	let spellNames = [];
 
+	let loading = true;
+
 	onMount(async function () {
 		const response = await fetch('http://www.dnd5eapi.co/api/spells');
 		const data = await response.json();
+		setTimeout(() => (loading = false), 250);
+		// loading = false;
 		// console.log(data);
 
 		// save data for later
@@ -65,9 +69,12 @@
 	// search
 
 	async function getSpellData(spellName) {
+		loading = true;
 		const response = await fetch('http://www.dnd5eapi.co/api/spells/' + spellName);
 		const data = await response.json();
 		console.log(data);
+		// loading = false;
+		setTimeout(() => (loading = false), 250);
 
 		// spellInfo = propertiesToArray(data);
 		// return;
@@ -189,14 +196,19 @@
 	</div>
 </div>
 
-<h3 class="text-3xl my-4">{spellName}</h3>
-
-{#each spellInfo as info}
-	<p class="my-2">
-		<b>{info.split(':')[0]}</b>:
-		{info.split(':')[1]}
-	</p>
-{/each}
+{#if loading}
+	<div class="my-4">
+		<Loader />
+	</div>
+{:else}
+	<h3 class="text-3xl my-4">{spellName}</h3>
+	{#each spellInfo as info}
+		<p class="my-2">
+			<b>{info.split(':')[0]}</b>:
+			{info.split(':')[1]}
+		</p>
+	{/each}
+{/if}
 
 <SpellbookAboutModal />
 

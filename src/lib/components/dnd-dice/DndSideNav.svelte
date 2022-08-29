@@ -3,7 +3,7 @@
 
 	let open = false;
 
-	// TODO: add initiative tracker?
+	// maybe todo: add initiative tracker?
 </script>
 
 <button class="btn btn-square absolute top-0 left-0 z-30" on:click={() => (open = !open)}>
