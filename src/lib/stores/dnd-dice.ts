@@ -56,7 +56,7 @@ interface Character {
 	modTotal: number;
 }
 
-interface CharacterRollerSettings {
+interface CharacterSettings {
 	characters: Character[];
 	characterName: string;
 	historyText: string;
@@ -111,7 +111,7 @@ const defaultDiceSettings: DiceSettings = {
 	rolledDice: 0
 };
 
-const defaultCharacterSettings: CharacterRollerSettings = {
+const defaultCharacterSettings: CharacterSettings = {
 	characters: [],
 	characterName: '',
 	historyText: '',
@@ -135,7 +135,7 @@ export const diceSettings = localStore<DiceSettings>(
 	JSON.parse(JSON.stringify(defaultDiceSettings))
 );
 
-export const characterSettings = localStore<CharacterRollerSettings>(
+export const characterSettings = localStore<CharacterSettings>(
 	'dnd-dice-character-settings',
 	JSON.parse(JSON.stringify(defaultCharacterSettings))
 );
