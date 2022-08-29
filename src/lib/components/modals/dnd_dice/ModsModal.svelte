@@ -5,6 +5,29 @@
 	import downloadFile from '$lib/util/downloadFile';
 
 	export let modifiers, modifierNames, notes;
+
+	function getDieRollerParams() {
+		// 9 modifiers separated by spaces
+		let m = '';
+		for (const modifier in modifiers) {
+			m += modifiers[modifier] + ' ';
+		}
+		m = m.slice(0, -1); // remove last space
+
+		m = btoa(m); // encode base 64
+		return '?m=' + m;
+	}
+
+	function downloadMods() {
+		let modText = '';
+		for (const modifier in modifiers) {
+			modText += '\r\n' + modifierNames[modifier] + ': ' + modifiers[modifier];
+		}
+		downloadFile(
+			'Mods:\r\n' + 'https://rgbstudios.org/projects/dnd-dice' + getDieRollerParams() + modText,
+			'dnd-modifiers.txt'
+		);
+	}
 </script>
 
 <Modal id="dnd-dice-mods-modal" class="bg-white text-base-900">
@@ -42,7 +65,7 @@
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
 			<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Clear Modifiers
 		</button>
-		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0">
+		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0" on:click={downloadMods}>
 			<Icon name="download" class="w-4 h-4 inline" /> &nbsp; Download Modifiers
 		</button>
 		<button class="btn block h-auto leading-6 text-xs">

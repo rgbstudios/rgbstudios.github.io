@@ -107,6 +107,9 @@
 			modifiers.int = parseInt(m[3]);
 			modifiers.wis = parseInt(m[4]);
 			modifiers.cha = parseInt(m[5]);
+			modifiers.prf = parseInt(m[6]);
+			modifiers.spl = parseInt(m[7]);
+			modifiers.itv = parseInt(m[8]);
 			// TODO: open mods modal
 		}
 	});
