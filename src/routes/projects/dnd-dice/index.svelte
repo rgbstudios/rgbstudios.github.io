@@ -134,9 +134,8 @@
 		history.replaceState({}, '', getDieRollerParams(modifiers));
 	}
 
-	// dice roll
+	// core dice roll logic
 	let rollText = '';
-	// ---------------- function for rolling dice ----------------
 	//advantage is 0 if none, 1 if advantage, -1 if disadvantage. values are strings
 	function doRolls() {
 		let result = 0,
