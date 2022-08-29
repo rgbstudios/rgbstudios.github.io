@@ -21,7 +21,6 @@
 
 	// TODO: fix url param import / export
 	// TODO: local storage settings
-	// TODO: descriptions of each ability in a modal, see https://www.enworld.org/threads/eight-abilities-str-con-dex-ath-int-per-cha-wis.682800/
 
 	/**
 	 * future todo:
@@ -33,6 +32,7 @@
 	 * show percentile option
 	 * roll one at a time animation option
 	 * option to download img of skills by stat and modifiers
+	 * implement stats in language into text somewhere: https://www.dmingwithcharisma.com/2011/10/dd-stats-in-simple-language/
 	 * percentile option
 	function percentile(num) {
 		num -= 3;
