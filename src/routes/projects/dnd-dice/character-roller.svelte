@@ -17,6 +17,7 @@
 
 	import copyText from '$lib/util/copyText';
 	import downloadFile from '$lib/util/downloadFile';
+	import { getRoll } from '$lib/util/dndUtil';
 
 	// TODO: fix url param import / export
 	// TODO: local storage settings
@@ -90,9 +91,6 @@
 
 		this.mod = getStatMod(this.value);
 	}
-
-	// todo move to dnd dice util
-	const getRoll = (sides) => Math.floor(Math.random() * sides) + 1;
 
 	let characters = [new Character()];
 

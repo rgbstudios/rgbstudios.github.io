@@ -10,6 +10,8 @@
 	import SettingsModal from '$lib/components/modals/dnd_dice/SettingsModal.svelte';
 	import ChangeDiceModal from '$lib/components/modals/dnd_dice/ChangeDiceModal.svelte';
 
+	import { getRoll } from '$lib/util/dndUtil';
+
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
 
 	/**
@@ -111,7 +113,6 @@
 	});
 
 	// utility
-	const getRoll = (sides) => Math.floor(Math.random() * sides) + 1;
 
 	const canTalk = () => 'speechSynthesis' in window;
 
