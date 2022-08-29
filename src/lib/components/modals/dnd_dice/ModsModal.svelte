@@ -1,4 +1,6 @@
 <script>
+	import { onMount } from 'svelte';
+
 	import Modal from '$lib/components/base/Modal.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
@@ -21,7 +23,8 @@
 	function downloadMods() {
 		let modText = '';
 		for (const modifier in modifiers) {
-			modText += '\r\n' + modifierNames[modifier] + ': ' + modifiers[modifier];
+			// note: using `modifier` and not `modifierNames[modifier]` because we want the three letter shorthand
+			modText += '\r\n' + modifier + ': ' + modifiers[modifier];
 		}
 		downloadFile(
 			'Mods:\r\n' + 'https://rgbstudios.org/projects/dnd-dice' + getDieRollerParams() + modText,
@@ -43,6 +46,50 @@
 			itv: 0
 		};
 	}
+
+	function uploadMods() {
+		document.getElementById('fileInput').click();
+	}
+
+	// TODO: works sometimes?
+	function processFile(evt) {
+		let file = evt.target.result;
+		if (file?.length) {
+			const results = file.split('\r\n');
+			console.log(results);
+
+			// todo: try catch and console log error, maybe show toast that there was an error processing file
+			// substr 5,4 because index 5 is the 6th character, after 'xyz: ' and 4 is the length, where max is '-999'
+			modifiers.str = parseInt(results[0 + 2].substr(5, 4));
+			modifiers.dex = parseInt(results[1 + 2].substr(5, 4));
+			modifiers.con = parseInt(results[2 + 2].substr(5, 4));
+			modifiers.int = parseInt(results[3 + 2].substr(5, 4));
+			modifiers.wis = parseInt(results[4 + 2].substr(5, 4));
+			modifiers.cha = parseInt(results[5 + 2].substr(5, 4));
+			modifiers.prf = parseInt(results[6 + 2].substr(5, 4));
+			modifiers.spl = parseInt(results[7 + 2].substr(5, 4));
+			modifiers.itv = parseInt(results[8 + 2].substr(5, 4));
+
+			// todo: update params if link btn checked
+		} else {
+			console.log('no file');
+		}
+	}
+
+	onMount(() => {
+		const fileInput = document.getElementById('fileInput');
+		fileInput.onchange = () => {
+			if (!window.FileReader) return; // browser not supported. TODO: toast
+
+			if (fileInput.files.length) {
+				// file exists
+				let textFile = fileInput.files[0];
+				const reader = new FileReader();
+				reader.readAsText(textFile);
+				reader.onload = processFile;
+			}
+		};
+	});
 </script>
 
 <Modal id="dnd-dice-mods-modal" class="bg-white text-base-900">
@@ -83,9 +130,11 @@
 		<button class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0" on:click={downloadMods}>
 			<Icon name="download" class="w-4 h-4 inline" /> &nbsp; Download Modifiers
 		</button>
-		<button class="btn block h-auto leading-6 text-xs">
+		<button class="btn block h-auto leading-6 text-xs" on:click={uploadMods}>
 			<Icon name="upload" class="w-4 h-4 inline" /> &nbsp; Upload Modifiers
 		</button>
+
+		<input id="fileInput" class="hidden" type="file" accept=".txt" />
 
 		<div class="col-span-3">
 			<hr class="my-6" />

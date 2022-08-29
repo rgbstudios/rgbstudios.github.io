@@ -30,6 +30,7 @@
 	 * Menton that modifiers are stored in the website url
 	 * Find delimeter other than 'a' for url params (?)
 	 * Add help and info modals
+	 * link / unlink btn for url params, store in settings, add to settings modal
 	 */
 
 	let currentAmount = 1,
