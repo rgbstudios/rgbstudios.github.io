@@ -23,6 +23,28 @@
 	// TODO: local storage settings
 	// TODO: descriptions of each ability in a modal, see https://www.enworld.org/threads/eight-abilities-str-con-dex-ath-int-per-cha-wis.682800/
 
+	/**
+	 * future todo:
+	 * options to chose number of stats generated, number of rolls, number of dice dropped, dice sides, etc
+	 * enter custom mods table
+	 * show method used to generate character in history and download txt file
+	 * create and download x characters at a time
+	 * speak option
+	 * show percentile option
+	 * roll one at a time animation option
+	 * option to download img of skills by stat and modifiers
+	 * percentile option
+	function percentile(num) {
+		num -= 3;
+		let val=0;
+		for(i=0; i<num; i++)
+			val += odds[i];
+		val += Math.ceil(odds[num]/2);
+		val /= 1296;
+		return val;
+	}
+	 */
+
 	let characterName = '';
 	let historyText = '';
 	let showImportAlert = false;
