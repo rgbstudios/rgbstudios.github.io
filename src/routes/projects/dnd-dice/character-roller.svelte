@@ -384,7 +384,7 @@
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
 	{#each $s.selectedModifiers as selectedMod, idx}
-		{#if currentCharacter && loaded}
+		{#if loaded}
 			<div class="border-2 border-base-200 p-4 rounded-lg text-center">
 				<p class="text-4xl">
 					{@html getDiceCodes(
@@ -411,7 +411,7 @@
 	{/each}
 </div>
 
-{#if !isRollingAnimation && currentCharacter && loaded}
+{#if !isRollingAnimation && loaded}
 	<div class="text-center my-4">
 		<div class="w-20 sm:w-32 text-left inline-block border-2 border-base-200 p-2">
 			<b>Total:</b>
