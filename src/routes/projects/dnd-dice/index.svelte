@@ -32,7 +32,6 @@
 	 * Menton that modifiers are stored in the website url
 	 * Find delimeter other than 'a' for url params (?)
 	 * Add help and info modals
-	 * link / unlink btn for url params, store in settings, add to settings modal
 	 */
 
 	// values used under the hood mapped to values shown to user
@@ -55,12 +54,6 @@
 		dis: 'Disadvantage'
 	};
 
-	// settings
-	let settings = {
-		speak: false,
-		linkParams: false
-	};
-
 	// misc
 	let notes = '',
 		rollHistory = [],
@@ -71,9 +64,10 @@
 	$: if ($s.currentSides !== 20) $s.bonus = 'non';
 
 	// update url params when modifiers changes if linkParams setting is enabled
-	// TODO: why this no run
-	$: if ($s.modifiers && settings && settings.linkParams) {
-		updateParams();
+	$: if ($s.modifiers && $s.settings.linkParams) {
+		updateParams(true);
+	} else {
+		updateParams(false);
 	}
 
 	onMount(() => {
@@ -109,9 +103,9 @@
 	};
 
 	// todo: this breaks sometimes `history is not defined`
-	function updateParams() {
+	function updateParams(doLink) {
 		if (history) {
-			history.replaceState({}, '', getDieRollerParams($s.modifiers));
+			history.replaceState({}, '', doLink ? getDieRollerParams($s.modifiers) : '?m=');
 		}
 	}
 
@@ -171,7 +165,7 @@
 		rollHistory = rollHistory; // reactive bugfix
 		rolledDice += $s.currentAmount === 1 && $s.advantage !== 'non' ? 2 : $s.currentAmount;
 
-		if (settings.speak) {
+		if ($s.settings.speak) {
 			talk(rollText.replace('|  Rolls:', '... rolls were: '));
 		}
 	}
@@ -233,9 +227,9 @@
 	</ModalButton>
 </div>
 
-<ModsModal modifiers={$s.modifiers} {modifierNames} {notes} />
+<ModsModal bind:modifiers={$s.modifiers} {modifierNames} {notes} />
 <HistoryModal {rollHistory} {rolledDice} />
-<SettingsModal {settings} />
+<SettingsModal bind:settings={$s.settings} />
 <ChangeDiceModal bind:value={$s.customAmount} title="Number of Dice" change="dice" />
 <ChangeDiceModal bind:value={$s.customSides} title="Dice Sides" change="sides" />
 
