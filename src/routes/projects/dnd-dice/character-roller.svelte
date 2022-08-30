@@ -19,6 +19,8 @@
 	import downloadFile from '$lib/util/downloadFile';
 	import { getRoll } from '$lib/util/dndUtil';
 
+	import { characterSettings as s } from '$lib/stores/dnd-dice';
+
 	// TODO: fix url param import / export
 	// TODO: local storage settings
 
@@ -45,18 +47,9 @@
 	}
 	 */
 
-	let characterName = '';
-	let historyText = '';
 	let showImportAlert = false;
 	let isRollingAnimation = false;
 	let animationRolls = [];
-
-	let settings = {
-		displayRolling: true,
-		exportUnicodeDice: false
-	};
-
-	let selectedModifiers = ['non', 'non', 'non', 'non', 'non', 'non'];
 
 	const modifierNames = {
 		non: '-',
@@ -69,10 +62,10 @@
 		cha: 'Charisma'
 	};
 
-	$: currentCharacter = characters[characters.length - 1];
+	$: currentCharacter = $s.characters[$s.characters.length - 1];
 
-	$: charactersGeneratedText = `${characters.length} character${
-		characters.length !== 1 ? 's' : ''
+	$: charactersGeneratedText = `${$s.characters.length} character${
+		$s.characters.length !== 1 ? 's' : ''
 	} generated`;
 
 	const modNames = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
@@ -114,8 +107,6 @@
 		this.mod = getStatMod(this.value);
 	}
 
-	let characters = [new Character()];
-
 	// utils
 	function getStatMod(stat) {
 		for (let i = 3, j = -4; ; i += 2, j++) {
@@ -137,7 +128,7 @@
 	}
 
 	function downloadCharacter() {
-		if (characters.length === 0) return;
+		if ($s.characters.length === 0) return;
 		const modifierNameMap = {
 			non: ' - ',
 			str: 'Str',
@@ -147,11 +138,11 @@
 			wis: 'Wis',
 			cha: 'Cha'
 		};
-		let txt = characterName + '\r\n';
+		let txt = $s.characterName + '\r\n';
 		for (let i = 0; i < currentCharacter.stats.length; i++) {
-			txt += modifierNameMap[selectedModifiers[i]] + ': ';
+			txt += modifierNameMap[$s.selectedModifiers[i]] + ': ';
 			for (let j = 0; j < currentCharacter.stats[i].rolls.length; j++) {
-				if (settings.exportUnicodeDice) txt += getDieUnicode(currentCharacter.stats[i].rolls[j]);
+				if ($s.settings.exportUnicodeDice) txt += getDieUnicode(currentCharacter.stats[i].rolls[j]);
 				else txt += currentCharacter.stats[i].rolls[j].toString();
 
 				if (j < currentCharacter.stats[i].rolls.length - 1) txt += ',';
@@ -168,7 +159,7 @@
 			txt +=
 				'\r\nRoll with your stats: https://rgbstudios.org/projects/dnd-dice' + getDieRollerParams();
 
-		downloadFile(txt, 'Character - ' + characterName + '.txt');
+		downloadFile(txt, 'Character - ' + $s.characterName + '.txt');
 	}
 
 	onMount(() => {
@@ -190,17 +181,19 @@
 
 			resetSelections();
 
-			for (let i = 0; i < selectedModifiers.length; i++) {
-				selectedModifiers[i] = modNames[parseInt(r.charAt(idx++))];
+			for (let i = 0; i < $s.selectedModifiers.length; i++) {
+				$s.selectedModifiers[i] = modNames[parseInt(r.charAt(idx++))];
 			}
 
-			characterName = r.substring(idx);
+			$s.characterName = r.substring(idx);
 
-			characters = [new Character(givenRolls)];
+			$s.characters = [new Character(givenRolls)];
 
-			console.log(characters[0]);
+			console.log($s.characters[0]);
 
 			showImportAlert = true;
+		} else {
+			$s.characters = [...$s.characters, new Character()];
 		}
 	});
 
@@ -256,14 +249,14 @@
 		}
 		for (let i = 0; i < 6; i++) {
 			// these values are also 0-6 so one digit
-			r += modNames.indexOf(selectedModifiers[i]);
+			r += modNames.indexOf($s.selectedModifiers[i]);
 		}
-		r += characterName;
+		r += $s.characterName;
 		r = btoa(r); // encode base64
 		return window.location.href.split('character-roller')[0] + 'character-roller' + '?r=' + r;
 	}
 
-	$: allAreSelected = !selectedModifiers.includes('non');
+	$: allAreSelected = !$s.selectedModifiers.includes('non');
 
 	// get url params for /dnd-dice
 	function getDieRollerParams() {
@@ -271,7 +264,7 @@
 		let m = '';
 
 		for (const modName of modNames) {
-			const idx = selectedModifiers.indexOf(modName);
+			const idx = $s.selectedModifiers.indexOf(modName);
 			console.log(idx);
 			m += currentCharacter.stats[idx].mod + ' ';
 		}
@@ -307,22 +300,21 @@
 
 	function rollCharacter() {
 		resetSelections();
-		characterName = '';
+		$s.characterName = '';
 
-		characters.push(new Character());
-		characters = characters; // update reactive stuff
+		$s.characters = [...$s.characters, new Character()];
 
-		if (settings.displayRolling) displayRolling();
+		if ($s.settings.displayRolling) displayRolling();
 
 		// show alert, remove url param
 		showImportAlert = false;
 		history.replaceState({}, '', '?r=');
 
-		historyText += prettyPrint(currentCharacter);
+		$s.historyText += prettyPrint(currentCharacter);
 	}
 
 	function resetSelections() {
-		selectedModifiers = ['non', 'non', 'non', 'non', 'non', 'non'];
+		$s.selectedModifiers = ['non', 'non', 'non', 'non', 'non', 'non'];
 	}
 </script>
 
@@ -389,7 +381,7 @@
 </div>
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-	{#each selectedModifiers as selectedMod, idx}
+	{#each $s.selectedModifiers as selectedMod, idx}
 		{#if currentCharacter}
 			<div class="border-2 border-base-200 p-4 rounded-lg text-center">
 				<p class="text-4xl">
@@ -407,7 +399,7 @@
 				{/if}
 				<select class="select select-bordered w-full" bind:value={selectedMod}>
 					{#each Object.keys(modifierNames) as mod}
-						<option value={mod} disabled={selectedModifiers.includes(mod) && mod !== 'non'}
+						<option value={mod} disabled={$s.selectedModifiers.includes(mod) && mod !== 'non'}
 							>{modifierNames[mod]}</option
 						>
 					{/each}
@@ -417,7 +409,7 @@
 	{/each}
 </div>
 
-{#if !isRollingAnimation}
+{#if !isRollingAnimation && currentCharacter}
 	<div class="text-center my-4">
 		<div class="w-20 sm:w-32 text-left inline-block border-2 border-base-200 p-2">
 			<b>Total:</b>
@@ -447,7 +439,7 @@
 			type="text"
 			class="input mb-2 sm:mb-0 sm:border-r-0"
 			placeholder="Character name"
-			bind:value={characterName}
+			bind:value={$s.characterName}
 		/>
 		<input
 			type="text"
@@ -505,10 +497,10 @@
 	<div class="hidden xl:block" />
 </div>
 
-<CharacterHistoryModal {historyText} />
+<CharacterHistoryModal historyText={$s.historyText} />
 <CharacterInfoModal />
 <CharacterModifiersModal />
-<CharacterSettingsModal {settings} />
+<CharacterSettingsModal settings={$s.settings} />
 <CharacterSkillsModal />
 <CharacterStatsModal character={currentCharacter} />
 
