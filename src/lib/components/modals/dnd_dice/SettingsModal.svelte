@@ -6,6 +6,8 @@
 
 	import copyText from '$lib/util/copyText';
 
+	import { deleteDiceSettings } from '$lib/stores/dnd-dice';
+
 	export let settings;
 </script>
 
@@ -40,7 +42,7 @@
 		>
 			<Icon name="link" class="w-4 h-4 inline" /> &nbsp; Copy link to website
 		</button>
-		<button class="btn block h-auto leading-6 text-xs">
+		<button class="btn block h-auto leading-6 text-xs" on:click={deleteDiceSettings}>
 			<Icon name="trash" class="w-4 h-4 inline" /> &nbsp; Delete all data
 		</button>
 	</div>

@@ -144,3 +144,10 @@ export const spellbookSettings = localStore<SpellbookSettings>(
 	'dnd-dice-spellbook-settings',
 	JSON.parse(JSON.stringify(defaultSpellbookSettings))
 );
+
+// Reset (delete then resets on reload)
+
+export const deleteDiceSettings = () => {
+	localStorage.removeItem('dnd-dice-settings');
+	location.reload();
+};

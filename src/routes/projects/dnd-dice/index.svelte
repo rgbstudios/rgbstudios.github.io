@@ -24,10 +24,9 @@
 	 * Fix focus styles
 	 * Make URL params work
 	 * Input validation
-	 * Implement delete all data
+	 *
+	 * Future todo:
 	 * Option to doubleclick to roll die by itself
-	 * Menton that modifiers are stored in the website url
-	 * Find delimeter other than 'a' for url params (?)
 	 */
 
 	// values used under the hood mapped to values shown to user
