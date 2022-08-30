@@ -194,7 +194,7 @@
 
 			showImportAlert = true;
 		} else {
-			$s.characters = [...$s.characters, new Character()];
+			rollCharacter();
 		}
 		loaded = true;
 	});
