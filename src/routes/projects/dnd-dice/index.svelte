@@ -58,7 +58,6 @@
 	// settings
 	let settings = {
 		speak: false,
-		dark: false,
 		linkParams: false
 	};
 

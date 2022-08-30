@@ -34,7 +34,6 @@ interface DiceSettings {
 
 	settings: {
 		speak: boolean;
-		dark: boolean;
 		linkParams: boolean;
 	};
 
@@ -104,7 +103,6 @@ const defaultDiceSettings: DiceSettings = {
 
 	settings: {
 		speak: false,
-		dark: false,
 		linkParams: false
 	},
 

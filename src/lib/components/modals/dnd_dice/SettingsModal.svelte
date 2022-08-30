@@ -20,11 +20,6 @@
 	</label>
 
 	<label class="flex items-center gap-3 cursor-pointer my-2">
-		<input type="checkbox" bind:checked={settings.dark} class="checkbox" />
-		<span class="label-text">Dark mode</span>
-	</label>
-
-	<label class="flex items-center gap-3 cursor-pointer my-2">
 		<input type="checkbox" bind:checked={settings.linkParams} class="checkbox" />
 		<span class="label-text">Link modifiers in url parameters</span>
 	</label>
