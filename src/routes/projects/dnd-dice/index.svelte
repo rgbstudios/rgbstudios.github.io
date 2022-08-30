@@ -21,7 +21,6 @@
 	 * Todo:
 	 * SEO keywords ampersand is escaped (seems ok?)
 	 * FB messenger share not working
-	 * Fix focus styles
 	 * Make URL params work
 	 * Input validation
 	 *
@@ -345,6 +344,14 @@
 	input,
 	label {
 		@apply font-bold;
+	}
+
+	button:focus,
+	select:focus,
+	input:focus,
+	label:focus,
+	textarea:focus {
+		@apply outline-base-500;
 	}
 
 	button:not(.btn-info),

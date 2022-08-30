@@ -527,4 +527,12 @@
 	button.btn-info {
 		@apply text-white;
 	}
+
+	button:focus,
+	select:focus,
+	input:focus,
+	label:focus,
+	textarea:focus {
+		@apply outline-base-500;
+	}
 </style>

@@ -36,4 +36,12 @@
 	button {
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}
+
+	button:focus,
+	select:focus,
+	input:focus,
+	label:focus,
+	textarea:focus {
+		@apply outline-base-500;
+	}
 </style>

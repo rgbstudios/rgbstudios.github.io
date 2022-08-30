@@ -16,15 +16,22 @@
 	}
 
 	onMount(() => {
+		if (typeof google !== 'undefined') {
+			googleChartSetup();
+		} else {
+			setTimeout(googleChartSetup, 3000);
+		}
+	});
+
+	function googleChartSetup() {
 		// load google charts visualization API and corechart package
 		google.charts.load('current', { packages: ['corechart'] });
 
 		// set a callback to run after visualization API loads
 		google.charts.setOnLoadCallback(() => {
 			googleChartsLoaded = true;
-			// drawCharts();
 		});
-	});
+	}
 
 	// Creates and populates data table, instantiates charts, passes in data and draws charts
 	const odds = [1, 4, 10, 21, 38, 62, 91, 122, 148, 167, 172, 160, 131, 94, 54, 21];
@@ -156,5 +163,13 @@
 	th,
 	td {
 		@apply border-gray-200;
+	}
+
+	button:focus,
+	select:focus,
+	input:focus,
+	label:focus,
+	textarea:focus {
+		@apply outline-base-500;
 	}
 </style>

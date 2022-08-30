@@ -14,6 +14,7 @@ module.exports = {
 					100: '#eee',
 					200: '#ddd',
 					300: '#ccc',
+					500: '#aaa',
 					700: '#333',
 					800: '#222',
 					900: '#111'
@@ -39,6 +40,7 @@ module.exports = {
 		themes: [
 			{
 				rgbtheme: {
+					// https://daisyui.com/docs/colors/
 					'primary': '#396',
 					'success': '#396',
 					'info': '#36f',
