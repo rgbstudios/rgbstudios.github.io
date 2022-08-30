@@ -83,7 +83,8 @@
 	// settings
 	let settings = {
 		speak: false,
-		dark: false
+		dark: false,
+		linkParams: false
 	};
 
 	// misc
@@ -94,6 +95,12 @@
 	// reset disabled inputs
 	$: if (currentAmount !== 1) advantage = 'non';
 	$: if (currentSides !== 20) bonus = 'non';
+
+	// update url params when modifiers changes if linkParams setting is enabled
+	// TODO: why this no run
+	$: if (modifiers && settings && settings.linkParams) {
+		updateParams();
+	}
 
 	onMount(() => {
 		// load url params
@@ -127,9 +134,11 @@
 		}
 	};
 
-	// todo: implement if link checkbox
+	// todo: this breaks sometimes `history is not defined`
 	function updateParams() {
-		history.replaceState({}, '', getDieRollerParams(modifiers));
+		if (history) {
+			history.replaceState({}, '', getDieRollerParams(modifiers));
+		}
 	}
 
 	// core dice roll logic

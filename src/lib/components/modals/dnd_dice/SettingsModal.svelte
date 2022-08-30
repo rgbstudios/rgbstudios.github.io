@@ -24,6 +24,11 @@
 		<span class="label-text">Dark mode</span>
 	</label>
 
+	<label class="flex items-center gap-3 cursor-pointer my-2">
+		<input type="checkbox" bind:checked={settings.linkParams} class="checkbox" />
+		<span class="label-text">Link modifiers in url parameters</span>
+	</label>
+
 	<div class="xs:grid xs:grid-cols-2 xs:gap-2 mt-6">
 		<button
 			class="btn block h-auto leading-6 text-xs mb-2 xs:mb-0"
