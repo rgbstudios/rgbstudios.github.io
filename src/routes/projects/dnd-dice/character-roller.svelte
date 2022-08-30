@@ -21,8 +21,7 @@
 
 	import { characterSettings as s } from '$lib/stores/dnd-dice';
 
-	// TODO: fix url param import / export
-	// TODO: local storage settings
+	// TODO: bugtest url param import / export
 
 	/**
 	 * future todo:

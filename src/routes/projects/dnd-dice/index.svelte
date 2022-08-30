@@ -117,10 +117,8 @@
 
 	// utility
 
-	const canTalk = () => 'speechSynthesis' in window;
-
 	const talk = (words) => {
-		if (canTalk()) {
+		if ('speechSynthesis' in window) {
 			const synth = window.speechSynthesis;
 			const msg = new SpeechSynthesisUtterance(words);
 			msg.rate = 1;
