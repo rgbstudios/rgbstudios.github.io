@@ -54,11 +54,6 @@
 		dis: 'Disadvantage'
 	};
 
-	// misc
-	let notes = '',
-		rollHistory = [],
-		rolledDice = 0;
-
 	// reset disabled inputs
 	$: if ($s.currentAmount !== 1) $s.advantage = 'non';
 	$: if ($s.currentSides !== 20) $s.bonus = 'non';
@@ -161,9 +156,8 @@
 			'  |  Rolls: ' +
 			rolls.join(', ');
 
-		rollHistory.push(rollText);
-		rollHistory = rollHistory; // reactive bugfix
-		rolledDice += $s.currentAmount === 1 && $s.advantage !== 'non' ? 2 : $s.currentAmount;
+		$s.rollHistory = [...$s.rollHistory, rollText];
+		$s.rolledDice += $s.currentAmount === 1 && $s.advantage !== 'non' ? 2 : $s.currentAmount;
 
 		if ($s.settings.speak) {
 			talk(rollText.replace('|  Rolls:', '... rolls were: '));
@@ -227,8 +221,8 @@
 	</ModalButton>
 </div>
 
-<ModsModal bind:modifiers={$s.modifiers} {modifierNames} {notes} />
-<HistoryModal {rollHistory} {rolledDice} />
+<ModsModal bind:modifiers={$s.modifiers} {modifierNames} bind:notes={$s.notes} />
+<HistoryModal bind:rollHistory={$s.rollHistory} bind:rolledDice={$s.rolledDice} />
 <SettingsModal bind:settings={$s.settings} />
 <ChangeDiceModal bind:value={$s.customAmount} title="Number of Dice" change="dice" />
 <ChangeDiceModal bind:value={$s.customSides} title="Dice Sides" change="sides" />
