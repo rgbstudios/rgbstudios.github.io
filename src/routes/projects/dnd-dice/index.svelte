@@ -104,7 +104,7 @@
 
 	// todo: this breaks sometimes `history is not defined`
 	function updateParams(doLink) {
-		if (history) {
+		if (typeof history !== 'undefined') {
 			history.replaceState({}, '', doLink ? getDieRollerParams($s.modifiers) : '?m=');
 		}
 	}
