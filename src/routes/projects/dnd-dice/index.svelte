@@ -23,10 +23,7 @@
 	 * Fix focus styles
 	 * Make URL params work
 	 * Input validation
-	 * Store everything in local storage
-	 * Implement dark mode (?)
 	 * Implement delete all data
-	 * Implement clear, download, and upload btns
 	 * Add info modal with how advantage works, that expertiece is double proficiency, and about rolling for initiative, to attack against AC, and for damage
 	 * Option to doubleclick to roll die by itself
 	 * Menton that modifiers are stored in the website url
