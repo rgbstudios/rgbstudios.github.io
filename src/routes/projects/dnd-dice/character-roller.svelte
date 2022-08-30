@@ -9,7 +9,7 @@
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
 
 	import CharacterHistoryModal from '$lib/components/modals/dnd_dice/CharacterHistoryModal.svelte';
-	import CharacterInfoModal from '$lib/components/modals/dnd_dice/CharacterInfoModal.svelte';
+	import CharacterAboutModal from '$lib/components/modals/dnd_dice/CharacterAboutModal.svelte';
 	import CharacterModifiersModal from '$lib/components/modals/dnd_dice/CharacterModifiersModal.svelte';
 	import CharacterSettingsModal from '$lib/components/modals/dnd_dice/CharacterSettingsModal.svelte';
 	import CharacterSkillsModal from '$lib/components/modals/dnd_dice/CharacterSkillsModal.svelte';
@@ -488,8 +488,8 @@
 		<ModalButton _for="dnd-dice-character-history-modal" class="btn-info mr-2 mb-2">
 			<Icon name="history" /> &nbsp; History
 		</ModalButton>
-		<ModalButton _for="dnd-dice-character-info-modal" class="btn-info mr-2 mb-2">
-			<Icon name="info" /> &nbsp; Info
+		<ModalButton _for="dnd-dice-character-about-modal" class="btn-info mr-2 mb-2">
+			<Icon name="info" /> &nbsp; About
 		</ModalButton>
 		<ModalButton _for="dnd-dice-character-settings-modal" class="btn-info mr-2 mb-2">
 			<Icon name="settings" /> &nbsp; Settings
@@ -499,7 +499,7 @@
 </div>
 
 <CharacterHistoryModal historyText={$s.historyText} />
-<CharacterInfoModal />
+<CharacterAboutModal />
 <CharacterModifiersModal />
 <CharacterSettingsModal settings={$s.settings} />
 <CharacterSkillsModal />

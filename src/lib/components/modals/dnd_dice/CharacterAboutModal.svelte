@@ -3,9 +3,9 @@
 	import Modal from '$lib/components/base/Modal.svelte';
 </script>
 
-<Modal id="dnd-dice-character-info-modal" class="bg-white text-base-900">
+<Modal id="dnd-dice-character-about-modal" class="bg-white text-base-900">
 	<div slot="title">
-		<Icon name="info" /> &nbsp; Info
+		<Icon name="info" /> &nbsp; About
 	</div>
 
 	<h3>Website Info:</h3>
