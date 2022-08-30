@@ -162,6 +162,7 @@
 		downloadFile(txt, 'Character - ' + $s.characterName + '.txt');
 	}
 
+	let loaded = false;
 	onMount(() => {
 		const url = new URL(window.location.href);
 		let r = url.searchParams.get('r');
@@ -195,6 +196,7 @@
 		} else {
 			$s.characters = [...$s.characters, new Character()];
 		}
+		loaded = true;
 	});
 
 	function prettyPrint(character) {
@@ -382,7 +384,7 @@
 
 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
 	{#each $s.selectedModifiers as selectedMod, idx}
-		{#if currentCharacter}
+		{#if currentCharacter && loaded}
 			<div class="border-2 border-base-200 p-4 rounded-lg text-center">
 				<p class="text-4xl">
 					{@html getDiceCodes(
@@ -409,7 +411,7 @@
 	{/each}
 </div>
 
-{#if !isRollingAnimation && currentCharacter}
+{#if !isRollingAnimation && currentCharacter && loaded}
 	<div class="text-center my-4">
 		<div class="w-20 sm:w-32 text-left inline-block border-2 border-base-200 p-2">
 			<b>Total:</b>
