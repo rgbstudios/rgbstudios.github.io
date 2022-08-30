@@ -14,6 +14,8 @@
 
 	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
 
+	import { diceSettings as s } from '$lib/stores/dnd-dice';
+
 	/**
 	 * Todo:
 	 * SEO keywords ampersand is escaped (seems ok?)
@@ -32,12 +34,6 @@
 	 * Add help and info modals
 	 * link / unlink btn for url params, store in settings, add to settings modal
 	 */
-
-	let currentAmount = 1,
-		currentSides = 20;
-
-	let customAmount = 10,
-		customSides = 10;
 
 	let modifier = 0,
 		advantage = 'non',
@@ -93,8 +89,8 @@
 		rolledDice = 0;
 
 	// reset disabled inputs
-	$: if (currentAmount !== 1) advantage = 'non';
-	$: if (currentSides !== 20) bonus = 'non';
+	$: if ($s.currentAmount !== 1) advantage = 'non';
+	$: if ($s.currentSides !== 20) bonus = 'non';
 
 	// update url params when modifiers changes if linkParams setting is enabled
 	// TODO: why this no run
@@ -148,13 +144,13 @@
 		let result = 0,
 			rolls = [];
 
-		if (currentAmount === 1 && advantage !== 'non') {
-			rolls.push(getRoll(currentSides));
-			rolls.push(getRoll(currentSides));
+		if ($s.currentAmount === 1 && advantage !== 'non') {
+			rolls.push(getRoll($s.currentSides));
+			rolls.push(getRoll($s.currentSides));
 			result += advantage == 'adv' ? Math.max(rolls[0], rolls[1]) : Math.min(rolls[0], rolls[1]);
 		} else {
-			for (let i = 0; i < currentAmount; i++) {
-				rolls.push(getRoll(currentSides));
+			for (let i = 0; i < $s.currentAmount; i++) {
+				rolls.push(getRoll($s.currentSides));
 				result += rolls[i];
 			}
 		}
@@ -173,9 +169,9 @@
 
 		rollText =
 			'Rolled ' +
-			currentAmount +
+			$s.currentAmount +
 			' D' +
-			currentSides +
+			$s.currentSides +
 			(advantage === 'non' ? '' : advantage == 'adv' ? ' (advantage)' : ' (disadvantage)') +
 			(modifier === 0 ? '' : modifier > 0 ? ' +' + modifier : ' ' + modifier) +
 			(attribute === 'non'
@@ -195,7 +191,7 @@
 
 		rollHistory.push(rollText);
 		rollHistory = rollHistory; // reactive bugfix
-		rolledDice += currentAmount === 1 && advantage !== 'non' ? 2 : currentAmount;
+		rolledDice += $s.currentAmount === 1 && advantage !== 'non' ? 2 : $s.currentAmount;
 
 		if (settings.speak) {
 			talk(rollText.replace('|  Rolls:', '... rolls were: '));
@@ -262,19 +258,19 @@
 <ModsModal {modifiers} {modifierNames} {notes} />
 <HistoryModal {rollHistory} {rolledDice} />
 <SettingsModal {settings} />
-<ChangeDiceModal bind:value={customAmount} title="Number of Dice" change="dice" />
-<ChangeDiceModal bind:value={customSides} title="Dice Sides" change="sides" />
+<ChangeDiceModal bind:value={$s.customAmount} title="Number of Dice" change="dice" />
+<ChangeDiceModal bind:value={$s.customSides} title="Dice Sides" change="sides" />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
 	<div id="number-of-dice" class="btn-group sm:justify-center">
 		<label for="number-of-dice" class="hidden sm:block">Number of Dice:</label>
 		<br class="sm:hidden" />
-		{#each [1, 2, 3, 4, 5, customAmount] as num}
+		{#each [1, 2, 3, 4, 5, $s.customAmount] as num}
 			<button
 				class="btn"
-				class:btn-active={num === currentAmount}
-				on:click={() => (currentAmount = num)}
+				class:btn-active={num === $s.currentAmount}
+				on:click={() => ($s.currentAmount = num)}
 			>
 				{num}
 			</button>
@@ -289,11 +285,11 @@
 	<label for="dice-sides" class="sm:hidden block mb-2">Die:</label>
 	<div id="dice-sides" class="btn-group sm:justify-center">
 		<label for="dice-sides" class="hidden sm:block">Die:</label>
-		{#each [4, 6, 8, 12, 20, customSides] as num, idx}
+		{#each [4, 6, 8, 12, 20, $s.customSides] as num, idx}
 			<button
 				class="btn d-{num}"
-				class:btn-active={num === currentSides}
-				on:click={() => (currentSides = num)}
+				class:btn-active={num === $s.currentSides}
+				on:click={() => ($s.currentSides = num)}
 			>
 				{#if idx !== 5}
 					<img src="/img/projects/other/icon-d{num}.svg" alt="d{num}" class="w-6 h-6 mr-2" />
@@ -324,7 +320,7 @@
 		<select
 			id="adv-select"
 			class="select select-bordered w-full"
-			disabled={currentAmount !== 1}
+			disabled={$s.currentAmount !== 1}
 			bind:value={advantage}
 		>
 			{#each ['non', 'adv', 'dis'] as val}
@@ -345,7 +341,7 @@
 		<select
 			id="bonus-select"
 			class="select select-bordered w-full"
-			disabled={currentSides !== 20}
+			disabled={$s.currentSides !== 20}
 			bind:value={bonus}
 		>
 			{#each ['non', 'prf', 'exp', 'spl', 'itv'] as val}
