@@ -398,14 +398,14 @@
 					<p class="mb-4">
 						{(currentCharacter.stats[idx].mod > 0 ? '+' : '') + currentCharacter.stats[idx].mod}
 					</p>
+					<select class="select select-bordered w-full" bind:value={selectedMod}>
+						{#each Object.keys(modifierNames) as mod}
+							<option value={mod} disabled={$s.selectedModifiers.includes(mod) && mod !== 'non'}
+								>{modifierNames[mod]}</option
+							>
+						{/each}
+					</select>
 				{/if}
-				<select class="select select-bordered w-full" bind:value={selectedMod}>
-					{#each Object.keys(modifierNames) as mod}
-						<option value={mod} disabled={$s.selectedModifiers.includes(mod) && mod !== 'non'}
-							>{modifierNames[mod]}</option
-						>
-					{/each}
-				</select>
 			</div>
 		{/each}
 	</div>
