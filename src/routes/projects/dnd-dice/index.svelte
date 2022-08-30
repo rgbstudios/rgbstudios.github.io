@@ -35,11 +35,6 @@
 	 * link / unlink btn for url params, store in settings, add to settings modal
 	 */
 
-	let modifier = 0,
-		advantage = 'non',
-		attribute = 'non',
-		bonus = 'non';
-
 	// values used under the hood mapped to values shown to user
 	const modifierNames = {
 		non: 'None',
@@ -60,22 +55,6 @@
 		dis: 'Disadvantage'
 	};
 
-	// user data
-	// current user's modifiers
-
-	let modifiers = {
-		str: 0,
-		dex: 0,
-		con: 0,
-		int: 0,
-		wis: 0,
-		cha: 0,
-
-		prf: 0,
-		spl: 0,
-		itv: 0
-	};
-
 	// settings
 	let settings = {
 		speak: false,
@@ -89,12 +68,12 @@
 		rolledDice = 0;
 
 	// reset disabled inputs
-	$: if ($s.currentAmount !== 1) advantage = 'non';
-	$: if ($s.currentSides !== 20) bonus = 'non';
+	$: if ($s.currentAmount !== 1) $s.advantage = 'non';
+	$: if ($s.currentSides !== 20) $s.bonus = 'non';
 
 	// update url params when modifiers changes if linkParams setting is enabled
 	// TODO: why this no run
-	$: if (modifiers && settings && settings.linkParams) {
+	$: if ($s.modifiers && settings && settings.linkParams) {
 		updateParams();
 	}
 
@@ -105,15 +84,15 @@
 		if (m) {
 			// atob decodes base 64
 			m = atob(m).split(' ');
-			modifiers.str = parseInt(m[0]);
-			modifiers.dex = parseInt(m[1]);
-			modifiers.con = parseInt(m[2]);
-			modifiers.int = parseInt(m[3]);
-			modifiers.wis = parseInt(m[4]);
-			modifiers.cha = parseInt(m[5]);
-			modifiers.prf = parseInt(m[6]);
-			modifiers.spl = parseInt(m[7]);
-			modifiers.itv = parseInt(m[8]);
+			$s.modifiers.str = parseInt(m[0]);
+			$s.modifiers.dex = parseInt(m[1]);
+			$s.modifiers.con = parseInt(m[2]);
+			$s.modifiers.int = parseInt(m[3]);
+			$s.modifiers.wis = parseInt(m[4]);
+			$s.modifiers.cha = parseInt(m[5]);
+			$s.modifiers.prf = parseInt(m[6]);
+			$s.modifiers.spl = parseInt(m[7]);
+			$s.modifiers.itv = parseInt(m[8]);
 			// TODO: open mods modal and show toast that loaded mods successfully from url
 		}
 	});
@@ -133,7 +112,7 @@
 	// todo: this breaks sometimes `history is not defined`
 	function updateParams() {
 		if (history) {
-			history.replaceState({}, '', getDieRollerParams(modifiers));
+			history.replaceState({}, '', getDieRollerParams($s.modifiers));
 		}
 	}
 
@@ -144,10 +123,10 @@
 		let result = 0,
 			rolls = [];
 
-		if ($s.currentAmount === 1 && advantage !== 'non') {
+		if ($s.currentAmount === 1 && $s.advantage !== 'non') {
 			rolls.push(getRoll($s.currentSides));
 			rolls.push(getRoll($s.currentSides));
-			result += advantage == 'adv' ? Math.max(rolls[0], rolls[1]) : Math.min(rolls[0], rolls[1]);
+			result += $s.advantage == 'adv' ? Math.max(rolls[0], rolls[1]) : Math.min(rolls[0], rolls[1]);
 		} else {
 			for (let i = 0; i < $s.currentAmount; i++) {
 				rolls.push(getRoll($s.currentSides));
@@ -155,15 +134,15 @@
 			}
 		}
 
-		result += modifier;
-		if (attribute !== 'non') {
-			result += modifiers[attribute];
+		result += $s.modifier;
+		if ($s.attribute !== 'non') {
+			result += $s.modifiers[$s.attribute];
 		}
-		if (bonus !== 'non') {
-			if (bonus === 'exp') {
-				result += modifiers['prf'] * 2; // expertise is double proficiency
+		if ($s.bonus !== 'non') {
+			if ($s.bonus === 'exp') {
+				result += $s.modifiers['prf'] * 2; // expertise is double proficiency
 			} else {
-				result += modifiers[bonus];
+				result += $s.modifiers[$s.bonus];
 			}
 		}
 
@@ -172,17 +151,17 @@
 			$s.currentAmount +
 			' D' +
 			$s.currentSides +
-			(advantage === 'non' ? '' : advantage == 'adv' ? ' (advantage)' : ' (disadvantage)') +
-			(modifier === 0 ? '' : modifier > 0 ? ' +' + modifier : ' ' + modifier) +
-			(attribute === 'non'
+			($s.advantage === 'non' ? '' : $s.advantage == 'adv' ? ' (advantage)' : ' (disadvantage)') +
+			($s.modifier === 0 ? '' : $s.modifier > 0 ? ' +' + $s.modifier : ' ' + $s.modifier) +
+			($s.attribute === 'non'
 				? ''
-				: ' +' + modifierNames[attribute] + '(' + modifiers[attribute] + ')') +
-			(bonus === 'non'
+				: ' +' + modifierNames[$s.attribute] + '(' + $s.modifiers[$s.attribute] + ')') +
+			($s.bonus === 'non'
 				? ''
 				: ' +' +
-				  modifierNames[bonus] +
+				  modifierNames[$s.bonus] +
 				  '(' +
-				  (bonus === 'exp' ? modifiers['prf'] * 2 : modifiers[bonus]) +
+				  ($s.bonus === 'exp' ? $s.modifiers['prf'] * 2 : $s.modifiers[$s.bonus]) +
 				  ')') +
 			': ' +
 			result +
@@ -191,7 +170,7 @@
 
 		rollHistory.push(rollText);
 		rollHistory = rollHistory; // reactive bugfix
-		rolledDice += $s.currentAmount === 1 && advantage !== 'non' ? 2 : $s.currentAmount;
+		rolledDice += $s.currentAmount === 1 && $s.advantage !== 'non' ? 2 : $s.currentAmount;
 
 		if (settings.speak) {
 			talk(rollText.replace('|  Rolls:', '... rolls were: '));
@@ -199,10 +178,10 @@
 	}
 
 	function doReset() {
-		modifier = 0;
-		advantage = 'non';
-		attribute = 'non';
-		bonus = 'non';
+		$s.modifier = 0;
+		$s.advantage = 'non';
+		$s.attribute = 'non';
+		$s.bonus = 'non';
 	}
 </script>
 
@@ -255,7 +234,7 @@
 	</ModalButton>
 </div>
 
-<ModsModal {modifiers} {modifierNames} {notes} />
+<ModsModal modifiers={$s.modifiers} {modifierNames} {notes} />
 <HistoryModal {rollHistory} {rolledDice} />
 <SettingsModal {settings} />
 <ChangeDiceModal bind:value={$s.customAmount} title="Number of Dice" change="dice" />
@@ -311,7 +290,7 @@
 			type="number"
 			min="-999"
 			max="999"
-			bind:value={modifier}
+			bind:value={$s.modifier}
 			class="input input-bordered w-full"
 		/>
 	</div>
@@ -321,7 +300,7 @@
 			id="adv-select"
 			class="select select-bordered w-full"
 			disabled={$s.currentAmount !== 1}
-			bind:value={advantage}
+			bind:value={$s.advantage}
 		>
 			{#each ['non', 'adv', 'dis'] as val}
 				<option value={val}>{modifierNames[val]}</option>
@@ -330,7 +309,7 @@
 	</div>
 	<div class="mx-auto mt-8 w-full">
 		<label for="attr-select" class="w-full">Attribute:</label>
-		<select id="attr-select" class="select select-bordered w-full" bind:value={attribute}>
+		<select id="attr-select" class="select select-bordered w-full" bind:value={$s.attribute}>
 			{#each ['non', 'str', 'dex', 'con', 'int', 'wis', 'cha'] as val}
 				<option value={val}>{modifierNames[val]}</option>
 			{/each}
@@ -342,7 +321,7 @@
 			id="bonus-select"
 			class="select select-bordered w-full"
 			disabled={$s.currentSides !== 20}
-			bind:value={bonus}
+			bind:value={$s.bonus}
 		>
 			{#each ['non', 'prf', 'exp', 'spl', 'itv'] as val}
 				<option value={val}>{modifierNames[val]}</option>
