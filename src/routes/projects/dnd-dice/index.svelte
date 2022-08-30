@@ -9,6 +9,7 @@
 	import HistoryModal from '$lib/components/modals/dnd_dice/HistoryModal.svelte';
 	import SettingsModal from '$lib/components/modals/dnd_dice/SettingsModal.svelte';
 	import ChangeDiceModal from '$lib/components/modals/dnd_dice/ChangeDiceModal.svelte';
+	import DiceAboutModal from '$lib/components/modals/dnd_dice/DiceAboutModal.svelte';
 
 	import { getDieRollerParams, getRoll } from '$lib/util/dndUtil';
 
@@ -24,11 +25,9 @@
 	 * Make URL params work
 	 * Input validation
 	 * Implement delete all data
-	 * Add info modal with how advantage works, that expertiece is double proficiency, and about rolling for initiative, to attack against AC, and for damage
 	 * Option to doubleclick to roll die by itself
 	 * Menton that modifiers are stored in the website url
 	 * Find delimeter other than 'a' for url params (?)
-	 * Add help and info modals
 	 */
 
 	// values used under the hood mapped to values shown to user
@@ -212,9 +211,15 @@
 	</ModalButton>
 	<ModalButton
 		_for="dnd-dice-settings-modal"
-		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200"
+		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200 mb-2 sm:mb-0 sm:border-r-0"
 	>
 		<Icon name="settings" /> &nbsp; Settings
+	</ModalButton>
+	<ModalButton
+		_for="dnd-dice-about-modal"
+		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200"
+	>
+		<Icon name="info" /> &nbsp; About
 	</ModalButton>
 </div>
 
@@ -223,6 +228,7 @@
 <SettingsModal bind:settings={$s.settings} />
 <ChangeDiceModal bind:value={$s.customAmount} title="Number of Dice" change="dice" />
 <ChangeDiceModal bind:value={$s.customSides} title="Dice Sides" change="sides" />
+<DiceAboutModal />
 
 <div class="mt-8">
 	<label for="number-of-dice" class="sm:hidden block mb-2">Number of Dice:</label>
