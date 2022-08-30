@@ -163,6 +163,7 @@
 
 	let loaded = false;
 	onMount(() => {
+		// todo: sometimes `TypeError 500 — Cannot read properties of undefined (reading 'isSelfAccepting')`
 		const url = new URL(window.location.href);
 		let r = url.searchParams.get('r');
 		if (r) {
