@@ -6,7 +6,7 @@ updated_date: '2022/07/31'
 author: 'Justin Golden'
 preview_text: 'Read on to create a functioning and customizable tabs component without all the fancy stuff..'
 img: '/img/blog/tabs.avif'
-categories: ['webdev']
+categories: ['webdev', 'component']
 keywords:
   [
     'svelte tab component',
