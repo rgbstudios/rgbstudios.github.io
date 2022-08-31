@@ -158,13 +158,31 @@ This of course has you importing the components from other files. I find it best
 
 ### Expanding
 
-You could add an icon or other features, for example:
+##### Transition
+
+To add a transition, simply import from `svelte/transition`:
+
+```
+import { fade } from 'svelte/transition';
+```
+
+Then wrap the current tab in a `div` with `in:fade`:
+
+```
+<div in:fade>
+	<svelte:component this={tab.content} />
+</div>
+```
+
+##### Icon
+
+You could add an icon to each tab:
 
 ```
 <button class="tab" class:active={idx === activeTab} on:click={() => (activeTab = idx)}>
-		<Icon name={tab.icon} />
-		{tab.name}
-	</button>
+	<Icon name={tab.icon} />
+	{tab.name}
+</button>
 ```
 
 If you have an `Icon` component, and then implement it like so:
