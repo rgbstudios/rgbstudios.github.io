@@ -2,9 +2,11 @@
 
 Website home to all RGB Studios projects
 
-### To-Do
+https://rgbstudios.org/
 
-Add icon, fill out keywords
+### Stack
+
+Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 ### First time setup
 
