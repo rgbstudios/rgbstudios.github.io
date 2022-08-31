@@ -10,7 +10,7 @@
 	import { settings } from '$lib/stores/color-picker';
 
 	export let items = [];
-	export let modal;
+	export let modalId;
 	export let copyText;
 
 	let lastTimestamp;
@@ -67,16 +67,17 @@
 						<button class="btn" on:click={() => copyText(item.color)} title="Copy">
 							<Icon name="copy" class="inline w-4 h-4" />
 						</button>
-						<button
+						<label
+							tabindex="0"
 							class="btn"
 							on:click={() => {
 								$settings.color = item.color;
-								modal.hide();
 							}}
+							for={modalId}
 							title="Open"
 						>
 							<Icon name="open" class="inline w-4 h-4" />
-						</button>
+						</label>
 						<!-- <button class="btn">
 							<Icon name="heart" class="inline w-4 h-4" />
 						</button> -->

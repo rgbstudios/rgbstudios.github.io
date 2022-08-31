@@ -184,7 +184,7 @@
 
 <svg
 	class={$$props.class ?? 'w-6 h-6 inline'}
-	stroke={icon.fill ? 'none' : 'currentColor'}
+	stroke={fillColor !== 'none' ? fillColor : icon.fill ? 'none' : 'currentColor'}
 	fill={fillColor !== 'none' ? fillColor : icon.fill ? 'currentColor' : 'none'}
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
