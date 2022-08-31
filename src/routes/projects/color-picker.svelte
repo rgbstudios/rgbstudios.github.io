@@ -192,7 +192,7 @@
 
 			<button
 				class="btn relative w-10 h-10 z-10 float-left"
-				style="background: url(/img/projects/icons/color-picker.svg) 0.125rem 0.125rem / 2rem no-repeat white"
+				style="background: url(/img/projects/icons/color-picker.svg) 0.125rem 0.125rem / 2rem no-repeat white; background-position: center;"
 				on:click|self={() => {
 					pickerOpen = !pickerOpen;
 				}}
