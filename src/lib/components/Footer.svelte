@@ -30,7 +30,7 @@
 	</div>
 	<div class="footer px-10 py-4 border-t bg-base-800 text-base-content border-base-700">
 		<div class="items-center grid-flow-col">
-			<img class="w-12 h-12" src="/img/rgb_logo_64.png" alt="RGB logo" />
+			<img class="w-12 h-12" src="/img/rgb_logo_256.png" alt="RGB logo" />
 			<p>
 				<a class="link link-hover font-bold" href="/">RGB Studios</a><br />Simple webapps and more<br
 				/>&copy; Copyright {year}

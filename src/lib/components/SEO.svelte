@@ -57,7 +57,7 @@
 			'browser extension notepad'
 		],
 		screenshot = 'img/website_seo_img.png',
-		icon = 'img/rgb_logo_64.png',
+		icon = 'img/rgb_logo_256.png',
 		url,
 		articleData = null;
 
