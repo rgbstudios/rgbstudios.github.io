@@ -4,22 +4,55 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
-	export let title = 'RGB Studios',
+	/**
+	 * Potential keywords:
+	 * web application development
+	 * us based web development companies
+	 * web development services us
+	 * us based web development company
+	 * web developer companies
+	 * web developer portfolio
+	 * web development firm
+	 * custom web development services
+	 * web app development services
+	 * web development agency
+	 * web application development company
+	 * custom web application development
+	 * web app development company
+	 * custom web development
+	 * web development services
+	 * web development companies
+	 * web app development
+	 * web design and development
+	 * web development company
+	 * front end web developer
+	 * full stack web development
+	 *
+	 * Notes:
+	 * The terms US, USA, agency, company, web app (instead of just web) mean a more qualified prospect that is likely to afford you
+	 */
+
+	export let title = 'RGB Studios - A Web Development Company',
 		description = 'RGB Studios makes simple, useful websites, webapps, and mobile apps.',
 		keywords = [
 			'rgb studios',
 			'useful web apps',
 			'web development',
 			'web development company',
+			'US based web development companies',
+			'USA web development company',
+			'One of the Best US based web development companies',
 			'affordable web designer',
 			'simple tool',
 			'online calculators',
 			'online converters',
 			'desktop clock',
+			'online clock',
 			'binomial calculator',
 			'dnd roller',
+			'dnd dice roller',
 			'dnd dice',
-			'clock',
+			'roll dnd dice online',
 			'chrome notes',
 			'browser extension notepad'
 		],

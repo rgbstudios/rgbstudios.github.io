@@ -1,3 +1,5 @@
+// TODO: add dedicated project page for browser extension projects
+
 const projects = [
 	{
 		title: 'Desktop Clock',
