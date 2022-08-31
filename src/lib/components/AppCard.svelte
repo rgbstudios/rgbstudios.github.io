@@ -5,9 +5,14 @@
 <a
 	href={link}
 	target="_blank"
-	class="card bg-base-200 p-4 pt-0 ring-base-300 hover:ring-2 cursor-pointer no-underline m-4"
+	class="card bg-base-800 p-4 pt-0 ring-base-700 hover:ring-2 cursor-pointer no-underline m-4"
 >
 	<div class="card-body">
+		<!-- <img
+			class="w-8 sm:w-12 inline-block mr-4"
+			src="img/projects/icons/{link.replace(/\//g, '').replace('projects', '')}.png"
+			alt=""
+		/> -->
 		<h2 class="card-title text-3xl">
 			{title}
 		</h2>

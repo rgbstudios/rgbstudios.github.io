@@ -3,15 +3,15 @@
 		isDark = false;
 </script>
 
-<div class="text-sm breadcrumbs mb-2">
+<div class="text-sm breadcrumbs mb-1">
 	<ul>
 		{#each breadcrumbs as { text, link }}
 			{#if link}
-				<li class="underline {isDark ? 'text-base-100 ' : 'text-white'}">
+				<li class="underline {isDark ? 'text-base-900 ' : 'text-white'}">
 					<a href={link}>{text}</a>
 				</li>
-			{:else}
-				<li class={isDark ? 'text-base-100 ' : 'text-white'}>{text}</li>
+			{:else if text}
+				<li class={isDark ? 'text-base-900 ' : 'text-white'}>{text}</li>
 			{/if}
 		{/each}
 	</ul>

@@ -22,7 +22,7 @@
 
 <div class="toast">
 	{#each $messages as m}
-		<div class="alert alert-info">
+		<div class="alert bg-base-800 border-2 border-base-700">
 			<div>
 				<span>{m.text}</span>
 			</div>

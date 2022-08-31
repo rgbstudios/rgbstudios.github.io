@@ -62,11 +62,11 @@
 			<ModalButton
 				_for="grade-calc-new-assignment-modal"
 				on:click={newAssignment}
-				className="btn-primary"
+				class="btn-primary"
 			>
 				<Icon name="check" /> &nbsp; Add</ModalButton
 			>
-			<ModalButton _for="grade-calc-new-assignment-modal" className="btn-error">
+			<ModalButton _for="grade-calc-new-assignment-modal" class="btn-error">
 				<Icon name="close" /> &nbsp; Cancel</ModalButton
 			>
 		</div>

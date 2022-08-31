@@ -38,7 +38,7 @@
 		class="modal-content bg-white overflow-auto h-full surface p-2 xs:p-8 relative m-auto w-full md:w-3/4"
 		on:click|stopPropagation
 	>
-		<div class="mb-4 border-b-2 border-gray-200 pb-8">
+		<div class="mb-4 border-b-2 border-base-200 pb-8">
 			<button class="btn-circle z-30 float-right" on:click={() => hide()} aria-label="Close">
 				<Icon name="close" class="w-6 h-6" />
 			</button>

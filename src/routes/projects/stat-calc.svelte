@@ -201,6 +201,6 @@
 
 <style>
 	.stat {
-		@apply bg-gray-800;
+		@apply bg-accent-800;
 	}
 </style>

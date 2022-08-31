@@ -27,6 +27,6 @@
 
 <style>
 	a {
-		@apply link link-hover bg-base-200 m-2 p-2 text-center;
+		@apply link link-hover bg-base-800 m-2 p-2 text-center;
 	}
 </style>

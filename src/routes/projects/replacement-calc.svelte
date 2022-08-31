@@ -197,7 +197,7 @@
 
 <div class="overflow-x-auto mt-8">
 	<form on:submit|preventDefault>
-		<table class="table w-full border border-gray-700">
+		<table class="table w-full border border-base-700">
 			<tbody>
 				<!-- Input -->
 				<tr>

@@ -64,6 +64,7 @@
 	checked={!hidden}
 	on:change={onChange}
 />
+
 <label for={id} class="modal" class:open={!hidden} on:transitionend={trapFocus}>
 	<label
 		for=""

@@ -6,7 +6,7 @@
 </script>
 
 <script lang="ts">
-	import Icon from '../Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 
 	export let items: CarouselItem[];
 	export let activeIndex: number = 0;

@@ -4,7 +4,7 @@
 </script>
 
 <footer class="w-full">
-	<div class="footer p-10 bg-base-200 text-base-content">
+	<div class="footer p-10 bg-base-800 text-base-content">
 		<div>
 			<span class="footer-title">Projects</span>
 			<a class="link link-hover" href="/projects">All</a>
@@ -28,7 +28,7 @@
 			<a class="link link-hover" href="/contact">Contact</a>
 		</div>
 	</div>
-	<div class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+	<div class="footer px-10 py-4 border-t bg-base-800 text-base-content border-base-700">
 		<div class="items-center grid-flow-col">
 			<img class="w-12 h-12" src="/img/rgb_logo_64.png" alt="RGB logo" />
 			<p>

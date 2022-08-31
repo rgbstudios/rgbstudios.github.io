@@ -40,11 +40,12 @@ const projects = [
 		isUpdated: true
 	},
 	{
-		// TODO: redo this site, link to other dnd sites
+		// TODO: finish design, confirm seo and sharing will be fine
+		// finish other pages (char roller and spellbook, add them to projects.js as well)
 		title: 'D&D Dice',
-		text: 'Use D&D Dice Roller to easily roll any number any dice, with modifiers and more',
-		img: 'img/projects/screenshots/dnd-dice-old.png',
-		link: 'https://rgbstudios.org/dnd-dice/',
+		text: 'Use D&D Dice Roller to easily roll any number of any dice, with modifiers and more',
+		img: 'img/projects/screenshots/dnd-dice.png',
+		link: '/projects/dnd-dice/',
 		tags: ['dnd', 'games', 'die roller', 'web app'],
 
 		isPopular: true,
