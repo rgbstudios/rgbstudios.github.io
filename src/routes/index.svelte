@@ -30,6 +30,11 @@
 
 <SEO />
 
+<p class="text-xl">
+	We are a US based web development company that creates cool web apps, helpful blog posts, and
+	websites for other people.
+</p>
+
 <div class="prose lg:prose-xl my-8">
 	<h3>Featured Projects:</h3>
 </div>
