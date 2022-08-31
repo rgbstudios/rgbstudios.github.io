@@ -64,6 +64,7 @@
 <div class="relative">
 	<!-- Prev -->
 	<button
+		aria-label="Previous slide"
 		class="absolute bg-primary p-3 z-10 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
 		on:click={prev}
 	>
@@ -83,6 +84,7 @@
 	</div>
 	<!-- Next -->
 	<button
+		aria-label="Next slide"
 		class="absolute bg-primary p-3 z-10 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
 		on:click={next}
 	>
@@ -92,6 +94,7 @@
 	<div class="flex gap-3 absolute bottom-5 left-1/2 -translate-x-1/2 col-start-2 col-end-3">
 		{#each items as _, index}
 			<button
+				aria-label="Go to slide {index + 1}"
 				class="w-3 h-3 rounded-full bg-white opacity-50 transition"
 				class:opacity-100={index === activeIndex}
 				on:click={() => goto(index)}

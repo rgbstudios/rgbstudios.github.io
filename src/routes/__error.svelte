@@ -27,7 +27,7 @@
 
 	<p>{error.name} {status} &mdash; {error.message}</p>
 
-	<a href="/" class="btn btn-primary no-underline">Go back home</a>
+	<span class="not-prose"><a href="/" class="btn btn-primary no-underline">Go back home</a></span>
 
 	{#if status === 404}
 		<p>Check out our popular projects:</p>

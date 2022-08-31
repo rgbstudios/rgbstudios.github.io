@@ -56,9 +56,11 @@
 	{/each}
 	<slot />
 	<hr />
-	<a href="/blog" class="btn btn-primary no-underline">
-		More Blog Articles <Icon name="chevron_right" />
-	</a>
+	<span class="not-prose">
+		<a href="/blog" class="btn btn-primary no-underline">
+			More Blog Articles <Icon name="chevron_right" />
+		</a>
+	</span>
 </article>
 
 <div class="noprint">

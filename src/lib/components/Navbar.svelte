@@ -43,7 +43,7 @@
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
-		<a class="btn btn-ghost" href="/">
+		<a class="btn btn-ghost" href="/" aria-label="Menu">
 			<img class="h-full" src="/img/rgb_logo_light_256.png" alt="RGB Studios logo" />
 		</a>
 	</div>
