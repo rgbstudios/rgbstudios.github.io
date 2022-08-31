@@ -141,6 +141,12 @@
 	const capitalize = (str) => str.replace(/\b\w/g, (l) => l.toUpperCase());
 </script>
 
+<svelte:head>
+	<!-- necessary evil to consume http api from https site
+	https://stackoverflow.com/q/52130918 -->
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+</svelte:head>
+
 <DndSideNav />
 
 <ProjectHeader
