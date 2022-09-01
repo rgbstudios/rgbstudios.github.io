@@ -6,7 +6,6 @@
 	import ShareButtons from '$lib/components/ShareButtons.svelte';
 	import SmallFooter from '$lib/components/SmallFooter.svelte';
 	import { page } from '$app/stores';
-	import { browser } from '$app/env';
 	import Toast from '$lib/components/Toast.svelte';
 
 	import w3color from '$lib/util/external/w3color';
@@ -18,14 +17,6 @@
 		link = window.location.href;
 		title = document.title;
 	});
-
-	$: if (browser) {
-		if ($page.url.pathname === '/projects/color-picker') {
-			document.documentElement.style.removeProperty('--current-color');
-			/// it's null for every route except color-picker
-			document.body.style.backgroundColor = null;
-		}
-	}
 </script>
 
 <div

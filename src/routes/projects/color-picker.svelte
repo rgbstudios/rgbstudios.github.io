@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	import w3color from '$lib/util/external/w3color';
 	import { getUrlParam, setUrlParam, removeUrlParam } from '$lib/util/urlParam';
@@ -43,7 +43,7 @@
 		}
 	}
 
-	let setColorProperty;
+	let setColorProperty, removeColorProperty;
 
 	$: rgbString = c.toRgbString();
 	$: rgbaString = c.toRgbaString();
@@ -82,6 +82,11 @@
 			document.body.style.backgroundColor = color;
 		};
 
+		removeColorProperty = () => {
+			document.documentElement.style.removeProperty('--current-color');
+			document.body.style.backgroundColor = null;
+		};
+
 		const c = getUrlParam('c');
 		if (c) {
 			// TODO: validation like in readColorString
@@ -93,6 +98,8 @@
 
 		pageLoaded = true;
 	});
+
+	onDestroy(() => removeColorProperty && removeColorProperty());
 
 	const updateLink = () => {
 		if ($settings.colorInUrl) {
