@@ -4,6 +4,7 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
+	import { toast } from '$lib/components/Toast.svelte';
 
 	import ModsModal from '$lib/components/modals/dnd_dice/ModsModal.svelte';
 	import HistoryModal from '$lib/components/modals/dnd_dice/HistoryModal.svelte';
@@ -75,7 +76,7 @@
 			$s.modifiers.prf = parseInt(m[6]);
 			$s.modifiers.spl = parseInt(m[7]);
 			$s.modifiers.itv = parseInt(m[8]);
-			// TODO: open mods modal and show toast that loaded mods successfully from url
+			toast('Loaded modifiers successfully from url');
 		}
 	});
 
