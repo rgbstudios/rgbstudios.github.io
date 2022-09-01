@@ -64,5 +64,5 @@
 </article>
 
 <div class="noprint">
-	<ShareButtons {title} {link} />
+	<ShareButtons {title} {link} isDark={true} />
 </div>

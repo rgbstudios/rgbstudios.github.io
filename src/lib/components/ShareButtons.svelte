@@ -1,12 +1,9 @@
 <script>
-	import { getContext } from 'svelte';
-
 	// https://github.com/bradvin/social-share-urls/blob/master/code/javascript/javascript/social-share-media.js
 
 	import Icon from './Icon.svelte';
 
-	export let title, link;
-	const isDark = getContext('share-buttons-dark');
+	export let title, link, isDark;
 
 	// copyText and shareText copied from Desktop Clock
 
@@ -70,7 +67,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Facebook"
 >
 	<Icon name="facebook" />
@@ -83,7 +80,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Twitter"
 >
 	<Icon name="twitter" />
@@ -94,7 +91,7 @@
 	href="https://www.pinterest.com/pin/create/button/?url={encodeURIComponent(link)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Pinterest"
 >
 	<Icon name="pinterest" />
@@ -108,7 +105,7 @@
 	)}&app_id=1132946187618983&redirect_uri=https%3A%2F%2Frgbstudios.org"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Facebook Messenger"
 >
 	<Icon name="facebook_messenger" />
@@ -121,7 +118,7 @@
 	)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Reddit"
 >
 	<Icon name="reddit" />
@@ -132,7 +129,7 @@
 	href="https://www.linkedin.com/sharing/share-offsite/?url={encodeURIComponent(link)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Linkedin"
 >
 	<Icon name="linkedin" />
@@ -143,7 +140,7 @@
 	href="https://api.whatsapp.com/send?text={encodeURIComponent(title + ': ' + link)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Whatsapp"
 >
 	<Icon name="whatsapp" />
@@ -157,7 +154,7 @@
 	)}%0D%0A{encodeURIComponent(link)} &subject={encodeURIComponent(title)}"
 	target="_blank"
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Email"
 >
 	<Icon name="envelope" />
@@ -176,7 +173,7 @@
 		});
 	}}
 	class="btn btn-outline"
-	class:light={!$isDark}
+	class:light={!isDark}
 	title="Copy Link"
 >
 	<Icon name="copy" />
@@ -185,7 +182,7 @@
 </button>
 
 <button
-	class:light={!$isDark}
+	class:light={!isDark}
 	on:click={() => shareApp(title, '', link)}
 	class="btn btn-outline btn-light"
 	title="Share"
@@ -194,12 +191,7 @@
 	&nbsp; Share
 </button>
 
-<button
-	class:light={!$isDark}
-	on:click={() => window.print()}
-	class="btn btn-outline"
-	title="Share"
->
+<button class:light={!isDark} on:click={() => window.print()} class="btn btn-outline" title="Share">
 	<Icon name="print" />
 	&nbsp; Print
 </button>
