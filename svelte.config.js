@@ -19,7 +19,7 @@ const config = {
 		mdsvex({
 			extensions: ['.md'],
 			layout: {
-				blog_layout: path.join(dirname, 'src/routes/(rgb)/blog/+layout.svelte')
+				blog_layout: path.join(dirname, 'src/routes/(rgb)/blog/Layout.svelte')
 			}
 		})
 	],
