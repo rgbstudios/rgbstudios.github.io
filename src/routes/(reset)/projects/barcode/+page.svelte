@@ -26,7 +26,7 @@
 		width,
 		text
 	} from '$lib/stores/barcode';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 	let errorMsg: string = '';
 	let barcodeCanvas: HTMLCanvasElement;
 	let barcodeDataURL: string;

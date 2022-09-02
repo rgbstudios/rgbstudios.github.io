@@ -1,10 +1,10 @@
-
-
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+	throw new Error(
+		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
+	);
 
 	import { afterUpdate, onMount } from 'svelte';
-	import { browser } from '$app/env';
+	import { browser } from '$app/environment';
 
 	/// COMPONENTS ///
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
