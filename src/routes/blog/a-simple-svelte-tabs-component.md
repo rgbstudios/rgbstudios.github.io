@@ -18,14 +18,14 @@ keywords:
   ]
 ---
 
-<img src="/img/blog/tabs.avif">
+<img src="/img/blog/tabs.avif" alt="">
 <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
 
 ### The Problem
 
 Most tab components I found either involve getting an entire UI kit, a lot of boilerplate code per implementation, or more likely, the code looks like this:
 
-<img src="/img/blog/tabs-code.png">
+<img src="/img/blog/tabs-code.png" alt="">
 
 (This was my old code; I had to zoom out twice to get this screenshot)
 
@@ -137,7 +137,7 @@ Here's the full file: 25 lines!
 </style>
 ```
 
-<img src="/img/blog/tabs-screenshot.png">
+<img src="/img/blog/tabs-screenshot.png" alt="">
 
 ### Usage
 

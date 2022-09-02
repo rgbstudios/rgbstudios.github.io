@@ -18,7 +18,7 @@ keywords:
 hidden: true
 ---
 
-<img src="/img/blog/dice_in_water.avif">
+<img src="/img/blog/dice_in_water.avif" alt="">
 <figcaption>Photo credit @deneskozma on Unsplash</figcaption>
 
 ### The Function

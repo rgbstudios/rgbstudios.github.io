@@ -22,7 +22,7 @@ keywords:
 hidden: true
 ---
 
-<img src="/img/blog/wall_of_numbers.avif">
+<img src="/img/blog/wall_of_numbers.avif" alt="">
 <figcaption>Photo credit @nhillier on Unsplash</figcaption>
 
 ### The Simple

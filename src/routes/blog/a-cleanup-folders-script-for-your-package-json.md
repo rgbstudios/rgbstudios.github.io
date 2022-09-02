@@ -17,7 +17,7 @@ keywords:
   ]
 ---
 
-<img src="/img/blog/vacuum_confetti.avif">
+<img src="/img/blog/vacuum_confetti.avif" alt="">
 <figcaption>Photo credit @norevisions on Unsplash</figcaption>
 
 ### The Problem
