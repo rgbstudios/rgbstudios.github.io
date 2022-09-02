@@ -1,23 +1,8 @@
-<script context="module">
-	/** @type {import('./__types/[slug]').Load} */
-	export async function load({ url }) {
-		const props = {};
 
-		for (const x of ['p', 'n', 'x']) {
-			const l = url.searchParams.get(x);
-			if (!l) continue;
-			props[x] = parseFloat(l);
-		}
-		props.q = url.searchParams.get('q');
-
-		return {
-			status: 200,
-			props
-		};
-	}
-</script>
 
 <script>
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	import { afterUpdate, onMount } from 'svelte';
 	import { browser } from '$app/env';
 

@@ -113,6 +113,8 @@ Here's the full file: 25 lines!
 
 ```
 <script>
+	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
 	export let tabs, activeTab = 0;
 </script>
 

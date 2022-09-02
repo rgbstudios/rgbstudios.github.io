@@ -1,19 +1,12 @@
-<script context="module">
-	export const load = ({ error, status }) => ({
-		props: {
-			error,
-			status
-		}
-	});
-</script>
-
 <script>
+	import { page } from '$app/stores';
 	import projects from '$lib/data/projects';
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
 
 	$: featuredApps = projects.filter((p) => p.isFeatured);
 
-	export let error, status;
+	$: status = $page.status;
+	$: error = $page.error;
 </script>
 
 <svelte:head>

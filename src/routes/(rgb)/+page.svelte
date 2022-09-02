@@ -1,14 +1,3 @@
-<script context="module">
-	export async function load({ fetch }) {
-		const res = await fetch('/blog/posts.json');
-		const { posts } = await res.json();
-
-		return {
-			props: { posts }
-		};
-	}
-</script>
-
 <script>
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
@@ -17,7 +6,9 @@
 
 	import projects from '$lib/data/projects';
 
-	export let posts;
+	export let data = {};
+
+	$: posts = data.posts;
 
 	$: featuredPosts = posts
 		?.filter((post) => !post.hidden)
