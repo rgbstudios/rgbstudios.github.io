@@ -16,9 +16,10 @@ keywords:
     'optimize website images'
   ]
 ---
-
-<img src="/img/blog/slow_website_frustration.avif" alt="">
-<figcaption>Photo credit @elisa_ventur on Unsplash</figcaption>
+<figure>
+  <img src="/img/blog/slow_website_frustration.avif" alt="">
+  <figcaption>Photo credit @elisa_ventur on Unsplash</figcaption>
+</figure>
 
 ### Why do web developers care so much about a few kilobytes?
 
@@ -32,8 +33,10 @@ Ok sure, but now we can load a few megs like nothing, right?
 
 Ideally, a website would be less than 1mb, but a website ranging between 2 or 3 megabytes is right at the limit in my opinion.
 
+<figure>
 <img src="/img/blog/hands_on_desk.avif" alt="">
 <figcaption>Photo credit @nordwood on Unsplash</figcaption>
+</figure>
 
 ### Easy Wins
 

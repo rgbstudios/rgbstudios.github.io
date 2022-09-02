@@ -20,9 +20,10 @@ keywords:
     'js framework easy transitions'
   ]
 ---
-
-<img src="/img/blog/crosswalk.avif" alt="">
-<figcaption>Photo credit @wesleyphotography on Unsplash</figcaption>
+<figure>
+  <img src="/img/blog/crosswalk.avif" alt="">
+  <figcaption>Photo credit @wesleyphotography on Unsplash</figcaption>
+</figure>
 
 ### TL;DR: All default Svelte transitions
 

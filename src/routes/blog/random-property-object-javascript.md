@@ -18,8 +18,10 @@ keywords:
 hidden: true
 ---
 
+<figure>
 <img src="/img/blog/dice_in_water.avif" alt="">
 <figcaption>Photo credit @deneskozma on Unsplash</figcaption>
+</figure>
 
 ### The Function
 

@@ -18,8 +18,10 @@ keywords:
   ]
 ---
 
+<figure>
 <img src="/img/blog/tabs.avif" alt="">
 <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
+</figure>
 
 ### The Problem
 
