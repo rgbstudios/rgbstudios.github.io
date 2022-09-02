@@ -21,18 +21,18 @@
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	export let data = {}
+	export let data = {};
 
 	$: N = 52 ?? data.N;
 	$: m = 4 ?? data.m;
 	$: n = 5 ?? data.n;
-	$: k = 1 ?? data.k;;
+	$: k = 1 ?? data.k;
 	let errorMsg = '';
 
 	// sync url with inputs
 	$: if (browser) {
 		let queryParams = new URLSearchParams(window.location.search);
-		N && queryParams.set('N' N);
+		N && queryParams.set('N', N);
 		n && queryParams.set('n', n);
 		k && queryParams.set('k', k);
 		m && queryParams.set('m', m);
