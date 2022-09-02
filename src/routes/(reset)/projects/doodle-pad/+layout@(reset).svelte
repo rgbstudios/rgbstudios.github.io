@@ -1,7 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import '../../../app.css';
+	import '$lib/app.css';
 
 	import ShareButtons from '$lib/components/ShareButtons.svelte';
 	import SmallFooter from '$lib/components/SmallFooter.svelte';

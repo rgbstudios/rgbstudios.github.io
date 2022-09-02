@@ -10,11 +10,12 @@
 
 	$: posts = data.posts;
 
-	$: featuredPosts = posts
-		?.filter((post) => !post.hidden)
-		.filter((post) => post.categories.includes('webdev')) // TODO criteria for featured
-		.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-		.slice(0, 4);
+	$: featuredPosts =
+		posts
+			?.filter((post) => !post.hidden)
+			?.filter((post) => post.categories.includes('webdev')) // TODO criteria for featured
+			?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+			?.slice(0, 4) ?? [];
 
 	$: featuredApps = projects.filter((p) => p.isFeatured);
 </script>

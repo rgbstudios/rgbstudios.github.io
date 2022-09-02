@@ -1,5 +1,5 @@
 <script>
-	import '../app.css';
+	import '$lib/app.css';
 
 	import Navbar from '$lib/components/Navbar.svelte';
 	import RGBHero from '$lib/components/RGBHero.svelte';
