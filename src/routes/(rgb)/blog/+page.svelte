@@ -1,15 +1,12 @@
-
-
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
-
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 
 	import { page } from '$app/stores';
 
-	export let posts;
+	export let data = {};
+	$: posts = data.posts;
 
 	const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 

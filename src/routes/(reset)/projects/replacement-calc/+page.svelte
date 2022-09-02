@@ -1,8 +1,4 @@
 <script>
-	throw new Error(
-		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
-	);
-
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
@@ -25,16 +21,18 @@
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	export let N = 52,
-		m = 4,
-		n = 5,
-		k = 1;
+	export let data = {}
+
+	$: N = 52 ?? data.N;
+	$: m = 4 ?? data.m;
+	$: n = 5 ?? data.n;
+	$: k = 1 ?? data.k;;
 	let errorMsg = '';
 
 	// sync url with inputs
 	$: if (browser) {
 		let queryParams = new URLSearchParams(window.location.search);
-		N && queryParams.set('N', N);
+		N && queryParams.set('N' N);
 		n && queryParams.set('n', n);
 		k && queryParams.set('k', k);
 		m && queryParams.set('m', m);

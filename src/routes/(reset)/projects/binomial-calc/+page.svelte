@@ -1,8 +1,4 @@
 <script>
-	throw new Error(
-		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
-	);
-
 	import { afterUpdate, onMount } from 'svelte';
 	import { browser } from '$app/environment';
 
@@ -59,10 +55,13 @@
 	}
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	export let p = 0.5,
-		n = 40,
-		x = 18;
-	export let q;
+
+	export let data = {};
+	$: p = data.p ?? 0.5;
+	$: n = data.n ?? 40;
+	$: x = data.x ?? 18;
+	$: q = data.q;
+
 	let errorMsg = '';
 	let barChartURI, pieChartURI;
 	const learnLocation = browser
