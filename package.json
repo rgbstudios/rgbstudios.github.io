@@ -7,7 +7,7 @@
 		"preview": "vite preview",
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. . && eslint . --fix",
-		"clean": "node infrastructure/clean.js",
+		"clean": "node cli/clean.js",
 		"cleanbuild": "npm run clean && npm install && npm run build && npm run preview"
 	},
 	"author": "Justin Golden",
@@ -42,6 +42,5 @@
 		"qrcode": "^1.5.1",
 		"screenfull": "6.0.2"
 	},
-	"dependencies": {
-	}
+	"dependencies": {}
 }
