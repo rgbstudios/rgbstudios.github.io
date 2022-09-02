@@ -46,7 +46,7 @@
 	</div>
 </Modal>
 
-<style>
+<style lang="postcss">
 	.label-text {
 		@apply font-bold text-base-700;
 	}

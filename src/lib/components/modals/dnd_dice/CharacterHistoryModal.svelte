@@ -29,7 +29,7 @@
 	</div>
 </Modal>
 
-<style>
+<style lang="postcss">
 	textarea {
 		@apply bg-white border-2 border-base-200 font-normal;
 	}

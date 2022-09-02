@@ -4,7 +4,7 @@
 	<h2 class="my-2 text-xl">A web development company</h2>
 </div>
 
-<style>
+<style lang="postcss">
 	.rgb-banner {
 		@apply w-full text-center py-2 mt-12;
 		background: linear-gradient(

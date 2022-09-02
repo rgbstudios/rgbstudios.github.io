@@ -49,7 +49,7 @@
 	</div>
 </Modal>
 
-<style>
+<style lang="postcss">
 	ul {
 		@apply mb-8;
 		li {

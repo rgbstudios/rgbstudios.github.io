@@ -26,7 +26,7 @@
 	</a>
 </nav>
 
-<style>
+<style lang="postcss">
 	.btn {
 		@apply bg-white border-2 border-base-200 hover:bg-base-200;
 	}

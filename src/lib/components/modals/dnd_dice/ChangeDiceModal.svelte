@@ -13,7 +13,7 @@
 	<input type="number" class="input input-bordered w-full" bind:value min="0" max="9999" />
 </Modal>
 
-<style>
+<style lang="postcss">
 	.label-text {
 		@apply font-bold text-base-700;
 	}

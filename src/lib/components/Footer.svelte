@@ -53,7 +53,7 @@
 	</div>
 </footer>
 
-<style>
+<style lang="postcss">
 	.footer-link {
 		@apply link link-hover p-1;
 	}

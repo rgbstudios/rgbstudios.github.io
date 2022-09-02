@@ -85,7 +85,7 @@
 	</label>
 </label>
 
-<style>
+<style lang="postcss">
 	/* for focus trapping */
 	.modal {
 		background-color: rgba(255, 255, 255, 0);

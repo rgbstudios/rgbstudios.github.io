@@ -219,7 +219,7 @@
 
 <SpellbookAboutModal />
 
-<style>
+<style lang="postcss">
 	button,
 	input {
 		@apply font-bold;

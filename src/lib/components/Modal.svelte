@@ -50,7 +50,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.modal-content {
 		animation: animateTop 0.25s;
 		-webkit-animation: animateTop 0.25s;

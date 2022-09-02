@@ -196,7 +196,7 @@
 	&nbsp; Print
 </button>
 
-<style>
+<style lang="postcss">
 	a,
 	button {
 		@apply m-2 ml-0;

@@ -150,7 +150,7 @@
 	</div>
 </Modal>
 
-<style>
+<style lang="postcss">
 	h3 {
 		@apply text-xl;
 	}

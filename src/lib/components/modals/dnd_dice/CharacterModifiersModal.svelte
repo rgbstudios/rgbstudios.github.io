@@ -45,7 +45,7 @@
 	</table>
 </Modal>
 
-<style>
+<style lang="postcss">
 	table * {
 		@apply bg-white;
 	}

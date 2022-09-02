@@ -199,7 +199,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.stat {
 		@apply bg-accent-800;
 	}

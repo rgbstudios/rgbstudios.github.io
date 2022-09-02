@@ -504,7 +504,7 @@
 	</label>
 </div>
 
-<style>
+<style lang="postcss">
 	td {
 		@apply px-4 py-2 text-sm sm:text-base;
 	}

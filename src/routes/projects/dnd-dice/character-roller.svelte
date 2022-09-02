@@ -506,7 +506,7 @@
 <CharacterSkillsModal />
 <CharacterStatsModal character={currentCharacter} />
 
-<style>
+<style lang="postcss">
 	label {
 		@apply mr-4 sm:my-auto;
 	}

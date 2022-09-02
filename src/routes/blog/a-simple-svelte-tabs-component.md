@@ -92,7 +92,7 @@ We simply pass in a component into `tab.component`. I'll show you under **Usage*
 Let's style our tabs, and make sure to style our active tabs differently.
 
 ```
-<style>
+<style lang="postcss">
 	.tab {
 		background-color: #f4f4f5;
 		padding: 1rem;
@@ -126,7 +126,7 @@ Here's the full file: 25 lines!
 	{/if}
 {/each}
 
-<style>
+<style lang="postcss">
 	.tab {
 		background-color: #f4f4f5;
 		padding: 1rem;

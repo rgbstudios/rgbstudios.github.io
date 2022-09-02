@@ -236,7 +236,7 @@
 <SetupModal />
 <InfoModal />
 
-<style>
+<style lang="postcss">
 	p {
 		margin-bottom: 1rem;
 	}

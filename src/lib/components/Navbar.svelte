@@ -85,7 +85,7 @@
 </div>
 <div class="navbar-bottom sticky top-14" />
 
-<style>
+<style lang="postcss">
 	.navbar-bottom {
 		@apply w-full h-1 opacity-50 hidden lg:block;
 		/* background: linear-gradient(

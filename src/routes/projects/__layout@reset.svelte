@@ -40,7 +40,7 @@
 	<Toast />
 </div>
 
-<style>
+<style lang="postcss">
 	.dnd-dice {
 		background-color: #fff;
 		background-size: 2.5rem 2.5rem;

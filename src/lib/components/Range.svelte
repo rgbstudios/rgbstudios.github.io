@@ -12,7 +12,7 @@
 	class="w-full slider {$$props.class ?? ''}"
 />
 
-<style>
+<style lang="postcss">
 	.slider {
 		@apply appearance-none w-full h-2 rounded-full border-2 border-base-200;
 	}

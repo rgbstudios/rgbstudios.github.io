@@ -25,7 +25,7 @@
 	</div>
 </article>
 
-<style>
+<style lang="postcss">
 	a {
 		@apply link link-hover bg-base-800 m-2 p-2 text-center;
 	}
