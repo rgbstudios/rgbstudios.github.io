@@ -1,5 +1,7 @@
 <script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+	throw new Error(
+		'@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)'
+	);
 
 	import { onMount } from 'svelte';
 
@@ -8,7 +10,7 @@
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
-	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+	import DndSideNav from '../DndSideNav.svelte';
 
 	import CharacterHistoryModal from '$lib/components/modals/dnd_dice/CharacterHistoryModal.svelte';
 	import CharacterAboutModal from '$lib/components/modals/dnd_dice/CharacterAboutModal.svelte';

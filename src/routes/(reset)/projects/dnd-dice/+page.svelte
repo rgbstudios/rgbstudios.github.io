@@ -14,7 +14,7 @@
 
 	import { getDieRollerParams, getRoll } from '$lib/util/dndUtil';
 
-	import DndSideNav from '$lib/components/dnd-dice/DndSideNav.svelte';
+	import DndSideNav from './SideNav.svelte';
 
 	import { diceSettings as s } from '$lib/stores/dnd-dice';
 
