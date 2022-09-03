@@ -4,13 +4,19 @@ import redirects from '$lib/data/redirects';
 export async function handle({ event, resolve }) {
 	const redirect = redirects.find((item) => event.url.pathname === item.source);
 
+	let response = null;
 	if (redirect) {
-		return new Response('', {
+		response = new Response('', {
 			status: 301,
-			headers: { Location: redirect.destination + event.url.search }
+			headers: {
+				location: redirect.destination + event.url.search
+			}
 		});
 	}
 
-	const response = await resolve(event);
+	response ??= await resolve(event);
+
+	response.headers.set('link', event.url.origin + event.url.pathname + '; rel="canonical"');
+
 	return response;
 }

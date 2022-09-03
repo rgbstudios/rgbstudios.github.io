@@ -2,7 +2,7 @@ export async function GET() {
 	const posts = await Promise.all(
 		Object.entries(import.meta.glob('../**/*.md')).map(async ([path, page]) => {
 			const { metadata } = await page();
-			const slug = path.split('/').pop().split('.').shift();
+			const slug = path.substring(3, path.length - 9);
 			return { ...metadata, slug };
 		})
 	);
