@@ -20,6 +20,7 @@ keywords:
     'js framework easy transitions'
   ]
 ---
+
 <figure>
   <img src="/img/blog/crosswalk.avif" alt="">
   <figcaption>Photo credit @wesleyphotography on Unsplash</figcaption>

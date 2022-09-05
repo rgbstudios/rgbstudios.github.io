@@ -16,6 +16,7 @@ keywords:
     'simple javascript delete folders'
   ]
 ---
+
 <figure>
   <img src="/img/blog/vacuum_confetti.avif" alt="">
   <figcaption>Photo credit @norevisions on Unsplash</figcaption>

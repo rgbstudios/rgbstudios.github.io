@@ -53,6 +53,7 @@ const redirects = [
 
 export default redirects;
 ```
+
 <figure>
   <img src="/img/blog/redirect_road.avif" alt="">
   <figcaption>Photo credit @35mm on Unsplash</figcaption>
