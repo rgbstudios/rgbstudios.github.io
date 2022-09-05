@@ -21,7 +21,7 @@
 
 <div
 	class:dnd-dice={$page.url.pathname.includes('projects/dnd-dice')}
-	class="flex min-h-full flex-col"
+	class="min-h-screen flex flex-col justify-between"
 >
 	<div class="container mx-auto px-4 py-8 flex-1">
 		<slot />
