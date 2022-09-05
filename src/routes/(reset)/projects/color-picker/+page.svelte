@@ -342,13 +342,13 @@
 	<div class="grid grid-cols-3 py-4 w-full sticky bottom-0 mt-4 bg-white bg-opacity-90">
 		<ModalButton
 			_for="history-color-list-modal"
-			className="w-12 h-12 mx-auto bg-white hover:bg-gray-100 rounded-full border-none"
+			class="w-12 h-12 mx-auto bg-white hover:bg-gray-100 rounded-full border-none"
 		>
 			<Icon name="history" class="inline w-4 h-4" />
 		</ModalButton>
 		<ModalButton
 			_for="favorite-color-list-modal"
-			className="w-12 h-12 mx-auto bg-white hover:bg-gray-100 rounded-full border-none"
+			class="w-12 h-12 mx-auto bg-white hover:bg-gray-100 rounded-full border-none btn-circle"
 		>
 			<Icon name="saved" class="inline w-4 h-4" />
 		</ModalButton>
@@ -369,13 +369,13 @@
 	bind:colorItems={favoritesList}
 	id="favorite-color-list-modal"
 	title="Favorites"
-	settingName={favoritesList}
+	settingName="favoritesList"
 />
 <ColorListModal
 	bind:colorItems={historyList}
 	id="history-color-list-modal"
 	title="History"
-	settingName={historyList}
+	settingName="historyList"
 />
 
 <style lang="postcss">
