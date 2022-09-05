@@ -8,10 +8,8 @@
 
 	export let data = {};
 
-	$: posts = data.posts;
-
 	$: featuredPosts =
-		posts
+		data?.posts
 			?.filter((post) => !post.hidden)
 			?.filter((post) => post.categories.includes('webdev')) // TODO criteria for featured
 			?.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())

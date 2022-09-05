@@ -160,6 +160,7 @@
 <svelte:head>
 	<script src="https://unpkg.com/jsbarcode@latest/dist/JsBarcode.all.min.js"></script>
 </svelte:head>
+
 <ProjectHeader
 	title="Barcode Generator"
 	description="Use Barcode Generator to generate a barcode for any text, then save or share the image"
