@@ -10,13 +10,13 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 ### First time setup
 
-- Fill out metadata in `package.json` and `app.html`
-
-- Install node/npm
+- Install the latest stable release of NodeJS
 
 - Install VS Code
 
-- `npm install`
+- `$: npm install pnpm -g`
+
+- `$: pnpm install`
 
 ### Recommended VS Code Extensions:
 
@@ -32,16 +32,18 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 ### Dev
 
-`npm run dev`
+`$: pnpm dev`
 
 ### Build for Production
 
-`npm run build`
+`$: pnpm build`
 
 ### Preview Production Build
 
-`npm run preview`
+`$: pnpm preview`
 
 ### Credit
 
-Designed by Justin Golden. Images from Unsplash. Icons (generally) from Hero Icons.
+Designed by Justin Golden.
+Images from Unsplash.
+Icons (generally) from Hero Icons.
