@@ -1,7 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 
-	import Icon from './Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 </script>
 
 <div class="navbar bg-base-900/90 sticky top-0 z-10 backdrop-blur-sm">
