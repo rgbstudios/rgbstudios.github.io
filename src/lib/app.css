@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--brand-red: #cc3300;
+		--brand-green: #339966;
+		--brand-blue: #3366ff;
+	}
+
+	::selection {
+		@apply bg-base-700 text-white;
+	}
+	::-moz-selection {
+		@apply bg-base-700 text-white;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-display;
+	}
+
+	.btn-primary {
+		@apply font-bold;
+	}
+
+	img {
+		-webkit-user-drag: none;
+		-khtml-user-drag: none;
+		-moz-user-drag: none;
+		-o-user-drag: none;
+		user-drag: none;
+	}
+
+	@media print {
+		* {
+			background: white !important;
+			color: black !important;
+		}
+		.noprint,
+		.navbar,
+		.rgb-banner,
+		footer,
+		img {
+			visibility: hidden;
+			display: none;
+		}
+	}
+}
