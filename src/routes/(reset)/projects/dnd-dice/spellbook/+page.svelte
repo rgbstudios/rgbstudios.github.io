@@ -10,7 +10,7 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 	import Loader from '$lib/components/Loader.svelte';
 
-	import DndSideNav from '../DndSideNav.svelte';
+	import DndSideNav from '../SideNav.svelte';
 	import SpellbookAboutModal from '$lib/components/modals/dnd_dice/SpellbookAboutModal.svelte';
 
 	import copyText from '$lib/util/copyText';

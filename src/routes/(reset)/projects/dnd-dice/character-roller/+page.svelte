@@ -6,7 +6,7 @@
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
-	import DndSideNav from '../DndSideNav.svelte';
+	import DndSideNav from '../SideNav.svelte';
 
 	import CharacterHistoryModal from '$lib/components/modals/dnd_dice/CharacterHistoryModal.svelte';
 	import CharacterAboutModal from '$lib/components/modals/dnd_dice/CharacterAboutModal.svelte';
