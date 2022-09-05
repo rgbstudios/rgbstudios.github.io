@@ -9,9 +9,10 @@
 	import Icon from './Icon.svelte';
 	import { settings } from '$lib/stores/color-picker';
 
+	import copyText from '$lib/util/copyText';
+
 	export let settingName;
 	export let modalId;
-	export let copyText;
 
 	let lastTimestamp;
 
