@@ -16,8 +16,12 @@
 	</div>
 	<figure>
 		<picture>
-			<source type="image/avif" srcset={img.replace('.avif', '.jpg')} alt={title} />
-			<img src={img} alt={title} class="w-full h-72 object-cover object-top" />
+			<source type="image/avif" srcset={img} alt={title} />
+			<img
+				src={img.replace('.avif', '.jpg')}
+				alt={title}
+				class="w-full h-72 object-cover object-top"
+			/>
 		</picture>
 	</figure>
 </a>
