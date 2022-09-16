@@ -1,4 +1,6 @@
 <script>
+	import { page } from '$app/stores';
+
 	import AboutCard from '$lib/components/AboutCard.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
@@ -6,7 +8,7 @@
 	import people from '$lib/data/people';
 </script>
 
-<SEO title="About | RGB Studios - A Web Development Company" />
+<SEO title="About | RGB Studios - A Web Development Company" url={$page.url.origin + '/about'} />
 
 <Breadcrumbs
 	breadcrumbs={[
