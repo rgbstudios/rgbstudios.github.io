@@ -171,6 +171,7 @@
 
 <ProjectHeader
 	title="D&D Dice Roller"
+	slug="dnd-dice"
 	description="Use D&D Dice Roller to easily roll any number any dice, with modifiers and more"
 	keywords={[
 		'dnd',

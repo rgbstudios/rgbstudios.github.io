@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'A Simple Guide for Svelte Transitions'
+slug: 'svelte-kit-transitions-guide'
 date: '2022/08/31'
 updated_date: '2022/08/31'
 author: 'Justin Golden'

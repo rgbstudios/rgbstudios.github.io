@@ -1,8 +1,18 @@
 <script>
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
-	export let title, date, author, categories, img, preview_text, keywords, updated_date, hidden;
+	export let title,
+		slug,
+		date,
+		author,
+		categories,
+		img,
+		preview_text,
+		keywords,
+		updated_date,
+		hidden;
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import Icon from '$lib/components/Icon.svelte';
@@ -22,6 +32,7 @@
 
 <SEO
 	title={`${title} | RGB Studios`}
+	url={$page.url.origin + '/blog/' + slug}
 	description={preview_text}
 	{keywords}
 	screenshot={img}

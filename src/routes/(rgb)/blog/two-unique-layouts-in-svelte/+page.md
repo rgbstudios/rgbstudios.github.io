@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'Using Two Unique Layouts in Svelte Kit'
+slug: 'two-unique-layouts-in-svelte'
 date: '2022/06/29'
 updated_date: '2022/06/29'
 author: 'Justin Golden'

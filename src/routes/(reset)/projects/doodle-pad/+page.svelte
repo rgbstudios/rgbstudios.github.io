@@ -1,6 +1,9 @@
 <script lang="ts">
-	import screenfull from 'screenfull';
 	import { onMount, tick } from 'svelte';
+	import { page } from '$app/stores';
+
+	import screenfull from 'screenfull';
+
 	import Icon from '$lib/components/Icon.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 
@@ -327,8 +330,10 @@
 
 <svelte:window on:resize={onResize} />
 
+<!-- TODO: use project header with no display at top for consistent seo, prevent future bugs -->
 <SEO
 	title="Doodle Pad | RGB Studios"
+	url={$page.url.origin + '/projects/doodle-pad'}
 	description="A simple website to doodle in your browser"
 	keywords={['doodle', 'draw', 'pad', 'drawing']}
 	icon="img/projects/icons/doodle-pad.png"

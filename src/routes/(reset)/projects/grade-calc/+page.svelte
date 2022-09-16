@@ -100,6 +100,7 @@
 
 <ProjectHeader
 	title="Grade Calc"
+	slug="grade-calc"
 	description="Use Grade Calc to calculate students' grades quickly and simply"
 	keywords={[
 		'free grade calculator',

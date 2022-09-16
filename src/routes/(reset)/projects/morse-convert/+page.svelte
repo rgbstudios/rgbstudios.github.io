@@ -134,6 +134,7 @@
 
 <ProjectHeader
 	title="Morse Code Converter"
+	slug="morse-convert"
 	description="Use Morse Code Converter to convert both ways between English and Morse code"
 	keywords={[
 		'morse code',
