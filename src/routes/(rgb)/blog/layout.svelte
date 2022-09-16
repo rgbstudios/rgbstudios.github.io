@@ -25,10 +25,22 @@
 			goto('/404');
 		}
 		link = window.location.href;
+
+		articleElement = document.getElementById('main-article');
 	});
+
+	let scrollPercent, articleElement;
+
+	const onScroll = () => {
+		scrollPercent = window.scrollY / articleElement.offsetHeight;
+	};
 </script>
 
 <svelte:head><title>{title} | RGB Studios</title></svelte:head>
+
+<div class="w-full top-0 left-0 fixed h-2 z-10">
+	<div class="h-2 bg-brand-green/50" style="width:{(scrollPercent ?? 0) * 100}%" />
+</div>
 
 <SEO
 	title={`${title} | RGB Studios`}
@@ -59,7 +71,10 @@
 		}
 	]}
 />
-<article class="prose lg:prose-xl mx-auto m-8">
+
+<svelte:window on:scroll={onScroll} />
+
+<article id="main-article" class="prose lg:prose-xl mx-auto m-8">
 	<h5>{author} &mdash; {new Date(date).toLocaleDateString()}</h5>
 	<h1>{title}</h1>
 	{#each categories as category}

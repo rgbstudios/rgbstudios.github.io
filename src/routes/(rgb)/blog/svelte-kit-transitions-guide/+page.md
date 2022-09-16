@@ -7,7 +7,7 @@ updated_date: '2022/08/31'
 author: 'Justin Golden'
 preview_text: 'Quickly learn how to apply fade, slide, and other transitions using Svelte'
 img: '/img/blog/crosswalk.avif'
-categories: ['webdev', 'css', 'ui', 'css transitions', 'svelte', 'svelte']
+categories: ['webdev', 'css', 'ui', 'css transitions', 'svelte', 'svelte kit']
 keywords:
   [
     'svelte transitions',
