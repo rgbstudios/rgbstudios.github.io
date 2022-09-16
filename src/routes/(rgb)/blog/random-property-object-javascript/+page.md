@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'How to Get a Random Property of an Object in JavaScript'
 slug: 'random-property-object-javascript'
-date: '2022/07/18'
-updated_date: '2022/07/18'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Get a random key from a JavaScript object in two lines and less than a millisecond'
 img: '/img/blog/dice_in_water.avif'

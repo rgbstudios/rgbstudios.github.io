@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'A Simple Guide to Redirects in Svelte Kit'
 slug: 'redirects-in-svelte-kit'
-date: '2022/06/29'
-updated_date: '2022/06/29'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Read on for a ten line imlementation to handling as many redirects as you need in your Svelte Kit project.'
 img: '/img/blog/redirect_road.avif'

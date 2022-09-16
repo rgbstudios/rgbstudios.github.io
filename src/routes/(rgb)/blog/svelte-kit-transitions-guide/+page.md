@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'A Simple Guide for Svelte Transitions'
 slug: 'svelte-kit-transitions-guide'
-date: '2022/08/31'
-updated_date: '2022/08/31'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Quickly learn how to apply fade, slide, and other transitions using Svelte'
 img: '/img/blog/crosswalk.avif'

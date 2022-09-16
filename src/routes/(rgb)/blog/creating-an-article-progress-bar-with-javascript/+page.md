@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Creating an Article Progress Bar with Javascript'
 slug: 'creating-an-article-progress-bar-with-javascript'
-date: '2022/08/31'
-updated_date: '2022/08/31'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Learn how to create a scroll tracker for articles on your blog in just a few minutes'
 img: '/img/blog/woman_scrolling.avif'

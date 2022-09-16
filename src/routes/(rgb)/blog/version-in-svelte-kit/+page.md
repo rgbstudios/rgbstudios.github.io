@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Getting a Version Number in a Svelte Kit Project'
 slug: 'version-in-svelte-kit'
-date: '2022/07/18'
-updated_date: '2022/07/18'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: "Read on to find the simple and complete way of using your app's version number in your project"
 img: '/img/blog/wall_of_numbers.avif'
