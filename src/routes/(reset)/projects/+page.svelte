@@ -1,11 +1,12 @@
 <script>
+	import { page } from '$app/stores';
+
 	import AppCard from '$lib/components/AppCard.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 
 	import projects from '$lib/data/projects';
 
-	import { page } from '$app/stores';
 	$: sort = $page.url.searchParams.get('sort');
 
 	$: pageTitle =
@@ -20,6 +21,7 @@
 
 <SEO
 	title={`${pageTitle} | RGB Studios`}
+	url={$page.url.origin + '/projects'}
 	description="View the top web apps from RGB Studios: clocks, calculators, converters and more"
 />
 
