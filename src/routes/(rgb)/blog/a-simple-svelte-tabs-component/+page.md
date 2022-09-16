@@ -19,8 +19,11 @@ keywords:
 ---
 
 <figure>
-<img src="/img/blog/tabs.avif" alt="">
-<figcaption>Photo credit @rssemfam on Unsplash</figcaption>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/tabs.avif" alt="">
+    <img src="/img/blog/tabs.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
 </figure>
 
 ### The Problem

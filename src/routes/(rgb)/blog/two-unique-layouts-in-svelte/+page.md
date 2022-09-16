@@ -17,8 +17,11 @@ keywords:
 ---
 
 <figure>
-<img src="/img/blog/two_doors.avif" alt="">
-<figcaption>Photo credit @erol on Unsplash</figcaption>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/two_doors.avif" alt="">
+    <img src="/img/blog/two_doors.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @erol on Unsplash</figcaption>
 </figure>
 
 ### The Problem
