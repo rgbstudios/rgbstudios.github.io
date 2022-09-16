@@ -20,8 +20,12 @@ keywords:
     'js framework easy transitions'
   ]
 ---
+
 <figure>
-  <img src="/img/blog/crosswalk.avif" alt="">
+  <picture>
+    <source type="image/avif" srcset="/img/blog/crosswalk.avif" alt="">
+    <img src="/img/blog/crosswalk.jpg" alt="">
+  </picture>
   <figcaption>Photo credit @wesleyphotography on Unsplash</figcaption>
 </figure>
 

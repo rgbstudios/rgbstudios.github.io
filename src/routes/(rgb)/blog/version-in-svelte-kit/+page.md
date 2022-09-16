@@ -23,8 +23,11 @@ hidden: true
 ---
 
 <figure>
-<img src="/img/blog/wall_of_numbers.avif" alt="">
-<figcaption>Photo credit @nhillier on Unsplash</figcaption>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/wall_of_numbers.avif" alt="">
+    <img src="/img/blog/wall_of_numbers.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @nhillier on Unsplash</figcaption>
 </figure>
 
 ### The Simple

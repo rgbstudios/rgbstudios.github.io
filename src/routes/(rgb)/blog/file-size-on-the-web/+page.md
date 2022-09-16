@@ -16,8 +16,12 @@ keywords:
     'optimize website images'
   ]
 ---
+
 <figure>
-  <img src="/img/blog/slow_website_frustration.avif" alt="">
+  <picture>
+    <source type="image/avif" srcset="/img/blog/slow_website_frustration.avif" alt="">
+    <img src="/img/blog/slow_website_frustration.jpg" alt="">
+  </picture>
   <figcaption>Photo credit @elisa_ventur on Unsplash</figcaption>
 </figure>
 

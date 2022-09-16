@@ -19,8 +19,11 @@ hidden: true
 ---
 
 <figure>
-<img src="/img/blog/dice_in_water.avif" alt="">
-<figcaption>Photo credit @deneskozma on Unsplash</figcaption>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/dice_in_water.avif" alt="">
+    <img src="/img/blog/dice_in_water.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @deneskozma on Unsplash</figcaption>
 </figure>
 
 ### The Function
