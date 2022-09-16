@@ -27,6 +27,7 @@
 
 <ProjectHeader
 	title="Simple Grade Calc"
+	slug="simple-grade-calc"
 	description="Use Simple Grade Calc to easily calculate your grade"
 	keywords={[
 		'grade calculator simple',

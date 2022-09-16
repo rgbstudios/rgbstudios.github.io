@@ -174,6 +174,7 @@
 
 <ProjectHeader
 	title="Color Picker"
+	slug="color-picker"
 	description="A simple but powerful color picker and converter for digital artists and web developers"
 	keywords={['color convert', 'color picker', 'color converter']}
 	icon={!isDark
