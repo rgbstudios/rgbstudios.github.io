@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'A Cleanup Folders Script for Your package.json'
+slug: 'a-cleanup-folders-script-for-your-package-json'
 date: '2022/06/29'
 updated_date: '2022/06/29'
 author: 'Justin Golden'

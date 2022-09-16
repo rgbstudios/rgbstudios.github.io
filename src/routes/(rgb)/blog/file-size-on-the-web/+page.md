@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'File Size on the Web'
+slug: 'file-size-on-the-web'
 date: '2022/06/26'
 updated_date: '2022/06/26'
 author: 'Justin Golden'

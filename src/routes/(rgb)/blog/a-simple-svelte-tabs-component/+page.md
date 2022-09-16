@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'A Simple Svelte Tabs Component'
+slug: 'a-simple-svelte-tabs-component'
 date: '2022/07/31'
 updated_date: '2022/07/31'
 author: 'Justin Golden'

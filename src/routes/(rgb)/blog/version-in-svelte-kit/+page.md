@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'Getting a Version Number in a Svelte Kit Project'
+slug: 'version-in-svelte-kit'
 date: '2022/07/18'
 updated_date: '2022/07/18'
 author: 'Justin Golden'

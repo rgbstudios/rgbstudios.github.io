@@ -1,6 +1,7 @@
 ---
 layout: blog_layout
 title: 'A Simple Guide to Redirects in Svelte Kit'
+slug: 'redirects-in-svelte-kit'
 date: '2022/06/29'
 updated_date: '2022/06/29'
 author: 'Justin Golden'
