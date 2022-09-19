@@ -304,7 +304,8 @@
 		resetSelections();
 		$s.characterName = '';
 
-		$s.characters = [...$s.characters, new Character()];
+		const newCharacter = new Character();
+		$s.characters = [...$s.characters, newCharacter];
 
 		if ($s.settings.displayRolling) displayRolling();
 
@@ -312,7 +313,7 @@
 		showImportAlert = false;
 		history.replaceState({}, '', '?r=');
 
-		$s.historyText += prettyPrint(currentCharacter);
+		$s.historyText += prettyPrint(newCharacter);
 	}
 
 	function resetSelections() {
