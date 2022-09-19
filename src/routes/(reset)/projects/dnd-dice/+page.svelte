@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
 	import Icon from '$lib/components/Icon.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
@@ -60,9 +60,13 @@
 		updateParams(false);
 	}
 
-	onMount(() => {
-		// load url params
-		const url = new URL(window.location.href);
+	let loaded = false;
+	$: if ($s?.modifiers?.dex !== undefined) loaded = true; // set `loaded` to true when LocalStorage has been loaded
+	$: if (loaded === true && extracted === false) extractFromParams(); // when loaded is true, extract params once
+
+	let extracted = false;
+	function extractFromParams() {
+		const url = new URL($page.url.toString());
 		let m = url.searchParams.get('m');
 		if (m) {
 			// atob decodes base 64
@@ -78,7 +82,9 @@
 			$s.modifiers.itv = parseInt(m[8]);
 			toast('Loaded modifiers successfully from url');
 		}
-	});
+
+		extracted = true; // avoid extracting more than once
+	}
 
 	// utility
 
