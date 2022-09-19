@@ -76,6 +76,7 @@
 
 <ProjectHeader
 	title="Base Converter"
+	slug="base-convert"
 	description="Convert numbers between binary, octal, decimal, hexadecimal, and more"
 	keywords={[
 		'base converter',

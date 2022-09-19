@@ -1,8 +1,10 @@
 <script>
+	import { page } from '$app/stores';
+
 	import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<SEO title="Privacy Policy | RGB Studios.org" />
+<SEO title="Privacy Policy | RGB Studios.org" url={$page.url.origin + '/privacy'} />
 
 <article class="prose lg:prose-xl mx-auto">
 	<h1>Privacy Policy</h1>

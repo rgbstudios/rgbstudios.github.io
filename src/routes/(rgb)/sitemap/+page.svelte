@@ -1,8 +1,10 @@
 <script>
+	import { page } from '$app/stores';
+
 	import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<SEO title="Sitemap | RGB Studios" />
+<SEO title="Sitemap | RGB Studios" url={$page.url.origin + '/sitemap'} />
 
 <article class="prose lg:prose-xl mx-auto">
 	<h1>Sitemap</h1>

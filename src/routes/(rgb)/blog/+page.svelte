@@ -1,9 +1,9 @@
 <script>
+	import { page } from '$app/stores';
+
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-
-	import { page } from '$app/stores';
 
 	export let data = {};
 	$: posts = data.posts;
@@ -26,6 +26,7 @@
 
 <SEO
 	title={`${pageTitle} | RGB Studios`}
+	url={$page.url.origin + '/blog'}
 	description="Read blog posts about web design and more from RGB Studios"
 	keywords={[
 		'web dev blog',

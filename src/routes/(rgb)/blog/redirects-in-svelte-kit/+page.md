@@ -1,8 +1,9 @@
 ---
 layout: blog_layout
 title: 'A Simple Guide to Redirects in Svelte Kit'
-date: '2022/06/29'
-updated_date: '2022/06/29'
+slug: 'redirects-in-svelte-kit'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Read on for a ten line imlementation to handling as many redirects as you need in your Svelte Kit project.'
 img: '/img/blog/redirect_road.avif'
@@ -55,7 +56,10 @@ export default redirects;
 ```
 
 <figure>
-  <img src="/img/blog/redirect_road.avif" alt="">
+  <picture>
+    <source type="image/avif" srcset="/img/blog/redirect_road.avif" alt="">
+    <img src="/img/blog/redirect_road.jpg" alt="">
+  </picture>
   <figcaption>Photo credit @35mm on Unsplash</figcaption>
 </figure>
 

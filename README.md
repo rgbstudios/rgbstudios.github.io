@@ -14,9 +14,9 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 - Install VS Code
 
-- `$: npm install pnpm -g`
+- Install `pnpm` globally: `npm i -g pnpm`
 
-- `$: pnpm install`
+- `pnpm install`
 
 ### Recommended VS Code Extensions:
 
@@ -32,15 +32,15 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 ### Dev
 
-`$: pnpm dev`
+`pnpm dev`
 
 ### Build for Production
 
-`$: pnpm build`
+`pnpm build`
 
 ### Preview Production Build
 
-`$: pnpm preview`
+`pnpm preview`
 
 ### Credit
 

@@ -151,6 +151,7 @@
 
 <ProjectHeader
 	title="D&D Spellbook"
+	slug="dnd-dice/spellbook"
 	description="Search for D&D spells and find description, range, class, level, and more"
 	keywords={[
 		'dnd',

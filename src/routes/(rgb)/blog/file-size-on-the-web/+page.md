@@ -1,8 +1,9 @@
 ---
 layout: blog_layout
 title: 'File Size on the Web'
-date: '2022/06/26'
-updated_date: '2022/06/26'
+slug: 'file-size-on-the-web'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'PC games add gigabyte updates, but web devs will debate fiercely over a few kilobytes. Find out why.'
 img: '/img/blog/slow_website_frustration.avif'
@@ -18,7 +19,10 @@ keywords:
 ---
 
 <figure>
-  <img src="/img/blog/slow_website_frustration.avif" alt="">
+  <picture>
+    <source type="image/avif" srcset="/img/blog/slow_website_frustration.avif" alt="">
+    <img src="/img/blog/slow_website_frustration.jpg" alt="">
+  </picture>
   <figcaption>Photo credit @elisa_ventur on Unsplash</figcaption>
 </figure>
 

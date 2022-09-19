@@ -1,4 +1,6 @@
 <script>
+	import { page } from '$app/stores';
+
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import SEO from '$lib/components/SEO.svelte';
@@ -18,7 +20,7 @@
 	$: featuredApps = projects.filter((p) => p.isFeatured);
 </script>
 
-<SEO />
+<SEO url={$page.url.origin} />
 
 <p class="text-xl">
 	We are a US based web development company that creates cool web apps, helpful blog posts, and

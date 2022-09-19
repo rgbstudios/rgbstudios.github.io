@@ -1,8 +1,9 @@
 ---
 layout: blog_layout
 title: 'A Simple Svelte Tabs Component'
-date: '2022/07/31'
-updated_date: '2022/07/31'
+slug: 'a-simple-svelte-tabs-component'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Read on to create a functioning and customizable tabs component without all the fancy stuff..'
 img: '/img/blog/tabs.avif'
@@ -19,8 +20,11 @@ keywords:
 ---
 
 <figure>
-<img src="/img/blog/tabs.avif" alt="">
-<figcaption>Photo credit @rssemfam on Unsplash</figcaption>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/tabs.avif" alt="">
+    <img src="/img/blog/tabs.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
 </figure>
 
 ### The Problem

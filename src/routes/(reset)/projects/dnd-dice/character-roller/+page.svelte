@@ -324,6 +324,7 @@
 
 <ProjectHeader
 	title="D&D Character Roller"
+	slug="dnd-dice/character-roller"
 	description="Use D&D Character Roller to easily roll stats for a new D&D character, complete with graphs, download, and more"
 	keywords={[
 		'dnd',

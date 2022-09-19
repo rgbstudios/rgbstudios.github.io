@@ -16,6 +16,7 @@
 
 <ProjectHeader
 	title="Intersect Calc"
+	slug="intersect-calc"
 	description="Find the intersection point of two lines"
 	keywords={[
 		'intersection calculator',

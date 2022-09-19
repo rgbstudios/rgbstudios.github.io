@@ -1,12 +1,13 @@
 ---
 layout: blog_layout
 title: 'A Simple Guide for Svelte Transitions'
-date: '2022/08/31'
-updated_date: '2022/08/31'
+slug: 'svelte-kit-transitions-guide'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Quickly learn how to apply fade, slide, and other transitions using Svelte'
 img: '/img/blog/crosswalk.avif'
-categories: ['webdev', 'css', 'ui', 'css transitions', 'svelte', 'svelte']
+categories: ['webdev', 'css', 'ui', 'css transitions', 'svelte', 'svelte kit']
 keywords:
   [
     'svelte transitions',
@@ -22,7 +23,10 @@ keywords:
 ---
 
 <figure>
-  <img src="/img/blog/crosswalk.avif" alt="">
+  <picture>
+    <source type="image/avif" srcset="/img/blog/crosswalk.avif" alt="">
+    <img src="/img/blog/crosswalk.jpg" alt="">
+  </picture>
   <figcaption>Photo credit @wesleyphotography on Unsplash</figcaption>
 </figure>
 

@@ -1,8 +1,18 @@
 <script>
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
-	export let title, date, author, categories, img, preview_text, keywords, updated_date, hidden;
+	export let title,
+		slug,
+		date,
+		author,
+		categories,
+		img,
+		preview_text,
+		keywords,
+		updated_date,
+		hidden;
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import Icon from '$lib/components/Icon.svelte';
@@ -15,13 +25,26 @@
 			goto('/404');
 		}
 		link = window.location.href;
+
+		articleElement = document.getElementById('main-article');
 	});
+
+	let scrollPercent, articleElement;
+
+	const onScroll = () => {
+		scrollPercent = window.scrollY / articleElement.offsetHeight;
+	};
 </script>
 
 <svelte:head><title>{title} | RGB Studios</title></svelte:head>
 
+<div class="w-full top-0 left-0 fixed h-2 z-10">
+	<div class="h-2 bg-brand-green/50" style="width:{(scrollPercent ?? 0) * 100}%" />
+</div>
+
 <SEO
 	title={`${title} | RGB Studios`}
+	url={$page.url.origin + '/blog/' + slug}
 	description={preview_text}
 	{keywords}
 	screenshot={img}
@@ -48,7 +71,10 @@
 		}
 	]}
 />
-<article class="prose lg:prose-xl mx-auto m-8">
+
+<svelte:window on:scroll={onScroll} />
+
+<article id="main-article" class="prose lg:prose-xl mx-auto m-8">
 	<h5>{author} &mdash; {new Date(date).toLocaleDateString()}</h5>
 	<h1>{title}</h1>
 	{#each categories as category}

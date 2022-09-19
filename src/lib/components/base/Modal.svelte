@@ -42,6 +42,7 @@
 
 	function trapFocus(e: TransitionEvent) {
 		const el = (e.target as HTMLElement).querySelector('.close-btn') as HTMLElement;
+		if (!el) return;
 		el.focus();
 	}
 
@@ -65,7 +66,7 @@
 	on:change={onChange}
 />
 
-<label for={id} class="modal" class:open={!hidden} on:transitionend={trapFocus}>
+<label for={id} class="modal" class:open={!hidden} on:transitionend={(e) => trapFocus(e)}>
 	<label
 		for=""
 		class="overscroll-contain modal-box relative rounded border-2 {$$props.class}"
@@ -75,9 +76,12 @@
 			<div class="header flex justify-between items-center border-b-2 p-2 mb-5">
 				<h3><slot name="title" /></h3>
 				{#if showCloseBtn}
-					<label for={id} class="btn btn-ghost btn-sm btn-circle close-btn" tabindex="0">
+					<button
+						on:click={() => (hidden = true)}
+						class="btn btn-ghost btn-sm btn-circle close-btn"
+					>
 						<Icon name="close" />
-					</label>
+					</button>
 				{/if}
 			</div>
 		{/if}

@@ -242,6 +242,7 @@
 
 <ProjectHeader
 	title="Binomial Distribution Calculator"
+	slug="binomial-calc"
 	description="Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs"
 	keywords={[
 		'binomial calculator',

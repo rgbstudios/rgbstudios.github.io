@@ -1,8 +1,11 @@
 <script>
+	import { page } from '$app/stores';
+
 	import SEO from './SEO.svelte';
 	import Breadcrumbs from './Breadcrumbs.svelte';
 
 	export let title,
+		slug,
 		description,
 		keywords,
 		icon,
@@ -14,7 +17,14 @@
 
 <div />
 
-<SEO title="{title} | RGB Studios" {description} {keywords} {icon} {screenshot} />
+<SEO
+	title="{title} | RGB Studios"
+	url={$page.url.origin + '/projects/' + slug}
+	{description}
+	{keywords}
+	{icon}
+	{screenshot}
+/>
 
 <Breadcrumbs
 	{isDark}

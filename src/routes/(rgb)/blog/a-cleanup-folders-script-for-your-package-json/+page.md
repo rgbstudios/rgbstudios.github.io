@@ -1,8 +1,9 @@
 ---
 layout: blog_layout
 title: 'A Cleanup Folders Script for Your package.json'
-date: '2022/06/29'
-updated_date: '2022/06/29'
+slug: 'a-cleanup-folders-script-for-your-package-json'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: 'Check out this ten line script to instantly clear those pesky build folders'
 img: '/img/blog/vacuum_confetti.avif'
@@ -18,7 +19,10 @@ keywords:
 ---
 
 <figure>
-  <img src="/img/blog/vacuum_confetti.avif" alt="">
+  <picture>
+    <source type="image/avif" srcset="/img/blog/vacuum_confetti.avif" alt="" />
+    <img src="/img/blog/vacuum_confetti.jpg" alt="">
+  </picture>
   <figcaption>Photo credit @norevisions on Unsplash</figcaption>
 </figure>
 

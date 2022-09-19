@@ -49,6 +49,7 @@
 
 <ProjectHeader
 	title="Stat Calc"
+	slug="stat-calc"
 	description="Use Stat Calc to calculate many statistics on a data set"
 	keywords={[
 		'stats calculator',

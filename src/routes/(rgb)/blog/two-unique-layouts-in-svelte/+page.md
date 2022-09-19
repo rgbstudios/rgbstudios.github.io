@@ -1,8 +1,9 @@
 ---
 layout: blog_layout
 title: 'Using Two Unique Layouts in Svelte Kit'
-date: '2022/06/29'
-updated_date: '2022/06/29'
+slug: 'two-unique-layouts-in-svelte'
+date: '2022/09/16'
+updated_date: '2022/09/16'
 author: 'Justin Golden'
 preview_text: "If you ever struggled to use one layout for some pages, and another layout that doesn't inherit from the base layout, read on."
 img: '/img/blog/two_doors.avif'
@@ -17,8 +18,11 @@ keywords:
 ---
 
 <figure>
-<img src="/img/blog/two_doors.avif" alt="">
-<figcaption>Photo credit @erol on Unsplash</figcaption>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/two_doors.avif" alt="">
+    <img src="/img/blog/two_doors.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @erol on Unsplash</figcaption>
 </figure>
 
 ### The Problem
