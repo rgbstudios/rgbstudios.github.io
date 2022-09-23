@@ -15,6 +15,7 @@ node_modules
 .env
 .env.*
 !.env.example
+package-lock.json
 
 # Logs
 .pnpm-debug.log

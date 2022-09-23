@@ -10,9 +10,7 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 ### First time setup
 
-- Fill out metadata in `package.json` and `app.html`
-
-- Install node/npm
+- Install the latest stable release of NodeJS
 
 - Install VS Code
 
@@ -46,4 +44,6 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 
 ### Credit
 
-Designed by Justin Golden. Images from Unsplash. Icons (generally) from Hero Icons.
+Designed by Justin Golden.
+Images from Unsplash.
+Icons (generally) from Hero Icons.

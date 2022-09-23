@@ -160,6 +160,7 @@
 <svelte:head>
 	<script src="https://unpkg.com/jsbarcode@latest/dist/JsBarcode.all.min.js"></script>
 </svelte:head>
+
 <ProjectHeader
 	title="Barcode Generator"
 	slug="barcode"
