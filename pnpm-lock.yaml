@@ -8,7 +8,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.38.0
   '@typescript-eslint/parser': ^5.38.0
   autoprefixer: ^10.4.11
-  daisyui: 2.19.0
+  daisyui: 2.31.0
   dino-color-picker: ^0.2.3
   eslint: ^8.23.1
   eslint-config-prettier: ^8.5.0
@@ -18,7 +18,7 @@ specifiers:
   mathjax: ^3.2.2
   mdsvex: ^0.10.6
   postcss: ^8.4.16
-  postcss-import: ^14.1.0
+  postcss-import: ^15.0.0
   postcss-load-config: ^4.0.1
   postcss-nested: ^5.0.6
   postcss-nested-ancestors: ^3.0.0
@@ -41,7 +41,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.38.0_wsb62dxj2oqwgas4kadjymcmry
   '@typescript-eslint/parser': 5.38.0_irgkl5vooow2ydyo6aokmferha
   autoprefixer: 10.4.11_postcss@8.4.16
-  daisyui: 2.19.0_6b4luod745iryv24jvdbvzbbsa
+  daisyui: 2.31.0_6b4luod745iryv24jvdbvzbbsa
   dino-color-picker: 0.2.3
   eslint: 8.23.1
   eslint-config-prettier: 8.5.0_eslint@8.23.1
@@ -51,7 +51,7 @@ devDependencies:
   mathjax: 3.2.2
   mdsvex: 0.10.6_svelte@3.50.1
   postcss: 8.4.16
-  postcss-import: 14.1.0_postcss@8.4.16
+  postcss-import: 15.0.0_postcss@8.4.16
   postcss-load-config: 4.0.1_postcss@8.4.16
   postcss-nested: 5.0.6_postcss@8.4.16
   postcss-nested-ancestors: 3.0.0_postcss@8.4.16
@@ -646,8 +646,8 @@ packages:
     hasBin: true
     dev: true
 
-  /daisyui/2.19.0_6b4luod745iryv24jvdbvzbbsa:
-    resolution: {integrity: sha512-lLOz4cHm3xpm0AfdFojDFrhiDu4hZTdEbcVJri+KzQn1HvxmZS4STVujn8tV4RQXjchGdnIsXFqxd6F7rVZBiA==}
+  /daisyui/2.31.0_6b4luod745iryv24jvdbvzbbsa:
+    resolution: {integrity: sha512-qepRXgQPLNcJ8ZPZy+dUvsC7mRWvMLRcVMe85/wZA60Tnhm/bkidhOzdllL8aAk2JX+W/xlIsTJ8NZFpPm+eyw==}
     peerDependencies:
       autoprefixer: ^10.0.2
       postcss: ^8.1.6
@@ -1701,6 +1701,18 @@ packages:
   /postcss-import/14.1.0_postcss@8.4.16:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
     engines: {node: '>=10.0.0'}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.16
+      postcss-value-parser: 4.2.0
+      read-cache: 1.0.0
+      resolve: 1.22.1
+    dev: true
+
+  /postcss-import/15.0.0_postcss@8.4.16:
+    resolution: {integrity: sha512-Y20shPQ07RitgBGv2zvkEAu9bqvrD77C9axhj/aA1BQj4czape2MdClCExvB27EwYEJdGgKZBpKanb0t1rK2Kg==}
+    engines: {node: '>=14.0.0'}
     peerDependencies:
       postcss: ^8.0.0
     dependencies:

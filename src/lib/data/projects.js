@@ -75,6 +75,15 @@ const projects = [
 		isUpdated: true
 	},
 	{
+		title: 'Image to `drop-shadow` converter',
+		text: 'Converter an image to css drop-shadow (because.. why not?)',
+		img: 'img/projects/screenshots/intersect-calc.png',
+		link: '/projects/image-to-box-shadow-converter/',
+		tags: ['calculator', 'educational', 'tool', 'web app'],
+
+		isUpdated: true
+	},
+	{
 		title: 'Intersect Calc',
 		text: 'Use Intersection Calc to calculate the intersection point of lines',
 		img: 'img/projects/screenshots/intersect-calc.png',
