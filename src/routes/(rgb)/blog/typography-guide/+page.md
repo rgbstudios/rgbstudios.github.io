@@ -428,3 +428,5 @@ Books:
 -
 
 todo: add images everywhere...
+todo: table of contents
+todo: split into definitive type guide and type on web guide
