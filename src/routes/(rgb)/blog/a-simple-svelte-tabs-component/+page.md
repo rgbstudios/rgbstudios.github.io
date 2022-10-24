@@ -22,7 +22,7 @@ keywords:
 <figure>
   <picture>
     <source type="image/avif" srcset="/img/blog/tabs.avif" alt="">
-    <img src="/img/blog/posts/tabs.jpg" alt="">
+    <img src="/img/blog/tabs.jpg" alt="">
   </picture>
   <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
 </figure>
@@ -146,7 +146,7 @@ Here's the full file: 25 lines!
 </style>
 ```
 
-<img src="/img/blog/tabs_screenshot.png" alt="">
+<img src="/img/blog/posts/tabs_screenshot.png" alt="">
 
 ### Usage
 
