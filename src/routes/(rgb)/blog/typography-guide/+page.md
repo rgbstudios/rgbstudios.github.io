@@ -63,13 +63,13 @@ A typeface is a group of fonts that all have a consistent aesthetic. A font is a
 
 **Serifs**
 
-A serif is the small pointy bits at the end of a letter. They are generally used for body copy because they are more comfortable to read.
+A serif is the small pointy bits at the end of a letter. They are generally used for body copy because they are more comfortable to read. Serifs originate from when chracters were created with a chisel on stone.
 
 <img src="/img/blog/posts/typography_serif_vs_sans.jpg" alt="serif vs sans serif">
 
 image from [canva](https://www.canva.com/learn/serif-vs-sans-serif-fonts/)
 
-The two main categories of fonts are serifs and sans serifs (meaning "without" serifs).
+The two main categories of fonts are serifs and sans serifs ("sans" comes from French for "without," meaning without serifs).
 
 Serifs are usually used in print, are more traditional, and the serifs improve readability in print. Sans serifs are cleaner and simpler, and the lack of serifs (especially before modern high density displays) makes it easier to read on screens.
 
@@ -91,18 +91,18 @@ Slab serifs (or Egyptian fonts) feature serifs (and letterforms in general) that
 
 Monospace fonts have all characters the same width and are commonly used for programming or in tallying such as reciepts. They are also used for screenplays and provide the appearance of a typewriter. Unless you're going for a very specific and eye catching design, I would not use these unless it is absolutely necessary that all characters be the same width, such as for a programming enviornment.
 
-Display fonts are for excessive or wild displays, not for body copy. For example, fatfaces, pixel fonts, stencil fonts, or other fonts with quirks or focused more on attention than readability all fall under this broad category. These fonts are ok for use for headings, but only if you're careful. Something like a stencil font may look fun to you, but will likely ultimately look tacky and unprofessional.
+Display fonts are for excessive or wild displays, not for body copy. For example, fatfaces, pixel fonts, stencil fonts, graffiti styles, or other fonts with quirks or focused more on attention than readability all fall under this broad category. These fonts are often experimental. These fonts are ok for use for headings, but only if you're careful. Something like a stencil font may look fun to you, but will likely ultimately look tacky and unprofessional.
 
 Script fonts (or "cursive" or "handwriting" fonts) give the appearance of handwritten text. While stylistic, this is not very readable and often looks immature and is not practical. However, these fonts can be used for very small and specific typographic elements to convey a playful mood or something creative and hands-on.
 
 **Examples**
 
 - Sans Serif: [Open Sans](https://fonts.google.com/specimen/Open+Sans)
-- Serif: [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville?category=Serif)
+- Serif: [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville)
 - Slab serif: [Crete Round](https://fonts.google.com/specimen/Crete+Round)
-- Display: [Audiowide](https://fonts.google.com/specimen/Audiowide?category=Display)
-- Monospace: [Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono?category=Monospace)
-- Handwriting: [Indie Flower](https://fonts.google.com/specimen/Indie+Flower?category=Handwriting)
+- Display: [Audiowide](https://fonts.google.com/specimen/Audiowide)
+- Monospace: [Cutive Mono](https://fonts.google.com/specimen/Cutive+Mono)
+- Handwriting: [Indie Flower](https://fonts.google.com/specimen/Indie+Flower)
 
 These classifications cover the most generic ways to catalogue fonts, however, fonts are commonly categoried based on the ratios of specific characters, which are known as the font's proportions.
 
@@ -118,13 +118,13 @@ Roman proportions are the building blocks of typography, and are modeled after a
 
 <img src="/img/blog/posts/typography_humanist.jpg" alt="humanist typefaces">
 
-**Humanist / Old Style**
+**Old Style and Humanist**
 
-Humanist, otherwise known as "old style" fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. "Old Style" fonts are serifs, as they have a traditional and fancy heir to them. However, "Humanist" generally refers to sans serifs, which borrow from "Old Style" proportions. These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy and a low contrast, and the serifs often have prominent brackets. Usually, these fonts have a tall x-height.
+Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs, as they have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (samd as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a caligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
 
-Example: [Spectral](https://fonts.google.com/specimen/Spectral) (serif) [Merriweather Sans](https://fonts.google.com/specimen/Merriweather+Sans) (sans serif)
+Example: [Goudy Bookletter 1911](https://fonts.google.com/specimen/Goudy+Bookletter+1911) (serif) [Merriweather Sans](https://fonts.google.com/specimen/Merriweather+Sans) (sans serif)
 
-History: These fonts were popular many years ago, but fell out of favor in the 18 and 19th centirues, but saw more use in the 20th century (as many fonts have) and are still popular now. Humanist fonts are sans serifs and therefore newer than old style fonts.
+History: Old style was developed between the 15th and 18th centuries for metal type. These fonts fell out of favor in the 18th and 19th centirues, but saw more use in the 20th century (as many fonts have) and are still popular now. Humanist fonts are sans serifs and therefore newer than old style fonts.
 
 Usage: These fonts can be used all around. They have an elegance associated with them.
 
@@ -132,11 +132,11 @@ Usage: These fonts can be used all around. They have an elegance associated with
 
 **Transitional / Neo-classical**
 
-Traditional, or "neo-classical" fontfaces resemble penship (similar to Humanist fontfaces), however, they also feature more symmetry and uniformity, have a higher contrast, and have more structure. These fonts are often serifs and usually have a vertical stress. Letterforms usually have a high contrast, and these fontfaces also often have tall x-heights.
+Traditional, or "neo-classical" fontfaces resemble penship (similar to Old Style fontfaces), however, they also feature more symmetry and uniformity, have a higher contrast, and have more structure. These fonts are often serifs and usually have a vertical stress. Letterforms usually have a high contrast, and these fontfaces also often have tall x-heights.
 
-Example: [PT Serif](https://fonts.google.com/specimen/PT+Serif)
+Example: [Baskervville](https://fonts.google.com/specimen/Baskervville)
 
-History: First appearing in the late 18th century, these fonts have been revived often in the past couple centuries.
+History: First appearing in the late 18th century, these fonts have been revived often in the past couple centuries. As printed processes were refined, fonts with finer details were created (hence sharper serifs on these fonts)
 
 Usage: These fonts can be used all around. They have some of the elegance from humanist fonts with a refined look.
 
@@ -144,25 +144,25 @@ Usage: These fonts can be used all around. They have some of the elegance from h
 
 **Modern**
 
-Modern fonts have straight, flat serifs, with very small or no brackets, and rounded terminals. These fonts have a very large contrast and tall x-height.
+Modern fonts have straight, flat serifs, with very small or no brackets, vertical stress, and rounded terminals. These fonts have a very large contrast and tall x-height.
 
 Example: [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 
-History: Began in the late 18 and early 19th century
+History: Began in the late 18 and early 19th century.
 
-Usage: Modern fonts give a very "designer" feel and make for great headlines in my opinion
+Usage: Modern fonts give a very "designer" feel and make for great headlines in my opinion. They are commonly used in fashion, beauty, and for magazines.
 
 <img src="/img/blog/posts/typography_slab_serif.jpg" alt="slab serif typefaces">
 
 **Slab Serifs**
 
-Slab serifs are uniquely defined by square, often heavy serifs. Often, slab serifs have no bracket to connect the serifs to the strokes. There is aften no contrast and a fully vertical stress. Slab serifs often have a tall x-height.
+Slab serifs are uniquely defined by square, often heavy serifs. Often, slab serifs have no bracket to connect the serifs to the strokes. They have a uniform stroke and a fully vertical stress. Slab serifs often have a tall x-height.
 
 Example: [Zilla Slab](https://fonts.google.com/specimen/Zilla+Slab)
 
 History: Slab serifs first started appearing around the early 18th century.
 
-Usage: Slab serifs are traditionally very bulky and industrial, but some of them have been developed with thinner font weights which can, in contrast to their predecessors, convey elegance and a modern design if used correctly. Be careful to only chose a highly readable slab serif font if you use one for body copy.
+Usage: Slab serifs are traditionally very bulky and industrial, but some of them have been developed with thinner font weights which can, in contrast to their predecessors, convey elegance and a modern design if used correctly. Generally, one would not want to chose slab serifs for body copy, but if you do, chose a font that is highly readable and has a thin font weight.
 
 <img src="/img/blog/posts/typography_grotesque.jpg" alt="grotesque typefaces">
 
@@ -170,19 +170,19 @@ Usage: Slab serifs are traditionally very bulky and industrial, but some of them
 
 **Grotesque / Neo-grotesque**
 
-Grotesque and Neo-grotesque typefaces have an aesthetic considered irregular and unusual, especially at the time, therefore resulting in the name. Despite the name, there are many great grotesque typefaces. These fonts are usually sans serifs. Grotesque fonts usually have a small contrast and the same cap height and ascender height. Neo-grotesque fonts came later and evolved minimal and simple letterforms with uniform strokes and straight terminals. Notably, Grotesque fonts have a "double story" lowercase "g" and Neo-grotesque fonts have a "single story" lowercase "g." Neo-grotesque fonts also have tight apertures (notable, lowercase "a" and "e"), which may hinder readability.
+Grotesque and Neo-grotesque typefaces have an aesthetic considered irregular and unusual, especially at the time, therefore resulting in the name. Despite the name, there are many great grotesque typefaces. These fonts are sans serifs and usually have a small contrast and the same cap height and ascender height. Neo-grotesque fonts came later and evolved minimal and simple letterforms with uniform strokes and straight terminals. Notably, Grotesque fonts have a "double story" lowercase "g" and Neo-grotesque fonts have a "single story" lowercase "g." Neo-grotesque fonts also have tight apertures (notable, lowercase "a" and "e"), which may hinder readability, while Grotesque fonts have open apertures. However, Neo-grotesque fonts are otherwise considered more readable, and were developed later in the 20th century in order to be neutral and legible, therefore a lot of the "personality" of Grotesque fonts were removed.
 
-Example: [Work Sans](https://fonts.google.com/specimen/Work+Sans)
+Example: [Work Sans](https://fonts.google.com/specimen/Work+Sans) (grotesque) [Roboto](https://fonts.google.com/specimen/Roboto) (grotesque)
 
 History: These fonts were seen in the early 20th century and were refined into neo-grotesque in in the mid 20th century.
 
-Usage: These fonts can be used all around. They have a nice design, but don't stand out.
+Usage: These fonts can be used all around. Grotesque fonts stand out more, while Neo-grotesque fonts don't stand out as much and work well for neutral body copy.
 
 <img src="/img/blog/posts/typography_geometric.jpg" alt="geometric typefaces">
 
 **Geometric**
 
-Geometric typefaces are almost always sans serif, and constructed from geometric shapes such as straight lines and circles. These fonts have uniform stroke thickness.
+Geometric typefaces are sans serifs and constructed from geometric shapes such as straight lines and circles. These fonts have uniform stroke thickness. Part of being geometric means rectangular letterforms and optically circular bowls.
 
 Example: [Poppins](https://fonts.google.com/specimen/Poppins) is a popular geometric font.
 
@@ -206,7 +206,7 @@ Example: [Dancing Script](https://fonts.google.com/specimen/Dancing+Script)
 
 History: These fonts each have vastly different histories, but it's easy to tell how they were inspired. Formal script and caligraphic fonts came first.
 
-Usage: I would not recommend any of these fonts for body copy, but if you really wanted to, you'd have to chose a script that's (somehow) highly readable and uniform. Formal scripts can make nice headings for the right job (maybe a beauty product or a wedding invitation), but I would refrain from using other scripts or caligraphic fonts for anything except watermarks and little designs on packages, etc.
+Usage: Scripts are not suitable for body copy. Formal scripts can make nice headings for the right job (maybe a beauty product or a wedding invitation), but I would refrain from using other scripts or caligraphic fonts for anything except watermarks and little designs on packages, etc.
 
 **A Note on Fontface Usage Regarding Classifications and Proportions**
 
@@ -228,7 +228,7 @@ There are numerous terms used to describe letterforms, but we'll go over only so
 
 The baseline is the line that all characters sit on. Note that descenders can go below this.
 
-The x-height is traditionally the height of a lowercase "x" and is often a marker for the height of lowercase letters.
+The x-height is traditionally the height of a lowercase "x" and is often a marker for the height of lowercase letters. Important for legibility.
 
 The cap height is the height of a capital letter.
 
@@ -240,7 +240,28 @@ X-height is typically used as a measure of readability and aesthetic (well speci
 
 **Parts of a Letterform**
 
-Font weight refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. Variable font weights are a recent development that allow the end user to fully customize the font weight. (Website note: each additional font weight will significantly impact performance)
+Font weight refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. Variable font weights are a recent development that allow the end user to fully customize the font weight. (Website note: each additional font weight will significantly impact performance).
+
+Common font weight names:
+100 - ultra light, extra light, or thin
+200 - ultra light, extra light, or thin
+300 - light
+400 - regular, or normal
+500 - medium, or book
+600 - semibold or bold
+700 - bold or heavy
+800 - extra bold or black
+900 - extra black or black
+
+Common width / proportion names:
+extra condensed / extra compressed
+condensed / compressed
+semi condensed / semi compressed
+regular
+wide
+expanded / extended
+
+[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names.
 
 Contrast refers to the difference between the thick and thin parts of the stroke in a letterform. Monolinear types such as slab serifs have very low stroke contrast, whereas fatface fonts (such as [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)) have greater contrast.
 
@@ -262,13 +283,25 @@ The ink trap refers to the negative space (or lack thereof) inside of a letterfo
 
 The aperture is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability.
 
-There are many, many other parts of a letterform, such as the bowl (covers curves as seen in "o"), the crossbar (horizontal line within as seen in "A" or "H"), the stem (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
+The bowl is the stroke around a curve in a letterform, such as in the "o" or "a."
+
+There are many, many other parts of a letterform, the crossbar (horizontal line within as seen in "A" or "H"), the stem (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
 
 <img src="/img/blog/posts/typography_anatomy.png" alt="typography anatomy">
 
 image from [material.io](https://m2.material.io/design/typography/understanding-typography.html#type-properties)
 
-### Typography and Copy
+### Typesetting
+
+(Typography and Copy)
+
+**Legibility**
+
+The measure of how easy text is to read, depends on ability to distinguish between characters, view characters together, and read a line or block of text.
+
+To chose a legible font, consider the x height, chose a normal character width (not condensed or extended) and weight (not light or bold). "Book" or "Regular" weight is best. Neutral fonts (fonts with less personality) are the most readable. High contrast fonts can result in decreased legibility due to having very thin strokes (especially Modern fonts). Legibility is far more important for body text than headings, as headings will be very large and readers will be drawn to them, but body text will be small and where the user spends most of their time.
+
+Avoid all caps fonts for legibility. Note that ascenders and descenders help distinguish characters.
 
 ##### Copies
 
@@ -361,7 +394,13 @@ image from [quora](https://www.quora.com/What-typefaces-does-Massimo-Vignelli-us
 
 ### Performance
 
-font files
+**Font Files**
+
+- Postscript (.ps) - developed by Adobe in the 1980s. Separate files needed for different operating systems, as well as for print and render, which became problematic. Holds about 220 glyphs.
+- TrueType (.ttf) - developed jointly by Apple and Microsoft in the early 1990s. Files could hold print and screen data and 65 thousand glyphs.
+- OpenType (.otf) - developed in the late 1990s. Uses unicode to allow up to 65 thousand glpyhs and multiple languages. Cross-platform.
+- Scalable Vector Graphics (.svg) - Usually SVGs are used for logos and icons online, but they can also be used for fonts. These were derived from OpenType. Characters can be displayd in various colors and animated due to being simple SVG files at their core.
+- Variable Fonts (.vf) - developed jointly by Adobe, Apple, Google, and Microsoft in 2016. Technically known as "OpenType Font Variations" and allows for up to 65 thousand unique glyph sets which can vary in font weight width, and slant. This means these files can be nearly fully customized by the end user, rather than being restricted to a few font weights.
 
 file sizes
 
@@ -389,14 +428,22 @@ variable fonts are your friend for many stroke widths, but still come at file si
 
 important: don't go overboard with many different font sizes, weights, styles, etc. even two fontfaces can be too many and overwhelming if you have many many different combinations of font size, weight, etc. develop six or seven styles for headings (3-4), body (1) small (1) links (1) and use consistent system everywhere. typography is a SYSTEM in your design, just like a color palette. need to be consistent and will look best and establish brand and comfort
 
-60-80 chars per line. containers containers containers. tailwind has `max-w-prose` class at 65ch max width
+45-90 chars per line. containers containers containers. tailwind has `max-w-prose` class at 65ch max width
 
 remember: right tool for the job
 
 layouts and numbers, quick reference:
-sizing: 15-25px (screen. print would be 10-12pt)
-leading: 120% to 150% of text size
-45-90 chracters per line
+sizing: 15-25px (screen. print would be 10-12pt) (fonts with larger x-height are easier to read on smaller sizes)
+
+**Tracking**
+Letter spacing. Try not to change this, unless absolutely necessary, or stylistically for a heading.
+
+**Leading**
+Line height. 120% to 150% of text size (changes based off of text size and x height)
+
+**Line Length / Column Width**
+45-90 (ideally 60-70) chracters per line
+
 primary heading 175%-200% of body text, secondary heading 125-150% of body text size
 alignment: generally, avoid temptation of aligning text to center
 line height, tailwind example use line height number not units, relative to font size, link to tailwind defaults text-xl, text-lg, etc
@@ -419,9 +466,15 @@ Websites:
 
 - https://designmodo.com/letterform/
 
+- https://www.jotform.com/blog/a-crash-course-in-typography-the-basics-of-type
+
 Videos:
 
 - https://youtu.be/RJ4k6FI_LYQ
+
+- https://youtu.be/yAuUDyUC-GM
+
+- https://youtu.be/yAuUDyUC-GM
 
 Books:
 
