@@ -23,10 +23,10 @@
 	const roundPrecision = 10;
 	export let data = {};
 
-	$: N = 52 ?? data.N;
-	$: m = 4 ?? data.m;
-	$: n = 5 ?? data.n;
-	$: k = 1 ?? data.k;
+	let N = 52 ?? data.N;
+	let m = 4 ?? data.m;
+	let n = 5 ?? data.n;
+	let k = 1 ?? data.k;
 	let errorMsg = '';
 
 	// sync url with inputs
@@ -195,7 +195,7 @@
 							bind:value={N}
 							min="1"
 							max="1000"
-							class="input input-bordered w-full"
+							class="input input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>
@@ -209,7 +209,7 @@
 							bind:value={m}
 							min="1"
 							max={N}
-							class="input input-bordered w-full"
+							class="input input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>
@@ -223,7 +223,7 @@
 							bind:value={n}
 							min="1"
 							max={N}
-							class="input input-bordered w-full"
+							class="input input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>
@@ -237,7 +237,7 @@
 							bind:value={k}
 							min="0"
 							max={n}
-							class="input input-bordered w-full"
+							class="input input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>
@@ -260,42 +260,42 @@
 					<td>Probability exactly k distinct items are picked</td>
 					<td class="text-brand-blue font-bold">P(X=k)</td>
 					<td>
-						<input disabled value={eq} class="input input-bordered w-full" />
+						<input disabled value={eq} class="input input-bordered w-full min-w-[10rem]" />
 					</td>
 				</tr>
 				<tr>
 					<td>Probability less than k distinct items are picked</td>
 					<td class="text-brand-red font-bold">P(X&lt;k)</td>
 					<td>
-						<input disabled value={lt} class="input input-bordered w-full" />
+						<input disabled value={lt} class="input input-bordered w-full min-w-[10rem]" />
 					</td>
 				</tr>
 				<tr>
 					<td>Probability more than k distinct items are picked</td>
 					<td class="text-brand-green font-bold">P(X&gt;k)</td>
 					<td>
-						<input disabled value={gt} class="input input-bordered w-full" />
+						<input disabled value={gt} class="input input-bordered w-full min-w-[10rem]" />
 					</td>
 				</tr>
 				<tr>
 					<td>Probability less than or equal to k distinct items are picked</td>
 					<td>P(X&le;k)</td>
 					<td>
-						<input disabled value={le} class="input input-bordered w-full" />
+						<input disabled value={le} class="input input-bordered w-full min-w-[10rem]" />
 					</td>
 				</tr>
 				<tr>
 					<td>Probability more than or equal to k distinct items are picked</td>
 					<td>P(X&ge;k)</td>
 					<td>
-						<input disabled value={ge} class="input input-bordered w-full" />
+						<input disabled value={ge} class="input input-bordered w-full min-w-[10rem]" />
 					</td>
 				</tr>
 				<tr>
 					<td>Mean</td>
 					<td>&mu;</td>
 					<td>
-						<input disabled value={mu} class="input input-bordered w-full" />
+						<input disabled value={mu} class="input input-bordered w-full min-w-[10rem]" />
 					</td>
 				</tr>
 			</tbody>
