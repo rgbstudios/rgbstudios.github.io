@@ -8,7 +8,7 @@
 
 <Navbar />
 <RGBHero />
-<div class="container mx-auto p-8">
+<div class="sm:container mx-auto p-8">
 	<slot />
 </div>
 <Footer />

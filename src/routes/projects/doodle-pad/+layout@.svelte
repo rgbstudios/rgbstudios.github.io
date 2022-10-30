@@ -15,7 +15,7 @@
 </script>
 
 <slot />
-<div class="container mx-auto p-8">
+<div class="sm:container mx-auto p-8">
 	<ShareButtons {title} {link} />
 	<SmallFooter />
 </div>

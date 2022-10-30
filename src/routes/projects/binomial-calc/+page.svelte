@@ -57,10 +57,10 @@
 	const roundPrecision = 10;
 
 	export let data = {};
-	$: p = data.p ?? 0.5;
-	$: n = data.n ?? 40;
-	$: x = data.x ?? 18;
-	$: q = data.q;
+	let p = data.p ?? 0.5;
+	let n = data.n ?? 40;
+	let x = data.x ?? 18;
+	let q = data.q;
 
 	let errorMsg = '';
 	let barChartURI, pieChartURI;
@@ -236,7 +236,8 @@
 	<script
 		id="MathJax-script"
 		async
-		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+		src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+	></script>
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </svelte:head>
 
@@ -279,7 +280,7 @@
 							min="0"
 							max="1"
 							step="0.1"
-							class="input input-sm input-bordered w-full"
+							class="input input-sm input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>
@@ -293,7 +294,7 @@
 							bind:value={n}
 							min="0"
 							max="999"
-							class="input input-sm input-bordered w-full"
+							class="input input-sm input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>
@@ -307,7 +308,7 @@
 							bind:value={x}
 							min="0"
 							max={n}
-							class="input input-sm input-bordered w-full"
+							class="input input-sm input-bordered w-full min-w-[10rem]"
 							required
 						/>
 					</td>

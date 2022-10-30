@@ -19,10 +19,10 @@
 				<li>Acrobatics</li>
 				<li>Sleight of Hand</li>
 				<li>Stealth</li>
-				<li>Arcana</li>
 			</ul>
 			<b>Intelligence</b>
 			<ul>
+				<li>Arcana</li>
 				<li>History</li>
 				<li>Investigation</li>
 				<li>Nature</li>

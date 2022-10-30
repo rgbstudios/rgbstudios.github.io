@@ -4,7 +4,7 @@
 </script>
 
 <div class="bg-base-800 w-full">
-	<footer class="container mx-auto footer items-center p-4">
+	<footer class="sm:container mx-auto footer items-center p-4">
 		<div class="items-center grid-flow-col">
 			<img class="w-12 h-12" src="/img/rgb_logo_256.png" alt="RGB logo" />
 			<p>
