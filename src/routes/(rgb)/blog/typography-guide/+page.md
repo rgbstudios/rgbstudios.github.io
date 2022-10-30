@@ -184,11 +184,11 @@ Usage: These fonts can be used all around. Grotesque fonts stand out more, while
 
 Geometric typefaces are sans serifs and constructed from geometric shapes such as straight lines and circles. These fonts have uniform stroke thickness. Part of being geometric means rectangular letterforms and optically circular bowls.
 
-Example: [Poppins](https://fonts.google.com/specimen/Poppins) is a popular geometric font.
+Example: [Poppins](https://fonts.google.com/specimen/Poppins)
 
 History: Geometric typefaces were popular in the early 20th century and late 20th century. They were likely created earlier.
 
-Usage: These typefaces are less ideal for body copy as repeating shapes and patterns decrease readability.
+Usage: These typefaces are less ideal for body copy as repeating shapes and patterns decrease readability. However, a notable exception is Futura, which was designed to be practical and is widely used in body copy despite being a geometric typeface.
 
 <img src="/img/blog/posts/typography_formal_script.jpg" alt="formal script typefaces">
 
