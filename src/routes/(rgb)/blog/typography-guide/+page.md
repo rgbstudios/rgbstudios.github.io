@@ -303,7 +303,7 @@ To chose a legible font, consider the x height, chose a normal character width (
 
 Avoid all caps fonts for legibility. Note that ascenders and descenders help distinguish characters.
 
-##### Copies
+##### Body and Heading Copy
 
 Body copy refers to the paragraphs and most basic and smallest copy on your page.
 
@@ -456,29 +456,39 @@ Type foundaries blah blah
 
 Websites:
 
-- https://fonts.google.com/knowledge
+- [Google Fonts - Fonts Knowledge](https://fonts.google.com/knowledge)
 
-- https://fonts.google.com/knowledge/glossary
+- [Fonts.com - Learn about Fonts & Typography](https://www.fonts.com/content/learning)
 
-- https://www.fonts.com/content/learning
+- [HubSpot - The Beginner's Guide to Typography in Web Design](https://blog.hubspot.com/website/website-typography)
 
-- https://blog.hubspot.com/website/website-typography
+- [designmodo - Typography: Anatomy of a Letterform](https://designmodo.com/letterform/)
 
-- https://designmodo.com/letterform/
-
-- https://www.jotform.com/blog/a-crash-course-in-typography-the-basics-of-type
+- [jotform - A Crash Course in Typography: The Basics of Type](https://www.jotform.com/blog/a-crash-course-in-typography-the-basics-of-type)
 
 Videos:
 
-- https://youtu.be/RJ4k6FI_LYQ
+- [The History of Typography - Animated Short](https://youtu.be/wOgIkxAfJsk)
 
-- https://youtu.be/yAuUDyUC-GM
+- [Beginning Graphic Design: Typography](https://youtu.be/sByzHoiYFX0)
 
-- https://youtu.be/yAuUDyUC-GM
+- [When to use Each Font Type](https://youtu.be/RJ4k6FI_LYQ)
+
+- [The Ultimate Guide to Typography](https://youtu.be/yAuUDyUC-GM)
+
+- [Typography Theory: The Basics of Type](https://youtu.be/ancf51AO3m8)
+
+- [Typography Theory: The Anatomy of Type](https://youtu.be/CDmzaapVvsM)
+
+- [Hyperlegible: an approach to accessible type design](https://youtu.be/wjE5eHLICzc)
 
 Books:
 
--
+- [Designing Type](https://www.amazon.com/gp/product/0300249926/) - All about creating a typeface, one letterform at a time. Dive deep into every single part of a font and learn about how to create your own.
+
+- [Essential Type](https://www.amazon.com/gp/product/0300222378/) - Serves as a quick glossary for typography terminology and how to understand and use fonts. Well structured, portable, and great images.
+
+- [Thinking with Type](https://www.amazon.com/gp/product/1568989695/) - A guide for using type in your designs. Plenty of examples, history, and explanations of where to use and not use fontfaces.
 
 todo: add images everywhere...
 todo: table of contents
