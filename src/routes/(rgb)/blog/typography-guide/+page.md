@@ -161,7 +161,7 @@ Geometric sans serifs are almost always based off of perfect or near perfect cir
 
 <img src="/img/blog/posts/typography_humanist.jpg" alt="humanist typefaces">
 
-**Old Style and Humanist**
+#### Old Style and Humanist
 
 Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs, as they have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (same as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a caligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
 
@@ -169,11 +169,11 @@ Example: [Goudy Bookletter 1911](https://fonts.google.com/specimen/Goudy+Booklet
 
 History: Old style was developed between the 15th and 18th centuries for metal type. These fonts fell out of favor in the 18th and 19th centirues, but saw more use in the 20th century (as many fonts have) and are still popular now. Humanist fonts are sans serifs and therefore newer than old style fonts.
 
-Usage: These fonts can be used all around. They have an elegance associated with them.
+Usage: These fonts can be used all around. They have an elegance associated with them. Consider using something else for highly modern marketing or branding.
 
 <img src="/img/blog/posts/typography_transitional.jpg" alt="transitional typefaces">
 
-**Transitional / Neo-classical**
+#### Transitional / Neo-classical
 
 Traditional, or "neo-classical" fontfaces resemble penship (similar to Old Style fontfaces), however, they also feature more symmetry and uniformity, have a higher contrast, and have more structure. These fonts are often serifs and usually have a vertical stress. Letterforms usually have a high contrast, and these fontfaces also often have tall x-heights.
 
@@ -185,19 +185,19 @@ Usage: These fonts can be used all around. They have some of the elegance from h
 
 <img src="/img/blog/posts/typography_modern.jpg" alt="modern typefaces">
 
-**Modern**
+#### Modern
 
 Modern fonts (sometimes called Didone fonts) have straight, flat serifs, with very small or no brackets, vertical stress, and rounded terminals. These fonts have a very large contrast and tall x-height.
 
 Example: [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 
-History: Began in the late 18 and early 19th century.
+History: Began in the late 18th and early 19th century.
 
-Usage: Modern fonts give a very "designer" feel and make for great headlines in my opinion. They are commonly used in fashion, beauty, and for magazines.
+Usage: Modern fonts give a very "designer" feel and make for great headlines in my opinion. They are commonly used in fashion, beauty, and for magazine covers or article headlines.
 
 <img src="/img/blog/posts/typography_slab_serif.jpg" alt="slab serif typefaces">
 
-**Slab Serifs**
+#### Slab Serifs
 
 Slab serifs are uniquely defined by square, often heavy serifs. Often, slab serifs have no bracket to connect the serifs to the strokes. They have a uniform stroke and a fully vertical stress. Slab serifs often have a tall x-height.
 
@@ -211,9 +211,9 @@ Usage: Slab serifs are traditionally very bulky and industrial, but some of them
 
 <img src="/img/blog/posts/typography_neo_grotesque.jpg" alt="neo grotesque typefaces">
 
-**Grotesque / Neo-grotesque**
+#### Grotesque / Neo-grotesque
 
-Grotesque and Neo-grotesque typefaces have an aesthetic considered irregular and unusual, especially at the time, therefore resulting in the name. Despite the name, there are many great grotesque typefaces. These fonts are sans serifs and usually have a small contrast and the same cap height and ascender height. Neo-grotesque fonts came later and evolved minimal and simple letterforms with uniform strokes and straight terminals. Notably, Grotesque fonts have a "double story" lowercase "g" and Neo-grotesque fonts have a "single story" lowercase "g." Neo-grotesque fonts also have tight apertures (notable, lowercase "a" and "e"), which may hinder readability, while Grotesque fonts have open apertures. However, Neo-grotesque fonts are otherwise considered more readable, and were developed later in the 20th century in order to be neutral and legible, therefore a lot of the "personality" of Grotesque fonts were removed.
+Grotesque and Neo-grotesque typefaces have an aesthetic considered irregular and unusual at the time and were the first sans serifs, hence the name, "grotesque." Despite the name, there are many great Grotesque and Neo-grotesque typefaces. These fonts are sans serifs and usually have a small contrast and the same cap height and ascender height. Neo-grotesque fonts came later and evolved minimal and simple letterforms with uniform strokes and straight terminals. Notably, Grotesque fonts have a "double story" lowercase "g" and Neo-grotesque fonts have a "single story" lowercase "g." Neo-grotesque fonts also have tight apertures (notable, lowercase "a" and "e"), which may hinder readability, while Grotesque fonts have open apertures. However, Neo-grotesque fonts are otherwise considered more readable, and were developed later in the 20th century in order to be neutral and legible, therefore a lot of the "personality" of Grotesque fonts were removed.
 
 Example: [Work Sans](https://fonts.google.com/specimen/Work+Sans) (grotesque) [Roboto](https://fonts.google.com/specimen/Roboto) (grotesque)
 
@@ -223,7 +223,7 @@ Usage: These fonts can be used all around. Grotesque fonts stand out more, while
 
 <img src="/img/blog/posts/typography_geometric.jpg" alt="geometric typefaces">
 
-**Geometric**
+#### Geometric
 
 Geometric typefaces are sans serifs and constructed from geometric shapes such as straight lines and circles. These fonts have uniform stroke thickness. Part of being geometric means rectangular letterforms and optically circular bowls.
 
@@ -241,9 +241,9 @@ Usage: These typefaces are less ideal for body copy as repeating shapes and patt
 
 <img src="/img/blog/posts/typography_handwritten.jpg" alt="handwritten typefaces">
 
-**Scripts**
+#### Scripts
 
-Script fonts are based on cursive handwriting, and divided into several categories. Formal scripts, which are more elegant, connected, and have fancy swashes and flourishes. Casual scripts mimic a wet brush and may or may not have connected letterforms. Caligraphic fonts, which are often not considered a script font, mimic caligraphy (of course) and have letterforms that emulate brush strokes, with high contrast. Handwriten fonts are also often not categoried with scripts, and have a very casual look and feel, and lack a rigid structure that other fonts have, in order to mimic handwriting.
+Script fonts are based on cursive handwriting, and divided into several categories. Formal scripts are more elegant, connected, and have fancy swashes and flourishes. Casual scripts mimic a wet brush and may or may not have connected letterforms. Caligraphic fonts are often not considered a script font, mimic caligraphy (of course) and have letterforms that emulate brush strokes, with high contrast. Handwriten fonts are also often not categoried with scripts, and have a very casual look and feel, and lack a rigid structure that other fonts have, in order to mimic handwriting.
 
 Example: [Dancing Script](https://fonts.google.com/specimen/Dancing+Script)
 
@@ -251,88 +251,94 @@ History: These fonts each have vastly different histories, but it's easy to tell
 
 Usage: Scripts are not suitable for body copy. Formal scripts can make nice headings for the right job (maybe a beauty product or a wedding invitation), but I would refrain from using other scripts or caligraphic fonts for anything except watermarks and little designs on packages, etc.
 
-**A Note on Fontface Usage Regarding Classifications and Proportions**
+#### A Note on Fontface Usage Regarding Classifications
 
-Different font proportions often reflect their time period. The same way that it would be bizarre to bring a lego set to a football game, it would prompt similar quizical expressions if you were to use a modern font for a company doing 18th century photography, or if you were to use an old style font for a modern fashion brand.
+Different font classifications often reflect their time period. The same way that it would be bizarre to bring a lego set to a football game, it would prompt similar quizical expressions if you were to use a modern font for a company doing 18th century photography, or if you were to use an old style font for a modern fashion brand. It's important to be mindful of the historical period a classification (not the font itself) comes from when using it for a specific use case.
 
-**More Notes on Usage**
+#### More Notes on Usage
 
-Different fonts communicate different feelings thought design. You'll want to chose a font Based on the look and feel, branding, and emotion you want to convey.
+Different fonts communicate different feelings thought design. You'll want to chose a font based on the look and feel, branding, and emotion you want to convey.
 
 Serifs often evoke an older, formal look and feel, and are great for body copy, specifically in print. Sans serif letterforms are clean and modern, and can also be used for both body and heading copy. Sans serifs work well on the web and for screens. Both serifs and sans serifs will still work well on either medium and for headings or body copy. Scripts should be mostly limited to wedding invitations, book covers, and specific historical displays when appropriate. Caligraphic fonts can convey a personal look and feel, but should be used with caution.
 
 ### Letterforms
 
-A letterform is a specific character and its shape, in context of a speciic typeface or font. A glyph is a representation of a character, commonly used un context of a collection of glyphs. A single character can have multiple glyphs, for example, multiple glyphs for the character "a" or "1."
+A **letterform** is a specific character and its shape, in context of a specific typeface or font. A **glyph** is a representation of a character, commonly used un context of a collection of glyphs. A single character can have multiple glyphs, for example, multiple glyphs for the character "a" or "1."
 
 There are numerous terms used to describe letterforms, but we'll go over only some of the basics here.
 
-**Important Lines**
+<img src="/img/blog/posts/typography_anatomy.png" alt="typography anatomy">
 
-The baseline is the line that all characters sit on. Note that descenders can go below this.
+<small>Image from <a href="https://m2.material.io/design/typography/understanding-typography.html#type-properties" target="\_blank">material.io</a></small>
 
-The x-height is traditionally the height of a lowercase "x" and is often a marker for the height of lowercase letters. Important for legibility.
+#### Important Lines
 
-The cap height is the height of a capital letter.
+The **baseline** is the line that all characters sit on. Note that descenders can go below this.
 
-Ascenders and descenders go above the x-height (and usually above the cap height) and below the baseline respectively. Lowercase "b" and "d" typically have ascenders and lowercase "g" and "p" are good examples of letterforms with descenders.
+The **x-height** is traditionally the height of a lowercase "x" and is often a marker for the height of lowercase letters. This is very important for legibility.
 
-**Take Aways**
+The **cap height** is the height of a capital letter.
 
-X-height is typically used as a measure of readability and aesthetic (well specifically relative to the cap height). Other lines are generally relative to the ratio between the x-height and cap height.
+**Ascenders** and **descenders** go above the x-height (and usually above the cap height) and below the baseline respectively. Lowercase "b" and "d" typically have ascenders and lowercase "g" and "p" are good examples of letterforms with descenders.
 
-**Parts of a Letterform**
+Quick take away: x-height is typically used as a measure of readability and aesthetic (well specifically relative to the cap height). Other lines are generally relative to the ratio between the x-height and cap height. Often when referring to "x-height," people mean the ratio between the x-height and the cap height.
 
-Font weight refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. Variable font weights are a recent development that allow the end user to fully customize the font weight. (Website note: each additional font weight will significantly impact performance).
+#### Font Variants
 
-Common font weight names:
-100 - ultra light, extra light, or thin
-200 - ultra light, extra light, or thin
-300 - light
-400 - regular, or normal
-500 - medium, or book
-600 - semibold or bold
-700 - bold or heavy
-800 - extra bold or black
-900 - extra black or black
+<img src="/img/blog/posts/typography_font_variants.jpg" alt="font variants">
 
-Common width / proportion names:
-extra condensed / extra compressed
-condensed / compressed
-semi condensed / semi compressed
-regular
-wide
-expanded / extended
+<small>Image from <a href="https://www.nngroup.com/articles/typography-terms-ux/" target="\_blank">nngroup</a></small>
 
-[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names.
+**Font weight** refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. **Variable font weights** are a recent development that allow the end user to fully customize the font weight. (Website performance note: each additional font weight will significantly impact performance).
 
-Contrast refers to the difference between the thick and thin parts of the stroke in a letterform. Monolinear types such as slab serifs have very low stroke contrast, whereas fatface fonts (such as [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)) have greater contrast.
+**Common font weight names:**
 
-The "stress" of a letterform refers to where the stroke width changes on the letterform.
+- 100 - ultra light, extra light, or thin
+- 200 - ultra light, extra light, or thin
+- 300 - light
+- 400 - regular, or normal
+- 500 - medium, or book
+- 600 - semibold or bold
+- 700 - bold or heavy
+- 800 - extra bold or black
+- 900 - extra black or black
+
+[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names if you're looking for a standard.
+
+**Font width** refers to how "streched out" the letterforms are. Generally, you want to avoid using other widths unless it's for stylistic effect, for a heading for example. Normal width is best for body copy.
+
+**Common width / proportion names:**
+
+- extra condensed / extra compressed
+- condensed / compressed
+- semi condensed / semi compressed / narrow
+- regular
+- wide
+- expanded / extended
+
+#### Parts of a Letterform
+
+**Contrast** refers to the difference between the thick and thin parts of the stroke in a letterform. Monolinear types such as slab serifs have very low stroke contrast, whereas fatface fonts (such as [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)) have greater contrast.
 
 <img src="/img/blog/posts/typography_font_stress.jpg" alt="font stress">
 
 <small>Image from <a href="https://www.quora.com/What-is-a-vertical-stress-in-typography" target="\_blank">quora</a></small>
 
----
+The **stress** of a letterform refers to where the stroke width changes on the letterform.
 
 <img src="/img/blog/posts/typography_letterform_anatomy.jpg" alt="letterform anatomy">
 
 <small>Image from <a href="https://designmodo.com/letterform/" target="\_blank">design modo</a></small>
 
-The terminal is the ending of a stroke. This is relevant because many letterforms will have stylistic terminals that can be curved or balled that change the perception of a font both in aesthetic and in legibility.
+The **terminal** is the ending of a stroke. This is relevant because many letterforms will have stylistic terminals that can be curved or balled that change the perception of a font both in aesthetic and in legibility.
 
-The ink trap refers to the negative space (or lack thereof) inside of a letterform that would traditionally be used to trap ink when printed (or stamped), but is now (as many other aspects of typography) an artifact of older technologies that remains popular for stylistic reasons.
+The **ink trap** refers to the negative space (or lack thereof) inside of a letterform that would traditionally be used to trap ink when printed (or stamped), but is now (as many other aspects of typography) an artifact of older technologies that remains popular for stylistic reasons.
 
-The aperture is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability.
+The **aperture** is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability.
 
-The bowl is the stroke around a curve in a letterform, such as in the "o" or "a."
+The **bowl** is the stroke around a curve in a letterform, such as in the "o" or "a."
 
-There are many, many other parts of a letterform, the crossbar (horizontal line within as seen in "A" or "H"), the stem (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
-
-<img src="/img/blog/posts/typography_anatomy.png" alt="typography anatomy">
-
-<small>Image from <a href="https://m2.material.io/design/typography/understanding-typography.html#type-properties" target="\_blank">material.io</a></small>
+There are many, many other parts of a letterform, the **crossbar** (horizontal line within as seen in "A" or "H"), the **stem** (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
 
 ### Typesetting
 
@@ -508,6 +514,8 @@ Websites:
 - [designmodo - Typography: Anatomy of a Letterform](https://designmodo.com/letterform/)
 
 - [jotform - A Crash Course in Typography: The Basics of Type](https://www.jotform.com/blog/a-crash-course-in-typography-the-basics-of-type)
+
+- [NN group - Typography terms cheat sheet](https://www.nngroup.com/articles/typography-terms-ux/)
 
 Videos:
 
