@@ -29,15 +29,17 @@ hidden: false
   <figcaption>Photo credit @brett_jordan on Unsplash</figcaption>
 </figure>
 
-### TL;DR
+### Overview
+
+#### TL;DR
 
 Use two fonts that contrast either font weight, serifs, or both. Chose a "boring" and readable font for your body copy and ensure your letter spacing, line height, and line length don't hinder readability.
 
-### Summary
+#### Summary
 
 This will be a crashcourse on the fundamentals of typography on the web, in print, and for your brand. There is an ever-evolving landscape of font families, styles, and choices in the modern era, and this guide will help you know what to look for and make the right choices, leaving your users happy and your message received.
 
-### Why You Care
+#### Why You Care
 
 Typography is two-fold: aesthetic and practical; an art form and a means to convey a message.
 
@@ -61,41 +63,41 @@ Just like a logo or a color palette, typography is an integral part of your bran
 
 A **typeface** is a group of fonts that all have a consistent aesthetic. A **font** is a specific instance, for example, font weight (bold, semibold, thin) style (italicized), size (12pt, 16pt), and more (condensed, extended, small caps). A **letterform** is a single specific character in a font, for example, a lowercase "a."
 
-#### Font Classification
+### Font Classification
 
-**Serifs**
+#### Serifs
 
-A serif is the small pointy bits at the end of a letter. They are generally used for body copy because they are more comfortable to read. Serifs originate from when chracters were created with a chisel on stone.
+**Serifs** are the small pointy bits at the end of a letter. They are generally used for body copy because they are more comfortable to read. Serifs originate from when chracters were created with a chisel on stone.
+
+The two main categories of fonts are **serifs** and **sans serifs** ("sans" comes from French for "without," meaning without serifs).
 
 <img src="/img/blog/posts/typography_serif_vs_sans.jpg" alt="serif vs sans serif">
 
-image from [canva](https://www.canva.com/learn/serif-vs-sans-serif-fonts/)
+<small>Image from <a href="https://www.canva.com/learn/serif-vs-sans-serif-fonts/" target="\_blank">canva</a></small>
 
-The two main categories of fonts are serifs and sans serifs ("sans" comes from French for "without," meaning without serifs).
+#### Usages
 
-Serifs are usually used in print, are more traditional, and the serifs improve readability in print. Sans serifs are cleaner and simpler, and the lack of serifs (especially before modern high density displays) makes it easier to read on screens.
-
-**Usages**
-
-A font is like a tool in a toolbelt. Not every tool is for every job. Just like you wouldn't hit a nail with a screwdriver, you wouldn't use comic sans for a wedding invitaion. But you could use it for an invite for your four year old's birthday.
+A font is like a tool in a toolbelt. Not every tool is for every job. Just like you wouldn't hit a nail with a screwdriver, you wouldn't use comic sans for a wedding invitaion. But you could use it for an invite for a four year old's birthday.
 
 Different fonts convey different messages.
 
-In general, serifs are "fancier" and sans serifs are more "modern" or "clean." Both serifs and sans serifs make fine choices for nearly any usage (but you'll have to get into more specifics to find the right one).
+Serifs are usually used in print, and are considered more traditional and formal. They improve readability in print. Sans serifs are cleaner and simpler, and the lack of serifs (especially before modern high density displays) make them easier to read on screens. They are considered modern and clean. Both serifs and sans serifs can make fine choices for many usages (but you'll have to get into more specifics to find the right one).
 
-**Other Classifications**
+#### Other Classifications
+
+Below you'll find a brief overview of some other classifications. We'll go into mroe detail later.
 
 <img src="/img/blog/posts/typography_styles_of_fonts.jpg" alt="styles of fonts">
 
-image from [randall branding](https://www.randallbranding.com/typowhat-the-ins-and-outs-of-typography/)
+<small>Image from <a href="https://www.randallbranding.com/typowhat-the-ins-and-outs-of-typography/" target="\_blank">randall branding</a></small>
 
-Slab serifs (or Egyptian fonts) feature serifs (and letterforms in general) that have very low or no stroke contrast (nearly uniform line width), often resembling sans serifs but with a uniform width line as a serif. They are usually either fairly bulky or fairly light. The bulkier ones are typically what one thinks of when they hear "slab serif" and are thought of as sturdy or hardy, possibly related to nature, earthy, trustworthy. Thinner slab serifs are a trendy design and can, on the other hand, look modern and both quirky and aesthetically pleasing.
+**Slab serifs** (or Egyptian fonts) feature serifs (and letterforms in general) that have very low or no stroke contrast (nearly uniform line width), often resembling sans serifs but with a uniform width line as a serif. They are usually either fairly bulky or fairly light. The bulkier ones are typically what one thinks of when they hear "slab serif" and are thought of as sturdy or hardy, possibly related to nature, earthy, and trustworthy. Thinner slab serifs are a trendy design and can, on the other hand, look modern and both quirky and aesthetically pleasing.
 
-Monospace fonts have all characters the same width and are commonly used for programming or in tallying such as reciepts. They are also used for screenplays and provide the appearance of a typewriter. Unless you're going for a very specific and eye catching design, I would not use these unless it is absolutely necessary that all characters be the same width, such as for a programming enviornment.
+**Monospace** fonts have all characters the same width and are commonly used for programming or in tallying such as reciepts. They are also used for screenplays and provide the appearance of a typewriter. Unless you're going for a very specific and eye catching design, I would not use these unless it is absolutely necessary that all characters be the same width, such as for a programming enviornment.
 
-Display fonts are for excessive or wild displays, not for body copy. For example, fatfaces, pixel fonts, stencil fonts, graffiti styles, or other fonts with quirks or focused more on attention than readability all fall under this broad category. These fonts are often experimental. These fonts are ok for use for headings, but only if you're careful. Something like a stencil font may look fun to you, but will likely ultimately look tacky and unprofessional.
+**Display fonts** are for excessive or wild displays, not for body copy. For example, fatfaces, pixel fonts, stencil fonts, graffiti styles, or other fonts with quirks or focused more on attention than readability all fall under this broad category. These fonts are often experimental. These fonts are ok for use for headings, but only if you're careful. Something like a stencil font may look fun to you, but will likely ultimately look tacky and unprofessional.
 
-Script fonts (or "cursive" or "handwriting" fonts) give the appearance of handwritten text. While stylistic, this is not very readable and often looks immature and is not practical. However, these fonts can be used for very small and specific typographic elements to convey a playful mood or something creative and hands-on.
+**Script fonts** (or "cursive" or "handwriting" fonts) give the appearance of handwritten text. While stylistic, this is not very readable and often looks immature and is not practical. However, these fonts can be used for very small and specific typographic elements to convey a playful mood or something creative and hands-on. Sometimes, these fonts can make a good heading, such as a formal script being used for a beauty product or wedding invitation, but you want to tread carefully.
 
 **Examples**
 
@@ -108,13 +110,29 @@ Script fonts (or "cursive" or "handwriting" fonts) give the appearance of handwr
 
 These classifications cover the most generic ways to catalogue fonts, however, fonts are commonly categoried based on the ratios of specific characters, which are known as the font's proportions.
 
-#### Proportions
+### Proportions
 
-Roman proportions are the building blocks of typography, and are modeled after ancient Roman engravings, with elegant and large distinctions between letterforms.
+Proportions are the building blocks of typography, and dictate a lot of the details in a fontface.
 
-#### Classifications
+Proportions dictate the width relative to the height of each letterform in a fontface.
 
-(images in this section from [envato tuts+](https://youtu.be/RJ4k6FI_LYQ))
+> The ratios between x-height, capital height, and overall height, the position of the baseline and x-height within the total height, the average width for all signs (normal, condensed, wide), and rthe relative widths of individual characters (l,n,m)
+
+— Karen Cheng in page 64 of [Designing Type](https://www.amazon.com/gp/product/0300249926/), an amazing book about everything that goes into the process of designing a typeface.
+
+<img src="/img/blog/posts/typography_proportions.jpg" alt="font proportions">
+
+<small>Classical and 'Modern' letter proportions (adapted from (Cheng, 2006)). The typeface 'Trajan' by Carol Twombly (up) and the typeface 'Neoplanta BG' by Stjepan Fileki (down). Image from <a href="https://www.researchgate.net/figure/Classical-and-Modern-letter-proportions-adapted-from-Cheng-2006-The-typeface_fig2_347649220" target="\_blank">ResearchGate</a></small>
+
+#### Classic Proportions
+
+Classic or old style proportions (also sometimes called roman proportions) are modeled after ancient Roman engravings and other ancient inscribtional models. These proportions are considered to be elegant and have a large distinctions between letterforms.
+
+#### Modern Proportions
+
+### Classifications
+
+<small>(images in this section from <a href="https://youtu.be/RJ4k6FI_LYQ" target="\_blank">envato tuts+</a></small>
 
 <img src="/img/blog/posts/typography_old_style.jpg" alt="old style typefaces">
 
@@ -164,7 +182,7 @@ Example: [Zilla Slab](https://fonts.google.com/specimen/Zilla+Slab)
 
 History: Slab serifs first started appearing around the early 18th century.
 
-Usage: Slab serifs are traditionally very bulky and industrial, but some of them have been developed with thinner font weights which can, in contrast to their predecessors, convey elegance and a modern design if used correctly. Generally, one would not want to chose slab serifs for body copy, but if you do, chose a font that is highly readable and has a thin font weight.
+Usage: Slab serifs are traditionally very bulky and industrial, but some of them have been developed with thinner font weights which can, in contrast to their predecessors, convey elegance and a modern design if used correctly. Generally, one would not want to chose slab serifs for body copy, but if you do, chose a font that is highly readable and has a thin font weight. You'll see slab serifs used for industrial settings, for goods and services relating to nature, or maybe for a barbeque restaurant. Thin slab serifs can be used similarly to other trendy and modern fonts. Once you've found an appropriate usage, they make great headings.
 
 <img src="/img/blog/posts/typography_grotesque.jpg" alt="grotesque typefaces">
 
@@ -271,13 +289,13 @@ The "stress" of a letterform refers to where the stroke width changes on the let
 
 <img src="/img/blog/posts/typography_font_stress.jpg" alt="font stress">
 
-image from [quora](https://www.quora.com/What-is-a-vertical-stress-in-typography)
+<small>Image from <a href="https://www.quora.com/What-is-a-vertical-stress-in-typography" target="\_blank">quora</a></small>
 
 ---
 
 <img src="/img/blog/posts/typography_letterform_anatomy.jpg" alt="letterform anatomy">
 
-image from [design modo](https://designmodo.com/letterform/)
+<small>Image from <a href="https://designmodo.com/letterform/" target="\_blank">design modo</a></small>
 
 The terminal is the ending of a stroke. This is relevant because many letterforms will have stylistic terminals that can be curved or balled that change the perception of a font both in aesthetic and in legibility.
 
@@ -291,7 +309,7 @@ There are many, many other parts of a letterform, the crossbar (horizontal line 
 
 <img src="/img/blog/posts/typography_anatomy.png" alt="typography anatomy">
 
-image from [material.io](https://m2.material.io/design/typography/understanding-typography.html#type-properties)
+<small>Image from <a href="https://m2.material.io/design/typography/understanding-typography.html#type-properties" target="\_blank">material.io</a></small>
 
 ### Typesetting
 
@@ -392,7 +410,7 @@ Famous Italiain designer Massimo Vignelli famously said "the only 6 typefaces yo
 
 <img src="/img/blog/posts/typography_six_typefaces.jpg" alt="six typefaces of Massimo Vignelli">
 
-image from [quora](https://www.quora.com/What-typefaces-does-Massimo-Vignelli-use)
+<small>Image from <a href="https://www.quora.com/What-typefaces-does-Massimo-Vignelli-use" target="\_blank">quora</a></small>
 
 ### Performance
 
