@@ -29,7 +29,9 @@ hidden: false
   <figcaption>Photo credit @brett_jordan on Unsplash</figcaption>
 </figure>
 
-(TL;DR: use two fonts that look "boring" and contrast either font weight or font category (serif vs sans) or both. Chose a readable font for your body copy and ensure your letter spacing, line height, and line length don't hinder readability.)
+### TL;DR
+
+Use two fonts that contrast either font weight, serifs, or both. Chose a "boring" and readable font for your body copy and ensure your letter spacing, line height, and line length don't hinder readability.
 
 ### Summary
 
@@ -42,7 +44,7 @@ Typography is two-fold: aesthetic and practical; an art form and a means to conv
 Good typography will:
 
 - Allow readers to comfortably consume your message
-- Increase accessibility on numerous devices and mediums and for numerous audiences
+- Increase accessibility on numerous devices and mediums for a wide audience
 - Keep users around longer and keep them coming back
 - Add a consistent branding and trustworthy name to your company
 
@@ -50,16 +52,16 @@ Bad typography will:
 
 - Push would-be readers away
 - Make it difficult for your message to translate between various screen sizes
-- Prevent users from revisiting your website
+- Prevent users from returning to your company or website
 - Tarnish your brand
 
 Just like a logo or a color palette, typography is an integral part of your brand.
 
 ### Basic Terminology
 
-A typeface is a group of fonts that all have a consistent aesthetic. A font is a specific instance, for example, font weight (bold, semibold, thin) style (italicized), size (12pt, 16pt), and more (condensed, extended, small caps). A letterform is a single specific character in a font, for example, a lowercase "a."
+A **typeface** is a group of fonts that all have a consistent aesthetic. A **font** is a specific instance, for example, font weight (bold, semibold, thin) style (italicized), size (12pt, 16pt), and more (condensed, extended, small caps). A **letterform** is a single specific character in a font, for example, a lowercase "a."
 
-##### Font Classification
+#### Font Classification
 
 **Serifs**
 
@@ -106,11 +108,11 @@ Script fonts (or "cursive" or "handwriting" fonts) give the appearance of handwr
 
 These classifications cover the most generic ways to catalogue fonts, however, fonts are commonly categoried based on the ratios of specific characters, which are known as the font's proportions.
 
-##### Proportions
+#### Proportions
 
 Roman proportions are the building blocks of typography, and are modeled after ancient Roman engravings, with elegant and large distinctions between letterforms.
 
-##### Classifications
+#### Classifications
 
 (images in this section from [envato tuts+](https://youtu.be/RJ4k6FI_LYQ))
 
@@ -303,7 +305,7 @@ To chose a legible font, consider the x height, chose a normal character width (
 
 Avoid all caps fonts for legibility. Note that ascenders and descenders help distinguish characters.
 
-##### Body and Heading Copy
+#### Body and Heading Copy
 
 Body copy refers to the paragraphs and most basic and smallest copy on your page.
 
@@ -311,13 +313,13 @@ Headings are the most important copy and are generally larger and more important
 
 Subheadings are generally used to divide subsections, but can be used anywhere you want to distinguish that this text is important, but is not as important as a heading.
 
-##### Spacing
+#### Spacing
 
 kerning, tracking, leading, measure/line length
 
 many of these features heavily impact readability (as well as font weight and color)
 
-##### Typography on the Page
+#### Typography on the Page
 
 This section will be about applying typography to your design.
 
@@ -345,7 +347,7 @@ can use tailwind's numbers, use units on your grid such as 0.25rem (4px)
 
 ### Chosing fonts
 
-##### What to Look for When Choosing a Typeface
+#### What to Look for When Choosing a Typeface
 
 Before you can chose a font pair, you must understand the individual font. There are two key considerations for chosing a font: readability, and aesthetic.
 
@@ -353,7 +355,7 @@ For legibility, you should only use "boring" looking serif or sans serifs for yo
 
 The style or mood conveyed by your font is also a huge consideration. It depends on the appearance you are trying to present. If you are an old bank, newspaper, or possibly b2b establishment, you would likely want to chose a serif font, to provide an established and trusthworthy appearance. However, if you're a new starup, techy or trendy, or it is otherwise important that you look sleek, modern, and up to date, you likely want a sans serif that looks modern, clean, and minimal. There are of course many other considerations such as classification and proportions that can be delved into further, however, this is just a brief overview of the perception garnered by these generic categories. Slab serifs are earthy or industrial, however, lighter weight ones can also look modern and clean. There are plenty of exceptions to most rules, however, it's important to know the rules before you break them; otherwise, you pages and brand will look out of place, inexperienced, or otherwise inappropriate.
 
-##### Font Pairs
+#### Font Pairs
 
 My first generic advice is simple: pair a serif and a sans serif. You can also choose two sans serifs, and I would recommend doing so if you're trying to go with a very clean and minimal aesthetic. I would **not** pair two serifs, as it is cluttered and they often do not provide sufficient contrast, or if they do, they look inconsistent with each other. Pairing a serif and sans serif, generally, the serif is used for body copy, however, I personally really enjoy a clean sans serif as a readable body copy, and a fancy and eloquent serif for headings and titles.
 
