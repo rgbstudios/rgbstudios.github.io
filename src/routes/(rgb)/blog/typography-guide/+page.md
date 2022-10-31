@@ -112,13 +112,15 @@ These classifications cover the most generic ways to catalogue fonts, however, f
 
 ### Proportions
 
+Preface: A large part of this section on proportions is based off of Karen Cheng's [Designing Type](https://www.amazon.com/gp/product/0300249926/), an amazing book about everything that goes into the process of designing a typeface.
+
 Proportions are the building blocks of typography, and dictate a lot of the details in a fontface.
 
 Proportions dictate the width relative to the height of each letterform in a fontface.
 
 > The ratios between x-height, capital height, and overall height, the position of the baseline and x-height within the total height, the average width for all signs (normal, condensed, wide), and rthe relative widths of individual characters (l,n,m)
 
-— Karen Cheng in page 64 of [Designing Type](https://www.amazon.com/gp/product/0300249926/), an amazing book about everything that goes into the process of designing a typeface.
+— Karen Cheng in page 64 of [Designing Type](https://www.amazon.com/gp/product/0300249926/)
 
 <img src="/img/blog/posts/typography_proportions.jpg" alt="font proportions">
 
@@ -126,9 +128,30 @@ Proportions dictate the width relative to the height of each letterform in a fon
 
 #### Classic Proportions
 
-Classic or old style proportions (also sometimes called roman proportions) are modeled after ancient Roman engravings and other ancient inscribtional models. These proportions are considered to be elegant and have a large distinctions between letterforms.
+Classic or old style proportions (also sometimes called roman proportions) are modeled after ancient Roman engravings and other ancient inscribtional models. These proportions are considered to be elegant and have a large distinctions between letterforms. This was the first commonly used proportion system.
+
+To quote once more from Cheng:
+
+> - M, O, Q are square
+> - L, K, S, X are half-square width
+> - B, E, F, I, J, P are the width of a root five rectangle
+> - A, H, R, T, U, Y, Z fit within two stacked golden rectangles
+> - C, D, G, N, V are the width of two root five rectangles
+> - W fits within a square with a root five rectangle
+
+These proportions are applied to the capital letters. Some fontfaces claim to have classic proportions, but do not completely adhere to this system. These capitals, which beautiful and profound, are often less practical as they take up a lot of space. Additionally, this proportion system produces capitals with uneven color (amount of black and whtie space on page in different areas).
 
 #### Modern Proportions
+
+Modern proportions, on the other hand, have a much more even color, and are therefore suited better for body copy. Even color can reduce reader fatigue and increase the overall aesthetic of the typography.
+
+#### Which Classifications Have Which Proportions
+
+Serif capitals can have either set of proportions.
+
+Humanist sans serifs often have classic proportions, and modern fonts and slab serif fonts almost always have modern proportions. Grotesque and Neo-grotesque fonts usually have modern proportions as well; The modernist movement was aimed towards simplicity and objectivity, so modern proportions are naturally best fit for these goals.
+
+Geometric sans serifs are almost always based off of perfect or near perfect circles and squares when possible.
 
 ### Classifications
 
@@ -140,7 +163,7 @@ Classic or old style proportions (also sometimes called roman proportions) are m
 
 **Old Style and Humanist**
 
-Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs, as they have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (samd as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a caligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
+Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs, as they have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (same as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a caligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
 
 Example: [Goudy Bookletter 1911](https://fonts.google.com/specimen/Goudy+Bookletter+1911) (serif) [Merriweather Sans](https://fonts.google.com/specimen/Merriweather+Sans) (sans serif)
 
@@ -164,7 +187,7 @@ Usage: These fonts can be used all around. They have some of the elegance from h
 
 **Modern**
 
-Modern fonts have straight, flat serifs, with very small or no brackets, vertical stress, and rounded terminals. These fonts have a very large contrast and tall x-height.
+Modern fonts (sometimes called Didone fonts) have straight, flat serifs, with very small or no brackets, vertical stress, and rounded terminals. These fonts have a very large contrast and tall x-height.
 
 Example: [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 
