@@ -63,6 +63,85 @@ Just like a logo or a color palette, typography is an integral part of your bran
 
 A **typeface** is a group of fonts that all have a consistent aesthetic. A **font** is a specific instance, for example, font weight (bold, semibold, thin) style (italicized), size (12pt, 16pt), and more (condensed, extended, small caps). A **letterform** is a single specific character in a font, for example, a lowercase "a."
 
+### Letterforms
+
+A **letterform** is a specific character and its shape, in context of a specific typeface or font. A **glyph** is a representation of a character, commonly used un context of a collection of glyphs. A single character can have multiple glyphs, for example, multiple glyphs for the character "a" or "1."
+
+There are numerous terms used to describe letterforms, but we'll go over only some of the basics here.
+
+<img src="/img/blog/posts/typography_anatomy.png" alt="typography anatomy">
+
+<small>Image from <a href="https://m2.material.io/design/typography/understanding-typography.html#type-properties" target="\_blank">material.io</a></small>
+
+#### Important Lines
+
+The **baseline** is the line that all characters sit on. Note that descenders can go below this.
+
+The **x-height** is traditionally the height of a lowercase "x" and is often a marker for the height of lowercase letters. This is very important for legibility.
+
+The **cap height** is the height of a capital letter.
+
+**Ascenders** and **descenders** go above the x-height (and usually above the cap height) and below the baseline respectively. Lowercase "b" and "d" typically have ascenders and lowercase "g" and "p" are good examples of letterforms with descenders.
+
+Quick take away: x-height is typically used as a measure of readability and aesthetic (well specifically relative to the cap height). Other lines are generally relative to the ratio between the x-height and cap height. Often when referring to "x-height," people mean the ratio between the x-height and the cap height.
+
+#### Font Variants
+
+<img src="/img/blog/posts/typography_font_variants.jpg" alt="font variants">
+
+<small>Image from <a href="https://www.nngroup.com/articles/typography-terms-ux/" target="\_blank">nngroup</a></small>
+
+**Font weight** refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. **Variable font weights** are a recent development that allow the end user to fully customize the font weight. (Website performance note: each additional font weight will significantly impact performance).
+
+**Common font weight names:**
+
+- 100 - ultra light, extra light, or thin
+- 200 - ultra light, extra light, or thin
+- 300 - light
+- 400 - regular, or normal
+- 500 - medium, or book
+- 600 - semibold or bold
+- 700 - bold or heavy
+- 800 - extra bold or black
+- 900 - extra black or black
+
+[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names if you're looking for a standard.
+
+**Font width** refers to how "streched out" the letterforms are. Generally, you want to avoid using other widths unless it's for stylistic effect, for a heading for example. Normal width is best for body copy.
+
+**Common width / proportion names:**
+
+- extra condensed / extra compressed
+- condensed / compressed
+- semi condensed / semi compressed / narrow
+- regular
+- wide
+- expanded / extended
+
+#### Parts of a Letterform
+
+**Contrast** refers to the difference between the thick and thin parts of the stroke in a letterform. Monolinear types such as slab serifs have very low stroke contrast, whereas fatface fonts (such as [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)) have greater contrast.
+
+<img src="/img/blog/posts/typography_font_stress.jpg" alt="font stress">
+
+<small>Image from <a href="https://www.quora.com/What-is-a-vertical-stress-in-typography" target="\_blank">quora</a></small>
+
+The **stress** of a letterform refers to where the stroke width changes on the letterform.
+
+<img src="/img/blog/posts/typography_letterform_anatomy.jpg" alt="letterform anatomy">
+
+<small>Image from <a href="https://designmodo.com/letterform/" target="\_blank">design modo</a></small>
+
+The **terminal** is the ending of a stroke. This is relevant because many letterforms will have stylistic terminals that can be curved or balled that change the perception of a font both in aesthetic and in legibility.
+
+The **ink trap** refers to the negative space (or lack thereof) inside of a letterform that would traditionally be used to trap ink when printed (or stamped), but is now (as many other aspects of typography) an artifact of older technologies that remains popular for stylistic reasons.
+
+The **aperture** is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability.
+
+The **bowl** is the stroke around a curve in a letterform, such as in the "o" or "a."
+
+There are many, many other parts of a letterform, the **crossbar** (horizontal line within as seen in "A" or "H"), the **stem** (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
+
 ### Font Classification
 
 #### Serifs
@@ -260,85 +339,6 @@ Different font classifications often reflect their time period. The same way tha
 Different fonts communicate different feelings thought design. You'll want to chose a font based on the look and feel, branding, and emotion you want to convey.
 
 Serifs often evoke an older, formal look and feel, and are great for body copy, specifically in print. Sans serif letterforms are clean and modern, and can also be used for both body and heading copy. Sans serifs work well on the web and for screens. Both serifs and sans serifs will still work well on either medium and for headings or body copy. Scripts should be mostly limited to wedding invitations, book covers, and specific historical displays when appropriate. Caligraphic fonts can convey a personal look and feel, but should be used with caution.
-
-### Letterforms
-
-A **letterform** is a specific character and its shape, in context of a specific typeface or font. A **glyph** is a representation of a character, commonly used un context of a collection of glyphs. A single character can have multiple glyphs, for example, multiple glyphs for the character "a" or "1."
-
-There are numerous terms used to describe letterforms, but we'll go over only some of the basics here.
-
-<img src="/img/blog/posts/typography_anatomy.png" alt="typography anatomy">
-
-<small>Image from <a href="https://m2.material.io/design/typography/understanding-typography.html#type-properties" target="\_blank">material.io</a></small>
-
-#### Important Lines
-
-The **baseline** is the line that all characters sit on. Note that descenders can go below this.
-
-The **x-height** is traditionally the height of a lowercase "x" and is often a marker for the height of lowercase letters. This is very important for legibility.
-
-The **cap height** is the height of a capital letter.
-
-**Ascenders** and **descenders** go above the x-height (and usually above the cap height) and below the baseline respectively. Lowercase "b" and "d" typically have ascenders and lowercase "g" and "p" are good examples of letterforms with descenders.
-
-Quick take away: x-height is typically used as a measure of readability and aesthetic (well specifically relative to the cap height). Other lines are generally relative to the ratio between the x-height and cap height. Often when referring to "x-height," people mean the ratio between the x-height and the cap height.
-
-#### Font Variants
-
-<img src="/img/blog/posts/typography_font_variants.jpg" alt="font variants">
-
-<small>Image from <a href="https://www.nngroup.com/articles/typography-terms-ux/" target="\_blank">nngroup</a></small>
-
-**Font weight** refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. **Variable font weights** are a recent development that allow the end user to fully customize the font weight. (Website performance note: each additional font weight will significantly impact performance).
-
-**Common font weight names:**
-
-- 100 - ultra light, extra light, or thin
-- 200 - ultra light, extra light, or thin
-- 300 - light
-- 400 - regular, or normal
-- 500 - medium, or book
-- 600 - semibold or bold
-- 700 - bold or heavy
-- 800 - extra bold or black
-- 900 - extra black or black
-
-[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names if you're looking for a standard.
-
-**Font width** refers to how "streched out" the letterforms are. Generally, you want to avoid using other widths unless it's for stylistic effect, for a heading for example. Normal width is best for body copy.
-
-**Common width / proportion names:**
-
-- extra condensed / extra compressed
-- condensed / compressed
-- semi condensed / semi compressed / narrow
-- regular
-- wide
-- expanded / extended
-
-#### Parts of a Letterform
-
-**Contrast** refers to the difference between the thick and thin parts of the stroke in a letterform. Monolinear types such as slab serifs have very low stroke contrast, whereas fatface fonts (such as [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)) have greater contrast.
-
-<img src="/img/blog/posts/typography_font_stress.jpg" alt="font stress">
-
-<small>Image from <a href="https://www.quora.com/What-is-a-vertical-stress-in-typography" target="\_blank">quora</a></small>
-
-The **stress** of a letterform refers to where the stroke width changes on the letterform.
-
-<img src="/img/blog/posts/typography_letterform_anatomy.jpg" alt="letterform anatomy">
-
-<small>Image from <a href="https://designmodo.com/letterform/" target="\_blank">design modo</a></small>
-
-The **terminal** is the ending of a stroke. This is relevant because many letterforms will have stylistic terminals that can be curved or balled that change the perception of a font both in aesthetic and in legibility.
-
-The **ink trap** refers to the negative space (or lack thereof) inside of a letterform that would traditionally be used to trap ink when printed (or stamped), but is now (as many other aspects of typography) an artifact of older technologies that remains popular for stylistic reasons.
-
-The **aperture** is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability.
-
-The **bowl** is the stroke around a curve in a letterform, such as in the "o" or "a."
-
-There are many, many other parts of a letterform, the **crossbar** (horizontal line within as seen in "A" or "H"), the **stem** (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
 
 ### Typesetting
 
