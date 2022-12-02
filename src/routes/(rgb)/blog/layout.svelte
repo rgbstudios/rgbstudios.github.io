@@ -75,8 +75,15 @@
 <svelte:window on:scroll={onScroll} />
 
 <article id="main-article" class="prose lg:prose-xl mx-auto m-8">
-	<h5>{author} &mdash; {new Date(date).toLocaleDateString()}</h5>
+	<h5 class="mb-2">
+		{new Date(date).toLocaleDateString(undefined, {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		})}
+	</h5>
 	<h1>{title}</h1>
+	<h5 class="mb-4">{author}</h5>
 	{#each categories as category}
 		<div class="badge badge-outline mr-2">{category}</div>
 	{/each}
