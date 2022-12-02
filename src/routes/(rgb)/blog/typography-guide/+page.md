@@ -136,7 +136,7 @@ The **terminal** is the ending of a stroke. This is relevant because many letter
 
 The **ink trap** refers to the negative space (or lack thereof) inside of a letterform that would traditionally be used to trap ink when printed (or stamped), but is now (as many other aspects of typography) an artifact of older technologies that remains popular for stylistic reasons.
 
-The **aperture** is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability.
+The **aperture** is the opening, notably in lowercase "a" and "e" which has a sizeable impact on both aesthetic and readability (notably, lowercase "c" can be confused with "o" if the aperture is too small).
 
 The **bowl** is the stroke around a curve in a letterform, such as in the "o" or "a."
 
@@ -340,11 +340,13 @@ Different fonts communicate different feelings thought design. You'll want to ch
 
 Serifs often evoke an older, formal look and feel, and are great for body copy, specifically in print. Sans serif letterforms are clean and modern, and can also be used for both body and heading copy. Sans serifs work well on the web and for screens. Both serifs and sans serifs will still work well on either medium and for headings or body copy. Scripts should be mostly limited to wedding invitations, book covers, and specific historical displays when appropriate. Caligraphic fonts can convey a personal look and feel, but should be used with caution.
 
+Italic variants can be used for emphasis. Use them sparingly. Note that just like bold text is not the same as simply increasing the stroke around the letterform, italics are not the same as simply slanting the letterforms; both require that a designer spend a lot of effort on meticulously redesigning each letterform by hand. Do not use faux italics ("fake" italics). (Fun fact: the term "italic" refers to the fac that this style comes from Italy).
+
 ### Typesetting
 
 (Typography and Copy)
 
-**Legibility**
+#### Legibility
 
 The measure of how easy text is to read, depends on ability to distinguish between characters, view characters together, and read a line or block of text.
 
@@ -360,17 +362,21 @@ Headings are the most important copy and are generally larger and more important
 
 Subheadings are generally used to divide subsections, but can be used anywhere you want to distinguish that this text is important, but is not as important as a heading.
 
+A good understanding of visual hierarchy is key to good typesetting.
+
 #### Spacing
 
-kerning, tracking, leading, measure/line length
+Note that many of these measurements highly impact readability and aesthetic.
 
-many of these features heavily impact readability (as well as font weight and color)
+TODO kerning, tracking, leading, measure/line length
 
 #### Typography on the Page
 
 This section will be about applying typography to your design.
 
 **Hierarchy**
+
+Color refers to the overall mixture of light and dark colors in your text. Regardless of what font and colors you chose, you will generally have either the text color or background color be significantly darker than the other. The color of the copy is what percentage of the copy is dark and light. A primary goal is to have "even color," not meaning exactly as much dark and light, but meaning a consistent percentage of dark and light throughout all parts of the copy. For example, 20% of the space could be dark, but even color would mean that regardless of what part of text you sample, it's still aproximately the same 20% value.
 
 Hierarchy is one of the most important parts of the layout of your typography. As with any other aspect of design, typography also requires an understanding of the fundamental design principals. Visual hierarchy is the notion that some elements are more important than others, and the general flow you want users to consume your information.
 
@@ -441,6 +447,17 @@ Famous Italiain designer Massimo Vignelli famously said "the only 6 typefaces yo
 
 <small>Image from <a href="https://www.quora.com/What-typefaces-does-Massimo-Vignelli-use" target="\_blank">quora</a></small>
 
+### Uppercase and Lowercase
+
+<figure>
+  <img src="/img/blog/posts/metal_type.jpg" alt="metal type inside a case">
+  <figcaption>Photo credit @kristianstrand on Unsplash</figcaption>
+</figure>
+
+I'm sure you know about _UPPERCASE_ and _lowercase_ letters by now, but I've got a quick tidbit for you:
+
+- The names "upper" and "lower" case refer to where the literal case of letters would site back when metal type was used
+
 ### Performance
 
 **Font Files**
@@ -496,6 +513,34 @@ Line height. 120% to 150% of text size (changes based off of text size and x hei
 primary heading 175%-200% of body text, secondary heading 125-150% of body text size
 alignment: generally, avoid temptation of aligning text to center
 line height, tailwind example use line height number not units, relative to font size, link to tailwind defaults text-xl, text-lg, etc
+
+### Dos and Do Nots
+
+Do:
+
+Do ensure your line length, line height, and other metrics mentioned above are legible
+
+Do ensure that your typeface(s) are appropriate for your setting
+
+Do ensure that you use well designed and trusted fonts
+
+Do ensure that your font pairs work well together
+
+Do be sure to use a few ifferent variations of font size, weight, and style to provide contrast and visual hierarchy
+
+Do not
+
+Do not use too many different font styles (such as ten different sizes, eight weights, and four font families all mixed and matched). Stick to a design system instead and only use the appropriate type styles for headings, subheadings, body copy, captions, quotes, authors, tags, and whatever other styles are defined in that style guide.
+
+Do not load many different fonts and variations to your webpage
+
+Do not combine more than three typefaces
+
+Do not manually adjust the tracking unless absolutely necessary
+
+Do not use methods of creating a "fake" bold or use faux italics
+
+Do not use a typeface that is hard to read for body copy (or in general... but especially for body copy)
 
 ### Where to Search
 
