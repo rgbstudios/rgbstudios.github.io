@@ -65,7 +65,7 @@ A **typeface** is a group of fonts that all have a consistent aesthetic. A **fon
 
 ### Letterforms
 
-A **letterform** is a specific character and its shape, in context of a specific typeface or font. A **glyph** is a representation of a character, commonly used un context of a collection of glyphs. A single character can have multiple glyphs, for example, multiple glyphs for the character "a" or "1."
+A **letterform** is a specific character and its shape, in context of a specific typeface or font. A **glyph** is a representation of a character, commonly used in context of a collection of glyphs. A single character can have multiple glyphs, for example, multiple glyphs for the character "a" or "1."
 
 There are numerous terms used to describe letterforms, but we'll go over only some of the basics here.
 
