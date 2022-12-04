@@ -586,6 +586,4 @@ Books:
 
 - [Thinking with Type](https://www.amazon.com/gp/product/1568989695/) - A guide for using type in your designs. Plenty of examples, history, and explanations of where to use and not use fontfaces.
 
-todo: add images everywhere...
 todo: table of contents
-todo: split into definitive type guide and type on web guide
