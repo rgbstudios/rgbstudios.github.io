@@ -91,7 +91,7 @@ Quick take away: x-height is typically used as a measure of readability and aest
 
 <small>Image from <a href="https://www.nngroup.com/articles/typography-terms-ux/" target="\_blank">nngroup</a></small>
 
-**Font weight** refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. **Variable font weights** are a recent development that allow the end user to fully customize the font weight. (Website performance note: each additional font weight will significantly impact performance).
+**Font weight** refers to how thick the typeface's stroke is in general. Often, fonts use a scale between 100 and 900 in incremenets of 100 where the larger number coresponds to a larger font weight. Most typefaces have a small number (sometimes just one or two) hand crafted font weights, with some professional typefaces featuring seven to nine. **Variable font weights** are a recent development that allow the end user to fully customize the font weight. (Website performance note: each additional font variant will significantly impact performance).
 
 **Common font weight names:**
 
@@ -105,9 +105,9 @@ Quick take away: x-height is typically used as a measure of readability and aest
 - 800 - extra bold or black
 - 900 - extra black or black
 
-[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names if you're looking for a standard.
+[Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names if you're looking for a standard: **thin, extralight, light, normal, medium, semibold, bold, extrabold, black**.
 
-**Font width** refers to how "streched out" the letterforms are. Generally, you want to avoid using other widths unless it's for stylistic effect, for a heading for example. Normal width is best for body copy.
+**Font width** refers to how "streched out" the letterforms are. Generally, you want to avoid using other widths unless it's for stylistic effect, for example, a heading. Normal width is best for body copy.
 
 **Common width / proportion names:**
 
@@ -120,13 +120,17 @@ Quick take away: x-height is typically used as a measure of readability and aest
 
 #### Parts of a Letterform
 
+<img src="/img/blog/posts/typography_contrast.svg" alt="font contrast">
+
+<small>Image from <a href="https://fonts.google.com/knowledge/glossary/contrast" target="\_blank">google fonts</a></small>
+
 **Contrast** refers to the difference between the thick and thin parts of the stroke in a letterform. Monolinear types such as slab serifs have very low stroke contrast, whereas fatface fonts (such as [Abril Fatface](https://fonts.google.com/specimen/Abril+Fatface)) have greater contrast.
 
 <img src="/img/blog/posts/typography_font_stress.jpg" alt="font stress">
 
 <small>Image from <a href="https://www.quora.com/What-is-a-vertical-stress-in-typography" target="\_blank">quora</a></small>
 
-The **stress** of a letterform refers to where the stroke width changes on the letterform.
+The **stress** of a letterform refers to where the stroke width changes on the letterform. Some typefaces have a near vertical stress, resulting in a balanced appearance. Other typefaces have a diagonal stress, to emulate a calligraphic style.
 
 <img src="/img/blog/posts/typography_letterform_anatomy.jpg" alt="letterform anatomy">
 
@@ -140,7 +144,7 @@ The **aperture** is the opening, notably in lowercase "a" and "e" which has a si
 
 The **bowl** is the stroke around a curve in a letterform, such as in the "o" or "a."
 
-There are many, many other parts of a letterform, the **crossbar** (horizontal line within as seen in "A" or "H"), the **stem** (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief.
+There are many, many other parts of a letterform such as the **crossbar** (horizontal line within as seen in "A" or "H"), and the **stem** (vertical stroke as seen in "I", "H", "W"), but I'll be keeping this section brief to focus on the primary anatomy necessary to make type decisions, rather than highlighting all terminology necessary to design a typeface yourself.
 
 ### Font Classification
 
@@ -174,7 +178,7 @@ Below you'll find a brief overview of some other classifications. We'll go into 
 
 **Monospace** fonts have all characters the same width and are commonly used for programming or in tallying such as reciepts. They are also used for screenplays and provide the appearance of a typewriter. Unless you're going for a very specific and eye catching design, I would not use these unless it is absolutely necessary that all characters be the same width, such as for a programming enviornment.
 
-**Display fonts** are for excessive or wild displays, not for body copy. For example, fatfaces, pixel fonts, stencil fonts, graffiti styles, or other fonts with quirks or focused more on attention than readability all fall under this broad category. These fonts are often experimental. These fonts are ok for use for headings, but only if you're careful. Something like a stencil font may look fun to you, but will likely ultimately look tacky and unprofessional.
+**Display fonts** are for excessive or wild displays, not for body copy. For example, fatfaces, pixel fonts, stencil fonts, graffiti styles, or other fonts with quirks or focused more on attention than readability all fall under this broad category. These fonts are often experimental. These fonts are ok for use for headings, but only if you're careful. Something like a stencil font may look fun to you, but will ultimately look tacky and unprofessional.
 
 **Script fonts** (or "cursive" or "handwriting" fonts) give the appearance of handwritten text. While stylistic, this is not very readable and often looks immature and is not practical. However, these fonts can be used for very small and specific typographic elements to convey a playful mood or something creative and hands-on. Sometimes, these fonts can make a good heading, such as a formal script being used for a beauty product or wedding invitation, but you want to tread carefully.
 
@@ -193,9 +197,9 @@ These classifications cover the most generic ways to catalogue fonts, however, f
 
 Preface: A large part of this section on proportions is based off of Karen Cheng's [Designing Type](https://www.amazon.com/gp/product/0300249926/), an amazing book about everything that goes into the process of designing a typeface.
 
-Proportions are the building blocks of typography, and dictate a lot of the details in a fontface.
+Proportions are the building blocks of typography, and dictate a lot of the details in a fontface. Specifically, they detail the width relative to the height of each letterform.
 
-Proportions dictate the width relative to the height of each letterform in a fontface.
+Proportions are
 
 > The ratios between x-height, capital height, and overall height, the position of the baseline and x-height within the total height, the average width for all signs (normal, condensed, wide), and rthe relative widths of individual characters (l,n,m)
 
@@ -242,7 +246,7 @@ Geometric sans serifs are almost always based off of perfect or near perfect cir
 
 #### Old Style and Humanist
 
-Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs and have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (same as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a caligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
+Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs and have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (same as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a calligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
 
 Example: [Goudy Bookletter 1911](https://fonts.google.com/specimen/Goudy+Bookletter+1911) (serif) [Merriweather Sans](https://fonts.google.com/specimen/Merriweather+Sans) (sans serif)
 
@@ -316,19 +320,19 @@ Usage: These typefaces are less ideal for body copy as repeating shapes and patt
 
 <img src="/img/blog/posts/typography_casual_script.jpg" alt="casual script typefaces">
 
-<img src="/img/blog/posts/typography_caligraphic.jpg" alt="caligraphic typefaces">
+<img src="/img/blog/posts/typography_calligraphic.jpg" alt="calligraphic typefaces">
 
 <img src="/img/blog/posts/typography_handwritten.jpg" alt="handwritten typefaces">
 
 #### Scripts
 
-Script fonts are based on cursive handwriting, and divided into several categories. Formal scripts are more elegant, connected, and have fancy swashes and flourishes. Casual scripts mimic a wet brush and may or may not have connected letterforms. Caligraphic fonts are often not considered a script font, mimic caligraphy (of course) and have letterforms that emulate brush strokes, with high contrast. Handwriten fonts are also often not categoried with scripts, and have a very casual look and feel, and lack a rigid structure that other fonts have, in order to mimic handwriting.
+Script fonts are based on cursive handwriting, and divided into several categories. Formal scripts are more elegant, connected, and have fancy swashes and flourishes. Casual scripts mimic a wet brush and may or may not have connected letterforms. calligraphic fonts are often not considered a script font, mimic caligraphy (of course) and have letterforms that emulate brush strokes, with high contrast. Handwriten fonts are also often not categoried with scripts, and have a very casual look and feel, and lack a rigid structure that other fonts have, in order to mimic handwriting.
 
 Example: [Dancing Script](https://fonts.google.com/specimen/Dancing+Script)
 
-History: These fonts each have vastly different histories, but it's easy to tell how they were inspired. Formal script and caligraphic fonts came first.
+History: These fonts each have vastly different histories, but it's easy to tell how they were inspired. Formal script and calligraphic fonts came first.
 
-Usage: Scripts are not suitable for body copy. Formal scripts can make nice headings for the right job (maybe a beauty product or a wedding invitation), but I would refrain from using other scripts or caligraphic fonts for anything except watermarks and little designs on packages, etc.
+Usage: Scripts are not suitable for body copy. Formal scripts can make nice headings for the right job (maybe a beauty product or a wedding invitation), but I would refrain from using other scripts or calligraphic fonts for anything except watermarks and little designs on packages, etc.
 
 #### A Note on Fontface Usage Regarding Classifications
 
@@ -338,13 +342,15 @@ Different font classifications often reflect their time period. The same way tha
 
 Different fonts communicate different feelings thought design. You'll want to chose a font based on the look and feel, branding, and emotion you want to convey.
 
-Serifs often evoke an older, formal look and feel, and are great for body copy, specifically in print. Sans serif letterforms are clean and modern, and can also be used for both body and heading copy. Sans serifs work well on the web and for screens. Both serifs and sans serifs will still work well on either medium and for headings or body copy. Scripts should be mostly limited to wedding invitations, book covers, and specific historical displays when appropriate. Caligraphic fonts can convey a personal look and feel, but should be used with caution.
+Serifs often evoke an older, formal look and feel, and are great for body copy, specifically in print. Sans serif letterforms are clean and modern, and can also be used for both body and heading copy. Sans serifs work well on the web and for screens. Both serifs and sans serifs will still work well on either medium and for headings or body copy. Scripts should be mostly limited to wedding invitations, book covers, and specific historical displays when appropriate. calligraphic fonts can convey a personal look and feel, but should be used with caution.
+
+#### Italics
 
 Italic variants can be used for emphasis. Use them sparingly. Note that just like bold text is not the same as simply increasing the stroke around the letterform, italics are not the same as simply slanting the letterforms; both require that a designer spend a lot of effort on meticulously redesigning each letterform by hand. Do not use faux italics ("fake" italics). (Fun fact: the term "italic" refers to the fac that this style comes from Italy).
 
 ### Typesetting
 
-(Typography and Copy)
+Typesetting is the process of arranging text to be printed. One must apply solid typography and design principals to specific copy in order to place it on the page in an aesthetic and readable manner.
 
 #### Legibility
 
@@ -368,7 +374,17 @@ A good understanding of visual hierarchy is key to good typesetting.
 
 Note that many of these measurements highly impact readability and aesthetic.
 
-TODO kerning, tracking, leading, measure/line length
+These values are mentioned below in more detail in the "Quick Reference Measurements" section.
+
+**Tracking** is the generic spacing between letterforms.
+
+**Kerning** is the spacing between specific pairs of letterforms.
+
+**Leading** is the space between lines (vertically).
+
+**Measure/Line Length** is the length of the body copy and can be real world units, or based off of how many characters (approximately) per line.
+
+If you want to learn to kern, or just play a game, try playing [Kern Type](https://type.method.ac/)
 
 #### Typography on the Page
 
@@ -376,13 +392,13 @@ This section will be about applying typography to your design.
 
 **Hierarchy**
 
-Color refers to the overall mixture of light and dark colors in your text. Regardless of what font and colors you chose, you will generally have either the text color or background color be significantly darker than the other. The color of the copy is what percentage of the copy is dark and light. A primary goal is to have "even color," not meaning exactly as much dark and light, but meaning a consistent percentage of dark and light throughout all parts of the copy. For example, 20% of the space could be dark, but even color would mean that regardless of what part of text you sample, it's still aproximately the same 20% value.
+**Color** refers to the overall mixture of light and dark colors in your text. Regardless of what font and colors you chose, you will generally have either the text color or background color be significantly darker than the other. The color of the copy is what percentage of the copy is dark and light. A primary goal is to have "even color," not meaning exactly as much dark and light, but meaning a consistent percentage of dark and light throughout all parts of the copy. For example, 20% of the space could be dark, but even color would mean that regardless of what part of text you sample, it's still aproximately the same 20% value. A good way of testing for even color would be to blur the text or view it from far away and see if there are any spots of text that are a lot lighter or darker than other spots.
 
-Hierarchy is one of the most important parts of the layout of your typography. As with any other aspect of design, typography also requires an understanding of the fundamental design principals. Visual hierarchy is the notion that some elements are more important than others, and the general flow you want users to consume your information.
+A solid understanding of **hierarchy** is fundamental to typesetting. As with any other aspect of design, typography also requires an understanding of the fundamental design principals. Visual hierarchy is the notion that some elements are more important than others, and the process of designing the general flow you want users to consume your information.
 
 In context of typography, it's the order of the type in your document. The user should be able to quickly discern between headers, subheaders, and body copy. Additionally, you want a consistent aesthetic, for the experience of your readers, and for your brand.
 
-color
+TODO
 
 alignment and justification
 
@@ -393,6 +409,8 @@ rhythm
 widows and orphans
 
 **Type Scale**
+
+TODO
 
 https://type-scale.com/ blah blah multiply by numbers, round to even numbers, pixels, em, rem, ch units on web
 multiply by a number, third, fourth, golden ratio
@@ -406,23 +424,23 @@ Before you can chose a font pair, you must understand the individual font. There
 
 For legibility, you should only use "boring" looking serif or sans serifs for your body copy that are easily readable and have good kerning and x heights, and letterforms that can be distingusihed.
 
-The style or mood conveyed by your font is also a huge consideration. It depends on the appearance you are trying to present. If you are an old bank, newspaper, or possibly b2b establishment, you would likely want to chose a serif font, to provide an established and trusthworthy appearance. However, if you're a new starup, techy or trendy, or it is otherwise important that you look sleek, modern, and up to date, you likely want a sans serif that looks modern, clean, and minimal. There are of course many other considerations such as classification and proportions that can be delved into further, however, this is just a brief overview of the perception garnered by these generic categories. Slab serifs are earthy or industrial, however, lighter weight ones can also look modern and clean. There are plenty of exceptions to most rules, however, it's important to know the rules before you break them; otherwise, you pages and brand will look out of place, inexperienced, or otherwise inappropriate.
+The style or mood conveyed by your font is also a huge consideration. It depends on the appearance you are trying to present. If you are an old bank, newspaper, business to business establishment, you would likely want to chose a serif font, to provide an established and trusthworthy appearance. However, if you're a new starup, techy or trendy, or it is otherwise important that you look sleek, modern, and up to date, you likely want a sans serif that looks modern, clean, and minimal. There are of course many other considerations such as classification and proportions that can be delved into further, however, this is just a brief overview of the perception garnered by these generic categories. Slab serifs are earthy or industrial, however, lighter weight ones can also look modern and clean. There are plenty of exceptions to most rules, however, it's important to know the rules before you break them; otherwise, you pages and brand will look out of place, inexperienced, or otherwise inappropriate.
 
 #### Font Pairs
 
-My first generic advice is simple: pair a serif and a sans serif. You can also choose two sans serifs, and I would recommend doing so if you're trying to go with a very clean and minimal aesthetic. I would **not** pair two serifs, as it is cluttered and they often do not provide sufficient contrast, or if they do, they look inconsistent with each other. Pairing a serif and sans serif, generally, the serif is used for body copy, however, I personally really enjoy a clean sans serif as a readable body copy, and a fancy and eloquent serif for headings and titles.
+My first generic advice is simple: pair a serif and a sans serif. You can also choose two sans serifs, which is a great choice if you're trying to go with a very clean and minimal aesthetic. I would **not** pair two serifs, as it is cluttered and they often do not provide sufficient contrast, or if they do, they look inconsistent with each other. Pairing a serif and sans serif, generally, the serif is used for body copy, however, I personally really enjoy a clean sans serif as a readable body copy, and a fancy and eloquent serif for headings and titles.
 
-Pairing fonts presents an itneresting conundrum: you want your fonts to look distinct and contrast each other (in my opinion, a **lot**), however, you also want them to look like they **belong**. This leads to my first few tips:
+Pairing fonts presents an interesting conundrum: you want your fonts to look distinct and contrast each other (in my opinion, a **lot**), however, you also want them to look like they **belong** (work well together, were chosen intentionally, similar time period and proportions). This leads to my first few tips:
 
 Chose fonts with similar x heights and proportions. This means the fonts look like they belong together, and they can stil contrast each other in other ways.
 
 Chose fonts that contrast each other significantly in either serif (sans serif and serif, slab serif and sans serif, etc) or font weight (very bold headings and light body copy, or more dense body copy and a hairline heading). However, you should avoid picking a font weight too large for your body copy, as it can greatly impair readability and just make your color look worse.
 
-One simple tip is to just use one fontface. You heard me right. First I say you want similar fonts, then different ones, and now I say you only need one? Let me explain: using one fontface ensures the text is consistent in nearly every measure: x height and color, proportions, overall style, and you have a consistent image. However, you can still have a lot of contrast by chosing different sizes, weights, and even other variants such as a condensed or extended version of a font. You could use a small caps version for a subheading or another piece of information such as author or date on a card, or label on a form. Additionally, some popular fontfaces feature a number of variants that maintain a consistent look, but use competely different categories. Roboto has a serif, a sans serif, and even a slab serif. Hell, there's a monospaced version too! [Roboto](https://fonts.google.com/?query=roboto)
+One simple tip is to just use one fontface. You heard me right. First I say you want similar fonts, then different ones, and now I say you only need one? Let me explain: using one fontface ensures the text is consistent in nearly every measure: x height and color, proportions, overall style, and you have a consistent image. However, you can still have a lot of contrast by chosing different sizes, weights, and even other variants such as a condensed or extended version of a font. You could use a small caps version for a subheading or another piece of information such as author or date on a card, or label on a form. Additionally, some popular fontfaces feature a number of variants that maintain a consistent look, but use competely different categories. Roboto has a serif, a sans serif, and even a slab serif. Hell, there's a monospaced version too! ([Roboto](https://fonts.google.com/?query=roboto)) Your type will look consistent but still feature enough variance to establish visual hierarchy and a consistent design language.
 
-Use at most two fonts. Only when you've truly mastered typography, and you have a very good reason, should you use more than two fonts. Even three fonts makes for a very wild experience, and you have to understand how all fonts interact with each other and what message you're conveying. If you were to use three fonts, you would have one for body copy, one for headers, and one uniquely for your brand, for example, if your logo is a letterform or contains a lot of type.
+Use at most two fonts. Only when you've truly mastered typography, and you have a very good reason, should you use more than two fonts. Even three fonts makes for a very wild experience, and you have to understand how all fonts interact with each other and what message you're conveying. If you were to use three fonts, you would have one for body copy, one for headers, and one uniquely for your brand, for example, if your logo is a letterform or contains a lot of type. (As a side note, if your logo features text, I would use the same typeface for your headings, **not** your body copy)
 
-Only use script fonts for headers, not body copy. The more "boring" the more readable is generally true. Here's a word of wisdom from yours truly: good typography is like good makeup, or good mayonaise: you don't even notice it's there unless you're looking for it, but you're much better off with it than without it. Generally, when someone notices typography (unless they're a type nerd like you are starting to become in reading this), it's because they found something bad, not good. Leave your crazy design decisions and creative whims for the headings, and keep the body copy simple. Not only will it be more readable, but it will further emphasize your headings. Even if you chose a rather bland heading, if you chose an even more basic body typeface, then the heading will still shine.
+Only use script fonts for headers, not body copy. The more "boring" the more readable is generally true. Here's a word of wisdom from yours truly: good typography is like good makeup, or good mayonaise: you don't even notice it's there unless you're looking for it, but you're much better off with it than without it (ok I actually hate mayo but that's beside the point). Generally, when someone notices typography (unless they're a type nerd like you are starting to become in reading this), it's because they found something bad, not good. Leave your crazy design decisions and creative whims for the headings, and keep the body copy simple. Not only will it be more readable, but it will further emphasize your headings. Even if you chose a rather bland heading, if you chose an even more basic body typeface, then the heading will still shine.
 
 Use a complex and sophisticated (but still highly readable) font for your body copy, and a big bold (or semibold) sans serif for your headings. The contrast will be beautiful. Or, do the inverse, but don't make your body text too dark.
 
@@ -432,7 +450,7 @@ Italicize your subheaders, and don't italicize anything else. This makes it dist
 
 It's often best to go with one or two of the all time classic fonts. Classic doesn't mean that it's too old or our of style. These fonts are time tested, readable, reliable, and still aesthetic, and a popular choice for many. Even type pros who sift through thousands of fonts and studied for years, and big businesses that can commission their own fonts on a whim will still often use fonts like Helvetica, Garamond, or Futura. Check out [this article on 25 classic fonts](https://blog.spoongraphics.co.uk/articles/25-classic-fonts-that-will-last-a-whole-design-career) as a reference.
 
-**Forget 25; six fonts should suffice!**
+**Forget 25; Six Fonts Should Suffice!**
 
 Famous Italiain designer Massimo Vignelli famously said "the only 6 typefaces you'll ever need" when referring to:
 
@@ -454,9 +472,15 @@ Famous Italiain designer Massimo Vignelli famously said "the only 6 typefaces yo
   <figcaption>Photo credit @kristianstrand on Unsplash</figcaption>
 </figure>
 
-I'm sure you know about _UPPERCASE_ and _lowercase_ letters by now, but I've got a quick tidbit for you:
+I'm sure you know what **UPPERCASE** and **lowercase** letters are by now. That being said, some fonts only have capital, or only have lowercase letters. You'll want to avoid using these for body copy (of course), but an all caps font (or even a "normal" font in all caps) can be fine for headings, subheadings, or labels.
+
+I've also got a quick tidbit for you:
 
 - The names "upper" and "lower" case refer to where the literal case of letters would site back when metal type was used
+
+### Numerals
+
+TODO types of numerals
 
 ### Performance
 
@@ -468,6 +492,8 @@ I'm sure you know about _UPPERCASE_ and _lowercase_ letters by now, but I've got
 - Scalable Vector Graphics (.svg) - Usually SVGs are used for logos and icons online, but they can also be used for fonts. These were derived from OpenType. Characters can be displayd in various colors and animated due to being simple SVG files at their core.
 - Variable Fonts (.vf) - developed jointly by Adobe, Apple, Google, and Microsoft in 2016. Technically known as "OpenType Font Variations" and allows for up to 65 thousand unique glyph sets which can vary in font weight width, and slant. This means these files can be nearly fully customized by the end user, rather than being restricted to a few font weights.
 
+TODO
+
 file sizes
 
 loading efficiently
@@ -476,47 +502,82 @@ system fonts / web safe
 
 ### Web Tips
 
-Now that you've got your fonts selected and performant, and know all about the basics of typography, what tips and tricks can we use to best organize and layout this type on the web?
+Now that you've selected your fonts and they're served performantly, and you know all about the basics of typography, what tips and tricks can you use to best organize and layout this type on the web?
 
-line heights between 1.2 and 1.5
+Set your `line-height` between `1.2` and `1.5`; Note that these values don't have units; You _can_ set them to `1.25rem` or `16px`, but then the line height won't scale with the font size. A line height of `1.25` on the other hand, will be 1.25 times the font size and is my personal recommendation on the web.
 
-font size in rem, default 1rem (16px) scales with user device
+Use `rem` (relative em) as your unit of measurement, and set your default font size to `1rem` (`16px`). These units will scale with the users device and to their preferences, but will not scale to the client width.
 
-containers mean consistent width, so no orphans and a few static layouts rather than being different by every pixel a user device is
+As is true for other aspects of web design, use fixed width containers at certain breakpoints:
 
-organizing with tpypography css file use type scale, lay out line heights, top and bottom margins in advance
+| Breakpoint   | Properties         |
+| ------------ | ------------------ |
+| None         | width: 100%;       |
+| sm (640px)   | max-width: 640px;  |
+| md (768px)   | max-width: 768px;  |
+| lg (1024px)  | max-width: 1024px; |
+| xl (1280px)  | max-width: 1280px; |
+| 2xl (1536px) | max-width: 1536px; |
 
-don't change character spacing of font, if badly kerned use a better font, changing will be like doodling on mona lisa with crayon, these values fine tuned after dozens, sometimes hudnreds of hours
+The example above is borrowed from [Tailwind's container](https://tailwindcss.com/docs/container)
 
-absolutely do not use stroke to make a font "bolder"
+Since you only have a few widths for you design, you have a few static layouts rather than having your page appear differently for every unique pixel on your users' devices.
 
-variable fonts are your friend for many stroke widths, but still come at file size cost
+Because you are designing a small number of designs for a small number of screen widths, it is much easier to maintain and ensure that your design _always_ looks good. This is especially true in typography, as you want to avoid orphans and other typographic bothers that would be inevidable if you were to scale fluidly.
 
-important: don't go overboard with many different font sizes, weights, styles, etc. even two fontfaces can be too many and overwhelming if you have many many different combinations of font size, weight, etc. develop six or seven styles for headings (3-4), body (1) small (1) links (1) and use consistent system everywhere. typography is a SYSTEM in your design, just like a color palette. need to be consistent and will look best and establish brand and comfort
+You'll want to organize your typography CSS rules in a single organized and separate place; I like to name mine `typography.css`.
 
-45-90 chars per line. containers containers containers. tailwind has `max-w-prose` class at 65ch max width
+In this file, I suggest applying your type scale (read more above) and defining `font-size` and optionally, `line-height` for each of your unique elements (such as `h1`, `h2`, `h3`, `p`, `small`). You can also define your `margin-top` and `margin-bottom` for these elements if you'd like. You can set your `font-weight` and should also define your `font-family` here.
 
-remember: right tool for the job
+You can define a **font stack** here to ensure that your fonts fallback to an approprioate typeface and load in a clean matter, or even just to match your body copy to the user's device (so your website looks native on windows, mac, iphone, and android devices). Using a **system font stack** also comes with the benefit of performance as these fonts do not need to be served or downloaded.
 
-layouts and numbers, quick reference:
-sizing: 15-25px (screen. print would be 10-12pt) (fonts with larger x-height are easier to read on smaller sizes)
+TODO font stack info
+
+Do not change the `letter-spacing` of the font; If it is badly kerned, use a better font. Changing the tracking of a font would be like doodling on the Mona Lisa with crayon. These values have been fine tuned after dozens to hundreds of hours. While it may not take a good type desighner to identify problems, it takes a good one to solve them. If you see letter spacing problems, use another font.
+
+Absolutely do not use stroke or shadow changes to make a font "bolder" and do not skew your text to make it "italic." These "faux" effects will look incorrect. If you require bold or italics, find a fontface with a bold or italic font built in.
+
+Variable width fonts are your friend if you require many different font weights, but they still come with a slight file size cost.
+
+Important: Don't go overboard with many different font sizes, weights, styles, etc. Even two font families can be overwhelming if you have many different combinations of font size, weight, etc. Develop 3-6 styles of headings, a style for body copy, small text, and links, and use this system everywhere. You want to create a consistent design language. Typography is a _system_ in your design, just like a color palette. You need to be consistent and establish your brand and comfort on your website. Consistent type styles will both make your site look much better and also make it much easier to use, parse, and understand. Typography can be crucial to UX.
+
+Use 45-90 characters per line. 60-70 is close to ideal. Tailwind CSS has the `max-w-prose` class that sets your `max-width` to `65ch` (characters). Note that `ch` isn't always equal to a character width, and feel free to set your `max-width` to a specific amount of `rem` based on having 60 or 70 characters per line, which depends on what font size you use for body copy. All body copy should be constrained to the exact same max width, even if the rest of the designs aren't.
+
+CSS frameworks will feature text sizes such as `text-sm`, `text-lg`, etc. which will set your `font-size` and also often set `line-height` and/or `margin`. [Tailwind](https://tailwindcss.com/docs/font-size) sets `font-size` and `line-height` for example.
+
+Remember to use the right tool for the job. Use a font that best represents your company, brand, message, etc.
+
+### Quick Reference Measurements
+
+Here are a few quick references for good measurements for your typography.
+
+**Font Size**
+How large the characters are. 15-25px on a screen. 10-12pt on paper. Fonts with larger x-heights are easier to read in smaller sizes.
+
+**Heading Font Size**
+Primary heading: 175%-200% of the body text size.
+
+Secondary heading:125%-150% of the body text size.
 
 **Tracking**
-Letter spacing. Try not to change this, unless absolutely necessary, or stylistically for a heading.
+Space between letters. Try not to change this, unless absolutely necessary, or stylistically for a heading.
+
+**Kerning**
+Individual spacing for specific pairs of characters, such as the space between "c" and "h." These values are fine tuned after many hours and you won't be touching them. This is why you don't want to change tracking, which is the spacing between _all_ characters.
 
 **Leading**
-Line height. 120% to 150% of text size (changes based off of text size and x height)
+Line height. Refers to the lead from metal type. 120% to 150% of text size. Changes based off of text size and x-height.
 
 **Line Length / Column Width**
-45-90 (ideally 60-70) chracters per line
+How many characters per line (average). 45-90, but ideally 60-70 chracters per line.
 
-primary heading 175%-200% of body text, secondary heading 125-150% of body text size
-alignment: generally, avoid temptation of aligning text to center
-line height, tailwind example use line height number not units, relative to font size, link to tailwind defaults text-xl, text-lg, etc
+**Alignment**
+
+You can left, center, or right align text. Generally, avoid the temptation of aligning text to the center. If writing a left-to-right (LTR) language (such as English), you'll want to stick with left alignment on all body copy. Headings are a stylistic choice but do not have to be centered. The same way that subheadings and headings can differ in font family, weight, and size, they can differ in alignment. Generally, you want elements of your design to align, so if there is a left aligned image right below your heading, you may want to left align the heading.
 
 ### Dos and Do Nots
 
-Do:
+**Do:**
 
 Do ensure your line length, line height, and other metrics mentioned above are legible
 
@@ -526,9 +587,9 @@ Do ensure that you use well designed and trusted fonts
 
 Do ensure that your font pairs work well together
 
-Do be sure to use a few ifferent variations of font size, weight, and style to provide contrast and visual hierarchy
+Do be sure to use a few different variations of font size, weight, and style to provide contrast and visual hierarchy
 
-Do not
+**Do not:**
 
 Do not use too many different font styles (such as ten different sizes, eight weights, and four font families all mixed and matched). Stick to a design system instead and only use the appropriate type styles for headings, subheadings, body copy, captions, quotes, authors, tags, and whatever other styles are defined in that style guide.
 
@@ -544,11 +605,23 @@ Do not use a typeface that is hard to read for body copy (or in general... but e
 
 ### Where to Search
 
-Type foundaries blah blah
+A **font foundry** is a company that designs or distributes typefaces. The name comes from when type was sold as physical wood or metal pieces. Now in the digital age, you can search font foundary websites and sort by different values and select the typeface(s) that you'd like. Note that some are free and some are paid. There are plenty of great free fonts out there, but if you are establishing a large company and want to command respect, you'll want a design agency to pick out your fonts (along with your logo, colors, iconography, etc.) and these fonts can cost hundreds or thousands of dollars depending on designer, foundary, licensing, use case, etc. However, for the casual designer, there are a great number of excellent typefaces available for free on Google Fonts and other foundaries:
+
+- [Google Fonts](https://fonts.google.com/) (free)
+
+- [Fonts.com](https://www.fonts.com/) (paid but affordable)
+
+- [Adobe Fonts](https://fonts.adobe.com/) (free if you have a creative cloud subscription)
+
+- [Displaay.net](https://displaay.net/) (paid premium fonts)
+
+These are just a handful of examples, and a quick search will find you many more. Don't feel confined to just these few examples.
+
+Slightly off-topic, but on [Type Wolf](https://www.typewolf.com/) you can read up about the latest typography design trends and about type in general.
 
 ### References
 
-Websites:
+**Websites:**
 
 - [Google Fonts - Fonts Knowledge](https://fonts.google.com/knowledge)
 
@@ -562,7 +635,7 @@ Websites:
 
 - [NN group - Typography terms cheat sheet](https://www.nngroup.com/articles/typography-terms-ux/)
 
-Videos:
+**Videos:**
 
 - [The History of Typography - Animated Short](https://youtu.be/wOgIkxAfJsk)
 
@@ -578,7 +651,7 @@ Videos:
 
 - [Hyperlegible: an approach to accessible type design](https://youtu.be/wjE5eHLICzc)
 
-Books:
+**Books:**
 
 - [Designing Type](https://www.amazon.com/gp/product/0300249926/) - All about creating a typeface, one letterform at a time. Dive deep into every single part of a font and learn about how to create your own.
 
@@ -586,4 +659,4 @@ Books:
 
 - [Thinking with Type](https://www.amazon.com/gp/product/1568989695/) - A guide for using type in your designs. Plenty of examples, history, and explanations of where to use and not use fontfaces.
 
-todo: table of contents
+I highly recommend all three of the above books.
