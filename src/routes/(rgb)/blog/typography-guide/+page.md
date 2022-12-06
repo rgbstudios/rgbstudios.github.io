@@ -452,7 +452,7 @@ There are three types of dashes:
 
 Dash, en dash, and em dash for your viewing and copying convenience:
 
-- (dash)
+\- (dash)
 
 – (en dash)
 
