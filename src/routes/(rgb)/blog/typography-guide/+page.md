@@ -424,9 +424,41 @@ A solid understanding of **hierarchy** is fundamental to typesetting. As with an
 
 In context of typography, it's the order of the type in your document. The user should be able to quickly discern between headers, subheaders, and body copy. Additionally, you want a consistent aesthetic, for the experience of your readers, and for your brand.
 
-TODO
+**Justification**
 
-alignment and justification
+How the text aligns on the page
+
+**Left justified**: Usually default and easiest for LTR (left to right, such as English) text on the reader
+
+**Center justified**: Draws attention to the text but can be harder to read. Use sparingly.
+
+**Right justified**: A design choice and should be used sparingly and only to provide space or align to other text (unless of course the language reads RTL, in which case reverse what I said about left and right justification)
+
+**Justified**: Make the text all the same length (removes the **rag** from the end of lines that are different widths). This is done by adjusting the spacing between words and glyphs such that the width is nearly identical. Common in newspapers. I would avoid it on the web.
+
+<img src="/img/blog/posts/typography_justification_and_dashes.png" alt="examples of justification and dashes">
+
+<small>Image above from Randal Branding</small>
+
+**Dashes**
+
+There are three types of dashes:
+
+**Dash**: A "normal" dash or minus sign on your keyboard (also called a hypen). Connects two words such as "long-term effects"
+
+**En Dash**: A dash longer than a "normal" one. Usually used to indicate time ranges.
+
+**Em Dash**: A very long dash used to separate information or indicate a break in a sentence.
+
+Dash, en dash, and em dash for your viewing and copying convenience:
+
+- (dash)
+
+– (en dash)
+
+— (em dash)
+
+TODO
 
 filler text
 
@@ -785,6 +817,8 @@ Slightly off-topic, but on [Type Wolf](https://www.typewolf.com/) you can read u
 - [Typography Theory: The Anatomy of Type](https://youtu.be/CDmzaapVvsM)
 
 - [Hyperlegible: an approach to accessible type design](https://youtu.be/wjE5eHLICzc)
+
+These are some of the best videos I've found on typography. Sit back, relax, and learn away. View with or send to a friend too : )
 
 **Books:**
 
