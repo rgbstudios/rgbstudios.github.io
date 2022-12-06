@@ -107,6 +107,8 @@ Quick take away: x-height is typically used as a measure of readability and aest
 
 [Tailwind CSS](https://tailwindcss.com/docs/font-weight) has some reasonable font weight names if you're looking for a standard: **thin, extralight, light, normal, medium, semibold, bold, extrabold, black**.
 
+You can also use the numbers `100, 200, 300, 400, 500, 600, 700, 800, 900` as `font-weight` values in CSS, or use `normal` (which is `400`) or `bold` (which is `700`) or values relative to the parent `lighter` or `bolder`. For more as well as common weight names, check [Moz Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight).
+
 **Font width** refers to how "streched out" the letterforms are. Generally, you want to avoid using other widths unless it's for stylistic effect, for example, a heading. Normal width is best for body copy.
 
 **Common width / proportion names:**
@@ -410,11 +412,25 @@ widows and orphans
 
 **Type Scale**
 
-TODO
+Just like other elements in design, you will want to create enough contrast to distinguish different design elements, but still enough similarity to not be absurdist or inconsistent. For that, you'll want to develop a type scale. A type scale is a system of font sizes for different heading elements that generally is multiplicative such that each size up or down is multiplied by the same value. 1.2, 1.25, 1.33, and 1.5 are common choices, as well as square roots and the golden ratio. [Type-scale.com](https://type-scale.com/) is one tool that will help you come up with a type scale fit to your liking, preview different fonts, and generate the CSS for your scale.
 
-https://type-scale.com/ blah blah multiply by numbers, round to even numbers, pixels, em, rem, ch units on web
-multiply by a number, third, fourth, golden ratio
-can use tailwind's numbers, use units on your grid such as 0.25rem (4px)
+When generating a type scale for the web, be sure to round to nice even numbers to stay on grid. Whatever your unit (`px`, `em`, `rem`) and grid system, be sure to adhere to it, even if it means changing the font sizes slightly. Tailwind's grid is `0.25rem` (or `4px`) and [Tailwind's font sizes](https://tailwindcss.com/docs/font-size) are shown below as an example:
+
+| Name      | Font Size            | Line Height           |
+| --------- | -------------------- | --------------------- |
+| text-xs   | font-size: 0.75rem;  | line-height: 1rem;    |
+| text-sm   | font-size: 0.875rem; | line-height: 1.25rem; |
+| text-base | font-size: 1rem;     | line-height: 1.5rem;  |
+| text-lg   | font-size: 1.125rem; | line-height: 1.75rem; |
+| text-xl   | font-size: 1.25rem;  | line-height: 1.75rem; |
+| text-2xl  | font-size: 1.5rem;   | line-height: 2rem;    |
+| text-3xl  | font-size: 1.875rem; | line-height: 2.25rem; |
+| text-4xl  | font-size: 2.25rem;  | line-height: 2.5rem;  |
+| text-5xl  | font-size: 3rem;     | line-height: 1;       |
+| text-6xl  | font-size: 3.75rem;  | line-height: 1;       |
+| text-7xl  | font-size: 4.5rem;   | line-height: 1;       |
+| text-8xl  | font-size: 6rem;     | line-height: 1;       |
+| text-9xl  | font-size: 8rem;     | line-height: 1;       |
 
 ### Chosing fonts
 
@@ -465,7 +481,9 @@ Famous Italiain designer Massimo Vignelli famously said "the only 6 typefaces yo
 
 <small>Image from <a href="https://www.quora.com/What-typefaces-does-Massimo-Vignelli-use" target="\_blank">quora</a></small>
 
-### Uppercase and Lowercase
+### Types ofLetterforms
+
+#### Uppercase and Lowercase
 
 <figure>
   <img src="/img/blog/posts/metal_type.jpg" alt="metal type inside a case">
@@ -478,11 +496,22 @@ I've also got a quick tidbit for you:
 
 - The names "upper" and "lower" case refer to where the literal case of letters would site back when metal type was used
 
-### Numerals
+#### Numerals
 
 TODO types of numerals
 
-### Performance
+#### Ligatures
+
+A ligature is a glyph formed from two (or more) letters. One common example is combining a lowercase "f" and i" such that the dot of the "i" is connected to the ascender of the "f."
+
+<figure>
+  <img src="/img/blog/posts/typography_ligatures.jpg" alt="ligature examples">
+  <figcaption>Photo from fonts.com</figcaption>
+</figure>
+
+In the figure above, you can see what the text would look like with and without ligatures. Some fonts have optional ligatures. (Some fonts also have optional other variations for characters, such as a double or single story "a" or "g")
+
+#### Performance
 
 **Font Files**
 
@@ -529,9 +558,30 @@ You'll want to organize your typography CSS rules in a single organized and sepa
 
 In this file, I suggest applying your type scale (read more above) and defining `font-size` and optionally, `line-height` for each of your unique elements (such as `h1`, `h2`, `h3`, `p`, `small`). You can also define your `margin-top` and `margin-bottom` for these elements if you'd like. You can set your `font-weight` and should also define your `font-family` here.
 
+** Font Stacks**
+
 You can define a **font stack** here to ensure that your fonts fallback to an approprioate typeface and load in a clean matter, or even just to match your body copy to the user's device (so your website looks native on windows, mac, iphone, and android devices). Using a **system font stack** also comes with the benefit of performance as these fonts do not need to be served or downloaded.
 
-TODO font stack info
+A font stack is a list of font families (in order) to be used. For example, [Modern Normalize](https://github.com/sindresorhus/modern-normalize/blob/main/modern-normalize.css#L43) (which is a reset stylesheet used to define good default values for a new project) uses the following stack:
+
+```
+font-family:
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji';
+```
+
+It will try to load the first font, and if not, it will try to load the second, and so on. These fonts are all commonly available system fonts on Mac, Windows, etc. and feature websafe fallbacks as well as fonts for emoji. This system font stack shown above is used by Modern Normalize which is used in Tailwind's preflight. If you have a font that's similar to Arial for example, you could say `font-family: myfont, Arial;` so that in case your font doesn't load properly, or while your font loads, users are greeted with a similar font, which doesn't need to be downloaded and doesn't impact performance.
+
+For more info on web safe CSS font stacks, check out [CSS Font Stack](https://www.cssfontstack.com/).
+
+**Custom Changes**
 
 Do not change the `letter-spacing` of the font; If it is badly kerned, use a better font. Changing the tracking of a font would be like doodling on the Mona Lisa with crayon. These values have been fine tuned after dozens to hundreds of hours. While it may not take a good type desighner to identify problems, it takes a good one to solve them. If you see letter spacing problems, use another font.
 
@@ -539,7 +589,11 @@ Absolutely do not use stroke or shadow changes to make a font "bolder" and do no
 
 Variable width fonts are your friend if you require many different font weights, but they still come with a slight file size cost.
 
+**Different Styles**
+
 Important: Don't go overboard with many different font sizes, weights, styles, etc. Even two font families can be overwhelming if you have many different combinations of font size, weight, etc. Develop 3-6 styles of headings, a style for body copy, small text, and links, and use this system everywhere. You want to create a consistent design language. Typography is a _system_ in your design, just like a color palette. You need to be consistent and establish your brand and comfort on your website. Consistent type styles will both make your site look much better and also make it much easier to use, parse, and understand. Typography can be crucial to UX.
+
+**Line Widths and Font Sizes**
 
 Use 45-90 characters per line. 60-70 is close to ideal. Tailwind CSS has the `max-w-prose` class that sets your `max-width` to `65ch` (characters). Note that `ch` isn't always equal to a character width, and feel free to set your `max-width` to a specific amount of `rem` based on having 60 or 70 characters per line, which depends on what font size you use for body copy. All body copy should be constrained to the exact same max width, even if the rest of the designs aren't.
 
