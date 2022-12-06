@@ -118,7 +118,7 @@ You can also use the numbers `100, 200, 300, 400, 500, 600, 700, 800, 900` as `f
 - semi condensed / semi compressed / narrow
 - regular
 - wide
-- expanded / extended
+- expanded / extended / extra wide
 
 #### Parts of a Letterform
 
@@ -344,11 +344,21 @@ Different font classifications often reflect their time period. The same way tha
 
 Different fonts communicate different feelings thought design. You'll want to chose a font based on the look and feel, branding, and emotion you want to convey.
 
+<img src="/img/blog/posts/typography_emotions.svg" alt="typefaces and emotions example">
+
+<small>Image above from Google Fonts</small>
+
 Serifs often evoke an older, formal look and feel, and are great for body copy, specifically in print. Sans serif letterforms are clean and modern, and can also be used for both body and heading copy. Sans serifs work well on the web and for screens. Both serifs and sans serifs will still work well on either medium and for headings or body copy. Scripts should be mostly limited to wedding invitations, book covers, and specific historical displays when appropriate. calligraphic fonts can convey a personal look and feel, but should be used with caution.
 
 #### Italics
 
 Italic variants can be used for emphasis. Use them sparingly. Note that just like bold text is not the same as simply increasing the stroke around the letterform, italics are not the same as simply slanting the letterforms; both require that a designer spend a lot of effort on meticulously redesigning each letterform by hand. Do not use faux italics ("fake" italics). (Fun fact: the term "italic" refers to the fac that this style comes from Italy).
+
+#### Multiplexed Typefaces
+
+Multiplexed typefaces (sometimes called duplexed or uniwidth) are typefaces where each glyph takes up the same width regardless of the font weight chosen (as opposed to typefaces where an increase in font weight increases the width of the glyphs). These are useful in some screen designs where one may change the font weight of an element and not want the content to shift or spacing to change, such as buttons or links on the web. This is certainly niche, but good to know they exist. If your font is not multiplexed (which most aren't, and you shouldn't constrain yourself to one) then you should generally avoid changing font weight on user interaction (such as hover) if it would shift the UI at all.
+
+Further reading on [Google Fonts](https://fonts.google.com/knowledge/glossary/multiplexed_duplexed_uniwidth)
 
 ### Typesetting
 
@@ -361,6 +371,20 @@ The measure of how easy text is to read, depends on ability to distinguish betwe
 To chose a legible font, consider the x height, chose a normal character width (not condensed or extended) and weight (not light or bold). "Book" or "Regular" weight is best. Neutral fonts (fonts with less personality) are the most readable. High contrast fonts can result in decreased legibility due to having very thin strokes (especially Modern fonts). Legibility is far more important for body text than headings, as headings will be very large and readers will be drawn to them, but body text will be small and where the user spends most of their time.
 
 Avoid all caps fonts for legibility. Note that ascenders and descenders help distinguish characters.
+
+As mentioned before, x-height is very important for legibility. Consider the image below (from [Google Fonts](https://fonts.google.com/knowledge/choosing_type/exploring_x_height_the_em_square) ):
+
+<img src="/img/blog/posts/typography_x_height_example.svg" alt="two paragrpahs in fonts with different x-heights">
+
+Believe it or not, both the text on the left and right have the exact same font size and line height values. The difference? x-height. The text on the left has a much larger x-height, making the text appear larger (and also run longer) even though each line of text is the same height.
+
+**Lowercase l, capital I, and number 1**
+
+<img src="/img/blog/posts/typography_illinois.svg" alt="legibility of I, l, and 1">
+
+Image from [Google Fonts](https://fonts.google.com/knowledge/choosing_type/choosing_reliable_typefaces)
+
+Many sans serif typefaces have "I" and "l" that are similar to each other, and sometimes even similar to "1." Having the user slowdown to read your text, misread it, or misread your advertisement from afar can be bad, but having a user not understand your UI or what to do or where to go can be frustrating, and frustration is the last emotion you want your users feeling when using your site/app.
 
 #### Body and Heading Copy
 
@@ -434,7 +458,7 @@ When generating a type scale for the web, be sure to round to nice even numbers 
 
 ### Chosing fonts
 
-#### What to Look for When Choosing a Typeface
+#### Choosing a Typeface
 
 Before you can chose a font pair, you must understand the individual font. There are two key considerations for chosing a font: readability, and aesthetic.
 
@@ -442,7 +466,9 @@ For legibility, you should only use "boring" looking serif or sans serifs for yo
 
 The style or mood conveyed by your font is also a huge consideration. It depends on the appearance you are trying to present. If you are an old bank, newspaper, business to business establishment, you would likely want to chose a serif font, to provide an established and trusthworthy appearance. However, if you're a new starup, techy or trendy, or it is otherwise important that you look sleek, modern, and up to date, you likely want a sans serif that looks modern, clean, and minimal. There are of course many other considerations such as classification and proportions that can be delved into further, however, this is just a brief overview of the perception garnered by these generic categories. Slab serifs are earthy or industrial, however, lighter weight ones can also look modern and clean. There are plenty of exceptions to most rules, however, it's important to know the rules before you break them; otherwise, you pages and brand will look out of place, inexperienced, or otherwise inappropriate.
 
-#### Font Pairs
+If you think I'm overstating the effect of emotion or mood conveyed by fonts (or just enjoy playing type games), check out Adobe's [Typographic Superpowers Game](https://game.fonts.adobe.com/) (Spoiler: you don't get to see your or others' choices)
+
+#### Pairing Fonts
 
 My first generic advice is simple: pair a serif and a sans serif. You can also choose two sans serifs, which is a great choice if you're trying to go with a very clean and minimal aesthetic. I would **not** pair two serifs, as it is cluttered and they often do not provide sufficient contrast, or if they do, they look inconsistent with each other. Pairing a serif and sans serif, generally, the serif is used for body copy, however, I personally really enjoy a clean sans serif as a readable body copy, and a fancy and eloquent serif for headings and titles.
 
@@ -452,15 +478,35 @@ Chose fonts with similar x heights and proportions. This means the fonts look li
 
 Chose fonts that contrast each other significantly in either serif (sans serif and serif, slab serif and sans serif, etc) or font weight (very bold headings and light body copy, or more dense body copy and a hairline heading). However, you should avoid picking a font weight too large for your body copy, as it can greatly impair readability and just make your color look worse.
 
-One simple tip is to just use one fontface. You heard me right. First I say you want similar fonts, then different ones, and now I say you only need one? Let me explain: using one fontface ensures the text is consistent in nearly every measure: x height and color, proportions, overall style, and you have a consistent image. However, you can still have a lot of contrast by chosing different sizes, weights, and even other variants such as a condensed or extended version of a font. You could use a small caps version for a subheading or another piece of information such as author or date on a card, or label on a form. Additionally, some popular fontfaces feature a number of variants that maintain a consistent look, but use competely different categories. Roboto has a serif, a sans serif, and even a slab serif. Hell, there's a monospaced version too! ([Roboto](https://fonts.google.com/?query=roboto)) Your type will look consistent but still feature enough variance to establish visual hierarchy and a consistent design language.
+**Superfamilies**
+
+One simple tip is to just use one fontface. You heard me right. First I say you want similar fonts, then different ones, and now I say you only need one? Let me explain: using one fontface ensures the text is consistent in nearly every measure: x height and color, proportions, overall style, and you have a consistent image. However, you can still have a lot of contrast by chosing different sizes, weights, and even other variants such as a condensed or extended version of a font. You could use a small caps version for a subheading or another piece of information such as author or date on a card, or label on a form. Additionally, some popular fontfaces feature a number of variants that maintain a consistent look, but use competely different categories. Roboto has a serif, a sans serif, and even a slab serif. Hell, there's a monospaced version too! ([Roboto](https://fonts.google.com/?query=roboto)) Your type will look consistent but still feature enough variance to establish visual hierarchy and a consistent design language. [Some great examples of superfamilies](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces_within_a_family_superfamily)
+
+**Two Fonts Exactly**
 
 Use at most two fonts. Only when you've truly mastered typography, and you have a very good reason, should you use more than two fonts. Even three fonts makes for a very wild experience, and you have to understand how all fonts interact with each other and what message you're conveying. If you were to use three fonts, you would have one for body copy, one for headers, and one uniquely for your brand, for example, if your logo is a letterform or contains a lot of type. (As a side note, if your logo features text, I would use the same typeface for your headings, **not** your body copy)
+
+**Plain and Simple**
 
 Only use script fonts for headers, not body copy. The more "boring" the more readable is generally true. Here's a word of wisdom from yours truly: good typography is like good makeup, or good mayonaise: you don't even notice it's there unless you're looking for it, but you're much better off with it than without it (ok I actually hate mayo but that's beside the point). Generally, when someone notices typography (unless they're a type nerd like you are starting to become in reading this), it's because they found something bad, not good. Leave your crazy design decisions and creative whims for the headings, and keep the body copy simple. Not only will it be more readable, but it will further emphasize your headings. Even if you chose a rather bland heading, if you chose an even more basic body typeface, then the heading will still shine.
 
 Use a complex and sophisticated (but still highly readable) font for your body copy, and a big bold (or semibold) sans serif for your headings. The contrast will be beautiful. Or, do the inverse, but don't make your body text too dark.
 
 Italicize your subheaders, and don't italicize anything else. This makes it distinct from the body copy and the headers at a glance. Visual hierarchy, ya know?
+
+**Same Source**
+
+Consider using two typefaces from the same foundry or type designer; this results in some consistency, the same way that the same artist will probaly have a consistent style or two across their work. Just make sure they aren't too similar, and don't take it as a given that because you found two fonts in the same place that they work together.
+
+<img src="/img/blog/posts/typography_pair_relationships.svg" alt="Typeface relationships with each other">
+
+<small>Image above from Google Fonts</small>
+
+See the above image for a solid reference for choosing typefaces that are "similar enough" to belong but "different enough" to contrast each other and not get mixed up. In addition to being poor design, choosing typefaces that are too similar from a UI perspective can confuse and take away from the design system you've created to show users what's what (for example, how buttons, links, subheadings, tags, comments all look different in the context of a webpage).
+
+**Glyphs**
+
+If one typeface is missing specific glyphs you need, you could look for another typeface that not only meets your other design requirements and works well, but that also features those missing glyphs. See "Ligatures" for examples.
 
 **Specific Fonts**
 
@@ -480,6 +526,26 @@ Famous Italiain designer Massimo Vignelli famously said "the only 6 typefaces yo
 <img src="/img/blog/posts/typography_six_typefaces.jpg" alt="six typefaces of Massimo Vignelli">
 
 <small>Image from <a href="https://www.quora.com/What-typefaces-does-Massimo-Vignelli-use" target="\_blank">quora</a></small>
+
+Some great Google Fonts links for reading more about pairing fonts:
+
+**Choosing Typefaces:**
+
+- [A checklist for choosing type](https://fonts.google.com/knowledge/choosing_type/a_checklist_for_choosing_type) - A list of a few key items to consider when choosing a font with each item in detail
+
+- [Emotive considerations for choosing typefaces](https://fonts.google.com/knowledge/choosing_type/emotive_considerations_for_choosing_typefaces) - About the emotions associated with typefaces
+
+- [Choosing reliable typefaces](https://fonts.google.com/knowledge/choosing_type/choosing_reliable_typefaces) - Choosing typefaces that won't fail your needs
+
+- [Choosing typefaces that have optical sizes](https://fonts.google.com/knowledge/choosing_type/choosing_typefaces_that_have_optical_sizes) - All about optical sizes and why they matter
+
+**Pairing Typefaces:**
+
+- [Pairing typefaces](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces)
+
+- [Pairing typefaces within a family & superfamily](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces_within_a_family_superfamily)
+
+- [Pairing typefaces by the same type designer or type foundry](https://fonts.google.com/knowledge/choosing_type/pairing_typefaces_by_the_same_type_designer_or_type_foundry)
 
 ### Types ofLetterforms
 
@@ -510,6 +576,13 @@ A ligature is a glyph formed from two (or more) letters. One common example is c
 </figure>
 
 In the figure above, you can see what the text would look like with and without ligatures. Some fonts have optional ligatures. (Some fonts also have optional other variations for characters, such as a double or single story "a" or "g")
+
+<figure>
+  <img src="/img/blog/posts/typography_ligatures_more.svg" alt="more ligature examples">
+  <figcaption>Photo from [Google Fonts](https://fonts.google.com/knowledge/choosing_type/choosing_reliable_typefaces)</figcaption>
+</figure>
+
+Above you can see more ligatures including a "st" with a big swash and a 1/2 symbol. Choose a font that has the symbols you need. Of course, this applies to other languages too. Some fonts have thousands of glyphs, and some don't even have basic punctuation. You may find yourself using a font and then months later find out you need a percent sign ("%") as a key part of your UI.
 
 #### Performance
 
@@ -608,6 +681,8 @@ Here are a few quick references for good measurements for your typography.
 **Font Size**
 How large the characters are. 15-25px on a screen. 10-12pt on paper. Fonts with larger x-heights are easier to read in smaller sizes.
 
+Related rabbit hole: When you set the font size in software, you're really setting the size of the **em square**, which can sit wherever the type designer wants. Every glyph is designed around an em square and can have ascenders, descenders, swashes, etc. outside of that area. This can be important when combining fonts that have different appearances and wanting text with the same font size to appear as the same height. [Further reading on em squares](https://fonts.google.com/knowledge/choosing_type/exploring_x_height_the_em_square)
+
 **Heading Font Size**
 Primary heading: 175%-200% of the body text size.
 
@@ -628,6 +703,12 @@ How many characters per line (average). 45-90, but ideally 60-70 chracters per l
 **Alignment**
 
 You can left, center, or right align text. Generally, avoid the temptation of aligning text to the center. If writing a left-to-right (LTR) language (such as English), you'll want to stick with left alignment on all body copy. Headings are a stylistic choice but do not have to be centered. The same way that subheadings and headings can differ in font family, weight, and size, they can differ in alignment. Generally, you want elements of your design to align, so if there is a left aligned image right below your heading, you may want to left align the heading.
+
+#### Licensing
+
+There are many different types of licenses (as with other digital media), and you should be aware and ensure to comply with the licenses or you may be in for some trouble down the line.
+
+Some licenses allow you to use a font based on number of viewers, based on the platform (website, app, commercials, print), and licenses will generally tell you what you can and can't do to the files, such as change, distribute, charge money for, etc. For a hobbyist, "free for personal use" should be good enough for you; just make sure you aren't violating the licenses if you are interested in changing things up or sharing a file.
 
 ### Dos and Do Nots
 
