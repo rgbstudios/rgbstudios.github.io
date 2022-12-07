@@ -420,7 +420,7 @@ If you want to learn to kern, or just play a game, try playing [Kern Type](https
 
 This section will be about applying typography to your design.
 
-**Hierarchy**
+##### Hierarchy
 
 **Color** refers to the overall mixture of light and dark colors in your text. Regardless of what font and colors you chose, you will generally have either the text color or background color be significantly darker than the other. The color of the copy is what percentage of the copy is dark and light. A primary goal is to have "even color," not meaning exactly as much dark and light, but meaning a consistent percentage of dark and light throughout all parts of the copy. For example, 20% of the space could be dark, but even color would mean that regardless of what part of text you sample, it's still aproximately the same 20% value. A good way of testing for even color would be to blur the text or view it from far away and see if there are any spots of text that are a lot lighter or darker than other spots.
 
@@ -428,7 +428,7 @@ A solid understanding of **hierarchy** is fundamental to typesetting. As with an
 
 In context of typography, it's the order of the type in your document. The user should be able to quickly discern between headers, subheaders, and body copy. Additionally, you want a consistent aesthetic, for the experience of your readers, and for your brand.
 
-**Justification**
+##### Justification
 
 How the text aligns on the page
 
@@ -444,7 +444,41 @@ How the text aligns on the page
 
 <small>Image above from Randal Branding</small>
 
-**Dashes**
+##### Typesetting Terminology
+
+The below terms refer to the appearance of lines of text.
+
+**Rhythmn** refers to how one perceives the flow of text on the page. It can apply to the sounds words make when read aloud, the length of words, the length of sentences, tracking, kerning, and everything that goes along with the flow of text and how one sees and reads it (from afar and up close).
+
+**Rag** refers to the side of the paragraph that isn't even (so the right side on LTR text). Specifically, the rag refers to the shape formed by this side. The closer your rag is to even, the better. A bad rag would have a lot of changes in shape, or something awkwardly sticking out too little or too much.
+
+Note that the longer the line length, the more distracting a bad rag is.
+
+<img src="/img/blog/posts/typography_rag.jpg" alt="typography good and bad rag examples">
+
+**Widows** refer to a word or short line in the end of a paragrpah that is left "by itself." An **orphan** is a word or short line on top of a new page, for example, when a paragraph carries over to the next page and then ends soon after. This is conidered bad typographically, similar to bad rag, as it looks uneven and draws attention to the shape and away from the design and content of the text. Good typography often means the lack of bad typography.
+
+<img src="/img/blog/posts/typography_widow_orphan.jpg" alt="typography widow and orphan examples">
+
+A lot of typesetting (at the end of the design process once the copy is finalized) is figuring out how to avoid bad rag, widows, and orphans.
+
+**Solutions**
+
+Firstly, if you are designing for the web, you should really consider using a **container** that has fixed widths at specific breakpoints. Without one, your text will scale differently at nearly every screen, resulting in hundreds, if not thousands of different ways users could view your text, making it impossible to typeset (among other design problems). See "web tips" below for more on containers. This is not a problem for traditional print copy as the book, newspaper, magazine, or poster you are designing for will likely only be available in one (maybe two) size.
+
+Once you have your final copy and sizes, there are a few tricks you can consider:
+
+- Manual line breaks: This is the simple solution, and will get you the exact results you want, although it may not be ideal as it can be time-consuming, look incorrect in some areas, and can look unprofessional unless done very well.
+
+- Hyphenation: You can hyphenate words in certain places, a lot more often than you'd think. Check out a nearby newspaper.
+
+- Justified text: You can justify your text to always be nearly full width. I disrecommend this on screens unless you're trying to emulate a newspaper as it is weird and can be harder to read.
+
+- Software: If you're using software like InDesign, there are plenty of typestting features available. This doesn't apply to web dev, but applies to most type (designed on screens and then printed out).
+
+Images above from [TheGoodPage.net](https://thegoodpage.net/2015/11/21/rags-widows-orphans/)
+
+##### Dashes
 
 There are three types of dashes:
 
@@ -462,15 +496,35 @@ Dash, en dash, and em dash for your viewing and copying convenience:
 
 — (em dash)
 
-TODO
+##### Lorem Ipsum
 
-filler text
+**Lorem Ipsum** or lipsum is dummy / filler text used for printing, previewing, and typesetting. When you want to use dummy text for your design, magazine page layout, app UI, or blog post, you should consider using something similar to lipsum. If you use actual text, people will begin reading it and getting distracted, and if you simply copy the same text over and over, it wo't look "realistic" and will look unfinished. Lipsum is generated text designed to look similar to latin based text from afar without having any meaning. It allows you to present your mockup in a professional manner (as it is industry standard) and allow the reader / user to focus on the typesetting rather than the content of the text.
 
-rhythm
+Lipsum became popular in the 1960s and has become significantly more popular again with the internet and digital interfaces. [Lipsum.com](https://www.lipsum.com/) can be used to generate lipsum.
 
-widows and orphans
+> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sapien nisl, rhoncus eu tortor non, tincidunt placerat sapien. Vestibulum ultricies dignissim imperdiet. Nam interdum dolor non vulputate scelerisque. Donec pulvinar massa lacus, non venenatis nibh gravida non. Nulla in rutrum lectus, vitae interdum ipsum. Maecenas consequat diam lobortis tortor ultricies varius. Aliquam auctor dignissim ex. Sed a luctus eros.
 
-**Type Scale**
+There are plenty of alternatives for fun and to spice things up.
+
+- [Pirate Lipsim](https://pirateipsum.me/)
+
+> Prow scuttle parrel provost Sail ho shrouds spirits boom mizzenmast yardarm. Pinnace holystone mizzenmast quarter crow's nest nipperkin grog yardarm hempen halter furl. Swab barque interloper chantey doubloon starboard grog black jack gangway rutters.
+
+- [Star Wars Lipsum](https://forcemipsum.com/)
+
+> Did you hear that? They've shut down the main reactor. We'll be destroyed for sure. This is madness! We're doomed! There'll be no escape for the Princess this time. What's that? Artoo! Artoo-Detoo, where are you? At last! Where have you been? They're heading in this direction.
+
+- [Nietzsche Lipsum](http://nietzsche-ipsum.com/)
+
+> Ocean salvation burying insofar pinnacle burying ideal transvaluation. Ubermensch gains joy battle love inexpedient sea law love gains disgust. Decieve hatred chaos deceptions madness society sexuality reason. Truth abstract strong revaluation mountains play inexpedient right marvelous decrepit. Ideal faith inexpedient ocean moral self fearful ultimate aversion. Depths victorious disgust grandeur decieve selfish truth society. Zarathustra right eternal-return hope value zarathustra holiest passion sea ultimate insofar prejudice.
+
+- [Office Lipsum](http://officeipsum.com/)
+
+> Nail it down. Low-hanging fruit put a record on and see who dances, nor churning anomalies, but digitalize. Product management breakout fastworks sorry i was triple muted. They have downloaded gmail and seems to be working for now drive awareness to increase engagement technologically savvy, or win-win. Screw the pooch copy and paste from stack overflow those options are already baked in with this model, but pull in ten extra bodies to help roll the tortoise, so driving the initiative forward, but move the needle. Drink the Kool-aid circle back horsehead offer. Run it up the flagpole, ping the boss and circle back into the weeds, yet productize, pixel pushing. Powerpoint Bunny digital literacy throughput. Move the needle nail it down, for let's circle back tomorrow. Can we align on lunch orders. Ladder up / ladder back to the strategy execute , or thought shower, or onward and upward, productize the deliverables and focus on the bottom line.
+
+For more lipsum alternatives, check out this article on [Justinmind.com](https://www.justinmind.com/blog/awesome-lorem-ipsum-alternatives/)
+
+##### Type Scale
 
 Just like other elements in design, you will want to create enough contrast to distinguish different design elements, but still enough similarity to not be absurdist or inconsistent. For that, you'll want to develop a type scale. A type scale is a system of font sizes for different heading elements that generally is multiplicative such that each size up or down is multiplied by the same value. 1.2, 1.25, 1.33, and 1.5 are common choices, as well as square roots and the golden ratio. [Type-scale.com](https://type-scale.com/) is one tool that will help you come up with a type scale fit to your liking, preview different fonts, and generate the CSS for your scale.
 
@@ -492,7 +546,7 @@ When generating a type scale for the web, be sure to round to nice even numbers 
 | text-8xl  | font-size: 6rem;     | line-height: 1;       |
 | text-9xl  | font-size: 8rem;     | line-height: 1;       |
 
-### Chosing fonts
+### Chosing Fonts
 
 #### Choosing a Typeface
 
@@ -691,7 +745,7 @@ Set your `line-height` between `1.2` and `1.5`; Note that these values don't hav
 
 Use `rem` (relative em) as your unit of measurement, and set your default font size to `1rem` (`16px`). These units will scale with the users device and to their preferences, but will not scale to the client width.
 
-As is true for other aspects of web design, use fixed width containers at certain breakpoints:
+As is true for other aspects of web design, use fixed width **containers** at certain breakpoints:
 
 | Breakpoint   | Properties         |
 | ------------ | ------------------ |
