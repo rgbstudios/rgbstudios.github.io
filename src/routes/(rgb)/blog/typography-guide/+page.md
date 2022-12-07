@@ -790,6 +790,8 @@ font stack, feels native, web fonts, network requests, fallback, tailwind prefli
 
 - **Flash of Unstyled Text** (FOUT) refers to the flash when changing between the fallback system font and the web font after it's downloaded. This is also ugly and bad UX (shocking, I know).
 
+FOIT and FOUT impact CLS (cumulative layout shift) which measures the importance of unexpected shifts in your page layout (when stuff moves around but not on purpose). CLS is important for CWV, which is important for SEO. (OMG, that's a lot of acronyms!).
+
 So you choose between having users stare at a balnk screen, or having users watch your font load in and all of your content shift around, right? Wrong.
 
 **The `font-display` Property**
@@ -811,13 +813,77 @@ Rather than just go with whatever the browser default happens to be, you can def
 
 Note: if a browser doesn't support `font-display`, it will follow its default font loading behavior.
 
-TODO
+In order to use `font-display`, you must understand the three periods of font loading:
+
+**Font Loading Process**
+
+1. Font Block. If the `font-face` is not loaded, any element attempting to use it must render with an invisible fallback font face (FOIT). (If the `font-face` loads during this period, it is used normally.)
+
+2. Font Swap. If the `font-face` is not loaded during this period, any element attempting to use it renders with a fallback system font (FOUT). (If the `font-face` loads during this period, it is used normally.)
+
+3. Font Failure. If the font is not loaded when this period starts, it's marked as a fail, and causes normal font fallback.
+
+(Source: [web.dev](https://web.dev/optimize-webfont-loading/) and [Nitropack.io](https://nitropack.io/blog/post/font-loading-optimization) )
+
+---
+
+Now you can understand what each `font-display` property does:
+
+- `font-display: auto;` - Use the browser default font loading strategy
+
+- `font-display: block;` - Give the font a short (often 3 second) block period and an infinite swap period. It always swaps in the web font when it loads. Use if loading the font is important to your page / brand.
+
+- `font-display: swap;` - Show the font as soon as it loads. Same use case as `block`.
+
+- `font-display: fallback;` - Hide text up to 0.1 seconds, then swaps in the web font if it loads within 3 seconds. If the font is not loaded in 3 seconeds, the fallback will continue to be used for the page's lifetime. Use if you prefer for the user to have a consistent experience without flashing, even if that means going without your font.
+
+- `font-display: optional;` - The font face has a 0.1 second block period. If the font is not available, it stays with the fallback for the page's lifetime. This leaves it up to the browser on whether to initiate the download or not. More performant, but you will have your hand-picked font loaded less often. Use if performance is far more important than branding.
+
+<img src="/img/blog/posts/typography_font_display_property.jpg" alt="font display property visual comparison">
+
+<small>Font display property visual comparison. Note that time is not linearly scaled here. Image from <a href="https://speakerdeck.com/notwaldorf/fontastic-web-performance?slide=74" target="\_blank">speakerdeck.com</a></small>
+
+**I still don't know which to choose**
+
+If performance is priority, use `font-display: optional`. If displaying your font is a top priority, use `font-display: swap` (and deliver the font as soon as possible).
+
+**Ok I've got my `font-display`, what next?**
+
+To avoid CLS, combine `link rel=preload` and `font-display:optional`.
+
+More CLS tips:
+
+Use `size-adjust` inside your `@font-face` rule (ex. `size-adjust: 90%;`) to define how to scale a font, relative to 100%, for a minimal visual change when your font swaps. [Read more on size-adjust](https://web.dev/css-size-adjust/).
+
+Make your fallback font similar to your web font. You can use this [font style matcher](https://meowni.ca/font-style-matcher/) for some help!
+
+**FCP and LCP tips:**
+
+Largest contentful paint (LCP) and first contentful paint (FCP) are also metrics that are key to your performance score in CWV and diagnose your page performance and affect your SEO. These metrics generally measure how long your user is staring at a blank screen or loading content initially.
+
+**FCP** refers to the time for the browser to render the first DOM content, for example, text or image.
+
+**LCP** measures the time it takes for the largest element above the fold to load, for example, text or image.
+
+**Compressing Fonts**
+
+Below is taken from nitropack.com; link can be found below:
+
+> **Embedded OpenType (EOT)** - Can be served to old IE (below I9) browsers. Not compressed by default. You can apply GZIP compression to this font.
+
+> **TrueType (TTF)** - Can be served to old Android (below 4.4) browsers. Not compressed by default. You can apply GZIP compression to this font.
+
+> **Web Open Font Format (WOFF)** - Can be served to the majority of browsers. Has built-in compression.
+
+> **Web Open Font Format 2 (WOFF 2)** - Can be served to browsers that support it. It uses custom compression algorithms to deliver ~30% file-size reduction over other formats.
+
+Your server should have the option to apply GZIP compression. If you've got a simpler stack, you can find an online tool to do the job.
+
+[Read more on loading fonts, performance, and CLS](https://nitropack.io/blog/post/font-loading-optimization)
 
 ### Using Fonts in Code
 
-TODO
-
-`@font-face`:
+**`@font-face`**
 
 The font face rule defines a specific font name, variant, and file location. By using the same font name, you can construct a `font-family` that the browser will use to evaluate which fonts need to be downloaded. This can be more performant than alternative ways of loading fonts.
 
@@ -849,6 +915,8 @@ By defining the `src` in order of `local()`, then `url()`, we first check if the
 
 If you only have `woff` and not `woff2` or only `woff2` and not `woff`, then ommit the declaration that you don't have (the same way that if you have an image as a `png` and not as a `jpg` that you wouldn't link to `myfile.jpg` if it doesn't exist).
 
+**Font Subsetting (unicode ranges)**
+
 You can also define unicode ranges using `@font-face`:
 
 ```
@@ -866,11 +934,70 @@ Here is the unicode range for Japanese glyphs:
 
 You can find other unicode ranges as well as more info on unicode ranges online. Note that unicode range subsetting is more important for many Asian languages that have a significantly larger number of glyphs.
 
+If you must edit font files manually (and you really want to...), check out [fonttools](https://github.com/fonttools/fonttools).
+
+**Linking CSS Files**
+
+Most people will link their stylesheet like such:
+
+```
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+However, this is more time-consuming as the browser must first fetch your `css` file, then fetch the font files. Instead, consider inlining your `@font-face` declarations directly inside your `head` tag:
+
+```
+<head>
+  @font-face {
+    font-family: "Open Sans";
+    src: url("/fonts/open-sans.woff") format("woff");
+  }
+
+  body {
+    font-family: "Open Sans";
+  }
+</head>
+```
+
+This allows the browser to download your font sooner, since it doesn't have to wait for your external stylesheet to load before beginning to download your font file.
+
+Note: Use with caution. If you inline many large font files, this can slow down your website's performance.
+
 **Preloading Fonts**
 
 If you must load your font first without loading a system default fallback first, for example, if your fonts are crucial to your brand identity, you should preload your fonts, so the browser can request them before othe resources. To quote web.dev:
 
 > This can reduce both the swap period if you use `font-display: swap`, or the blocking period if you're not using `font-display`.
+
+**More on Resource Hints**
+
+Use `preload` to force the browser to download the resource sooner because it is crucial to the page.
+
+`<link rel="preload" href="https://examplecdn.com/fonts/bestfont.woff" as="font" crossorigin>` (add to the `head` tag)
+
+Note that `crossorigin` is requires to be compliant with CORS and permit the browser to load resources from a cross-origin source.
+
+[More on preload, preconnect, and prefetch](https://nitropack.io/blog/post/resource-hints-performance-optimization)
+
+**Example on Google Fonts**
+
+If you go to fonts.google.com and select 300 and 500 weights of Montserrat (a gorgeous typeface I might add), then click the button on the top right to export, you can see the following code provided:
+
+For `<head>`:
+
+`<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">`
+
+`<style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap');</style>`
+
+To use in `CSS`:
+
+`font-family: 'Montserrat', sans-serif;`
+
+The code in `<head>` will preconnect to google fonts, then fetch Montserrat at the specified weights, with display set to swap. The style tag is inserted inline directly into the `<head>` as well.
+
+The default Google Fonts way of doing things is pretty good when it comes to performance.
 
 ### Web Tips
 
