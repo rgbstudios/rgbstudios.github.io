@@ -248,7 +248,7 @@ Geometric sans serifs are almost always based off of perfect or near perfect cir
 
 #### Old Style and Humanist
 
-Old Style and Humanist fonts mimic the stroke of a pen, with proportions similar to traditional Roman lettering. Old Style fonts are serifs and have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (same as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a calligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
+Old Style and Humanist fonts mimic the stroke of a pen, with similar proportions to traditional Roman lettering. Old Style fonts are serifs and have a traditional and fancy heir to them. However, Humanist fonts are sans serifs, which borrow from Roman proportions (same as Old Style). These fonts often have a diagonal stress (rather than vertical) which emulates caligraphy, a low contrast, and serifs with prominent brackets. Usually, these fonts have a tall x-height. Despite being sans serifs, Humanist fonts still clearly have a calligraphic influence. Humanist fonts have more contrast than most sans serifs, and feature wide apertures as well.
 
 Example: [Goudy Bookletter 1911](https://fonts.google.com/specimen/Goudy+Bookletter+1911) (serif) [Merriweather Sans](https://fonts.google.com/specimen/Merriweather+Sans) (sans serif)
 
@@ -260,7 +260,7 @@ Usage: These fonts can be used all around. They have an elegance associated with
 
 #### Transitional / Neo-classical
 
-Traditional, or "neo-classical" fontfaces resemble penship (similar to Old Style fontfaces), however, they also feature more symmetry and uniformity, have a higher contrast, and have more structure. These fonts are often serifs and usually have a vertical stress. Letterforms usually have a high contrast, and these fontfaces also often have tall x-heights.
+Traditional, or "neo-classical" fontfaces still resemble penship (similar to Old Style fontfaces), however, they also feature more symmetry and uniformity, have a higher contrast, and have more structure. These fonts are often serifs and usually have a vertical stress. Letterforms usually have a high contrast, and these fontfaces also often have tall x-heights. Transitional serifs are sharper and more clean than humanist serifs, which are more calligraphic in appearance.
 
 Example: [Baskervville](https://fonts.google.com/specimen/Baskervville)
 
@@ -272,7 +272,7 @@ Usage: These fonts can be used all around. They have some of the elegance from h
 
 #### Modern
 
-Modern fonts (sometimes called Didone fonts) have straight, flat serifs, with very small or no brackets, vertical stress, and rounded terminals. These fonts have a very large contrast and tall x-height.
+Modern fonts (sometimes called Didone fonts) have straight, flat, thin serifs, with very small or no brackets, vertical stress, and rounded terminals. These fonts have very large contrast between thick and thin strokes and tall x-heights.
 
 Example: [Bodoni Moda](https://fonts.google.com/specimen/Bodoni+Moda)
 
@@ -335,6 +335,10 @@ Example: [Dancing Script](https://fonts.google.com/specimen/Dancing+Script)
 History: These fonts each have vastly different histories, but it's easy to tell how they were inspired. Formal script and calligraphic fonts came first.
 
 Usage: Scripts are not suitable for body copy. Formal scripts can make nice headings for the right job (maybe a beauty product or a wedding invitation), but I would refrain from using other scripts or calligraphic fonts for anything except watermarks and little designs on packages, etc.
+
+<img src="/img/blog/posts/typography_thinking_with_type_p46.jpg" alt="Examples of different categories of typefaces">
+
+Page 46 of [Thinking with Type](https://www.amazon.com/Thinking-Type-2nd-revised-expanded/dp/1568989695) details more examples, descriptions, and histories of typeface classifications.
 
 #### A Note on Fontface Usage Regarding Classifications
 
@@ -596,7 +600,52 @@ I've also got a quick tidbit for you:
 
 #### Numerals
 
-TODO types of numerals
+**Lining numerals** each have uniform width, so numbers can line up perfectly when tabulated. Businesses in the 20th century found a need for uniform width numbers, hence lining numerals were created. These numerals have the same height as capitals, so they appear large next to text.
+
+**Non-lining numerals** (or oldstyle numerals, or text numerals) feature ascenders and descenders just like "normal" lowercase letters. They used to be more popular, but have seen a recent resurgance at the turn of the 21st century for their unique appearance and character. These numerals also follow a proportion system, just like other letterforms.
+
+Some fonts will have both lining and non-lining numerals available.
+
+**Note**
+
+While some group numerals into the two groups above, some people group them into _four_ groups rather than two. These groups specify that lining and non-lining numerals are only separated by whether all numerals sit on the baseline (lining) or feature ascneders and descenders (non-lining / oldstyle). The second category is **proportional** or **tabular** where proportional numerals have various widths (like non-monospace fonts) and tabular numerals each take up uniform width.
+
+<figure>
+  <img src="/img/blog/posts/typography_numerals_four.gif" alt="four types of numerals">
+  <figcaption>From [The World's Greatest Book](http://theworldsgreatestbook.com/book-design-part-3/)</figcaption>
+</figure>
+
+**CSS**
+
+In CSS, you can set the `font-variant-numeric` to specify the numeral proportion, type of zero, and other options (if available in your current font). Read more on [Moz Docs](https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-numeric).
+
+<figure>
+  <img src="/img/blog/posts/typography_numeral_types.png" alt="examples of different numeral types">
+  <figcaption>Some examples of numeral types and their CSS `font-variant-numeric` properties. From mozilla, screenshot by me.</figcaption>
+</figure>
+
+CSS also allows you to specify fraction types, slashed zero, as well as lining and proportion.
+
+**Use Cases**
+
+It should be obvious that lining/tabular numerals should be used when you have data that should align, such as a list of different numbers to be displayed in new lines.
+
+When uniform width is not required, you should try to use proportional numerals when possible, as these are more "normal" and have more design freedom, just like non-monospaced fonts.
+
+As for ascenders and descenders, just note that they call attention to the numbers. If you want to highlight numbers in your design, then you can use these. For headlines, it is ideal to use lining numerals as to not break the flow of the headline.
+
+Lining numerals appear larger because they have the height of capital letters. Non-lining numerals integrate with body copy well, and are best used with smaller currency and math symbols (such as "%" and "$").
+
+**Superscript and Subscript Numerals**
+
+Subscript and superscript numerals also exist for mathematical and scientific purposes, as can be seen below:
+
+<figure>
+  <img src="/img/blog/posts/typography_numerals_sub_super.gif" alt="subscript and superscript numerals">
+  <figcaption>From [The World's Greatest Book](http://theworldsgreatestbook.com/book-design-part-3/)</figcaption>
+</figure>
+
+Note that superscript numbers are often used for footnotes.
 
 #### Ligatures
 
