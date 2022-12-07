@@ -723,19 +723,61 @@ Above you can see more ligatures including a "st" with a big swash and a 1/2 sym
 
 **Font Files**
 
-- Postscript (.ps) - developed by Adobe in the 1980s. Separate files needed for different operating systems, as well as for print and render, which became problematic. Holds about 220 glyphs.
-- TrueType (.ttf) - developed jointly by Apple and Microsoft in the early 1990s. Files could hold print and screen data and 65 thousand glyphs.
-- OpenType (.otf) - developed in the late 1990s. Uses unicode to allow up to 65 thousand glpyhs and multiple languages. Cross-platform.
-- Scalable Vector Graphics (.svg) - Usually SVGs are used for logos and icons online, but they can also be used for fonts. These were derived from OpenType. Characters can be displayd in various colors and animated due to being simple SVG files at their core.
-- Variable Fonts (.vf) - developed jointly by Adobe, Apple, Google, and Microsoft in 2016. Technically known as "OpenType Font Variations" and allows for up to 65 thousand unique glyph sets which can vary in font weight width, and slant. This means these files can be nearly fully customized by the end user, rather than being restricted to a few font weights.
+- Postscript (`.ps`) - developed by Adobe in the 1980s. Separate files needed for different operating systems, as well as for print and render, which became problematic. Holds about 220 glyphs.
+- TrueType (`.ttf`) - developed jointly by Apple and Microsoft in the early 1990s. Files could hold print and screen data and 65 thousand glyphs.
+- OpenType (`.otf`) - developed in the late 1990s. Uses unicode to allow up to 65 thousand glpyhs and multiple languages. Cross-platform.
+- Scalable Vector Graphics (`.svg`) - Usually SVGs are used for logos and icons online, but they can also be used for fonts. These were derived from OpenType. Characters can be displayd in various colors and animated due to being simple SVG files at their core.
+- Variable Fonts (`.vf`) - developed jointly by Adobe, Apple, Google, and Microsoft in 2016. Technically known as "OpenType Font Variations" and allows for up to 65 thousand unique glyph sets which can vary in font weight width, and slant. This means these files can be nearly fully customized by the end user, rather than being restricted to a few font weights.
+- Web Open Fonts (`.woff` and `.woff2`) - WOFF stands for "web open font format" (and you can guess what WOFF2 stands for). These fonts are specifically for web pages only, and are widely supported on the web and feature great compression. They are based off of opentype / truetype and were developed by Mozilla, Operate, and Microsoft in 2010. WOFF2 has slightly less browser support (approx 1% at time of writing, 98% vs 97%) and boasts an average of 30% file size savings over WOFF.
+
+For the web, use `WOFF` or `WOFF2`. Check compatibility as always: https://caniuse.com/woff and https://caniuse.com/woff2. They shouldn't be used outside the web.
+
+For distributing fonts, `OTF` is nice due to its support for both Mac and PC as well as modern font features such as more glyphs and languages.
+
+**Hosting**
+Previously, using Google Fonts or other common foundaries and fonts would mean that the files would be cached, so if a user already used that font from the same CDN on another page, then your font would be cached on their system and loaded instantly. Now, Chrome and other browsers don't support cross site caching (as it is a security risk), so that benefit is gone. You are generally best self hosting the file. However, if you do use a CDN, be sure to use a fast one of course.
+
+**Why Care About Performance? Lighthouse and WCV**
+
+In addition to having a performant site that allows users to navigate and doesn't frustrate them or have them leave before load, performance can actually impact your page SEO (ranking on Google). Web Core Vitals (WCV) are used to determine your page ranking on googlebot, and they are largely determined by your performance score. You can run Google Lighthouse (a tool for diagnosing and improving your webpage) by opening the console in your chromium browser (right click, inspect, then the top right choose "Lighthouse") and run a scan.
+
+Just as performance and page ranking are impacted by font file size and load speed, so too is the user experience. Content layout shift (CLS) can be caused by a slow loading font, or having a fallback font that doesn't match the one you're loading, resulting in a bad user experience and lower WCV metrics, once again lowering your page ranking and therefore, your number of users. You also want to have a good **font stack** (see more below) so that before your font has loaded (or if it doesn't), the fallback font appears similar to the one you intended, meaning your brand image doesn't suffer as much. Font flicker can also occur depending on the font loading procedure you've chosen.
+
+**The Easy Way - Performance and Design**
+
+Just like the easy solution to having big images is to just "have less images" (well, or compress them...), the easy solution for font performance problems is to just "have less." This advice might sound dumb, but hear me out. Each font file is a new network request and has to be rendered to the page, meaning even if the file size was near zero, the request / response process itself as well as the render process already significantly slow page load. Each new font variant (such as font weight or variant) is another file. Often times, designers end up shipping _dozens_ of fonts to the front end (8 font weights, each normal and italic is already 16; now imagine you have two typefaces: 32). In reality, you should probably only need 4-10 font files total. Maybe your serif heading font needs to have a normal, bold, and expanded version, and your body copy needs to have light, normal, bold, and normal italic. That's 7 requests, which would be a lot more than 32 in our example above. This can have a monumentus impact on performance.
+
+As for design, less is more. As mentioned throughout this article, consistency is key, you want to develop a design language for your UI, and having just a few different fonts is much, much better for aesthetics and usability, even if there was no performance difference, similar to how using two or three palettes with a total of 8-12 colors is much better than using 40 colors.
+
+**Well, can we just ship less characters?**
+
+Surprisingly, yes this is possible, although with some caveats. Most foundries / CDNs don't support this, and you'd have to manually edit the files yourself or have someone do it, and the performance difference from removing characters compared to the fixed cost associated with the file isn't very large (similar to how reducing image size isn't as impactful as shipping one less image, since it doesn't remove a network request and the file size should be small already). However, Google Fonts supports this as a URL parameter:
+
+`<link href="http://fonts.googleapis.com/css?family=Roboto&text=ABCDEFGHIJKLMNOPQRSTUVWXYZ" rel="stylesheet" type="text/css">`
+
+Just make sure you're _only_ using these glyphs of course. The last thing you want is to think you have everything you need and then write a blog post with a semicolon and see it stick out like a sore thumb falling back to a default font.
+
+If you're using a font only for its numbers for example, this can be quite a savings. Also, some of the most popular typefaces feature glyphs for hundreds of different characters. You might be shipping cyrillic glyphs to the front end and never using them.
+
+**Each font weight is another network request?**
+
+**Variable fonts** are a recent development that support changing the font weight to any value you choose in a range, and in addition to the customizability, if you would otherwise use many font weights, they can save bytes, and more importantly, network requests (since you only need one file instead of several). Check the [Can I Use](https://caniuse.com/variable-fonts) page for any features you're not sure about as always.
+
+**Network Requests? Where?**
+
+After inspecting your page, you can check the "Network" tab to see all network requests. You can see when requests for your WOFF or CSS files come in, if they block something, how long they take, and more. Note that for fonts, the time for the server to respond and how many requests are coming in is far more important than the file size of the font (which is also important).
+
+However, you should still be minful of the file size of your particular font. Ideally, you shouldn't need to consider this (just like you wouln't choose a different image because of its file size), and I wouldn't unless there is a huge discrepancy in size between two nearly identical fonts. Another side note that shouldn't be a consideration is that sans serif fonts are likely (but not guarenteed) to be smaller file size as they have less "stuff."
 
 TODO
 
-file sizes
-
-loading efficiently
-
 system fonts / web safe
+
+font stack, feels native, web fonts, network requests, fallback, tailwind preflight modern normalize, show code
+
+### Using Fonts in Code
+
+TODO
 
 ### Web Tips
 
