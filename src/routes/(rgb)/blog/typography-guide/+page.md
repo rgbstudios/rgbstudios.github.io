@@ -735,6 +735,7 @@ For the web, use `WOFF` or `WOFF2`. Check compatibility as always: https://caniu
 For distributing fonts, `OTF` is nice due to its support for both Mac and PC as well as modern font features such as more glyphs and languages.
 
 **Hosting**
+
 Previously, using Google Fonts or other common foundaries and fonts would mean that the files would be cached, so if a user already used that font from the same CDN on another page, then your font would be cached on their system and loaded instantly. Now, Chrome and other browsers don't support cross site caching (as it is a security risk), so that benefit is gone. You are generally best self hosting the file. However, if you do use a CDN, be sure to use a fast one of course.
 
 **Why Care About Performance? Lighthouse and WCV**
@@ -742,6 +743,8 @@ Previously, using Google Fonts or other common foundaries and fonts would mean t
 In addition to having a performant site that allows users to navigate and doesn't frustrate them or have them leave before load, performance can actually impact your page SEO (ranking on Google). Web Core Vitals (WCV) are used to determine your page ranking on googlebot, and they are largely determined by your performance score. You can run Google Lighthouse (a tool for diagnosing and improving your webpage) by opening the console in your chromium browser (right click, inspect, then the top right choose "Lighthouse") and run a scan.
 
 Just as performance and page ranking are impacted by font file size and load speed, so too is the user experience. Content layout shift (CLS) can be caused by a slow loading font, or having a fallback font that doesn't match the one you're loading, resulting in a bad user experience and lower WCV metrics, once again lowering your page ranking and therefore, your number of users. You also want to have a good **font stack** (see more below) so that before your font has loaded (or if it doesn't), the fallback font appears similar to the one you intended, meaning your brand image doesn't suffer as much. Font flicker can also occur depending on the font loading procedure you've chosen.
+
+Note: Largest Contentful Paint (LCP) can be greatly impacted by many fonts and/or large font files, which is a core web vital that has a large affect on your page ranking.
 
 **The Easy Way - Performance and Design**
 
@@ -769,15 +772,105 @@ After inspecting your page, you can check the "Network" tab to see all network r
 
 However, you should still be minful of the file size of your particular font. Ideally, you shouldn't need to consider this (just like you wouln't choose a different image because of its file size), and I wouldn't unless there is a huge discrepancy in size between two nearly identical fonts. Another side note that shouldn't be a consideration is that sans serif fonts are likely (but not guarenteed) to be smaller file size as they have less "stuff."
 
+Read about [reducing font size on web.dev](https://web.dev/reduce-webfont-size/)
+
+**Font Stacks!**
+
+This section has an exclamation point in the title because it's just that important.
+
 TODO
 
 system fonts / web safe
 
 font stack, feels native, web fonts, network requests, fallback, tailwind preflight modern normalize, show code
 
+**FOIT and FOUT - The bad, the bad, and the ugly**
+
+- **Flash of Invisible Text** (FOIT) refers to the text being hidden until the font is downloaded. The text is invisible and then flashes in. This is ugly and bad UX.
+
+- **Flash of Unstyled Text** (FOUT) refers to the flash when changing between the fallback system font and the web font after it's downloaded. This is also ugly and bad UX (shocking, I know).
+
+So you choose between having users stare at a balnk screen, or having users watch your font load in and all of your content shift around, right? Wrong.
+
+**The `font-display` Property**
+
+The `font-display` property tells the browser how to proceed with text rendering when the font hasn't loaded yet (and is defined in the `@font-face`).
+
+Different browsers have different defaults:
+
+| Browser | Default behavior if font not ready                                                                   |
+| ------- | ---------------------------------------------------------------------------------------------------- |
+| Edge    | Use system font until font is ready, then swap                                                       |
+| Chrome  | Hide text up to 3 seconds. If text still isn't ready, use system font until font is ready, then swap |
+| Firefox | Hide text up to 3 seconds. If text still isn't ready, use system font until font is ready, then swap |
+| Safari  | Hide text until font is ready                                                                        |
+
+Source: [web.dev](https://web.dev/avoid-invisible-text/)
+
+Rather than just go with whatever the browser default happens to be, you can define your own behavior for `font-display`.
+
+Note: if a browser doesn't support `font-display`, it will follow its default font loading behavior.
+
+TODO
+
 ### Using Fonts in Code
 
 TODO
+
+`@font-face`:
+
+The font face rule defines a specific font name, variant, and file location. By using the same font name, you can construct a `font-family` that the browser will use to evaluate which fonts need to be downloaded. This can be more performant than alternative ways of loading fonts.
+
+Falling back with local, woff2, and woff:
+
+Check this example from web.dev:
+
+```
+@font-face {
+  font-family: 'Awesome Font';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Awesome Font'),
+    url('/fonts/awesome.woff2') format('woff2'),
+    url('/fonts/awesome.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Awesome Font';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Awesome Font Italic'),
+    url('/fonts/awesome-i.woff2') format('woff2'),
+    url('/fonts/awesome-i.woff') format('woff');
+}
+```
+
+By defining the `src` in order of `local()`, then `url()`, we first check if the font is already installed on the user's system, which would allow us to bypass an unnecessary network request. Next, we try to load the `woff2` font. If `woff2` isn't supported, then we load the `woff` font. This ensures that we have performance gains from users who support `woff2` and still serve the font to users who don't. Note that unless you are using a popular font, it is very rare that your user would happen to have your font installed on their system. You can ommit the `local()` directive line if you'd like.
+
+If you only have `woff` and not `woff2` or only `woff2` and not `woff`, then ommit the declaration that you don't have (the same way that if you have an image as a `png` and not as a `jpg` that you wouldn't link to `myfile.jpg` if it doesn't exist).
+
+You can also define unicode ranges using `@font-face`:
+
+```
+@font-face {
+  font-family: 'Awesome Font';
+  src: url('/fonts/awesome-l.woff2') format('woff2');
+  /* Latin glyphs */
+  unicode-range: U+000-5FF;
+}
+```
+
+Here is the unicode range for Japanese glyphs:
+
+`unicode-range: U+3000-9FFF, U+ff??;`
+
+You can find other unicode ranges as well as more info on unicode ranges online. Note that unicode range subsetting is more important for many Asian languages that have a significantly larger number of glyphs.
+
+**Preloading Fonts**
+
+If you must load your font first without loading a system default fallback first, for example, if your fonts are crucial to your brand identity, you should preload your fonts, so the browser can request them before othe resources. To quote web.dev:
+
+> This can reduce both the swap period if you use `font-display: swap`, or the blocking period if you're not using `font-display`.
 
 ### Web Tips
 
