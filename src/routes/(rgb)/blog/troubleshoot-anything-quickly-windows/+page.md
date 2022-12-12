@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Troubleshoot Anything Quickly in Windows'
 slug: 'troubleshoot-anything-quickly-windows'
-date: '2022/010/25'
-updated_date: '2022/10/25'
+date: '2022/12/11'
+updated_date: '2022/12/11'
 author: 'Justin Golden'
 preview_text: 'Learn to run the Windows troubleshooter in seconds'
 img: '/img/blog/troubleshooting.avif'

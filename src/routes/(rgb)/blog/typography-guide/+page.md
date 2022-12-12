@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'The Definitive Guide to Typography on the Web'
 slug: 'version-in-svelte-kit'
-date: '2022/11/01'
-updated_date: '2022/11/01'
+date: '2022/12/11'
+updated_date: '2022/12/11'
 author: 'Justin Golden'
 preview_text: 'Learn all about fontfaces, letterforms, font pairs, branding, layouts, performance, and more to best use fonts for your brand or website'
 img: '/img/blog/typography_a.avif'

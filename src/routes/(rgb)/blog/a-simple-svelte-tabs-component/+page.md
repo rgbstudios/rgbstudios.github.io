@@ -3,7 +3,7 @@ layout: blog_layout
 title: 'A Simple Svelte Tabs Component'
 slug: 'a-simple-svelte-tabs-component'
 date: '2022/09/16'
-updated_date: '2022/09/16'
+updated_date: '2022/12/11'
 author: 'Justin Golden'
 preview_text: 'Read on to create a functioning and customizable tabs component without all the fancy stuff..'
 img: '/img/blog/tabs.avif'

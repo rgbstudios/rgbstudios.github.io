@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Everything You Need to Know About Optimizing Images on The Web'
 slug: 'images-on-the-web'
-date: '2022/11/30'
-updated_date: '2022/11/30'
+date: '2022/12/11'
+updated_date: '2022/12/11'
 author: 'Justin Golden'
 preview_text: 'Learn all about optimizing images, supporting browsers, and improve your user experience, performance and page ranking'
 img: '/img/blog/website_with_images.avif'

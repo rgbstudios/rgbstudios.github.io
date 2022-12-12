@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'How to Change Default Audio Devices in Windows'
 slug: 'default-audio-devices-windows'
-date: '2022/010/25'
-updated_date: '2022/10/25'
+date: '2022/12/11'
+updated_date: '2022/12/11'
 author: 'Justin Golden'
 preview_text: 'Learn to change your default speakers, headphones, or microphone in Windows.'
 img: '/img/blog/audio_settings.avif'
