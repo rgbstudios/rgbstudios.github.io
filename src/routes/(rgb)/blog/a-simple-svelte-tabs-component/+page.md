@@ -31,7 +31,7 @@ keywords:
 
 Most tab components I found either involve getting an entire UI kit, a lot of boilerplate code per implementation, or more likely, the code looks like this:
 
-<img src="/img/blog/tabs-code.png" alt="">
+<img src="/img/blog/posts/tabs_code.png" alt="">
 
 (This was my old code; I had to zoom out twice to get this screenshot)
 
@@ -146,7 +146,7 @@ Here's the full file: 25 lines!
 </style>
 ```
 
-<img src="/img/blog/tabs-screenshot.png" alt="">
+<img src="/img/blog/posts/tabs_screenshot.png" alt="">
 
 ### Usage
 
