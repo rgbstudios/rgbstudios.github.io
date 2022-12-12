@@ -963,6 +963,8 @@ Check this example from web.dev:
 
 By defining the `src` in order of `local()`, then `url()`, we first check if the font is already installed on the user's system, which would allow us to bypass an unnecessary network request. Next, we try to load the `woff2` font. If `woff2` isn't supported, then we load the `woff` font. This ensures that we have performance gains from users who support `woff2` and still serve the font to users who don't. Note that unless you are using a popular font, it is very rare that your user would happen to have your font installed on their system. You can ommit the `local()` directive line if you'd like.
 
+Note that for each weight and variant, you need a new `@font-face` rule (and you should use the same `font-family` name if they are of the same family of course).
+
 If you only have `woff` and not `woff2` or only `woff2` and not `woff`, then ommit the declaration that you don't have (the same way that if you have an image as a `png` and not as a `jpg` that you wouldn't link to `myfile.jpg` if it doesn't exist).
 
 **Font Subsetting (unicode ranges)**
