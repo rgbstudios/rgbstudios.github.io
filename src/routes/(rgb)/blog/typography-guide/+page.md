@@ -778,11 +778,59 @@ Read about [reducing font size on web.dev](https://web.dev/reduce-webfont-size/)
 
 This section has an exclamation point in the title because it's just that important.
 
-TODO
+A **font stack** is an ordered list of font families to be used. This ensures that if your preferred font fails to load or loads slowly, that you can fallback to a font that looks similar to it. There are a lot more reasons to use font stacks as well.
 
-system fonts / web safe
+You can also define a font stack designed to match your users device (a **system font stack**), which has two great benefits. Firstly, the performance is greatly improved as system fonts do not need to be served or downloaded. The second benefit is that your site or app will look and feel like a native system app, so on a mac it will blend in with other mac apps, on a windows device it will look like other windows apps, and so on for android and ios.
 
-font stack, feels native, web fonts, network requests, fallback, tailwind preflight modern normalize, show code
+For example, [Modern Normalize](https://github.com/sindresorhus/modern-normalize/blob/main/modern-normalize.css#L43) (which is a reset stylesheet used to define good default values for a new project) uses the following stack:
+
+```
+font-family:
+  system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif,
+  'Apple Color Emoji',
+  'Segoe UI Emoji';
+```
+
+It will try to load the first font, and if not, it will try to load the second, and so on. These fonts are all commonly available system fonts on Mac, Windows, etc. and feature websafe fallbacks as well as fonts for emoji. This system font stack shown above is used by Modern Normalize which is used in Tailwind's preflight. If you have a font that's similar to Arial for example, you could say `font-family: myfont, Arial;` so that in case your font doesn't load properly, or while your font loads, users are greeted with a similar font, which doesn't need to be downloaded and doesn't impact performance.
+
+A **websafe font** is a font that comes with browsers, and is therefore "safe" to use as you know it will always be available. [w3 schools](https://www.w3schools.com/cssref/css_websafe_fonts.php) has a list of websafe fonts:
+
+- Arial (sans-serif)
+- Verdana (sans-serif)
+- Tahoma (sans-serif)
+- Trebuchet MS (sans-serif)
+- Times New Roman (serif)
+- Georgia (serif)
+- Garamond (serif)
+- Courier New (monospace)
+- Brush Script MT (cursive)
+
+For more info on web safe CSS font stacks, check out [CSS Font Stack](https://www.cssfontstack.com/).
+
+Syntax:
+
+- Browsers will try to load the first font specified
+- Font names are separated by commas
+- Multiple word fonts must be enclosed in quotes
+- A font stack should end in a generic font classification (`serif`, `sans-serif`, `cursive`, or `monospace`)
+
+For example:
+
+```
+body {
+  font-family: Georgia, "Times New Roman", serif;
+}
+```
+
+By using a font stack, you can ensure that if your host (for example, google fonts or adobe typekit) has some downtime, or if your user has slow internet, they will still be greated with a good looking and fast loading font.
+
+I'll leave you with a snippet of some [dependable font stacks from css tricks](https://css-tricks.com/snippets/css/font-stacks/) and an [amazing guide to font stacks by smashing magazine](https://www.smashingmagazine.com/2009/09/complete-guide-to-css-font-stacks/).
 
 **FOIT and FOUT - The bad, the bad, and the ugly**
 
@@ -880,6 +928,8 @@ Below is taken from nitropack.com; link can be found below:
 Your server should have the option to apply GZIP compression. If you've got a simpler stack, you can find an online tool to do the job.
 
 [Read more on loading fonts, performance, and CLS](https://nitropack.io/blog/post/font-loading-optimization)
+
+[Watch a video on font performance](https://youtu.be/G0cOQ79WKZE)
 
 ### Using Fonts in Code
 
@@ -1028,28 +1078,7 @@ You'll want to organize your typography CSS rules in a single organized and sepa
 
 In this file, I suggest applying your type scale (read more above) and defining `font-size` and optionally, `line-height` for each of your unique elements (such as `h1`, `h2`, `h3`, `p`, `small`). You can also define your `margin-top` and `margin-bottom` for these elements if you'd like. You can set your `font-weight` and should also define your `font-family` here.
 
-** Font Stacks**
-
-You can define a **font stack** here to ensure that your fonts fallback to an approprioate typeface and load in a clean matter, or even just to match your body copy to the user's device (so your website looks native on windows, mac, iphone, and android devices). Using a **system font stack** also comes with the benefit of performance as these fonts do not need to be served or downloaded.
-
-A font stack is a list of font families (in order) to be used. For example, [Modern Normalize](https://github.com/sindresorhus/modern-normalize/blob/main/modern-normalize.css#L43) (which is a reset stylesheet used to define good default values for a new project) uses the following stack:
-
-```
-font-family:
-  system-ui,
-  -apple-system,
-  'Segoe UI',
-  Roboto,
-  Helvetica,
-  Arial,
-  sans-serif,
-  'Apple Color Emoji',
-  'Segoe UI Emoji';
-```
-
-It will try to load the first font, and if not, it will try to load the second, and so on. These fonts are all commonly available system fonts on Mac, Windows, etc. and feature websafe fallbacks as well as fonts for emoji. This system font stack shown above is used by Modern Normalize which is used in Tailwind's preflight. If you have a font that's similar to Arial for example, you could say `font-family: myfont, Arial;` so that in case your font doesn't load properly, or while your font loads, users are greeted with a similar font, which doesn't need to be downloaded and doesn't impact performance.
-
-For more info on web safe CSS font stacks, check out [CSS Font Stack](https://www.cssfontstack.com/).
+I also suggest defining a custom font stack here, which you can read about above.
 
 **Custom Changes**
 
