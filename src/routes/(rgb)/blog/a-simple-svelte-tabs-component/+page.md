@@ -3,7 +3,7 @@ layout: blog_layout
 title: 'A Simple Svelte Tabs Component'
 slug: 'a-simple-svelte-tabs-component'
 date: '2022/09/16'
-updated_date: '2022/09/16'
+updated_date: '2022/12/11'
 author: 'Justin Golden'
 preview_text: 'Read on to create a functioning and customizable tabs component without all the fancy stuff..'
 img: '/img/blog/tabs.avif'
@@ -31,7 +31,7 @@ keywords:
 
 Most tab components I found either involve getting an entire UI kit, a lot of boilerplate code per implementation, or more likely, the code looks like this:
 
-<img src="/img/blog/tabs-code.png" alt="">
+<img src="/img/blog/posts/tabs_code.png" alt="">
 
 (This was my old code; I had to zoom out twice to get this screenshot)
 
@@ -146,7 +146,7 @@ Here's the full file: 25 lines!
 </style>
 ```
 
-<img src="/img/blog/tabs-screenshot.png" alt="">
+<img src="/img/blog/posts/tabs_screenshot.png" alt="">
 
 ### Usage
 
