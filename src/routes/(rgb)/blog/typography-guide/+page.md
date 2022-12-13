@@ -1182,6 +1182,10 @@ These are just a handful of examples, and a quick search will find you many more
 
 Slightly off-topic, but on [Type Wolf](https://www.typewolf.com/) you can read up about the latest typography design trends and about type in general.
 
+### Font History
+
+I've generally neglected font history in this article, however, I think it can be left to this incredible [video on font history by struthless](https://youtu.be/WVfRxFwVHQc)
+
 ### References
 
 **Websites:**
