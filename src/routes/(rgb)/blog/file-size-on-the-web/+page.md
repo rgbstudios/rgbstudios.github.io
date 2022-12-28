@@ -26,17 +26,17 @@ keywords:
   <figcaption>Photo credit @elisa_ventur on Unsplash</figcaption>
 </figure>
 
-### Why do web developers care so much about a few kilobytes?
+### Why do web developers care so much about saving a few kilobytes?
 
-The web is the world. Almost everyone worldwide has access to the web, be it from a blazing fast internet connection or a really rough signal. But even with a bad signal, a bundred klilobytes shouldn't matter, right?
+The web is the world. Almost everyone worldwide has access to the web, be it from a blazing fast internet connection or a really rough signal. But even with a bad signal, a hundred klilobytes shouldn't matter, right?
 
 Wrong.
 
-Research by Google found that **53% of mobile visitors leave the website if it doesn't load in 3 seconds**. Pair that with average load times for sites (19 seconds on 3G and 14 seconds on 4G) and every second makes a difference.
+Research by Google found that **53% of mobile visitors leave the website if it doesn't load in 3 seconds**. With average load times for sites hovering around 19 seconds on 3G and 14 seconds on 4G, it's clear that every second matters.
 
-Ok sure, but now we can load a few megs like nothing, right?
+But surely a few megabytes won't make a difference, right?
 
-Ideally, a website would be less than 1mb, but a website ranging between 2 or 3 megabytes is right at the limit in my opinion.
+In an ideal world, a website would be less than 1mb. However, it's generally accepted that a website ranging between 2-3mb is still acceptable. Beyond that, the impact on performance and user experience becomes more noticeable. However, not all bytes are created equal, as it takes the browser longer to run javascript than it does to render an image, and it takes even longer to paint CSS or render content to the DOM in general.
 
 <figure>
 <img src="/img/blog/hands_on_desk.avif" alt="">
