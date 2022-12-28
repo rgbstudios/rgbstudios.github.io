@@ -53,7 +53,7 @@ Complex animations and videos can impact website performance and slow down load 
 
 ##### Fonts
 
-People don't realize it, but those fonts add up. While a single font may only be about 20-60kb (I don't recommend using more than two font families), once you add multiple font weights (bold, semibold, light, etc.), variants (italic), and character sets (for other languages), just two font families can add up to hundreds of kilobytes, all of which have to be parsed by the browser immediately. If your fonts take even a tenth of a second to load, they can shift the page and be noticible to users. Cumulative layout shift (CLS) is also a core web vital that Google uses for its page ranking algorithm.
+It's important to be mindful of the impact that fonts can have on website performance. While a single font may only be around 20-60kb, using multiple font families, weights, variants, and character sets can quickly add up to hundreds of kilobytes. These fonts must be parsed by the browser, which can slow down load time and be noticeable to users. Additionally, if fonts take even a fraction of a second to load, they can cause the page layout to shift, which can be frustrating for users. This is known as cumulative layout shift (CLS) and is a factor that Google considers in its page ranking algorithm.
 
 [Web font best practices](https://youtu.be/G0cOQ79WKZE) is a great resource for optimizing your fonts.
 
