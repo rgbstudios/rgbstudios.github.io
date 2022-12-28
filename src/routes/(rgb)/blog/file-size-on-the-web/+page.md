@@ -36,7 +36,7 @@ Research by Google found that **53% of mobile visitors leave the website if it d
 
 But surely a few megabytes won't make a difference, right?
 
-In an ideal world, a website would be less than 1mb. However, it's generally accepted that a website ranging between 2-3mb is still acceptable. Beyond that, the impact on performance and user experience becomes more noticeable. However, not all bytes are created equal, as it takes the browser longer to run javascript than it does to render an image, and it takes even longer to paint CSS or render content to the DOM in general.
+While it's ideal for a website to be under 1mb, a website ranging between 2-3mb is still acceptable. However, it's important to note that the impact on performance and user experience becomes more noticeable as the size of the website increases. Not all bytes are equal in terms of their impact on load time. For example, it takes the browser longer to run JavaScript than it does to render an image, and it takes even longer to paint CSS or render content to the DOM. By optimizing these elements and minimizing the size of the website, web developers can improve performance and enhance user experience.
 
 <figure>
 <img src="/img/blog/hands_on_desk.avif" alt="">
