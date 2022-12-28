@@ -49,7 +49,7 @@ Ideally, a website would be less than 1mb, but a website ranging between 2 or 3 
 
 The first thing I would check would be your image sizes. Large, unoptimized images can slow down your website significantly. I've seen far too many websites with a single 8-12mb photo that accounts for 90+% of the load time and 99% of the file size. Use image compression tools like [squoosh.app](https://squoosh.app/) and consider using optimized image formats like `webp`. If you're using a metaframework such as NextJS for React, try looking into built in solutions (NextJS has NextJS images built in). Also, consider lazyloading images. If you're using WordPress or another CMS, see if there's a plugin for automatically optimizing images for your CMS (Try Smush for WP).
 
-Additionally, loading complex animations or videos can impact performance. From a design perspective, it's also a good idea to limit animations and only transition in response to user input (for example, buttons should remain static unless hovered or clicked). Transitions should be used to make the UI feel nice, bring the design together, and tell users where to go and what to click, but less is certainly more.
+Complex animations and videos can impact website performance and slow down load time. To improve the user experience, it's important to limit animations and use transitions sparingly. Transitions can add visual interest and help guide users through the user interface, but it's best to use them sparingly and only in response to user input (e.g., hover or click). Too many animations and transitions can be overwhelming and distract from the content. Remember, less is more when it comes to animations and transitions.
 
 ##### Fonts
 
