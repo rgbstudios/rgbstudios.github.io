@@ -53,7 +53,7 @@ Complex animations and videos can impact website performance and slow down load 
 
 ##### Fonts
 
-It's important to be mindful of the impact that fonts can have on website performance. While a single font may only be around 20-60kb, using multiple font families, weights, variants, and character sets can quickly add up to hundreds of kilobytes. These fonts must be parsed by the browser, which can slow down load time and be noticeable to users. Additionally, if fonts take even a fraction of a second to load, they can cause the page layout to shift, which can be frustrating for users. This is known as cumulative layout shift (CLS) and is a factor that Google considers in its page ranking algorithm.
+When it comes to website performance, fonts are an often-overlooked consideration. While a single font may only be around 20-60kb, using multiple font families, weights, variants, and character sets can quickly add up to hundreds of kilobytes. These fonts must be parsed by the browser, which can slow down load time and be noticeable to users. Even a slight delay in font loading can cause the page layout to shift, which can be frustrating for users. This phenomenon, known as cumulative layout shift (CLS), is something that Google takes into account in its page ranking algorithm. To improve website performance and enhance the user experience, it's important to be mindful of the number and size of fonts used on your site.
 
 [Web font best practices](https://youtu.be/G0cOQ79WKZE) is a great resource for optimizing your fonts.
 
