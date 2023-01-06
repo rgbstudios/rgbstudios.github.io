@@ -3,8 +3,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 
-	// For code syntax highlighting
-	import '$lib/css/prism-atom-dark.css';
+	import '$lib/css/rgb-syntax-highlighting.css';
 
 	export let title,
 		slug,
