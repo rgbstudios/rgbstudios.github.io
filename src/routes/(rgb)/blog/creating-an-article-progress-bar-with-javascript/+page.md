@@ -111,19 +111,19 @@ Or using a JS framework, Svelte for example:
 
 ##### Svelte
 
-```
+```svelte
 <script>
-import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 
-let scrollPercent, articleElement;
+	let scrollPercent, articleElement;
 
-onMount(()=> {
-  articleElement = document.getElementById('main-article');
-});
+	onMount(() => {
+		articleElement = document.getElementById('main-article');
+	});
 
-const onScroll = () => {
-  scrollPercent = window.scrollY / articleElement.offsetHeight;
-};
+	const onScroll = () => {
+		scrollPercent = window.scrollY / articleElement.offsetHeight;
+	};
 </script>
 
 <svelte:window on:scroll={onScroll} />

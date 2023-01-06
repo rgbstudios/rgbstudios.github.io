@@ -34,15 +34,15 @@ keywords:
 
 1. Create a `clean.js` file (I store mine in an `infrastructure` directory at the root of the project):
 
-```
+```js
 import fs from 'fs';
 
 const paths = ['.netlify', '.svelte-kit', 'build'];
 for (const path of paths) {
-  if (fs.existsSync(path)) {
-    fs.rmSync(path, { recursive: true });
-    console.log(`deleted ${path}`);
-  }
+	if (fs.existsSync(path)) {
+		fs.rmSync(path, { recursive: true });
+		console.log(`deleted ${path}`);
+	}
 }
 ```
 

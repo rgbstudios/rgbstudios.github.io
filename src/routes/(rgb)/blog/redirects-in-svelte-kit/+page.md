@@ -25,31 +25,31 @@ You want to handle redirects without creating a new page or a lot of code for ea
 
 Create a `hooks.js` file in your `routes` directory:
 
-```
+```js
 import redirects from './data/redirects';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-  const redirect = redirects.find((item) => event.url.pathname === item.source);
+	const redirect = redirects.find((item) => event.url.pathname === item.source);
 
-  if (redirect) {
-    return new Response('', { status: 301, headers: { Location: redirect.destination } });
-  }
+	if (redirect) {
+		return new Response('', { status: 301, headers: { Location: redirect.destination } });
+	}
 
-  const response = await resolve(event);
-  return response;
+	const response = await resolve(event);
+	return response;
 }
 ```
 
 _(optional)_ Create `redirects.js` (in my example in my `data` directory):
 (alternatively, you could just store this object inside of `hooks.js`, but I like to keep them separate)
 
-```
+```js
 const redirects = [
-  {
-    source: '/test1',
-    destination: '/test2'
-  }
+	{
+		source: '/test1',
+		destination: '/test2'
+	}
 ];
 
 export default redirects;

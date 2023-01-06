@@ -37,7 +37,7 @@ The easiest possible answer is as follows:
 
 Create a new `version.js` file in your project with one line:
 
-```
+```js
 export default '1.0.0';
 ```
 
@@ -51,7 +51,7 @@ This of course is not automatic and will not sync with your `package.json` versi
 
 To use the `"version"` defined in your `package.json` through your app, we can define it as a global inside `svelte.config.js`:
 
-```
+```js
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 
@@ -62,7 +62,7 @@ const pkg = JSON.parse(json);
 
 Then inside your config object:
 
-```
+```js
 const config = {
 	kit: {
 		adapter: adapter(),
@@ -71,7 +71,7 @@ const config = {
 				__version__: JSON.stringify(pkg.version)
 			}
 		}
-	},
+	}
 	// ...
 };
 
@@ -88,7 +88,7 @@ We must still define `__version__` as a global so our linters don't complain. He
 
 1. In `.eslintrc.json`:
 
-```
+```json
 "globals": {
 		"__version__": "readonly"
 	},
@@ -96,7 +96,7 @@ We must still define `__version__` as a global so our linters don't complain. He
 
 2. In `package.json`:
 
-```
+```json
 "eslintConfig": {
 	"globals": {
 		"__version__": true
@@ -106,19 +106,19 @@ We must still define `__version__` as a global so our linters don't complain. He
 
 3. In `src/global.d.ts`:
 
-```
+```ts
 declare const __version__: string;
 ```
 
 4. In the files you use it in:
 
-```
+```js
 /* global __version__:readonly */
 ```
 
 5. In `vite-env.d.ts` (create if one doesn't already exist). See [Vite shared options docs](https://vitejs.dev/config/shared-options.html#define)
 
-```
+```ts
 declare const __version__: string;
 ```
 
