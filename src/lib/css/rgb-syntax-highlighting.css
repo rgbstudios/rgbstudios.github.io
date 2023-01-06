@@ -13,15 +13,14 @@
 
 code[class*='language-'],
 pre[class*='language-'] {
-	color: #c5c8c6;
-	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-	font-family: Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace;
+	color: #ccc;
+	font-family: Consolas, 'Courier New', Courier, monospace;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-	line-height: 1.5;
+	line-height: 1.25;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -43,7 +42,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-	background: #1d1f21;
+	background: #222;
 }
 
 /* Inline code */
@@ -56,11 +55,11 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #7c7c7c;
+	color: #888;
 }
 
 .token.punctuation {
-	color: #c5c8c6;
+	color: #ccc;
 }
 
 .namespace {
@@ -70,26 +69,31 @@ pre[class*='language-'] {
 .token.property,
 .token.keyword,
 .token.tag {
-	color: #96cbfe;
+	/* light blue */
+	color: #9af;
 }
 
 .token.class-name {
-	color: #ffffb6;
+	/* lighter yellow */
+	color: #ffc;
 	text-decoration: underline;
 }
 
 .token.boolean,
 .token.constant {
-	color: #99cc99;
+	/* off light green */
+	color: #9c9;
 }
 
 .token.symbol,
 .token.deleted {
-	color: #f92672;
+	/* dark red */
+	color: #c30;
 }
 
 .token.number {
-	color: #ff73fd;
+	/* light red */
+	color: #f63;
 }
 
 .token.selector,
@@ -98,46 +102,54 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	color: #a8ff60;
+	/* light green */
+	color: #6c9;
 }
 
 .token.variable {
-	color: #c6c5fe;
+	/* lighter blue */
+	color: #cdf;
 }
 
 .token.operator {
-	color: #ededed;
+	color: #eee;
 }
 
 .token.entity {
-	color: #ffffb6;
-	cursor: help;
+	/* lighter yellow */
+	color: #ffc;
 }
 
 .token.url {
-	color: #96cbfe;
+	/* light blue */
+	color: #9af;
 }
 
 .language-css .token.string,
 .style .token.string {
-	color: #87c38a;
+	/* lighter green */
+	color: #bec;
 }
 
 .token.atrule,
 .token.attr-value {
-	color: #f9ee98;
+	/* lighter red */
+	color: #fb9;
 }
 
 .token.function {
-	color: #dad085;
+	/* blue */
+	color: #68f;
 }
 
 .token.regex {
-	color: #e9c062;
+	/* light yellow */
+	color: #fc9;
 }
 
 .token.important {
-	color: #fd971f;
+	/* dark yellow */
+	color: #f93;
 }
 
 .token.important,
