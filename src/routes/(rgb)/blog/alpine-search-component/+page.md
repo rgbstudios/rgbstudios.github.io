@@ -192,6 +192,21 @@ Note the usage of `this.` to use `search` and `allData` inside our object.
 
 We'll want to replace `userData` with `filteredUsers` in our `x-for` loop as well.
 
+### Bonus: Slash to Focus Search
+
+To make hitting slash focus our input, we simply give it an `x-ref` so we can refer to it: `x-ref="searchInput"`, then we add an `x-on` to run on the keydown event and focus our input: `x-on:keydown.window.prevent.slash="$refs.searchInput.focus()"`
+
+```html
+<input
+	x-ref="searchInput"
+	x-model="search"
+	x-on:keydown.window.prevent.slash="$refs.searchInput.focus()"
+	placeholder="Search for a user..."
+	type="search"
+	class="block w-full rounded bg-gray-200 p-4 mb-4"
+/>
+```
+
 ### Full File
 
 ```html
