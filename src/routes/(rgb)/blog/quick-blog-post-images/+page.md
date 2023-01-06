@@ -30,7 +30,7 @@ keywords:
   <figcaption>Photo credit @wflwong on Unsplash</figcaption>
 </figure>
 
-Length: Short
+Length: Medium
 
 Level: ✓ Beginner X Intermediate X Advanced
 
