@@ -3,6 +3,9 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 
+	// For code syntax highlighting
+	import '$lib/css/prism-atom-dark.css';
+
 	export let title,
 		slug,
 		date,
@@ -36,7 +39,9 @@
 	};
 </script>
 
-<svelte:head><title>{title} | RGB Studios</title></svelte:head>
+<svelte:head>
+	<title>{title} | RGB Studios</title>
+</svelte:head>
 
 <div class="w-full top-0 left-0 fixed h-2 z-10">
 	<div class="h-2 bg-brand-green/50" style="width:{(scrollPercent ?? 0) * 100}%" />
