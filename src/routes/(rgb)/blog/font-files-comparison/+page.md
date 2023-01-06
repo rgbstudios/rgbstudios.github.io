@@ -7,7 +7,7 @@ updated_date: '2023/01/05'
 author: 'Justin Golden'
 preview_text: 'Read on to learn about different font files, their use cases, capabilities, performance, and support.'
 img: '/img/blog/metal_type_grid.avif'
-categories: ['design', 'learn', 'typography']
+categories: ['design', 'learn', 'typography', 'webdev']
 keywords:
   [
     'font file formats',
