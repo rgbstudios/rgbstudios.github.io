@@ -1,19 +1,41 @@
 /**
  * PrismJS is used to handle syntax highlighting with mdsvex under the hood
- * How to: https://www.alexandersix.com/posts/syntax-highlighting-with-sveltekit
  * Prism: https://github.com/PrismJS/prism-themes
  * Atom: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-atom-dark.css
+ * These styles are based off of the `atom-dark` theme https://github.com/atom/atom-dark-syntax
+ * Ported to Prism JS by Joe Gibson (@gibsjose)
  */
 
-/**
- * atom-dark theme for `prism.js`
- * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
- * @author Joe Gibson (@gibsjose)
- */
+:root {
+	--blue-dark: hsl(225, 100%, 60%);
+	--blue: hsl(225, 100%, 70%);
+	--blue-light: hsl(225, 100%, 80%);
+	--blue-lighter: hsl(225, 100%, 90%);
+
+	--green-dark: hsl(150, 50%, 60%);
+	--green: hsl(150, 50%, 70%);
+	--green-light: hsl(150, 50%, 80%);
+	--green-lighter: hsl(150, 50%, 90%);
+
+	--red-dark: hsl(15, 100%, 50%);
+	--red: hsl(15, 100%, 60%);
+	--red-light: hsl(15, 100%, 70%);
+	--red-lighter: hsl(15, 100%, 80%);
+
+	--yellow-dark: hsl(30, 100%, 50%);
+	--yellow: hsl(30, 100%, 60%);
+	--yellow-light: hsl(30, 100%, 70%);
+	--yellow-lighter: hsl(30, 100%, 80%);
+
+	--gray-dark: #222;
+	--gray: #888;
+	--gray-light: #ccc;
+	--gray-lighter: #eee;
+}
 
 code[class*='language-'],
 pre[class*='language-'] {
-	color: #ccc;
+	color: var(--gray-light);
 	font-family: Consolas, 'Courier New', Courier, monospace;
 	direction: ltr;
 	text-align: left;
@@ -42,7 +64,7 @@ pre[class*='language-'] {
 
 :not(pre) > code[class*='language-'],
 pre[class*='language-'] {
-	background: #222;
+	background: var(--gray-dark);
 }
 
 /* Inline code */
@@ -55,11 +77,11 @@ pre[class*='language-'] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #888;
+	color: var(--gray);
 }
 
 .token.punctuation {
-	color: #ccc;
+	color: var(--gray-light);
 }
 
 .namespace {
@@ -69,31 +91,27 @@ pre[class*='language-'] {
 .token.property,
 .token.keyword,
 .token.tag {
-	/* light blue */
-	color: #9af;
+	color: var(--blue-light);
 }
 
 .token.class-name {
-	/* lighter yellow */
-	color: #ffc;
+	color: var(--yellow-lighter);
+
 	text-decoration: underline;
 }
 
 .token.boolean,
 .token.constant {
-	/* off light green */
-	color: #9c9;
+	color: var(--green);
 }
 
 .token.symbol,
 .token.deleted {
-	/* dark red */
-	color: #c30;
+	color: var(--red-dark);
 }
 
 .token.number {
-	/* light red */
-	color: #f63;
+	color: var(--red-light);
 }
 
 .token.selector,
@@ -102,54 +120,45 @@ pre[class*='language-'] {
 .token.char,
 .token.builtin,
 .token.inserted {
-	/* light green */
-	color: #6c9;
+	color: var(--green-light);
 }
 
 .token.variable {
-	/* lighter blue */
-	color: #cdf;
+	color: var(--blue-lighter);
 }
 
 .token.operator {
-	color: #eee;
+	color: var(--gray-lighter);
 }
 
 .token.entity {
-	/* lighter yellow */
-	color: #ffc;
+	color: var(--yellow-lighter);
 }
 
 .token.url {
-	/* light blue */
-	color: #9af;
+	color: var(--blue-light);
 }
 
 .language-css .token.string,
 .style .token.string {
-	/* lighter green */
-	color: #bec;
+	color: var(--green-lighter);
 }
 
 .token.atrule,
 .token.attr-value {
-	/* lighter red */
-	color: #fb9;
+	color: var(--red-lighter);
 }
 
 .token.function {
-	/* blue */
-	color: #68f;
+	color: var(--blue);
 }
 
 .token.regex {
-	/* light yellow */
-	color: #fc9;
+	color: var(--yellow-light);
 }
 
 .token.important {
-	/* dark yellow */
-	color: #f93;
+	color: var(--yellow-dark);
 }
 
 .token.important,
