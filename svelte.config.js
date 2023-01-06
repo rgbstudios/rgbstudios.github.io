@@ -18,9 +18,6 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			highlight: {
-				alias: { postcss: 'css' }
-			},
 			layout: {
 				blog_layout: path.join(dirname, 'src/routes/(rgb)/blog/layout.svelte')
 			}
