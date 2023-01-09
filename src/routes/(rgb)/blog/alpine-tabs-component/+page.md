@@ -26,6 +26,10 @@ keywords:
   <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
 </figure>
 
+Length: Short
+
+Level: ✓ Beginner ✓ Intermediate ✗ Advanced
+
 _If you don't know [Alpine JS](https://alpinejs.dev/), check their [website](https://alpinejs.dev/) and then spend less than an hour following along the [Alpine JS crash course from Traversy Media](https://youtu.be/r5iWCtfltso)._
 
 _For a TL;DR, check the complete code at the bottom of this article._
