@@ -65,7 +65,7 @@
 	<!-- Prev -->
 	<button
 		aria-label="Previous slide"
-		class="absolute bg-primary p-3 z-1 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
+		class="z-10 absolute bg-primary p-3 z-1 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
 		on:click={prev}
 	>
 		<Icon name="chevron_right" />
@@ -85,7 +85,7 @@
 	<!-- Next -->
 	<button
 		aria-label="Next slide"
-		class="absolute bg-primary p-3 z-1 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
+		class="z-10 absolute bg-primary p-3 z-1 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
 		on:click={next}
 	>
 		<Icon name="chevron_right" />
