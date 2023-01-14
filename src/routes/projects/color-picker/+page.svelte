@@ -187,6 +187,7 @@
 <div class="text-base-900">
 	<div class="grid grid-cols-1 md:grid-cols-2 gap-2">
 		<div class="order-3 md:order-1 mx-auto md:mx-0">
+			<!-- svelte-ignore a11y-autofocus -->
 			<input
 				id="auto-detect-input"
 				class="w-48 mr-4 mb-4 float-left input bg-white text-base-900"
