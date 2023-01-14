@@ -3,6 +3,9 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 
+	// For code syntax highlighting
+	import '$lib/css/prism-atom-dark.css';
+
 	export let title,
 		slug,
 		date,
@@ -36,7 +39,9 @@
 	};
 </script>
 
-<svelte:head><title>{title} | RGB Studios</title></svelte:head>
+<svelte:head>
+	<title>{title} | RGB Studios</title>
+</svelte:head>
 
 <div class="w-full top-0 left-0 fixed h-2 z-10">
 	<div class="h-2 bg-brand-green/50" style="width:{(scrollPercent ?? 0) * 100}%" />
@@ -75,8 +80,15 @@
 <svelte:window on:scroll={onScroll} />
 
 <article id="main-article" class="prose lg:prose-xl mx-auto m-8">
-	<h5>{author} &mdash; {new Date(date).toLocaleDateString()}</h5>
+	<h5 class="mb-2">
+		{new Date(date).toLocaleDateString(undefined, {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric'
+		})}
+	</h5>
 	<h1>{title}</h1>
+	<h5 class="mb-4">{author}</h5>
 	{#each categories as category}
 		<div class="badge badge-outline mr-2">{category}</div>
 	{/each}
