@@ -23,7 +23,7 @@
 	class:dnd-dice={$page.url.pathname.includes('projects/dnd-dice')}
 	class="min-h-screen flex flex-col justify-between"
 >
-	<div class="container mx-auto px-4 py-8 flex-1">
+	<div class="container py-8 flex-1">
 		<slot />
 		<br />
 		<br />

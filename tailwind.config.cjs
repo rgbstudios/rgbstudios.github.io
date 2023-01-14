@@ -4,6 +4,14 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
+		container: {
+			center: true,
+			padding: '2rem',
+			screens: {
+				// Use default screens, not `xs` for `max-width`
+				...defaultTheme.screens
+			}
+		},
 		extend: {
 			colors: {
 				'brand-red': '#c30',
