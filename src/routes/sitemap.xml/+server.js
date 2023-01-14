@@ -1,4 +1,8 @@
-// https://www.sitemaps.org/protocol.html
+/**
+ * Generates `sitemap.xml` for crawlers
+ *
+ * @link https://www.sitemaps.org/protocol.html
+ */
 
 const pages = [
 	{

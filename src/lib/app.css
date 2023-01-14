@@ -1,8 +1,12 @@
+/* Global styles for the entire website */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+	/* Basic project styles */
+
 	:root {
 		--brand-red: #cc3300;
 		--brand-green: #339966;
@@ -36,6 +40,8 @@
 		-o-user-drag: none;
 		user-drag: none;
 	}
+
+	/* Print styles */
 
 	@media print {
 		* {

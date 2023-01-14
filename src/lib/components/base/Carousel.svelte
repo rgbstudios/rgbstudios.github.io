@@ -65,7 +65,7 @@
 	<!-- Prev -->
 	<button
 		aria-label="Previous slide"
-		class="z-10 absolute bg-primary p-3 z-1 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
+		class="z-10 absolute bg-primary p-2 lg:p-4 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
 		on:click={prev}
 	>
 		<Icon name="chevron_right" />
@@ -85,13 +85,13 @@
 	<!-- Next -->
 	<button
 		aria-label="Next slide"
-		class="z-10 absolute bg-primary p-3 z-1 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
+		class="z-10 absolute bg-primary p-2 lg:p-4 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
 		on:click={next}
 	>
 		<Icon name="chevron_right" />
 	</button>
 	<!-- Dots -->
-	<div class="flex gap-3 absolute bottom-5 left-1/2 -translate-x-1/2 col-start-2 col-end-3">
+	<div class="flex gap-3 absolute bottom-4 left-1/2 -translate-x-1/2 col-start-2 col-end-3">
 		{#each items as _, index}
 			<button
 				aria-label="Go to slide {index + 1}"

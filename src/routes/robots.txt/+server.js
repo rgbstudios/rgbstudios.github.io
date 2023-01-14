@@ -1,3 +1,7 @@
+/**
+ * Serves `robots.txt` for crawlers
+ */
+
 export async function GET() {
 	const txt = `User-agent: *
 Disallow:

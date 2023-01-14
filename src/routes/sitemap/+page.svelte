@@ -1,4 +1,8 @@
 <script>
+	/**
+	 * Sitemap HTML page (`/sitemap`) for humans
+	 */
+
 	import { page } from '$app/stores';
 
 	import SEO from '$lib/components/SEO.svelte';

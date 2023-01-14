@@ -1,4 +1,10 @@
 <script>
+	/**
+	 * Blog posts home page (`/blog`)
+	 *
+	 * Displays non-hidden blog posts of the category in the URL parameter
+	 */
+
 	import { page } from '$app/stores';
 
 	import BlogCard from '$lib/components/BlogCard.svelte';
@@ -12,6 +18,7 @@
 
 	$: category = $page.url.searchParams.get('category');
 
+	// Show only non-hidden posts of the given category, then sort them by date
 	$: filteredPosts = posts
 		?.filter((post) => !post.hidden)
 		.filter((post) => category === null || post.categories.includes(category))

@@ -31,7 +31,7 @@
 	</p>
 </article>
 
-<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="my-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each people as { name, img, website, email, about }}
 		<AboutCard title={name} text={about} {email} {img} link={website} />
 	{/each}
