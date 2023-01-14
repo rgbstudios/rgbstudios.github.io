@@ -28,12 +28,12 @@
 </p>
 
 <div class="prose lg:prose-xl my-8">
-	<h3>Featured Projects:</h3>
+	<h3>Featured Projects</h3>
 </div>
 <FeaturedAppCarousel slides={featuredApps} />
 
-<article class="prose lg:prose-xl my-8">
-	<p>
+<article class="my-8 lg:w-full grid gap-8 lg:grid-cols-3">
+	<p class="prose lg:prose-xl lg:col-span-2">
 		RGB Studios makes awesome websites, webapps, mobile apps, and browser extensions. We take pride
 		in clean, beautiful designs that are simple and easy to use.
 	</p>
@@ -44,17 +44,19 @@
 	</span>
 </article>
 
+<hr />
+
 <div class="prose lg:prose-xl my-8">
-	<hr />
-	<h3>Featured Articles:</h3>
+	<h3>Featured Articles</h3>
 </div>
-<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each featuredPosts as { title, preview_text, slug, categories, img } (slug)}
 		<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
 	{/each}
 </div>
-<article class="prose lg:prose-xl max-w-none my-8">
-	<p>
+
+<article class="my-8 lg:w-full grid gap-8 lg:grid-cols-3">
+	<p class="prose lg:prose-xl lg:col-span-2">
 		Read on to learn more about the web, design, and how to get your website cleaner, easier to use,
 		and higher ranked.
 	</p>
@@ -63,8 +65,12 @@
 			Blog Articles <Icon name="chevron_right" />
 		</a>
 	</span>
+</article>
 
-	<p>
+<hr />
+
+<article class="my-8 lg:w-full grid gap-8 lg:grid-cols-3">
+	<p class="prose lg:prose-xl lg:col-span-2">
 		We can also design your website for you or help you with your style guide and brand identity.
 		Contact us for a quote!
 	</p>

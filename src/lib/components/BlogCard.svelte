@@ -2,7 +2,7 @@
 	export let title, text, link, tags, img;
 </script>
 
-<a href={link} class="card bg-base-800 ring-base-700 hover:ring-2 cursor-pointer no-underline m-4">
+<a href={link} class="card bg-base-800 ring-base-700 hover:ring-2 cursor-pointer no-underline">
 	<div class="card-body">
 		<h2 class="card-title text-3xl">
 			{title}

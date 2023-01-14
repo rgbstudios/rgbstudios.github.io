@@ -54,7 +54,7 @@
 	<h1 class="text-center">{pageTitle}</h1>
 </article>
 {#if filteredPosts.length !== 0}
-	<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+	<div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 		{#each filteredPosts as { title, preview_text, slug, categories, img } (slug)}
 			<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
 		{/each}
