@@ -28,7 +28,7 @@
 </p>
 
 <div class="prose-custom my-8">
-	<h3>Featured Projects</h3>
+	<h2>Featured Projects</h2>
 </div>
 <FeaturedAppCarousel slides={featuredApps} />
 
@@ -47,7 +47,7 @@
 <hr />
 
 <div class="prose-custom my-8">
-	<h3>Featured Articles</h3>
+	<h2>Featured Articles</h2>
 </div>
 <div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each featuredPosts as { title, preview_text, slug, categories, img } (slug)}
