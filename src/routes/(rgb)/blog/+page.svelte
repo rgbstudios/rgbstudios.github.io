@@ -57,7 +57,7 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto">
+<article class="prose-custom mx-auto">
 	<h1 class="text-center">{pageTitle}</h1>
 </article>
 {#if filteredPosts.length !== 0}
@@ -67,7 +67,7 @@
 		{/each}
 	</div>
 {:else}
-	<article class="prose lg:prose-xl mx-auto mt-8">
+	<article class="prose-custom mx-auto mt-8">
 		<p>
 			No posts found for that category. Try a different category or <a href="/blog">
 				View all blog posts

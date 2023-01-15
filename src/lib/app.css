@@ -41,6 +41,12 @@
 		user-drag: none;
 	}
 
+	/* Typography */
+
+	.prose-custom {
+		@apply prose lg:prose-xl max-w-4xl;
+	}
+
 	/* Print styles */
 
 	@media print {

@@ -83,7 +83,7 @@
 
 <svelte:window on:scroll={onScroll} />
 
-<article id="main-article" class="prose lg:prose-xl mx-auto m-8">
+<article id="main-article" class="prose-custom mx-auto m-8">
 	<h5 class="mb-2">
 		{new Date(date).toLocaleDateString(undefined, {
 			year: 'numeric',

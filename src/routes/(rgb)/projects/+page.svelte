@@ -37,7 +37,7 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto">
+<article class="prose-custom mx-auto">
 	<h1 class="text-center">
 		{pageTitle}
 	</h1>

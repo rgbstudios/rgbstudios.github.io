@@ -13,7 +13,7 @@
 	<title>Error {status === 404 ? ' 404' : ''}</title>
 </svelte:head>
 
-<article class="prose lg:prose-xl mx-auto">
+<article class="prose-custom mx-auto">
 	{#if status === 404}
 		<h1 class="text-center">The resource could not be found</h1>
 	{/if}

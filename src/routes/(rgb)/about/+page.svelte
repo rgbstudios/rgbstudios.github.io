@@ -22,7 +22,7 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto">
+<article class="prose-custom mx-auto my-8">
 	<h1 class="text-center">About</h1>
 	<p class="text-xl">
 		We are a US based web development company that creates cool web apps, helpful blog posts, and

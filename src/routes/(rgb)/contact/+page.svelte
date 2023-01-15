@@ -18,8 +18,8 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto">
-	<h1>Let's Get in Touch</h1>
+<article class="prose-custom mx-auto my-8">
+	<h1 class="text-center">Let's Get in Touch</h1>
 	<p>
 		Reach out about any of our web apps, posts, media, interviews, or inquiries about creating
 		branding or designing a website.

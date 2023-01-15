@@ -6,7 +6,7 @@
 
 <SEO title="Privacy Policy | RGB Studios.org" url={$page.url.origin + '/privacy'} />
 
-<article class="prose lg:prose-xl mx-auto">
+<article class="prose-custom mx-auto">
 	<h1>Privacy Policy</h1>
 	<p>
 		All of our applications are currently free and without ads. We will never sell your data to
