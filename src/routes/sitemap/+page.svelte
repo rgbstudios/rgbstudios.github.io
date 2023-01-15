@@ -10,9 +10,10 @@
 
 <SEO title="Sitemap | RGB Studios" url={$page.url.origin + '/sitemap'} />
 
-<div class="container">
+<div class="container my-16">
 	<article class="prose-custom mx-auto">
 		<h1>Sitemap</h1>
+		<img class="w-full max-w-xl mx-auto" src="/img/pages/mind_map.svg" alt="" />
 		<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
 			<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Projects</h2>
 			<a href="/projects">All Apps</a>

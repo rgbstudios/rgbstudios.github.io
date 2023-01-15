@@ -69,6 +69,14 @@
 
 <hr />
 
+<div class="prose-custom my-8">
+	<h2>Get in Touch</h2>
+</div>
+<div class="my-8 grid md:grid-cols-2 gap-8">
+	<img class="" src="/img/pages/heatmap.svg" alt="" />
+	<img class="hidden md:block" src="/img/pages/responsive.svg" alt="" />
+</div>
+
 <article class="my-8 lg:w-full grid gap-8 lg:grid-cols-3">
 	<p class="prose-custom lg:col-span-2">
 		We can also design your website for you or help you with your style guide and brand identity.
