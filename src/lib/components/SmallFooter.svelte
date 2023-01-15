@@ -6,7 +6,7 @@
 <div class="bg-base-800 w-full">
 	<footer class="container footer items-center py-4">
 		<div class="items-center grid-flow-col">
-			<img class="w-12 h-12" src="/img/rgb_logo_256.png" alt="RGB logo" />
+			<a href="/"><img class="w-12 h-12" src="/img/rgb_logo_256.png" alt="RGB logo" /></a>
 			<p>
 				<a class="link link-hover font-bold" href="/">RGB Studios</a>
 				<br />
