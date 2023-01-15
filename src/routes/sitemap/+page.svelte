@@ -10,26 +10,28 @@
 
 <SEO title="Sitemap | RGB Studios" url={$page.url.origin + '/sitemap'} />
 
-<article class="prose-custom mx-auto">
-	<h1>Sitemap</h1>
-	<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
-		<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Projects</h2>
-		<a href="/projects">All Apps</a>
-		<a href="/projects?sort=popular">Popular Apps</a>
-		<a href="/projects?sort=new">New Apps</a>
-		<a href="/projects?sort=updated">Recently Updated Apps</a>
+<div class="container">
+	<article class="prose-custom mx-auto">
+		<h1>Sitemap</h1>
+		<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+			<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Projects</h2>
+			<a href="/projects">All Apps</a>
+			<a href="/projects?sort=popular">Popular Apps</a>
+			<a href="/projects?sort=new">New Apps</a>
+			<a href="/projects?sort=updated">Recently Updated</a>
 
-		<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Blog</h2>
-		<a href="/blog">All Posts</a>
-		<a href="/blog?category=webdev">Web Dev Posts</a>
-		<a href="/blog?category=design">Design Posts</a>
+			<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Blog</h2>
+			<a href="/blog">All Posts</a>
+			<a href="/blog?category=webdev">Web Dev Posts</a>
+			<a href="/blog?category=design">Design Posts</a>
 
-		<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Company</h2>
-		<a href="/">Home</a>
-		<a href="/about">About us</a>
-		<a href="/contact">Contact</a>
-	</div>
-</article>
+			<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Company</h2>
+			<a href="/">Home</a>
+			<a href="/about">About us</a>
+			<a href="/contact">Contact</a>
+		</div>
+	</article>
+</div>
 
 <style lang="postcss">
 	a {

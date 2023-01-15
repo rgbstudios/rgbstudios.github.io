@@ -14,7 +14,7 @@
 	<img
 		src={img}
 		alt={title}
-		class="h-full w-72 sm:w-full sm:h-72 mx-auto object-cover object-top grayscale b-8"
+		class="h-full w-72 sm:w-full sm:h-72 mx-auto object-cover object-center grayscale b-8"
 	/>
 
 	<a href="mailto:{email}" class="btn btn-outline">
