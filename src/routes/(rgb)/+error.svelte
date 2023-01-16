@@ -1,4 +1,5 @@
 <script>
+	// TODO: see if this page is ever used, if it functions correctly, etc.
 	import { page } from '$app/stores';
 	import projects from '$lib/data/projects';
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
