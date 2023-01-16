@@ -1,3 +1,7 @@
+/**
+ * Endpoint to get all blog post data
+ */
+
 export async function GET() {
 	const posts = await Promise.all(
 		Object.entries(import.meta.glob('../**/*.md')).map(async ([path, page]) => {

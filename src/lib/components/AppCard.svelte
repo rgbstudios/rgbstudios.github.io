@@ -5,7 +5,7 @@
 <a
 	href={link}
 	target="_blank"
-	class="card bg-base-800 p-4 pt-0 ring-base-700 hover:ring-2 cursor-pointer no-underline m-4"
+	class="card bg-base-800 p-4 pt-0 ring-base-700 hover:ring-2 cursor-pointer no-underline"
 >
 	<div class="card-body">
 		<!-- <img
@@ -36,5 +36,5 @@
 			{/if}
 		</div>
 	</div>
-	<figure><img src={img} alt={title} class="w-full h-72 object-cover object-top" /></figure>
+	<img src={img} alt={title} class="w-full h-72 object-cover object-top" />
 </a>

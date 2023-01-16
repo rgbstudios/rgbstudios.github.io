@@ -1,8 +1,12 @@
+/* Global styles for the entire website */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+	/* Basic project styles */
+
 	:root {
 		--brand-red: #cc3300;
 		--brand-green: #339966;
@@ -26,7 +30,7 @@
 	}
 
 	.btn-primary {
-		@apply font-bold;
+		@apply font-bold !text-white;
 	}
 
 	img {
@@ -36,6 +40,14 @@
 		-o-user-drag: none;
 		user-drag: none;
 	}
+
+	/* Typography */
+
+	.prose-custom {
+		@apply prose lg:prose-xl max-w-4xl;
+	}
+
+	/* Print styles */
 
 	@media print {
 		* {

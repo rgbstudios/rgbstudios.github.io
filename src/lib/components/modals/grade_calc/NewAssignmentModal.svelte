@@ -7,7 +7,7 @@
 	import uid from '$lib/util/uid';
 
 	/// STATE ///
-	import { assignments, setupDone } from '$lib/stores/grade-calc';
+	import { assignments } from '$lib/stores/grade-calc';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	let name: Assignment['name'],
 		max_score: Assignment['max_score'] = 100,

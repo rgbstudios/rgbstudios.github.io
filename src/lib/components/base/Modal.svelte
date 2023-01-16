@@ -73,7 +73,7 @@
 		class:max-w-full={fluid}
 	>
 		{#if $$slots.title || showCloseBtn}
-			<div class="header flex justify-between items-center border-b-2 p-2 mb-5">
+			<div class="header flex justify-between items-center border-b-2 p-2 mb-4">
 				<h3><slot name="title" /></h3>
 				{#if showCloseBtn}
 					<button

@@ -5,6 +5,8 @@
 
 	import Tabs, { type TabItem } from '$lib/components/Tabs.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import downloadFile from '$lib/util/downloadFile';
+
 	/// STATE ///
 	const tabs: TabItem[] = [
 		{

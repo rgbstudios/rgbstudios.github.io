@@ -1,4 +1,8 @@
 <script>
+	/**
+	 * Layout used for individual blog posts ('/blog/*')
+	 */
+
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
@@ -78,16 +82,16 @@
 
 <svelte:window on:scroll={onScroll} />
 
-<article id="main-article" class="prose lg:prose-xl mx-auto m-8">
-	<h5 class="mb-2">
+<article id="main-article" class="prose-custom mx-auto m-8">
+	<p class="mb-2">
 		{new Date(date).toLocaleDateString(undefined, {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric'
 		})}
-	</h5>
+	</p>
 	<h1>{title}</h1>
-	<h5 class="mb-4">{author}</h5>
+	<p class="mb-4">{author}</p>
 	{#each categories as category}
 		<div class="badge badge-outline mr-2">{category}</div>
 	{/each}

@@ -3,8 +3,8 @@
 		isDark = false;
 </script>
 
-<div class="text-sm breadcrumbs mb-1">
-	<ul>
+<div class="text-sm breadcrumbs overflow-x-visible mb-1">
+	<ul class="inline-flex flex-wrap">
 		{#each breadcrumbs as { text, link }}
 			{#if link}
 				<li class="underline {isDark ? 'text-base-900 ' : 'text-white'}">

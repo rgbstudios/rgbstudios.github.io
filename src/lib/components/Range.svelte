@@ -18,12 +18,12 @@
 	}
 
 	.slider::-webkit-slider-thumb {
-		@apply appearance-none w-5 h-5 rounded-full cursor-pointer ring-2 ring-base-200;
+		@apply appearance-none w-4 h-4 rounded-full cursor-pointer ring-2 ring-base-200;
 		background-color: var(--current-color);
 	}
 
 	.slider::-moz-range-thumb {
-		@apply appearance-none w-5 h-5 rounded-full cursor-pointer  ring-2 ring-base-200;
+		@apply appearance-none w-4 h-4 rounded-full cursor-pointer  ring-2 ring-base-200;
 		background-color: var(--current-color);
 	}
 </style>

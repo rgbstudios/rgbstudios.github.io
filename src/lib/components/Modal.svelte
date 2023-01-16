@@ -3,7 +3,6 @@
 
 	// Note: copied from desktop clock and modified
 
-	import { session } from '$app/stores';
 	import Icon from './Icon.svelte';
 
 	export let title;
