@@ -8,5 +8,5 @@ mobile wireframe
 sitemap
 mind map
 
-404
+404 and no results screens
 blank canvas

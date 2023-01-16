@@ -3,6 +3,7 @@ blog post ideas:
 localstore in svelte kit
 sitemap xml generator
 custom error page svelte kit
+syntax highlighting in your blog posts
 
 bugfix:
 404 page
@@ -12,4 +13,4 @@ fix linting errors on build
 
 updates:
 add read time and experience lvl to each blog post
-add pagination and search
+add pagination
