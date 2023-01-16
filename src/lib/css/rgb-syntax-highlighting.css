@@ -1,5 +1,6 @@
 /**
  * PrismJS is used to handle syntax highlighting with mdsvex under the hood
+ * How to: https://www.alexandersix.com/posts/syntax-highlighting-with-sveltekit
  * Prism: https://github.com/PrismJS/prism-themes
  * Atom: https://github.com/PrismJS/prism-themes/blob/master/themes/prism-atom-dark.css
  * These styles are based off of the `atom-dark` theme https://github.com/atom/atom-dark-syntax
