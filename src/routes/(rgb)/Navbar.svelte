@@ -7,7 +7,7 @@
 <div class="navbar bg-base-900/90 sticky top-0 z-10 backdrop-blur-sm">
 	<div class="navbar-start">
 		<div class="dropdown">
-			<button class="btn btn-ghost lg:hidden">
+			<button class="btn btn-ghost lg:hidden" title="Menu">
 				<Icon name="menu" />
 			</button>
 			<ul
