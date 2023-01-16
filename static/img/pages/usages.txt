@@ -1,6 +1,5 @@
 home
 responsive
-heatmap
 
 contact
 mailbox
