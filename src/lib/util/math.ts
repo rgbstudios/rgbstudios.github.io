@@ -1,3 +1,9 @@
+/**
+ * Contains utilities for math functions used in calculators
+ *
+ * Currently, only used by binomial calc
+ */
+
 export function factorial(n: number): number {
 	let retval = 1;
 	for (let i = n; i > 1; i--) {

@@ -1,0 +1,15 @@
+
+blog post ideas:
+localstore in svelte kit
+sitemap xml generator
+custom error page svelte kit
+
+bugfix:
+404 page
+
+lint:
+fix linting errors on build
+
+updates:
+add read time and experience lvl to each blog post
+add pagination and search

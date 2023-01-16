@@ -1,3 +1,5 @@
+// Handle redirects
+
 import redirects from '$lib/data/redirects';
 
 /** @type {import('@sveltejs/kit').Handle} */

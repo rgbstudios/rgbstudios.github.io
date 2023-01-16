@@ -50,7 +50,7 @@
 			return decimalAns.toString(base).toUpperCase();
 		} catch (err) {
 			//only catches if invalid base in arithmetic modal
-			showError('Error - Invalid Inputs');
+			simpleError = 'Error - Invalid Inputs';
 		}
 	}
 

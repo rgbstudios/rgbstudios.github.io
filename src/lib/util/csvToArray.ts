@@ -1,6 +1,10 @@
-// This will parse a delimited string into an array of
-// arrays. The default delimiter is the comma, but this
-// can be overriden in the second argument.
+/**
+ * Convert CSV into 2D array
+ *
+ * Parses a delimited string into an array of arrays.
+ * The default delimiter is a comma and can be overriden in the second argument.
+ */
+
 export function CSVToArray(strData, strDelimiter) {
 	// Check to see if the delimiter is defined. If not,
 	// then default to comma.

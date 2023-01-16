@@ -11,13 +11,7 @@
 
 	/// UTILS ///
 	import roundNumber from '$lib/util/roundNumber';
-	import {
-		exactKdistinct,
-		lessKdistinct,
-		meanReplacement,
-		moreKdistinct,
-		nCk
-	} from '$lib/util/math';
+	import { exactKdistinct, lessKdistinct, meanReplacement, moreKdistinct } from '$lib/util/math';
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;

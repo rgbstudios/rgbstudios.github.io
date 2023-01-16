@@ -45,5 +45,6 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify
 ### Credit
 
 Designed by Justin Golden.
-Images from Unsplash.
+Blog images from Unsplash.
+Website vector art from Undraw.
 Icons (generally) from Hero Icons.

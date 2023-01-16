@@ -1,3 +1,7 @@
+/**
+ * Contains utils for rolling a die and getting die roller url parameters
+ */
+
 export const getRoll = (sides) => Math.floor(Math.random() * sides) + 1;
 
 export const getDieRollerParams = (modifiers) => {

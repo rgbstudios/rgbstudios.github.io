@@ -1,6 +1,8 @@
-// https://svelte.dev/repl/0ace7a508bd843b798ae599940a91783?version=3.16.7
-
-// Dispatch event on click outside of node
+/**
+ * Dispatch event on click outside of node
+ *
+ * @link https://svelte.dev/repl/0ace7a508bd843b798ae599940a91783?version=3.16.7
+ */
 
 export function clickOutside(node) {
 	const handleClick = (event) => {

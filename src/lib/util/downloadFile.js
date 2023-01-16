@@ -1,3 +1,10 @@
+/**
+ * Utility to download a file
+ *
+ * Creates and downloads a file given its text content, file name, and optionally, file type.
+ * Creates an anchor element, clicks it, then removes it.
+ */
+
 export default function (content, filename, filetype = 'text/plain') {
 	const a = document.createElement('a');
 	a.download = filename;
