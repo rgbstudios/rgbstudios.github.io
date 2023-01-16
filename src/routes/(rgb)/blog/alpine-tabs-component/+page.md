@@ -6,7 +6,7 @@ date: '2023/01/09'
 updated_date: '2023/01/09'
 author: 'Justin Golden'
 preview_text: 'Learn Alpine JS and make a fully functional tabs component in just three minutes'
-img: '/img/blog/book_with_tabs.avif'
+img: '/img/blog/typing_document.avif'
 categories: ['webdev', 'javascript', 'alpinejs']
 keywords:
   [
@@ -20,10 +20,10 @@ keywords:
 
 <figure>
   <picture>
-    <source type="image/avif" srcset="/img/blog/book_with_tabs.avif" alt="">
-    <img src="/img/blog/book_with_tabs.jpg" alt="">
+    <source type="image/avif" srcset="/img/blog/typing_document.avif" alt="">
+    <img src="/img/blog/typing_document.jpg" alt="">
   </picture>
-  <figcaption>Photo credit @rssemfam on Unsplash</figcaption>
+  <figcaption>Photo credit @glenncarstenspeters on Unsplash</figcaption>
 </figure>
 
 Length: Short
