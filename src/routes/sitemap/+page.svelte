@@ -3,6 +3,12 @@
 	 * Sitemap HTML page (`/sitemap`) for humans
 	 */
 
+	/*
+	 * Without this, going directly to `/sitemap` doesn't load the styles
+	 * But clicking the footer link still loads the styles
+	 */
+	import '$lib/app.css';
+
 	import { page } from '$app/stores';
 
 	import SEO from '$lib/components/SEO.svelte';
