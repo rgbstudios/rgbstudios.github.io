@@ -1070,7 +1070,7 @@ As is true for other aspects of web design, use fixed width **containers** at ce
 | xl (1280px)  | max-width: 1280px; |
 | 2xl (1536px) | max-width: 1536px; |
 
-The example above is borrowed from [Tailwind's container](https://tailwindcss.com/docs/container)
+The example above is borrowed from [Tailwind's container](https://tailwindcss.com/docs/container) (you can also customize the container breakpoints and padding at each breakpoint as well).
 
 Since you only have a few widths for you design, you have a few static layouts rather than having your page appear differently for every unique pixel on your users' devices.
 

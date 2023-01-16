@@ -1,3 +1,7 @@
+/**
+ * Copy text to clipboard and display a toast
+ */
+
 import { toast } from '$lib/components/Toast.svelte';
 
 const copyText = (txt) => {

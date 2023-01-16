@@ -22,7 +22,7 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto">
+<article class="prose-custom mx-auto my-8">
 	<h1 class="text-center">About</h1>
 	<p class="text-xl">
 		We are a US based web development company that creates cool web apps, helpful blog posts, and
@@ -31,7 +31,7 @@
 	</p>
 </article>
 
-<div class="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+<div class="my-16 grid gap-8 lg:grid-cols-3">
 	{#each people as { name, img, website, email, about }}
 		<AboutCard title={name} text={about} {email} {img} link={website} />
 	{/each}

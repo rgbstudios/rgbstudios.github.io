@@ -1,3 +1,7 @@
+/**
+ * Contains utilities for getting, setting, and removing url parameters
+ */
+
 const getUrlParam = (key) => {
 	const url = new URL(window.location.href);
 	return url.searchParams.get(key);

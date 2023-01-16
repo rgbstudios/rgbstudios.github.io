@@ -1,4 +1,8 @@
 <script>
+	/**
+	 * Layout file used for `/projects/*` pages
+	 */
+
 	import { onMount } from 'svelte';
 
 	import '$lib/app.css';
@@ -23,10 +27,11 @@
 	class:dnd-dice={$page.url.pathname.includes('projects/dnd-dice')}
 	class="min-h-screen flex flex-col justify-between"
 >
-	<div class="container mx-auto px-4 py-8 flex-1">
+	<div class="container py-8 flex-1">
 		<slot />
 		<br />
 		<br />
+		<!-- DND dice is light themed and color picker depends on the current color -->
 		<ShareButtons
 			{title}
 			{link}
@@ -41,6 +46,7 @@
 </div>
 
 <style lang="postcss">
+	/* Special layout styles for DND dice */
 	.dnd-dice {
 		background-color: #fff;
 		background-size: 2.5rem 2.5rem;

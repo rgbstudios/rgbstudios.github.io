@@ -49,7 +49,7 @@
 	]}
 />
 
-<article class="prose lg:prose-xl mx-auto text-center">
+<article class="prose-custom mx-auto text-center">
 	<img
 		class={isCondensed ? 'w-8 sm:w-12 inline-block mr-4' : 'w-16 mx-auto'}
 		src="/{icon}"

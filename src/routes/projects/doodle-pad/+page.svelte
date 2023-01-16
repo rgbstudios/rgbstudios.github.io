@@ -254,11 +254,11 @@
 		const file = e.target.files[0];
 		let img = new Image();
 		if (file) {
+			img.onload = function () {
+				ctx.drawImage(img, 0, 0);
+			};
+			img.src = URL.createObjectURL(e.target.files[0]);
 		}
-		img.onload = function () {
-			ctx.drawImage(img, 0, 0);
-		};
-		img.src = URL.createObjectURL(e.target.files[0]);
 	}
 
 	/// FILTERS ///
