@@ -1,10 +1,18 @@
 <script>
+	import { page } from '$app/stores';
+
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
 
 <svelte:head>
 	<title>Contact | RGB Studios.org</title>
 </svelte:head>
+
+<SEO
+	title="Contact | RGB Studios - A Web Development Company"
+	url={$page.url.origin + '/contact'}
+/>
 
 <Breadcrumbs
 	breadcrumbs={[
