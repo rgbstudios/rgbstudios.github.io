@@ -30,7 +30,7 @@
 	}
 
 	.btn-primary {
-		@apply font-bold text-white;
+		@apply font-bold !text-white;
 	}
 
 	img {
