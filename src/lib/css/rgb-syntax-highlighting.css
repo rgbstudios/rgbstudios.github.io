@@ -15,9 +15,9 @@
 	--green-light: hsl(150, 50%, 70%);
 	--green-lighter: hsl(150, 50%, 80%);
 
-	--red: hsl(15, 100%, 60%);
-	--red-light: hsl(15, 100%, 70%);
-	--red-lighter: hsl(15, 100%, 80%);
+	--red: hsl(15, 100%, 50%);
+	--red-light: hsl(15, 100%, 60%);
+	--red-lighter: hsl(15, 100%, 70%);
 
 	--yellow: hsl(30, 100%, 60%);
 	--yellow-light: hsl(30, 100%, 70%);
