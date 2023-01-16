@@ -7,7 +7,7 @@
  */
 
 :root {
-	--blue: hsl(225, 100%, 70%);
+	/* --blue: hsl(225, 100%, 70%); */
 	--blue-light: hsl(225, 100%, 80%);
 	--blue-lighter: hsl(225, 100%, 90%);
 
@@ -146,11 +146,12 @@ pre[class*='language-'] {
 }
 
 .token.function {
-	color: var(--blue);
+	color: var(--yellow-light);
 }
 
 .token.regex {
 	color: var(--yellow-light);
+	font-style: italic;
 }
 
 .token.important {
