@@ -1,5 +1,12 @@
 <script>
-	// TODO: see if this page is ever used, if it functions correctly, etc.
+	/**
+	 * Test this page by creating an invalid import in homepage
+	 * For example:
+	 * `import SEO from '$lib/components/SEO.svelteee';`
+	 */
+
+	import '$lib/app.css';
+
 	import { page } from '$app/stores';
 	import projects from '$lib/data/projects';
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
