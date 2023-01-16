@@ -36,5 +36,5 @@
 			{/if}
 		</div>
 	</div>
-	<figure><img src={img} alt={title} class="w-full h-72 object-cover object-top" /></figure>
+	<img src={img} alt={title} class="w-full h-72 object-cover object-top" />
 </a>
