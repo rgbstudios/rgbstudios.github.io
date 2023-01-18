@@ -15,14 +15,19 @@
 	import projects from '$lib/data/projects';
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
 
-	$: featuredApps = projects.filter((p) => p.isFeatured);
+	import Navbar from '$lib/components/layout/Navbar.svelte';
+	import RGBHero from '$lib/components/layout/RGBHero.svelte';
+	import Footer from '$lib/components/layout/Footer.svelte';
 
-	$: console.log($page);
+	$: featuredApps = projects.filter((p) => p.isFeatured);
 </script>
 
 <svelte:head>
 	<title>{$page.status === 404 ? 'Page Not Found' : 'Error'} | RGB Studios</title>
 </svelte:head>
+
+<Navbar />
+<RGBHero />
 
 <div class="container my-8">
 	{#if $page.status === 404}
@@ -53,3 +58,5 @@
 		</div>
 	{/if}
 </div>
+
+<Footer />

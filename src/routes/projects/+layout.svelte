@@ -8,7 +8,7 @@
 	import '$lib/app.css';
 
 	import ShareButtons from '$lib/components/ShareButtons.svelte';
-	import SmallFooter from '$lib/components/SmallFooter.svelte';
+	import SmallFooter from '$lib/components/layout/SmallFooter.svelte';
 	import { page } from '$app/stores';
 	import Toast from '$lib/components/Toast.svelte';
 
