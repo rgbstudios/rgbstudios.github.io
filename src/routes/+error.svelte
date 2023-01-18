@@ -24,9 +24,9 @@
 	<title>{$page.status === 404 ? 'Page Not Found' : 'Error'} | RGB Studios</title>
 </svelte:head>
 
-<article class="container mx-auto my-8">
+<div class="container my-8">
 	{#if $page.status === 404}
-		<article class="prose-custom mx-auto">
+		<div class="prose-custom mx-auto">
 			<h1 class="text-center">Error 404</h1>
 			<h2 class="text-center">The resource could not be found</h2>
 			<img class="w-full max-w-md mx-auto" src="/img/pages/blank_canvas.svg" alt="" />
@@ -37,10 +37,10 @@
 				</span>
 				or check out our popular <a href="/projects">projects</a>:
 			</p>
-		</article>
+		</div>
 		<FeaturedAppCarousel slides={featuredApps} />
 	{:else}
-		<article class="prose-custom mx-auto">
+		<div class="prose-custom mx-auto">
 			<h1>Error {$page.status} &mdash; {$page.error.message}</h1>
 			<span class="not-prose"
 				><a href="/" class="btn btn-primary no-underline">Go back home</a></span
@@ -50,6 +50,6 @@
 					contact@rgbstudios.org
 				</a>.
 			</p>
-		</article>
+		</div>
 	{/if}
-</article>
+</div>
