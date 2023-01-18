@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 const postsPerPage = 12;
 
 /** @type {import('./$types').PageServerLoad} */
-export async function load({ params }) {
+export async function load({ fetch, params }) {
 	// If non-numeric values, 404
 	if (!new RegExp(/^[0-9]+$/).test(params.page)) {
 		throw error(404, 'Not found');
@@ -15,8 +15,7 @@ export async function load({ params }) {
 
 	const pageNum = parseInt(params.page);
 
-	// TODO: fixme
-	const res = await fetch('http://localhost:5173/blog/posts.json');
+	const res = await fetch('/blog/posts.json');
 	const posts = await res.json();
 
 	const pagePosts = posts.splice(postsPerPage * (pageNum - 1), postsPerPage);
