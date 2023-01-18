@@ -4,9 +4,6 @@ localstore in svelte kit
 sitemap xml generator
 custom error page svelte kit
 
-bugfix:
-404 page
-
 lint:
 fix linting errors on build
 

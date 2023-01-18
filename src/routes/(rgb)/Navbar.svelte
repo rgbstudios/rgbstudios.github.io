@@ -12,7 +12,7 @@
 			</button>
 			<ul
 				tabindex="0"
-				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-900 rounded-box w-52"
+				class="menu menu-compact dropdown-content mt-2 p-2 shadow bg-base-900 rounded-box w-52"
 			>
 				<li><a href="/">Home</a></li>
 
@@ -43,7 +43,7 @@
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
-		<a class="btn btn-ghost" href="/" aria-label="Menu">
+		<a class="hidden xs:block btn btn-ghost" href="/" aria-label="Menu">
 			<img class="h-full" src="/img/rgb_logo_light_256.png" alt="RGB Studios logo" />
 		</a>
 	</div>

@@ -191,7 +191,7 @@
 	icon="img/projects/icons/barcode.png"
 	screenshot="img/projects/screenshots/barcode.png"
 />
-<div class="grid gap-5 mt-5">
+<div class="grid gap-4 mt-4">
 	<label class="input-group">
 		<span>Barcode Text</span>
 		<input
@@ -207,7 +207,7 @@
 			{errorMsg}
 		</div>
 	{/if}
-	<div class="grid gap-5 lg:grid-cols-[auto,auto,auto] md:grid-cols-[auto,auto]">
+	<div class="grid gap-4 lg:grid-cols-[auto,auto,auto] md:grid-cols-[auto,auto]">
 		<label class="input-group">
 			<span>Format</span>
 			<select class="select select-bordered max-w-xs" bind:value={$format}>

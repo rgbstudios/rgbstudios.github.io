@@ -26,7 +26,7 @@
 	icon="img/projects/icons/intersect-calc.png"
 	screenshot="img/projects/screenshots/intersect-calc.png"
 />
-<div class="flex flex-col gap-5">
+<div class="flex flex-col gap-4">
 	<div>
 		<span class="label">
 			<span class="label-text">Line 1 Equation</span>

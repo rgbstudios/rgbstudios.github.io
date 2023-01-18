@@ -297,7 +297,7 @@
 	</form>
 </div>
 
-<div class="alert mt-5">
+<div class="alert mt-4">
 	<div>
 		<Icon name="info" class="w-6 h-6 inline text-brand-blue" />
 		<span
@@ -308,11 +308,11 @@
 	</div>
 </div>
 
-<div id="pie-chart" class="mt-5" />
-<div id="bar-chart" class="mt-5" />
+<div id="pie-chart" class="mt-4" />
+<div id="bar-chart" class="mt-4" />
 
 <!-- Info modal -->
-<div class="mt-5">
+<div class="mt-4">
 	<ModalButton _for="replacement-calc-info-modal">Info</ModalButton>
 	<InfoModal />
 

@@ -428,14 +428,14 @@
 	</form>
 </div>
 
-<div class="grid gap-5">
-	<div id="pie-chart" class="mt-5" />
+<div class="grid gap-4">
+	<div id="pie-chart" class="mt-4" />
 	<div class="flex justify-center">
 		<a class="btn" download="pie_chart.png" href={pieChartURI} title="Download pie chart">
 			<Icon name="download" />
 		</a>
 	</div>
-	<div id="bar-chart" class="mt-5" />
+	<div id="bar-chart" class="mt-4" />
 	<div class="flex justify-center">
 		<a class="btn" download="bar_chart.png" href={barChartURI} title="Download bar chart">
 			<Icon name="download" />
@@ -444,7 +444,7 @@
 </div>
 
 <!-- Info modal -->
-<div class="mt-5">
+<div class="mt-4">
 	<label for="info-modal" class="btn modal-button btn-info">Info</label>
 
 	<input
@@ -462,7 +462,7 @@
 			<div class="divider" />
 			{@html info_html}
 			<!-- Link to this modal: -->
-			<div class="mt-5 grid gap-1">
+			<div class="mt-4 grid gap-1">
 				<span>Share the link to these formulas:</span>
 				<div class="flex w-full">
 					<input

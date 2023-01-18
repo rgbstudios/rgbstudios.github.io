@@ -30,7 +30,7 @@
 			<Icon name="trash" /> &nbsp; Clear All Data
 		</label>
 	</div>
-	<div class="btn-group justify-end gap-1 mt-5">
+	<div class="btn-group justify-end gap-1 mt-4">
 		<button class="btn" on:click={() => Screenfull.isEnabled && Screenfull.toggle()}>
 			<Icon name="fullscreen" /> &nbsp; Fullscreen
 		</button>
