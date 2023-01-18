@@ -11,8 +11,10 @@
 	<title>Blog Page {pageNum} | RGB Studios</title>
 </svetle:head>
 
-<article class="prose-custom mx-auto my-8">
-	<h1 class="text-center">Blog Page {pageNum}</h1>
+<article class="my-8">
+	<div class="prose-custom mx-auto">
+		<h1 class="text-center">Blog Page {pageNum}</h1>
+	</div>
 
 	<BlogGrid {posts} />
 </article>
