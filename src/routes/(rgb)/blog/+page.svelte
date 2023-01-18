@@ -7,7 +7,7 @@
 
 	import { page } from '$app/stores';
 
-	import BlogCard from '$lib/components/BlogCard.svelte';
+	import BlogGrid from '$lib/components/BlogGrid.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 	import SEO from '$lib/components/SEO.svelte';
@@ -88,11 +88,7 @@
 </form>
 
 {#if filteredPosts.length !== 0}
-	<div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-		{#each filteredPosts as { title, preview_text, slug, categories, img } (slug)}
-			<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
-		{/each}
-	</div>
+	<BlogGrid posts={filteredPosts} />
 {:else}
 	<article class="prose-custom mx-auto mt-8">
 		<p>
