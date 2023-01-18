@@ -71,7 +71,7 @@
 
 <Modal id="barcode-wifi-qr-modal" bind:hidden fluid>
 	<div slot="title">Wifi QR Code</div>
-	<div class="grid lg:grid-cols-3 grid-cols-1 gap-5">
+	<div class="grid lg:grid-cols-3 grid-cols-1 gap-4">
 		<label class="input-group">
 			<span>Auth Type</span>
 			<select class="select select-bordered grow" bind:value={auth}>
@@ -87,9 +87,9 @@
 			<span>Password</span>
 			<input type="password" class="grow input input-bordered" bind:value={pass} />
 		</label>
-		<div class="col-span-full grid gap-5 mx-auto">
+		<div class="col-span-full grid gap-4 mx-auto">
 			<h3 class="flex gap-3">Print Settings</h3>
-			<div class="gap-5 grid">
+			<div class="gap-4 grid">
 				<label class="flex items-center gap-3 cursor-pointer">
 					<input type="checkbox" bind:checked={showName} class="checkbox" />
 					<span class="label-text">Show Name</span>
@@ -102,7 +102,7 @@
 		</div>
 	</div>
 	{#if errorMsg === ''}
-		<div class="grid p-5 justify-center">
+		<div class="grid p-4 justify-center">
 			<canvas bind:this={canvas} />
 		</div>
 		<div class="btn-group justify-center gap-1">
@@ -120,7 +120,7 @@
 			</ModalButton>
 		</div>
 	{:else}
-		<div class="alert shadow-lg mt-5 alert-error">
+		<div class="alert shadow-lg mt-4 alert-error">
 			{errorMsg}
 		</div>
 	{/if}

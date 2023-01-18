@@ -41,7 +41,7 @@
 	screenshot="img/projects/screenshots/simple-grade-calc.png"
 />
 
-<div class="flex flex-col gap-5 mt-5">
+<div class="flex flex-col gap-4 mt-8">
 	<span class="input-group justify-center">
 		<span>Calculate:</span>
 		<div class="btn-group">
