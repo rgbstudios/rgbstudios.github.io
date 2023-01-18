@@ -71,7 +71,7 @@
 	icon="img/projects/icons/stat-calc.png"
 	screenshot="img/projects/screenshots/stat-calc.png"
 />
-<div class="form-control mt-5 gap-5">
+<div class="form-control mt-8 gap-4">
 	<label class="input-group">
 		<span class="bg-primary">Dataset:</span>
 		<input
@@ -94,7 +94,7 @@
 	</label>
 </div>
 
-<div class="mt-5 grid md:grid-cols-2 gap-1" class:hidden={data.length === 1 && data[0] === 0}>
+<div class="mt-8 grid md:grid-cols-2 gap-1" class:hidden={data.length === 1 && data[0] === 0}>
 	<div class="stat">
 		<div class="stat-title">Input Size</div>
 		<div class="stat-value">{data.length}</div>
@@ -182,7 +182,7 @@
 	</div>
 </div>
 
-<div class="alert shadow-lg mt-5">
+<div class="alert shadow-lg mt-4">
 	<div>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"

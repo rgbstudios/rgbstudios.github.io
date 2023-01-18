@@ -42,10 +42,20 @@
 		</div>
 		<div class="md:place-self-center md:justify-self-end">
 			<div class="grid grid-flow-col gap-4">
-				<a href="https://twitter.com/rgbstudiosorg" target="_blank" aria-label="Twitter">
+				<a
+					class="hover:text-white"
+					href="https://twitter.com/rgbstudiosorg"
+					target="_blank"
+					aria-label="Twitter"
+				>
 					<Icon name="twitter" />
 				</a>
-				<a href="https://www.facebook.com/rgbstudios.org" target="_blank" aria-label="Facebook">
+				<a
+					class="hover:text-white"
+					href="https://www.facebook.com/rgbstudios.org"
+					target="_blank"
+					aria-label="Facebook"
+				>
 					<Icon name="facebook" />
 				</a>
 			</div>

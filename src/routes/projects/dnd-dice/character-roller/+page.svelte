@@ -396,7 +396,7 @@
 					)}
 				</p>
 				{#if !isRollingAnimation}
-					<p class="text-xl font-extrabold mt-3">{currentCharacter.stats[idx].value}</p>
+					<p class="text-xl font-extrabold mt-4">{currentCharacter.stats[idx].value}</p>
 					<p class="mb-4">
 						{(currentCharacter.stats[idx].mod > 0 ? '+' : '') + currentCharacter.stats[idx].mod}
 					</p>

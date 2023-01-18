@@ -5,9 +5,6 @@ sitemap xml generator
 custom error page svelte kit
 syntax highlighting in your blog posts
 
-bugfix:
-404 page
-
 lint:
 fix linting errors on build
 
