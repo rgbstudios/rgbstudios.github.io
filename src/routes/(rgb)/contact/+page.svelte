@@ -8,8 +8,9 @@
 	// Email JS
 	onMount(() => {
 		const btn = document.getElementById('contact-form-btn');
+		const form = document.getElementById('contact-form');
 
-		document.getElementById('contact-form').addEventListener('submit', function (event) {
+		form.addEventListener('submit', function (event) {
 			event.preventDefault();
 
 			btn.value = 'Sending...';
@@ -21,6 +22,7 @@
 				() => {
 					btn.value = 'Send Email';
 					alert('Sent!');
+					form.reset();
 					console.log('Form submitted successfully');
 				},
 				(err) => {
