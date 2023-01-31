@@ -1,25 +1,12 @@
 <script>
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-</script>
 
-<svelte:head>
-	<title>Contact | RGB Studios.org</title>
-
-	<!-- Email JS -->
-	<script
-		type="text/javascript"
-		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-	>
-	</script>
-
-	<script type="text/javascript">
-		emailjs.init('eCcBFCDspEKglI10s');
-	</script>
-
-	<script>
+	// Email JS
+	onMount(() => {
 		const btn = document.getElementById('contact-form-btn');
 
 		document.getElementById('contact-form').addEventListener('submit', function (event) {
@@ -43,6 +30,21 @@
 				}
 			);
 		});
+	});
+</script>
+
+<svelte:head>
+	<title>Contact | RGB Studios.org</title>
+
+	<!-- Email JS -->
+	<script
+		type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+	>
+	</script>
+
+	<script type="text/javascript">
+		emailjs.init('eCcBFCDspEKglI10s');
 	</script>
 </svelte:head>
 
