@@ -4,35 +4,6 @@
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
-
-	// Email JS
-	onMount(() => {
-		const btn = document.getElementById('contact-form-btn');
-		const form = document.getElementById('contact-form');
-
-		form.addEventListener('submit', function (event) {
-			event.preventDefault();
-
-			btn.value = 'Sending...';
-
-			const serviceID = 'default_service';
-			const templateID = 'template_rrmeook';
-
-			emailjs.sendForm(serviceID, templateID, this).then(
-				() => {
-					btn.value = 'Send Email';
-					alert('Sent!');
-					form.reset();
-					console.log('Form submitted successfully');
-				},
-				(err) => {
-					btn.value = 'Send Email';
-					alert('There was an error');
-					console.error('Error submitting form: ' + JSON.stringify(err));
-				}
-			);
-		});
-	});
 </script>
 
 <svelte:head>
@@ -47,6 +18,36 @@
 
 	<script type="text/javascript">
 		emailjs.init('eCcBFCDspEKglI10s');
+	</script>
+
+	<script>
+		window.addEventListener('load', () => {
+			const btn = document.getElementById('contact-form-btn');
+			const form = document.getElementById('contact-form');
+
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+
+				btn.value = 'Sending...';
+
+				const serviceID = 'default_service';
+				const templateID = 'template_rrmeook';
+
+				emailjs.sendForm(serviceID, templateID, this).then(
+					() => {
+						btn.value = 'Send Email';
+						alert('Sent!');
+						form.reset();
+						console.log('Form submitted successfully');
+					},
+					(err) => {
+						btn.value = 'Send Email';
+						alert('There was an error');
+						console.error('Error submitting form: ' + JSON.stringify(err));
+					}
+				);
+			});
+		});
 	</script>
 </svelte:head>
 
