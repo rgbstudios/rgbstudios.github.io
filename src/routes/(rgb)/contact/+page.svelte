@@ -7,6 +7,43 @@
 
 <svelte:head>
 	<title>Contact | RGB Studios.org</title>
+
+	<!-- Email JS -->
+	<script
+		type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+	>
+	</script>
+
+	<script type="text/javascript">
+		emailjs.init('eCcBFCDspEKglI10s');
+	</script>
+
+	<script>
+		const btn = document.getElementById('contact-form-btn');
+
+		document.getElementById('contact-form').addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			btn.value = 'Sending...';
+
+			const serviceID = 'default_service';
+			const templateID = 'template_rrmeook';
+
+			emailjs.sendForm(serviceID, templateID, this).then(
+				() => {
+					btn.value = 'Send Email';
+					alert('Sent!');
+					console.log('Form submitted successfully');
+				},
+				(err) => {
+					btn.value = 'Send Email';
+					alert('There was an error');
+					console.error('Error submitting form: ' + JSON.stringify(err));
+				}
+			);
+		});
+	</script>
 </svelte:head>
 
 <SEO
@@ -69,42 +106,6 @@
 
 			<input type="submit" id="contact-form-btn" value="Send Email" class="btn btn-primary mt-6" />
 		</form>
-
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-		>
-		</script>
-
-		<script type="text/javascript">
-			emailjs.init('eCcBFCDspEKglI10s');
-		</script>
-
-		<script>
-			const btn = document.getElementById('contact-form-btn');
-
-			document.getElementById('contact-form').addEventListener('submit', function (event) {
-				event.preventDefault();
-
-				btn.value = 'Sending...';
-
-				const serviceID = 'default_service';
-				const templateID = 'template_rrmeook';
-
-				emailjs.sendForm(serviceID, templateID, this).then(
-					() => {
-						btn.value = 'Send Email';
-						alert('Sent!');
-						console.log('Form submitted successfully');
-					},
-					(err) => {
-						btn.value = 'Send Email';
-						alert('There was an error');
-						console.error('Error submitting form: ' + JSON.stringify(err));
-					}
-				);
-			});
-		</script>
 
 		<img class="hidden lg:block w-64 h-64 ml-auto" src="/img/pages/mailbox.svg" alt="" />
 	</div>
