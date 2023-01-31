@@ -1,6 +1,5 @@
 <script>
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
 
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import SEO from '$lib/components/SEO.svelte';
