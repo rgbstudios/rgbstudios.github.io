@@ -83,9 +83,10 @@
 				<option value="A blog post">A blog post</option>
 				<option value="A quote for my existing website">A quote for my existing website</option>
 				<option value="A quote for a new website">A quote for a new website</option>
-				<option value="A quote for style guide and brand identity"
-					>A quote for style guide and brand identity</option
-				>
+				<option value="A quote for style guide and brand identity">
+					A quote for style guide and brand identity
+				</option>
+				<option value="Other">Other</option>
 			</select>
 
 			<label for="from_email" class="mt-6 block">Email</label>
