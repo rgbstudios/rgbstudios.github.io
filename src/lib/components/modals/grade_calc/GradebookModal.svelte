@@ -89,7 +89,7 @@
 <Modal id="grade-calc-gradebook-modal">
 	<div slot="title">Gradebook</div>
 	<Tabs {tabs} bind:activeTab />
-	<div class="py-5">
+	<div class="py-4">
 		<!-- Assignments Tab -->
 		{#if activeTab === 0}
 			<div class="overflow-x-auto">
@@ -146,7 +146,7 @@
 			</div>
 		{/if}
 	</div>
-	<div class="btn-group justify-end gap-1 mt-5">
+	<div class="btn-group justify-end gap-1 mt-4">
 		<button class="btn" on:click={exportAsCSV}>
 			<Icon name="download" /> &nbsp; Download Grades
 		</button>

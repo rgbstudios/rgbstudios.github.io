@@ -121,22 +121,22 @@ These tags should describe what the image is, and if it acts as a link or button
 
 You can also use a `figcaption` inside of a `figure` tag to describe the image. This renders the text to the screen, similar to a `<p>` tag:
 
-```
+```html
 <figure>
-  <img src="website_with_images.jpg" alt="a website with images">
-  <figcaption>Photo credit @domenicoloia on Unsplash</figcaption>
+	<img src="website_with_images.jpg" alt="a website with images" />
+	<figcaption>Photo credit @domenicoloia on Unsplash</figcaption>
 </figure>
 ```
 
 You can also use `figure` and `figcaption` with a fallback image:
 
-```
+```html
 <figure>
-  <picture>
-    <source type="image/avif" srcset="website_with_images.avif">
-    <img src="website_with_images.jpg" alt="a website with images">
-  </picture>
-  <figcaption>Photo credit @domenicoloia on Unsplash</figcaption>
+	<picture>
+		<source type="image/avif" srcset="website_with_images.avif" />
+		<img src="website_with_images.jpg" alt="a website with images" />
+	</picture>
+	<figcaption>Photo credit @domenicoloia on Unsplash</figcaption>
 </figure>
 ```
 
@@ -174,14 +174,14 @@ Preload your images (see below).
 
 Preload your images with a `link rel="preload"` in your `header`:
 
-```
-<link rel="preload" href="my_preloaded_image.png">
+```html
+<link rel="preload" href="my_preloaded_image.png" />
 ```
 
 Then use the image later:
 
-```
-<img src="my_preloaded_image.png" alt="">
+```html
+<img src="my_preloaded_image.png" alt="" />
 ```
 
 See [web.dev](https://web.dev/preload-responsive-images/) for more info on preloading images.
@@ -194,11 +194,11 @@ For example, "website_with_images.avif" might be your much smaller image, but us
 
 Use the `<picture>` tag for fallbacks.
 
-```
+```html
 <picture>
-    <source type="image/avif" srcset="website_with_images.avif">
-    <img src="website_with_images.jpg" alt="">
-  </picture>
+	<source type="image/avif" srcset="website_with_images.avif" />
+	<img src="website_with_images.jpg" alt="" />
+</picture>
 ```
 
 The `picture` tag works by trying to load the first image it can from `source` and if it fails (or isn't supported), it will fallback to the `img` tag which is supported everywhere. Note that adding an `alt`, `title`, `class`, or any other attribute to your `img` take will suffice and the `source` images will use those attributes.
@@ -209,11 +209,11 @@ Check "Can I Use" as mentioned above to check support for your image (for exampl
 
 You can also use the `picture` tag to serve different quality images to different users based on their screen size.
 
-```
- <picture>
-  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
-  <source media="(min-width:465px)" srcset="img_white_flower.jpg">
-  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+```html
+<picture>
+	<source media="(min-width:650px)" srcset="img_pink_flowers.jpg" />
+	<source media="(min-width:465px)" srcset="img_white_flower.jpg" />
+	<img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;" />
 </picture>
 ```
 
@@ -231,7 +231,7 @@ You can combine fallback images and `media` attributes to serve images based on 
 
 [Regenerate Thumbnails Advanced](https://wordpress.org/plugins/regenerate-thumbnails-advanced/) is another Wordpress plugin that will generate the correct sizes for your images, so you can serve them to a picture tag with different media sets. You can add the folloing code to your `functions.php` in your Wordpress theme:
 
-```
+```php
 add_theme_support('post-thumbnails');
 add_image_size('smcard', 360, 270);
 add_image_size('medcard', 480, 360);
@@ -243,17 +243,26 @@ Then generate the images with the following UI:
 
 The code to consume the images in your theme should look something like this:
 
-```
+```php
 $attachment_id = get_post_thumbnail_id( $post->ID ); // thumbnail ID
 $img_atts = wp_get_attachment_image_src( $attachment_id , 'medcard' ); // image url, width, height
 $img_title = ""; // get image title somehow
 ```
 
-```
+```html
 <picture>
-    <source media="(max-width: 960px)" srcset="<?php echo $img_atts[0]; ?>">
-    <source media="(max-width: 1280px)" srcset="<?php echo wp_get_attachment_image_url( $attachment_id, 'smcard' ) ?>">
-    <img class="rounded" src="<?php echo $img_atts[0]; ?>" width="<?php echo $img_atts[1]; ?>" height="<?php echo $img_atts[2]; ?>" alt="<?php echo $img_title; ?>">
+	<source media="(max-width: 960px)" srcset="<?php echo $img_atts[0]; ?>" />
+	<source
+		media="(max-width: 1280px)"
+		srcset="<?php echo wp_get_attachment_image_url( $attachment_id, 'smcard' ) ?>"
+	/>
+	<img
+		class="rounded"
+		src="<?php echo $img_atts[0]; ?>"
+		width="<?php echo $img_atts[1]; ?>"
+		height="<?php echo $img_atts[2]; ?>"
+		alt="<?php echo $img_title; ?>"
+	/>
 </picture>
 ```
 

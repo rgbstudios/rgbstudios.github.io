@@ -39,8 +39,9 @@ Most tab components I found either involve getting an entire UI kit, a lot of bo
 
 We'll simply export a list of `tabs` and then the index of the `activeTab`:
 
-```
-export let tabs, activeTab = 0;
+```js
+export let tabs,
+	activeTab = 0;
 ```
 
 ### The HTML
@@ -49,7 +50,7 @@ export let tabs, activeTab = 0;
 
 We want to loop through each tab and render them as a button with the tab name and with class `tab` for styling later.
 
-```
+```svelte
 {#each tabs as tab, idx}
 	<button class="tab">
 		{tab.name}
@@ -59,19 +60,19 @@ We want to loop through each tab and render them as a button with the tab name a
 
 Let's apply an active class if the tab is active:
 
-```
+```svelte
 class:active={idx === activeTab}
 ```
 
 And let's set the `activeTab` on click:
 
-```
+```svelte
 on:click={() => (activeTab = idx)}
 ```
 
 So far we've got:
 
-```
+```svelte
 {#each tabs as tab, idx}
 	<button class="tab" class:active={idx === activeTab} on:click={() => (activeTab = idx)}>
 		{tab.name}
@@ -83,7 +84,7 @@ So far we've got:
 
 Now let's render the content for each tab. We will only show the content for the active tab, and it will be a `component` like so:
 
-```
+```svelte
 {#each tabs as tab, idx}
 	{#if idx === activeTab}
 		<svelte:component this={tab.content} />
@@ -97,7 +98,7 @@ We simply pass in a component into `tab.component`. I'll show you under **Usage*
 
 Let's style our tabs, and make sure to style our active tabs differently.
 
-```
+```svelte
 <style lang="postcss">
 	.tab {
 		background-color: #f4f4f5;
@@ -115,9 +116,9 @@ You can of course add your own styles; this is just a bare minimum to get the co
 
 Here's the full file: 25 lines!
 
-```
+```svelte
 <script>
-	export let data = {}
+	export let data = {};
 
 	$: tabs = data.tabs;
 	$: activeTab = data.activeTab ?? 0;
@@ -154,13 +155,14 @@ Here's how you would use the tabs component in your app:
 
 `import Tabs from '$lib/components/Tabs.svelte';` (or wherever you saved it)
 
-```
+```svelte
 <Tabs
 	tabs={[
 		{ name: 'Home', content: PomodoroHome },
 		{ name: 'About', content: PomodoroAbout },
 		{ name: 'Settings', content: PomodoroSettings }
-	]} />
+	]}
+/>
 ```
 
 This of course has you importing the components from other files. I find it best practice to split things up into smaller files when possible, so long as the file structure is organized and it's not cluttered.
@@ -171,13 +173,13 @@ This of course has you importing the components from other files. I find it best
 
 To add a transition, simply import from `svelte/transition`:
 
-```
+```js
 import { fade } from 'svelte/transition';
 ```
 
 Then wrap the current tab in a `div` with `in:fade`:
 
-```
+```svelte
 <div in:fade>
 	<svelte:component this={tab.content} />
 </div>
@@ -187,7 +189,7 @@ Then wrap the current tab in a `div` with `in:fade`:
 
 You could add an icon to each tab:
 
-```
+```svelte
 <button class="tab" class:active={idx === activeTab} on:click={() => (activeTab = idx)}>
 	<Icon name={tab.icon} />
 	{tab.name}
@@ -196,13 +198,14 @@ You could add an icon to each tab:
 
 If you have an `Icon` component, and then implement it like so:
 
-```
+```svelte
 <Tabs
 	tabs={[
 		{ name: 'Home', icon: 'home', content: PomodoroHome },
 		{ name: 'About', icon: 'info_circle', content: PomodoroAbout },
 		{ name: 'Settings', icon: 'cog', content: PomodoroSettings }
-	]} />
+	]}
+/>
 ```
 
 ---

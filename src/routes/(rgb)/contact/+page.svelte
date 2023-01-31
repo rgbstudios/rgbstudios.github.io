@@ -35,27 +35,77 @@
 
 	<img class="w-full max-w-xl mx-auto" src="/img/pages/mobile_wireframe.svg" alt="" />
 
-	<!-- https://stackoverflow.com/a/12627093/4907950 -->
 	<div class="lg:grid lg:grid-cols-2 lg:gap-8">
-		<form action="mailto:contact@rgbstudios.org" method="GET">
+		<form id="contact-form">
 			<label for="subject">Subject</label>
 			<select id="subject" name="subject" class="select select-bordered w-full block">
-				<option>An existing web app</option>
-				<option>A new web app</option>
-				<option>A blog post</option>
-				<option>A quote for my existing website</option>
-				<option>A quote for a new website</option>
-				<option>A quote for style guide and brand identity</option>
+				<option value="An existing web app">An existing web app</option>
+				<option value="A new web app">A new web app</option>
+				<option value="A blog post">A blog post</option>
+				<option value="A quote for my existing website">A quote for my existing website</option>
+				<option value="A quote for a new website">A quote for a new website</option>
+				<option value="A quote for style guide and brand identity"
+					>A quote for style guide and brand identity</option
+				>
 			</select>
-			<label for="body" class="mt-6 block">Message</label>
+
+			<label for="from_email" class="mt-6 block">Email</label>
+			<input
+				required
+				type="email"
+				name="from_email"
+				id="from_email"
+				class="input input-bordered w-full"
+			/>
+
+			<label for="message" class="mt-6 block">Message</label>
 			<textarea
-				id="body"
-				name="body"
+				required
+				id="message"
+				name="message"
 				class="textarea textarea-bordered block w-full"
 				placeholder="Your message..."
 			/>
-			<input type="submit" value="Send" class="btn btn-primary mt-6" />
+
+			<input type="submit" id="contact-form-btn" value="Send Email" class="btn btn-primary mt-6" />
 		</form>
+
+		<script
+			type="text/javascript"
+			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+		>
+		</script>
+
+		<script type="text/javascript">
+			emailjs.init('eCcBFCDspEKglI10s');
+		</script>
+
+		<script>
+			const btn = document.getElementById('contact-form-btn');
+
+			document.getElementById('contact-form').addEventListener('submit', function (event) {
+				event.preventDefault();
+
+				btn.value = 'Sending...';
+
+				const serviceID = 'default_service';
+				const templateID = 'template_rrmeook';
+
+				emailjs.sendForm(serviceID, templateID, this).then(
+					() => {
+						btn.value = 'Send Email';
+						alert('Sent!');
+						console.log('Form submitted successfully');
+					},
+					(err) => {
+						btn.value = 'Send Email';
+						alert('There was an error');
+						console.error('Error submitting form: ' + JSON.stringify(err));
+					}
+				);
+			});
+		</script>
+
 		<img class="hidden lg:block w-64 h-64 ml-auto" src="/img/pages/mailbox.svg" alt="" />
 	</div>
 </article>
