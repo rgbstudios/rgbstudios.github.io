@@ -21,12 +21,14 @@
 		<a
 			class="link"
 			href="http://media.wizards.com/2014/downloads/dnd/PlayerDnDBasicRules_v0.2_PrintFriendly.pdf"
-			target="_blank">D&amp;D 5e Basic Rules for Players</a
+			target="_blank"
+			rel="noreferrer">D&amp;D 5e Basic Rules for Players</a
 		><br />
 		<a
 			class="link"
 			href="http://media.wizards.com/2014/downloads/dnd/DMBasicRulesv.0.3_PrinterFriendly.pdf"
-			target="_blank">D&amp;D 5e Basic Rules for DMs</a
+			target="_blank"
+			rel="noreferrer">D&amp;D 5e Basic Rules for DMs</a
 		>
 	</ul>
 </Modal>

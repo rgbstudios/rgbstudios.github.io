@@ -11,7 +11,7 @@
 		<p class="lg:hidden">{text}</p>
 		<p class="hidden lg:block">{longText}</p>
 		<div class="card-actions justify-end">
-			<a href={link} target="_blank" class="btn btn-primary">View</a>
+			<a href={link} target="_blank" rel="noreferrer" class="btn btn-primary">View</a>
 		</div>
 	</div>
 </div>

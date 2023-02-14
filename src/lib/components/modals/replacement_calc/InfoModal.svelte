@@ -33,17 +33,28 @@
 			class="link"
 			href="https://en.wikipedia.org/wiki/Hypergeometric_distribution"
 			target="_blank"
+			rel="noreferrer"
 		>
 			Wikipedia on Hypergeometric Distributions
 		</a>
 	</p>
 	<p>
-		<a class="link" href="https://en.wikipedia.org/wiki/Simple_random_sample" target="_blank">
+		<a
+			class="link"
+			href="https://en.wikipedia.org/wiki/Simple_random_sample"
+			target="_blank"
+			rel="noreferrer"
+		>
 			Wikipedia on Simple Random Samples
 		</a>
 	</p>
 	<p>
-		<a class="link" href="https://en.wikipedia.org/wiki/Urn_problem" target="_blank">
+		<a
+			class="link"
+			href="https://en.wikipedia.org/wiki/Urn_problem"
+			target="_blank"
+			rel="noreferrer"
+		>
 			Wikipedia on the Urn Problem
 		</a>
 	</p>
@@ -54,6 +65,7 @@
 			class="link"
 			href="https://web.ma.utexas.edu/users/parker/sampling/woreplshort.htm"
 			target="_blank"
+			rel="noreferrer"
 		>
 			UTexas provides formulas for sampling with and without replacement
 		</a>
