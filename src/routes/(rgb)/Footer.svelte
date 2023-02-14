@@ -46,6 +46,7 @@
 					class="hover:text-white"
 					href="https://twitter.com/rgbstudiosorg"
 					target="_blank"
+					rel="noreferrer"
 					aria-label="Twitter"
 				>
 					<Icon name="twitter" />
@@ -54,6 +55,7 @@
 					class="hover:text-white"
 					href="https://www.facebook.com/rgbstudios.org"
 					target="_blank"
+					rel="noreferrer"
 					aria-label="Facebook"
 				>
 					<Icon name="facebook" />

@@ -36,7 +36,7 @@ const projects = [
 		title: 'Color Picker',
 		text: 'A simple picker and converter web app with RGB, CMYK, HSL and HWB, and the ability to share and store colors. ',
 		img: '/img/projects/screenshots/color-picker.png',
-		link: '/projects/color-picker/',
+		link: '/project/color-picker/',
 		tags: ['color', 'converter', 'tool', 'web app', 'installable'],
 
 		isUpdated: true
@@ -47,7 +47,7 @@ const projects = [
 		title: 'D&D Dice',
 		text: 'Use D&D Dice Roller to easily roll any number of any dice, with modifiers and more',
 		img: '/img/projects/screenshots/dnd-dice.png',
-		link: '/projects/dnd-dice/',
+		link: '/project/dnd-dice/',
 		tags: ['dnd', 'games', 'die roller', 'web app'],
 
 		isPopular: true,
@@ -60,7 +60,7 @@ const projects = [
 		title: 'Grade Calc',
 		text: "Use Grade Calc to calculate students' grades quickly and simply",
 		img: '/img/projects/screenshots/grade-calc.png',
-		link: '/projects/grade-calc/',
+		link: '/project/grade-calc/',
 		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
@@ -69,7 +69,7 @@ const projects = [
 		title: 'Base Converter',
 		text: 'Convert numbers between binary, octal, decimal, hexadecimal, and more',
 		img: '/img/projects/screenshots/base-convert.png',
-		link: '/projects/base-convert/',
+		link: '/project/base-convert/',
 		tags: ['calculator', 'converter', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
@@ -78,7 +78,7 @@ const projects = [
 		title: 'Intersect Calc',
 		text: 'Use Intersection Calc to calculate the intersection point of lines',
 		img: '/img/projects/screenshots/intersect-calc.png',
-		link: '/projects/intersect-calc/',
+		link: '/project/intersect-calc/',
 		tags: ['calculator', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
@@ -95,7 +95,7 @@ const projects = [
 		title: 'Doodle Pad',
 		text: 'A simple website to doodle in your browser',
 		img: '/img/projects/screenshots/doodle-pad.png',
-		link: '/projects/doodle-pad/',
+		link: '/project/doodle-pad/',
 		tags: ['art', 'drawing', 'tool', 'web app'],
 
 		isUpdated: true
@@ -104,7 +104,7 @@ const projects = [
 		title: 'Morse Code Converter',
 		text: 'Use Morse Code Converter to convert both ways between English and Morse code',
 		img: '/img/projects/screenshots/morse-convert.png',
-		link: '/projects/morse-convert/',
+		link: '/project/morse-convert/',
 		tags: ['morse code', 'converter', 'tool', 'web app'],
 
 		isUpdated: true
@@ -121,7 +121,7 @@ const projects = [
 		title: 'Stat Calc',
 		text: 'Use Stat Calc to calculate many statistics on a data set',
 		img: '/img/projects/screenshots/stat-calc.png',
-		link: '/projects/stat-calc/',
+		link: '/project/stat-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
@@ -130,7 +130,7 @@ const projects = [
 		title: 'Binomial Calc',
 		text: 'Use Binomial Calc to calculate the probabilities of binomial distributions and see them represented by interactve graphs',
 		img: '/img/projects/screenshots/binomial-calc.png',
-		link: '/projects/binomial-calc/',
+		link: '/project/binomial-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
@@ -146,7 +146,7 @@ const projects = [
 		title: 'Barcode Generator',
 		text: 'Use Barcode Generator to generate a barcode for any text, then save or share the image. Generate a barcode for your Wifi for guests and more.',
 		img: '/img/projects/screenshots/barcode.png',
-		link: '/projects/barcode',
+		link: '/project/barcode',
 		tags: ['barcode', 'tool', 'web app'],
 
 		isUpdated: true
@@ -155,7 +155,7 @@ const projects = [
 		title: 'Simple Grade Calc',
 		text: 'Use Simple Grade Calc to easily calculate your grade',
 		img: '/img/projects/screenshots/simple-grade-calc.png',
-		link: '/projects/simple-grade-calc/',
+		link: '/project/simple-grade-calc/',
 		tags: ['grade calculator', 'calculator', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
@@ -164,7 +164,7 @@ const projects = [
 		title: 'Replacement Calc',
 		text: 'Use Replacement Calc to calculate the probabilities of picking a certain number of objects without replacement, such as picking marbles or cards',
 		img: '/img/projects/screenshots/replacement-calc.png',
-		link: '/projects/replacement-calc/',
+		link: '/project/replacement-calc/',
 		tags: ['statistics', 'calculator', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
