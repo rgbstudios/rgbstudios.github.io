@@ -8,9 +8,9 @@
 		<div>
 			<span class="footer-title">Projects</span>
 			<a class="footer-link" href="/projects">All</a>
-			<a class="footer-link" href="/projects?sort=popular">Popular</a>
-			<a class="footer-link" href="/projects?sort=new">New</a>
-			<a class="footer-link" href="/projects?sort=updated">Recently Updated</a>
+			<a class="footer-link" href="/projects/popular">Popular</a>
+			<a class="footer-link" href="/projects/new">New</a>
+			<a class="footer-link" href="/projects/updated">Recently Updated</a>
 		</div>
 		<div>
 			<span class="footer-title">Blog</span>
