@@ -239,9 +239,16 @@ slashes ( / )"
 
 <p>
 	Read about Morse Code on
-	<a class="link link-hover" href="https://en.wikipedia.org/wiki/Morse_code" target="_blank">
+	<a
+		class="link link-hover"
+		href="https://en.wikipedia.org/wiki/Morse_code"
+		target="_blank"
+		rel="noreferrer"
+	>
 		Wikipedia
 	</a>
 	and
-	<a class="link link-hover" href="https://morsecode.world/" target="_blank"> morsecode.world </a>
+	<a class="link link-hover" href="https://morsecode.world/" target="_blank" rel="noreferrer">
+		morsecode.world
+	</a>
 </p>

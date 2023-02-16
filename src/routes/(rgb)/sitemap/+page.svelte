@@ -17,9 +17,9 @@
 		<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
 			<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Projects</h2>
 			<a href="/projects">All Apps</a>
-			<a href="/projects?sort=popular">Popular Apps</a>
-			<a href="/projects?sort=new">New Apps</a>
-			<a href="/projects?sort=updated">Recently Updated</a>
+			<a href="/projects/popular">Popular Apps</a>
+			<a href="/projects/new">New Apps</a>
+			<a href="/projects/updated">Recently Updated</a>
 
 			<h2 class="block col-span-2 sm:col-span-3 md:col-span-4">Blog</h2>
 			<a href="/blog">All Posts</a>

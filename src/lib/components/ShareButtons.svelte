@@ -66,6 +66,7 @@
 		link
 	)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Facebook"
@@ -79,6 +80,7 @@
 		link
 	)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Twitter"
@@ -90,6 +92,7 @@
 <a
 	href="https://www.pinterest.com/pin/create/button/?url={encodeURIComponent(link)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Pinterest"
@@ -104,6 +107,7 @@
 		link
 	)}&app_id=1132946187618983&redirect_uri=https%3A%2F%2Frgbstudios.org"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Facebook Messenger"
@@ -117,6 +121,7 @@
 		link
 	)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Reddit"
@@ -128,6 +133,7 @@
 <a
 	href="https://www.linkedin.com/sharing/share-offsite/?url={encodeURIComponent(link)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Linkedin"
@@ -139,6 +145,7 @@
 <a
 	href="https://api.whatsapp.com/send?text={encodeURIComponent(title + ': ' + link)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Whatsapp"
@@ -153,6 +160,7 @@
 		'I thought you would enjoy ' + title + ':'
 	)}%0D%0A{encodeURIComponent(link)} &subject={encodeURIComponent(title)}"
 	target="_blank"
+	rel="noreferrer"
 	class="btn btn-outline"
 	class:light={!isDark}
 	title="Email"
