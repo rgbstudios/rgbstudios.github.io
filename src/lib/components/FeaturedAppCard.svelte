@@ -3,7 +3,7 @@
 </script>
 
 <div class="card lg:card-side bg-base-900 shadow-xl w-full">
-	<figure>
+	<figure class="flex-shrink-0">
 		<img src={img} alt={title} class="w-full h-64 lg:h-96 lg:w-96 object-cover object-top" />
 	</figure>
 	<div class="card-body">
