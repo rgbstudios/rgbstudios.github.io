@@ -14,7 +14,7 @@
 	"author": "Justin Golden",
 	"type": "module",
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.5",
+		"@sveltejs/adapter-netlify": "^2.0.5",
 		"@sveltejs/kit": "^1.7.1",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/lodash": "^4.14.191",
