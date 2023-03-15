@@ -23,9 +23,9 @@
 					</span>
 					<ul class="p-2 bg-base-900">
 						<li><a href="/projects">All Projects</a></li>
-						<li><a href="/projects?sort=popular">Popular</a></li>
-						<li><a href="/projects?sort=new">New</a></li>
-						<li><a href="/projects?sort=updated">Recently Updated</a></li>
+						<li><a href="/projects/popular">Popular</a></li>
+						<li><a href="/projects/new">New</a></li>
+						<li><a href="/projects/updated">Recently Updated</a></li>
 					</ul>
 				</li>
 				<li tabindex="0">
@@ -58,9 +58,9 @@
 				</a>
 				<ul class="p-2 bg-base-900">
 					<li><a href="/projects">All Projects</a></li>
-					<li><a href="/projects?sort=popular">Popular</a></li>
-					<li><a href="/projects?sort=new">New</a></li>
-					<li><a href="/projects?sort=updated">Recently Updated</a></li>
+					<li><a href="/projects/popular">Popular</a></li>
+					<li><a href="/projects/new">New</a></li>
+					<li><a href="/projects/updated">Recently Updated</a></li>
 				</ul>
 			</li>
 			<li tabindex="0">

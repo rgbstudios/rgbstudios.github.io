@@ -6,7 +6,7 @@ https://rgbstudios.org/
 
 ### Stack
 
-Svelte Kit, Tailwind CSS, Daisy UI, Netlify
+Svelte Kit, Tailwind CSS, Daisy UI, Netlify, EmailJS
 
 ### First time setup
 

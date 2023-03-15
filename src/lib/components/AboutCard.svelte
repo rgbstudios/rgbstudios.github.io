@@ -20,7 +20,13 @@
 	<a href="mailto:{email}" class="btn btn-outline" title="Email {title}">
 		<Icon name="envelope" />
 	</a>
-	<a href={link} target="_blank" class="btn btn-outline" title="{title}'s homepage">
+	<a
+		href={link}
+		target="_blank"
+		rel="noreferrer"
+		class="btn btn-outline"
+		title="{title}'s homepage"
+	>
 		<Icon name="home" />
 	</a>
 </div>
