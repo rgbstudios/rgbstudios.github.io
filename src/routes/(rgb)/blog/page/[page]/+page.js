@@ -18,6 +18,7 @@ export async function load({ fetch, params }) {
 	const res = await fetch('/blog/posts.json');
 	const posts = await res.json();
 
+	const totalPosts = posts.length;
 	const pagePosts = posts.splice(postsPerPage * (pageNum - 1), postsPerPage);
 
 	// Invalid page number, 404
@@ -25,5 +26,5 @@ export async function load({ fetch, params }) {
 		throw error(404, 'Not found');
 	}
 
-	return { posts: pagePosts, pageNum };
+	return { posts: pagePosts, pageNum, totalPosts };
 }

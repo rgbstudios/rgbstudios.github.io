@@ -10,10 +10,13 @@
 	import BlogGrid from '$lib/components/BlogGrid.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 
 	export let data = {};
 	$: posts = data.posts;
+
+	const postsPerPage = 12;
 
 	const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -88,7 +91,8 @@
 </form>
 
 {#if filteredPosts.length !== 0}
-	<BlogGrid posts={filteredPosts} />
+	<BlogGrid posts={filteredPosts.splice(0, postsPerPage)} />
+	<Pagination totalPosts={posts.length} currentPage="1" />
 {:else}
 	<article class="prose-custom mx-auto mt-8">
 		<p>

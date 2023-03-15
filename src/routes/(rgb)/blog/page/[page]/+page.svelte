@@ -1,6 +1,7 @@
 <script lang="ts">
 	import BlogGrid from '$lib/components/BlogGrid.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
+	import Pagination from '$lib/components/Pagination.svelte';
 
 	export let data;
 
@@ -34,4 +35,5 @@
 	</div>
 
 	<BlogGrid {posts} />
+	<Pagination totalPosts={data.totalPosts} currentPage={pageNum} />
 </article>
