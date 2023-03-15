@@ -64,7 +64,7 @@
 				</ul>
 			</li>
 			<li tabindex="0">
-				<a href="/blog" class:active={$page.url.pathname === '/blog'}>
+				<a href="/blog" class:active={$page.url.pathname.includes('/blog')}>
 					Blog
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
