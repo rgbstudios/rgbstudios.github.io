@@ -1,0 +1,29 @@
+blog search, category, and pagination all working together and testing
+
+redirect /blog/page/1 to /blog/page
+
+
+blog page testing:
+
+/blog/page
+/blog/page/
+/blog/page/0
+/blog/page/00
+/blog/page/01
+/blog/page/1
+/blog/page/2
+/blog/page/99
+/blog/page/-2
+/blog/page/2.2
+/blog/page/-2.2
+/blog/page//
+/blog/page/1/1
+/blog/page/1/abc
+/blog/page/1/
+/blog/page/2/
+/blog/page/99/1
+/blog/page/1/99
+/blog/page//2
+/blog/page//2/
+/blog/page/2/
+/blog/page//2//

@@ -92,7 +92,9 @@
 
 {#if filteredPosts.length !== 0}
 	<BlogGrid posts={filteredPosts.splice(0, postsPerPage)} />
-	<Pagination totalPosts={posts.length} currentPage="1" />
+	{#if searchTerm === ''}
+		<Pagination totalPosts={posts.length} currentPage="1" />
+	{/if}
 {:else}
 	<article class="prose-custom mx-auto mt-8">
 		<p>
