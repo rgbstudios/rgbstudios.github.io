@@ -25,7 +25,7 @@ keywords:
   <figcaption>Photo credit @campful on Unsplash</figcaption>
 </figure>
 
-**Java** is an old war tank. It's dated, can be intimidating to start using, and runs slow, but it'll work almost anywhere and it's resilient, and it does its purpose
+**Java** is an old war tank. It's dated, can be intimidating to start using, and runs slow, but it'll work almost anywhere and it's resilient, and it serves its purpose
 
 **JavaScript** is a bumble bee. It's small and annoying to many, but despite all known laws of aviation, it runs fast anyway, because the V8 engine doesn't care what humans think. It's easy to squish, but you can add bullet proof armor and a laser gun and night vision goggles and all sorts of cool features to power it up, but these start to weigh the bee down.
 

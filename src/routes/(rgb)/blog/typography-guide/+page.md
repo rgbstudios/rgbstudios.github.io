@@ -813,6 +813,8 @@ A **websafe font** is a font that comes with browsers, and is therefore "safe" t
 
 For more info on web safe CSS font stacks, check out [CSS Font Stack](https://www.cssfontstack.com/).
 
+If you want a font stack in a specific style, for example a Geometric Humanist font stack that uses native system fonts, try [modernfontstacks.com](https://modernfontstacks.com/)
+
 Syntax:
 
 - Browsers will try to load the first font specified
