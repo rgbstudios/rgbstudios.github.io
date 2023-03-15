@@ -1,4 +1,6 @@
 <script>
+	// TODO: handle many pages
+	// @link https://gist.github.com/kottenator/9d936eb3e4e3c3e02598?permalink_comment_id=4504389#gistcomment-4504389
 	export let totalPosts, currentPage;
 
 	const postsPerPage = 12;
