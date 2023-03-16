@@ -21,7 +21,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.52.0",
 		"@typescript-eslint/parser": "^5.52.0",
 		"autoprefixer": "^10.4.13",
-		"daisyui": "2.50.1",
+		"daisyui": "2.51.4",
 		"dino-color-picker": "^0.2.3",
 		"eslint": "^8.34.0",
 		"eslint-config-prettier": "^8.6.0",
