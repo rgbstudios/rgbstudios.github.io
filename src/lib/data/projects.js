@@ -4,7 +4,7 @@ const projects = [
 	{
 		title: 'Desktop Clock',
 		text: 'A simple, resizable customizable, installable clock for any device!',
-		img: 'https://desktopclock.app/img/screenshot.png',
+		img: '/img/projects/screenshots/desktop-clock.jpg',
 		link: 'https://desktopclock.app/',
 		tags: ['clock', 'stopwatch', 'worldclock', 'web app', 'tool', 'installable'],
 
