@@ -7,6 +7,47 @@
 
 <svelte:head>
 	<title>Contact | RGB Studios.org</title>
+
+	<!-- Email JS -->
+	<script
+		type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+	>
+	</script>
+
+	<script type="text/javascript">
+		emailjs.init('eCcBFCDspEKglI10s');
+	</script>
+
+	<script>
+		window.addEventListener('load', () => {
+			const btn = document.getElementById('contact-form-btn');
+			const form = document.getElementById('contact-form');
+
+			form.addEventListener('submit', function (event) {
+				event.preventDefault();
+
+				btn.value = 'Sending...';
+
+				const serviceID = 'default_service';
+				const templateID = 'template_rrmeook';
+
+				emailjs.sendForm(serviceID, templateID, this).then(
+					() => {
+						btn.value = 'Send Email';
+						alert('Sent!');
+						form.reset();
+						console.log('Form submitted successfully');
+					},
+					(err) => {
+						btn.value = 'Send Email';
+						alert('There was an error');
+						console.error('Error submitting form: ' + JSON.stringify(err));
+					}
+				);
+			});
+		});
+	</script>
 </svelte:head>
 
 <SEO
@@ -44,9 +85,10 @@
 				<option value="A blog post">A blog post</option>
 				<option value="A quote for my existing website">A quote for my existing website</option>
 				<option value="A quote for a new website">A quote for a new website</option>
-				<option value="A quote for style guide and brand identity"
-					>A quote for style guide and brand identity</option
-				>
+				<option value="A quote for style guide and brand identity">
+					A quote for style guide and brand identity
+				</option>
+				<option value="Other">Other</option>
 			</select>
 
 			<label for="from_email" class="mt-6 block">Email</label>
@@ -69,42 +111,6 @@
 
 			<input type="submit" id="contact-form-btn" value="Send Email" class="btn btn-primary mt-6" />
 		</form>
-
-		<script
-			type="text/javascript"
-			src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-		>
-		</script>
-
-		<script type="text/javascript">
-			emailjs.init('eCcBFCDspEKglI10s');
-		</script>
-
-		<script>
-			const btn = document.getElementById('contact-form-btn');
-
-			document.getElementById('contact-form').addEventListener('submit', function (event) {
-				event.preventDefault();
-
-				btn.value = 'Sending...';
-
-				const serviceID = 'default_service';
-				const templateID = 'template_rrmeook';
-
-				emailjs.sendForm(serviceID, templateID, this).then(
-					() => {
-						btn.value = 'Send Email';
-						alert('Sent!');
-						console.log('Form submitted successfully');
-					},
-					(err) => {
-						btn.value = 'Send Email';
-						alert('There was an error');
-						console.error('Error submitting form: ' + JSON.stringify(err));
-					}
-				);
-			});
-		</script>
 
 		<img class="hidden lg:block w-64 h-64 ml-auto" src="/img/pages/mailbox.svg" alt="" />
 	</div>

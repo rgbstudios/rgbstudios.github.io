@@ -8,9 +8,9 @@
 		<div>
 			<span class="footer-title">Projects</span>
 			<a class="footer-link" href="/projects">All</a>
-			<a class="footer-link" href="/projects?sort=popular">Popular</a>
-			<a class="footer-link" href="/projects?sort=new">New</a>
-			<a class="footer-link" href="/projects?sort=updated">Recently Updated</a>
+			<a class="footer-link" href="/projects/popular">Popular</a>
+			<a class="footer-link" href="/projects/new">New</a>
+			<a class="footer-link" href="/projects/updated">Recently Updated</a>
 		</div>
 		<div>
 			<span class="footer-title">Blog</span>
@@ -46,6 +46,7 @@
 					class="hover:text-white"
 					href="https://twitter.com/rgbstudiosorg"
 					target="_blank"
+					rel="noreferrer"
 					aria-label="Twitter"
 				>
 					<Icon name="twitter" />
@@ -54,6 +55,7 @@
 					class="hover:text-white"
 					href="https://www.facebook.com/rgbstudios.org"
 					target="_blank"
+					rel="noreferrer"
 					aria-label="Facebook"
 				>
 					<Icon name="facebook" />

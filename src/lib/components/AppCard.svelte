@@ -5,6 +5,7 @@
 <a
 	href={link}
 	target="_blank"
+	rel="noreferrer"
 	class="card bg-base-800 p-4 pt-0 ring-base-700 hover:ring-2 cursor-pointer no-underline"
 >
 	<div class="card-body">
