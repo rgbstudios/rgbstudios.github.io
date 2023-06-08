@@ -98,7 +98,7 @@ f36 fc9 -->
 <hr class="my-10" />
 
 <div class="grid md:grid-cols-2 my-10 md:my-0">
-	<ul class="p-4 list-disc list-inside text-lg sm:text-xl leading-relaxed my-auto">
+	<ul class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose my-auto">
 		<li>Shortcut keys for cut, copy, paste, select all, delete, undo, redo</li>
 		<li>Common keyboard shortcuts like ctrl+X, ctrl+C, ctrl+V work</li>
 		<li>Download as text file</li>
@@ -115,7 +115,7 @@ f36 fc9 -->
 		alt="chrome notes screenshot"
 	/>
 	<ul
-		class="order-0 md:order-1 p-4 list-disc list-inside text-lg sm:text-xl leading-relaxed my-auto"
+		class="order-0 md:order-1 p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose my-auto"
 	>
 		<li>Store multiple notes</li>
 		<li>Custom font size</li>
@@ -127,7 +127,7 @@ f36 fc9 -->
 </div>
 
 <div class="grid md:grid-cols-2 my-10 md:my-0">
-	<ul class="p-4 list-disc list-inside text-lg sm:text-xl leading-relaxed my-auto">
+	<ul class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose my-auto">
 		<li>Night mode</li>
 		<li>Focus mode</li>
 		<li>Works offline</li>
