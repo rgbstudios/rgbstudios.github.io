@@ -98,24 +98,30 @@ f36 fc9 -->
 <hr class="my-10" />
 
 <div class="grid md:grid-cols-2 my-10 md:my-0">
-	<ul class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose my-auto">
+	<ul
+		class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose m-auto max-w-sm"
+	>
 		<li>Shortcut keys for cut, copy, paste, select all, delete, undo, redo</li>
 		<li>Common keyboard shortcuts like ctrl+X, ctrl+C, ctrl+V work</li>
 		<li>Download as text file</li>
 		<li>Read note (or selection) out loud</li>
 		<li>Spellcheck</li>
 	</ul>
-	<img src="/img/projects/screenshots/chrome-notes.png" alt="chrome notes screenshot" />
+	<img
+		class="mr-auto"
+		src="/img/projects/screenshots/chrome-notes.png"
+		alt="chrome notes screenshot"
+	/>
 </div>
 
 <div class="grid md:grid-cols-2 my-10 md:my-0">
 	<img
-		class="order-1 md:order-0"
+		class="order-1 md:order-0 ml-auto"
 		src="/img/projects/screenshots/chrome-notes-menu.png"
 		alt="chrome notes screenshot"
 	/>
 	<ul
-		class="order-0 md:order-1 p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose my-auto"
+		class="order-0 md:order-1 p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose m-auto max-w-sm"
 	>
 		<li>Store multiple notes</li>
 		<li>Custom font size</li>
@@ -127,7 +133,9 @@ f36 fc9 -->
 </div>
 
 <div class="grid md:grid-cols-2 my-10 md:my-0">
-	<ul class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose my-auto">
+	<ul
+		class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose m-auto max-w-sm"
+	>
 		<li>Night mode</li>
 		<li>Focus mode</li>
 		<li>Works offline</li>
@@ -135,14 +143,34 @@ f36 fc9 -->
 		<li>No in app purchases</li>
 		<li>Less than 0.1mb</li>
 	</ul>
-	<img src="/img/projects/screenshots/chrome-notes-night.png" alt="chrome notes screenshot" />
+	<img
+		class="mr-auto"
+		src="/img/projects/screenshots/chrome-notes-night.png"
+		alt="chrome notes screenshot"
+	/>
 </div>
 
 <div class="grid gap-10 md:gap-0 md:grid-cols-2 my-10 md:my-0">
-	<img src="/img/projects/screenshots/chrome-notes-help.png" alt="chrome notes screenshot" />
-	<img src="/img/projects/screenshots/chrome-notes-focus-mode.png" alt="chrome notes screenshot" />
-	<img src="/img/projects/screenshots/chrome-notes-more-tips.png" alt="chrome notes screenshot" />
-	<img src="/img/projects/screenshots/chrome-notes-shortcuts.png" alt="chrome notes screenshot" />
+	<img
+		class="ml-auto"
+		src="/img/projects/screenshots/chrome-notes-help.png"
+		alt="chrome notes screenshot"
+	/>
+	<img
+		class="mr-auto"
+		src="/img/projects/screenshots/chrome-notes-focus-mode.png"
+		alt="chrome notes screenshot"
+	/>
+	<img
+		class="ml-auto"
+		src="/img/projects/screenshots/chrome-notes-more-tips.png"
+		alt="chrome notes screenshot"
+	/>
+	<img
+		class="mr-auto"
+		src="/img/projects/screenshots/chrome-notes-shortcuts.png"
+		alt="chrome notes screenshot"
+	/>
 </div>
 
 <hr class="my-10" />
