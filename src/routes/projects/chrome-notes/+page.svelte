@@ -136,6 +136,13 @@ f36 fc9 -->
 	<img src="/img/projects/screenshots/chrome-notes-night.png" alt="chrome notes screenshot" />
 </div>
 
+<div class="grid gap-10 md:gap-0 md:grid-cols-2 my-10 md:my-0">
+	<img src="/img/projects/screenshots/chrome-notes-help.png" alt="chrome notes screenshot" />
+	<img src="/img/projects/screenshots/chrome-notes-focus-mode.png" alt="chrome notes screenshot" />
+	<img src="/img/projects/screenshots/chrome-notes-more-tips.png" alt="chrome notes screenshot" />
+	<img src="/img/projects/screenshots/chrome-notes-shortcuts.png" alt="chrome notes screenshot" />
+</div>
+
 <hr class="my-10" />
 
 <h3 class="text-xl mt-10 mb-4">Also available for Edge and Firefox:</h3>
