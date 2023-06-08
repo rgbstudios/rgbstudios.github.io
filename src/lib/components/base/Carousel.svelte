@@ -12,6 +12,8 @@
 	export let activeIndex: number = 0;
 	export let duration: number = 1000;
 
+	export let buttonStyle = 'primary';
+
 	export let autoScroll: boolean = true;
 	export let autoScrollDuration: number = 5000;
 	let autoScrollInterval;
@@ -65,7 +67,10 @@
 	<!-- Prev -->
 	<button
 		aria-label="Previous slide"
-		class="z-10 absolute bg-primary p-2 lg:p-4 text-lg top-1/2 -translate-y-1/2 rotate-180 hover:bg-green-700 transition"
+		class="z-10 absolute p-2 lg:p-4 text-lg top-1/2 -translate-y-1/2 rotate-180 transition-colors {buttonStyle ===
+		'primary'
+			? 'bg-primary hover:bg-green-700'
+			: 'bg-base-900 hover:bg-base-800'}"
 		on:click={prev}
 	>
 		<Icon name="chevron_right" />
@@ -85,7 +90,10 @@
 	<!-- Next -->
 	<button
 		aria-label="Next slide"
-		class="z-10 absolute bg-primary p-2 lg:p-4 text-lg top-1/2 right-0 -translate-y-1/2 hover:bg-green-700 transition"
+		class="z-10 absolute p-2 lg:p-4 text-lg top-1/2 right-0 -translate-y-1/2 transition-colors {buttonStyle ===
+		'primary'
+			? 'bg-primary hover:bg-green-700'
+			: 'bg-base-900 hover:bg-base-800'}"
 		on:click={next}
 	>
 		<Icon name="chevron_right" />
@@ -95,7 +103,7 @@
 		{#each items as _, index}
 			<button
 				aria-label="Go to slide {index + 1}"
-				class="w-4 h-4 rounded-full bg-white opacity-50 transition"
+				class="w-4 h-4 rounded-full bg-white/50 hover:bg-white transition"
 				class:opacity-100={index === activeIndex}
 				on:click={() => goto(index)}
 			/>
