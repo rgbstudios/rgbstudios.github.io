@@ -5,8 +5,8 @@
 	import { shareApp } from '$lib/components/ShareButtons.svelte';
 
 	const slides = [
-		'chrome-notes-store-0.png',
 		'chrome-notes-store-1.png',
+		'chrome-notes-store-0.png',
 		'chrome-notes-store-2.png',
 		'chrome-notes-store-3.png'
 	];
