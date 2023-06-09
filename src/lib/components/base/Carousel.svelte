@@ -103,8 +103,8 @@
 		{#each items as _, index}
 			<button
 				aria-label="Go to slide {index + 1}"
-				class="w-4 h-4 rounded-full bg-white/50 hover:bg-white transition"
-				class:opacity-100={index === activeIndex}
+				class="w-4 h-4 rounded-full bg-white hover:opacity-100 transition"
+				class:opacity-50={index !== activeIndex}
 				on:click={() => goto(index)}
 			/>
 		{/each}
