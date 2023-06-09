@@ -235,4 +235,8 @@ f36 fc9 -->
 	.btn:hover {
 		background-color: #f36;
 	}
+
+	li {
+		list-style-image: url('/img/projects/icons/chrome-notes.svg');
+	}
 </style>
