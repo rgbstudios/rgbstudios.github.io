@@ -47,7 +47,7 @@
 <!-- f90
 f36 fc9 -->
 
-<div class="grid gap-4 lg:grid-cols-2 items-center bg-[#f36] p-10 mb-10">
+<div class="grid gap-4 lg:grid-cols-2 items-center bg-[#f36]/50 p-10 mb-10">
 	<div>
 		<h2 class="text-2xl my-4">A simple notepad extension for Google Chrome</h2>
 		<p class="text-lg mb-10">
