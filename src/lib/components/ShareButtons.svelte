@@ -1,3 +1,17 @@
+<script context="module">
+	export function shareApp(shareTitle, shareText, shareLink) {
+		navigator.share &&
+			navigator
+				.share({
+					title: shareTitle,
+					text: shareText,
+					url: shareLink
+				})
+				.then(() => console.log('Successful share'))
+				.catch((err) => console.log('Error sharing', err));
+	}
+</script>
+
 <script>
 	// https://github.com/bradvin/social-share-urls/blob/master/code/javascript/javascript/social-share-media.js
 
@@ -44,18 +58,6 @@
 			}
 		);
 		return result;
-	}
-
-	export function shareApp(shareTitle, shareText, shareLink) {
-		navigator.share &&
-			navigator
-				.share({
-					title: shareTitle,
-					text: shareText,
-					url: shareLink
-				})
-				.then(() => console.log('Successful share'))
-				.catch((err) => console.log('Error sharing', err));
 	}
 
 	$: copied = false;
