@@ -17,6 +17,78 @@
 		edge: 'https://microsoftedge.microsoft.com/addons/detail/edge-notes/fiigjfolhmeakepmplcmljcnonjggine',
 		firefox: 'https://addons.mozilla.org/en-GB/firefox/addon/ff-notes/'
 	};
+
+	const reviews = [
+		// {
+		// 	stars: 5,
+		// 	date: 'May 14, 2023',
+		// 	author: 'Sidharth Vardhan',
+		// 	quote:
+		// 		'I hope developers try to develop this extensions. Not only this app has dark mode but also abilty to open in a separate window'
+		// },
+		{
+			stars: 5,
+			date: 'Feb 3, 2023',
+			author: 'Hristo Mihovski',
+			quote:
+				'They are very handy when I do my projects for science and to write the most important stuff that I need. Love it!'
+		},
+		{
+			stars: 5,
+			date: 'Jan 27, 2023',
+			author: 'Briana',
+			quote:
+				"A very nice note taking app! It has nice features like undo,  redo, titling notes, saving multiple notes at once, exporting, and even read aloud and spellcheck! It is super convenient for when I have an idea and don't want to loose it."
+		},
+		{
+			stars: 5,
+			date: 'Nov 11, 2022',
+			author: 'Yum Yum',
+			quote:
+				'For me, this is the most simplest yet straight forward functionality. The feature I love the most that is not present in other web note is this can be opened in new window, completely detached from the web...floating anywhere in my desktop. Keep it up. '
+		},
+		{
+			stars: 5,
+			date: 'Sep 20, 2022',
+			author: 'Mary Angel Pamintuan',
+			quote: 'I use it for work and it is very helpful. I like the simplicity!'
+		},
+		{
+			stars: 5,
+			date: 'Jun 23, 2022',
+			author: 'hello hello',
+			quote:
+				'This is sooo helpful! Thank you so much. The new feature of adding multiple notes is exactly what I wanted for this extension. Thanks!'
+		},
+		{
+			stars: 5,
+			date: 'Jan 14, 2022',
+			author: 'Shekhar Singh',
+			quote:
+				'It is a great tool for anyone who just wants a simple and effective notepad with them whenever they need it the most. Great work devs.'
+		},
+		{
+			stars: 5,
+			date: 'Feb 22, 2021',
+			author: 'Jenna Dos Ramos',
+			quote:
+				'Chrome notes is an free, easy fast way to take notes without registration or login. It is perfect for writing to-do lists and taking notes during online class or working from home. All my notes are saved and I absolutely love how there is a dark mode for those late night study sessions. Other helpful tools they offer include keyboard short cuts, deleting your current notepad, downloading the file, immersive reader, and copy paste buttons. Overall would rate 10/10!'
+		},
+		{
+			stars: 5,
+			date: 'Jan 8, 2020',
+			author: 'Richard Alder',
+			quote:
+				'I’m really happy :). Your Note taking extension comes very light and  handy. It’s awesome.'
+		},
+		{
+			stars: 5,
+			date: 'Feb 8, 2019',
+			author: 'nakamura 0',
+			quote:
+				'Finally found a fast, simple note app that’s free, requires no registration or logins, and doesn’t vacum personal data. If you don’t require bloated software for simple tasks, Chrome Notes is perfect.'
+		}
+	];
 </script>
 
 <ProjectHeader
@@ -172,6 +244,33 @@ f36 fc9 -->
 		alt="chrome notes screenshot"
 	/>
 </div>
+
+<hr class="my-10" />
+
+<h3 class="text-center text-2xl my-4">60,000+ happy users, 100+ reviews and 4.5/5 stars average</h3>
+
+<Carousel
+	let:item={review}
+	items={reviews.map((review, i) => ({ id: i, ...review }))}
+	buttonStyle="secondary"
+>
+	<div class="text-center mx-16 mt-10 mb-20">
+		<div class="flex justify-center text-[#f90] mb-6">
+			{#each Array(review.stars) as _}
+				<Icon name="star_fill" />
+			{/each}
+			{#each Array(5 - review.stars) as _}
+				<Icon name="star" />
+			{/each}
+		</div>
+
+		<div class="mx-10">
+			<Icon name="quote" class="h-8" />
+			<p class="text-xl my-2">{review.quote}</p>
+			<Icon name="quote_end" class="h-8 ml-auto" />
+		</div>
+	</div>
+</Carousel>
 
 <hr class="my-10" />
 
