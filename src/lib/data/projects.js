@@ -4,7 +4,7 @@ const projects = [
 	{
 		title: 'Desktop Clock',
 		text: 'A simple, resizable customizable, installable clock for any device!',
-		img: 'https://desktopclock.app/img/screenshot.png',
+		img: '/img/projects/screenshots/desktop-clock.jpg',
 		link: 'https://desktopclock.app/',
 		tags: ['clock', 'stopwatch', 'worldclock', 'web app', 'tool', 'installable'],
 
@@ -22,7 +22,7 @@ const projects = [
 		title: 'Chrome Notes',
 		text: 'A simple notepad extension for Google Chrome',
 		img: '/img/projects/screenshots/chrome-notes.png',
-		link: 'https://chrome.google.com/webstore/detail/chrome-notes/lnfempckkegmaeleniojhjplemmebgfi',
+		link: '/projects/chrome-notes/',
 		tags: ['notepad', 'extension', 'tool', 'installable'],
 
 		isPopular: true,

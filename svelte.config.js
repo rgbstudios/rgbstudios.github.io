@@ -24,7 +24,17 @@ const config = {
 		})
 	],
 	kit: {
-		adapter: adapter()
+		/**
+		 * edge: we use edge functions
+		 * split: split every route into its own function, which we do not want
+		 * we want one function for all routes to keep the function warm -> higher chance no coldstart
+		 * @link https://kit.svelte.dev/docs/adapter-netlify
+		 * @link https://www.netlify.com/pricing/
+		 */
+		adapter: adapter({
+			edge: true,
+			split: false
+		})
 	}
 };
 

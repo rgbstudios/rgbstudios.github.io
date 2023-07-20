@@ -16,10 +16,20 @@
 			</p>
 		</div>
 		<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-			<a class="hover:text-white" href="https://twitter.com/rgbstudiosorg" target="_blank">
+			<a
+				class="hover:text-white"
+				href="https://twitter.com/rgbstudiosorg"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<Icon name="twitter" />
 			</a>
-			<a class="hover:text-white" href="https://www.facebook.com/rgbstudios.org" target="_blank">
+			<a
+				class="hover:text-white"
+				href="https://www.facebook.com/rgbstudios.org"
+				target="_blank"
+				rel="noreferrer"
+			>
 				<Icon name="facebook" />
 			</a>
 		</div>
