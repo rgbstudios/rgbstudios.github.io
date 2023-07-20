@@ -3,7 +3,7 @@ layout: blog_layout
 title: 'A Simple Guide to Redirects in Svelte Kit'
 slug: 'redirects-in-svelte-kit'
 date: '2022/09/16'
-updated_date: '2022/09/16'
+updated_date: '2023/07/20'
 author: 'Justin Golden'
 preview_text: 'Read on for a ten line imlementation to handling as many redirects as you need in your Svelte Kit project.'
 img: '/img/blog/redirect_road.avif'
@@ -23,36 +23,19 @@ You want to handle redirects without creating a new page or a lot of code for ea
 
 ### The Solution
 
-Create a `hooks.js` file in your `routes` directory:
+Create a `hooks.server.js` file in your `src` directory:
 
 ```js
-import redirects from './data/redirects';
+import { redirect, type Handle } from '@sveltejs/kit';
 
-/** @type {import('@sveltejs/kit').Handle} */
-export async function handle({ event, resolve }) {
-	const redirect = redirects.find((item) => event.url.pathname === item.source);
+const redirects = {
+	'/test1': '/test2'
+};
 
-	if (redirect) {
-		return new Response('', { status: 301, headers: { Location: redirect.destination } });
-	}
-
-	const response = await resolve(event);
-	return response;
-}
-```
-
-_(optional)_ Create `redirects.js` (in my example in my `data` directory):
-(alternatively, you could just store this object inside of `hooks.js`, but I like to keep them separate)
-
-```js
-const redirects = [
-	{
-		source: '/test1',
-		destination: '/test2'
-	}
-];
-
-export default redirects;
+export const handle: Handle = async ({ event, resolve }) => {
+	if (redirects[event.url.pathname]) throw redirect(301, redirects[event.url.pathname]);
+	return await resolve(event);
+};
 ```
 
 <figure>
@@ -65,30 +48,38 @@ export default redirects;
 
 ### The Details
 
-For starters, I think the `redirects` file is fairly self-explanatory, but I'll give it a go anyways. We export a list of redirect objects, which contain `sources` and `destinations`. We redirect from the source to the destination. Each `source` should be unique.
+1. We first define a mapping of `redirects` which will direct from the key (eg. `/test1`) to the value (eg. `/test2`).
+
+2. We export a `handle` function, which takes in the `event` which represents the request and a `resolve` function which generates a response (in our case, rendering a page, see the [docs](https://kit.svelte.dev/docs/hooks#handle)):
+
+```js
+export async function handle({ event, resolve }) {
+```
+
+3. We then check to see if `redirects` contains the current page (`event.url.pathname`):
+
+```js
+if (redirects[event.url.pathname])
+```
+
+4. If the redirect exists, then we return a response with status 301 (permanent redirect, 302 is temporary, [Status code 301](https://justingolden.me/status-codes/#301)) to the new location, `redirects[event.url.pathname])`
+
+```js
+throw redirect(301, redirects[event.url.pathname]);
+```
+
+Basically, the code would check if `redirects` contains that key and if so redirect to the value, so if the value exists, redirect to it:
+
+```js
+if ('/test2') throw redirect(301, '/test2');
+```
+
+5. If there is no redirect, then we simply resolve the event and return that response, not changing anything from default behavior.
+
+```js
+return await resolve(event);
+```
 
 ---
 
-1. The `hooks` file first imports our `redirects`:
-
-`import redirects from './data/redirects';`
-
-2. Then sets the typing for typescript / syntax highlighting (you can remove this but it's nice to have):
-
-`/** @type {import('@sveltejs/kit').Handle} */`
-
-3. We export a the `handle` function, which takes in the `event` which represents the request and a `resolve` function which generates a response (in our case, rendering a page, see the [docs](https://kit.svelte.dev/docs/hooks#handle)):
-
-`export async function handle({ event, resolve }) {`
-
-4. We then check to see if any `redirects` contains the current page (`event.url.pathname`) as a `source`:
-
-`const redirect = redirects.find((item) => event.url.pathname === item.source);`
-
-5. If the redirect exists, then we return a response with status 301 (permanent redirect, 302 is temporary, [Status code 301](https://justingolden.me/status-codes/#301)) to the new location, `redirect.destination`
-
-`return new Response('', { status: 301, headers: { Location: redirect.destination } });`
-
-6. If there is no redirect, then we simply resolve the event and return that response, not changing anything form default behavior.
-
-`const response = await resolve(event); return response;`
+_Thank you KTibow for helping update this article to the latest version of SvelteKit. Updated 07/20/2023_
