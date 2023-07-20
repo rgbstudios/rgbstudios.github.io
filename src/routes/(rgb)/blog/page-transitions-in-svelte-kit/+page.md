@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Page Transitions in Svelte Kit'
 slug: 'page-transitions-in-svelte-kit'
-date: '2023/04/07'
-updated_date: '2023/04/07'
+date: '2023/07/20'
+updated_date: '2023/07/20'
 author: 'Justin Golden'
 preview_text: 'A simple guide to page transitions in your svelte kit project'
 img: '/img/blog/moving_train.avif'

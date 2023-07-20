@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'How to Disable Specific TypeScript Rules'
 slug: 'disable-typescript-rules'
-date: '2023/04/07'
-updated_date: '2023/04/07'
+date: '2023/07/20'
+updated_date: '2023/07/20'
 author: 'Justin Golden'
 preview_text: 'Learn how to disable and ignore TypeScript warnings and errors by line, by file, and by project'
 img: '/img/blog/mute_light.avif'

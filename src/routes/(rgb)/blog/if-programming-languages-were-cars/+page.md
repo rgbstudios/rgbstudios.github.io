@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'If Programming Languages were cars'
 slug: 'if-programming-languages-were-cars'
-date: '2023/02/03'
-updated_date: '2023/02/03'
+date: '2023/07/20'
+updated_date: '2023/07/20'
 author: 'Justin Golden'
 preview_text: 'We analyze a few popular programming languages and compare them to cars (and other vehicles)'
 img: '/img/blog/car.avif'
@@ -36,3 +36,5 @@ keywords:
 If **HTML** was a vehicle, it would be a rock. It's not a programming language.
 
 **C#** would be a fighter plane. It's cool, runs fast, and beats the hell out of Java, but it can be expensive. It goes most places but not restricted air space (Mac)
+
+**Assembly** is a Ford Model T. It's old, it's simple, and it's beautiful, but you could probably use a better tool for the job.
