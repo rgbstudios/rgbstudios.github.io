@@ -202,7 +202,7 @@
 	isCondensed={true}
 />
 
-<div class="sm:btn-group justify-center">
+<div class="sm:btn-group justify-center sm:flex">
 	<ModalButton
 		_for="dnd-dice-mods-modal"
 		class="bg-white border-2 border-base-200 hover:bg-base-200 hover:border-base-200 mb-2 sm:mb-0 sm:border-r-0"
@@ -370,6 +370,10 @@
 
 	button.btn-info {
 		@apply text-white;
+	}
+
+	.btn-group {
+		@apply flex;
 	}
 
 	.btn-group button:not(:last-child) {
