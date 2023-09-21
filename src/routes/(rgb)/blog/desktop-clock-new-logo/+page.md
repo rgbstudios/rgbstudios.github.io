@@ -83,6 +83,10 @@ We also use the updated page icons in the `/more` page as well!
 
 ### Out in the Wild
 
+#### Android Splash Screen
+
+<img src="/img/blog/posts/desktop_clock_rebrand_android_splash_screen.png" alt="" class="max-w-md">
+
 #### Install prompt
 
 <img src="/img/blog/posts/desktop_clock_rebrand_install_prompt.png" alt="">
@@ -94,6 +98,7 @@ We also use the updated page icons in the `/more` page as well!
 ### In Windows
 
 <img src="/img/blog/posts/desktop_clock_rebrand_windows.png" alt="">
+<img src="/img/blog/posts/desktop_clock_rebrand_windows_tile.png" alt="">
 
 ### Different Operating Systems
 
