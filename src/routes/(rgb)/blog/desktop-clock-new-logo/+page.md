@@ -95,6 +95,12 @@ We also use the updated page icons in the `/more` page as well!
 
 <img src="/img/blog/posts/desktop_clock_rebrand_windows.png" alt="">
 
+### Different Operating Systems
+
+Rendered by realfavicongenerator.net
+
+<img src="/img/blog/posts/desktop_clock_rebrand_different_os.png" alt="">
+
 <!-- TODO: add images from facebook, twitter share screenshots, installed in android, iphone -->
 
 ---
