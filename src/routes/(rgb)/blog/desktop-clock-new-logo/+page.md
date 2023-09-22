@@ -99,6 +99,7 @@ We also use the updated page icons in the `/more` page as well!
 
 <img src="/img/blog/posts/desktop_clock_rebrand_windows.png" alt="">
 <img src="/img/blog/posts/desktop_clock_rebrand_windows_tile.png" alt="">
+<img src="/img/blog/posts/desktop_clock_rebrand_windows_icon.png" alt="">
 
 ### Different Operating Systems
 
