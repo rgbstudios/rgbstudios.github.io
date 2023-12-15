@@ -22,7 +22,7 @@ const projects = [
 		title: 'Chrome Notes',
 		text: 'A simple notepad extension for Google Chrome',
 		img: '/img/projects/screenshots/chrome-notes.png',
-		link: 'https://chrome.google.com/webstore/detail/chrome-notes/lnfempckkegmaeleniojhjplemmebgfi',
+		link: '/projects/chrome-notes/',
 		tags: ['notepad', 'extension', 'tool', 'installable'],
 
 		isPopular: true,
