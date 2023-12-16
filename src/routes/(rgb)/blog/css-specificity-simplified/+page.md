@@ -63,3 +63,5 @@ Basically, you count the number of IDs, classes, and types used. The number of I
 A type would be like "div" or "button" and class could also be states like `:hover` or square brackets like `[role=button]` as shown above.
 
 For those new to HTML and CSS, IDs are unique and targeted with a `#`, for example: `#my-id` and multiple elements can have the same class, and they are targeted with a `.`, for example: `.my-class`.
+
+Here's a link for some more reading on [css-tricks.com](https://css-tricks.com/specifics-on-css-specificity/).
