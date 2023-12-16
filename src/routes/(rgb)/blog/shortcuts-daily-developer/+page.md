@@ -44,7 +44,7 @@ Some of these are simple, and some more complex. I'm listing all of the shortcut
 - `Ctrl Shift F` - Find in all files (`Ctrl Shift E` is files and `Ctrl Shift G` is git)
 - `Ctrl P` - Type file name to open
 - `Alt Z` - Toggle line wrap
-- `Alt Arrows` - Move selected lines up/down, or change files left/right
+- `Alt Arrows` - Move selected lines up/down, or change files left/right (can select multiple lines to move)
 - `Ctrl \` - Split editor
 - `Ctrl Shift V` - Preview Markdown
 - `Ctrl W` - Close tab window (currently open file) (works in browser to close current tab)
