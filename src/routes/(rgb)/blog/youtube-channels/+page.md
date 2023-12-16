@@ -256,4 +256,9 @@ Bonus mention of [this story about fonts](https://youtu.be/WVfRxFwVHQc?si=ntn-yY
 - About: HAI makes entertaining short videos on all sorts of weird and interesting topics. These videos are likable for pretty much anyone. He's got another channel called Wendover Productions that has longer videos and focuses more on trains and planes. The videos are funny and entertaining, and cover lots of random facts you didn't need to know. Other videos to watch are about how fake meat saved dippin dots, cars trick you with engine noises, and the london underground gets hotter every year. The Infographics Show has similar videos, but is more focused on military and less comedic.
 - Recommended Video: [Porsche Owns Volkswagen and Volkswagen Owns Porsche](https://youtu.be/tlfmaBsZQ5U?si=vILiQAaVyyt1nvGH)
 
+[Solar Sands](https://www.youtube.com/@SolarSands)
+
+- About: Solar Sands makes all sorts of interesting artsy / historic videos. Videos are often philosophical and/or about art and art styles. Monumentality, and The canvas of babel are also recommended videos.
+- Recommended Video: [The Secret Darker Art of Dr. Seuss](https://youtu.be/3WSk86uIx2E?si=uJcvrI3Cyl7QW3Pr)
+
 Bonus mention of [Animation vs physics](https://youtu.be/ErMSHiQRnc8?si=OP-fkWTEZ_D0WCSE) by [Alan Becker](https://www.youtube.com/@alanbecker).
