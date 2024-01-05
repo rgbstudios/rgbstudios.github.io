@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'How to Create a Svelte Kit Store That Syncs With Local Storage - Svelte 5'
 slug: 'svelte-kit-local-storage-store'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Create a Svelte Kit store that automatically syncs with localStorage in Svelte 5'
 img: '/img/blog/storage.avif'

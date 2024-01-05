@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Guide to Position in CSS'
 slug: 'css-position-guide'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Learn about the different position properties in CSS'
 img: '/img/blog/chess_position.avif'

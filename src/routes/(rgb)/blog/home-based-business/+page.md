@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Home Sweet Home Based Business'
 slug: 'home-based-business'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Learn how to create your business from home with this simple must read checklist'
 img: '/img/blog/home_business.avif'

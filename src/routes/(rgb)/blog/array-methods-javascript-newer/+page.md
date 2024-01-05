@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Array Methods in JavaScript - Part 3: New Methods in 2024'
 slug: 'array-methods-javascript-newer'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Learn about new array methods coming soon to a browser near you!'
 img: '/img/blog/solar_array_3.avif'

@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Array Methods in JavaScript - Part 1: The Basics'
 slug: 'array-methods-javascript'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Learn about many different array methods in JavaScript - Great read for all skill sets!'
 img: '/img/blog/solar_array.avif'

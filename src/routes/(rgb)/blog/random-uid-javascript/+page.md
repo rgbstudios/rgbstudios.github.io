@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'How to Easily Create a Random UID in JavaScript'
 slug: 'random-uid-javascript'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'A simple solution to generating a random UID in JavaScript'
 img: '/img/blog/passport.avif'

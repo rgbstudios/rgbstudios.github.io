@@ -2,12 +2,12 @@
 layout: blog_layout
 title: 'Shortcuts I Use Daily as a Web Developer'
 slug: 'shortcuts-daily-developer'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: "Learn about Justin's most used keyboard shortcuts in VS Code, Chrome, Windows, and more"
 img: '/img/blog/keycaps.avif'
-categories: ['web']
+categories: ['programming', 'web']
 keywords:
   [
     'learn js arrays',

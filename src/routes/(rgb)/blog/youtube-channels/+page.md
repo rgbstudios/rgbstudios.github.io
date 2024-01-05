@@ -2,8 +2,8 @@
 layout: blog_layout
 title: 'Educational, Entertaining, and Fun Channels for Programming, Engineering, History, and More'
 slug: 'youtube-channels'
-date: '2023/12/15'
-updated_date: '2023/12/15'
+date: '2024/01/04'
+updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'A great list of YouTube channels to check out to learn more about programming, engineering, how things work, or miscellaneous fun topics'
 img: '/img/blog/youtube.avif'
