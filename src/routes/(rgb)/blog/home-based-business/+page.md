@@ -34,7 +34,7 @@ Coming up with a solid business plan is essential when launching any type of bus
 
 ### Register Your Business as an LLC
 
-Registering your business as an LLC provides a range of important benefits for those starting a home-based business. An LLC is well-suited to protect personal assets, provide tax flexibility and ease the process of raising capital. In addition, forming an LLC typically has lower setup and ongoing costs associated with it compared to other legal structures like corporations. There are many services that can assist you with LLC formation and guide you through issues like LLC self employment tax. Be sure to read reviews and compare their services to make the best decision for your business.
+Registering your business as an LLC provides a range of important benefits for those starting a home-based business. An LLC is well-suited to protect personal assets, provide tax flexibility and ease the process of raising capital. In addition, forming an LLC typically has lower setup and ongoing costs associated with it compared to other legal structures like corporations. There are many services that can assist you with LLC formation and guide you through issues like [LLC self employment tax](https://www.zenbusiness.com/llc-self-employment-tax/). Be sure to read reviews and compare their services to make the best decision for your business.
 
 ### Plan Marketing And Website Design
 
@@ -50,7 +50,7 @@ Finding reliable suppliers for your products/services is essential for any succe
 
 ### Acquire Suitable Business Insurance
 
-Acquiring suitable business insurance is an important step for those starting a home-based business. Business insurance can protect your company from unexpected costs such as natural disasters and lawsuits. It also provides financial resources to help with the recovery of losses that may be incurred during operation.
+Acquiring suitable business insurance is an important step for those starting a home-based business. [Business insurance can protect your company](https://digital.com/small-business-insurance-needs/) from unexpected costs such as natural disasters and lawsuits. It also provides financial resources to help with the recovery of losses that may be incurred during operation.
 Finding A New Living Space With Home Office
 When starting a home-based business, it is important to consider finding a new living space that can accommodate your office setup. A dedicated place for work ensures that you have the privacy and productivity necessary to run your business effectively. It also allows you to separate your personal and professional lives, which can help reduce stress and facilitate better time management.
 
@@ -66,7 +66,7 @@ Whether you're selling handmade crafts, offering consulting services, or running
 
 ### Declutter And Maintain a Clean Home
 
-It's essential to keep a clean and clutter-free home to create a productive and professional work environment. A clean home can reduce distractions and improve focus, which is critical for achieving business goals. Don’t do everything yourself; enlist your kids’ help to maintain a clean home. By decluttering regularly and maintaining a clean home, you can set yourself up for success in your home-based business.
+It's essential to keep a clean and clutter-free home to create a productive and professional work environment. A clean home can reduce distractions and improve focus, which is critical for achieving business goals. Don’t do everything yourself; [enlist your kids’ help](https://cleanerdigs.com/how-to-declutter-your-kids-playroom-in-under-30-minutes/) to maintain a clean home. By decluttering regularly and maintaining a clean home, you can set yourself up for success in your home-based business.
 
 Starting a home-based business requires preparation, but it also offers many rewards along with new challenges. Tackle the details to legally establish your business as an LLC, get insurance, and have your kids help out with cleaning. If you’re looking at a rental, verify you can work from your location, and remember you can write off a number of different expenses related to your new business. These best practices will get you started off on the right foot.
 
