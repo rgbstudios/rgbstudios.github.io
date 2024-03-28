@@ -23,7 +23,7 @@
 		"autoprefixer": "^10.4.13",
 		"daisyui": "2.50.1",
 		"dino-color-picker": "^0.2.3",
-		"eslint": "^8.34.0",
+		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"jsqr": "^1.4.0",
