@@ -4,6 +4,10 @@ localstore in svelte kit
 sitemap xml generator
 custom error page svelte kit
 syntax highlighting in your blog posts
+status code im a teapot
+cookies vs local storage
+write article about autocomplete js, pros, cons, usages
+- https://tarekraafat.github.io/autoComplete.js/#/
 
 lint:
 fix linting errors on build

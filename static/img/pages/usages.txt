@@ -1,6 +1,12 @@
 home
 responsive
 
+blog
+blog post
+
+projects
+circle compass
+
 contact
 mailbox
 mobile wireframe

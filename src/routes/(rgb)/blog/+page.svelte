@@ -79,6 +79,8 @@
 	{/if}
 </article>
 
+<img class="h-64 mx-auto" src="/img/pages/blog_post.svg" alt="" />
+
 <form
 	class="input-group"
 	action=""
@@ -101,8 +103,8 @@
 			No posts found for that {category !== null && searchTerm === ''
 				? 'category'
 				: category === null && searchTerm !== ''
-				? 'search'
-				: 'category and search'}. Try a different category or search or
+					? 'search'
+					: 'category and search'}. Try a different category or search or
 			<a href="/blog" on:click={() => (searchTerm = '')}> View all blog posts </a>
 		</p>
 		<img class="w-full max-w-sm mx-auto" src="/img/pages/blank_canvas.svg" alt="" />

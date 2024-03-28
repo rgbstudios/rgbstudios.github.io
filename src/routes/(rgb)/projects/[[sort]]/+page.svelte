@@ -13,10 +13,10 @@
 		(sort === 'popular'
 			? 'Popular'
 			: sort === 'new'
-			? 'New'
-			: sort === 'updated'
-			? 'Recently Updated'
-			: 'All') + ' Projects';
+				? 'New'
+				: sort === 'updated'
+					? 'Recently Updated'
+					: 'All') + ' Projects';
 
 	$: filteredProjects = projects.filter((project) => {
 		if (sort === 'new' && !project.isNew) return false;
@@ -49,12 +49,15 @@
 		{pageTitle}
 	</h1>
 </article>
+
+<img class="h-64 mx-auto mb-8" src="/img/pages/circle_compass.svg" alt="" />
+
 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each filteredProjects as { title, text, img, link, isNew, isPopular, isUpdated, tags } (link)}
 		<AppCard {title} {text} {img} {link} {isNew} {isPopular} {isUpdated} {tags} />
 	{/each}
 </div>
 
-{#if sort !== null}
-	<a class="btn btn-primary ml-4" href="/projects">View all projects</a>
+{#if sort !== null && sort !== undefined}
+	<a class="btn btn-primary flex mt-8" href="/projects">View all projects</a>
 {/if}
