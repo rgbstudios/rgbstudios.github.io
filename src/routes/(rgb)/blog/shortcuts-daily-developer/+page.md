@@ -58,6 +58,7 @@ Some of these are simple, and some more complex. I'm listing all of the shortcut
 - `Ctrl Home` / `Ctrl End` - Move to start or end of file
 - `Ctrl Alt Arrows (up/down)` - Make new cursors above/below
 - `Ctrl 1` - Focus editor (this might feel dumb when you can just click, but preventing yourself from needing the mouse is great)
+- Right click file tab, then `Shift Alt R` - Reveal in file explorer
 
 I also recommend a plugin to quickly change quotes, and a plugin called "Auto Rename Tag" which will rename the other corresponding XML/HTML tag when you rename one (super useful!)
 
@@ -75,6 +76,7 @@ VS Code has [Emmet](https://code.visualstudio.com/docs/editor/emmet) built in, a
   - `Win X` then `U` then `S` to sleep
   - `Win X` then `U` then `U` to shut down
   - `Win X` then `U` then `R` to restart
+- `Win .` - Win and period to open the emoji picker, just type and then use arrow keys and hit enter
 - `F2` - Rename selected file
 - `Ctrl L` - Highlight file explorer location (works in browser to highlight address bar)
 
@@ -82,7 +84,7 @@ I use Power Toys for fancy zones, which allows me to drag a window holding `Shif
 
 ### GitHub Desktop
 
-- `Ctrl Shift A` -Open in VS Code (or whatever editor you have setup in Github Desktop)
+- `Ctrl Shift A` - Open in VS Code (or whatever editor you have setup in Github Desktop)
 - `Ctrl Shift G` - Open on Github.com
 - `Ctrl Shift F` - Open in File Explorer
 - `Ctrl B` - Change branches
@@ -90,3 +92,8 @@ I use Power Toys for fancy zones, which allows me to drag a window holding `Shif
 - `Ctrl Shift P` - Pull
 - `Ctrl Shift T` - Fetch
 - `Ctrl Shift N` - New branch
+- `Ctrl Alt P` - Preview pull request
+
+### Email
+
+- `Ctrl K` - Select a link then hit `ctrl K` to turn it into a clickable link in gmail and some other email clients
