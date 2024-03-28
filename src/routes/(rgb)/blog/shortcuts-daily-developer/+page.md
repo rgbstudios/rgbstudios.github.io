@@ -57,6 +57,7 @@ Some of these are simple, and some more complex. I'm listing all of the shortcut
 - `Home` / `End` - Start or end of line
 - `Ctrl Home` / `Ctrl End` - Move to start or end of file
 - `Ctrl Alt Arrows (up/down)` - Make new cursors above/below
+- `Ctrl 1` - Focus editor (this might feel dumb when you can just click, but preventing yourself from needing the mouse is great)
 
 I also recommend a plugin to quickly change quotes, and a plugin called "Auto Rename Tag" which will rename the other corresponding XML/HTML tag when you rename one (super useful!)
 
