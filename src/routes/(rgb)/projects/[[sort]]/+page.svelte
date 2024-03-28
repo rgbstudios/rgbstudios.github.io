@@ -13,10 +13,10 @@
 		(sort === 'popular'
 			? 'Popular'
 			: sort === 'new'
-			? 'New'
-			: sort === 'updated'
-			? 'Recently Updated'
-			: 'All') + ' Projects';
+				? 'New'
+				: sort === 'updated'
+					? 'Recently Updated'
+					: 'All') + ' Projects';
 
 	$: filteredProjects = projects.filter((project) => {
 		if (sort === 'new' && !project.isNew) return false;
@@ -55,6 +55,6 @@
 	{/each}
 </div>
 
-{#if sort !== null}
-	<a class="btn btn-primary ml-4" href="/projects">View all projects</a>
+{#if sort !== null && sort !== undefined}
+	<a class="btn btn-primary flex mt-8" href="/projects">View all projects</a>
 {/if}
