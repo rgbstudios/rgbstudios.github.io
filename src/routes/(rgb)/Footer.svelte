@@ -8,9 +8,9 @@
 		<div>
 			<span class="footer-title">Projects</span>
 			<a class="footer-link" href="/projects">All</a>
-			<a class="footer-link" href="/projects?sort=popular">Popular</a>
-			<a class="footer-link" href="/projects?sort=new">New</a>
-			<a class="footer-link" href="/projects?sort=updated">Recently Updated</a>
+			<a class="footer-link" href="/projects/popular">Popular</a>
+			<a class="footer-link" href="/projects/new">New</a>
+			<a class="footer-link" href="/projects/updated">Recently Updated</a>
 		</div>
 		<div>
 			<span class="footer-title">Blog</span>
@@ -42,10 +42,22 @@
 		</div>
 		<div class="md:place-self-center md:justify-self-end">
 			<div class="grid grid-flow-col gap-4">
-				<a href="https://twitter.com/rgbstudiosorg" target="_blank" aria-label="Twitter">
+				<a
+					class="hover:text-white"
+					href="https://twitter.com/rgbstudiosorg"
+					target="_blank"
+					rel="noreferrer"
+					aria-label="Twitter"
+				>
 					<Icon name="twitter" />
 				</a>
-				<a href="https://www.facebook.com/rgbstudios.org" target="_blank" aria-label="Facebook">
+				<a
+					class="hover:text-white"
+					href="https://www.facebook.com/rgbstudios.org"
+					target="_blank"
+					rel="noreferrer"
+					aria-label="Facebook"
+				>
 					<Icon name="facebook" />
 				</a>
 			</div>

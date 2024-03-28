@@ -45,8 +45,8 @@
 
   <div class="divider"></div>
 
-  <p>Learn more on <a class="link" href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank">Wikipedia</a>
-  and <a class="link" href="https://www.mathsisfun.com/data/binomial-distribution.html" target="_blank">Math is Fun</a>, or watch a <a class="link" href="https://youtu.be/8idr1WZ1A7Q" target="_blank">3Blue1Brown video</a>.</p>
+  <p>Learn more on <a class="link" href="https://en.wikipedia.org/wiki/Binomial_distribution" target="_blank" rel="noreferrer">Wikipedia</a>
+  and <a class="link" href="https://www.mathsisfun.com/data/binomial-distribution.html" target="_blank" rel="noreferrer">Math is Fun</a>, or watch a <a class="link" href="https://youtu.be/8idr1WZ1A7Q" target="_blank" rel="noreferrer">3Blue1Brown video</a>.</p>
 `;
 	let changed = false;
 	$: {
@@ -428,14 +428,14 @@
 	</form>
 </div>
 
-<div class="grid gap-5">
-	<div id="pie-chart" class="mt-5" />
+<div class="grid gap-4">
+	<div id="pie-chart" class="mt-4" />
 	<div class="flex justify-center">
 		<a class="btn" download="pie_chart.png" href={pieChartURI} title="Download pie chart">
 			<Icon name="download" />
 		</a>
 	</div>
-	<div id="bar-chart" class="mt-5" />
+	<div id="bar-chart" class="mt-4" />
 	<div class="flex justify-center">
 		<a class="btn" download="bar_chart.png" href={barChartURI} title="Download bar chart">
 			<Icon name="download" />
@@ -444,7 +444,7 @@
 </div>
 
 <!-- Info modal -->
-<div class="mt-5">
+<div class="mt-4">
 	<label for="info-modal" class="btn modal-button btn-info">Info</label>
 
 	<input
@@ -462,7 +462,7 @@
 			<div class="divider" />
 			{@html info_html}
 			<!-- Link to this modal: -->
-			<div class="mt-5 grid gap-1">
+			<div class="mt-4 grid gap-1">
 				<span>Share the link to these formulas:</span>
 				<div class="flex w-full">
 					<input
@@ -479,11 +479,18 @@
 				</div>
 				<div class="divider" />
 				<p>
-					Made with <a class="link" target="_blank" href="https://developers.google.com/chart"
-						>Google Charts</a
+					Made with <a
+						class="link"
+						target="_blank"
+						rel="noreferrer"
+						href="https://developers.google.com/chart">Google Charts</a
 					>,
-					<a class="link" target="_blank" href="https://www.mathjax.org/">MathJax</a>,
-					<a class="link" target="_blank" href="https://kit.svelte.dev/">SvelteKit</a>,
+					<a class="link" target="_blank" rel="noreferrer" href="https://www.mathjax.org/"
+						>MathJax</a
+					>,
+					<a class="link" target="_blank" rel="noreferrer" href="https://kit.svelte.dev/"
+						>SvelteKit</a
+					>,
 				</p>
 			</div>
 		</label>

@@ -1,67 +1,50 @@
 ---
 layout: blog_layout
-title: 'A Cleanup Folders Script for Your package.json'
-slug: 'a-cleanup-folders-script-for-your-package-json'
-date: '2022/09/16'
-updated_date: '2022/09/16'
+title: 'Ignore Dark Mode During Print Using Tailwind CSS'
+slug: 'ignore-dark-mode-during-print-tailwind-css'
+date: '2024/03/27'
+updated_date: '2024/03/27'
 author: 'Justin Golden'
-preview_text: 'Check out this ten line script to instantly clear those pesky build folders'
-img: '/img/blog/vacuum_confetti.avif'
-categories: ['webdev', 'javascript', 'node js']
+preview_text: 'Learn how to ignore dark mode and use light mode when the user prints your page in your Tailwind CSS project'
+img: '/img/blog/printer.avif'
+categories: ['webdev', 'tailwindcss', 'css']
 keywords:
   [
-    'package.json clean folders',
-    'package.json delete folders script',
-    'package.json remove folders script',
-    'node js script to delete folders',
-    'simple javascript delete folders'
+    'turn off dark mode print tailwind css',
+    'turn off dark mode print',
+    'use light mode styles when printing',
+    'use light mode styles when printing tailwind css',
+    'print specific styles css',
+    'tailwind print styles'
   ]
 ---
 
 <figure>
   <picture>
-    <source type="image/avif" srcset="/img/blog/vacuum_confetti.avif" alt="" />
-    <img src="/img/blog/vacuum_confetti.jpg" alt="">
+    <source type="image/avif" srcset="/img/blog/printer.avif" alt="" />
+    <img src="/img/blog/printer.jpg" alt="">
   </picture>
-  <figcaption>Photo credit @norevisions on Unsplash</figcaption>
+  <figcaption>Photo credit @alrivarola on Unsplash</figcaption>
 </figure>
 
 ### The Problem
 
-"Have you tried turning it off and on again?" You find yourself deleting the same few folders over and over again to clear the cache, rebuild, or whatever other reason you need to ensure your project is working as expected.
+Your website uses Tailwind CSS and has a light and dark mode. The user can print the page, but if they're in dark mode, they get a mess. How can you configure Tailwind so it automatically uses light mode when they print?
 
 ### The Solution
 
-1. Create a `clean.js` file (I store mine in an `infrastructure` directory at the root of the project):
+1. In your `tailwind.config.cjs`, set `darkMode` to `null`:
+
+`darkMode: null`
+
+2. In your `tailwind.config.cjs`, under `plugins`, `addVariant` for `dark` to use `@media not print`:
 
 ```js
-import fs from 'fs';
-
-const paths = ['.netlify', '.svelte-kit', 'build'];
-for (const path of paths) {
-	if (fs.existsSync(path)) {
-		fs.rmSync(path, { recursive: true });
-		console.log(`deleted ${path}`);
-	}
-}
+plugins: [
+	plugin(function ({ addUtilities, addVariant }) {
+		addVariant('dark', '@media not print { .dark & }');
+	})
+];
 ```
 
-Of course, change `paths` to your desired paths to delete. I chose paths for my Svelte Kit + Netlify project.
-
-Feel free to add `node_modules` here, but just know reinstalling might take some time, and it often doesn't solve anything that rerunning `npm install` doesn't already solve.
-
-Feel free to remove the `console.log` as well. I like it as confirmation that the command ran and as a reminder of what I deleted.
-
-2. Add it to your `package.json` `scripts`:
-
-`"clean": "node infrastructure/clean.js",`
-
-3. Bonus points: `cleanbuild`
-
-I like to add a `cleanbuild` script to run clean, then reinstall (this doesn't delete `node_modules`, unless of course you specified that in your `clean.js` script, then run build and preview to ensure everything is in order in every way):
-
-`"cleanbuild": "npm run clean && npm install && npm run build && npm run preview"`
-
----
-
-Obligatory **BE CAREFUL** warning: Do **NOT** put a folder you don't want deleted. You can delete your project in an instant. Of course, this is why we use git, but I figured it's worth mentioning for any newbies here.
+That's it! Hope this short article helped you. Feel free to check out our [other articles](/blog)!

@@ -83,7 +83,8 @@
 
 				if (code.data.substring(0, 4) == 'http') {
 					// if website then display as clickable link
-					output = '<a href="' + code.data + '" target="_blank">' + code.data + '</a>';
+					output =
+						'<a href="' + code.data + '" target="_blank" rel="noreferrer">' + code.data + '</a>';
 				} else {
 					output = code.data;
 				}

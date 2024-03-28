@@ -26,7 +26,7 @@
 </script>
 
 <Modal id="grade-calc-new-assignment-modal" showCloseBtn={false}>
-	<form class="form-control pt-7 grid gap-3">
+	<form class="form-control pt-4 grid gap-3">
 		<label class="input-group">
 			<span>Name</span>
 			<input

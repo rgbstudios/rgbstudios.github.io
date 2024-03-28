@@ -12,7 +12,7 @@
 			</button>
 			<ul
 				tabindex="0"
-				class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-900 rounded-box w-52"
+				class="menu menu-compact dropdown-content mt-2 p-2 shadow bg-base-900 rounded-box w-52"
 			>
 				<li><a href="/">Home</a></li>
 
@@ -23,9 +23,9 @@
 					</span>
 					<ul class="p-2 bg-base-900">
 						<li><a href="/projects">All Projects</a></li>
-						<li><a href="/projects?sort=popular">Popular</a></li>
-						<li><a href="/projects?sort=new">New</a></li>
-						<li><a href="/projects?sort=updated">Recently Updated</a></li>
+						<li><a href="/projects/popular">Popular</a></li>
+						<li><a href="/projects/new">New</a></li>
+						<li><a href="/projects/updated">Recently Updated</a></li>
 					</ul>
 				</li>
 				<li tabindex="0">
@@ -43,7 +43,7 @@
 				<li><a href="/contact">Contact</a></li>
 			</ul>
 		</div>
-		<a class="btn btn-ghost" href="/" aria-label="Menu">
+		<a class="hidden xs:block btn btn-ghost" href="/" aria-label="Menu">
 			<img class="h-full" src="/img/rgb_logo_light_256.png" alt="RGB Studios logo" />
 		</a>
 	</div>
@@ -58,9 +58,9 @@
 				</a>
 				<ul class="p-2 bg-base-900">
 					<li><a href="/projects">All Projects</a></li>
-					<li><a href="/projects?sort=popular">Popular</a></li>
-					<li><a href="/projects?sort=new">New</a></li>
-					<li><a href="/projects?sort=updated">Recently Updated</a></li>
+					<li><a href="/projects/popular">Popular</a></li>
+					<li><a href="/projects/new">New</a></li>
+					<li><a href="/projects/updated">Recently Updated</a></li>
 				</ul>
 			</li>
 			<li tabindex="0">

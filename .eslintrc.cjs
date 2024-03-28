@@ -17,8 +17,7 @@ module.exports = {
 		}
 	],
 	settings: {
-		'svelte3/typescript': () => require('typescript'), // pass the TypeScript package to the Svelte plugin
-		'svelte3/typescript': true // load TypeScript as peer dependency
+		'svelte3/typescript': () => require('typescript') // pass the TypeScript package to the Svelte plugin
 	},
 	env: {
 		es2021: true,

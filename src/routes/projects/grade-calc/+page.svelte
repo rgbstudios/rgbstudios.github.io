@@ -115,7 +115,7 @@
 />
 
 <!-- Root Layout -->
-<div class="wrapper mt-5 grid gap-5">
+<div class="wrapper mt-8 grid gap-4">
 	<div class="btn-group justify-center gap-1">
 		<label for="grade-calc-info-modal" class="btn modal-button">
 			<Icon name="info" /> &nbsp; Info
@@ -128,7 +128,7 @@
 		</label>
 	</div>
 	<h3 class="text-center">Assignments</h3>
-	<form on:submit|preventDefault={calculate} class="grid gap-5">
+	<form on:submit|preventDefault={calculate} class="grid gap-4">
 		{#each $assignments as { name, max_score, weight }, index}
 			<div class="card w-full bg-accent-900 border">
 				<div class="card-body p-6">
@@ -205,8 +205,8 @@
 		</div>
 		<button class="btn btn-primary">Calculate &nbsp; <Icon name="chevron_right" /> </button>
 	</form>
-	<div class="bg-base-900 border card p-5 text-center grid gap-3">
-		<p class="flex gap-5 justify-center text-5xl">
+	<div class="bg-base-900 border card p-4 text-center grid gap-3">
+		<p class="flex gap-4 justify-center text-5xl">
 			{student.grade * 100}%<button
 				class="btn btn-primary text-md"
 				type="button"
@@ -217,7 +217,7 @@
 		</p>
 		<p class="text-3xl font-bold">{getGradeLetter(student.grade * 100)}</p>
 	</div>
-	<div class="bg-base-900 border card p-5 text-center grid gap-3">
+	<div class="bg-base-900 border card p-4 text-center grid gap-3">
 		{#each history as item}
 			<span>{item}</span>
 		{/each}

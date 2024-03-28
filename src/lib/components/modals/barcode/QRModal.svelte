@@ -46,7 +46,7 @@
 
 <Modal id="barcode-qr-modal" bind:hidden on:close={onClose}>
 	<div slot="title">QR Code</div>
-	<div class="grid p-5 justify-center">
+	<div class="grid p-4 justify-center">
 		<canvas bind:this={canvas} />
 	</div>
 	<div class="btn-group justify-center gap-1">
