@@ -1142,6 +1142,16 @@ There are many different types of licenses (as with other digital media), and yo
 
 Some licenses allow you to use a font based on number of viewers, based on the platform (website, app, commercials, print), and licenses will generally tell you what you can and can't do to the files, such as change, distribute, charge money for, etc. For a hobbyist, "free for personal use" should be good enough for you; just make sure you aren't violating the licenses if you are interested in changing things up or sharing a file.
 
+### Accents
+
+Accents such as acute (é), grave (è), tilde (ñ) are common in many languages and often included in font files. If you're designing a font, this is a big rabbit hole, but for someone simply using a font, there are just a few things to keep in mind:
+
+- Most professional fonts will include many of these
+- Most font files will not store redundant data (ie. store the vector for the letter "A" over and over again). See [Coding Adventure: Rendering Text by Sebastian Lague](https://youtu.be/SO83KQuuZvg?si=pYWVbL1QmSTtEW0b) for a deep dive on how font files work (it's a great video, but certainly venturing off-topic for this article!)
+- You can select specific unicode ranges for your fonts and the font will only use that range. You can look at all of the glyphs in a font file on [wakamaifondue.com](https://wakamaifondue.com/beta/), which is an amazing site (he also writes about [the variable font inheritance problem](https://pixelambacht.nl/2022/boiled-down-fixing-variable-font-inheritance/), which is only relevant if you use variable fonts)
+
+Further reading: https://www.myfonts.com/pages/fontscom-learning-fontology-level-3-signs-and-symbols-accents
+
 ### Dos and Do Nots
 
 **Do:**
