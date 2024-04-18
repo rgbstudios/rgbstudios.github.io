@@ -990,6 +990,8 @@ You can find other unicode ranges as well as more info on unicode ranges online.
 
 Google Fonts Subsets: when using google fonts, you can use `&subset=latin` to specify your language. Otherwise, fonts like Open Sans will fetch many different font files. Note that Latin subset is always included if available. You can also use specific text: `&text=hello` if you only need specific characters. If you need a special character, such as a slash "/" then you need to URL encode it (slash is `%2F` so you would do `&text=hello%2F` so it's treated as a character slash and not a slash in the URL). See the [Google Fonts Docs on Subsets](https://developers.google.com/fonts/docs/getting_started#Subsets) for more.
 
+You can view the unicode range and more using [wakamaifondue.com](https://wakamaifondue.com/beta/). Select a specific unicode range using [unicode range selector](https://justingolden.me/unicode-range-selector/).
+
 If you must edit font files manually (and you really want to...), check out [fonttools](https://github.com/fonttools/fonttools).
 
 **Linking CSS Files**
