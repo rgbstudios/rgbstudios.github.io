@@ -6,18 +6,12 @@ date: '2024/04/17'
 updated_date: '2024/04/17'
 author: 'Justin Golden'
 preview_text: 'Learn how to animate a SVG viewbox quickly'
-img: '/img/blog/viewport.avif'
+img: '/img/blog/undraw_logistics.svg'
 categories: ['webdev', 'svg', 'css']
 keywords: ['animate svg viewbox', 'transition svg viewbox', 'zoom in out svg view box']
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/viewport.avif" alt="" />
-    <img src="/img/blog/viewport.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @mattseymour on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_logistics.svg" alt="" class="bg-white p-4">
 
 ### The Expectation
 

@@ -6,7 +6,7 @@ date: '2024/03/27'
 updated_date: '2024/03/27'
 author: 'Justin Golden'
 preview_text: 'Learn how to ignore dark mode and use light mode when the user prints your page in your Tailwind CSS project'
-img: '/img/blog/printer.avif'
+img: '/img/blog/undraw_printing_invoices.svg'
 categories: ['webdev', 'tailwindcss', 'css']
 keywords:
   [
@@ -19,13 +19,7 @@ keywords:
   ]
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/printer.avif" alt="" />
-    <img src="/img/blog/printer.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @alrivarola on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_printing_invoices.svg" alt="" class="bg-white p-4">
 
 ### The Problem
 

@@ -18,12 +18,12 @@
 		</div>
 	</div>
 
-	<picture>
+	<picture class="bg-white group-hover:scale-105 transition-transform">
 		<source type="image/avif" srcset={img} alt={title} />
 		<img
 			src={img.replace('.avif', '.jpg')}
 			alt={title}
-			class="group-hover:scale-105 transition-transform w-full h-72 object-cover object-top"
+			class="w-full h-72 object-cover object-top"
 		/>
 	</picture>
 </a>

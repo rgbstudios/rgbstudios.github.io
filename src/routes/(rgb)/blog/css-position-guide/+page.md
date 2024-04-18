@@ -6,18 +6,12 @@ date: '2024/01/04'
 updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Learn about the different position properties in CSS'
-img: '/img/blog/chess_position.avif'
+img: '/img/blog/undraw_world.svg'
 categories: ['web', 'css']
 keywords: ['css position guide', 'css position explained', 'css position property']
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/chess_position.avif" alt="">
-    <img src="/img/blog/chess_position.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @m4quuv on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_world.svg" alt="" class="bg-white p-4">
 
 Length: Medium
 

@@ -6,7 +6,7 @@ date: '2024/04/17'
 updated_date: '2024/04/17'
 author: 'Justin Golden'
 preview_text: 'Check out these free to use and customizable vector art websites for your next project'
-img: '/img/blog/street_art_alley.avif'
+img: '/img/blog/undraw_making_art.svg'
 categories: ['webdev', 'svg', 'css']
 keywords:
   [
@@ -17,13 +17,7 @@ keywords:
   ]
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/street_art_alley.avif" alt="" />
-    <img src="/img/blog/street_art_alley.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @vladbunu on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_making_art.svg" alt="" class="bg-white p-4">
 
 ## Top 4
 

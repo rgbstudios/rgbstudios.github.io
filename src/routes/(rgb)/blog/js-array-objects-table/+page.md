@@ -6,7 +6,7 @@ date: '2024/04/17'
 updated_date: '2024/04/17'
 author: 'Justin Golden'
 preview_text: 'Learn how to take an array of objects and display it as a table on your website'
-img: '/img/blog/color_table.avif'
+img: '/img/blog/undraw_apps.svg'
 categories: ['webdev', 'js', 'css']
 keywords:
   [
@@ -19,13 +19,7 @@ keywords:
   ]
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/color_table.avif" alt="" />
-    <img src="/img/blog/color_table.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @markusspiske on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_apps.svg" alt="" class="bg-white p-4">
 
 Here's how to render an array of JSON objects into a HTML table.
 

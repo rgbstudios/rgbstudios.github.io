@@ -6,7 +6,7 @@ date: '2024/03/26'
 updated_date: '2024/03/26'
 author: 'Justin Golden'
 preview_text: 'Learn how to use the new CSS accent-color property and what it can do'
-img: '/img/blog/toggles.avif'
+img: '/img/blog/undraw_check_boxes.svg'
 categories: ['webdev', 'css']
 keywords:
   [
@@ -17,13 +17,7 @@ keywords:
   ]
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/toggles.avif" alt="" />
-    <img src="/img/blog/toggles.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @arthurbizkit on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_check_boxes.svg" alt="" class="bg-white p-4">
 
 ## The `accent-color` Property
 

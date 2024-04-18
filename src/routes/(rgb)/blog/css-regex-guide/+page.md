@@ -6,18 +6,12 @@ date: '2024/03/27'
 updated_date: '2024/03/27'
 author: 'Justin Golden'
 preview_text: 'Learn how to use CSS regex in minutes'
-img: '/img/blog/colored_wires.avif'
+img: '/img/blog/undraw_code_thinking.svg'
 categories: ['webdev', 'javascript', 'node js']
 keywords: ['css regex guide', 'css regex tutorial', 'css regex pros and cons']
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/colored_wires.avif" alt="" />
-    <img src="/img/blog/colored_wires.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @barkiple on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_code_thinking.svg" alt="" class="bg-white p-4">
 
 ## What is Regex?
 

@@ -6,7 +6,7 @@ date: '2024/01/04'
 updated_date: '2024/01/04'
 author: 'Justin Golden'
 preview_text: 'Learn how to create your business from home with this simple must read checklist'
-img: '/img/blog/home_business.avif'
+img: '/img/blog/undraw_businessman.svg'
 categories: ['business']
 keywords:
   [
@@ -18,13 +18,7 @@ keywords:
   ]
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/home_business.avif" alt="" />
-    <img src="/img/blog/home_business.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @uns__nstudio on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_businessman.svg" alt="" class="bg-white p-4">
 
 Starting a home-based business can be an exciting and rewarding experience. However, it is important to be mindful of the various steps that need to be taken to ensure your business runs smoothly. We have compiled a list of tips and tricks that will help you launch your home-based business with ease.
 

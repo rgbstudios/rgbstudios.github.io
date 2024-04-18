@@ -6,19 +6,13 @@ date: '2024/03/27'
 updated_date: '2024/03/27'
 author: 'Justin Golden'
 preview_text: 'Use this quick CSS hack to make your div full bleed, even if it is inside a container and you want the background-color to extend out'
-img: '/img/blog/coffee_falling_outside.avif'
+img: '/img/blog/undraw_complete_design.svg'
 categories: ['webdev', 'css']
 keywords:
   ['css full bleed outside container', 'css full bleed div', 'css full bleed margin padding']
 ---
 
-<figure>
-  <picture>
-    <source type="image/avif" srcset="/img/blog/coffee_falling_outside.avif" alt="" />
-    <img src="/img/blog/coffee_falling_outside.jpg" alt="">
-  </picture>
-  <figcaption>Photo credit @gabriel_meinert on Unsplash</figcaption>
-</figure>
+<img src="/img/blog/undraw_complete_design.svg" alt="" class="bg-white p-4">
 
 ### The Problem
 
