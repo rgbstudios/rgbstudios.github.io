@@ -14,3 +14,15 @@ fix linting errors on build
 updates:
 add read time and experience lvl to each blog post
 add pagination and search
+
+
+useful sites for devs
+https://superdesigner.co/
+https://flexbox.tech/
+https://devdocs.io/
+https://easings.net/
+https://loading.io/pattern/
+https://turtle.community/topic/design
+
+
+

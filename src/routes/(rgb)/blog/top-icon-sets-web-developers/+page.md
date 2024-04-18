@@ -156,8 +156,14 @@ https://www.ibm.com/design/language/iconography/ui-icons/library/
 
 IBM recently came out with a brand new design system, and they've made it available for everyone to use. These icons are both industrial and yet clean. They're somehow rigid and still friendly, professional and still casual. It's not the look for everyone, but they have many icons, including many for tech related things such as data, cloud, AI, files, and IBM related products, but they also have all the normal icons you need like arrows and such. They have a little over 20 social icons, which is probably good enough to get by for what you need. I believe they call these icons Carbon icons, and they also have a typeface called Plex that is part of their rebrand you can check out as well.
 
-### List of Icons
+## List of Icons
 
 https://icon-sets.iconify.design/
 
 You can visit the site above to see a list of many different icon sets.
+
+## Conclusion
+
+There are a lot of icon sets to choose from. My advice is to not mix and match, unless the styles are nearly the same, and ensure that the stroke widths and corners/edges are at least consistent if you have to mix and match. Font Awesome is the overall pick for most available for free and best for paid and for all projects, but there are plenty of alternatives, and a lot of "click and copy" websites with lots of pretty icons.
+
+Also check out [The Top Vector Illustration Websites](/blog/vector-illustration-websites)
