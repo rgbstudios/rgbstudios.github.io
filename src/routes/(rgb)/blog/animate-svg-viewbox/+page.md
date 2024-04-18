@@ -1,6 +1,6 @@
 ---
 layout: blog_layout
-title: 'The trick to animating SVG viewbox'
+title: 'The Trick to Animating SVG Viewbox'
 slug: 'animate-svg-viewbox'
 date: '2024/04/17'
 updated_date: '2024/04/17'
