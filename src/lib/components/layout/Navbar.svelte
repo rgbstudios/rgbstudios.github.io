@@ -52,7 +52,7 @@
 		<ul class="menu menu-horizontal p-0">
 			<li><a href="/" class:active={$page.url.pathname === '/'}>Home</a></li>
 			<li tabindex="0">
-				<a href="/projects" class:active={$page.url.pathname === '/projects'}>
+				<a href="/projects" class:active={$page.url.pathname.includes('/projects')}>
 					Projects
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>
@@ -64,7 +64,7 @@
 				</ul>
 			</li>
 			<li tabindex="0">
-				<a href="/blog" class:active={$page.url.pathname === '/blog'}>
+				<a href="/blog" class:active={$page.url.pathname.includes('/blog')}>
 					Blog
 					<Icon name="chevron_down" class="w-4 h-4" />
 				</a>

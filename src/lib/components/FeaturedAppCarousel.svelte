@@ -8,7 +8,7 @@
 	<FeaturedAppCard {...slides[0]} />
 {:else if slides.length > 1}
 	<Carousel let:item={slide} items={slides.map((s) => ({ id: s.link, ...s }))}>
-		<div class="border-2 border-gray-700">
+		<div class="border-2 border-gray-700 h-full grid">
 			<FeaturedAppCard {...slide} />
 		</div>
 	</Carousel>

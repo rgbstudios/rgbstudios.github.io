@@ -2,11 +2,11 @@
 	import { page } from '$app/stores';
 
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
-	import BlogCard from '$lib/components/BlogCard.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import Icon from '$lib/components/Icon.svelte';
 
 	import projects from '$lib/data/projects';
+	import BlogGrid from '$lib/components/BlogGrid.svelte';
 
 	export let data = {};
 
@@ -49,11 +49,8 @@
 <div class="prose-custom my-8">
 	<h2>Featured Articles</h2>
 </div>
-<div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-	{#each featuredPosts as { title, preview_text, slug, categories, img } (slug)}
-		<BlogCard {title} text={preview_text} link="/blog/{slug}" {img} tags={categories} />
-	{/each}
-</div>
+
+<BlogGrid posts={featuredPosts} />
 
 <article class="my-8 lg:w-full grid gap-8 lg:grid-cols-3">
 	<p class="prose-custom lg:col-span-2">

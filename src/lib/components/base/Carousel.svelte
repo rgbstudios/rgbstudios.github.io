@@ -16,34 +16,24 @@
 
 	export let autoScroll: boolean = true;
 	export let autoScrollDuration: number = 5000;
-	let autoScrollInterval;
+	let autoScrollInterval: ReturnType<typeof setInterval>;
 
 	let moving: boolean = false;
 	$: length = items.length;
 
-	function next() {
+	function step(amount: number) {
 		if (moving) return;
 		moving = true;
-		activeIndex = (activeIndex + 1 + length) % length;
+		activeIndex = (activeIndex + amount + length) % length;
 		setTimeout(() => (moving = false), duration);
 
 		if (autoScroll && autoScrollDuration) {
 			clearInterval(autoScrollInterval);
-			autoScrollInterval = setInterval(next, autoScrollDuration);
+			autoScrollInterval = setInterval(() => step(1), autoScrollDuration);
 		}
 	}
-	function prev() {
-		if (moving) return;
-		moving = true;
-		activeIndex = (activeIndex - 1 + length) % length;
-		setTimeout(() => (moving = false), duration);
 
-		if (autoScroll && autoScrollDuration) {
-			clearInterval(autoScrollInterval);
-			autoScrollInterval = setInterval(next, autoScrollDuration);
-		}
-	}
-	function goto(idx) {
+	function goto(idx: number) {
 		if (moving) return;
 		moving = true;
 		activeIndex = idx;
@@ -51,13 +41,13 @@
 
 		if (autoScroll && autoScrollDuration) {
 			clearInterval(autoScrollInterval);
-			autoScrollInterval = setInterval(next, autoScrollDuration);
+			autoScrollInterval = setInterval(() => step(1), autoScrollDuration);
 		}
 	}
 
 	$: if (autoScroll && autoScrollDuration) {
 		clearInterval(autoScrollInterval);
-		autoScrollInterval = setInterval(next, autoScrollDuration);
+		autoScrollInterval = setInterval(() => step(1), autoScrollDuration);
 	} else {
 		clearInterval(autoScrollInterval);
 	}
@@ -71,7 +61,7 @@
 		'primary'
 			? 'bg-primary hover:bg-green-700'
 			: 'bg-base-900 hover:bg-base-800'}"
-		on:click={prev}
+		on:click={() => step(-1)}
 	>
 		<Icon name="chevron_right" />
 	</button>
@@ -94,7 +84,7 @@
 		'primary'
 			? 'bg-primary hover:bg-green-700'
 			: 'bg-base-900 hover:bg-base-800'}"
-		on:click={next}
+		on:click={() => step(1)}
 	>
 		<Icon name="chevron_right" />
 	</button>

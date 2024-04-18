@@ -7,7 +7,7 @@
 	class="group card bg-base-800 ring-base-700 hover:ring-2 cursor-pointer no-underline"
 >
 	<div class="card-body">
-		<h2 class="group-hover:text-white card-title text-3xl">
+		<h2 class="group-hover:text-white card-title text-2xl lg:text-3xl">
 			{title}
 		</h2>
 		<p class="my-4">{text}</p>

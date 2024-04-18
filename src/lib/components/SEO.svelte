@@ -57,7 +57,6 @@
 			'browser extension notepad'
 		],
 		screenshot = 'img/website_seo_img.png',
-		icon = 'img/rgb_logo_256.png',
 		url,
 		articleData = null;
 
@@ -69,12 +68,6 @@
 
 <svelte:head>
 	<title>{title}</title>
-
-	<link rel="icon" href={HOST_URL + '/' + icon} />
-	<meta name="apple-mobile-web-app-status-bar" content="#111111" />
-	<meta name="theme-color" content="#111111" />
-	<meta name="msapplication-TileColor" content="#111111" />
-	<link rel="mask-icon" href={HOST_URL + '/' + icon} color="#111111" />
 
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
