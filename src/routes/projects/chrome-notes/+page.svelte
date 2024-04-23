@@ -151,7 +151,8 @@ f36 fc9 -->
 		rel="noreferrer"
 		class="btn btn-lg btn-primary no-underline"
 	>
-		Install Chrome Notes &nbsp; <Icon name="bag" />
+		<Icon name="chrome" />
+		&nbsp; Install Chrome Notes &nbsp; <Icon name="bag" />
 	</a>
 
 	<button
@@ -163,9 +164,41 @@ f36 fc9 -->
 				urls.chrome
 			)}
 	>
-		Share Chrome Notes &nbsp; <Icon name="share" />
+		<Icon name="chrome" />
+		&nbsp; Share Chrome Notes &nbsp; <Icon name="share" />
 	</button>
 </div>
+
+<hr class="my-10" />
+
+<h3 class="text-2xl mt-10 mb-4">Also available for Edge and Firefox:</h3>
+
+{#each ['Edge', 'Firefox'] as browser}
+	<div class="flex flex-col md:flex-row justify-between gap-4 my-4">
+		<a
+			href={urls[browser.toLowerCase()]}
+			target="_blank"
+			rel="noreferrer"
+			class="btn btn-primary no-underline"
+		>
+			<Icon name={browser.toLowerCase()} />
+			&nbsp; Install {browser} Notes &nbsp; <Icon name="bag" />
+		</a>
+
+		<button
+			class="btn btn-primary no-underline"
+			on:click={() =>
+				shareApp(
+					`${browser} Notes`,
+					`Check out ${browser} Notes, a simple notepad extension for ${browser}`,
+					urls[browser.toLowerCase()]
+				)}
+		>
+			<Icon name={browser.toLowerCase()} />
+			&nbsp; Share {browser} Notes &nbsp; <Icon name="share" />
+		</button>
+	</div>
+{/each}
 
 <hr class="my-10" />
 
@@ -173,10 +206,11 @@ f36 fc9 -->
 	<ul
 		class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose m-auto max-w-sm"
 	>
-		<li>Shortcut keys for cut, copy, paste, select all, delete, undo, redo</li>
+		<li>Shortcut buttons for cut, copy, paste, select all, delete, undo, redo</li>
 		<li>Common keyboard shortcuts like ctrl+X, ctrl+C, ctrl+V work</li>
 		<li>Download as text file</li>
 		<li>Read note (or selection) out loud</li>
+		<li>Speech to text</li>
 		<li>Spellcheck</li>
 	</ul>
 	<img
@@ -196,10 +230,10 @@ f36 fc9 -->
 		class="order-0 md:order-1 p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose m-auto max-w-sm"
 	>
 		<li>Store multiple notes</li>
-		<li>Custom font size</li>
-		<li>Resize your notepad</li>
+		<li>Adjustable font size and notepad size</li>
 		<li>Share your notes with friends</li>
 		<li>Pop out to new window</li>
+		<li>Download and upload full backups</li>
 		<li>Notes are kept on your device &mdash; we never touch your data</li>
 	</ul>
 </div>
@@ -209,7 +243,7 @@ f36 fc9 -->
 		class="p-4 list-disc list-inside text-lg sm:text-xl leading-loose sm:leading-loose m-auto max-w-sm"
 	>
 		<li>Night mode</li>
-		<li>Focus mode</li>
+		<li>Focus mode for distraction-free writing</li>
 		<li>Works offline</li>
 		<li>Ad free</li>
 		<li>No in app purchases</li>
@@ -247,7 +281,9 @@ f36 fc9 -->
 
 <hr class="my-10" />
 
-<h3 class="text-center text-2xl my-4">60,000+ happy users, 100+ reviews and 4.5/5 stars average</h3>
+<h3 class="text-center text-2xl my-4">
+	<b>90,000+</b> happy users, <b>100+</b> reviews and <b>4.5</b> stars average
+</h3>
 
 <Carousel
 	let:item={review}
@@ -274,9 +310,7 @@ f36 fc9 -->
 
 <hr class="my-10" />
 
-<h3 class="text-xl mt-10 mb-4">Also available for Edge and Firefox:</h3>
-
-{#each ['Edge', 'Firefox'] as browser}
+{#each ['Chrome', 'Edge', 'Firefox'] as browser}
 	<div class="flex flex-col md:flex-row justify-between gap-4 my-4">
 		<a
 			href={urls[browser.toLowerCase()]}
@@ -284,7 +318,9 @@ f36 fc9 -->
 			rel="noreferrer"
 			class="btn btn-primary no-underline"
 		>
-			Install {browser} Notes &nbsp; <Icon name="bag" />
+			<Icon name={browser.toLowerCase()} />
+			&nbsp; Install {browser} Notes &nbsp;
+			<Icon name="bag" />
 		</a>
 
 		<button
@@ -296,35 +332,11 @@ f36 fc9 -->
 					urls[browser.toLowerCase()]
 				)}
 		>
-			Share {browser} Notes &nbsp; <Icon name="share" />
+			<Icon name={browser.toLowerCase()} />
+			&nbsp; Share {browser} Notes &nbsp; <Icon name="share" />
 		</button>
 	</div>
 {/each}
-
-<hr class="my-10" />
-
-<div class="flex flex-col md:flex-row justify-between gap-4">
-	<a
-		href={urls.chrome}
-		target="_blank"
-		rel="noreferrer"
-		class="btn btn-lg btn-primary no-underline"
-	>
-		Install Chrome Notes &nbsp; <Icon name="bag" />
-	</a>
-
-	<button
-		class="btn btn-lg btn-primary no-underline"
-		on:click={() =>
-			shareApp(
-				'Chrome Notes',
-				'Check out Chrome Notes, a simple notepad extension for Google Chrome',
-				urls.chrome
-			)}
-	>
-		Share Chrome Notes &nbsp; <Icon name="share" />
-	</button>
-</div>
 
 <style>
 	.btn {
@@ -337,5 +349,12 @@ f36 fc9 -->
 
 	li {
 		list-style-image: url('/img/projects/icons/chrome-notes.svg');
+	}
+	h3 b {
+		text-decoration: underline;
+		text-decoration-color: #f90;
+		letter-spacing: 0.1rem;
+		@apply text-4xl;
+		padding: 0 0.25rem;
 	}
 </style>
