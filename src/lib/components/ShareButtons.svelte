@@ -156,6 +156,8 @@
 	&nbsp; Share
 </a>
 
+<br class="hidden lg:block" />
+
 <!-- `%0D%0A` is `<br>` encoded -->
 <a
 	href="mailto:?to=&body={encodeURIComponent(
