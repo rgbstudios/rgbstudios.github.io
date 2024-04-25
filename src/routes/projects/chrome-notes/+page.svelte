@@ -145,18 +145,13 @@ f36 fc9 -->
 </div>
 
 <div class="flex flex-col md:flex-row justify-between gap-4">
-	<a
-		href={urls.chrome}
-		target="_blank"
-		rel="noreferrer"
-		class="btn btn-lg btn-primary no-underline"
-	>
+	<a href={urls.chrome} target="_blank" rel="noreferrer" class="btn btn-primary no-underline">
 		<Icon name="chrome" />
 		&nbsp; Install Chrome Notes &nbsp; <Icon name="bag" />
 	</a>
 
 	<button
-		class="btn btn-lg btn-primary no-underline"
+		class="btn btn-primary no-underline"
 		on:click={() =>
 			shareApp(
 				'Chrome Notes',
