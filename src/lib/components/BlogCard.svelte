@@ -18,7 +18,7 @@
 		</div>
 	</div>
 
-	<picture class="bg-white group-hover:scale-105 transition-transform">
+	<picture class="bg-white/90 group-hover:bg-white group-hover:scale-105 transition-transform">
 		<source type="image/avif" srcset={img} alt={title} />
 		<img
 			src={img.replace('.avif', '.jpg')}
