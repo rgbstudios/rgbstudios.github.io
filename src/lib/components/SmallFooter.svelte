@@ -17,6 +17,7 @@
 		</div>
 		<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
 			<a
+				title="Twitter"
 				class="hover:text-white"
 				href="https://twitter.com/rgbstudiosorg"
 				target="_blank"
@@ -29,6 +30,7 @@
 				href="https://www.facebook.com/rgbstudios.org"
 				target="_blank"
 				rel="noreferrer"
+				title="Facebook"
 			>
 				<Icon name="facebook" />
 			</a>
