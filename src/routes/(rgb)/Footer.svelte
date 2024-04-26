@@ -69,4 +69,7 @@
 	.footer-link {
 		@apply link link-hover p-1;
 	}
+	.footer-title {
+		@apply opacity-90;
+	}
 </style>

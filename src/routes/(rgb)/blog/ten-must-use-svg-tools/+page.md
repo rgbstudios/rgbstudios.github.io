@@ -7,7 +7,7 @@ updated_date: '2024/04/04'
 author: 'Justin Golden'
 preview_text: 'Check out these useful SVG website tools for editing, exporting, and designing your website with ease'
 img: '/img/blog/lights_rgb.avif'
-categories: ['webdev', 'svg', 'css']
+categories: ['webdev', 'svg', 'css', 'design']
 keywords:
   [
     'useful svg tools',
@@ -18,7 +18,7 @@ keywords:
     'url encode svg',
     'svg editor online',
     'svg patterns',
-    'svg divider app',
+    'svg divider app'
   ]
 ---
 
@@ -127,8 +127,3 @@ https://css-tricks.com/use-and-reuse-everything-in-svg-even-animations/
 https://css-tricks.com/using-svg/
 
 Here are some useful articles to learn about SVG.
-
-
-
-
-

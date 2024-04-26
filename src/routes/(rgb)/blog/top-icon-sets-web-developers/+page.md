@@ -7,7 +7,7 @@ updated_date: '2024/04/17'
 author: 'Justin Golden'
 preview_text: 'Check out the pros and cons of each of these easy to use icon sets'
 img: '/img/blog/icons.avif'
-categories: ['webdev', 'svg', 'css']
+categories: ['webdev', 'svg', 'css', 'design']
 keywords:
   [
     'top icon sets',
