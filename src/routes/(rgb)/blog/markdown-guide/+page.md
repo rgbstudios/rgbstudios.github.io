@@ -61,7 +61,13 @@ Here are some basic Markdown syntax elements:
 - **Bold and Italic:** Use double asterisks (`**bold**`) for bold text and single asterisks (`*italic*`) for italic text.
 - **Links:** Create links with `[link text](URL)`.
 - **Images:** Embed images with `![alt text](image URL)`.
-- **Code Blocks:** Use backticks (\`) for inline code and triple backticks (\`\`\`) for code blocks.
+- **Code Blocks:** Use backticks (`&#96;`) for inline code and triple backticks ( `&#96;&#96;&#96;`) for code blocks.
+
+## Formatting Code
+
+If you use triple backticks, leave the rest of that line blank. You can also write the language you are using if you want syntax highlighting, for example, `&#96;&#96;&#96;html` and then write your html between the triple backtick lines. Use `md` instead of `html` to format as markdown. You can write `js`, `ts`, `css`, `json`, and plenty of others depending on the support of the markdown engine you're using.
+
+## Others
 
 You can also create tables and other complex structures, and there are some variants that allow strikethrough (`~`), allow underscores (`_`) for bold and italic, and more. The above syntax should get you through 99% of use cases.
 
@@ -70,3 +76,11 @@ Check out [Markdown Guide](https://www.markdownguide.org/cheat-sheet/) and [Comm
 ## Conclusion
 
 Markdown is a versatile and easy-to-use markup language that simplifies the process of formatting text for the web. Whether you're writing documentation, blogging, or participating in online discussions, Markdown can help you communicate your ideas effectively while maintaining readability and clarity. So go ahead, give Markdown a try, and unleash your creativity in writing!
+
+## Aside
+
+If you want to render triple backticks in a code line (such as what I needed for this article 😅), then you can write:
+
+```md
+`&#96;&#96;&#96;`
+```
