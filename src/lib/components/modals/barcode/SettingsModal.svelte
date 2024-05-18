@@ -3,8 +3,6 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { bgColor, height, linesColor, margin, width } from '$lib/stores/barcode';
 
-	/* global JsBarcode */
-
 	let barcodeSvg: SVGSVGElement;
 
 	$: barcodeSvg &&

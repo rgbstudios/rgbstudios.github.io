@@ -26,6 +26,7 @@ module.exports = {
 	},
 	globals: {
 		google: true,
-		MathJax: true
+		MathJax: true,
+		JsBarcode: true
 	}
 };
