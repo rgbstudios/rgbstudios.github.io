@@ -1,5 +1,6 @@
 module.exports = {
 	root: true,
+	// add `'plugin:@typescript-eslint/recommended'` for many more ts errors
 	extends: ['eslint:recommended', 'prettier'],
 	parser: '@typescript-eslint/parser', // add the TypeScript parser
 	parserOptions: {
