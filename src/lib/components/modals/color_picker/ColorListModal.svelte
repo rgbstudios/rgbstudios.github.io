@@ -7,5 +7,5 @@
 
 <Modal {id} class="max-w-full bg-white text-black" fluid={true}>
 	<div slot="title">{title}</div>
-	<ColorList {settingName} bind:this={colorItems} modalId={id} />
+	<ColorList {settingName} bind:this={colorItems} />
 </Modal>
