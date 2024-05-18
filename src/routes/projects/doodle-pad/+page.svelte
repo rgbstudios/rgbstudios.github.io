@@ -77,6 +77,7 @@
 	}
 
 	function floodFill(imageData, newColor, x, y) {
+		// eslint-disable-next-line no-unused-vars
 		const { width, height, data } = imageData;
 		const stack = [];
 		const baseColor = getColorAtPixel(imageData, x, y);
