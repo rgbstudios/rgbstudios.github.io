@@ -34,6 +34,8 @@
 	let parsedUploadString: string = '';
 	let filesInput: HTMLInputElement;
 
+	/* global JsBarcode */
+
 	// update error message
 	$: if (barcodeCanvas) {
 		if ($text.trim() === '' || !isValid($text, $format)) errorMsg = 'Invalid Text';
