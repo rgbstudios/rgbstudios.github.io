@@ -220,9 +220,14 @@
 			class="link link-hover font-bold"
 			href="https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf">FIPS 180-4</a
 		>
+		&nbsp; | &nbsp; Learn about hashes:
+		<a
+			href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API/Non-cryptographic_uses_of_subtle_crypto"
+			class="link link-hover font-bold">Hash Uses</a
+		>
 	</p>
-	<p class="mt-2">
+	<p class="mt-4">
 		Note: SHA-1 is considered vulnerable and should not be used for cryptographic applications
 	</p>
-	<p class="mt-2">Note: Each character output above is 4 bits, since they are in hex</p>
+	<p class="mt-4">Note: Each character output above is 4 bits, since they are in hex</p>
 </div>
