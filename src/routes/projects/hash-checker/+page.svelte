@@ -16,7 +16,7 @@
 		files[column] = target.files ? target.files[0] : null;
 	}
 
-	async function generateAndSetHash(hashAlgorithm, source, column) {
+	async function generateAndSetHash(source, column) {
 		const hashBuffer = await crypto.subtle.digest(hashAlgorithm, source);
 		const hashArray = Array.from(new Uint8Array(hashBuffer));
 		const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
@@ -25,7 +25,7 @@
 	}
 
 	async function generateHash(column: number) {
-		generateAndSetHash(hashAlgorithm, new TextEncoder().encode(inputStrings[column]), column);
+		generateAndSetHash(new TextEncoder().encode(inputStrings[column]), column);
 	}
 
 	async function generateFileHash(column: number) {
@@ -35,7 +35,7 @@
 			return;
 		}
 
-		generateAndSetHash(hashAlgorithm, await file.arrayBuffer(), column);
+		generateAndSetHash(await file.arrayBuffer(), column);
 	}
 
 	// Click generate hash buttons for user
