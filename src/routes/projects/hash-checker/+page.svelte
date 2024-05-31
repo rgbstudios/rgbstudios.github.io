@@ -16,16 +16,16 @@
 		files[column] = target.files ? target.files[0] : null;
 	}
 
-	async function generateHash(column: number) {
-		const inputString = inputStrings[column];
-		const hashBuffer = await crypto.subtle.digest(
-			hashAlgorithm,
-			new TextEncoder().encode(inputString)
-		);
+	async function generateAndSetHash(hashAlgorithm, source, column) {
+		const hashBuffer = await crypto.subtle.digest(hashAlgorithm, source);
 		const hashArray = Array.from(new Uint8Array(hashBuffer));
 		const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
 
 		generatedHashes[column] = hashHex;
+	}
+
+	async function generateHash(column: number) {
+		generateAndSetHash(hashAlgorithm, new TextEncoder().encode(inputStrings[column]), column);
 	}
 
 	async function generateFileHash(column: number) {
@@ -35,12 +35,7 @@
 			return;
 		}
 
-		const arrayBuffer = await file.arrayBuffer();
-		const hashBuffer = await crypto.subtle.digest(hashAlgorithm, arrayBuffer);
-		const hashArray = Array.from(new Uint8Array(hashBuffer));
-		const hashHex = hashArray.map((b) => b.toString(16).padStart(2, '0')).join('');
-
-		generatedHashes[column] = hashHex;
+		generateAndSetHash(hashAlgorithm, await file.arrayBuffer(), column);
 	}
 
 	// Click generate hash buttons for user
