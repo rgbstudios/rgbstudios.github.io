@@ -38,6 +38,7 @@
 		data += ',Final Grade\n';
 		for (const { name, scores, grade } of $studentsHistory) {
 			data += `${name || 'Anonymous'}`;
+			// eslint-disable-next-line no-unused-vars
 			for (const [index, _] of $assignments.entries()) {
 				data += `,${scores[index]}`;
 			}

@@ -77,6 +77,7 @@
 	}
 
 	function floodFill(imageData, newColor, x, y) {
+		// eslint-disable-next-line no-unused-vars
 		const { width, height, data } = imageData;
 		const stack = [];
 		const baseColor = getColorAtPixel(imageData, x, y);
@@ -440,8 +441,8 @@
 	</button>
 	{#if !uiHidden}
 		<div class="dropdown absolute bottom-4 right-4 dropdown-top dropdown-end">
-			<span tabindex="0" class="btn btn-sm m-1">Filters</span>
-			<ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-900 rounded-box w-52">
+			<button class="btn btn-sm m-1">Filters</button>
+			<ul class="dropdown-content menu p-2 shadow bg-base-900 rounded-box w-52">
 				<li><button on:click={darken}>Darken</button></li>
 				<li><button on:click={lighten}>Lighten</button></li>
 				<li><button on:click={grayscale}>Grayscale</button></li>
