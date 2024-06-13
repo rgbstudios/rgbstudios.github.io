@@ -6,8 +6,8 @@ date: '2024/04/04'
 updated_date: '2024/04/04'
 author: 'Justin Golden'
 preview_text: 'Check out these useful SVG website tools for editing, exporting, and designing your website with ease'
-img: '/img/blog/undraw_pen_tool.svg'
-categories: ['webdev', 'svg', 'css']
+img: '/img/blog/lights_rgb.avif'
+categories: ['webdev', 'svg', 'css', 'design']
 keywords:
   [
     'useful svg tools',
@@ -22,7 +22,13 @@ keywords:
   ]
 ---
 
-<img src="/img/blog/undraw_pen_tool.svg" alt="" class="bg-white p-4">
+<figure>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/lights_rgb.avif" alt="" />
+    <img src="/img/blog/lights_rgb.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @gabrielbassino on Unsplash</figcaption>
+</figure>
 
 ## Editing and Using SVG
 

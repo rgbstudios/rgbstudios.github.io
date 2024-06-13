@@ -10,13 +10,10 @@
 			<button class="btn btn-ghost lg:hidden" title="Menu">
 				<Icon name="menu" />
 			</button>
-			<ul
-				tabindex="0"
-				class="menu menu-compact dropdown-content mt-2 p-2 shadow bg-base-900 rounded-box w-52"
-			>
+			<ul class="menu menu-compact dropdown-content mt-2 p-2 shadow bg-base-900 rounded-box w-52">
 				<li><a href="/">Home</a></li>
 
-				<li tabindex="0">
+				<li>
 					<span class="justify-between">
 						Projects
 						<Icon name="chevron_right" class="w-4 h-4" />
@@ -28,7 +25,7 @@
 						<li><a href="/projects/updated">Recently Updated</a></li>
 					</ul>
 				</li>
-				<li tabindex="0">
+				<li>
 					<span class="justify-between">
 						Blog
 						<Icon name="chevron_right" class="w-4 h-4" />
@@ -51,7 +48,7 @@
 	<div class="navbar-center hidden lg:flex">
 		<ul class="menu menu-horizontal p-0">
 			<li><a href="/" class:active={$page.url.pathname === '/'}>Home</a></li>
-			<li tabindex="0">
+			<li>
 				<a href="/projects" class:active={$page.url.pathname === '/projects'}>
 					Projects
 					<Icon name="chevron_down" class="w-4 h-4" />
@@ -63,7 +60,7 @@
 					<li><a href="/projects/updated">Recently Updated</a></li>
 				</ul>
 			</li>
-			<li tabindex="0">
+			<li>
 				<a href="/blog" class:active={$page.url.pathname === '/blog'}>
 					Blog
 					<Icon name="chevron_down" class="w-4 h-4" />

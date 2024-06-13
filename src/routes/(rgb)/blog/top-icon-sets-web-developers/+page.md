@@ -6,8 +6,8 @@ date: '2024/04/17'
 updated_date: '2024/04/17'
 author: 'Justin Golden'
 preview_text: 'Check out the pros and cons of each of these easy to use icon sets'
-img: '/img/blog/undraw_icon_design.svg'
-categories: ['webdev', 'svg', 'css']
+img: '/img/blog/icons.avif'
+categories: ['webdev', 'svg', 'css', 'design']
 keywords:
   [
     'top icon sets',
@@ -18,7 +18,13 @@ keywords:
   ]
 ---
 
-<img src="/img/blog/undraw_icon_design.svg" alt="" class="bg-white p-4">
+<figure>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/icons.avif" alt="" />
+    <img src="/img/blog/icons.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @aquatium on Unsplash</figcaption>
+</figure>
 
 ## Top 4
 

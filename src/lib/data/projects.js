@@ -57,6 +57,16 @@ const projects = [
 		isFeatured: true
 	},
 	{
+		title: 'Hash Checker',
+		text: 'Check hashes for text or files, compare hashes, and pick from several different hasing algorithms such as SHA-256, SHA-384, and SHA-512',
+		img: '/img/projects/screenshots/hash-checker.png',
+		link: '/projects/hash-checker/',
+		tags: ['programming', 'calculator', 'converter', 'educational', 'tool', 'web app'],
+
+		isUpdated: true,
+		isNew: true
+	},
+	{
 		title: 'Grade Calc',
 		text: "Use Grade Calc to calculate students' grades quickly and simply",
 		img: '/img/projects/screenshots/grade-calc.png',
@@ -70,7 +80,7 @@ const projects = [
 		text: 'Convert numbers between binary, octal, decimal, hexadecimal, and more',
 		img: '/img/projects/screenshots/base-convert.png',
 		link: '/projects/base-convert/',
-		tags: ['calculator', 'converter', 'educational', 'tool', 'web app'],
+		tags: ['programming', 'calculator', 'converter', 'educational', 'tool', 'web app'],
 
 		isUpdated: true
 	},

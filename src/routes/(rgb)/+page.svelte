@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
+	import AppCard from '$lib/components/AppCard.svelte';
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 	import Icon from '$lib/components/Icon.svelte';
@@ -45,6 +46,22 @@
 </article>
 
 <hr />
+
+<!-- begin temp -->
+
+<div class="prose-custom my-8">
+	<h2>New Tool &mdash; Hash Checker!</h2>
+</div>
+
+{#each projects as { title, text, img, link, isNew, isPopular, isUpdated, tags } (link)}
+	{#if title === 'Hash Checker'}
+		<AppCard {title} {text} {img} {link} {isNew} {isPopular} {isUpdated} {tags} />
+	{/if}
+{/each}
+
+<hr />
+
+<!-- end temp -->
 
 <div class="prose-custom my-8">
 	<h2>Featured Articles</h2>

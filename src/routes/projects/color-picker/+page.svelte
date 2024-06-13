@@ -267,8 +267,8 @@
 					class="grid {colormode === 'CMYK'
 						? 'grid-cols-1'
 						: colormode === 'RGB'
-						? 'lg:grid-cols-2 xl:grid-cols-3'
-						: 'lg:grid-cols-2'} gap-2"
+							? 'lg:grid-cols-2 xl:grid-cols-3'
+							: 'lg:grid-cols-2'} gap-2"
 				>
 					<CopyableInput
 						class="mb-4"
@@ -381,19 +381,10 @@
 />
 
 <style lang="postcss">
-	h1,
-	h2,
 	h3 {
 		@apply tracking-widest sm:text-xl md:text-2xl;
 	}
 
-	p {
-		@apply leading-relaxed text-base md:text-lg;
-	}
-
-	a {
-		@apply hover:underline font-medium;
-	}
 	input[type='text'],
 	input[type='number'] {
 		@apply p-2 bg-white h-10;

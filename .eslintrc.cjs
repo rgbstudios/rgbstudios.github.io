@@ -1,5 +1,7 @@
 module.exports = {
 	root: true,
+	// add `'plugin:@typescript-eslint/recommended'` for many more ts errors
+	// still can't get types.d.ts working with eslint - @link https://github.com/sveltejs/kit/discussions/3743
 	extends: ['eslint:recommended', 'prettier'],
 	parser: '@typescript-eslint/parser', // add the TypeScript parser
 	parserOptions: {
@@ -26,6 +28,7 @@ module.exports = {
 	},
 	globals: {
 		google: true,
-		MathJax: true
+		MathJax: true,
+		JsBarcode: true
 	}
 };

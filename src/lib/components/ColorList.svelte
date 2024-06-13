@@ -12,7 +12,6 @@
 	import copyText from '$lib/util/copyText';
 
 	export let settingName;
-	export let modalId;
 
 	let lastTimestamp;
 
@@ -77,17 +76,14 @@
 						<button class="btn" on:click={() => copyText(item.color)} title="Copy">
 							<Icon name="copy" class="inline w-4 h-4" />
 						</button>
-						<label
+						<button
 							tabindex="0"
 							class="btn"
-							on:click={() => {
-								$settings.color = item.color;
-							}}
-							for={modalId}
+							on:click={() => ($settings.color = item.color)}
 							title="Open"
 						>
 							<Icon name="open" class="inline w-4 h-4" />
-						</label>
+						</button>
 						<!-- <button class="btn">
 							<Icon name="heart" class="inline w-4 h-4" />
 						</button> -->
@@ -109,32 +105,7 @@
 {/if}
 
 <style lang="postcss">
-	h1,
-	h2,
-	h3 {
-		@apply tracking-widest sm:text-xl md:text-2xl;
-	}
-
 	p {
 		@apply leading-relaxed text-base md:text-lg;
-	}
-
-	a {
-		@apply hover:underline font-medium;
-	}
-	input[type='text'],
-	input[type='number'] {
-		@apply p-2 bg-white h-10;
-		@apply border-2 border-base-200;
-	}
-
-	.btn {
-		@apply p-2 bg-white hover:bg-base-100 text-base-900 border-0;
-	}
-	.btn-circle {
-		@apply p-2 bg-white hover:bg-base-100 rounded-full;
-	}
-	.colormode {
-		@apply bg-white p-4;
 	}
 </style>
