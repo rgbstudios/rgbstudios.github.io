@@ -10,6 +10,7 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import Icon from '$lib/components/Icon.svelte';
+	import ColorVariants from '$lib/components/ColorVariants.svelte';
 	import CopyableInput from '$lib/components/CopyableInput.svelte';
 	import Range from '$lib/components/Range.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
@@ -367,9 +368,13 @@
 	</div>
 </div>
 
-<p class:text-black={!isDark} class="mt-4">
-	Hit enter after typing in an input to convert. Hit tab and shift+tab to navigate inputs quickly.
-</p>
+<div class:text-black={!isDark} class="overflow-x-auto">
+	<p class="my-4">
+		Hit enter after typing in an input to convert. Hit tab and shift+tab to navigate inputs quickly.
+	</p>
+
+	<ColorVariants color={$settings.color} />
+</div>
 
 <ColorListModal
 	bind:colorItems={favoritesList}
