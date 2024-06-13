@@ -199,7 +199,7 @@
 			/>
 
 			<button
-				class="btn relative w-10 h-10 z-10 float-left"
+				class="btn no-animation relative w-10 h-10 z-10 float-left"
 				style="background: url(/img/projects/icons/color-picker.svg) 0.125rem 0.125rem / 2rem no-repeat white; background-position: center;"
 				on:click|self={() => {
 					pickerOpen = !pickerOpen;
@@ -366,6 +366,10 @@
 		</button>
 	</div>
 </div>
+
+<p class:text-black={!isDark} class="mt-4">
+	Hit enter after typing in an input to convert. Hit tab and shift+tab to navigate inputs quickly.
+</p>
 
 <ColorListModal
 	bind:colorItems={favoritesList}
