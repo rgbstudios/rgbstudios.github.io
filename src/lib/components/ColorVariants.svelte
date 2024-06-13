@@ -1,7 +1,7 @@
 <script>
+	import { settings } from '$lib/stores/color-picker';
 	import w3color from '$lib/util/external/w3color';
 	import Icon from './Icon.svelte';
-	import { settings } from '$lib/stores/color-picker';
 
 	export let color;
 
@@ -13,6 +13,8 @@
 	function hslToRgb(str) {
 		return w3color(str).toRgbString();
 	}
+
+	// todo: fix rounding problems and don't display duplicate colors
 </script>
 
 <h3 class="mb-4">Hue</h3>
