@@ -10,6 +10,7 @@
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
 
 	import Icon from '$lib/components/Icon.svelte';
+	import ColorVariants from '$lib/components/ColorVariants.svelte';
 	import CopyableInput from '$lib/components/CopyableInput.svelte';
 	import Range from '$lib/components/Range.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
@@ -199,7 +200,7 @@
 			/>
 
 			<button
-				class="btn relative w-10 h-10 z-10 float-left"
+				class="btn no-animation relative w-10 h-10 z-10 float-left"
 				style="background: url(/img/projects/icons/color-picker.svg) 0.125rem 0.125rem / 2rem no-repeat white; background-position: center;"
 				on:click|self={() => {
 					pickerOpen = !pickerOpen;
@@ -364,6 +365,10 @@
 		>
 			<Icon name="heart" class="inline w-4 h-4" fillColor={isFavorite ? $settings.color : 'none'} />
 		</button>
+	</div>
+
+	<div class="bg-white p-4 mt-10">
+		<ColorVariants color={$settings.color} />
 	</div>
 </div>
 
