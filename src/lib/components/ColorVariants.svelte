@@ -145,7 +145,13 @@
 	h3 {
 		@apply tracking-widest sm:text-xl md:text-2xl;
 	}
+	.btn {
+		@apply p-2 bg-white hover:bg-base-100 text-base-900 border-0;
+	}
 
+	table {
+		min-width: 100%;
+	}
 	th,
 	td {
 		padding: 0.5rem 1rem;
