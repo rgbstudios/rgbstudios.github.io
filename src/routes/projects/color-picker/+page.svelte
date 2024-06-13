@@ -368,11 +368,7 @@
 	</div>
 </div>
 
-<div class:text-black={!isDark} class="overflow-x-auto">
-	<p class="my-4">
-		Hit enter after typing in an input to convert. Hit tab and shift+tab to navigate inputs quickly.
-	</p>
-
+<div class:text-black={!isDark} class="mt-10 overflow-x-auto">
 	<ColorVariants color={$settings.color} />
 </div>
 
