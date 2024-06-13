@@ -368,7 +368,7 @@
 	</div>
 </div>
 
-<div class:text-black={!isDark} class="mt-10 overflow-x-auto">
+<div class:text-black={!isDark} class="mt-10">
 	<ColorVariants color={$settings.color} />
 </div>
 
