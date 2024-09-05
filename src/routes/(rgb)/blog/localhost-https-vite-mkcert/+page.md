@@ -75,8 +75,8 @@ import fs from 'fs';
 
 server: {
   https: {
-    key: fs.readFileSync('app/ssl/server.key'),
-    cert: fs.readFileSync('app/ssl/server.crt')
+    key: fs.readFileSync('./app/ssl/server.key'),
+    cert: fs.readFileSync('./app/ssl/server.crt')
   }
 }
 ```
