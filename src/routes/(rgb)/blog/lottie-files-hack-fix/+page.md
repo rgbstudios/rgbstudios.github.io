@@ -6,10 +6,18 @@ date: '2024/10/30'
 updated_date: '2024/10/30'
 author: 'Justin Golden'
 preview_text: 'Fix hacked crypto wallet popup on your website - downgrade to 2.0.4 of lottie files'
-img: '/img/blog/person_writing.avif'
+img: '/img/blog/person-distress-computer.avif'
 categories: ['webdev']
 keywords: ['crypto wallet popup', 'lottie files hack', 'lottie files hack crypto wallet popup']
 ---
+
+<figure>
+  <picture>
+    <source type="image/avif" srcset="/img/blog/person-distress-computer.avif" alt="" />
+    <img src="/img/blog/person-distress-computer.jpg" alt="">
+  </picture>
+  <figcaption>Photo credit @austindistel on Unsplash</figcaption>
+</figure>
 
 ## Problem
 
