@@ -2,7 +2,6 @@
 	/**
 	 * Layout used for individual blog posts ('/blog/*')
 	 */
-
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
