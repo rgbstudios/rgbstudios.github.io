@@ -1,9 +1,11 @@
 <script>
 	import MobileMenuDropdown from './MobileMenuDropdown.svelte';
 	import Icon from '$lib/components/Icon.svelte';
+ import { navigating } from '$app/stores'
 
 	let mobileMenuDropdownParent;
 	let isMobileMenuDropdownOpen = false;
+ $: if($navigating) isMobileMenuDropdownOpen = false;
 </script>
 
 <svelte:window
