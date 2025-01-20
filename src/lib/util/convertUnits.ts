@@ -175,7 +175,7 @@ export class Converter {
 		if (typeof conversionFrom === 'object') {
 			value = conversionFrom.function(value); // Apply the conversion function
 		} else {
-			value = value * conversionFrom; // Simple multiplier
+			value = value / conversionFrom; // Simple multiplier
 		}
 
 		if (typeof conversionTo === 'object') {
