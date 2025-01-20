@@ -1,5 +1,5 @@
 <script lang="ts">
-	// todo: conversion ratio for formulas like temperature should be displayed better
+	// todo: handle .999 and .000 type numbers better
 	import { converter, type ConversionResult } from '$lib/util/convertUnits';
 
 	let value: number | null = null;
@@ -67,21 +67,23 @@
 			</thead>
 			<tbody>
 				{#each results as { unit: toUnit, value: convertedValue, descriptions }}
-					<tr>
-						<td>{toUnit}</td>
-						<td>{convertedValue.toFixed(6)}</td>
-						<td>
-							1 {fromUnit} = {converter
-								.convert('1', fromUnit, measure)
-								.find((r) => r.unit === toUnit)
-								?.value.toFixed(6)}
-							{toUnit}
-							{#if descriptions && fromUnit !== toUnit}
-								<br />
-								<span class="text-xs">{descriptions[fromUnit]}</span>
-							{/if}
-						</td>
-					</tr>
+					{#if fromUnit !== toUnit}
+						<tr>
+							<td>{toUnit}</td>
+							<td>{convertedValue.toFixed(6)}</td>
+							<td>
+								1 {fromUnit} = {converter
+									.convert('1', fromUnit, measure)
+									.find((r) => r.unit === toUnit)
+									?.value.toFixed(6)}
+								{toUnit}
+								{#if descriptions}
+									<br />
+									<span class="text-xs">{descriptions[fromUnit]}</span>
+								{/if}
+							</td>
+						</tr>
+					{/if}
 				{/each}
 			</tbody>
 		</table>

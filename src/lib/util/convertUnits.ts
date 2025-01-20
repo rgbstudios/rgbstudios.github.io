@@ -1,3 +1,4 @@
+// todo: handle singular/plural unit names
 export type ConversionResult = {
 	unit: string;
 	value: number;
