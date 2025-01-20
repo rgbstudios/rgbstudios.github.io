@@ -66,19 +66,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				{#each results as { unit, value: convertedValue, description }}
+				{#each results as { unit: toUnit, value: convertedValue, descriptions }}
 					<tr>
-						<td>{unit}</td>
+						<td>{toUnit}</td>
 						<td>{convertedValue.toFixed(6)}</td>
 						<td>
 							1 {fromUnit} = {converter
 								.convert('1', fromUnit, measure)
-								.find((r) => r.unit === unit)
+								.find((r) => r.unit === toUnit)
 								?.value.toFixed(6)}
-							{unit}
-							{#if description}
+							{toUnit}
+							{#if descriptions && fromUnit !== toUnit}
 								<br />
-								{description}
+								<span class="text-xs">{descriptions[fromUnit]}</span>
 							{/if}
 						</td>
 					</tr>

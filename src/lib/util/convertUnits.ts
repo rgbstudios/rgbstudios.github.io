@@ -1,12 +1,12 @@
 export type ConversionResult = {
 	unit: string;
 	value: number;
-	description?: string; // Optional description for the conversion
+	descriptions?: Record<string, string>; // Optional descriptions for the conversion
 };
 
 type ConversionFunction = {
 	function: (value: number) => number; // Conversion logic
-	description: string; // Human-readable description
+	descriptions: Record<string, string>; // Human-readable descriptions
 };
 
 export class Converter {
@@ -53,11 +53,17 @@ export class Converter {
 			celsius: 1,
 			fahrenheit: {
 				function: (value: number) => (value * 9) / 5 + 32,
-				description: '(°C × 9/5) + 32'
+				descriptions: {
+					celsius: '°F = °C × 9/5 + 32',
+					kelvin: '°F = (°K - 273.15) × 9/5 + 32'
+				}
 			},
 			kelvin: {
 				function: (value: number) => value + 273.15,
-				description: '°C + 273.15'
+				descriptions: {
+					celsius: '°K = °C + 273.15',
+					fahrenheit: '°K = (°F - 32) × 5/9 + 273.15'
+				}
 			}
 		},
 		// Speed
@@ -157,7 +163,7 @@ export class Converter {
 			return {
 				unit,
 				value: this.convertUnit(numValue, fromUnit, unit, measure),
-				description: isFunction ? conversion.description : undefined
+				descriptions: isFunction ? conversion.descriptions : undefined
 			};
 		});
 	}
