@@ -2,7 +2,7 @@
 	// todo: conversion ratio for formulas like temperature should be displayed better
 	import { converter, type ConversionResult } from '$lib/util/convertUnits';
 
-	let value: number = 0;
+	let value: number | null = null;
 	let fromUnit: string = '';
 	let measure: string = 'length';
 	let results: ConversionResult[] = [];
@@ -14,15 +14,11 @@
 	function handleInputChange(event: Event) {
 		const input = (event.target as HTMLInputElement).value;
 		const parsedValue = parseFloat(input);
-		if (!isNaN(parsedValue)) {
-			value = parsedValue;
-		} else {
-			value = 0; // Reset if invalid number
-		}
+		value = !isNaN(parsedValue) ? parsedValue : null;
 	}
 
 	// Reactive block to update conversion results when value and unit are provided
-	$: if (!isNaN(value) && fromUnit && measure) {
+	$: if (value !== null && fromUnit && measure) {
 		try {
 			results = converter.convert(value.toString(), fromUnit, measure); // Pass the value as string
 		} catch (error) {
@@ -42,20 +38,20 @@
 			placeholder="Enter value"
 			on:input={handleInputChange}
 			class="input flex-1"
-			{value}
+			bind:value
 		/>
 
 		<select bind:value={fromUnit} class="select">
 			<option value="" disabled selected>Select unit</option>
 			{#each converter.getUnits(measure) as unit}
-				<option value={unit} selected={unit === fromUnit}>{unit}</option>
+				<option value={unit}>{unit}</option>
 			{/each}
 		</select>
 
 		<select on:change={() => (fromUnit = '')} bind:value={measure} class="select">
 			<option value="" disabled>Select category</option>
 			{#each measures as m}
-				<option value={m} selected={m === measure}>{m}</option>
+				<option value={m}>{m}</option>
 			{/each}
 		</select>
 	</div>
@@ -66,11 +62,11 @@
 				<tr>
 					<th>Unit</th>
 					<th>Value</th>
-					<th>Conversion Ratio</th>
+					<th>Conversion Formula</th>
 				</tr>
 			</thead>
 			<tbody>
-				{#each results as { unit, value: convertedValue }}
+				{#each results as { unit, value: convertedValue, description }}
 					<tr>
 						<td>{unit}</td>
 						<td>{convertedValue.toFixed(6)}</td>
@@ -80,6 +76,10 @@
 								.find((r) => r.unit === unit)
 								?.value.toFixed(6)}
 							{unit}
+							{#if description}
+								<br />
+								{description}
+							{/if}
 						</td>
 					</tr>
 				{/each}

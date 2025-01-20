@@ -1,10 +1,16 @@
 export type ConversionResult = {
 	unit: string;
 	value: number;
+	description?: string; // Optional description for the conversion
+};
+
+type ConversionFunction = {
+	function: (value: number) => number; // Conversion logic
+	description: string; // Human-readable description
 };
 
 export class Converter {
-	private conversions: Record<string, Record<string, number | ((value: number) => number)>> = {
+	private conversions: Record<string, Record<string, number | ConversionFunction>> = {
 		// Length
 		length: {
 			meters: 1,
@@ -38,15 +44,21 @@ export class Converter {
 			hours: 1 / 3600,
 			days: 1 / 86400,
 			weeks: 1 / 604800,
-			months: 1 / 2629746, // Approximate month length
-			years: 1 / 31557600, // Approximate year length
-			decades: 1 / 315576000 // Approximate decade length
+			months: 1 / 2629746,
+			years: 1 / 31557600,
+			decades: 1 / 315576000
 		},
 		// Temperature
 		temperature: {
 			celsius: 1,
-			fahrenheit: (value: number) => (value * 9) / 5 + 32,
-			kelvin: (value: number) => value + 273.15
+			fahrenheit: {
+				function: (value: number) => (value * 9) / 5 + 32,
+				description: '(°C × 9/5) + 32'
+			},
+			kelvin: {
+				function: (value: number) => value + 273.15,
+				description: '°C + 273.15'
+			}
 		},
 		// Speed
 		speed: {
@@ -140,27 +152,31 @@ export class Converter {
 		const measureConversions = this.conversions[measure];
 		if (!measureConversions) return [];
 
-		return Object.entries(measureConversions).map(([unit, conversion]) => ({
-			unit,
-			value: this.convertUnit(numValue, fromUnit, unit, measure)
-		}));
+		return Object.entries(measureConversions).map(([unit, conversion]) => {
+			const isFunction = typeof conversion === 'object';
+			return {
+				unit,
+				value: this.convertUnit(numValue, fromUnit, unit, measure),
+				description: isFunction ? conversion.description : undefined
+			};
+		});
 	}
 
 	private convertUnit(value: number, fromUnit: string, toUnit: string, measure: string): number {
 		const conversionFrom = this.conversions[measure][fromUnit];
 		const conversionTo = this.conversions[measure][toUnit];
 
-		if (typeof conversionFrom === 'function') {
-			value = conversionFrom(value); // Handle cases like temperature where conversion is a function
+		if (typeof conversionFrom === 'object') {
+			value = conversionFrom.function(value); // Apply the conversion function
 		} else {
-			value = value * conversionFrom;
+			value = value * conversionFrom; // Simple multiplier
 		}
 
-		if (typeof conversionTo === 'function') {
-			return conversionTo(value); // Handle cases like temperature
+		if (typeof conversionTo === 'object') {
+			return conversionTo.function(value); // Apply the conversion function
 		}
 
-		return value * conversionTo;
+		return value * conversionTo; // Simple multiplier
 	}
 
 	getMeasures() {
