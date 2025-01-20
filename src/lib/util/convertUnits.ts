@@ -1,0 +1,179 @@
+export type ConversionResult = {
+	unit: string;
+	value: number;
+};
+
+export class Converter {
+	private conversions: Record<string, Record<string, number | ((value: number) => number)>> = {
+		// Length
+		length: {
+			meters: 1,
+			kilometers: 0.001,
+			centimeters: 100,
+			millimeters: 1000,
+			inches: 39.3701,
+			feet: 3.28084,
+			miles: 0.000621371,
+			yards: 1.09361
+		},
+		// Mass
+		mass: {
+			grams: 1,
+			kilograms: 0.001,
+			pounds: 0.00220462,
+			ounces: 0.035274
+		},
+		// Volume
+		volume: {
+			liters: 1,
+			milliliters: 1000,
+			gallons: 0.264172,
+			cubicMeters: 0.001,
+			cubicCentimeters: 1000
+		},
+		// Time
+		time: {
+			seconds: 1,
+			minutes: 1 / 60,
+			hours: 1 / 3600,
+			days: 1 / 86400,
+			weeks: 1 / 604800,
+			months: 1 / 2629746, // Approximate month length
+			years: 1 / 31557600, // Approximate year length
+			decades: 1 / 315576000 // Approximate decade length
+		},
+		// Temperature
+		temperature: {
+			celsius: 1,
+			fahrenheit: (value: number) => (value * 9) / 5 + 32,
+			kelvin: (value: number) => value + 273.15
+		},
+		// Speed
+		speed: {
+			metersPerSecond: 1,
+			kilometersPerHour: 3.6,
+			milesPerHour: 2.23694,
+			feetPerSecond: 3.28084
+		},
+		// Pressure
+		pressure: {
+			pascal: 1,
+			bar: 1e-5,
+			psi: 0.0001450377,
+			atmosphere: 9.86923e-6,
+			torr: 0.00750062
+		},
+		// Current
+		current: {
+			amperes: 1,
+			milliamperes: 1000,
+			microamperes: 1e6
+		},
+		// Voltage
+		voltage: {
+			volts: 1,
+			millivolts: 1000,
+			microvolts: 1e6
+		},
+		// Power
+		power: {
+			watts: 1,
+			kilowatts: 0.001,
+			megawatts: 1e-6,
+			horsepower: 0.00134102
+		},
+		// Force
+		force: {
+			newtons: 1,
+			dynes: 1e5,
+			poundsForce: 0.224809
+		},
+		// Resistance
+		resistance: {
+			ohms: 1,
+			kiloohms: 0.001,
+			megaohms: 1e-6
+		},
+		// Energy
+		energy: {
+			joules: 1,
+			kilojoules: 0.001,
+			calories: 0.239006,
+			kilocalories: 0.000239006,
+			wattHours: 1 / 3600
+		},
+		// Density
+		density: {
+			kilogramsPerCubicMeter: 1,
+			gramsPerCubicCentimeter: 1000,
+			poundsPerCubicFoot: 0.06242796,
+			gramsPerMilliliter: 1000
+		},
+		// Area
+		area: {
+			squareMeters: 1,
+			squareKilometers: 1e-6,
+			squareCentimeters: 10000,
+			squareMillimeters: 1e6,
+			squareInches: 1550.0031,
+			squareFeet: 10.7639,
+			acres: 0.000247105,
+			hectares: 1e-4
+		},
+		// Magnetic Field Strength
+		magneticFieldStrength: {
+			tesla: 1,
+			gauss: 10000
+		},
+		// Concentration
+		concentration: {
+			molesPerLiter: 1,
+			molar: 1,
+			percent: 100
+		}
+	};
+
+	convert(value: string, fromUnit: string, measure: string): ConversionResult[] {
+		const numValue = parseFloat(value);
+		if (isNaN(numValue)) return [];
+
+		const measureConversions = this.conversions[measure];
+		if (!measureConversions) return [];
+
+		return Object.entries(measureConversions).map(([unit, conversion]) => ({
+			unit,
+			value: this.convertUnit(numValue, fromUnit, unit, measure)
+		}));
+	}
+
+	private convertUnit(value: number, fromUnit: string, toUnit: string, measure: string): number {
+		const conversionFrom = this.conversions[measure][fromUnit];
+		const conversionTo = this.conversions[measure][toUnit];
+
+		if (typeof conversionFrom === 'function') {
+			value = conversionFrom(value); // Handle cases like temperature where conversion is a function
+		} else {
+			value = value * conversionFrom;
+		}
+
+		if (typeof conversionTo === 'function') {
+			return conversionTo(value); // Handle cases like temperature
+		}
+
+		return value * conversionTo;
+	}
+
+	getMeasures() {
+		return Object.keys(this.conversions);
+	}
+
+	getUnits(measure: string) {
+		return Object.keys(this.conversions[measure] || {});
+	}
+
+	getUnitType(unit: string): string | null {
+		return Object.keys(this.conversions).find((measure) => this.conversions[measure][unit]) || null;
+	}
+}
+
+export const converter = new Converter();
