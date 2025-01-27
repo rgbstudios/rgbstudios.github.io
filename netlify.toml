@@ -1,3 +1,7 @@
+[build.environment]
+  NODE_VERSION = "16.15.0"
+  NPM_FLAGS = "--version"
+
 [build]
   command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
   publish = "build/"
