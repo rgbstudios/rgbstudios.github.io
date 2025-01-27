@@ -48,6 +48,10 @@ To set up Netlify dev locally, `npm install -g netlify-cli`
 
 `netlify dev`
 
+### Update Node Version in Netlify
+
+https://app.netlify.com/sites/rgbstudios/configuration/deploys#content > configure > dependency management > configure
+
 ### Credit
 
 Designed by Justin Golden.
