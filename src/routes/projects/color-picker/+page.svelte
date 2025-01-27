@@ -366,10 +366,10 @@
 			<Icon name="heart" class="inline w-4 h-4" fillColor={isFavorite ? $settings.color : 'none'} />
 		</button>
 	</div>
-</div>
 
-<div class:text-black={!isDark} class="mt-10">
-	<ColorVariants color={$settings.color} />
+	<div class="bg-white p-4 mt-10">
+		<ColorVariants color={$settings.color} />
+	</div>
 </div>
 
 <ColorListModal

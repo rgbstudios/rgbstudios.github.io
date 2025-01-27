@@ -1,45 +1,35 @@
 <script>
 	import { page } from '$app/stores';
+	import MobileMenu from './MobileMenu.svelte';
+	import MobileMenuItem from './MobileMenuItem.svelte';
 
 	import Icon from '$lib/components/Icon.svelte';
 </script>
 
 <div class="navbar bg-base-900/90 sticky top-0 z-10 backdrop-blur-sm">
 	<div class="navbar-start">
-		<div class="dropdown">
-			<button class="btn btn-ghost lg:hidden" title="Menu">
-				<Icon name="menu" />
-			</button>
-			<ul class="menu menu-compact dropdown-content mt-2 p-2 shadow bg-base-900 rounded-box w-52">
-				<li><a href="/">Home</a></li>
-
-				<li>
-					<span class="justify-between">
-						Projects
-						<Icon name="chevron_right" class="w-4 h-4" />
-					</span>
-					<ul class="p-2 bg-base-900">
-						<li><a href="/projects">All Projects</a></li>
-						<li><a href="/projects/popular">Popular</a></li>
-						<li><a href="/projects/new">New</a></li>
-						<li><a href="/projects/updated">Recently Updated</a></li>
-					</ul>
-				</li>
-				<li>
-					<span class="justify-between">
-						Blog
-						<Icon name="chevron_right" class="w-4 h-4" />
-					</span>
-					<ul class="p-2 bg-base-900">
-						<li><a href="/blog">All Posts</a></li>
-						<li><a href="/blog?category=webdev">Web Dev</a></li>
-						<li><a href="/blog?category=design">Design</a></li>
-					</ul>
-				</li>
-				<li><a href="/about">About Us</a></li>
-				<li><a href="/contact">Contact</a></li>
-			</ul>
-		</div>
+		<MobileMenu>
+			<MobileMenuItem href="/" label="Home" />
+			<MobileMenuItem
+				label="Projects"
+				submenu={[
+					{ href: '/projects', label: 'All Projects' },
+					{ href: '/projects/popular', label: 'Popular' },
+					{ href: '/projects/new', label: 'New' },
+					{ href: '/projects/updated', label: 'Recently Updated' }
+				]}
+			/>
+			<MobileMenuItem
+				label="Blog"
+				submenu={[
+					{ href: '/blog', label: 'All Posts' },
+					{ href: '/blog?category=webdev', label: 'Web Dev' },
+					{ href: '/blog?category=design', label: 'Design' }
+				]}
+			/>
+			<MobileMenuItem href="/about" label="About Us" />
+			<MobileMenuItem href="/contact" label="Contact" />
+		</MobileMenu>
 		<a class="hidden xs:block btn btn-ghost" href="/" aria-label="Menu">
 			<img class="h-full" src="/img/rgb_logo_light_256.png" alt="RGB Studios logo" />
 		</a>
@@ -80,17 +70,4 @@
 		<a class="btn btn-outline" href="/contact">Get in touch</a>
 	</div>
 </div>
-<div class="navbar-bottom sticky top-14" />
-
-<style lang="postcss">
-	.navbar-bottom {
-		@apply w-full h-1 opacity-50 hidden lg:block;
-		/* background: linear-gradient(
-			-45deg,
-			var(--brand-red) 33%,
-			var(--brand-green) 33%,
-			var(--brand-green) 67%,
-			var(--brand-blue) 67%
-		); */
-	}
-</style>
+<div class="w-full h-1 opacity-50 hidden lg:blocksticky top-14" />
