@@ -18,6 +18,8 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify, EmailJS
 
 - `pnpm install`
 
+To set up Netlify dev locally, `npm install -g netlify-cli`
+
 ### Recommended VS Code Extensions:
 
 - Prettier
@@ -41,6 +43,10 @@ Svelte Kit, Tailwind CSS, Daisy UI, Netlify, EmailJS
 ### Preview Production Build
 
 `pnpm preview`
+
+### Netlify Dev
+
+`netlify dev`
 
 ### Credit
 
