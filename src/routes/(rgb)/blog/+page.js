@@ -2,7 +2,9 @@
  * Endpoint to send blog post data to the front end
  */
 
-import { getPosts } from '$lib/util/posts';
-export async function load() {
-	return { posts: await getPosts() };
+export async function load({ fetch }) {
+	const res = await fetch('/blog/posts.json');
+	const posts = await res.json();
+
+	return { posts };
 }
