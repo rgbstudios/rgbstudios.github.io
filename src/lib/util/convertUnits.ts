@@ -18,25 +18,36 @@ export class Converter {
 			kilometers: 0.001,
 			centimeters: 100,
 			millimeters: 1000,
+			micrometers: 1e6,
+			nanometers: 1e9,
 			inches: 39.3701,
 			feet: 3.28084,
+			yards: 1.09361,
 			miles: 0.000621371,
-			yards: 1.09361
+			nauticalMiles: 0.000539957
 		},
 		// Mass
 		mass: {
 			grams: 1,
 			kilograms: 0.001,
+			milligrams: 1000,
+			metricTons: 1e-6,
+			usTons: 0.00000110231,
 			pounds: 0.00220462,
-			ounces: 0.035274
+			ounces: 0.03527396
 		},
 		// Volume
 		volume: {
 			liters: 1,
 			milliliters: 1000,
-			gallons: 0.264172,
 			cubicMeters: 0.001,
-			cubicCentimeters: 1000
+			cubicCentimeters: 1000,
+			cubicInches: 61.0237,
+			cubicFeet: 0.0353147,
+			gallons: 0.264172,
+			gallonsImperial: 0.219969,
+			teaspoons: 202.884,
+			tablespoons: 67.628
 		},
 		// Time
 		time: {
@@ -45,9 +56,9 @@ export class Converter {
 			hours: 1 / 3600,
 			days: 1 / 86400,
 			weeks: 1 / 604800,
-			months: 1 / 2629746,
-			years: 1 / 31557600,
-			decades: 1 / 315576000
+			months: 1 / 2629800,
+			years: 1 / 31556952,
+			decades: 1 / 315569520
 		},
 		// Temperature
 		temperature: {
@@ -72,7 +83,8 @@ export class Converter {
 			metersPerSecond: 1,
 			kilometersPerHour: 3.6,
 			milesPerHour: 2.23694,
-			feetPerSecond: 3.28084
+			feetPerSecond: 3.28084,
+			knots: 1.94384
 		},
 		// Pressure
 		pressure: {
@@ -80,7 +92,9 @@ export class Converter {
 			bar: 1e-5,
 			psi: 0.0001450377,
 			atmosphere: 9.86923e-6,
-			torr: 0.00750062
+			torr: 0.00750062,
+			millimetersOfMercury: 0.00750062,
+			kilopascals: 0.001
 		},
 		// Current
 		current: {
@@ -99,13 +113,15 @@ export class Converter {
 			watts: 1,
 			kilowatts: 0.001,
 			megawatts: 1e-6,
-			horsepower: 0.00134102
+			horsepower: 0.00134102,
+			btuPerHour: 3.41214
 		},
 		// Force
 		force: {
 			newtons: 1,
 			dynes: 1e5,
-			poundsForce: 0.224809
+			poundsForce: 0.224809,
+			kilonewtons: 0.001
 		},
 		// Resistance
 		resistance: {
@@ -117,8 +133,8 @@ export class Converter {
 		energy: {
 			joules: 1,
 			kilojoules: 0.001,
-			calories: 0.239006,
-			kilocalories: 0.000239006,
+			calories: 0.2388459,
+			kilocalories: 0.0002388459,
 			wattHours: 1 / 3600
 		},
 		// Density
