@@ -30,9 +30,9 @@ keywords:
 
 ## Introduction
 
-If you've ever worked with JavaScript modules, you may have encountered cases where some `import` or `require` statements don't work as expected. You might have also seen files with `.mjs` or `.cjs` extensions and wondered why they exist.
+If you've ever worked with JavaScript modules, you may have encountered cases where `import` or `require` statements don't work as expected. You might have also seen files with `.mjs` or `.cjs` extensions and wondered why they exist.
 
-In this article, we'll break down the difference between **ES Modules (ESM)** and **CommonJS (CJS)**, why these file extensions matter, and how to navigate module systems in modern JavaScript projects.
+In this article, we'll break down the differences between **ES Modules (ESM)** and **CommonJS (CJS)**, why these file extensions matter, and how to navigate module systems in modern JavaScript projects.
 
 ---
 
@@ -42,16 +42,16 @@ JavaScript originally had no built-in module system. Developers had to rely on g
 
 ### CommonJS (CJS)
 
-Node.js, a runtime for executing JavaScript outside the browser, was created to leverage JavaScript's asynchronous, event-driven nature for backend development. This allowed developers to use JavaScript for both front-end and back-end programming.
+Node.js, a runtime for executing JavaScript outside the browser, was created to leverage JavaScript's asynchronous, event-driven nature for backend development.
 
-To manage dependencies and modularize code, Node.js introduced **CommonJS (CJS)** as a module system, allowing developers to `require()` files and export functionality using `module.exports`:
+To manage dependencies and modularize code, Node.js introduced **CommonJS (CJS)**, a module system allowing developers to `require()` files and export functionality using `module.exports`:
 
 ```js
 const fs = require('fs');
 module.exports = { greet: () => console.log('Hello!') };
 ```
 
-CommonJS became the standard for Node.js, but it wasn't supported in browsers.
+CommonJS became the standard for Node.js but wasn't supported in browsers.
 
 ### ES Modules (ESM)
 
@@ -70,22 +70,22 @@ While ESM works natively in modern browsers, Node.js only fully adopted it in **
 
 ## The `.mjs` and `.cjs` Extensions
 
-By default, Node.js assumes JavaScript files (`.js`) use **CommonJS**. If you want to use ESM, you need to:
+By default, Node.js assumes JavaScript files (`.js`) use **CommonJS**. To use ESM, you need to:
 
 1. **Use the `.mjs` extension**
 2. **Set `"type": "module"` in `package.json`**
 
 ### `.mjs` (ES Modules)
 
-- Explicitly tells Node.js to treat the file as an **ES Module**.
-- Uses `import`/`export` syntax.
-- Doesn't support `require()`.
+- Explicitly tells Node.js to treat the file as an **ES Module**
+- Uses `import`/`export` syntax
+- Doesn't support `require()`
 
 ### `.cjs` (CommonJS)
 
-- Explicitly tells Node.js to treat the file as **CommonJS**.
-- Uses `require()` and `module.exports`.
-- Doesn't support `import` unless using dynamic `import()`.
+- Explicitly tells Node.js to treat the file as **CommonJS**
+- Uses `require()` and `module.exports`
+- Doesn't support `import` unless using dynamic `import()`
 
 ### `"type": "module"` in `package.json`
 
@@ -99,7 +99,7 @@ Instead of renaming files to `.mjs`, you can add this to `package.json`:
 
 This makes **all `.js` files** in your project default to **ESM**, while `.cjs` files still use CommonJS.
 
-Conversely, if your project primarily uses CommonJS but you need some ESM files, you don't need to specify `type` as it defaults to `commonjs`. You can explicitly set it if you'd like:
+If your project primarily uses CommonJS but you need some ESM files, you don't need to specify `"type"`, as it defaults to `"commonjs"`. However, you can explicitly set it:
 
 ```json
 {
@@ -107,7 +107,7 @@ Conversely, if your project primarily uses CommonJS but you need some ESM files,
 }
 ```
 
-and use `.mjs` for ES Modules.
+Then, use `.mjs` for ES Modules.
 
 ---
 
@@ -152,24 +152,26 @@ CommonJS loads entire modules, which can increase bundle size.
 - **For Node.js projects**:
   - If working with modern tooling, use `"type": "module"` and `.mjs`.
   - If using older packages, stick to `.cjs`.
-- **For compatibility**: If mixing both, use `.cjs` for CommonJS modules and `.mjs` for ES modules when mixing them.
-
-- Browsers: natively support ES Modules (mjs)
-- Performance: ES Modules have better performance
-- Future proof: ES Modules are the official JS module standard
-- Node: Node.js still defaults to CJS, but you can add `"type": "module"` to your `package.json` and use ES Modules
+- **For compatibility**: Use `.cjs` for CommonJS and `.mjs` for ES Modules when mixing both.
 
 ---
 
 ## Reference Table
 
-| Feature                  | CommonJS (CJS)                 | ECMAScript Modules (ESM) |
-| ------------------------ | ------------------------------ | ------------------------ |
-| Syntax                   | `require()` / `module.exports` | `import` / `export`      |
-| Execution                | Synchronous                    | Asynchronous             |
-| Browser Support          | No (requires bundler)          | Yes (native support)     |
-| Tree Shaking             | No                             | Yes                      |
-| Default Usage in Node.js | Before ES modules support      | Modern standard          |
+| Feature                  | CommonJS (CJS)                 | ES Modules (ESM)     |
+| ------------------------ | ------------------------------ | -------------------- |
+| Syntax                   | `require()` / `module.exports` | `import` / `export`  |
+| Execution                | Synchronous                    | Asynchronous         |
+| Browser Support          | No (requires bundler)          | Yes (native support) |
+| Tree Shaking             | No                             | Yes                  |
+| Default Usage in Node.js | Before ES module support       | Modern standard      |
+
+### Summary:
+
+- **Browsers**: Natively support ES Modules (`.mjs`).
+- **Performance**: ES Modules allow tree-shaking, making them more efficient.
+- **Future-proof**: ES Modules are the official JavaScript module standard.
+- **Node.js**: Still defaults to CJS, but adding `"type": "module"` to `package.json` enables ES Modules.
 
 ---
 
