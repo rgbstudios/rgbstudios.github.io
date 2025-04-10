@@ -34,9 +34,9 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				sans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+				sans: ['Bitter', ...defaultTheme.fontFamily.sans],
 				display: ['Poppins'],
-				body: ['Open Sans']
+				body: ['Bitter']
 			},
 			screens: {
 				xs: '360px'
