@@ -50,7 +50,7 @@
 	</h1>
 </article>
 
-<img class="h-64 mx-auto mb-8" src="/img/pages/circle_compass.svg" alt="" />
+<img class="h-48 mx-auto mb-8" src="/img/pages/circle_compass.svg" alt="" />
 
 <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 	{#each filteredProjects as { title, text, img, link, isNew, isPopular, isUpdated, tags } (link)}
