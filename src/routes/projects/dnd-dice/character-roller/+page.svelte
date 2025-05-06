@@ -440,23 +440,23 @@
 		<div class="sm:btn-group justify-center mt-4 sm:mt-0">
 			<input
 				type="text"
-				class="input mb-2 sm:mb-0 sm:border-r-0"
+				class="input mb-2 sm:mb-0 mr-1"
 				placeholder="Character name"
 				bind:value={$s.characterName}
 			/>
 			<input
 				type="text"
-				class="input mb-2 sm:mb-0 sm:border-r-0"
+				class="input mb-2 sm:mb-0 mr-1"
 				value={currentCharacter.stats
 					.map((stat) => stat.value)
 					.sort((a, b) => a - b)
 					.join(', ')}
 			/>
-			<button class="btn mb-2 sm:mb-0 sm:border-r-0" on:click={downloadCharacter}>
+			<button class="btn mb-2 sm:mb-0 mr-1" on:click={downloadCharacter}>
 				<Icon name="download" /> &nbsp; Download
 			</button>
 			<button
-				class="btn mb-2 sm:mb-0 sm:border-r-0"
+				class="btn mb-2 sm:mb-0 mr-1"
 				on:click={() =>
 					copyText(
 						currentCharacter.stats
