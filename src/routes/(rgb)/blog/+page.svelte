@@ -61,7 +61,7 @@
 	<h1 class="text-center">{pageTitle}</h1>
 </article>
 
-<img class="h-64 mx-auto" src="/img/pages/blog_post.svg" alt="" />
+<img class="h-48 mx-auto" src="/img/pages/blog_post.svg" alt="" />
 
 {#if filteredPosts.length !== 0}
 	<div class="grid gap-8 my-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

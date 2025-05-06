@@ -9,7 +9,7 @@
 <article class="prose-custom mx-auto">
 	<h1>Privacy Policy</h1>
 
-	<img class="h-64 mx-auto" src="/img/pages/blog_post.svg" alt="" />
+	<img class="h-48 mx-auto" src="/img/pages/blog_post.svg" alt="" />
 
 	<p>
 		All of our applications are without ads. We will never sell your data to third parties or store
