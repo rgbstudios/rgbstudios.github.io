@@ -122,7 +122,7 @@
 
 	function getDiceCodes(rolls) {
 		let diceCodes = '';
-		for (let i = 0; i < rolls.length; i++) diceCodes += getDieCode(rolls[i]) + ' ';
+		for (let i = 0; i < rolls.length; i++) diceCodes += getDieCode(rolls[i]) + '';
 		return diceCodes;
 	}
 
@@ -388,7 +388,7 @@
 	<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
 		{#each $s.selectedModifiers as selectedMod, idx}
 			<div class="border-2 border-base-200 p-4 rounded-lg text-center">
-				<p class="text-4xl">
+				<p class="text-4xl break-all">
 					{@html getDiceCodes(
 						isRollingAnimation && animationRolls.length
 							? animationRolls[idx]
