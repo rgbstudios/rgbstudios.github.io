@@ -24,6 +24,9 @@
 	<a href="/projects/dnd-dice/spellbook">
 		<img src="/img/projects/other/icon-d8.svg" class="h-8 inline" alt="" /> Spellbook
 	</a>
+	<a href="/projects/dnd-dice/simple-die-roller">
+		<img src="/img/projects/other/icon-d4.svg" class="h-8 inline" alt="" /> Simple Die Roller
+	</a>
 </nav>
 
 <style lang="postcss">
