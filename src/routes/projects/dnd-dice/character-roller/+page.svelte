@@ -121,9 +121,7 @@
 	}
 
 	function getDiceCodes(rolls) {
-		let diceCodes = '';
-		for (let i = 0; i < rolls.length; i++) diceCodes += getDieCode(rolls[i]) + '';
-		return diceCodes;
+		return rolls.map(getDieCode).join('');
 	}
 
 	function downloadCharacter() {
