@@ -4,6 +4,11 @@
 
 import { getPosts } from '$lib/util/posts';
 
+export const prerender = true;
+
+/**
+ * @returns {Promise<Response>}
+ */
 export async function GET() {
 	const posts = await getPosts();
 

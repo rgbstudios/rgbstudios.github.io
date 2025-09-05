@@ -1,7 +1,11 @@
 /**
  * Serves `robots.txt` for crawlers
  */
+export const prerender = true;
 
+/**
+ * @returns {Response}
+ */
 export async function GET() {
 	const txt = `User-agent: *
 Disallow:
