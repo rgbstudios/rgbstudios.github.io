@@ -1,3 +1,8 @@
+<script context="module">
+	// prerender the 404 page so it becomes a static asset
+	export const prerender = true;
+</script>
+
 <script>
 	import projects from '$lib/data/projects';
 	import FeaturedAppCarousel from '$lib/components/FeaturedAppCarousel.svelte';
