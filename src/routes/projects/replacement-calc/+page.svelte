@@ -15,12 +15,11 @@
 
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
-	export let data = {};
 
-	let N = 52 ?? data.N;
-	let m = 4 ?? data.m;
-	let n = 5 ?? data.n;
-	let k = 1 ?? data.k;
+	let N = 52;
+	let m = 4;
+	let n = 5;
+	let k = 1;
 	let errorMsg = '';
 
 	// sync url with inputs
@@ -31,6 +30,19 @@
 		k && queryParams.set('k', k);
 		m && queryParams.set('m', m);
 		history.replaceState(null, null, '?' + queryParams.toString());
+	}
+
+	/** Populate variables from URL query parameters. */
+	function initFromParams() {
+		const params = new URLSearchParams(window.location.search);
+		const valN = parseInt(params.get('N'));
+		if (valN) N = valN;
+		const valn = parseInt(params.get('n'));
+		if (valn) n = valn;
+		const valk = parseInt(params.get('k'));
+		if (valk) k = valk;
+		const valm = parseInt(params.get('m'));
+		if (valm) m = valm;
 	}
 
 	$: eq = roundNumber(exactKdistinct(N, m, n, k), roundPrecision);
@@ -65,6 +77,8 @@
 	// Charts
 
 	onMount(() => {
+		initFromParams();
+
 		// load google charts visualization API and corechart package
 		google.charts.load('current', { packages: ['corechart'] });
 

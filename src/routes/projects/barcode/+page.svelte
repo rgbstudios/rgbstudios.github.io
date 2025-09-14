@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Future: add scan barcode modal, button to toggle url params
 	import jsQR from 'jsqr';
-	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 	import copyText from '$lib/util/copyText';
 
 	/// COMPONENTS ///
@@ -53,7 +53,12 @@
 			lineColor: $linesColor
 		});
 
-	$: parseURL($page.url.searchParams);
+	/** Initialize state from the current URL query parameters. */
+	function initFromParams() {
+		parseURL(new URLSearchParams(window.location.search));
+	}
+
+	onMount(initFromParams);
 
 	function isValid(text: string, format: string): boolean {
 		try {

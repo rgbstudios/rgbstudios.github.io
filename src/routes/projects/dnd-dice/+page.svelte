@@ -1,6 +1,4 @@
 <script>
-	import { page } from '$app/stores';
-
 	import Icon from '$lib/components/Icon.svelte';
 	import ModalButton from '$lib/components/base/ModalButton.svelte';
 	import ProjectHeader from '$lib/components/ProjectHeader.svelte';
@@ -66,7 +64,7 @@
 
 	let extracted = false;
 	function extractFromParams() {
-		const url = new URL($page.url.toString());
+		const url = new URL(window.location.href);
 		let m = url.searchParams.get('m');
 		if (m) {
 			// atob decodes base 64
