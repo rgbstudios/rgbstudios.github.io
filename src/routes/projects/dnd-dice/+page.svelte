@@ -15,6 +15,7 @@
 	import DndSideNav from './SideNav.svelte';
 
 	import { diceSettings as s } from '$lib/stores/dnd-dice';
+	import { browser } from '$app/environment';
 
 	/**
 	 * Todo:
@@ -60,7 +61,7 @@
 
 	let loaded = false;
 	$: if ($s?.modifiers?.dex !== undefined) loaded = true; // set `loaded` to true when LocalStorage has been loaded
-	$: if (loaded === true && extracted === false) extractFromParams(); // when loaded is true, extract params once
+	$: if (browser && loaded === true && extracted === false) extractFromParams(); // when loaded is true, extract params once in the browser
 
 	let extracted = false;
 	function extractFromParams() {
