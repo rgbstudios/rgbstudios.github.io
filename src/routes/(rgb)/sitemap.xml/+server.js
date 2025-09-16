@@ -4,6 +4,10 @@
  * @link https://www.sitemaps.org/protocol.html
  */
 
+export const prerender = true;
+
+import { getPosts } from '$lib/util/posts';
+
 const pages = [
 	{
 		url: '',
@@ -36,10 +40,12 @@ const pages = [
 	}
 ];
 
-export async function GET({ url }) {
-	// TODO: handle errors for when this fetch call fails.
-	const res = await fetch(url.origin + '/blog/posts.json');
-	const posts = (await res.json()) || [];
+/**
+ * @param {{ url: URL }} param0
+ * @returns {Promise<Response>}
+ */
+export async function GET() {
+	const posts = await getPosts();
 	const postPages = posts
 		.filter(({ hidden }) => !hidden)
 		.map(({ slug }) => ({ url: `blog/${slug}`, priority: 0.6 }));

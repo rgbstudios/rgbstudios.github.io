@@ -6,6 +6,7 @@
 	 */
 
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 
 	import BlogCard from '$lib/components/BlogCard.svelte';
 	import Breadcrumbs from '$lib/components/Breadcrumbs.svelte';
@@ -16,7 +17,8 @@
 
 	const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
-	$: category = $page.url.searchParams.get('category');
+	let category = null;
+	$: category = browser ? $page.url.searchParams.get('category') : null;
 
 	// Show only non-hidden posts of the given category, then sort them by date
 	$: filteredPosts = posts

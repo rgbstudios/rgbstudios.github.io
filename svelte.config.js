@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-netlify';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
 import path from 'path';
@@ -24,15 +24,13 @@ const config = {
 		})
 	],
 	kit: {
-		/**
-		 * split: split every route into its own function, which we do not want
-		 * we want one function for all routes to keep the function warm -> higher chance no coldstart
-		 * @link https://kit.svelte.dev/docs/adapter-netlify
-		 * @link https://www.netlify.com/pricing/
-		 */
-		adapter: adapter({
-			split: false
-		})
+		adapter: adapter(),
+		paths: {
+			relative: false
+		},
+		prerender: {
+			entries: ['*']
+		}
 	}
 };
 

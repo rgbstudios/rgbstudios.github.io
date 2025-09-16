@@ -56,11 +56,10 @@
 	let googleChartsLoaded = false;
 	const roundPrecision = 10;
 
-	export let data = {};
-	let p = data.p ?? 0.5;
-	let n = data.n ?? 40;
-	let x = data.x ?? 18;
-	let q = data.q;
+	let p = 0.5;
+	let n = 40;
+	let x = 18;
+	let q;
 
 	let errorMsg = '';
 	let barChartURI, pieChartURI;
@@ -79,6 +78,18 @@
 		stringParams
 			? history.replaceState(null, null, '?' + stringParams)
 			: history.replaceState(null, null);
+	}
+
+	/** Populate variables from URL query parameters. */
+	function initFromParams() {
+		const params = new URLSearchParams(window.location.search);
+		const pParam = params.get('p');
+		if (pParam !== null) p = parseFloat(pParam);
+		const nParam = params.get('n');
+		if (nParam !== null) n = parseFloat(nParam);
+		const xParam = params.get('x');
+		if (xParam !== null) x = parseFloat(xParam);
+		q = params.get('q');
 	}
 
 	let eq, lt, gt, le, ge, mu, sigma, stddev, _nck;
@@ -130,6 +141,8 @@
 	/// LIFECYCLE HOOKS ///
 	// Charts
 	onMount(() => {
+		initFromParams();
+
 		// load google charts visualization API and corechart package
 		google.charts.load('current', { packages: ['corechart'] });
 
