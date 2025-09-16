@@ -25,6 +25,9 @@ const config = {
 	],
 	kit: {
 		adapter: adapter(),
+		paths: {
+			relative: false
+		},
 		prerender: {
 			entries: ['*']
 		}
